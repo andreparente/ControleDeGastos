@@ -10,18 +10,51 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var erroemail: UILabel!
+    @IBOutlet weak var errocampovazio: UILabel!
+    @IBOutlet weak var nome: UITextField!
+    @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var senha: UITextField!
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.blackColor()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        nome.placeholder="Nome"
+        mail.placeholder="Email"
+        senha.placeholder="Senha"
+        senha.secureTextEntry=true
+        errocampovazio.hidden=true
+        errocampovazio.text="Todos os campos são obrigatórios"
+        erroemail.hidden=true
+        erroemail.text="Email inválido"
     }
     
+    @IBAction func confirma(sender: UIButton)
+{
+    if (nome.text!.isEmpty || (mail.text!.isEmpty) || senha.text!.isEmpty)
+    {
+        errocampovazio.hidden=false
+    }
+    else
+    {
+    errocampovazio.hidden=true
+        if isValidEmail(mail.text!) == false
+        {
+        erroemail.hidden=false
+        }
+        else
+        {
+        erroemail.hidden=true
+        performSegueWithIdentifier("LoginToMain", sender: self)
+        }
+    }
+}
+
+    func isValidEmail(testStr:String) -> Bool {
+        
+        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(testStr)
+    }
 
     /*
     // MARK: - Navigation

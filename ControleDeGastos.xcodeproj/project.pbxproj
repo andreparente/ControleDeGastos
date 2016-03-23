@@ -375,6 +375,7 @@
 			baseConfigurationReference = 55440201E2595A4545A36F1C /* Pods-ControleDeGastos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = ControleDeGastos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos;
@@ -387,6 +388,7 @@
 			baseConfigurationReference = 56307421CB692CF9FCD566F8 /* Pods-ControleDeGastos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = ControleDeGastos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos;
