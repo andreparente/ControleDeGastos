@@ -148,6 +148,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="pRs-b8-5QE" kind="show" identifier="GastoManualToCadastroCartao" id="8DZ-gY-4kH"/>
+                        <segue destination="i28-Vj-dol" kind="show" identifier="GastoToMain" id="mSI-rX-yBy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mr0-d5-1u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -217,5 +218,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w9G-UC-YqS"/>
+        <segue reference="mSI-rX-yBy"/>
     </inferredMetricsTieBreakers>
 </document>
