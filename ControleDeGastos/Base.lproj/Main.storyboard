@@ -14,14 +14,167 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="i28-Vj-dol" kind="show" identifier="LoginToMain" id="NL6-cS-gUU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47" y="187"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="Tlb-kS-LJA">
+            <objects>
+                <viewController id="i28-Vj-dol" customClass="MainViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fhy-6b-Bqe"/>
+                        <viewControllerLayoutGuide type="bottom" id="bZu-uI-xk1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Gb-Go-fx3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="goP-2V-gWf" kind="show" identifier="LoginToGastoManual" id="tSg-0A-cuP"/>
+                        <segue destination="G5x-cB-V2J" kind="show" identifier="MainToQRCode" id="TWx-xF-EmX"/>
+                        <segue destination="vyZ-T2-JsW" kind="show" identifier="MainToSettings" id="2Fy-V5-dhU"/>
+                        <segue destination="dwH-NT-Olr" kind="show" identifier="MainToGrafico" id="Lpn-go-2ch"/>
+                        <segue destination="8A6-r8-ap1" kind="show" identifier="MainToHistoricoTabela" id="nGk-Nr-gbT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fxh-nN-ady" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634.5" y="186.5"/>
+        </scene>
+        <!--Grafico View Controller-->
+        <scene sceneID="OiH-XQ-vpT">
+            <objects>
+                <viewController id="dwH-NT-Olr" customClass="GraficoViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZaT-B7-na9"/>
+                        <viewControllerLayoutGuide type="bottom" id="gHq-Wg-ozM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Web-ih-PxA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RU6-lF-KpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634.5" y="1030.5"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="98H-9U-lGA">
+            <objects>
+                <viewController id="vyZ-T2-JsW" customClass="SettingsViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zHf-uf-Tb6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ezb-Ch-Ydd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YJ9-3W-MxK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6DC-TN-rj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262.5" y="1030.5"/>
+        </scene>
+        <!--Gasto Manual View Controller-->
+        <scene sceneID="OT6-4x-4c5">
+            <objects>
+                <viewController id="goP-2V-gWf" customClass="GastoManualViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zN2-QO-Yxc"/>
+                        <viewControllerLayoutGuide type="bottom" id="qsB-Km-Wpw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z7Y-kM-Rpj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="pRs-b8-5QE" kind="show" identifier="GastoManualToCadastroCartao" id="8DZ-gY-4kH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mr0-d5-1u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256.5" y="186.5"/>
+        </scene>
+        <!--Cadastro Cartao View Controller-->
+        <scene sceneID="mt3-on-LzT">
+            <objects>
+                <viewController id="pRs-b8-5QE" customClass="CadastroCartaoViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r6A-L5-oG9"/>
+                        <viewControllerLayoutGuide type="bottom" id="N95-41-xvC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aTn-Dm-bdD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ox5-v9-2pL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926.5" y="186.5"/>
+        </scene>
+        <!--Historico Tabela View Controller-->
+        <scene sceneID="YEL-Mv-h5T">
+            <objects>
+                <viewController id="8A6-r8-ap1" customClass="HistoricoTabelaViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cbN-RH-t7n"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qh6-oK-ftk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CXh-Zu-1Mb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMG-pc-Dkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634.5" y="-616.5"/>
+        </scene>
+        <!--Code View Controller-->
+        <scene sceneID="miV-1B-ksb">
+            <objects>
+                <viewController id="G5x-cB-V2J" customClass="QRCodeViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IQa-MA-rLj"/>
+                        <viewControllerLayoutGuide type="bottom" id="ef0-8C-yHL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ez0-CD-bkc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="goP-2V-gWf" kind="show" identifier="QRCodeToGastoManual" id="w9G-UC-YqS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hb0-GL-HX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256.5" y="-616.5"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="w9G-UC-YqS"/>
+    </inferredMetricsTieBreakers>
 </document>
