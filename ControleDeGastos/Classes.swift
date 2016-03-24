@@ -17,7 +17,7 @@ class Gasto {
     var data: String
     var foto: UIImage?
     var ehDinheiro: Bool = true
-    var categoria: Categoria!
+    var categoria: CategoriaGasto!
     
     init(nome: String, valor: Double, data: String) {
         
@@ -62,7 +62,7 @@ class Cartao {
     
 }
 
-class Categoria {
+class CategoriaGasto {
     
     var nome: String
     
