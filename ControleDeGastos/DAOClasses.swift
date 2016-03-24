@@ -10,30 +10,24 @@ import UIKit
 
 class DAO {
     
-    func connectCoreData() -> Bool {
-    //implementar funcao de acesso ao CoreData
+    internal func connectDAO() -> Bool {
         return true
-        
-    }
-}
-class DAOUsuario {
-    
-    func getUsuario(usuario: Usuario) -> Usuario {
-        //implementar funçao buscando do CoreData
-        return usuario
     }
     
-    func setUsuario(usuario: Usuario){
-        //implementar funcao inserindo no CoreData
-    }
-    
-    func getArrayGastos(usuario: Usuario) -> [Gasto] {
-        //implementar funçao que carrega os gastos do usuario
-        return usuario.gasto!
-    }
-    
-    func addGasto(usuario: Usuario) -> Bool {
-        //adicionar gasto ao DAO
+    // insere usuario na base
+    // usar unicamente na tela de cadastro
+    func saveUsuario(usuario: Usuario) -> Bool {
         return true
+    }
+    
+    // salva os dados de um usuario que ja existe na base
+    // usar quando o usuario logado for modificado
+    // e antes de fechar o aplicativo
+    func updateUsuario(usuario: Usuario){
+    }
+    
+    // pega um usuario na base
+    // usar na tela de login
+    func getUsuario() -> Usuario {
     }
 }
