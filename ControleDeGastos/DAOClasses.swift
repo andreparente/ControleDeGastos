@@ -23,11 +23,13 @@ class DAO {
     // salva os dados de um usuario que ja existe na base
     // usar quando o usuario logado for modificado
     // e antes de fechar o aplicativo
-    func updateUsuario(usuario: Usuario){
+    func updateUsuario(usuario: Usuario) -> Bool {
+        return true
     }
     
     // pega um usuario na base
     // usar na tela de login
-    func getUsuario() -> Usuario {
+    func getUsuario(email: String) -> Usuario {
+        return Usuario(nome: "admin", email: "admin@admin", senha: 123)
     }
 }
