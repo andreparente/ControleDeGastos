@@ -12,21 +12,28 @@ class ViewController: UIViewController,ChartViewDelegate {
     
     
     // AQUI ELE CRIA A VIEW PRO GRAFICO
-    let chartView = PieChartView(frame: CGRectMake(0, 22, 400, 400))
-    var categorias: [String]!
-    var gastos: [Double]!
+    let chartView = PieChartView(frame: CGRectMake(0, screenSize.height/6, screenSize.width, screenSize.height/2))
+    let totalLabel = UILabel(frame: CGRectMake(0, screenSize.height-(screenSize.height/3), screenSize.width,40))
+    var nomesCat: [String]!
+    var valoresGastos: [Double]!
+    var gastos: [Gasto]!
     
     override func viewDidLoad() {
+        
+
+        totalLabel.text = "LOCAL CERTO!!"
+        view.addSubview(totalLabel)
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        chartView.center = view.center
+        
         //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
         chartView.noDataText = "You need to enter some data"
         chartView.delegate = self
         chartView.animate(xAxisDuration: 1)
         view.addSubview(chartView)
-        setChart(categorias, values: gastos)
+        setChart(nomesCat, values: valoresGastos)
     }
     
     //FUNCAO QUE SETTA TODO O GRAFICO
@@ -59,12 +66,25 @@ class ViewController: UIViewController,ChartViewDelegate {
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
     
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
-        print("\(entry.value) in \(categorias[entry.xIndex])")
+        print("\(entry.value) in \(nomesCat[entry.xIndex])")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+    
+        var i: Int!
+        
+        for i in 0...gastos.count {
+            
+            valoresGastos[i] = gastos[i].valor
+            nomesCat[i] = gastos[i].categoria!.nome
+            
+        }
+        
     }
     
     

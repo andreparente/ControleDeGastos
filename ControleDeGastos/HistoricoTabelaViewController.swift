@@ -11,11 +11,11 @@ import UIKit
 class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
     
     var tableView: UITableView = UITableView()
-
+    var gastos: [Gasto]!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let screenSize = UIScreen.mainScreen().bounds
+        
         tableView.frame = CGRectMake(screenSize.minX,screenSize.minY+22,screenSize.width,screenSize.height)
         tableView.delegate = self
         tableView.dataSource = self
@@ -27,13 +27,19 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     
     //funçao que diz a quantidade de células
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 1
+            return gastos.count
     }
+    
     
     //funçao que seta as células
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        
+        cell.textLabel?.text = gastos[indexPath.row].nome + (gastos[indexPath.row].categoria?.nome)!
+        cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(15))
+        cell.detailTextLabel?.text = "Valor:" + String(gastos[indexPath.row].valor)
+        cell.detailTextLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
         return cell
             
     }

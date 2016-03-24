@@ -8,13 +8,16 @@
 
 import UIKit
 
+public let screenSize = UIScreen.mainScreen().bounds
+
 class Gasto {
     
-    var nome: String?
-    var valor: Double?
-    var data: String?
+    var nome: String
+    var valor: Double
+    var data: String
     var foto: UIImage?
     var ehDinheiro: Bool = true
+    var categoria: Categoria!
     
     init(nome: String, valor: Double, data: String) {
         
@@ -28,11 +31,11 @@ class Gasto {
 
 class Usuario {
     
-    var email: String?
-    var senha: String?
-    var nome: String?
-    var limiteMes: Double?
-    var gasto: [Gasto]?
+    var email: String
+    var senha: String
+    var nome: String
+    var limiteMes: Double
+    var gasto: [Gasto]
     
     init(nome: String,email: String,senha: String,limiteMes: Double,gastos: [Gasto]) {
         self.nome = nome
@@ -46,9 +49,9 @@ class Usuario {
 
 class Cartao {
     
-    var nome: String?
-    var limite: Double?
-    var cor: UIColor?
+    var nome: String
+    var limite: Double
+    var cor: UIColor
     
     init(nome:String, limite:Double,cor: UIColor){
         self.nome = nome
@@ -59,9 +62,9 @@ class Cartao {
     
 }
 
-class categoria {
+class Categoria {
     
-    var nome: String?
+    var nome: String
     
     init(nomeCat: String) {
         self.nome = nomeCat
