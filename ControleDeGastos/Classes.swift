@@ -15,7 +15,7 @@ class Usuario {
     var email: String
     var senha: String
     var nome: String
-    var limiteMes: Double
+    var limiteMes: Double?
     var cartoes = [Cartao]()
     var gastos = [Gasto]()
     var categoriasGastos = [String]()
@@ -56,7 +56,7 @@ class Usuario {
     }
 
     func getLimiteMes() -> Double {
-        return self.limiteMes
+        return self.limiteMes!
     }
 }
 
@@ -68,7 +68,7 @@ class Gasto {
     var foto: UIImage?
     var ehDinheiro: Bool
     var categoria: String!
-    var cartao: Cartao
+    var cartao: Cartao?
 
     init(nome: String, categoria: String, valor: Double, data: NSDate) {
         self.nome = nome
@@ -92,7 +92,7 @@ class Gasto {
     }
 
     func getFoto() -> UIImage {
-        return self.foto
+        return self.foto!
     }
 }
 

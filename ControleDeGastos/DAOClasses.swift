@@ -7,16 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
 class DAO {
     
+    var managedContext: NSManagedObjectContext?
+    
     internal func connectDAO() -> Bool {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedContext = appDelegate.managedObjectContext
         return true
     }
     
     // insere usuario na base
     // usar unicamente na tela de cadastro
     func saveUsuario(usuario: Usuario) -> Bool {
+        //2
+        let entity =  NSEntityDescription.entityForName("Usuario",
+            inManagedObjectContext:managedContext!)
+        
+        let user = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext: managedContext)
+        
+        user.setValue("nometeste", forKey: "nome")
+        
+        //4
+        do {
+            try managedContext!.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
         return true
     }
     
@@ -30,6 +50,6 @@ class DAO {
     // pega um usuario na base
     // usar na tela de login
     func getUsuario(email: String) -> Usuario {
-        return Usuario(nome: "admin", email: "admin@admin", senha: 123)
+        return Usuario(nome: "admin", email: "admin@admin", senha: "123")
     }
 }

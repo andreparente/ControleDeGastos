@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
-    <entity name="Cartao" syncable="YES">
-        <attribute name="cor" optional="YES" attributeType="Transformable" syncable="YES"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Xcode 7.0">
+    <entity name="Cartao" representedClassName="Cartao" syncable="YES">
+        <attribute name="cor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="limite" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Categoria" syncable="YES">
-        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
-    <entity name="Gasto" syncable="YES">
+    <entity name="Gasto" representedClassName="Gasto" syncable="YES">
+        <attribute name="categoria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="ehDinheiro" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="valor" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
-    <entity name="Usuario" syncable="YES">
+    <entity name="Usuario" representedClassName="Usuario" syncable="YES">
+        <attribute name="categoriasGastos" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="limiteMes" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cartoes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cartao" syncable="YES"/>
+        <relationship name="gastos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gasto" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Usuario" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Gasto" positionX="-54" positionY="18" width="128" height="120"/>
         <element name="Cartao" positionX="-36" positionY="45" width="128" height="90"/>
-        <element name="Categoria" positionX="-18" positionY="63" width="128" height="60"/>
+        <element name="Gasto" positionX="-54" positionY="18" width="128" height="135"/>
+        <element name="Usuario" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

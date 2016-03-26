@@ -81,7 +81,7 @@ class ViewController: UIViewController,ChartViewDelegate {
         for i in 0...gastos.count {
             
             valoresGastos[i] = gastos[i].valor
-            nomesCat[i] = gastos[i].categoria!.nome
+            nomesCat[i] = gastos[i].categoria
             
         }
         
