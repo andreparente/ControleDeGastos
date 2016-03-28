@@ -16,7 +16,7 @@ class Usuario {
     var email = String()
     var senha = String()
     var nome = String()
-    var limiteMes = Double()
+    var limiteMes = Int()
     var cartoes = [Cartao]()
     var gastos = [Gasto]()
     var categoriasGastos = [String]()
@@ -49,31 +49,40 @@ class Usuario {
     func addCartao(cartao: Cartao) {
         self.cartoes.append(cartao)
     }
-
+    
     func getCartoes() -> [Cartao] {
         return self.cartoes
     }
+    
+    func getCartaoIndex(nomeCartao: String) -> Int {
+        for j in 0..<self.cartoes.count {
+            if (self.cartoes[j].nome == nomeCartao) {
+                return j
+            }
+        }
+        return -1
+    }
 
-    func setLimiteMes(limite: Double) {
+    func setLimiteMes(limite: Int) {
         self.limiteMes = limite
     }
     
-    func getLimiteMes() -> Double {
+    func getLimiteMes() -> Int {
         return self.limiteMes
     }
 }
 
 class Gasto {
     var nome = String()
-    var valor = Double()
-    var data = NSDate()
-    var foto: UIImage?
+    var valor = Int() // temporariamente para que o AIO funcione
+    var data = String() // formato "yyyy-MM-dd-hh-mm-ss"
+    //var foto: UIImage?
     var ehDinheiro = Bool()
     var categoria = String()
     var cartao: Cartao?
 
     // init para gasto em dinheiro
-    init(nome: String, categoria: String, valor: Double, data: NSDate) {
+    init(nome: String, categoria: String, valor: Int, data: String) {
         self.nome = nome
         self.categoria = categoria
         self.valor = valor
@@ -82,7 +91,7 @@ class Gasto {
     }
 
     // init para gasto em cartao
-    init(nome: String, categoria: String, valor: Double, data: NSDate, cartao: Cartao) {
+    init(nome: String, categoria: String, valor: Int, data: String, cartao: Cartao) {
         self.nome = nome
         self.categoria = categoria
         self.valor = valor
@@ -90,7 +99,7 @@ class Gasto {
         self.ehDinheiro = false
         self.cartao = cartao
     }
-
+    /*
     func setFoto(foto: UIImage) {
         self.foto = foto
     }
@@ -98,25 +107,26 @@ class Gasto {
     func getFoto() -> UIImage {
         return self.foto!
     }
+    */
 }
 
 class Cartao {
     
     var nome = String()
-    var limite = Double()
-    var cor: UIColor
+    var limite = Int()
+    var cor: Int
 
-    init(nome:String, limite:Double, cor: UIColor){
+    init(nome:String, limite:Int, cor: Int){
         self.nome = nome
         self.limite = limite
         self.cor = cor
     }
 
-    func setLimite(limite: Double) {
+    func setLimite(limite: Int) {
         self.limite = limite
     }
 
-    func getLimite() -> Double {
+    func getLimite() -> Int {
         return self.limite
     }
 }

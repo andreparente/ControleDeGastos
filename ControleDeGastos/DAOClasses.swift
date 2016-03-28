@@ -11,7 +11,6 @@ import CoreData
 
 // colocar nessa variavel o usuario depois de loggar
 // lembrar de conferir a senha
-var usuarioLogado: Usuario?
 
 class DAO {
     
@@ -91,3 +90,4 @@ class DAO {
         return (false, nilUser)
     }
 }
+
