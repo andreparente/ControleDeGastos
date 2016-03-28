@@ -95,7 +95,7 @@
             </objects>
             <point key="canvasLocation" x="1446.5" y="186.5"/>
         </scene>
-        <!--Gráfico-->
+        <!--Grafico-->
         <scene sceneID="OiH-XQ-vpT">
             <objects>
                 <viewController id="dwH-NT-Olr" customClass="GraficoViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gráfico" id="lFH-YW-TPh"/>
+                    <tabBarItem key="tabBarItem" title="Grafico" id="lFH-YW-TPh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RU6-lF-KpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,6 +118,7 @@
         <!--Configurações-->
         <scene sceneID="98H-9U-lGA">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6DC-TN-rj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="vyZ-T2-JsW" customClass="SettingsViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zHf-uf-Tb6"/>
@@ -131,7 +132,6 @@
                     <tabBarItem key="tabBarItem" title="Configurações" id="tUi-2T-3DY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6DC-TN-rj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1262.5" y="1030.5"/>
         </scene>
@@ -238,10 +238,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="i28-Vj-dol" kind="relationship" relationship="viewControllers" id="b8h-4c-uCu"/>
-                        <segue destination="dwH-NT-Olr" kind="relationship" relationship="viewControllers" id="dLe-Wh-PBr"/>
-                        <segue destination="vyZ-T2-JsW" kind="relationship" relationship="viewControllers" id="efy-vm-Jmg"/>
                         <segue destination="8A6-r8-ap1" kind="relationship" relationship="viewControllers" id="Tk9-hb-F6y"/>
+                        <segue destination="i28-Vj-dol" kind="relationship" relationship="viewControllers" id="qRV-4C-eBq"/>
+                        <segue destination="dwH-NT-Olr" kind="relationship" relationship="viewControllers" id="cRh-te-LVN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8y6-8X-0w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -253,7 +252,6 @@
         <segue reference="tSg-0A-cuP"/>
         <segue reference="mSI-rX-yBy"/>
         <segue reference="Tk9-hb-F6y"/>
-        <segue reference="dLe-Wh-PBr"/>
-        <segue reference="efy-vm-Jmg"/>
+        <segue reference="cRh-te-LVN"/>
     </inferredMetricsTieBreakers>
 </document>

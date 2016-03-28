@@ -51,6 +51,17 @@ class LoginViewController: UIViewController {
         }
     }
 }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "LoginToMain" {
+        
+        let vc = segue.destinationViewController as! UITabBarController
+        vc.selectedIndex = 1
+        
+        }
+        
+    }
 
     func isValidEmail(testStr:String) -> Bool {
         
