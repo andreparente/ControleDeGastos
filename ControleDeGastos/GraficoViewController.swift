@@ -15,16 +15,18 @@ class ViewController: UIViewController,ChartViewDelegate {
     let chartView = PieChartView(frame: CGRectMake(0, screenSize.height/6, screenSize.width, screenSize.height/2))
     let totalLabel = UILabel(frame: CGRectMake(0, screenSize.height-(screenSize.height/3), screenSize.width,40))
     var nomesCat: [String]!
-    var valoresGastos: [Double]!
+    var valoresGastos: [Double]?
     var gastos: [Gasto]!
+    var total = 0.0
     
     override func viewDidLoad() {
 
-        totalLabel.text = "LOCAL CERTO!!"
+        totalLabel.text = "Total: R$\(total)"
         view.addSubview(totalLabel)
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         
         
         //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
@@ -32,7 +34,7 @@ class ViewController: UIViewController,ChartViewDelegate {
         chartView.delegate = self
         chartView.animate(xAxisDuration: 1)
         view.addSubview(chartView)
-        setChart(nomesCat, values: valoresGastos)
+        setChart((usuarioLogado?.categoriasGastos)!, values: valoresGastos!)
     }
     
     //FUNCAO QUE SETTA TODO O GRAFICO
@@ -75,10 +77,11 @@ class ViewController: UIViewController,ChartViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
     
+        total = 0.0
+        gastos = (usuarioLogado?.gastos)!
         for var i in 0..<gastos.count {
-            valoresGastos[i] = Double(gastos[i].valor)
-            nomesCat[i] = gastos[i].categoria
-            
+            valoresGastos![i] = Double(gastos[i].valor)
+            total = total+Double(gastos[i].valor)
         }
         
     }

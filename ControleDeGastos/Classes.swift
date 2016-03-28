@@ -11,7 +11,7 @@ import CoreData
 
 public let screenSize = UIScreen.mainScreen().bounds
 
-class Usuario {
+public class Usuario {
 
     var email = String()
     var senha = String()
@@ -72,7 +72,7 @@ class Usuario {
     }
 }
 
-class Gasto {
+public class Gasto {
     var nome = String()
     var valor = Int() // temporariamente para que o AIO funcione
     var data = String() // formato "yyyy-MM-dd-hh-mm-ss"
@@ -110,7 +110,7 @@ class Gasto {
     */
 }
 
-class Cartao {
+public class Cartao {
     
     var nome = String()
     var limite = Int()

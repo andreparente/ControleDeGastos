@@ -7,10 +7,10 @@
 //
 import Foundation
 
-var usuarioLogado: Usuario?
-var listaUsuarios = [Usuario]()
+public var usuarioLogado: Usuario?
+public var listaUsuarios = [Usuario]()
 
-class AIO {
+public class AIO {
     internal var objectSeparator = "\n +++ \n"
     internal var attributeSeparator = " - \n"
     internal var arraySeparator = " && "
