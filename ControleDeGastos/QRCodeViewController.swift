@@ -8,13 +8,23 @@
 
 import UIKit
 import AVFoundation
+extension Double {
+    /// Rounds the double to decimal places value
+    func roundToPlaces(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return round(self * divisor) / divisor
+    }
+}
 class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var messageLabel: UILabel!
     var link:String!
+    var valorfinal:String = ""
+    var datafinalmente:String = ""
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
+    var contglobal=0
     override func viewDidLoad() {
         super.viewDidLoad()
         messageLabel.text="No QR code is detected"
@@ -43,82 +53,136 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         qrCodeFrameView?.layer.borderWidth = 2
         view.addSubview(qrCodeFrameView!)
         view.bringSubviewToFront(qrCodeFrameView!)
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // MARK: - Identifica QRCode
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
-        
-        // Check if the metadataObjects array is not nil and it contains at least one object.
+        //Ve se o array não é nil e se tem pelo menos um objeto.
         if metadataObjects == nil || metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRectZero
             messageLabel.text = "No QR code is detected"
             return
         }
         
-        // Get the metadata object.
+        // Objeto de metadata
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if metadataObj.type == AVMetadataObjectTypeQRCode {
-            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
+            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds.
             let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
             qrCodeFrameView?.frame = barCodeObject.bounds;
             
-            if metadataObj.stringValue != nil {
+            if metadataObj.stringValue != nil  && contglobal==0{
                 print(metadataObj.stringValue)
                 link = metadataObj.stringValue
-               // reconheceUrl(link)
+                (valorfinal,datafinalmente)=reconheceUrl(link)
+                print(datafinalmente)
+                print(valorfinal)
+                performSegueWithIdentifier("QRCodeToGastoManual", sender: self)
+                contglobal += 1
+                return
             }
         }
     }
-    
-  /*   func reconheceUrl(link:String)->()
+    // MARK: - Reconhece Link
+    func reconheceUrl(link:String)->(String,String)
     {
+        //Vetor de char pra armazenar a url recebida
         let characters=Array(link.characters)
         print(characters)
-        let j=0
-        var n=0
-        var x=0
-        let i=characters.count
-        var valor:[Character]!
-        var valorfinal:String!
+        //Variaveis uteis
+        var j=0;var n=0;var x=0;let i=characters.count;var z=0;var w=0
+        var valor:[String]! = ["",""]
+        var valorfinalmutavel:String! = ""
+        var datatotal:[String]! = [""]
+        var data:[String]!=[""]
+        var valoremhexa:String! = ""
+        var datafinal:String!
         for  j in 0...i
         {
+            //Quando encontrar vN entra no if.O if insere o valor em um array de string
             if(characters[j] == "v" && characters[j+1] == "N")
             {
                 n=j+4
                 while(characters[n] != "&")
                 {
-                    valor.append(characters[n])
+                    valor.insert(String(characters[n]), atIndex: x)
                     n += 1;x += 1;
                 }
                 break
             }
+            else
+            {
+                if (characters[j]=="d" && characters[j+1]=="h")
+                {
+                    z=j+6
+                    while(characters[z] != "&")
+                    {
+                        datatotal.insert(String(characters[z]), atIndex: w)
+                        z += 1;w += 1;
+                    }
+                }
+            }
         }
+        j=0
+        w=0
+        while(datatotal[j] != "5" && datatotal[j+1] != "4")
+        {
+            data.insert(datatotal[j],atIndex: w)
+            j+=1;w+=1
+        }
+        if data != nil
+        {
+            for char1 in data
+            {
+                if char1 != ""
+                {
+                valoremhexa.append(Character(char1))
+                }
+            }
+        }
+        datafinal=hexStringtoAscii(valoremhexa)
+        //Quando quebrar o loop passa o valor pra uma string só
         if valor != nil
         {
             
             for char in valor
             {
-                valorfinal=String(char)
+                if char != ""
+                {
+                valorfinalmutavel.append(Character(char))
+                }
             }
         }
-        print(Double(valorfinal))
+        return (valorfinalmutavel,datafinal)
     }
- 
-    */
-}
+    
 
 
-    /*
+
+    func hexStringtoAscii(hexString : String) -> String {
+        
+        let pattern = "(0x)?([0-9a-f]{2})"
+        let regex = try! NSRegularExpression(pattern: pattern, options: .CaseInsensitive)
+        let nsString = hexString as NSString
+        let matches = regex.matchesInString(hexString, options: [], range: NSMakeRange(0, nsString.length))
+        let characters = matches.map {
+            Character(UnicodeScalar(UInt32(nsString.substringWithRange($0.rangeAtIndex(2)), radix: 16)!))
+        }
+        return String(characters)
+    }
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destination:GastoManualViewController = segue.destinationViewController as! GastoManualViewController
+        destination.valortotal=Double(valorfinal)?.roundToPlaces(2)
+        destination.data=datafinalmente
+        
     }
-    */
 
+}
