@@ -76,7 +76,7 @@ class ViewController: UIViewController,ChartViewDelegate {
     override func viewWillAppear(animated: Bool) {
     
         for var i in 0..<gastos.count {
-            valoresGastos[i] = gastos[i].valor
+            valoresGastos[i] = Double(gastos[i].valor)
             nomesCat[i] = gastos[i].categoria
             
         }
