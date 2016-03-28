@@ -8,14 +8,14 @@
 import UIKit
 import Charts
 
-class ViewController: UIViewController,ChartViewDelegate {
+class GraficoViewController: UIViewController,ChartViewDelegate {
     
     
     // AQUI ELE CRIA A VIEW PRO GRAFICO
     let chartView = PieChartView(frame: CGRectMake(0, screenSize.height/6, screenSize.width, screenSize.height/2))
     let totalLabel = UILabel(frame: CGRectMake(0, screenSize.height-(screenSize.height/3), screenSize.width,40))
     var nomesCat: [String]!
-    var valoresGastos: [Double]?
+    var valoresGastos: [Double] = [0.0]
     var gastos: [Gasto]!
     var total = 0.0
     
@@ -26,7 +26,22 @@ class ViewController: UIViewController,ChartViewDelegate {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        total = 0.0
+        if(usuarioLogado?.gastos.count == 0) {
+            //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
+            chartView.noDataText = "You need to enter some data"
+            chartView.delegate = self
+            chartView.animate(xAxisDuration: 1)
+            view.addSubview(chartView)
+        }
+        else {
         
+            gastos = (usuarioLogado?.gastos)!
+            
+            for var i in 0..<gastos.count {
+                valoresGastos[i] = Double(gastos[i].valor)
+                total = total+Double(gastos[i].valor)
+            }
         
         
         //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
@@ -34,13 +49,16 @@ class ViewController: UIViewController,ChartViewDelegate {
         chartView.delegate = self
         chartView.animate(xAxisDuration: 1)
         view.addSubview(chartView)
-        setChart((usuarioLogado?.categoriasGastos)!, values: valoresGastos!)
+        setChart((usuarioLogado?.categoriasGastos)!, values: valoresGastos)
+        }
     }
     
     //FUNCAO QUE SETTA TODO O GRAFICO
     func setChart(dataPoints: [String], values: [Double]) {
         
-        chartView.noDataText = "You need to provide data for the chart."
+        if(usuarioLogado?.gastos.count > 0) {
+
+
         chartView.descriptionText = "Tamo quase lá!"
         
         var dataEntries: [ChartDataEntry] = []
@@ -60,6 +78,10 @@ class ViewController: UIViewController,ChartViewDelegate {
         
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
         chartView.data = chartData
+        }
+        else {
+                    chartView.noDataText = "You need to provide data for the chart."
+        }
         
         
     }
@@ -77,12 +99,8 @@ class ViewController: UIViewController,ChartViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
     
-        total = 0.0
-        gastos = (usuarioLogado?.gastos)!
-        for var i in 0..<gastos.count {
-            valoresGastos![i] = Double(gastos[i].valor)
-            total = total+Double(gastos[i].valor)
-        }
+        print("A TELA DE GRAFICOS VAI APARECER")
+      
         
     }
     

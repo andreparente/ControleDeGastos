@@ -27,20 +27,37 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     
     //funçao que diz a quantidade de células
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(usuarioLogado?.gastos.count > 0) {
             return (usuarioLogado?.gastos.count)!
+        }
+        else {
+            
+            return 1
+        }
     }
     
     
     //funçao que seta as células
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        
-        cell.textLabel?.text = (usuarioLogado?.gastos[indexPath.row].nome)! + (usuarioLogado?.gastos[indexPath.row].categoria)!
-        cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(15))
-        cell.detailTextLabel?.text = "Valor:" + String(usuarioLogado?.gastos[indexPath.row].valor)
-        cell.detailTextLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
-        return cell
+        if(usuarioLogado?.gastos.count > 0) {
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+            
+            cell.textLabel?.text = (usuarioLogado?.gastos[indexPath.row].nome)! + (usuarioLogado?.gastos[indexPath.row].categoria)!
+            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(15))
+            cell.detailTextLabel?.text = "Valor:" + String(usuarioLogado?.gastos[indexPath.row].valor)
+            cell.detailTextLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
+            return cell
+            
+        }
+        else {
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+            
+            cell.textLabel?.text = "Você Não Possui Gastos!"
+            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
+            cell.textLabel?.center = cell.center
+            return cell
+
+        }
             
     }
     

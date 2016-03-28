@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nome: UITextField!
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var senha: UITextField!
+    var usuarioAux: Usuario?
     
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,8 @@ class LoginViewController: UIViewController {
         else
         {
         erroemail.hidden=true
+            usuarioAux = Usuario(nome: nome.text!,email: mail.text!,senha: senha.text!)
+            usuarioLogado = usuarioAux
         performSegueWithIdentifier("LoginToMain", sender: self)
         }
     }
