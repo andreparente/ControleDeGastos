@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+// colocar nessa variavel o usuario depois de loggar
+// lembrar de conferir a senha
+var usuarioLogado: Usuario?
+
 class DAO {
     
     var managedContext: NSManagedObjectContext?
@@ -22,22 +26,30 @@ class DAO {
     // insere usuario na base
     // usar unicamente na tela de cadastro
     func saveUsuario(usuario: Usuario) -> Bool {
-        //2
+        let conection = connectDAO()
+        if(!conection) {
+            return false
+        }
+        
         let entity =  NSEntityDescription.entityForName("Usuario",
             inManagedObjectContext:managedContext!)
-        
-        let user = NSManagedObject(entity: entity!,
+        let newUser = NSManagedObject(entity: entity!,
             insertIntoManagedObjectContext: managedContext)
         
-        user.setValue("nometeste", forKey: "nome")
-        
-        //4
+        newUser.setValue(usuario.nome, forKey: "nome")
+        newUser.setValue(usuario.email, forKey: "email")
+        newUser.setValue(usuario.senha, forKey: "senha")
+        newUser.setValue(usuario.limiteMes, forKey: "limiteMes")
+
+        // salva alteracao na base
+        var didSave = false
         do {
             try managedContext!.save()
+            didSave = true
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
-        return true
+        return didSave
     }
     
     // salva os dados de um usuario que ja existe na base
@@ -47,9 +59,35 @@ class DAO {
         return true
     }
     
-    // pega um usuario na base
+    // procura por um usuario na base
     // usar na tela de login
-    func getUsuario(email: String) -> Usuario {
-        return Usuario(nome: "admin", email: "admin@admin", senha: "123")
+    // retorna um bool para sucesso e o proprio usuario encontrado
+    // lembrar de conferir a senha antes de loggar
+    func loadUsuario(email: String) -> (Bool, Usuario) {
+        let nilUser = Usuario()
+        let conection = connectDAO()
+        if(!conection) {
+            return (false, nilUser)
+        }
+        
+        let fetchRequest = NSFetchRequest(entityName: "Pessoa")
+        
+        // pega o array de usuarios na base
+        var usuarios = [Usuario]()
+        do {
+            let results =
+            try managedContext!.executeFetchRequest(fetchRequest)
+            usuarios = (results as? [Usuario])!
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        // busca o usuario
+        for i in 0..<usuarios.count {
+            if (usuarios[i].email == email) {
+                return (true, usuarios[i])
+            }
+        }
+        return (false, nilUser)
     }
 }

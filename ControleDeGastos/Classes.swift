@@ -7,19 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 public let screenSize = UIScreen.mainScreen().bounds
 
 class Usuario {
 
-    var email: String
-    var senha: String
-    var nome: String
-    var limiteMes: Double?
+    var email = String()
+    var senha = String()
+    var nome = String()
+    var limiteMes = Double()
     var cartoes = [Cartao]()
     var gastos = [Gasto]()
     var categoriasGastos = [String]()
 
+    init(){}
+    
     init(nome: String,email: String,senha: String) {
         self.nome = nome
         self.email = email
@@ -54,22 +57,22 @@ class Usuario {
     func setLimiteMes(limite: Double) {
         self.limiteMes = limite
     }
-
+    
     func getLimiteMes() -> Double {
-        return self.limiteMes!
+        return self.limiteMes
     }
 }
 
 class Gasto {
-    
-    var nome: String
-    var valor: Double
-    var data: NSDate
+    var nome = String()
+    var valor = Double()
+    var data = NSDate()
     var foto: UIImage?
-    var ehDinheiro: Bool
-    var categoria: String!
+    var ehDinheiro = Bool()
+    var categoria = String()
     var cartao: Cartao?
 
+    // init para gasto em dinheiro
     init(nome: String, categoria: String, valor: Double, data: NSDate) {
         self.nome = nome
         self.categoria = categoria
@@ -78,6 +81,7 @@ class Gasto {
         self.ehDinheiro = true
     }
 
+    // init para gasto em cartao
     init(nome: String, categoria: String, valor: Double, data: NSDate, cartao: Cartao) {
         self.nome = nome
         self.categoria = categoria
@@ -98,8 +102,8 @@ class Gasto {
 
 class Cartao {
     
-    var nome: String
-    var limite: Double
+    var nome = String()
+    var limite = Double()
     var cor: UIColor
 
     init(nome:String, limite:Double, cor: UIColor){

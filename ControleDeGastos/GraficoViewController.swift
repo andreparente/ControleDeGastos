@@ -19,7 +19,6 @@ class ViewController: UIViewController,ChartViewDelegate {
     var gastos: [Gasto]!
     
     override func viewDidLoad() {
-        
 
         totalLabel.text = "LOCAL CERTO!!"
         view.addSubview(totalLabel)
@@ -76,10 +75,7 @@ class ViewController: UIViewController,ChartViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
     
-        var i: Int!
-        
-        for i in 0...gastos.count {
-            
+        for var i in 0..<gastos.count {
             valoresGastos[i] = gastos[i].valor
             nomesCat[i] = gastos[i].categoria
             

@@ -36,7 +36,7 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = gastos[indexPath.row].nome + (gastos[indexPath.row].categoria)!
+        cell.textLabel?.text = gastos[indexPath.row].nome + (gastos[indexPath.row].categoria)
         cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(15))
         cell.detailTextLabel?.text = "Valor:" + String(gastos[indexPath.row].valor)
         cell.detailTextLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
