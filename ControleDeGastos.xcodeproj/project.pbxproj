@@ -23,6 +23,7 @@
 		8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */; };
 		8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01F1C9C2F6B00C055F8 /* LaunchScreen.storyboard */; };
 		D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */; };
+		E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559BFA71CA96CDD00B3CD5A /* AIObase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A71E0201C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A71E0221C9C2F6B00C055F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E559BFA71CA96CDD00B3CD5A /* AIObase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIObase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		8A54D3BF1CA2CAF200E63645 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E559BFA71CA96CDD00B3CD5A /* AIObase.swift */,
 				8A54D3D51CA3157A00E63645 /* Classes.swift */,
 				8A54D3D81CA317C400E63645 /* DAOClasses.swift */,
 			);
@@ -268,6 +271,7 @@
 				8A54D3CC1CA2CCDF00E63645 /* GastoManualViewController.swift in Sources */,
 				8A54D3CE1CA2CCFC00E63645 /* GraficoViewController.swift in Sources */,
 				8A71E0171C9C2F6B00C055F8 /* AppDelegate.swift in Sources */,
+				E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */,
 				8A54D3C81CA2CC5B00E63645 /* MainViewController.swift in Sources */,
 				8A54D3CA1CA2CCCF00E63645 /* QRCodeViewController.swift in Sources */,
 				8A54D3D21CA2CFD100E63645 /* HistoricoTabelaViewController.swift in Sources */,
