@@ -262,6 +262,45 @@ public class AIO {
         }
     }
     
+    internal func carregarEmailUltimoUsuario () -> String {
+        let file = "ultimo-usuario.aio"
+        
+        var email = ""
+
+        if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            let path = dir.stringByAppendingPathComponent(file)
+            
+            //reading
+            do {
+                let text = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+                print ("Li do arquivo \(file) a string:\n\(text)")
+                email = String(text)
+            } catch {
+                print ("erro na leitura do arquivo \(file)")
+            }
+        }
+        return email
+    }
+
+    func salvarEmailUltimoUsuario (usuario: Usuario) -> Bool {
+        let file = "ultimo-usuarios.aio"
+        
+        if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            let path = dir.stringByAppendingPathComponent(file)
+
+            //writing
+            do {
+                try usuario.email.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+                print ("Escrevi no arquivo \(file) a entrada:\n\(usuario.email)")
+            } catch {
+                print ("erro na escrita do arquivo \(file)")
+                return false
+            }
+        }
+        return true
+    }
+    
+
     // encontra o usuario pelo email
     func indiceUsuarioPorEmail (email: String) -> Int {
         var indice = -1
