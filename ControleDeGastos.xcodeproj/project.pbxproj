@@ -23,6 +23,7 @@
 		8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */; };
 		8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01F1C9C2F6B00C055F8 /* LaunchScreen.storyboard */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
+		9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */; };
 		D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */; };
 		E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559BFA71CA96CDD00B3CD5A /* AIObase.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		8A71E0201C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A71E0221C9C2F6B00C055F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E559BFA71CA96CDD00B3CD5A /* AIObase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIObase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */,
 				8A54D3D31CA2CFFA00E63645 /* CadastroCartaoViewController.swift */,
 				9C4429711CAAA544005D0530 /* CadastroViewController.swift */,
+				9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A54D3C31CA2CBA700E63645 /* LoginViewController.swift in Sources */,
+				9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */,
 				8A54D3CE1CA2CCFC00E63645 /* GraficoViewController.swift in Sources */,
 				8A71E0171C9C2F6B00C055F8 /* AppDelegate.swift in Sources */,
 				E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */,
