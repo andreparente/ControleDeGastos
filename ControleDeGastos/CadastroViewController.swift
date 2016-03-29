@@ -39,30 +39,32 @@ class CadastroViewController: UIViewController {
         let mailsalvo=Email.text
         let senhasalva=senha.text
         let confirmasenha=confirmasenha1.text
+        
+        // valida preenchimento dos campos
         if (senhasalva!.isEmpty || mailsalvo!.isEmpty||confirmasenha!.isEmpty||name!.isEmpty)
         {
             erroincompleto.hidden=false
+            return
         }
-        else
+        erroincompleto.hidden=true
+        
+        // valida email
+        if isValidEmail(Email.text!) == false
         {
-            erroincompleto.hidden=true
-            if isValidEmail(Email.text!) == false
-            {
-                erromail.hidden=false
-            }
-            else
-            {
-                erromail.hidden=true
-                if senhasalva == confirmasenha
-                {
-                    performSegueWithIdentifier("CadastroToLogin", sender: self)
-                }
-                else
-                {
-                    errosenhas.hidden=false
-                }
-            }
+            erromail.hidden=false
+            return
         }
+        erromail.hidden=true
+        
+        // valida dois campos de senha
+        if !(senhasalva == confirmasenha)
+        {
+            errosenhas.hidden=false
+            return
+        }
+        
+        // realiza o cadastro e faz o segue
+        performSegueWithIdentifier("CadastroToLogin", sender: self)
     }
     
 
