@@ -104,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main" id="dn7-U9-lTy"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="icone home" id="dn7-U9-lTy"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="goP-2V-gWf" kind="show" identifier="LoginToGastoManual" id="tSg-0A-cuP"/>
@@ -118,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="1446.5" y="186.5"/>
         </scene>
-        <!--Grafico-->
+        <!--Gráfico-->
         <scene sceneID="OiH-XQ-vpT">
             <objects>
                 <viewController id="dwH-NT-Olr" customClass="GraficoViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Grafico" id="lFH-YW-TPh"/>
+                    <tabBarItem key="tabBarItem" title="Gráfico" id="lFH-YW-TPh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RU6-lF-KpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -341,7 +341,7 @@
             </objects>
             <point key="canvasLocation" x="46.5" y="-598.5"/>
         </scene>
-        <!--Histórico-->
+        <!--Historico Tabela View Controller-->
         <scene sceneID="YEL-Mv-h5T">
             <objects>
                 <viewController id="8A6-r8-ap1" customClass="HistoricoTabelaViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
@@ -354,7 +354,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Histórico" id="dlU-ab-fu0"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="dlU-ab-fu0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMG-pc-Dkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -412,11 +412,14 @@
             <point key="canvasLocation" x="747" y="186"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icone home" width="55" height="52"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="16U-4i-2bc"/>
-        <segue reference="xcU-Pe-Xfo"/>
-        <segue reference="tSg-0A-cuP"/>
-        <segue reference="nGk-Nr-gbT"/>
-        <segue reference="Lpn-go-2ch"/>
+        <segue reference="mSI-rX-yBy"/>
+        <segue reference="w9G-UC-YqS"/>
+        <segue reference="Tk9-hb-F6y"/>
+        <segue reference="cRh-te-LVN"/>
+        <segue reference="sQ1-Os-lJ1"/>
     </inferredMetricsTieBreakers>
 </document>
