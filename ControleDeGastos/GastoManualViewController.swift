@@ -7,14 +7,27 @@
 //
 
 import UIKit
-
+func formatADate() {
+    var dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    let d = NSDate()
+    let s = dateFormatter.stringFromDate(d)
+    print(s)
+}
 class GastoManualViewController: UIViewController {
 
+    @IBOutlet weak var date: UIDatePicker!
+    @IBOutlet weak var categoria: UITextField!
+    @IBOutlet weak var valor: UITextField!
     var valortotal:Double!
     var data:String!
+    var dataNs:NSDate!
+    var dateFormatter: NSDateFormatter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        valor.text=String(valortotal)
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +36,8 @@ class GastoManualViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func Add(sender: UIButton) {
+    }
 
     /*
     // MARK: - Navigation
