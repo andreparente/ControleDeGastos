@@ -102,21 +102,34 @@
                     <view key="view" contentMode="scaleToFill" id="7Gb-Go-fx3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-AX-XUB">
+                                <rect key="frame" x="294" y="28" width="48" height="48"/>
+                                <state key="normal" title="Settings" image="ic_settings_48px-128"/>
+                                <connections>
+                                    <segue destination="kOo-RQ-Xmt" kind="show" id="xsX-Mx-VU8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vID-WR-fxp">
+                                <rect key="frame" x="69" y="131" width="58" height="30"/>
+                                <state key="normal" title="GASTAR"/>
+                                <connections>
+                                    <segue destination="goP-2V-gWf" kind="show" id="QRM-YM-FfM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="icone home" id="dn7-U9-lTy"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="goP-2V-gWf" kind="show" identifier="LoginToGastoManual" id="tSg-0A-cuP"/>
-                        <segue destination="G5x-cB-V2J" kind="show" identifier="MainToQRCode" id="TWx-xF-EmX"/>
-                        <segue destination="vyZ-T2-JsW" kind="show" identifier="MainToSettings" id="2Fy-V5-dhU"/>
                         <segue destination="dwH-NT-Olr" kind="show" identifier="MainToGrafico" id="Lpn-go-2ch"/>
                         <segue destination="8A6-r8-ap1" kind="show" identifier="MainToHistoricoTabela" id="nGk-Nr-gbT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxh-nN-ady" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446.5" y="186.5"/>
+            <point key="canvasLocation" x="1454.5" y="186.5"/>
         </scene>
         <!--Gráfico-->
         <scene sceneID="OiH-XQ-vpT">
@@ -131,32 +144,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gráfico" id="lFH-YW-TPh"/>
+                    <tabBarItem key="tabBarItem" title="Gráfico" selectedImage="pie_chart" id="lFH-YW-TPh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RU6-lF-KpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="634.5" y="1030.5"/>
         </scene>
-        <!--Configurações-->
-        <scene sceneID="98H-9U-lGA">
+        <!--Settings View Controller-->
+        <scene sceneID="zuq-0A-QSK">
             <objects>
-                <viewController id="vyZ-T2-JsW" customClass="SettingsViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kOo-RQ-Xmt" customClass="SettingsViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zHf-uf-Tb6"/>
-                        <viewControllerLayoutGuide type="bottom" id="ezb-Ch-Ydd"/>
+                        <viewControllerLayoutGuide type="top" id="6rV-QR-oyB"/>
+                        <viewControllerLayoutGuide type="bottom" id="xeF-8U-e6F"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YJ9-3W-MxK">
+                    <view key="view" contentMode="scaleToFill" id="I0w-V7-IV9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaH-Ge-2We">
+                                <rect key="frame" x="130" y="71" width="115" height="30"/>
+                                <state key="normal" title="Adicionar Cartao"/>
+                                <connections>
+                                    <segue destination="pRs-b8-5QE" kind="show" id="sSJ-GH-Kbx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Configurações" id="tUi-2T-3DY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="7e0-v9-ANp" kind="show" identifier="SettingsToMain" id="enk-Hl-U5o"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6DC-TN-rj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9G-V5-7xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1262.5" y="1030.5"/>
+            <point key="canvasLocation" x="1454.5" y="1086.5"/>
         </scene>
         <!--Gasto Manual View Controller-->
         <scene sceneID="OT6-4x-4c5">
@@ -207,7 +231,6 @@
                                 <state key="normal" title="Nova Categoria"/>
                                 <connections>
                                     <action selector="Add:" destination="goP-2V-gWf" eventType="touchUpInside" id="8zP-aJ-XsQ"/>
-                                    <segue destination="pRs-b8-5QE" kind="show" id="llE-vP-QF6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MM/DD/YY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-0d-VcF">
@@ -225,6 +248,13 @@
                                 <state key="normal" title="Gastei!"/>
                                 <connections>
                                     <action selector="gasteiAction:" destination="goP-2V-gWf" eventType="touchUpInside" id="hn8-ZX-6bP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj6-V4-gwE">
+                                <rect key="frame" x="279" y="70" width="58" height="30"/>
+                                <state key="normal" title="QRCode"/>
+                                <connections>
+                                    <segue destination="G5x-cB-V2J" kind="show" id="XVY-vd-HLN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -260,6 +290,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="7e0-v9-ANp" kind="show" identifier="CadastroCartaoToMain" id="9hI-j2-l14"/>
+                        <segue destination="kOo-RQ-Xmt" kind="show" identifier="CadastroCartaoToSettings" id="949-Ae-jnM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ox5-v9-2pL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -413,13 +447,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_settings_48px-128" width="128" height="128"/>
         <image name="icone home" width="55" height="52"/>
+        <image name="pie_chart" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Lpn-go-2ch"/>
         <segue reference="mSI-rX-yBy"/>
-        <segue reference="w9G-UC-YqS"/>
-        <segue reference="Tk9-hb-F6y"/>
-        <segue reference="cRh-te-LVN"/>
+        <segue reference="QRM-YM-FfM"/>
+        <segue reference="nGk-Nr-gbT"/>
+        <segue reference="xsX-Mx-VU8"/>
         <segue reference="sQ1-Os-lJ1"/>
     </inferredMetricsTieBreakers>
 </document>
