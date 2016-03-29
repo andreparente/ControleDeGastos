@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="goP-2V-gWf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -147,28 +147,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4I-4I-Z2v">
-                                <rect key="frame" x="20" y="70" width="335" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor Gasto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4I-4I-Z2v">
+                                <rect key="frame" x="43" y="71" width="197" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0e-CU-qUk">
-                                <rect key="frame" x="20" y="152" width="243" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0e-CU-qUk">
+                                <rect key="frame" x="20" y="152" width="165" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZGc-Yf-SUb">
-                                <rect key="frame" x="43" y="242" width="288" height="183"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do Gasto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-UQ-HLq">
+                                <rect key="frame" x="20" y="236" width="243" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZGc-Yf-SUb">
+                                <rect key="frame" x="43" y="314" width="288" height="105"/>
                                 <date key="date" timeIntervalSinceReferenceDate="480947909.87446201">
                                     <!--2016-03-29 12:38:29 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="goP-2V-gWf" eventType="valueChanged" id="jsW-ia-vYI"/>
+                                    <action selector="defaultDate:" destination="goP-2V-gWf" eventType="primaryActionTriggered" id="OIZ-s9-Fua"/>
+                                </connections>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-TC-XVL">
+                                <rect key="frame" x="20" y="74" width="22" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlw-oW-o0k">
-                                <rect key="frame" x="311" y="141" width="44" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="+"/>
+                                <rect key="frame" x="188" y="146" width="162" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Nova Categoria"/>
                                 <connections>
                                     <action selector="Add:" destination="goP-2V-gWf" eventType="touchUpInside" id="8zP-aJ-XsQ"/>
+                                    <segue destination="pRs-b8-5QE" kind="show" id="llE-vP-QF6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MM/DD/YY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-0d-VcF">
+                                <rect key="frame" x="145" y="285" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8Y-Gk-BLT">
+                                <rect key="frame" x="0.0" y="526" width="375" height="92"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qq1-86-EhC">
+                                <rect key="frame" x="43" y="459" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Gastei!"/>
+                                <connections>
+                                    <action selector="gasteiAction:" destination="goP-2V-gWf" eventType="touchUpInside" id="hn8-ZX-6bP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -176,10 +209,13 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="CategoriaPickerView" destination="y8Y-Gk-BLT" id="XKY-d9-vtS"/>
                         <outlet property="categoria" destination="a0e-CU-qUk" id="omF-i9-Ik7"/>
+                        <outlet property="categoriaPickerView" destination="y8Y-Gk-BLT" id="8f2-sg-28u"/>
                         <outlet property="date" destination="ZGc-Yf-SUb" id="phM-t6-T8b"/>
+                        <outlet property="dateLabel" destination="tS3-0d-VcF" id="XIQ-hZ-O2L"/>
+                        <outlet property="nomeGasto" destination="Gph-UQ-HLq" id="7kS-lw-Tqk"/>
                         <outlet property="valor" destination="N4I-4I-Z2v" id="CDX-s4-7wH"/>
-                        <segue destination="pRs-b8-5QE" kind="show" identifier="GastoManualToCadastroCartao" id="8DZ-gY-4kH"/>
                         <segue destination="7e0-v9-ANp" kind="show" identifier="GastoToMain" id="mSI-rX-yBy"/>
                     </connections>
                 </viewController>
@@ -356,7 +392,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="tSg-0A-cuP"/>
         <segue reference="mSI-rX-yBy"/>
-        <segue reference="Tk9-hb-F6y"/>
-        <segue reference="cRh-te-LVN"/>
+        <segue reference="Lpn-go-2ch"/>
+        <segue reference="nGk-Nr-gbT"/>
     </inferredMetricsTieBreakers>
 </document>
