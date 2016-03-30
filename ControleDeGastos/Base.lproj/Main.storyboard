@@ -240,17 +240,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qq1-86-EhC">
-                                <rect key="frame" x="43" y="459" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="Gastei!"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="43" y="444" width="288" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="gasteiAction:" destination="goP-2V-gWf" eventType="touchUpInside" id="hn8-ZX-6bP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj6-V4-gwE">
                                 <rect key="frame" x="279" y="70" width="58" height="30"/>
                                 <state key="normal" title="QRCode"/>
@@ -273,6 +262,13 @@
                                     <rect key="frame" x="27" y="501" width="320" height="216"/>
                                 </variation>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toe-R6-viE">
+                                <rect key="frame" x="163" y="439" width="48" height="30"/>
+                                <state key="normal" title="Gastei!"/>
+                                <connections>
+                                    <action selector="gasteiAction:" destination="goP-2V-gWf" eventType="touchUpInside" id="wWF-s7-LNz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -289,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mr0-d5-1u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2067.75" y="186.375"/>
+            <point key="canvasLocation" x="2105.5" y="205.5"/>
         </scene>
         <!--Cadastro Cartao View Controller-->
         <scene sceneID="mt3-on-LzT">

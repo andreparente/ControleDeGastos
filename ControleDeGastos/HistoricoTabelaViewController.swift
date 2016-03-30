@@ -17,7 +17,7 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
         // Do any additional setup after loading the view.
 
         
-        tableView.frame = CGRectMake(screenSize.minX,screenSize.minY+22,screenSize.width,screenSize.height)
+        tableView.frame = CGRectMake(0,screenSize.minY+22,screenSize.width,screenSize.height)
         tableView.delegate = self
         tableView.dataSource = self
  
@@ -47,10 +47,10 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
             let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
             print("oi")
             cell.textLabel?.text = (base.usuarioLogado?.gastos[indexPath.row].nome)! +
-                "                                      " + (base.usuarioLogado?.gastos[indexPath.row].categoria)!
+                "                                                           " + (base.usuarioLogado?.gastos[indexPath.row].categoria)!
 
             cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(15))
-            cell.detailTextLabel?.text = "Valor:" + String(base.usuarioLogado?.gastos[indexPath.row].valor)
+            cell.detailTextLabel?.text = "R$: " + String(base.usuarioLogado!.gastos[indexPath.row].valor)
             cell.detailTextLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
             return cell
             

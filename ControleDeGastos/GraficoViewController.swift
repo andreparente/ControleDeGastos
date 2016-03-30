@@ -31,17 +31,35 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
        
     }
     
+    //Funcao para organizar o grafico
+    func organizaVetores(usuario: Usuario) -> ([Double?]) {
+    
+        var vetValAux = [Double?](count: usuario.categoriasGastos.count,repeatedValue: nil)
+        for i in 0..<usuario.categoriasGastos.count {
+            vetValAux[i] = 0
+        }
+        for i in 0..<usuario.categoriasGastos.count {
+            for valGasto in usuario.gastos {
+                if(valGasto.categoria == usuario.categoriasGastos[i]) {
+                    vetValAux[i] = vetValAux[i]! + Double(valGasto.valor)
+                }
+            }
+        }
+        return vetValAux
+    }
+
+    
+    
     //FUNCAO QUE SETTA TODO O GRAFICO
-    func setChart(dataPoints: [String], values: [Double]) {
-        print("Funcao executando")
+    func setChart(dataPoints: [String], values: [Double?]) {
         chartView.descriptionText = "Resumo"
-        print(values.count)
+
         var dataEntries: [ChartDataEntry] = []
         
         //ESSE FOR PREENCHE O VETOR DE ENTRADA DE DADOS, PRA CADA INDEX,
         for i in 0..<values.count {
             
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            let dataEntry = ChartDataEntry(value: values[i]!, xIndex: i)
             
             dataEntries.append(dataEntry)
         }
@@ -64,11 +82,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         print("\(entry.value) in \(base.usuarioLogado?.categoriasGastos[entry.xIndex])")
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(animated: Bool) {
         for gasto in base.usuarioLogado!.gastos {
             print("gasto ", gasto.nome)
@@ -77,7 +90,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         if(base.usuarioLogado?.gastos.count == 0) {
             
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
-            chartView.noDataText = "You need to enter some data"
+            chartView.noDataText = "Você não possui nenhum gasto!"
             chartView.delegate = self
             chartView.animate(xAxisDuration: 1)
             //setChart((base.usuarioLogado?.categoriasGastos)!, values: valoresGastos)
@@ -86,16 +99,16 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         }
         else {
             
-            var i: Int = 0
+
             for gasto in base.usuarioLogado!.gastos {
-                
-                valoresGastos.append(Double(gasto.valor))
-                print("Valores gastos: ", valoresGastos[i])
+
                 total = total+Double(gasto.valor)
                 print("total: ", total)
-                i++
+                
             }
-            setChart((base.usuarioLogado?.categoriasGastos)!, values: valoresGastos)
+            var vetor: [Double?]
+            vetor = organizaVetores(base.usuarioLogado!)
+            setChart((base.usuarioLogado?.categoriasGastos)!, values: vetor)
             totalLabel.text = "Total: R$"+String(total)
         }
 
