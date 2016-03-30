@@ -124,7 +124,12 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        categoriaPickerView.hidden = false
+        if(textField.placeholder == "Categoria") {
+            categoriaPickerView.hidden = false
+        }
+        else {
+            categoriaPickerView.hidden = true
+        }
         return false
     }
     
