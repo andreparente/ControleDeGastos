@@ -25,11 +25,16 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         print("carregou a view Login")
-        mail.placeholder="Email"
+        mail.attributedPlaceholder = NSAttributedString(string:"Email",
+                                                               attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+        mail.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         mail.delegate = self
         mail.keyboardType = .EmailAddress
-        senha.placeholder="Senha"
+        senha.attributedPlaceholder = NSAttributedString(string:"Senha",
+                                                        attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+        senha.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         senha.secureTextEntry=true
         senha.delegate = self
         errocampovazio.hidden=true

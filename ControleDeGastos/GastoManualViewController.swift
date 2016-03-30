@@ -25,14 +25,14 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     let calendar = NSCalendar.currentCalendar()
     
     override func viewDidLoad() {
-        
+        view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
-        navigationBar.backgroundColor = UIColor.whiteColor()
+        navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
         
         // Create a navigation item with a title

@@ -20,6 +20,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         nome.placeholder = "nome"
         nome.delegate=self
         Email.placeholder = "Email"

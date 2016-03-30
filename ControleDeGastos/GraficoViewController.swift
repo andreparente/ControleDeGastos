@@ -21,7 +21,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         chartView.delegate = self
         view.addSubview(chartView)
         view.addSubview(totalLabel)
@@ -93,8 +93,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
             chartView.noDataText = "Você não possui nenhum gasto!"
             chartView.delegate = self
             chartView.animate(xAxisDuration: 1)
-            //setChart((base.usuarioLogado?.categoriasGastos)!, values: valoresGastos)
-            
             
         }
         else {
