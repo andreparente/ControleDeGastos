@@ -32,6 +32,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     override func viewDidLoad() {
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
+        
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
         navigationBar.backgroundColor = UIColor.whiteColor()
@@ -79,6 +83,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         //TESTE
         usuarioLogado = Usuario(nome: "A", email: "aa@a.c", senha: "1")
         
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func btn_clicked(sender: UIBarButtonItem) {
