@@ -79,6 +79,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         {
         valor.text=String(valortotal)
         }
+        valor.keyboardType = .NumberPad
         dateLabel.text = data
         // Do any additional setup after loading the view.
         
