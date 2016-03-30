@@ -119,8 +119,9 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         return false
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         view.endEditing(true)
+        return true
     }
     
     @IBAction func datePickerChanged(sender: AnyObject) {

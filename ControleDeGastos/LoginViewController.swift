@@ -74,10 +74,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-        
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         view.endEditing(true)
-        
+        return true
     }
 
     /*
