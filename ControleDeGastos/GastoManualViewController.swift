@@ -32,6 +32,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     override func viewDidLoad() {
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
+        
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
         navigationBar.backgroundColor = UIColor.whiteColor()
@@ -63,6 +67,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         categoriaPickerView.dataSource = self
         categoriaPickerView.hidden = true
         categoria.delegate = self
+        nomeGasto.delegate = self
+        valor.delegate = self
         categoria.inputView = categoriaPickerView
 
 
@@ -77,6 +83,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         //TESTE
         base.usuarioLogado = Usuario(nome: "A", email: "aa@a.c", senha: "1")
         
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func btn_clicked(sender: UIBarButtonItem) {
@@ -113,8 +124,18 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        categoriaPickerView.hidden = false
+        if(textField.placeholder == "Categoria") {
+            categoriaPickerView.hidden = false
+        }
+        else {
+            categoriaPickerView.hidden = true
+        }
         return false
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
     
     @IBAction func datePickerChanged(sender: AnyObject) {
@@ -135,6 +156,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else {
+            base.usuarioLogado?.addGasto(Gasto(nome: nomeGasto.text!, categoria: categoria.text!, valor: Int(valor.text!)!, data: dateLabel.text!))
             performSegueWithIdentifier("GastoToMain", sender: self)
         
         

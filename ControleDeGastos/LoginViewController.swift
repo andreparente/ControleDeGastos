@@ -15,8 +15,8 @@ func isValidEmail(testStr:String) -> Bool {
     return emailTest.evaluateWithObject(testStr)
 }
 
-class LoginViewController: UIViewController {
-    
+class LoginViewController: UIViewController,UITextFieldDelegate {
+
     @IBOutlet weak var erroemail: UILabel!
     @IBOutlet weak var errocampovazio: UILabel!
     @IBOutlet weak var nome: UITextField!
@@ -28,13 +28,20 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         print("carregou a view Login")
         nome.placeholder="Nome"
+        nome.delegate = self
         mail.placeholder="Email"
+        mail.delegate = self
         senha.placeholder="Senha"
         senha.secureTextEntry=true
+        senha.delegate = self
         errocampovazio.hidden=true
         errocampovazio.text="Todos os campos são obrigatórios"
         erroemail.hidden=true
         erroemail.text="Email inválido"
+            
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+            view.addGestureRecognizer(tap)
+        
     }
     
     @IBAction func confirma(sender: UIButton)
@@ -69,6 +76,16 @@ class LoginViewController: UIViewController {
             
         }
         
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
     
     /*
