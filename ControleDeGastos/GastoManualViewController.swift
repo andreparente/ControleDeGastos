@@ -63,6 +63,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         categoriaPickerView.dataSource = self
         categoriaPickerView.hidden = true
         categoria.delegate = self
+        nomeGasto.delegate = self
+        valor.delegate = self
         categoria.inputView = categoriaPickerView
 
 
@@ -115,6 +117,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         categoriaPickerView.hidden = false
         return false
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        view.endEditing(true)
     }
     
     @IBAction func datePickerChanged(sender: AnyObject) {
