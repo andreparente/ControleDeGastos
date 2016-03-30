@@ -16,7 +16,7 @@ func isValidEmail(testStr:String) -> Bool {
 }
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var erroemail: UILabel!
     @IBOutlet weak var errocampovazio: UILabel!
     @IBOutlet weak var nome: UITextField!
@@ -24,8 +24,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var senha: UITextField!
     var usuarioAux: Usuario?
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        print("carregou a view Login")
         nome.placeholder="Nome"
         mail.placeholder="Email"
         senha.placeholder="Senha"
@@ -37,47 +38,47 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func confirma(sender: UIButton)
-{
-    if (nome.text!.isEmpty || (mail.text!.isEmpty) || senha.text!.isEmpty)
     {
-        errocampovazio.hidden=false
-    }
-    else
-    {
-    errocampovazio.hidden=true
-        if isValidEmail(mail.text!) == false
+        if (nome.text!.isEmpty || (mail.text!.isEmpty) || senha.text!.isEmpty)
         {
-        erroemail.hidden=false
+            errocampovazio.hidden=false
         }
         else
         {
-        erroemail.hidden=true
-            usuarioAux = Usuario(nome: nome.text!,email: mail.text!,senha: senha.text!)
-            usuarioLogado = usuarioAux
-        performSegueWithIdentifier("LoginToMain", sender: self)
+            errocampovazio.hidden=true
+            if isValidEmail(mail.text!) == false
+            {
+                erroemail.hidden=false
+            }
+            else
+            {
+                erroemail.hidden=true
+                usuarioAux = Usuario(nome: nome.text!,email: mail.text!,senha: senha.text!)
+                base.usuarioLogado = usuarioAux
+                performSegueWithIdentifier("LoginToMain", sender: self)
+            }
         }
     }
-}
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "LoginToMain" {
-        
-        let vc = segue.destinationViewController as! UITabBarController
-        vc.selectedIndex = 1
-        
+            
+            let vc = segue.destinationViewController as! UITabBarController
+            vc.selectedIndex = 1
+            
         }
         
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

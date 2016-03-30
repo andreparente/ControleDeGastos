@@ -19,10 +19,13 @@
         <attribute name="limiteMes" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Usuario"/>
+        </fetchedProperty>
     </entity>
     <elements>
         <element name="Cartao" positionX="-36" positionY="45" width="128" height="90"/>
         <element name="Gasto" positionX="-54" positionY="18" width="128" height="135"/>
-        <element name="Usuario" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="Usuario" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>

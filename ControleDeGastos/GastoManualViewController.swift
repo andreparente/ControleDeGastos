@@ -75,7 +75,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
 
         //TESTE
-        usuarioLogado = Usuario(nome: "A", email: "aa@a.c", senha: "1")
+        base.usuarioLogado = Usuario(nome: "A", email: "aa@a.c", senha: "1")
         
     }
     
@@ -96,7 +96,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoria.text = usuarioLogado?.categoriasGastos[row]
+        categoria.text = base.usuarioLogado?.categoriasGastos[row]
         categoriaPickerView.hidden = true
     }
     
@@ -105,11 +105,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return (usuarioLogado?.categoriasGastos.count)!
+        return (base.usuarioLogado?.categoriasGastos.count)!
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return usuarioLogado?.categoriasGastos[row]
+        return base.usuarioLogado?.categoriasGastos[row]
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {

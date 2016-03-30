@@ -12,36 +12,17 @@ class LaunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce"))
-        {
-            // app already launched
-            print("Entrou")
-            dispatch_async(dispatch_get_main_queue()){
-                
-                self.performSegueWithIdentifier("LaunchToMain", sender: self)
-                
-            }
-
-            print("Fez segue")
-        }
-        else
-        {
-            // This is the first launch ever
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
-            NSUserDefaults.standardUserDefaults().synchronize()
-            dispatch_async(dispatch_get_main_queue()){
-                
-                self.performSegueWithIdentifier("LaunchToLogin", sender: self)
-                
-            }
-        }
-        // Do any additional setup after loading the view.
+        // hasLaunchedOnce eh na abertura do app (appDelegate)
+        let destino = !hasLaunchedOnce ? "LaunchToMain" : "LaunchToLogin"
+        print (hasLaunchedOnce, destino)
+        self.performSegueWithIdentifier(destino, sender: self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "LaunchToMain" {

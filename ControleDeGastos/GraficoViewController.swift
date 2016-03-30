@@ -27,7 +27,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         total = 0.0
-        if(usuarioLogado?.gastos.count == 0) {
+        if(base.usuarioLogado?.gastos.count == 0) {
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "You need to enter some data"
             chartView.delegate = self
@@ -36,7 +36,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         }
         else {
         
-            gastos = (usuarioLogado?.gastos)!
+            gastos = (base.usuarioLogado?.gastos)!
             
             for var i in 0..<gastos.count {
                 valoresGastos[i] = Double(gastos[i].valor)
@@ -49,14 +49,14 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         chartView.delegate = self
         chartView.animate(xAxisDuration: 1)
         view.addSubview(chartView)
-        setChart((usuarioLogado?.categoriasGastos)!, values: valoresGastos)
+        setChart((base.usuarioLogado?.categoriasGastos)!, values: valoresGastos)
         }
     }
     
     //FUNCAO QUE SETTA TODO O GRAFICO
     func setChart(dataPoints: [String], values: [Double]) {
         
-        if(usuarioLogado?.gastos.count > 0) {
+        if(base.usuarioLogado?.gastos.count > 0) {
 
 
         chartView.descriptionText = "Tamo quase lá!"

@@ -17,6 +17,7 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var erroincompleto: UILabel!
     @IBOutlet weak var erromail: UILabel!
     @IBOutlet weak var errosenhas: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nome.placeholder = "nome"

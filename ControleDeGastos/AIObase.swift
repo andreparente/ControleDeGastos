@@ -7,14 +7,15 @@
 //
 import Foundation
 
-public var usuarioLogado: Usuario?
-public var listaUsuarios = [Usuario]()
+public var base = AIO()
 
 public class AIO {
     internal var objectSeparator = "\n +++ \n"
     internal var attributeSeparator = " - \n"
     internal var arraySeparator = " && "
-    
+    internal var usuarioLogado: Usuario?
+    internal var listaUsuarios = [Usuario]()
+
     // rodar assim que o app for iniciado
     func carregarBaseDeDados() {
         carregarUsuariosSemObjetos()
@@ -282,7 +283,7 @@ public class AIO {
         return email
     }
 
-    func salvarEmailUltimoUsuario (usuario: Usuario) -> Bool {
+    func salvarUltimoUsuario () -> Bool {
         let file = "ultimo-usuarios.aio"
         
         if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
@@ -290,8 +291,8 @@ public class AIO {
 
             //writing
             do {
-                try usuario.email.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
-                print ("Escrevi no arquivo \(file) a entrada:\n\(usuario.email)")
+                try self.usuarioLogado?.email.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+                print ("Escrevi no arquivo \(file) a entrada:\n\(self.usuarioLogado?.email)")
             } catch {
                 print ("erro na escrita do arquivo \(file)")
                 return false
@@ -300,7 +301,16 @@ public class AIO {
         return true
     }
     
-
+    func carregarUltimoUsuario () -> Bool {
+        let email = self.carregarEmailUltimoUsuario()
+        let i = self.indiceUsuarioPorEmail(email)
+        let ok = (i != -1)
+        if (ok) {
+            self.usuarioLogado = self.listaUsuarios[i]
+        }
+        return ok
+    }
+    
     // encontra o usuario pelo email
     func indiceUsuarioPorEmail (email: String) -> Int {
         var indice = -1

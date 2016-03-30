@@ -27,8 +27,8 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     
     //funçao que diz a quantidade de células
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(usuarioLogado?.gastos.count > 0) {
-            return (usuarioLogado?.gastos.count)!
+        if(base.usuarioLogado?.gastos.count > 0) {
+            return (base.usuarioLogado?.gastos.count)!
         }
         else {
             
@@ -39,12 +39,12 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     
     //funçao que seta as células
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if(usuarioLogado?.gastos.count > 0) {
+        if(base.usuarioLogado?.gastos.count > 0) {
             let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
             
-            cell.textLabel?.text = (usuarioLogado?.gastos[indexPath.row].nome)! + (usuarioLogado?.gastos[indexPath.row].categoria)!
+            cell.textLabel?.text = (base.usuarioLogado?.gastos[indexPath.row].nome)! + (base.usuarioLogado?.gastos[indexPath.row].categoria)!
             cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(15))
-            cell.detailTextLabel?.text = "Valor:" + String(usuarioLogado?.gastos[indexPath.row].valor)
+            cell.detailTextLabel?.text = "Valor:" + String(base.usuarioLogado?.gastos[indexPath.row].valor)
             cell.detailTextLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
             return cell
             
