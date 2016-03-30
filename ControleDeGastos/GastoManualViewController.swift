@@ -151,6 +151,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else {
+            usuarioLogado?.addGasto(Gasto(nome: nomeGasto.text!, categoria: categoria.text!, valor: Int(valor.text!)!, data: dateLabel.text!))
             performSegueWithIdentifier("GastoToMain", sender: self)
         
         
