@@ -75,7 +75,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        if valortotal != nil
+        {
         valor.text=String(valortotal)
+        }
         dateLabel.text = data
         // Do any additional setup after loading the view.
         
