@@ -8,8 +8,8 @@
 
 import UIKit
 
-class CadastroViewController: UIViewController {
-
+class CadastroViewController: UIViewController,UITextFieldDelegate {
+    
     @IBOutlet weak var nome: UITextField!
     @IBOutlet weak var Email: UITextField!
     @IBOutlet weak var senha: UITextField!
@@ -21,16 +21,24 @@ class CadastroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nome.placeholder = "nome"
+        nome.delegate=self
         Email.placeholder = "Email"
+        Email.delegate=self
         senha.placeholder = "Senha"
+        senha.delegate=self
+        senha.secureTextEntry=true
         confirmasenha1.placeholder="Confirma Senha"
+        confirmasenha1.delegate=self
+        confirmasenha1.secureTextEntry=true
         erroincompleto.hidden=true
         erroincompleto.text="Todos os dados são obrigatórios"
         erromail.hidden=true
         erromail.text="E-mail inválido"
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -70,16 +78,24 @@ class CadastroViewController: UIViewController {
         base.salvarBaseDeDados()
         performSegueWithIdentifier("CadastroToLogin", sender: self)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
-    */
-
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
