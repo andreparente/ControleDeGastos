@@ -24,6 +24,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate {
         nome.delegate=self
         Email.placeholder = "Email"
         Email.delegate=self
+        Email.keyboardType = .EmailAddress
         senha.placeholder = "Senha"
         senha.delegate=self
         senha.secureTextEntry=true

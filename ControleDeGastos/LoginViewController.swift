@@ -28,6 +28,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         print("carregou a view Login")
         mail.placeholder="Email"
         mail.delegate = self
+        mail.keyboardType = .EmailAddress
         senha.placeholder="Senha"
         senha.secureTextEntry=true
         senha.delegate = self
