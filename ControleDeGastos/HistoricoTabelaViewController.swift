@@ -8,17 +8,19 @@
 
 import UIKit
 
-class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
+class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate  {
     
     var tableView: UITableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
         
         tableView.frame = CGRectMake(screenSize.minX,screenSize.minY+22,screenSize.width,screenSize.height)
         tableView.delegate = self
         tableView.dataSource = self
+ 
         
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
@@ -28,10 +30,12 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     //funçao que diz a quantidade de células
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(base.usuarioLogado?.gastos.count > 0) {
+            
+            
             return (base.usuarioLogado?.gastos.count)!
+            
         }
         else {
-            
             return 1
         }
     }
@@ -41,8 +45,9 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if(base.usuarioLogado?.gastos.count > 0) {
             let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-            
-            cell.textLabel?.text = (base.usuarioLogado?.gastos[indexPath.row].nome)! + (base.usuarioLogado?.gastos[indexPath.row].categoria)!
+            print("oi")
+            cell.textLabel?.text = (base.usuarioLogado?.gastos[indexPath.row].nome)! +
+                "                                      " + (base.usuarioLogado?.gastos[indexPath.row].categoria)!
 
             cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(15))
             cell.detailTextLabel?.text = "Valor:" + String(base.usuarioLogado?.gastos[indexPath.row].valor)
@@ -72,6 +77,12 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        print("ViewWillAppear eh chamada sempre")
+
     }
     
 

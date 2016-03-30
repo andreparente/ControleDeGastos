@@ -14,62 +14,38 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     // AQUI ELE CRIA A VIEW PRO GRAFICO
     let chartView = PieChartView(frame: CGRectMake(0, screenSize.height/6, screenSize.width, screenSize.height/2))
     let totalLabel = UILabel(frame: CGRectMake(0, screenSize.height-(screenSize.height/3), screenSize.width,40))
-    var nomesCat: [String]!
-    var valoresGastos: [Double] = [0.0]
+    var valoresGastos: [Double] = []
     var gastos: [Gasto]!
     var total = 0.0
     
     override func viewDidLoad() {
 
-        
-        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        total = 0.0
-        if(base.usuarioLogado?.gastos.count == 0) {
-            //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
-            chartView.noDataText = "You need to enter some data"
-            chartView.delegate = self
-            chartView.animate(xAxisDuration: 1)
-            view.addSubview(chartView)
-        }
-        else {
         
-            gastos = (base.usuarioLogado?.gastos)!
-            
-            for var i in 0..<gastos.count {
-                valoresGastos[i] = Double(gastos[i].valor)
-                total = total+Double(gastos[i].valor)
-            }
-        
-        
-        //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
-        chartView.noDataText = "You need to enter some data"
         chartView.delegate = self
-        chartView.animate(xAxisDuration: 1)
         view.addSubview(chartView)
-        setChart((base.usuarioLogado?.categoriasGastos)!, values: valoresGastos)
-        }
+        view.addSubview(totalLabel)
+        chartView.animate(xAxisDuration: 1)
+        // Do any additional setup after loading the view, typically from a nib.
+        
+       
     }
     
     //FUNCAO QUE SETTA TODO O GRAFICO
     func setChart(dataPoints: [String], values: [Double]) {
-        
-        if(base.usuarioLogado?.gastos.count > 0) {
-
-
-        chartView.descriptionText = "Tamo quase lá!"
-        
+        print("Funcao executando")
+        chartView.descriptionText = "Resumo"
+        print(values.count)
         var dataEntries: [ChartDataEntry] = []
+        
         //ESSE FOR PREENCHE O VETOR DE ENTRADA DE DADOS, PRA CADA INDEX,
-        for i in 0..<dataPoints.count {
+        for i in 0..<values.count {
             
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
             
             dataEntries.append(dataEntry)
         }
-        
+        print(dataEntries)
         //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         
@@ -78,10 +54,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
         chartView.data = chartData
-        }
-        else {
-                    chartView.noDataText = "You need to provide data for the chart."
-        }
         
         
     }
@@ -89,7 +61,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
     
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
-        print("\(entry.value) in \(nomesCat[entry.xIndex])")
+        print("\(entry.value) in \(base.usuarioLogado?.categoriasGastos[entry.xIndex])")
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,37 +70,35 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-    
-        print("A TELA DE GRAFICOS VAI APARECER")
+        for gasto in base.usuarioLogado!.gastos {
+            print("gasto ", gasto.nome)
+        }
         total = 0.0
         if(base.usuarioLogado?.gastos.count == 0) {
+            
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "You need to enter some data"
             chartView.delegate = self
             chartView.animate(xAxisDuration: 1)
-            view.addSubview(chartView)
+            //setChart((base.usuarioLogado?.categoriasGastos)!, values: valoresGastos)
+            
+            
         }
         else {
             
-            gastos = (base.usuarioLogado?.gastos)!
-            
-            for var i in 0..<gastos.count {
-                valoresGastos[i] = Double(gastos[i].valor)
-                total = total+valoresGastos[i]
+            var i: Int = 0
+            for gasto in base.usuarioLogado!.gastos {
+                
+                valoresGastos.append(Double(gasto.valor))
+                print("Valores gastos: ", valoresGastos[i])
+                total = total+Double(gasto.valor)
+                print("total: ", total)
+                i++
             }
-            
-            totalLabel.text = "Total: R$\(total)"
-            view.addSubview(totalLabel)
-            
-            //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
-            chartView.noDataText = "You need to enter some data"
-            chartView.delegate = self
-            chartView.animate(xAxisDuration: 1)
-            view.addSubview(chartView)
             setChart((base.usuarioLogado?.categoriasGastos)!, values: valoresGastos)
+            totalLabel.text = "Total: R$"+String(total)
         }
-      
-        
+
     }
     
     

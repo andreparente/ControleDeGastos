@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UINavigationBarDelegate {
     
     @IBOutlet weak var date: UIDatePicker!
@@ -75,10 +76,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         valor.keyboardType = .NumberPad
         dateLabel.text = data
         // Do any additional setup after loading the view.
-        
-
-        //TESTE
-        base.usuarioLogado = Usuario(nome: "A", email: "aa@a.c", senha: "1")
         
     }
     
@@ -155,6 +152,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         }
         else {
  */
+        
             base.usuarioLogado?.addGasto(Gasto(nome: nomeGasto.text!, categoria: categoria.text!, valor: Int(valor.text!)!, data: dateLabel.text!))
 
             performSegueWithIdentifier("GastoToMain", sender: self)
