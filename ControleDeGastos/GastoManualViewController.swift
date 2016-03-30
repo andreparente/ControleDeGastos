@@ -8,13 +8,6 @@
 
 import UIKit
 
-/*func formatADate() {
-    var dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd"
-    let d = NSDate()
-    let s = dateFormatter.stringFromDate(d)
-    print(s)
-}*/
 class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UINavigationBarDelegate {
     
     @IBOutlet weak var date: UIDatePicker!

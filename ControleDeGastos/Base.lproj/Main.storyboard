@@ -200,6 +200,9 @@
                                 <rect key="frame" x="43" y="71" width="197" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="71" width="96" height="30"/>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0e-CU-qUk">
                                 <rect key="frame" x="20" y="152" width="165" height="30"/>
@@ -210,8 +213,11 @@
                                 <rect key="frame" x="20" y="236" width="243" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="236" width="121.5" height="30"/>
+                                </variation>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZGc-Yf-SUb">
+                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZGc-Yf-SUb">
                                 <rect key="frame" x="43" y="314" width="288" height="105"/>
                                 <date key="date" timeIntervalSinceReferenceDate="480947909.87446201">
                                     <!--2016-03-29 12:38:29 +0000-->
@@ -220,12 +226,6 @@
                                     <action selector="datePickerChanged:" destination="goP-2V-gWf" eventType="valueChanged" id="jsW-ia-vYI"/>
                                 </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-TC-XVL">
-                                <rect key="frame" x="20" y="74" width="22" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlw-oW-o0k">
                                 <rect key="frame" x="188" y="146" width="162" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -240,13 +240,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8Y-Gk-BLT">
-                                <rect key="frame" x="0.0" y="526" width="375" height="92"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qq1-86-EhC">
                                 <rect key="frame" x="43" y="459" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Gastei!"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="43" y="444" width="288" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="gasteiAction:" destination="goP-2V-gWf" eventType="touchUpInside" id="hn8-ZX-6bP"/>
                                 </connections>
@@ -254,10 +254,25 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj6-V4-gwE">
                                 <rect key="frame" x="279" y="70" width="58" height="30"/>
                                 <state key="normal" title="QRCode"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="191" y="70" width="58" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="G5x-cB-V2J" kind="show" id="XVY-vd-HLN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-TC-XVL">
+                                <rect key="frame" x="20" y="74" width="22" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8Y-Gk-BLT">
+                                <rect key="frame" x="0.0" y="503" width="375" height="92"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="27" y="501" width="320" height="216"/>
+                                </variation>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -274,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mr0-d5-1u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2068.5" y="186.5"/>
+            <point key="canvasLocation" x="2067.75" y="186.375"/>
         </scene>
         <!--Cadastro Cartao View Controller-->
         <scene sceneID="mt3-on-LzT">
@@ -451,11 +466,11 @@
         <image name="icone home" width="55" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xsX-Mx-VU8"/>
-        <segue reference="NL6-cS-gUU"/>
-        <segue reference="sQ1-Os-lJ1"/>
-        <segue reference="nGk-Nr-gbT"/>
         <segue reference="QRM-YM-FfM"/>
+        <segue reference="mSI-rX-yBy"/>
         <segue reference="Lpn-go-2ch"/>
+        <segue reference="nGk-Nr-gbT"/>
+        <segue reference="sQ1-Os-lJ1"/>
+        <segue reference="949-Ae-jnM"/>
     </inferredMetricsTieBreakers>
 </document>
