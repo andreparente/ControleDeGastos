@@ -36,7 +36,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         erroemail.hidden=true
         erroemail.text="Email inválido"
             
-            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
             view.addGestureRecognizer(tap)
         
     }
