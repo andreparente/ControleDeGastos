@@ -13,12 +13,13 @@ public class AIO {
     internal var objectSeparator = "\n +++ \n"
     internal var attributeSeparator = " - \n"
     internal var arraySeparator = " && "
-    internal var usuarioLogado: Usuario?
-    internal var listaUsuarios = [Usuario]()
+    public var usuarioLogado: Usuario?
+    public var listaUsuarios = [Usuario]()
 
     // rodar assim que o app for iniciado
-    func carregarBaseDeDados() {
+    func carregarBaseDeDados() { // a ordem do load nao pode ser alterada
         carregarUsuariosSemObjetos()
+        carregarUltimoUsuario()
         carregarCartoes()
         carregarGastos()
     }
@@ -31,6 +32,11 @@ public class AIO {
         for gasto in (usuarioLogado?.getGastos())! {
             salvarGasto(gasto, usuario: usuarioLogado!)
         }
+        for usuario in self.listaUsuarios {
+            print("salvando usuario ", usuario.email)
+            salvarUsuario(usuario)
+        }
+        salvarUltimoUsuario()
     }
 
     // formato:     nome \n email \n senha \n categorias
@@ -299,6 +305,10 @@ public class AIO {
             }
         }
         return true
+    }
+    
+    func salvarUsuario (usuario: Usuario) {
+        self.adicionarUsuario(usuario)
     }
     
     func carregarUltimoUsuario () -> Bool {

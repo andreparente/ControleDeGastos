@@ -65,6 +65,9 @@ class CadastroViewController: UIViewController {
         }
         
         // realiza o cadastro e faz o segue
+        let usuario = Usuario(nome: name!, email: mailsalvo!, senha: senhasalva!)
+        base.listaUsuarios.append(usuario)
+        base.salvarBaseDeDados()
         performSegueWithIdentifier("CadastroToLogin", sender: self)
     }
     
