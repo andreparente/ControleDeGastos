@@ -34,6 +34,8 @@ class CadastroViewController: UIViewController,UITextFieldDelegate {
         erroincompleto.text="Todos os dados são obrigatórios"
         erromail.hidden=true
         erromail.text="E-mail inválido"
+        errosenhas.hidden=true
+        errosenhas.text="Senhas não são iguais"
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.

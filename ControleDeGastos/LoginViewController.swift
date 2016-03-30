@@ -19,7 +19,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var erroemail: UILabel!
     @IBOutlet weak var errocampovazio: UILabel!
-    @IBOutlet weak var nome: UITextField!
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var senha: UITextField!
     var usuarioAux: Usuario?
@@ -27,8 +26,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("carregou a view Login")
-        nome.placeholder="Nome"
-        nome.delegate = self
         mail.placeholder="Email"
         mail.delegate = self
         senha.placeholder="Senha"
@@ -46,7 +43,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func confirma(sender: UIButton)
     {
-        if (nome.text!.isEmpty || (mail.text!.isEmpty) || senha.text!.isEmpty)
+        if ((mail.text!.isEmpty) || senha.text!.isEmpty)
         {
             errocampovazio.hidden=false
         }
@@ -60,7 +57,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             else
             {
                 erroemail.hidden=true
-                usuarioAux = Usuario(nome: nome.text!,email: mail.text!,senha: senha.text!)
+                usuarioAux = Usuario(nome: "Oi",email: mail.text!,senha: senha.text!)
                 base.usuarioLogado = usuarioAux
                 performSegueWithIdentifier("LoginToMain", sender: self)
             }

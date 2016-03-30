@@ -17,18 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IDY-HJ-P1A">
-                                <rect key="frame" x="20" y="143" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKe-60-dBH">
-                                <rect key="frame" x="20" y="220" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Q6-iS-nvL">
-                                <rect key="frame" x="20" y="296" width="335" height="30"/>
+                                <rect key="frame" x="20" y="146" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -46,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poz-Rh-YRM">
-                                <rect key="frame" x="20" y="258" width="225" height="21"/>
+                                <rect key="frame" x="20" y="209" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -58,6 +48,11 @@
                                     <action selector="cadastro:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e00-UJ-2XP"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Q6-iS-nvL">
+                                <rect key="frame" x="20" y="268" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -66,7 +61,6 @@
                         <outlet property="errocampovazio" destination="hDN-N8-S8A" id="8XR-7Z-yRg"/>
                         <outlet property="erroemail" destination="poz-Rh-YRM" id="Xkh-pB-gRr"/>
                         <outlet property="mail" destination="vKe-60-dBH" id="E7B-RI-5DF"/>
-                        <outlet property="nome" destination="IDY-HJ-P1A" id="1WW-Eo-6me"/>
                         <outlet property="senha" destination="0Q6-iS-nvL" id="33z-Cu-O3A"/>
                         <segue destination="7e0-v9-ANp" kind="show" identifier="LoginToMain" id="NL6-cS-gUU"/>
                         <segue destination="rab-8m-gdV" kind="show" identifier="LoginToCadastro" id="iBk-FN-BBi"/>
