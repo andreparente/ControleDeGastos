@@ -88,6 +88,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         return true
     }
     
+    @IBAction func cadastro(sender: UIButton) {
+        performSegueWithIdentifier("LoginToCadastro", sender: self)
+    }
     /*
     // MARK: - Navigation
     

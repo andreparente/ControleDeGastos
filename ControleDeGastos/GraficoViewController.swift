@@ -21,11 +21,11 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     
     override func viewDidLoad() {
 
-        totalLabel.text = "Total: R$\(total)"
-        view.addSubview(totalLabel)
+        
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
         total = 0.0
         if(base.usuarioLogado?.gastos.count == 0) {
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
@@ -100,6 +100,33 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     override func viewWillAppear(animated: Bool) {
     
         print("A TELA DE GRAFICOS VAI APARECER")
+        total = 0.0
+        if(base.usuarioLogado?.gastos.count == 0) {
+            //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
+            chartView.noDataText = "You need to enter some data"
+            chartView.delegate = self
+            chartView.animate(xAxisDuration: 1)
+            view.addSubview(chartView)
+        }
+        else {
+            
+            gastos = (base.usuarioLogado?.gastos)!
+            
+            for var i in 0..<gastos.count {
+                valoresGastos[i] = Double(gastos[i].valor)
+                total = total+valoresGastos[i]
+            }
+            
+            totalLabel.text = "Total: R$\(total)"
+            view.addSubview(totalLabel)
+            
+            //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
+            chartView.noDataText = "You need to enter some data"
+            chartView.delegate = self
+            chartView.animate(xAxisDuration: 1)
+            view.addSubview(chartView)
+            setChart((base.usuarioLogado?.categoriasGastos)!, values: valoresGastos)
+        }
       
         
     }
