@@ -52,7 +52,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         /*
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(GastoManualViewController.btn_clicked(_:)))
-
+        
         
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = leftButton
@@ -130,20 +130,20 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         view.endEditing(true)
         return true
     }
-
+    
     func usuarioJaExiste () -> Bool {
         let i = base.indiceUsuarioPorEmail(Email.text!)
         return i != -1
     }
-
+    
     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
     
 }

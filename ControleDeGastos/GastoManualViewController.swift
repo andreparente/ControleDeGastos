@@ -26,8 +26,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
-//        view.addGestureRecognizer(tap)
+        //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
+        //        view.addGestureRecognizer(tap)
         
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
@@ -40,20 +40,20 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         navigationItem.title = "Gasto"
         
         // Create left and right button for navigation item
-//        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(GastoManualViewController.btn_clicked(_:)))
+        //        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(GastoManualViewController.btn_clicked(_:)))
         
         
         // Create two buttons for the navigation item
-//        navigationItem.leftBarButtonItem = leftButton
+        //        navigationItem.leftBarButtonItem = leftButton
         
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
         
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
-
         
-
+        
+        
         calendar.components([.Day , .Month , .Year], fromDate: dataNs)
         
         super.viewDidLoad()
@@ -64,14 +64,14 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         nomeGasto.delegate = self
         valor.delegate = self
         categoria.inputView = categoriaPickerView
-
-
+        
+        
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         if valortotal != nil
         {
-        valor.text=String(valortotal)
+            valor.text=String(valortotal)
         }
         valor.keyboardType = .NumberPad
         dateLabel.text = data
@@ -141,32 +141,32 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
     }
     
-
+    
     @IBAction func gasteiAction(sender: AnyObject) {
-      /* if(valor.text! == "nil" || valor.text!.isEmpty) {
-            
-       let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
+        /* if(valor.text! == "nil" || valor.text!.isEmpty) {
+        
+        let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
         let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
         alert.addAction(alertAction)
-            self.presentViewController(alert, animated: true, completion: nil)
+        self.presentViewController(alert, animated: true, completion: nil)
         }*/
         //else {
- 
         
-            base.usuarioLogado?.addGasto(Gasto(nome: nomeGasto.text!, categoria: categoria.text!, valor: Int(valor.text!)!, data: dateLabel.text!))
-
-            performSegueWithIdentifier("GastoToMain", sender: self)
+        
+        base.usuarioLogado?.addGasto(Gasto(nome: nomeGasto.text!, categoria: categoria.text!, valor: Int(valor.text!)!, data: dateLabel.text!))
+        
+        performSegueWithIdentifier("GastoToMain", sender: self)
         
         
         //}
     }
-
     
- 
+    
+    
     @IBAction func Add(sender: UIButton) {
         
     }
     
-
-
+    
+    
 }

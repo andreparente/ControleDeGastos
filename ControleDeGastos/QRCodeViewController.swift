@@ -142,7 +142,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             {
                 if char1 != ""
                 {
-                valoremhexa.append(Character(char1))
+                    valoremhexa.append(Character(char1))
                 }
             }
         }
@@ -155,16 +155,16 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             {
                 if char != ""
                 {
-                valorfinalmutavel.append(Character(char))
+                    valorfinalmutavel.append(Character(char))
                 }
             }
         }
         return (valorfinalmutavel,datafinal)
     }
     
-
-
-
+    
+    
+    
     func hexStringtoAscii(hexString : String) -> String {
         
         let pattern = "(0x)?([0-9a-f]{2})"
@@ -184,5 +184,5 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         destination.data=datafinalmente
         
     }
-
+    
 }

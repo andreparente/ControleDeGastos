@@ -29,13 +29,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         print("carregou a view Login")
         mail.attributedPlaceholder = NSAttributedString(string:"Email",
-                                                               attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         mail.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         
         mail.delegate = self
         mail.keyboardType = .EmailAddress
         senha.attributedPlaceholder = NSAttributedString(string:"Senha",
-                                                        attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         senha.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         senha.secureTextEntry=true
         senha.delegate = self
@@ -46,9 +46,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-            /*
-            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
-            view.addGestureRecognizer(tap)
+        /*
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         */
     }
     

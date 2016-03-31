@@ -23,11 +23,11 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         navigationItem.title = "Settings"
         
         // Create left and right button for navigation item
-//        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.btn_clicked(_:)))
-
+        //        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.btn_clicked(_:)))
+        
         
         // Create two buttons for the navigation item
-//        navigationItem.leftBarButtonItem = leftButton
+        //        navigationItem.leftBarButtonItem = leftButton
         
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,10 +47,10 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
             field.placeholder = "Insira seu limite"})
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
-        let textField = alert.textFields![0] as UITextField
-        print("Text field: \(textField.text)")
-        base.usuarioLogado?.setLimiteMes(Int(textField.text!)!)
-    }))
+            let textField = alert.textFields![0] as UITextField
+            print("Text field: \(textField.text)")
+            base.usuarioLogado?.setLimiteMes(Int(textField.text!)!)
+        }))
         self.presentViewController(alert,animated: true, completion: nil)
     }
     func btn_clicked(sender: UIBarButtonItem) {
@@ -66,14 +66,14 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
             let textField = alert.textFields![0] as UITextField
             print("Text field: \(textField.text)")
             for usuario in (base.usuarioLogado?.categoriasGastos)!
+            {
+                if textField.text == usuario
                 {
-                    if textField.text == usuario
-                    {
-                        let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
-                        alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
-                        self.presentViewController(alert2,animated: true, completion: nil)
-                    }
+                    let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
+                    self.presentViewController(alert2,animated: true, completion: nil)
                 }
+            }
         }))
         self.presentViewController(alert,animated: true, completion: nil)
     }
@@ -93,14 +93,14 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         }
         
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
 }
