@@ -8,13 +8,7 @@
 
 import UIKit
 
-/*func formatADate() {
-    var dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd"
-    let d = NSDate()
-    let s = dateFormatter.stringFromDate(d)
-    print(s)
-}*/
+
 class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UINavigationBarDelegate {
     
     @IBOutlet weak var date: UIDatePicker!
@@ -31,14 +25,14 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     let calendar = NSCalendar.currentCalendar()
     
     override func viewDidLoad() {
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+        view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
+//        view.addGestureRecognizer(tap)
         
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
-        navigationBar.backgroundColor = UIColor.whiteColor()
+        navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
         
         // Create a navigation item with a title
@@ -46,11 +40,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         navigationItem.title = "Gasto"
         
         // Create left and right button for navigation item
-        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: "btn_clicked:")
+//        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(GastoManualViewController.btn_clicked(_:)))
         
         
         // Create two buttons for the navigation item
-        navigationItem.leftBarButtonItem = leftButton
+//        navigationItem.leftBarButtonItem = leftButton
         
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
@@ -75,13 +69,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        if valortotal != nil
+        {
         valor.text=String(valortotal)
+        }
+        valor.keyboardType = .NumberPad
         dateLabel.text = data
         // Do any additional setup after loading the view.
-        
-
-        //TESTE
-        base.usuarioLogado = Usuario(nome: "A", email: "aa@a.c", senha: "1")
         
     }
     
@@ -149,21 +143,22 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
 
     @IBAction func gasteiAction(sender: AnyObject) {
-       // if(valor.text! == "nil" || valor.text!.isEmpty) {
+      /* if(valor.text! == "nil" || valor.text!.isEmpty) {
             
-       /*let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
+       let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
         let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
         alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
-        }
-        else {
- */
+        }*/
+        //else {
+ 
+        
             base.usuarioLogado?.addGasto(Gasto(nome: nomeGasto.text!, categoria: categoria.text!, valor: Int(valor.text!)!, data: dateLabel.text!))
 
             performSegueWithIdentifier("GastoToMain", sender: self)
         
         
-       // }
+        //}
     }
 
     

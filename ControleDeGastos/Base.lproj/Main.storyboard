@@ -17,47 +17,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IDY-HJ-P1A">
-                                <rect key="frame" x="20" y="143" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKe-60-dBH">
-                                <rect key="frame" x="20" y="220" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Q6-iS-nvL">
-                                <rect key="frame" x="20" y="296" width="335" height="30"/>
+                                <rect key="frame" x="20" y="255" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj8-7R-Nlv">
                                 <rect key="frame" x="101" y="404" width="63" height="30"/>
-                                <state key="normal" title="Confirma"/>
+                                <state key="normal" title="Confirma">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="confirma:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TYI-Rq-Jp5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDN-N8-S8A">
-                                <rect key="frame" x="20" y="105" width="355" height="21"/>
+                                <rect key="frame" x="20" y="226" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poz-Rh-YRM">
-                                <rect key="frame" x="20" y="258" width="225" height="21"/>
+                                <rect key="frame" x="124" y="226" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBm-5V-VmR">
                                 <rect key="frame" x="241" y="404" width="63" height="30"/>
-                                <state key="normal" title="Cadastro"/>
+                                <state key="normal" title="Cadastro">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="cadastro:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e00-UJ-2XP"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Q6-iS-nvL">
+                                <rect key="frame" x="20" y="319" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="X7I-bQ-RER">
+                                <rect key="frame" x="73" y="28" width="229" height="155"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -66,7 +68,6 @@
                         <outlet property="errocampovazio" destination="hDN-N8-S8A" id="8XR-7Z-yRg"/>
                         <outlet property="erroemail" destination="poz-Rh-YRM" id="Xkh-pB-gRr"/>
                         <outlet property="mail" destination="vKe-60-dBH" id="E7B-RI-5DF"/>
-                        <outlet property="nome" destination="IDY-HJ-P1A" id="1WW-Eo-6me"/>
                         <outlet property="senha" destination="0Q6-iS-nvL" id="33z-Cu-O3A"/>
                         <segue destination="7e0-v9-ANp" kind="show" identifier="LoginToMain" id="NL6-cS-gUU"/>
                         <segue destination="rab-8m-gdV" kind="show" identifier="LoginToCadastro" id="iBk-FN-BBi"/>
@@ -119,18 +120,33 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vID-WR-fxp">
-                                <rect key="frame" x="69" y="131" width="58" height="30"/>
+                                <rect key="frame" x="141" y="179" width="92" height="30"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="18"/>
                                 <state key="normal" title="GASTAR"/>
                                 <connections>
                                     <segue destination="goP-2V-gWf" kind="show" id="QRM-YM-FfM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="854-k0-bpT">
+                                <rect key="frame" x="20" y="286" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBW-pr-crG">
+                                <rect key="frame" x="20" y="366" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="icone home" id="dn7-U9-lTy"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="limite" destination="854-k0-bpT" id="iDa-SS-BBD"/>
+                        <outlet property="totalgastos" destination="qBW-pr-crG" id="Ken-Yp-xyz"/>
                         <segue destination="dwH-NT-Olr" kind="show" identifier="MainToGrafico" id="Lpn-go-2ch"/>
                         <segue destination="8A6-r8-ap1" kind="show" identifier="MainToHistoricoTabela" id="nGk-Nr-gbT"/>
                     </connections>
@@ -152,7 +168,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gráfico" id="lFH-YW-TPh"/>
+                    <tabBarItem key="tabBarItem" title="Gráfico" image="pie_chart" id="lFH-YW-TPh">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="andre"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RU6-lF-KpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,11 +191,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaH-Ge-2We">
-                                <rect key="frame" x="130" y="71" width="115" height="30"/>
-                                <state key="normal" title="Adicionar Cartao"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgQ-fe-lJf">
+                                <rect key="frame" x="120" y="239" width="133" height="30"/>
+                                <state key="normal" title="Adicionar categoria"/>
                                 <connections>
-                                    <segue destination="pRs-b8-5QE" kind="show" id="sSJ-GH-Kbx"/>
+                                    <action selector="categoria:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="PTA-Qr-NBJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76s-jX-fi7">
+                                <rect key="frame" x="162" y="452" width="51" height="30"/>
+                                <state key="normal" title="LogOut"/>
+                                <connections>
+                                    <action selector="logOut:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="Vf8-Yu-EW8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEq-3v-enE">
+                                <rect key="frame" x="144" y="350" width="85" height="30"/>
+                                <state key="normal" title="Mudar email"/>
+                                <connections>
+                                    <action selector="mudaremail:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="iNV-It-MGz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-gd-AnK">
+                                <rect key="frame" x="144" y="132" width="87" height="30"/>
+                                <state key="normal" title="Alterar limite"/>
+                                <connections>
+                                    <action selector="limite:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="r0N-s2-jxM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -184,11 +225,46 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="7e0-v9-ANp" kind="show" identifier="SettingsToMain" id="enk-Hl-U5o"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SettingsToLogin" id="JPP-2I-nDT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9G-V5-7xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454.5" y="1086.5"/>
+            <point key="canvasLocation" x="1272.5" y="1126.5"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="lJu-Kh-5PZ">
+            <objects>
+                <tableViewController id="49V-VM-ECV" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5KP-8X-fyt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mXg-bT-KiJ">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mXg-bT-KiJ" id="S5c-06-dHy">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhT-0t-lYa">
+                                            <rect key="frame" x="22" y="7" width="46" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="49V-VM-ECV" id="xc9-5d-y2E"/>
+                            <outlet property="delegate" destination="49V-VM-ECV" id="2LX-Hj-oAt"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ir-7h-pKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037" y="1175"/>
         </scene>
         <!--Gasto Manual View Controller-->
         <scene sceneID="OT6-4x-4c5">
@@ -206,6 +282,9 @@
                                 <rect key="frame" x="43" y="71" width="197" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="71" width="96" height="30"/>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0e-CU-qUk">
                                 <rect key="frame" x="20" y="152" width="165" height="30"/>
@@ -216,8 +295,11 @@
                                 <rect key="frame" x="20" y="236" width="243" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="236" width="121.5" height="30"/>
+                                </variation>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZGc-Yf-SUb">
+                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZGc-Yf-SUb">
                                 <rect key="frame" x="43" y="314" width="288" height="105"/>
                                 <date key="date" timeIntervalSinceReferenceDate="480947909.87446201">
                                     <!--2016-03-29 12:38:29 +0000-->
@@ -226,12 +308,6 @@
                                     <action selector="datePickerChanged:" destination="goP-2V-gWf" eventType="valueChanged" id="jsW-ia-vYI"/>
                                 </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-TC-XVL">
-                                <rect key="frame" x="20" y="74" width="22" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlw-oW-o0k">
                                 <rect key="frame" x="188" y="146" width="162" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -243,25 +319,36 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MM/DD/YY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-0d-VcF">
                                 <rect key="frame" x="145" y="285" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8Y-Gk-BLT">
-                                <rect key="frame" x="0.0" y="526" width="375" height="92"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qq1-86-EhC">
-                                <rect key="frame" x="43" y="459" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="Gastei!"/>
-                                <connections>
-                                    <action selector="gasteiAction:" destination="goP-2V-gWf" eventType="touchUpInside" id="hn8-ZX-6bP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj6-V4-gwE">
                                 <rect key="frame" x="279" y="70" width="58" height="30"/>
                                 <state key="normal" title="QRCode"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="191" y="70" width="58" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="G5x-cB-V2J" kind="show" id="XVY-vd-HLN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-TC-XVL">
+                                <rect key="frame" x="20" y="74" width="22" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8Y-Gk-BLT">
+                                <rect key="frame" x="0.0" y="503" width="375" height="92"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="27" y="501" width="320" height="216"/>
+                                </variation>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toe-R6-viE">
+                                <rect key="frame" x="163" y="439" width="48" height="30"/>
+                                <state key="normal" title="Gastei!"/>
+                                <connections>
+                                    <action selector="gasteiAction:" destination="goP-2V-gWf" eventType="touchUpInside" id="wWF-s7-LNz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -280,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mr0-d5-1u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2068.5" y="186.5"/>
+            <point key="canvasLocation" x="2105.5" y="205.5"/>
         </scene>
         <!--Cadastro Cartao View Controller-->
         <scene sceneID="mt3-on-LzT">
@@ -347,19 +434,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbM-Zn-izP">
                                 <rect key="frame" x="20" y="63" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1q-jH-Q7Z">
                                 <rect key="frame" x="20" y="217" width="330" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-vP-96T">
                                 <rect key="frame" x="20" y="385" width="330" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -453,15 +540,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="andre" width="46" height="46"/>
         <image name="ic_settings_48px-128" width="128" height="128"/>
         <image name="icone home" width="55" height="52"/>
+        <image name="money" width="586" height="586"/>
+        <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xsX-Mx-VU8"/>
-        <segue reference="NL6-cS-gUU"/>
-        <segue reference="sQ1-Os-lJ1"/>
-        <segue reference="nGk-Nr-gbT"/>
         <segue reference="QRM-YM-FfM"/>
-        <segue reference="Lpn-go-2ch"/>
+        <segue reference="enk-Hl-U5o"/>
+        <segue reference="xsX-Mx-VU8"/>
+        <segue reference="JPP-2I-nDT"/>
+        <segue reference="cRh-te-LVN"/>
+        <segue reference="Tk9-hb-F6y"/>
     </inferredMetricsTieBreakers>
 </document>

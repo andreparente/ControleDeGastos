@@ -12,11 +12,11 @@ class CadastroCartaoViewController: UIViewController,UINavigationBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
 
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
-        
-        navigationBar.backgroundColor = UIColor.whiteColor()
+        navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
         
         // Create a navigation item with a title
@@ -24,11 +24,11 @@ class CadastroCartaoViewController: UIViewController,UINavigationBarDelegate {
         navigationItem.title = "Cadastro Cartão"
         
         // Create left and right button for navigation item
-        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: "btn_clicked:")
+        //let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(CadastroCartaoViewController.btn_clicked(_:)))
         
         
         // Create two buttons for the navigation item
-        navigationItem.leftBarButtonItem = leftButton
+//        navigationItem.leftBarButtonItem = leftButton
         
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]

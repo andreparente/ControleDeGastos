@@ -16,7 +16,7 @@ public class Usuario {
     var email = String()
     var senha = String()
     var nome = String()
-    var limiteMes = Int()
+    var limiteMes = 0
     var cartoes = [Cartao]()
     var gastos = [Gasto]()
     var categoriasGastos = [String]()
