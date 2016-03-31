@@ -22,6 +22,7 @@ class CadastroCartaoViewController: UIViewController,UINavigationBarDelegate {
         let navigationItem = UINavigationItem()
         navigationItem.title = "Cadastro Cartão"
         
+    
         // Create left and right button for navigation item
         //let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(CadastroCartaoViewController.btn_clicked(_:)))
         

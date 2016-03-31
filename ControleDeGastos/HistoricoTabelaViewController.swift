@@ -27,36 +27,27 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     
     //funçao que diz a quantidade de células
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(base.usuarioLogado!.gastos.count > 0) {
-            return (base.usuarioLogado?.gastos.count)!
-        }
-        else {
-            return 1
-        }
+        let cellsNumber = base.usuarioLogado!.gastos.count
+        return (cellsNumber > 0) ? cellsNumber : 1
     }
     
     //funçao que seta as células
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if(base.usuarioLogado?.gastos.count > 0) {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        let cellsNumber = base.usuarioLogado?.gastos.count
+        cell.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        
+        if (cellsNumber > 0) {
             cell.textLabel?.text = (base.usuarioLogado?.gastos[indexPath.row].nome)! + " " + (base.usuarioLogado?.gastos[indexPath.row].categoria)!
-            
             cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(15))
             cell.detailTextLabel?.text = "R$: " + String(base.usuarioLogado!.gastos[indexPath.row].valor)
             cell.detailTextLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
-            cell.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-            return cell
-            
-        }
-        else {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-            
+        } else {
             cell.textLabel?.text = "Você Não Possui Gastos!"
             cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
             cell.textLabel?.center = cell.center
-            cell.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-            return cell
         }
+        return cell
     }
     
     //funçao que é chamada ao clicar em determinada célula

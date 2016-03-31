@@ -17,6 +17,7 @@ func isValidEmail(testStr:String) -> Bool {
 
 class LoginViewController: UIViewController,UITextFieldDelegate {
     
+    @IBOutlet weak var errosenha: UILabel!
     @IBOutlet weak var erroemail: UILabel!
     @IBOutlet weak var errocampovazio: UILabel!
     @IBOutlet weak var mail: UITextField!
@@ -27,7 +28,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-        print("carregou a view Login")
+        
         mail.attributedPlaceholder = NSAttributedString(string:"Email",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         mail.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
@@ -43,6 +44,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         errocampovazio.text="Todos os campos são obrigatórios"
         erroemail.hidden=true
         erroemail.text="Email inválido"
+//        errosenha.hidden=true
+//        errosenha.text="Senha errada" // falta adicionar na storyboard
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -51,25 +54,37 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         view.addGestureRecognizer(tap)
         */
     }
-    
+
     @IBAction func confirma(sender: UIButton)
     {
+        // campos vazios
         if ((mail.text!.isEmpty) || senha.text!.isEmpty)
         {
             errocampovazio.hidden=false
             return
         }
         errocampovazio.hidden=true
-        if isValidEmail(mail.text!) == false
+        
+        // email no formato valido e existente na base
+        let indUsuario = base.indiceUsuarioPorEmail(mail.text!)
+        if isValidEmail(mail.text!) == false || indUsuario == -1
         {
             erroemail.hidden=false
             return
         }
         erroemail.hidden=true
         
-        usuarioAux = Usuario(nome: "Oi",email: mail.text!,senha: senha.text!)
-        base.usuarioLogado = usuarioAux
+        // senha valida
+        if base.listaUsuarios[indUsuario].senha != senha.text! {
+            //errosenha.hidden=false // descomentar depois de adicionar na storyboard
+            return
+        }
         
+        // faz o login
+        let usuario = base.listaUsuarios[indUsuario]
+        base.login(usuario)
+        
+        // faz o segue
         performSegueWithIdentifier("LoginToMain", sender: self)
     }
     

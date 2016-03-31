@@ -218,7 +218,7 @@ public class AIO {
     // "nome \n categoria \n valor \n data "
     internal func adicionarGasto (gasto: Gasto, usuario: Usuario) {
         let file = file_gastos
-        let path = dir + "/" + file + "-" + usuario.email + "." + file_format
+        let path = dir + "/" + file + "-" + usuario.email + "." + file_format /* ./gastos-caio@hotmail.com.aio */
         
         var textoAntesDoSave = ""
         
@@ -256,6 +256,49 @@ public class AIO {
     internal func adicionarUsuario (usuario: Usuario) {
         let file = file_usuarios
         let path = dir + "/" + file + "." + file_format
+        
+        var textoAntesDoSave = ""
+        
+        //reading
+        do {
+            textoAntesDoSave = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
+        } catch {
+            print ("erro na leitura do arquivo \(path)")
+        }
+        
+        //writing
+        do {
+            // copia todo o texto anterior
+            var entries = textoAntesDoSave
+            
+            // adiciona a nova entrada
+            var newEntrie = "\(usuario.nome)\(attributeSeparator)"
+            newEntrie += "\(usuario.email)\(attributeSeparator)"
+            newEntrie += "\(usuario.senha)\(attributeSeparator)"
+            let categorias = usuario.getCategoriasGastos()
+            let nCateg = categorias.count
+            if (nCateg > 0) {
+                for i in 0..<(nCateg-1) {
+                    newEntrie += "\(categorias[i])\(arraySeparator)"
+                }
+                newEntrie += "\(categorias[nCateg-1])\(attributeSeparator)"
+            }
+            newEntrie += "\(usuario.email)\(objectSeparator)"
+            
+            entries += newEntrie
+            
+            try entries.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+            print ("Adicionei ao arquivo \(file) a entrada:\n\(newEntrie)")
+        } catch {
+            print ("erro na escrita do arquivo \(file)")
+        }
+        
+    }
+    
+    
+    internal func editarUsuario (usuario: Usuario) {
+        let file = file_usuarios
+        let path = dir + "/" + file + "." + file_format /* ./usuarios.aio */
         
         var textoAntesDoSave = ""
         

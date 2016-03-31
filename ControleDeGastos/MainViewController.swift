@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         print ("login feito com o usuario \(base.usuarioLogado!.nome), de email \(base.usuarioLogado!.email)")
         
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
@@ -24,7 +25,7 @@ class MainViewController: UIViewController {
         {
             valortotal += valor.valor
         }
-        totalgastos.text = "Seu total de gastos é:\(valortotal)"
+        totalgastos.text = "Seu total de gastos é: \(valortotal)"
         
         // Do any additional setup after loading the view.
     }

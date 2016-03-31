@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         self.saveContext()
         base.logout()
+        print("rodei a funcao final do app")
     }
     
     // MARK: - Core Data stack

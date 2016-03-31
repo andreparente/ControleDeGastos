@@ -51,7 +51,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         navigationItem.title = "Cadastro"
         /*
         // Create left and right button for navigation item
-        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(GastoManualViewController.btn_clicked(_:)))
+        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: Selector(GastoManualViewController.btn_clicked(_:)))
         
         
         // Create two buttons for the navigation item

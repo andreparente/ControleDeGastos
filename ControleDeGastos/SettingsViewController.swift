@@ -70,13 +70,14 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             print("Text field: \(textField.text)")
-            for usuario in (base.usuarioLogado?.categoriasGastos)!
+            for categ in (base.usuarioLogado?.categoriasGastos)!
             {
-                if textField.text == usuario
-                {
+                if textField.text == categ {
                     let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
                     alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
                     self.presentViewController(alert2,animated: true, completion: nil)
+                } else {
+                    
                 }
             }
         }))
@@ -87,7 +88,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
     }
     
     @IBAction func logOut(sender: UIButton) {
-        base.usuarioLogado=nil
+        base.logout()
         performSegueWithIdentifier("SettingsToLogin", sender: self)
     }
     
