@@ -153,7 +153,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gráfico" image="chart" selectedImage="chart" id="lFH-YW-TPh"/>
+                    <tabBarItem key="tabBarItem" title="Gráfico" id="lFH-YW-TPh">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="andre"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RU6-lF-KpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -465,7 +469,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chart" width="50" height="50"/>
+        <image name="andre" width="46" height="46"/>
         <image name="ic_settings_48px-128" width="128" height="128"/>
         <image name="icone home" width="55" height="52"/>
         <image name="money" width="586" height="586"/>

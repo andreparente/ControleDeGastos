@@ -14,7 +14,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     // AQUI ELE CRIA A VIEW PRO GRAFICO
     let chartView = PieChartView(frame: CGRectMake(0, screenSize.height/6, screenSize.width, screenSize.height/2))
     let totalLabel = UILabel(frame: CGRectMake(0, screenSize.height-(screenSize.height/3), screenSize.width,40))
-    var valoresGastos: [Double] = []
+    let limiteLabel = UILabel(frame: CGRectMake(0, screenSize.height-(screenSize.height/3)+50, screenSize.width,40))
     var gastos: [Gasto]!
     var total = 0.0
     
@@ -25,6 +25,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         chartView.delegate = self
         view.addSubview(chartView)
         view.addSubview(totalLabel)
+        view.addSubview(limiteLabel)
+        printaLimite(base.usuarioLogado!)
         chartView.animate(xAxisDuration: 1)
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -48,6 +50,15 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         return vetValAux
     }
 
+    //FUNCAO QUE PRINTA LIMITE
+    func printaLimite(usuario: Usuario) {
+        if(usuario.limiteMes == 0) {
+            limiteLabel.text = "Você não disponibilizou o limite por mês"
+        }
+        else {
+            limiteLabel.text = "Seu limite é \(usuario.limiteMes)"
+        }
+    }
     
     
     //FUNCAO QUE SETTA TODO O GRAFICO
