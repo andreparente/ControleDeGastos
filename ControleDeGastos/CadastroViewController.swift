@@ -38,7 +38,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         erromail.text="E-mail inválido"
         errosenhas.hidden=true
         errosenhas.text="Senhas não são iguais"
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account

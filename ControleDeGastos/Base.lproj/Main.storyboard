@@ -120,18 +120,33 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vID-WR-fxp">
-                                <rect key="frame" x="69" y="131" width="58" height="30"/>
+                                <rect key="frame" x="141" y="179" width="92" height="30"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="18"/>
                                 <state key="normal" title="GASTAR"/>
                                 <connections>
                                     <segue destination="goP-2V-gWf" kind="show" id="QRM-YM-FfM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="854-k0-bpT">
+                                <rect key="frame" x="20" y="286" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBW-pr-crG">
+                                <rect key="frame" x="20" y="366" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="icone home" id="dn7-U9-lTy"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="limite" destination="854-k0-bpT" id="iDa-SS-BBD"/>
+                        <outlet property="totalgastos" destination="qBW-pr-crG" id="Ken-Yp-xyz"/>
                         <segue destination="dwH-NT-Olr" kind="show" identifier="MainToGrafico" id="Lpn-go-2ch"/>
                         <segue destination="8A6-r8-ap1" kind="show" identifier="MainToHistoricoTabela" id="nGk-Nr-gbT"/>
                     </connections>
@@ -153,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gráfico" id="lFH-YW-TPh">
+                    <tabBarItem key="tabBarItem" title="Gráfico" image="pie_chart" id="lFH-YW-TPh">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="andre"/>
                         </userDefinedRuntimeAttributes>
@@ -176,32 +191,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-gd-AnK">
-                                <rect key="frame" x="144" y="45" width="87" height="30"/>
-                                <state key="normal" title="Alterar limite"/>
-                                <connections>
-                                    <action selector="limite:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="r0N-s2-jxM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgQ-fe-lJf">
-                                <rect key="frame" x="121" y="165" width="133" height="30"/>
+                                <rect key="frame" x="120" y="239" width="133" height="30"/>
                                 <state key="normal" title="Adicionar categoria"/>
                                 <connections>
                                     <action selector="categoria:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="PTA-Qr-NBJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76s-jX-fi7">
-                                <rect key="frame" x="162" y="351" width="51" height="30"/>
+                                <rect key="frame" x="162" y="452" width="51" height="30"/>
                                 <state key="normal" title="LogOut"/>
                                 <connections>
                                     <action selector="logOut:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="Vf8-Yu-EW8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEq-3v-enE">
-                                <rect key="frame" x="145" y="265" width="85" height="30"/>
+                                <rect key="frame" x="144" y="350" width="85" height="30"/>
                                 <state key="normal" title="Mudar email"/>
                                 <connections>
                                     <action selector="mudaremail:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="iNV-It-MGz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-gd-AnK">
+                                <rect key="frame" x="144" y="132" width="87" height="30"/>
+                                <state key="normal" title="Alterar limite"/>
+                                <connections>
+                                    <action selector="limite:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="r0N-s2-jxM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -529,13 +544,14 @@
         <image name="ic_settings_48px-128" width="128" height="128"/>
         <image name="icone home" width="55" height="52"/>
         <image name="money" width="586" height="586"/>
+        <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="949-Ae-jnM"/>
-        <segue reference="Lpn-go-2ch"/>
-        <segue reference="NL6-cS-gUU"/>
-        <segue reference="sQ1-Os-lJ1"/>
         <segue reference="QRM-YM-FfM"/>
-        <segue reference="nGk-Nr-gbT"/>
+        <segue reference="enk-Hl-U5o"/>
+        <segue reference="xsX-Mx-VU8"/>
+        <segue reference="JPP-2I-nDT"/>
+        <segue reference="cRh-te-LVN"/>
+        <segue reference="Tk9-hb-F6y"/>
     </inferredMetricsTieBreakers>
 </document>
