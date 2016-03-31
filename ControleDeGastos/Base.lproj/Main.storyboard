@@ -147,37 +147,12 @@
                     <connections>
                         <outlet property="limite" destination="854-k0-bpT" id="iDa-SS-BBD"/>
                         <outlet property="totalgastos" destination="qBW-pr-crG" id="Ken-Yp-xyz"/>
-                        <segue destination="dwH-NT-Olr" kind="show" identifier="MainToGrafico" id="Lpn-go-2ch"/>
                         <segue destination="8A6-r8-ap1" kind="show" identifier="MainToHistoricoTabela" id="nGk-Nr-gbT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxh-nN-ady" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1454.5" y="186.5"/>
-        </scene>
-        <!--Gráfico-->
-        <scene sceneID="OiH-XQ-vpT">
-            <objects>
-                <viewController id="dwH-NT-Olr" customClass="GraficoViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZaT-B7-na9"/>
-                        <viewControllerLayoutGuide type="bottom" id="gHq-Wg-ozM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Web-ih-PxA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Gráfico" image="icone home" id="lFH-YW-TPh">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="andre"/>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RU6-lF-KpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="634.5" y="1030.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="zuq-0A-QSK">
@@ -531,26 +506,45 @@
                     <connections>
                         <segue destination="8A6-r8-ap1" kind="relationship" relationship="viewControllers" id="Tk9-hb-F6y"/>
                         <segue destination="i28-Vj-dol" kind="relationship" relationship="viewControllers" id="qRV-4C-eBq"/>
-                        <segue destination="dwH-NT-Olr" kind="relationship" relationship="viewControllers" id="cRh-te-LVN"/>
+                        <segue destination="qDv-K7-cHH" kind="relationship" relationship="viewControllers" id="mkc-D7-zcm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8y6-8X-0w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="747" y="186"/>
         </scene>
+        <!--Gráfico-->
+        <scene sceneID="SNO-Iq-bCZ">
+            <objects>
+                <viewController id="qDv-K7-cHH" customClass="GraficoViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q4f-nB-hbk"/>
+                        <viewControllerLayoutGuide type="bottom" id="14y-Hs-Y9K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zmR-da-6Xv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gráfico" image="pie_chart" id="ma6-dk-5vZ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pvM-w5-cKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="571" y="1093"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="andre" width="46" height="46"/>
         <image name="ic_settings_48px-128" width="128" height="128"/>
         <image name="icone home" width="55" height="52"/>
         <image name="money" width="586" height="586"/>
+        <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sQ1-Os-lJ1"/>
+        <segue reference="Tk9-hb-F6y"/>
         <segue reference="NL6-cS-gUU"/>
+        <segue reference="sQ1-Os-lJ1"/>
         <segue reference="xsX-Mx-VU8"/>
-        <segue reference="Lpn-go-2ch"/>
-        <segue reference="nGk-Nr-gbT"/>
         <segue reference="QRM-YM-FfM"/>
     </inferredMetricsTieBreakers>
 </document>
