@@ -133,25 +133,20 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     @IBAction func gasteiAction(sender: AnyObject) {
-        /* if(valor.text! == "nil" || valor.text!.isEmpty) {
-        
-        let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
-        let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-        alert.addAction(alertAction)
-        self.presentViewController(alert, animated: true, completion: nil)
-        }*/
-        //else {
-        
-        
-        base.usuarioLogado?.addGasto(Gasto(nome: nomeGasto.text!, categoria: categoria.text!, valor: Int(valor.text!)!, data: dateLabel.text!))
-        
-        performSegueWithIdentifier("GastoToMain", sender: self)
-        
-        
-        //}
+        if(valor.text! == "nil" || valor.text!.isEmpty) {
+            let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(alertAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else {
+            base.usuarioLogado?.addGasto(Gasto(nome: nomeGasto.text!, categoria: categoria.text!, valor: Int(valor.text!)!, data: dateLabel.text!))
+            
+            performSegueWithIdentifier("GastoToMain", sender: self)
+        }
     }
     
-    @IBAction func Add(sender: UIButton) {
+    func Add(sender: UIButton) {
         
     }
     
