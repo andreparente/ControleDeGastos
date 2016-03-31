@@ -531,11 +531,11 @@
         <image name="money" width="586" height="586"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NL6-cS-gUU"/>
-        <segue reference="xcU-Pe-Xfo"/>
-        <segue reference="nGk-Nr-gbT"/>
-        <segue reference="Lpn-go-2ch"/>
-        <segue reference="QRM-YM-FfM"/>
         <segue reference="949-Ae-jnM"/>
+        <segue reference="Lpn-go-2ch"/>
+        <segue reference="NL6-cS-gUU"/>
+        <segue reference="sQ1-Os-lJ1"/>
+        <segue reference="QRM-YM-FfM"/>
+        <segue reference="nGk-Nr-gbT"/>
     </inferredMetricsTieBreakers>
 </document>
