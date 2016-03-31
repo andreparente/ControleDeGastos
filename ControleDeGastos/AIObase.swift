@@ -11,18 +11,22 @@ public var base = AIO()
 public var hasLaunchedOnce = Bool()
 
 public class AIO {
+    // separadores de texto da base
     internal let objectSeparator = "\n +++ \n"
     internal let attributeSeparator = " - \n"
     internal let arraySeparator = " && "
     
     // se der erro, tem que criar essas pastas na mao
-    internal let dir = NSString(string: "/Users/Shared/app/app-gastos")
+    internal let dir = "/Users/Shared/app/app-gastos"
     
-    internal let file_usuarios = "usuarios.aio"
-    internal let file_ultimoUsuario = "ultimoUsuario.aio"
-    internal let file_gastos = "gastos.aio"
-    internal let file_cartoes = "cartoes.aio"
+    // formato padrao dos nomes dos arquivos da base
+    internal let file_usuarios = "usuarios"
+    internal let file_ultimoUsuario = "ultimoUsuario"
+    internal let file_gastos = "gastos"
+    internal let file_cartoes = "cartoes"
+    internal let file_format = "aio"
     
+    // variaveis utilizaveis externamente
     var usuarioLogado: Usuario?
     var listaUsuarios = [Usuario]()
     
@@ -30,8 +34,9 @@ public class AIO {
     func carregarBaseDeDados() { // a ordem do load nao pode ser alterada
         carregarUsuariosSemObjetos()
         hasLaunchedOnce = base.carregarUltimoUsuario()
-        carregarCartoes()
-        carregarGastos()
+        if (hasLaunchedOnce) {
+            login(self.usuarioLogado!)
+        }
     }
     
     // rodar antes de fechar o app ou antes de desloggar um usuario
@@ -46,7 +51,23 @@ public class AIO {
             print("salvando usuario ", usuario.email)
             salvarUsuario(usuario)
         }
-        salvarUltimoUsuario((self.usuarioLogado)!)
+        salvarUltimoUsuario(self.usuarioLogado!)
+    }
+    
+    func login (usuario: Usuario) {
+        usuarioLogado = usuario
+        carregarCartoes(self.usuarioLogado!)
+        carregarGastos(self.usuarioLogado!)
+    }
+    
+    func logout () {
+        for cartao in (usuarioLogado!.getCartoes()) {
+            salvarCartao(cartao, usuario: usuarioLogado!)
+        }
+        for gasto in (usuarioLogado?.getGastos())!{
+            salvarGasto(gasto, usuario: usuarioLogado!)
+        }
+        usuarioLogado = nil
     }
     
     func salvarCartao (cartao: Cartao, usuario: Usuario) {
@@ -64,8 +85,7 @@ public class AIO {
     // formato:     nome \n email \n senha \n categorias
     internal func carregarUsuariosSemObjetos () {
         let file = file_usuarios
-        
-        let path = self.dir.stringByAppendingPathComponent(file)
+        let path = dir + "/" + file + "." + file_format
         
         //reading
         do {
@@ -88,16 +108,16 @@ public class AIO {
                 listaUsuarios.append(novoUsuario)
             }
         } catch {
-            print ("erro na leitura do arquivo \(file)")
+            print ("erro na leitura do arquivo \(path)")
         }
         
     }
     
-    // formato:     nome \n limite \n cor \n emailUsuario
-    internal func carregarCartoes () {
+    // formato:     nome \n limite \n cor
+    internal func carregarCartoes (usuario: Usuario) {
         let file = file_cartoes
-        
-        let path = self.dir.stringByAppendingPathComponent(file)
+        //let path = self.dir.stringByAppendingPathComponent(file)
+        let path = dir + "/" + file + "-" + usuario.email + "." + file_format
         
         //reading
         do {
@@ -108,24 +128,23 @@ public class AIO {
             
             //print ("Li do arquivo \(file) a string:\n\(text)")
             
-            for entry in entries {
-                let attributes = entry.componentsSeparatedByString(attributeSeparator)
+            for var i in 0..<entries.count-1 {
+                let attributes = entries[i].componentsSeparatedByString(attributeSeparator)
                 let novoCartao = Cartao(nome: attributes[0], limite: Int(attributes[1])!, cor: Int(attributes[2])!)
-                let indUsuario = indiceUsuarioPorEmail(attributes[3])
+                let indUsuario = indiceUsuarioPorEmail(usuario.email)
                 
                 // adiciona o cartao ao seu respectivo usuario
                 listaUsuarios[indUsuario].addCartao(novoCartao)
             }
         } catch {
-            print ("erro na leitura do arquivo \(file)")
+            print ("erro na leitura do arquivo \(path)")
         }
     }
     
-    // formato:     nome \n limite \n cor \n emailUsuario
+    // formato:     nome \n limite \n cor
     internal func adicionarCartao (cartao: Cartao, usuario: Usuario) {
         let file = file_cartoes
-        
-        let path = self.dir.stringByAppendingPathComponent(file)
+        let path = dir + "/" + file + "-" + usuario.email + "." + file_format
         
         var textoAntesDoSave = ""
         
@@ -133,7 +152,7 @@ public class AIO {
         do {
             textoAntesDoSave = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
         } catch {
-            print ("erro na leitura do arquivo \(file)")
+            print ("erro na leitura do arquivo \(path)")
         }
         
         //writing
@@ -144,8 +163,7 @@ public class AIO {
             // adiciona a nova entrada
             var newEntrie = "\(cartao.nome)\(attributeSeparator)"
             newEntrie += "\(cartao.limite)\(attributeSeparator)"
-            newEntrie += "\(cartao.cor)\(attributeSeparator)"
-            newEntrie += "\(usuario.email)\(objectSeparator)"
+            newEntrie += "\(cartao.cor)\(objectSeparator)"
             
             entries += newEntrie
             
@@ -158,12 +176,11 @@ public class AIO {
     
     
     // possiveis formatos:
-    // "nome \n categoria \n valor \n data \n emailUsuario \n nomeCartao"
-    // "nome \n categoria \n valor \n data \n emailUsuario"
-    internal func carregarGastos () {
+    // "nome \n categoria \n valor \n data \n nomeCartao"
+    // "nome \n categoria \n valor \n data "
+    internal func carregarGastos (usuario: Usuario) {
         let file = file_gastos
-        
-        let path = self.dir.stringByAppendingPathComponent(file)
+        let path = dir + "/" + file + "-" + usuario.email + "." + file_format
         
         //reading
         do {
@@ -174,14 +191,14 @@ public class AIO {
             
             //print ("Li do arquivo \(file) a string:\n\(text)")
             
-            for entry in entries {
-                let attributes = entry.componentsSeparatedByString(attributeSeparator)
+            for var i in 0..<entries.count-1 {
+                let attributes = entries[i].componentsSeparatedByString(attributeSeparator)
                 let numParametros = attributes.count
                 let novoGasto = Gasto(nome: attributes[0], categoria: attributes[1], valor: Int(attributes[2])!, data: attributes[3])
                 
-                let indUsuario = indiceUsuarioPorEmail(attributes[4])
-                if (numParametros == 6) { // quando possui cartao, adiciona o cartao
-                    let indCartao = listaUsuarios[indUsuario].getCartaoIndex(attributes[5])
+                let indUsuario = indiceUsuarioPorEmail(usuario.email)
+                if (numParametros == 5) { // quando possui cartao, adiciona o cartao
+                    let indCartao = listaUsuarios[indUsuario].getCartaoIndex(attributes[4])
                     if (indCartao != -1) {
                         novoGasto.cartao = listaUsuarios[indUsuario].cartoes[indCartao]
                     }
@@ -192,17 +209,16 @@ public class AIO {
             }
             
         } catch {
-            print ("erro na leitura do arquivo \(file)")
+            print ("erro na leitura do arquivo \(path)")
         }
     }
     
     // possiveis formatos:
-    // "nome \n categoria \n valor \n data \n emailUsuario \n nomeCartao"
-    // "nome \n categoria \n valor \n data \n emailUsuario"
+    // "nome \n categoria \n valor \n data \n nomeCartao"
+    // "nome \n categoria \n valor \n data "
     internal func adicionarGasto (gasto: Gasto, usuario: Usuario) {
         let file = file_gastos
-        
-        let path = self.dir.stringByAppendingPathComponent(file)
+        let path = dir + "/" + file + "-" + usuario.email + "." + file_format
         
         var textoAntesDoSave = ""
         
@@ -210,7 +226,7 @@ public class AIO {
         do {
             textoAntesDoSave = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
         } catch {
-            print ("erro na leitura do arquivo \(file)")
+            print ("erro na leitura do arquivo \(path)")
         }
         
         //writing
@@ -222,8 +238,7 @@ public class AIO {
             var newEntrie = "\(gasto.nome)\(attributeSeparator)"
             newEntrie += "\(gasto.categoria)\(attributeSeparator)"
             newEntrie += "\(gasto.valor)\(attributeSeparator)"
-            newEntrie += "\(gasto.data)\(attributeSeparator)"
-            newEntrie += "\(usuario.email)"
+            newEntrie += "\(gasto.data)"
             if !gasto.ehDinheiro { // se tiver cartao, escreve o cartao
                 newEntrie += "\(attributeSeparator)\(gasto.cartao?.nome)"
             }
@@ -240,8 +255,7 @@ public class AIO {
     
     internal func adicionarUsuario (usuario: Usuario) {
         let file = file_usuarios
-        
-        let path = self.dir.stringByAppendingPathComponent(file)
+        let path = dir + "/" + file + "." + file_format
         
         var textoAntesDoSave = ""
         
@@ -249,7 +263,7 @@ public class AIO {
         do {
             textoAntesDoSave = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
         } catch {
-            print ("erro na leitura do arquivo \(file)")
+            print ("erro na leitura do arquivo \(path)")
         }
         
         //writing
@@ -283,10 +297,9 @@ public class AIO {
     
     internal func carregarEmailUltimoUsuario () -> String {
         let file = file_ultimoUsuario
+        let path = dir + "/" + file + "." + file_format
         
         var email = ""
-        
-        let path = self.dir.stringByAppendingPathComponent(file)
         
         //reading
         do {
@@ -294,7 +307,7 @@ public class AIO {
             //print ("Li do arquivo \(file) a string:\n\(text)")
             email = String(text)
         } catch {
-            print ("erro na leitura do arquivo \(file)")
+            print ("erro na leitura do arquivo \(path)")
             //print ("error \(error)")
         }
         
@@ -303,8 +316,7 @@ public class AIO {
     
     func salvarUltimoUsuario (usuario: Usuario) -> Bool {
         let file = file_ultimoUsuario
-        
-        let path = self.dir.stringByAppendingPathComponent(file)
+        let path = dir + "/" + file + "." + file_format
         
         //writing
         let text = usuario.email

@@ -133,15 +133,38 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     @IBAction func gasteiAction(sender: AnyObject) {
-        if(valor.text! == "nil" || valor.text!.isEmpty) {
+        let nome = nomeGasto.text
+        let categoria = self.categoria.text
+        let valor = Int(self.valor.text!)
+        let data = dateLabel.text
+        
+        if(valor == nil) {
             let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
-        }
-        else {
-            base.usuarioLogado?.addGasto(Gasto(nome: nomeGasto.text!, categoria: categoria.text!, valor: Int(valor.text!)!, data: dateLabel.text!))
-            
+        } else if(data == nil || data!.isEmpty) {
+            let alert = UIAlertController(title: "Warning", message: "Você não preencheu a data", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(alertAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if(nome == nil || nome!.isEmpty) {
+            let alert = UIAlertController(title: "Warning", message: "Você não preencheu o nome", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(alertAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if(categoria == nil || categoria!.isEmpty) {
+            let alert = UIAlertController(title: "Warning", message: "Você não preencheu a categoria", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(alertAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            let gasto = Gasto(nome: nome!, categoria: categoria!, valor: valor!, data: data!)
+            // adiciona na RAM
+            base.usuarioLogado?.addGasto(gasto)
+            // adiciona no disco
+            base.salvarGasto(gasto, usuario: base.usuarioLogado!)
+            // faz o segue
             performSegueWithIdentifier("GastoToMain", sender: self)
         }
     }

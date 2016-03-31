@@ -71,7 +71,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
             let dataEntry = ChartDataEntry(value: values[i]!, xIndex: i)
             dataEntries.append(dataEntry)
         }
-        print(dataEntries)
+        //print(dataEntries)
         //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         
