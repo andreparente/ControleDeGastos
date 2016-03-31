@@ -16,7 +16,7 @@ func isValidEmail(testStr:String) -> Bool {
 }
 
 class LoginViewController: UIViewController,UITextFieldDelegate {
-
+    
     @IBOutlet weak var erroemail: UILabel!
     @IBOutlet weak var errocampovazio: UILabel!
     @IBOutlet weak var nome: UITextField!
@@ -26,7 +26,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("carregou a view Login")
         nome.placeholder="Nome"
         nome.delegate = self
         mail.placeholder="Email"
@@ -38,9 +37,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         errocampovazio.text="Todos os campos são obrigatórios"
         erroemail.hidden=true
         erroemail.text="Email inválido"
-            
-            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-            view.addGestureRecognizer(tap)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         
     }
     
@@ -61,7 +60,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             {
                 erroemail.hidden=true
                 usuarioAux = Usuario(nome: nome.text!,email: mail.text!,senha: senha.text!)
-                base.usuarioLogado = usuarioAux
+                base.usuarioLogado = usuarioAux!
                 performSegueWithIdentifier("LoginToMain", sender: self)
             }
         }
@@ -82,7 +81,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         view.endEditing(true)
         return true

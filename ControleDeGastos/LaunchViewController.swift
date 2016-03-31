@@ -17,7 +17,6 @@ class LaunchViewController: UIViewController {
         print (hasLaunchedOnce, destino)
         dispatch_async(dispatch_get_main_queue()) {
             self.performSegueWithIdentifier(destino, sender: self)
-
         }
     }
     

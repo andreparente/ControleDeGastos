@@ -36,7 +36,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         }
         else {
         
-            gastos = (base.usuarioLogado?.gastos)!
+            gastos = (base.usuarioLogado?.gastos)
             
             for var i in 0..<gastos.count {
                 valoresGastos[i] = Double(gastos[i].valor)
@@ -110,7 +110,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         }
         else {
             
-            gastos = (base.usuarioLogado?.gastos)!
+            gastos = (base.usuarioLogado?.gastos)
             
             for var i in 0..<gastos.count {
                 valoresGastos[i] = Double(gastos[i].valor)

@@ -107,7 +107,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoria.text = base.usuarioLogado?.categoriasGastos[row]
+        categoria.text = base.usuarioLogado!.categoriasGastos[row]
         categoriaPickerView.hidden = true
     }
     

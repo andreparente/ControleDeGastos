@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print ("login feito com o usuario \(base.usuarioLogado!.nome), de email \(base.usuarioLogado!.email)")
         // Do any additional setup after loading the view.
     }
 
