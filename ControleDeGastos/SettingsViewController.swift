@@ -9,7 +9,9 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UINavigationBarDelegate{
+    
     var field:UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
@@ -41,6 +43,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func limite(sender: UIButton) {
         let alert=UIAlertController(title:" Seu limite e:\(base.usuarioLogado!.getLimiteMes())", message: "Mude seu limite abaixo:", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
@@ -53,10 +56,12 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         }))
         self.presentViewController(alert,animated: true, completion: nil)
     }
+    
     func btn_clicked(sender: UIBarButtonItem) {
         // Do something
         performSegueWithIdentifier("SettingsToMain", sender: self)
     }
+    
     @IBAction func categoria(sender: UIButton) {
         let alert=UIAlertController(title:"Categoria", message: "Insira uma nova categoria abaixo", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
@@ -77,12 +82,15 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         }))
         self.presentViewController(alert,animated: true, completion: nil)
     }
+    
     @IBAction func mudaremail(sender: UIButton) {
     }
+    
     @IBAction func logOut(sender: UIButton) {
         base.usuarioLogado=nil
         performSegueWithIdentifier("SettingsToLogin", sender: self)
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "SettingsToMain" {

@@ -52,8 +52,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         
-        
-        
         calendar.components([.Day , .Month , .Year], fromDate: dataNs)
         
         super.viewDidLoad()
@@ -65,8 +63,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         valor.delegate = self
         categoria.inputView = categoriaPickerView
         
-        
-        
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         if valortotal != nil
@@ -75,8 +71,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         }
         valor.keyboardType = .NumberPad
         dateLabel.text = data
-        // Do any additional setup after loading the view.
-        
     }
     
     func dismissKeyboard() {
@@ -97,7 +91,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             vc.selectedIndex = 1
             
         }
-        
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -134,13 +127,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     @IBAction func datePickerChanged(sender: AnyObject) {
-        
         dataNs = date.date
         data = dateFormatter.stringFromDate(dataNs)
         dateLabel.text = data
-        
     }
-    
     
     @IBAction func gasteiAction(sender: AnyObject) {
         /* if(valor.text! == "nil" || valor.text!.isEmpty) {
@@ -161,12 +151,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         //}
     }
     
-    
-    
     @IBAction func Add(sender: UIButton) {
         
     }
-    
-    
     
 }

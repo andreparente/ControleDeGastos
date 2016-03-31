@@ -10,7 +10,6 @@ import Charts
 
 class GraficoViewController: UIViewController,ChartViewDelegate {
     
-    
     // AQUI ELE CRIA A VIEW PRO GRAFICO
     let chartView = PieChartView(frame: CGRectMake(0, screenSize.height/6, screenSize.width, screenSize.height/2))
     let totalLabel = UILabel(frame: CGRectMake(0, screenSize.height-(screenSize.height/3), screenSize.width,40))
@@ -28,9 +27,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         view.addSubview(limiteLabel)
         printaLimite(base.usuarioLogado!)
         chartView.animate(xAxisDuration: 1)
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
     }
     
     //Funcao para organizar o grafico
@@ -66,7 +62,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         }
     }
     
-    
     //FUNCAO QUE SETTA TODO O GRAFICO
     func setChart(dataPoints: [String], values: [Double?]) {
         chartView.descriptionText = "Resumo"
@@ -86,7 +81,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         
         chartDataSet.colors = ChartColorTemplates.liberty()
         
-        
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
         chartView.data = chartData
         
@@ -94,7 +88,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     }
     
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
-    
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         print("\(entry.value) in \(base.usuarioLogado?.categoriasGastos[entry.xIndex])")
     }
@@ -123,9 +116,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
             setChart((base.usuarioLogado?.categoriasGastos)!, values: vetor)
             totalLabel.text = "Total: R$"+String(total)
         }
-        
     }
-    
-    
 }
 

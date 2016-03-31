@@ -25,6 +25,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
     var contglobal=0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         messageLabel.text="No QR code is detected"
@@ -60,8 +61,10 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     // MARK: - Identifica QRCode
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+        
         //Ve se o array não é nil e se tem pelo menos um objeto.
         if metadataObjects == nil || metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRectZero
@@ -103,6 +106,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         var data:[String]!=[""]
         var valoremhexa:String! = ""
         var datafinal:String!
+        
         for  j in 0...i
         {
             //Quando encontrar vN entra no if.O if insere o valor em um array de string
@@ -161,9 +165,6 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         }
         return (valorfinalmutavel,datafinal)
     }
-    
-    
-    
     
     func hexStringtoAscii(hexString : String) -> String {
         

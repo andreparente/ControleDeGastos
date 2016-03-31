@@ -57,24 +57,20 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         if ((mail.text!.isEmpty) || senha.text!.isEmpty)
         {
             errocampovazio.hidden=false
+            return
         }
-        else
+        errocampovazio.hidden=true
+        if isValidEmail(mail.text!) == false
         {
-            errocampovazio.hidden=true
-            if isValidEmail(mail.text!) == false
-            {
-                erroemail.hidden=false
-            }
-            else
-            {
-                erroemail.hidden=true
-                
-                usuarioAux = Usuario(nome: "Oi",email: mail.text!,senha: senha.text!)
-                base.usuarioLogado = usuarioAux
-                
-                performSegueWithIdentifier("LoginToMain", sender: self)
-            }
+            erroemail.hidden=false
+            return
         }
+        erroemail.hidden=true
+        
+        usuarioAux = Usuario(nome: "Oi",email: mail.text!,senha: senha.text!)
+        base.usuarioLogado = usuarioAux
+        
+        performSegueWithIdentifier("LoginToMain", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -83,9 +79,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             
             let vc = segue.destinationViewController as! UITabBarController
             vc.selectedIndex = 1
-            
         }
-        
     }
     
     func dismissKeyboard() {

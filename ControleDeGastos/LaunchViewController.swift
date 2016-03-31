@@ -31,11 +31,8 @@ class LaunchViewController: UIViewController {
             
             let vc = segue.destinationViewController as! UITabBarController
             vc.selectedIndex = 1
-            
         }
-        
     }
-    
     
     /*
     // MARK: - Navigation

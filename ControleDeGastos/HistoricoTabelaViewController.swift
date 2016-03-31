@@ -15,18 +15,14 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-        // Do any additional setup after loading the view.
-        
         
         tableView.frame = CGRectMake(0,screenSize.minY+22,screenSize.width,screenSize.height)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         
-        
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
-        
     }
     
     //funçao que diz a quantidade de células
@@ -38,7 +34,6 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
             return 1
         }
     }
-    
     
     //funçao que seta as células
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -61,16 +56,12 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
             cell.textLabel?.center = cell.center
             cell.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
             return cell
-            
         }
-        
     }
     
     //funçao que é chamada ao clicar em determinada célula
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         print("You selected cell #\(indexPath.row)!")
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,10 +71,8 @@ class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITab
     
     
     override func viewWillAppear(animated: Bool) {
-        print("ViewWillAppear eh chamada sempre")
-        
+        //print("ViewWillAppear eh chamada sempre")
     }
-    
     
     /*
     // MARK: - Navigation

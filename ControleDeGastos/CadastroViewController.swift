@@ -69,10 +69,12 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func btn_clicked(sender: UIBarButtonItem) {
         // Do something
         performSegueWithIdentifier("CadastroToLogin", sender: self)
     }
+    
     @IBAction func confirma(sender: UIButton) {
         let name=nome.text
         let mailsalvo=Email.text
@@ -122,10 +124,12 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         
         performSegueWithIdentifier("CadastroToLogin", sender: self)
     }
+    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         view.endEditing(true)
         return true

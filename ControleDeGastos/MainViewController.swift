@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var limite: UILabel!
     @IBOutlet weak var totalgastos: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("login feito com o usuario \(base.usuarioLogado!.nome), de email \(base.usuarioLogado!.email)")
@@ -32,6 +33,7 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func printaLimite(usuario: Usuario) {
         if(usuario.limiteMes == 0) {
             limite.text = "Você não disponibilizou o limite por mês"
