@@ -18,7 +18,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     var total = 0.0
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         chartView.delegate = self
@@ -52,7 +51,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
             limiteLabel.text = "Você não disponibilizou o limite por mês"
         }
         else {
-            
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "You need to enter some data"
             chartView.delegate = self
@@ -70,9 +68,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         
         //ESSE FOR PREENCHE O VETOR DE ENTRADA DE DADOS, PRA CADA INDEX,
         for i in 0..<values.count {
-            
             let dataEntry = ChartDataEntry(value: values[i]!, xIndex: i)
-            
             dataEntries.append(dataEntry)
         }
         print(dataEntries)
@@ -83,8 +79,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
         chartView.data = chartData
-        
-        
     }
     
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
@@ -106,9 +100,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
             
         }
         else {
-            
             for gasto in base.usuarioLogado!.gastos {
-                
                 total = total+Double(gasto.valor)
             }
             var vetor: [Double?]
