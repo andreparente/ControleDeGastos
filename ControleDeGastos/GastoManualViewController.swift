@@ -173,9 +173,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         let nome = nomeGasto.text
         let categoria = self.categoria.text
         let valorgasto = Double(valor.text!)?.roundToPlaces(2)
-        print(valorgasto!)
         let data = dateLabel.text
-        
+        // nao pode usar variavel sem verificar se eh nil antes
         if(valorgasto == nil) {
             let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)

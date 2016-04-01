@@ -115,7 +115,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         // realizando o cadastro:
         let usuario = Usuario(nome: name!, email: mailsalvo!, senha: senhasalva!)
         // adiciona usuario na lista de usuarios da RAM
-        base.listaUsuarios.append(usuario)
+        base.ramUsuarios.append(usuario)
         // adiciona usuario na lista de usuarios do disco
         base.adicionarUsuario(usuario)
         // adiciona o usuario na entrada ultimoUsuario da base

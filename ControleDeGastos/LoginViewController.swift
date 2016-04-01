@@ -85,13 +85,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         erroemail.hidden=true
         errocadastro.hidden=true
         // senha valida
-        if base.listaUsuarios[indUsuario].senha != senha.text! {
+        if base.ramUsuarios[indUsuario].senha != senha.text! {
             errosenhas.hidden=false
             return
         }
         
         // faz o login
-        let usuario = base.listaUsuarios[indUsuario]
+        let usuario = base.ramUsuarios[indUsuario]
         base.login(usuario)
         
         // faz o segue

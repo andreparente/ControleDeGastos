@@ -28,7 +28,7 @@ public class AIO {
     
     // variaveis utilizaveis externamente
     var usuarioLogado: Usuario?
-    var listaUsuarios = [Usuario]()
+    var ramUsuarios = [Usuario]()
     
     // rodar assim que o app for iniciado
     func carregarBaseDeDados() { // a ordem do load nao pode ser alterada
@@ -47,7 +47,7 @@ public class AIO {
         for gasto in (usuarioLogado?.getGastos())!{
             salvarGasto(gasto, usuario: usuarioLogado!)
         }
-        for usuario in self.listaUsuarios {
+        for usuario in self.ramUsuarios {
             print("salvando usuario ", usuario.email)
             salvarUsuario(usuario)
         }
@@ -67,6 +67,7 @@ public class AIO {
         for gasto in (usuarioLogado?.getGastos())!{
             salvarGasto(gasto, usuario: usuarioLogado!)
         }
+        salvarUltimoUsuario(usuarioLogado!)
         usuarioLogado = nil
     }
     
@@ -105,7 +106,7 @@ public class AIO {
                     novoUsuario.addCategoriaGasto(categ)
                 }
                 // adiciona o novo usuario ao array de usuarios
-                listaUsuarios.append(novoUsuario)
+                ramUsuarios.append(novoUsuario)
             }
         } catch {
             print ("erro na leitura do arquivo \(path)")
@@ -134,7 +135,7 @@ public class AIO {
                 let indUsuario = indiceUsuarioPorEmail(usuario.email)
                 
                 // adiciona o cartao ao seu respectivo usuario
-                listaUsuarios[indUsuario].addCartao(novoCartao)
+                ramUsuarios[indUsuario].addCartao(novoCartao)
             }
         } catch {
             print ("erro na leitura do arquivo \(path)")
@@ -198,16 +199,16 @@ public class AIO {
                 
                 let indUsuario = indiceUsuarioPorEmail(usuario.email)
                 if (numParametros == 5) { // quando possui cartao, adiciona o cartao
-                    let indCartao = listaUsuarios[indUsuario].getCartaoIndex(attributes[4])
+                    let indCartao = ramUsuarios[indUsuario].getCartaoIndex(attributes[4])
                     if (indCartao != -1) {
-                        novoGasto.cartao = listaUsuarios[indUsuario].cartoes[indCartao]
+                        novoGasto.cartao = ramUsuarios[indUsuario].cartoes[indCartao]
                     }
                 }
                 
                 // adiciona o gasto ao seu respectivo usuario
-                listaUsuarios[indUsuario].addGasto(novoGasto)
+                ramUsuarios[indUsuario].addGasto(novoGasto)
             }
-            
+        
         } catch {
             print ("erro na leitura do arquivo \(path)")
         }
@@ -379,7 +380,7 @@ public class AIO {
         let i = self.indiceUsuarioPorEmail(email)
         let ok = (i != -1)
         if (ok) {
-            self.usuarioLogado = self.listaUsuarios[i]
+            self.usuarioLogado = self.ramUsuarios[i]
         }
         return ok
     }
@@ -387,8 +388,8 @@ public class AIO {
     // encontra o usuario pelo email
     func indiceUsuarioPorEmail (email: String) -> Int {
         var indice = -1
-        for (var i=0; i<listaUsuarios.count; i += 1) {
-            if listaUsuarios[i].email == email {
+        for (var i=0; i<ramUsuarios.count; i += 1) {
+            if ramUsuarios[i].email == email {
                 indice = i
                 break
             }
