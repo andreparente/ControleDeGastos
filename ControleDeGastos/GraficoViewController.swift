@@ -8,24 +8,43 @@
 import UIKit
 import Charts
 
-class GraficoViewController: UIViewController,ChartViewDelegate {
+class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDelegate {
     
     // AQUI ELE CRIA A VIEW PRO GRAFICO
-    let chartView = PieChartView(frame: CGRectMake(0, screenSize.height/6, screenSize.width, screenSize.height/2))
-    let totalLabel = UILabel(frame: CGRectMake(0, screenSize.height-(screenSize.height/3), screenSize.width,40))
-    let limiteLabel = UILabel(frame: CGRectMake(0, screenSize.height-(screenSize.height/3)+50, screenSize.width,40))
+    @IBOutlet weak var chartView: PieChartView!
+    
+    @IBOutlet weak var dataMesTextField: UITextField!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var limiteLabel: UILabel!
+    @IBOutlet weak var dataMesDatePicker: UIDatePicker!
+    
     var gastos: [Gasto]!
     var total = 0.0
+    var dataNs = NSDate()
+    var dateFormatter = NSDateFormatter()
+    let calendar = NSCalendar.currentCalendar()
+    var dataString: String!
+    var vetorFinal: [Double?] = []
+    var vetorGastosMes: [Gasto?] = []
+    var vetorFinalCatMes: [String?] = []
+    var vetorFinalGastosMes: [Double?] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-        chartView.delegate = self
-        view.addSubview(chartView)
-        view.addSubview(totalLabel)
-        view.addSubview(limiteLabel)
+        dataMesTextField.delegate = self
+        dataMesDatePicker.hidden = true
+        dataMesTextField.inputView = dataMesDatePicker
         printaLimite(base.usuarioLogado!)
-        chartView.animate(xAxisDuration: 1)
+        dateFormatter.dateFormat = "yyyy-MM"
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+
+        
+        calendar.components([.Year , .Month], fromDate: dataNs)
+        chartView.delegate = self
+        chartView.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+
     }
     
     //Funcao para organizar o grafico
@@ -45,6 +64,41 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
         return vetValAux
     }
     
+    func organizaVetoresMes(usuario: Usuario, gastosMes: [Gasto?]) -> ([Double?],[String?]) {
+        
+        
+        var cont = 0
+        var i = 0
+        var vetCatAux: [String?] = []
+        
+        for i in 0..<gastosMes.count {
+            for categorias in usuario.categoriasGastos {
+                if(gastosMes[i]!.categoria == categorias) {
+                    vetCatAux.append(categorias)
+                    cont++
+                }
+            }
+        }
+        
+        var vetValAux = [Double?](count: cont,repeatedValue: nil)
+        
+        for i in 0..<vetValAux.count {
+            vetValAux[i] = 0
+        }
+        
+        for i in 0..<vetCatAux.count {
+            for valGasto in gastosMes {
+                if(valGasto!.categoria == usuario.categoriasGastos[i]) {
+                    vetValAux[i] = vetValAux[i]! + Double(valGasto!.valor)
+                }
+            }
+        }
+        return (vetValAux,vetCatAux)
+        
+        
+        
+    }
+    
     //FUNCAO QUE PRINTA LIMITE
     func printaLimite(usuario: Usuario) {
         if(usuario.limiteMes == 0) {
@@ -55,13 +109,12 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
             chartView.noDataText = "You need to enter some data"
             chartView.delegate = self
             chartView.animate(xAxisDuration: 1)
-            view.addSubview(chartView)
             limiteLabel.text = "Seu limite é \(usuario.limiteMes)"
         }
     }
     
     //FUNCAO QUE SETTA TODO O GRAFICO
-    func setChart(dataPoints: [String], values: [Double?]) {
+    func setChart(dataPoints: [String?], values: [Double?]) {
         chartView.descriptionText = "Resumo"
         
         var dataEntries: [ChartDataEntry] = []
@@ -71,7 +124,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
             let dataEntry = ChartDataEntry(value: values[i]!, xIndex: i)
             dataEntries.append(dataEntry)
         }
-        //print(dataEntries)
+
         //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         
@@ -84,6 +137,17 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         print("\(entry.value) in \(base.usuarioLogado?.categoriasGastos[entry.xIndex])")
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if(textField.placeholder == "Escolha o mês e ano") {
+            dataMesDatePicker.hidden = false
+            return false
+        }
+        else {
+            dataMesDatePicker.hidden = true
+        }
+        return true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -103,11 +167,26 @@ class GraficoViewController: UIViewController,ChartViewDelegate {
             for gasto in base.usuarioLogado!.gastos {
                 total = total+Double(gasto.valor)
             }
-            var vetor: [Double?]
-            vetor = organizaVetores(base.usuarioLogado!)
-            setChart((base.usuarioLogado?.categoriasGastos)!, values: vetor)
+            vetorFinal = organizaVetores(base.usuarioLogado!)
+            setChart((base.usuarioLogado!.categoriasGastos), values: vetorFinal)
             totalLabel.text = "Total: R$"+String(total)
         }
     }
+    
+    @IBAction func DatePickerChanged(sender: AnyObject) {
+        
+
+        
+        dataString = dateFormatter.stringFromDate(dataNs)
+        print("dataString: ", dataString)
+        dataMesTextField.text = dataString
+        vetorGastosMes = (base.usuarioLogado?.getGastosMês(dataString))!
+        print("vetor final: ", vetorGastosMes)
+        (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
+        print("vetor final depois do organizaVetores: ")
+        setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
+        
+    }
+    
 }
 

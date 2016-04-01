@@ -19,7 +19,7 @@ public class Usuario {
     var limiteMes = 0
     var cartoes = [Cartao]()
     var gastos = [Gasto]()
-    var categoriasGastos = [String]()
+    var categoriasGastos = [String?]()
 
     init(){}
     
@@ -34,7 +34,7 @@ public class Usuario {
         self.categoriasGastos.append(categ)
     }
 
-    func getCategoriasGastos() -> [String] {
+    func getCategoriasGastos() -> [String?] {
         return self.categoriasGastos
     }
 
@@ -69,6 +69,19 @@ public class Usuario {
     
     func getLimiteMes() -> Int {
         return self.limiteMes
+    }
+    
+    //funçao que retorna o vetor de gastos de um determinado mês (de 01 a 12)
+    func getGastosMês(mesAno: String) -> [Gasto?] {
+        var gastosMes: [Gasto?] = []
+        print("print getgastosMes era pra ser mes e ano só: ", mesAno)
+        for gasto in self.gastos {
+            if gasto.data.rangeOfString(mesAno) != nil {
+                print("\(gasto.data)")
+                gastosMes.append(gasto)
+            }
+        }
+        return gastosMes
     }
 }
 

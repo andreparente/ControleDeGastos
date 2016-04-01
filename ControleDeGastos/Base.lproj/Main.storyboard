@@ -511,14 +511,55 @@
                     <view key="view" contentMode="scaleToFill" id="zmR-da-6Xv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha o mês e ano" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDg-lM-EMw">
+                                <rect key="frame" x="90" y="28" width="188" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-Dh-qqU" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="66" width="335" height="335"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7U-2V-vb1">
+                                <rect key="frame" x="20" y="409" width="169" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-VO-phP">
+                                <rect key="frame" x="20" y="438" width="169" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LwU-ZW-9Ci">
+                                <rect key="frame" x="0.0" y="467" width="375" height="151"/>
+                                <date key="date" timeIntervalSinceReferenceDate="481218274.36300898">
+                                    <!--2016-04-01 15:44:34 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="DatePickerChanged:" destination="qDv-K7-cHH" eventType="valueChanged" id="Kku-nX-Iqq"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Gráfico" image="pie_chart" id="ma6-dk-5vZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="chartView" destination="VZb-Dh-qqU" id="zIZ-Uk-hIQ"/>
+                        <outlet property="data" destination="LwU-ZW-9Ci" id="tf3-ay-u0F"/>
+                        <outlet property="dataMesDatePicker" destination="LwU-ZW-9Ci" id="Ilc-l6-vL3"/>
+                        <outlet property="dataMesTextField" destination="fDg-lM-EMw" id="G4q-1F-6OF"/>
+                        <outlet property="limiteLabel" destination="eXw-VO-phP" id="jIh-8f-Uji"/>
+                        <outlet property="totalLabel" destination="R7U-2V-vb1" id="7Ad-FH-47I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvM-w5-cKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571" y="1093"/>
+            <point key="canvasLocation" x="570.5" y="1092.5"/>
         </scene>
     </scenes>
     <resources>

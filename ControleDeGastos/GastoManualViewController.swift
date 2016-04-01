@@ -45,7 +45,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
         
         // Create two buttons for the navigation item
-                navigationItem.leftBarButtonItem = leftButton
+        navigationItem.leftBarButtonItem = leftButton
         
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
