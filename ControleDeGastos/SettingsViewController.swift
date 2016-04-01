@@ -69,16 +69,22 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
-            print("Text field: \(textField.text)")
+            var naoExiste = true
             for categ in (base.usuarioLogado?.categoriasGastos)!
             {
                 if textField.text == categ {
                     let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
                     alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
                     self.presentViewController(alert2,animated: true, completion: nil)
-                } else {
-                    base.usuarioLogado?.addCategoriaGasto(textField.text!)
+                    naoExiste = false
                 }
+            }
+            if (naoExiste)
+            {
+                // adiciona na RAM
+                base.usuarioLogado?.addCategoriaGasto(textField.text!)
+                // adiciona no disco
+                base.editarUsuario(base.usuarioLogado!)
             }
         }))
         self.presentViewController(alert,animated: true, completion: nil)

@@ -163,7 +163,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             if (naoExiste)
             {
                 // adiciona na RAM
-                base.usuarioLogado?.addCategoriaGasto(textField.text!)
+                base.usuarioLogado!.addCategoriaGasto(textField.text!)
                 // adiciona no disco
                 base.editarUsuario(base.usuarioLogado!)
                 self.categoria.text = textField.text

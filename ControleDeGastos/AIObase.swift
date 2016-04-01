@@ -333,8 +333,8 @@ public class AIO {
         let novoUsuario = Usuario(nome: attributes[0], email: attributes[1], senha: attributes[2])
         // adiciona as categorias ao novo usuario
         let categorias = attributes[3].componentsSeparatedByString(arraySeparator)
-        for categ in categorias {
-            novoUsuario.addCategoriaGasto(categ)
+        for (var i = 0; i < categorias.count; i += 1) {
+            novoUsuario.addCategoriaGasto(categorias[i])
         }
         return novoUsuario
     }
