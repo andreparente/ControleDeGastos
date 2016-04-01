@@ -46,7 +46,7 @@ public class AIO {
         base.logout()
         for usuario in self.ramUsuarios {
             print("salvando usuario ", usuario.email)
-            salvarUsuario(usuario)
+            adicionarUsuario(usuario)
         }
     }
     
@@ -76,7 +76,7 @@ public class AIO {
         limInferior = (limInferior > 0) ? limInferior : limSuperior
         for (i=limInferior; i < limSuperior; i += 1) {
             print("inferior: \(limInferior), superior: \(limSuperior)")
-            salvarCartao(usuarioLogado!.getCartoes()[i], usuario: usuarioLogado!)
+            adicionarCartao(usuarioLogado!.getCartoes()[i], usuario: usuarioLogado!)
         }
         
         // salva os gastos que ainda nao foram salvos
@@ -84,7 +84,7 @@ public class AIO {
         limInferior = limSuperior - ramGastosQtd - 1
         limInferior = (limInferior > 0) ? limInferior : limSuperior
         for (i=limInferior; i < limSuperior; i += 1) {
-            salvarGasto(usuarioLogado!.getGastos()[i], usuario: usuarioLogado!)
+            adicionarGasto(usuarioLogado!.getGastos()[i], usuario: usuarioLogado!)
         }
         
         // salva ultimo usuario
@@ -94,18 +94,6 @@ public class AIO {
         ramCartoesQtd = 0
         ramGastosQtd = 0
         usuarioLogado = nil
-    }
-    
-    func salvarCartao (cartao: Cartao, usuario: Usuario) {
-        adicionarCartao(cartao, usuario: usuario)
-    }
-    
-    func salvarGasto (gasto: Gasto, usuario: Usuario) {
-        adicionarGasto(gasto, usuario: usuario)
-    }
-    
-    func salvarUsuario (usuario: Usuario) {
-        self.adicionarUsuario(usuario)
     }
     
     // formato:     nome \n email \n senha \n categorias

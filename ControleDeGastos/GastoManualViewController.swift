@@ -162,8 +162,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             }
             if (self.cont == base.usuarioLogado?.categoriasGastos.count)
             {
+                // adiciona na RAM
                 base.usuarioLogado?.addCategoriaGasto(textField.text!)
+                // adiciona no disco
+                base.editarUsuario(base.usuarioLogado!)
                 self.categoria.text = textField.text
+                // atualiza pickerView
+                self.categoriaPickerView.reloadAllComponents()
             }
         }))
         self.presentViewController(alert,animated: true, completion: nil)
@@ -200,7 +205,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             // adiciona na RAM
             base.usuarioLogado?.addGasto(gasto)
             // adiciona no disco
-            base.salvarGasto(gasto, usuario: base.usuarioLogado!)
+            base.adicionarGasto(gasto, usuario: base.usuarioLogado!)
             // faz o segue
             performSegueWithIdentifier("GastoToMain", sender: self)
         }
