@@ -33,17 +33,17 @@ class MainViewController: UIViewController {
         available = (base.usuarioLogado?.limiteMes)! - valortotal
         if(available >= 100)
         {
-            totaldisponivel.text = "Você ainda tem \(available) para gastar nesse mês"
+            totaldisponivel.text = "Você ainda tem R$ \(available) para gastar nesse mês"
         }
         else
         {
             if (available > 0 && available < 100)
             {
-                totaldisponivel.text = "Atenção!Você só tem mais \(available) para gastar nesse mês"
+                totaldisponivel.text = "Atenção!Você só tem mais R$ \(available) para gastar nesse mês"
             }
             else
             {
-                totaldisponivel.text = "Você estourou seu limite de gastos do mês por \(valortotal - (base.usuarioLogado?.limiteMes)!)"
+                totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valortotal - (base.usuarioLogado?.limiteMes)!)"
             }
         }
             totaldisponivel.hidden=false

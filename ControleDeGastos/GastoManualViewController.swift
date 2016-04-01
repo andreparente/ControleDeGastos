@@ -77,7 +77,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         }
         else
         {
-          dateLabel.text = String(NSDate())
+            let datacrazy = NSDate()
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components([.Day , .Month , .Year], fromDate: datacrazy)
+            dateLabel.text = "\(components.year)-\(components.month)-\(components.day)"
         }
     }
     
@@ -203,5 +206,4 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             performSegueWithIdentifier("GastoToMain", sender: self)
         }
     }
-    
 }
