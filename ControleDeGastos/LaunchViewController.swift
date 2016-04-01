@@ -12,7 +12,7 @@ class LaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // hasLaunchedOnce eh na abertura do app (appDelegate)
+        // hasLaunchedOnce eh definida na abertura do app (appDelegate)
         let destino = hasLaunchedOnce ? "LaunchToMain" : "LaunchToLogin"
         print (hasLaunchedOnce, destino)
         dispatch_async(dispatch_get_main_queue()) {

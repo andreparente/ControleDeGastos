@@ -29,6 +29,8 @@ public class AIO {
     // variaveis utilizaveis externamente
     var usuarioLogado: Usuario?
     var ramUsuarios = [Usuario]()
+    var ramGastosQtd = 0    // numero de gastos que ainda nao foi salvo na base
+    var ramCartoesQtd = 0   // numero de cartoes que ainda nao foi salvo na base
     
     // rodar assim que o app for iniciado
     func carregarBaseDeDados() { // a ordem do load nao pode ser alterada
@@ -39,35 +41,55 @@ public class AIO {
         }
     }
     
-    // rodar antes de fechar o app ou antes de desloggar um usuario
+    // rodar antes de fechar o app
     func salvarBaseDeDados() {
-        for cartao in (usuarioLogado!.getCartoes()) {
-            salvarCartao(cartao, usuario: usuarioLogado!)
-        }
-        for gasto in (usuarioLogado?.getGastos())!{
-            salvarGasto(gasto, usuario: usuarioLogado!)
-        }
+        base.logout()
         for usuario in self.ramUsuarios {
             print("salvando usuario ", usuario.email)
             salvarUsuario(usuario)
         }
-        salvarUltimoUsuario(self.usuarioLogado!)
     }
     
     func login (usuario: Usuario) {
         usuarioLogado = usuario
-        carregarCartoes(self.usuarioLogado!)
-        carregarGastos(self.usuarioLogado!)
+        // se os cartoes ainda nao foram carregados, carrega
+        if (self.usuarioLogado?.getCartoes().count <= 0) {
+            carregarCartoes(self.usuarioLogado!)
+        }
+        // se os gastos ainda nao foram carregados, carrega
+        if (self.usuarioLogado?.getGastos().count <= 0) {
+            carregarGastos(self.usuarioLogado!)
+        }
     }
     
     func logout () {
-        for cartao in (usuarioLogado!.getCartoes()) {
-            salvarCartao(cartao, usuario: usuarioLogado!)
+        var i = 0
+        var limInferior = 0
+        var limSuperior = 0
+        
+        // em teoria esses dois FORs abaixo nunca vao rodar
+        // pq os gastos e cartoes estao sendo salvos diretamente no disco
+        
+        // salva os cartoes que ainda nao foram salvos
+        limSuperior = usuarioLogado!.getCartoes().count
+        limInferior = limSuperior - ramCartoesQtd - 1
+        limInferior = (limInferior > 0) ? limInferior : limSuperior
+        print("inferior: \(limInferior), superior: \(limSuperior)")
+        for (i=limInferior; i < limSuperior; i += 1) {
+            salvarCartao(usuarioLogado!.getCartoes()[i], usuario: usuarioLogado!)
         }
-        for gasto in (usuarioLogado?.getGastos())!{
-            salvarGasto(gasto, usuario: usuarioLogado!)
+        
+        // salva os gastos que ainda nao foram salvos
+        limSuperior = usuarioLogado!.getGastos().count
+        limInferior = limSuperior - ramCartoesQtd - 1
+        limInferior = (limInferior > 0) ? limInferior : limSuperior
+        for (i=limInferior; i < limSuperior; i += 1) {
+            salvarGasto(usuarioLogado!.getGastos()[i], usuario: usuarioLogado!)
         }
+        
+        // salva ultimo usuario
         salvarUltimoUsuario(usuarioLogado!)
+        
         usuarioLogado = nil
     }
     
@@ -162,10 +184,7 @@ public class AIO {
             var entries = textoAntesDoSave
             
             // adiciona a nova entrada
-            var newEntrie = "\(cartao.nome)\(attributeSeparator)"
-            newEntrie += "\(cartao.limite)\(attributeSeparator)"
-            newEntrie += "\(cartao.cor)\(objectSeparator)"
-            
+            var newEntrie = cartaoToString(cartao)
             entries += newEntrie
             
             try entries.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
@@ -236,15 +255,7 @@ public class AIO {
             var entries = textoAntesDoSave
             
             // adiciona a nova entrada
-            var newEntrie = "\(gasto.nome)\(attributeSeparator)"
-            newEntrie += "\(gasto.categoria)\(attributeSeparator)"
-            newEntrie += "\(gasto.valor)\(attributeSeparator)"
-            newEntrie += "\(gasto.data)"
-            if !gasto.ehDinheiro { // se tiver cartao, escreve o cartao
-                newEntrie += "\(attributeSeparator)\(gasto.cartao?.nome)"
-            }
-            newEntrie += "\(objectSeparator)"
-            
+            let newEntrie = gastoToString(gasto)
             entries += newEntrie
             
             try entries.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
@@ -254,6 +265,78 @@ public class AIO {
         }
     }
     
+    // possiveis formatos:
+    // "nome \n categoria \n valor \n data \n nomeCartao"
+    // "nome \n categoria \n valor \n data "
+    func editarGasto (novoGasto: Gasto, usuario: Usuario) {
+        let file = file_gastos
+        let path = dir + "/" + file + "-" + usuario.email + "." + file_format
+        
+        //reading and writing
+        do {
+            let text = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+            let entries = text.componentsSeparatedByString(objectSeparator)
+            var result = ""
+            //print ("Li do arquivo \(file) a string:\n\(text)")
+            
+            for var i in 0..<entries.count-1 {
+                let attributes = entries[i].componentsSeparatedByString(attributeSeparator)
+                let gasto = Gasto(nome: attributes[0], categoria: attributes[1], valor: Int(attributes[2])!, data: attributes[3])
+                
+                // se for o objeto desejado, edita
+                if (novoGasto.nome == gasto.nome && novoGasto.data == gasto.data) {
+                    // edita no disco
+                    result += gastoToString(novoGasto)
+                    // edita na RAM
+                    usuarioLogado?.gastos[i] = novoGasto
+                } else {
+                    result += gastoToString(gasto)
+                }
+            }
+            try result.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+        } catch {
+            print ("erro na leitura do arquivo \(path)")
+        }
+    }
+    
+    // gera uma string que eh a descricao do usuario na base
+    internal func usuarioToString (usuario: Usuario) -> String {
+        var newEntrie = "\(usuario.nome)\(attributeSeparator)"
+        newEntrie += "\(usuario.email)\(attributeSeparator)"
+        newEntrie += "\(usuario.senha)\(attributeSeparator)"
+        let categorias = usuario.getCategoriasGastos()
+        let nCateg = categorias.count
+        if (nCateg > 0) {
+            for i in 0..<(nCateg-1) {
+                newEntrie += "\(categorias[i])\(arraySeparator)"
+            }
+            newEntrie += "\(categorias[nCateg-1])\(attributeSeparator)"
+        }
+        newEntrie += "\(usuario.email)\(objectSeparator)"
+        return newEntrie
+    }
+    
+    // gera uma string que eh a descricao do gasto na base
+    internal func gastoToString (gasto: Gasto) -> String {
+        var newEntrie = "\(gasto.nome)\(attributeSeparator)"
+        newEntrie += "\(gasto.categoria)\(attributeSeparator)"
+        newEntrie += "\(gasto.valor)\(attributeSeparator)"
+        newEntrie += "\(gasto.data)"
+        if !gasto.ehDinheiro { // se tiver cartao, escreve o cartao
+            newEntrie += "\(attributeSeparator)\(gasto.cartao?.nome)"
+        }
+        newEntrie += "\(objectSeparator)"
+        return newEntrie
+    }
+
+    // gera uma string que eh a descricao do cartao na base
+    internal func cartaoToString (cartao: Cartao) -> String {
+        var newEntrie = "\(cartao.nome)\(attributeSeparator)"
+        newEntrie += "\(cartao.limite)\(attributeSeparator)"
+        newEntrie += "\(cartao.cor)\(objectSeparator)"
+        return newEntrie
+    }
+
     internal func adicionarUsuario (usuario: Usuario) {
         let file = file_usuarios
         let path = dir + "/" + file + "." + file_format
@@ -273,19 +356,7 @@ public class AIO {
             var entries = textoAntesDoSave
             
             // adiciona a nova entrada
-            var newEntrie = "\(usuario.nome)\(attributeSeparator)"
-            newEntrie += "\(usuario.email)\(attributeSeparator)"
-            newEntrie += "\(usuario.senha)\(attributeSeparator)"
-            let categorias = usuario.getCategoriasGastos()
-            let nCateg = categorias.count
-            if (nCateg > 0) {
-                for i in 0..<(nCateg-1) {
-                    newEntrie += "\(categorias[i])\(arraySeparator)"
-                }
-                newEntrie += "\(categorias[nCateg-1])\(attributeSeparator)"
-            }
-            newEntrie += "\(usuario.email)\(objectSeparator)"
-            
+            let newEntrie = usuarioToString(usuario)
             entries += newEntrie
             
             try entries.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
@@ -296,7 +367,7 @@ public class AIO {
         
     }
     
-    
+    // ainda nao funciona
     internal func editarUsuario (usuario: Usuario) {
         let file = file_usuarios
         let path = dir + "/" + file + "." + file_format /* ./usuarios.aio */
