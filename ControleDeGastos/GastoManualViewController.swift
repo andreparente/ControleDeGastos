@@ -23,7 +23,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     var dataNs = NSDate()
     var dateFormatter = NSDateFormatter()
     let calendar = NSCalendar.currentCalendar()
-    var cont = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,8 +118,9 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return base.usuarioLogado?.categoriasGastos[row]
+        return (base.usuarioLogado!.categoriasGastos[row])!
     }
+    
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if(textField.placeholder == "Categoria") {
             categoriaPickerView.hidden = false
@@ -150,17 +150,17 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             //print("Text field: \(textField.text!)")
+            var naoExiste = true
             for categ in (base.usuarioLogado?.categoriasGastos)!
             {
                 if textField.text == categ {
                     let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
                     alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
                     self.presentViewController(alert2,animated: true, completion: nil)
-                } else {
-                    self.cont+=1
+                    naoExiste = false
                 }
             }
-            if (self.cont == base.usuarioLogado?.categoriasGastos.count)
+            if (naoExiste)
             {
                 // adiciona na RAM
                 base.usuarioLogado?.addCategoriaGasto(textField.text!)

@@ -58,7 +58,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBAction func confirma(sender: UIButton)
     {
         // campos vazios
-        if ((mail.text!.isEmpty) || senha.text!.isEmpty)
+        if ((mail.text == nil) || senha.text == nil)
         {
             errocampovazio.hidden=false
             return
