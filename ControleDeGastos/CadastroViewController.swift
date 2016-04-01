@@ -37,9 +37,9 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         erromail.hidden=true
         erromail.text="E-mail inválido"
         errosenhas.hidden=true
-        errosenhas.text="Senhas não são iguais"/*
+        errosenhas.text="Senhas não são iguais"
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)*/
+        view.addGestureRecognizer(tap)
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
@@ -49,9 +49,9 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Cadastro"
-        /*
+        
         // Create left and right button for navigation item
-        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: Selector(GastoManualViewController.btn_clicked(_:)))
+        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(CadastroViewController.btn_clicked(_:)))
         
         
         // Create two buttons for the navigation item
@@ -59,7 +59,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-        */
+        
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.

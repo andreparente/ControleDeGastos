@@ -27,6 +27,7 @@ public class Usuario {
         self.nome = nome
         self.email = email
         self.senha = senha
+        self.categoriasGastos.append("Outros")
     }
 
     func addCategoriaGasto(categ: String) {

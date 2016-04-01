@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poz-Rh-YRM">
-                                <rect key="frame" x="124" y="226" width="225" height="21"/>
+                                <rect key="frame" x="20" y="293" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -60,13 +60,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="X7I-bQ-RER">
                                 <rect key="frame" x="73" y="28" width="229" height="155"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLK-E8-Loc">
+                                <rect key="frame" x="20" y="365" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHD-u9-z0D">
+                                <rect key="frame" x="20" y="197" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="errocadastro" destination="LHD-u9-z0D" id="Wng-jW-vhj"/>
                         <outlet property="errocampovazio" destination="hDN-N8-S8A" id="8XR-7Z-yRg"/>
                         <outlet property="erroemail" destination="poz-Rh-YRM" id="Xkh-pB-gRr"/>
+                        <outlet property="errosenhas" destination="GLK-E8-Loc" id="pNh-3Y-bIU"/>
                         <outlet property="mail" destination="vKe-60-dBH" id="E7B-RI-5DF"/>
                         <outlet property="senha" destination="0Q6-iS-nvL" id="33z-Cu-O3A"/>
                         <segue destination="7e0-v9-ANp" kind="show" identifier="LoginToMain" id="NL6-cS-gUU"/>
@@ -139,6 +153,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-m4-c0C">
+                                <rect key="frame" x="20" y="438" width="330" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -146,6 +166,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="limite" destination="854-k0-bpT" id="iDa-SS-BBD"/>
+                        <outlet property="totaldisponivel" destination="Gzj-m4-c0C" id="n9H-Kq-Rfv"/>
                         <outlet property="totalgastos" destination="qBW-pr-crG" id="Ken-Yp-xyz"/>
                         <segue destination="8A6-r8-ap1" kind="show" identifier="MainToHistoricoTabela" id="nGk-Nr-gbT"/>
                     </connections>
@@ -207,40 +228,6 @@
             </objects>
             <point key="canvasLocation" x="1272.5" y="1126.5"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="lJu-Kh-5PZ">
-            <objects>
-                <tableViewController id="49V-VM-ECV" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5KP-8X-fyt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mXg-bT-KiJ">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mXg-bT-KiJ" id="S5c-06-dHy">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhT-0t-lYa">
-                                            <rect key="frame" x="22" y="7" width="46" height="30"/>
-                                            <state key="normal" title="Button"/>
-                                        </button>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="49V-VM-ECV" id="xc9-5d-y2E"/>
-                            <outlet property="delegate" destination="49V-VM-ECV" id="2LX-Hj-oAt"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7ir-7h-pKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2037" y="1175"/>
-        </scene>
         <!--Gasto Manual View Controller-->
         <scene sceneID="OT6-4x-4c5">
             <objects>
@@ -288,11 +275,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Nova Categoria"/>
                                 <connections>
-                                    <action selector="Add:" destination="goP-2V-gWf" eventType="touchUpInside" id="8zP-aJ-XsQ"/>
+                                    <action selector="novacategoria:" destination="goP-2V-gWf" eventType="touchUpInside" id="MDK-n2-n5q"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MM/DD/YY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-0d-VcF">
-                                <rect key="frame" x="145" y="285" width="85" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MM/DD/YY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-0d-VcF">
+                                <rect key="frame" x="43" y="285" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -541,10 +528,10 @@
         <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tk9-hb-F6y"/>
-        <segue reference="NL6-cS-gUU"/>
         <segue reference="sQ1-Os-lJ1"/>
+        <segue reference="NL6-cS-gUU"/>
         <segue reference="xsX-Mx-VU8"/>
         <segue reference="QRM-YM-FfM"/>
+        <segue reference="nGk-Nr-gbT"/>
     </inferredMetricsTieBreakers>
 </document>

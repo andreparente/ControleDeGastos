@@ -26,7 +26,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-                let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("dismissKeyboard"))
+                let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
                 view.addGestureRecognizer(tap)
         
         
@@ -40,7 +40,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         navigationItem.title = "Gasto"
         
         // Create left and right button for navigation item
-        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:("btn_clicked:"))
+        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:(#selector(GastoManualViewController.btn_clicked(_:))))
         
         
         // Create two buttons for the navigation item
@@ -62,15 +62,22 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         nomeGasto.delegate = self
         valor.delegate = self
         categoria.inputView = categoriaPickerView
-        
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         if valortotal != nil
         {
             valor.text=String(valortotal)
         }
+        print(valor.text!)
         valor.keyboardType = .NumberPad
+        if data != nil
+        {
         dateLabel.text = data
+        }
+        else
+        {
+          dateLabel.text = String(NSDate())
+        }
     }
     
     func dismissKeyboard() {
@@ -103,13 +110,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        print(base.usuarioLogado?.categoriasGastos.count)
         return (base.usuarioLogado?.categoriasGastos.count)!
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return base.usuarioLogado?.categoriasGastos[row]
     }
-    
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if(textField.placeholder == "Categoria") {
             categoriaPickerView.hidden = false
@@ -131,14 +138,37 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         data = dateFormatter.stringFromDate(dataNs)
         dateLabel.text = data
     }
+    @IBAction func novacategoria(sender: UIButton) {
+        let alert=UIAlertController(title:"Categoria", message: "Insira uma nova categoria abaixo", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
+            field.placeholder = "Insira nova categoria"})
+        alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
+        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
+            let textField = alert.textFields![0] as UITextField
+            print("Text field: \(textField.text!)")
+            for categ in (base.usuarioLogado?.categoriasGastos)!
+            {
+                if textField.text == categ {
+                    let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
+                    self.presentViewController(alert2,animated: true, completion: nil)
+                } else {
+                    base.usuarioLogado?.addCategoriaGasto(textField.text!)
+                    self.categoria.text = textField.text
+                }
+            }
+        }))
+        self.presentViewController(alert,animated: true, completion: nil)
+    }
     
     @IBAction func gasteiAction(sender: AnyObject) {
         let nome = nomeGasto.text
         let categoria = self.categoria.text
-        let valor = Int(self.valor.text!)
+        let valorgasto = Double(valor.text!)?.roundToPlaces(2)
+        print(valorgasto!)
         let data = dateLabel.text
         
-        if(valor == nil) {
+        if(valorgasto == nil) {
             let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
@@ -159,7 +189,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
-            let gasto = Gasto(nome: nome!, categoria: categoria!, valor: valor!, data: data!)
+            let gasto = Gasto(nome: nome!, categoria: categoria!, valor: Int(valorgasto!), data: data!)
             // adiciona na RAM
             base.usuarioLogado?.addGasto(gasto)
             // adiciona no disco
@@ -167,10 +197,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             // faz o segue
             performSegueWithIdentifier("GastoToMain", sender: self)
         }
-    }
-    
-    func Add(sender: UIButton) {
-        
     }
     
 }

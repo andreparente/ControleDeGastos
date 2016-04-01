@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         navigationItem.title = "Settings"
         
         // Create left and right button for navigation item
-               let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: "btn_clicked:")
+               let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.btn_clicked(_:)))
         
         
         // Create two buttons for the navigation item
@@ -77,7 +77,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
                     alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
                     self.presentViewController(alert2,animated: true, completion: nil)
                 } else {
-                    
+                base.usuarioLogado?.addCategoriaGasto(textField.text!)
                 }
             }
         }))

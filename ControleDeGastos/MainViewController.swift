@@ -11,8 +11,9 @@ import UIKit
 class MainViewController: UIViewController {
     
     @IBOutlet weak var limite: UILabel!
+    @IBOutlet weak var totaldisponivel: UILabel!
     @IBOutlet weak var totalgastos: UILabel!
-    
+    var available:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +27,31 @@ class MainViewController: UIViewController {
             valortotal += valor.valor
         }
         totalgastos.text = "Seu total de gastos é: \(valortotal)"
-        
+        totaldisponivel.numberOfLines = 2
+        if(base.usuarioLogado?.limiteMes != 0)
+        {
+        available = (base.usuarioLogado?.limiteMes)! - valortotal
+        if(available >= 100)
+        {
+            totaldisponivel.text = "Você ainda tem \(available) para gastar nesse mês"
+        }
+        else
+        {
+            if (available > 0 && available < 100)
+            {
+                totaldisponivel.text = "Atenção!Você só tem mais \(available) para gastar nesse mês"
+            }
+            else
+            {
+                totaldisponivel.text = "Você estourou seu limite de gastos do mês por \(valortotal - (base.usuarioLogado?.limiteMes)!)"
+            }
+        }
+            totaldisponivel.hidden=false
+        }
+        else
+        {
+                totaldisponivel.hidden=true
+        }
         // Do any additional setup after loading the view.
     }
     

@@ -17,11 +17,12 @@ func isValidEmail(testStr:String) -> Bool {
 
 class LoginViewController: UIViewController,UITextFieldDelegate {
     
-    @IBOutlet weak var errosenha: UILabel!
+    @IBOutlet weak var errosenhas: UILabel!
     @IBOutlet weak var erroemail: UILabel!
     @IBOutlet weak var errocampovazio: UILabel!
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var senha: UITextField!
+    @IBOutlet weak var errocadastro: UILabel!
     var usuarioAux: Usuario?
     
     override func viewDidLoad() {
@@ -44,15 +45,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         errocampovazio.text="Todos os campos são obrigatórios"
         erroemail.hidden=true
         erroemail.text="Email inválido"
-//        errosenha.hidden=true
-//        errosenha.text="Senha errada" // falta adicionar na storyboard
+        errosenhas.hidden=true
+        errosenhas.text="Senha inválida"
+        errocadastro.hidden=true
+        errocadastro.text = "Usuário não cadastrado"
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
-        /*
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        */
+        
     }
 
     @IBAction func confirma(sender: UIButton)
@@ -67,16 +67,26 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         // email no formato valido e existente na base
         let indUsuario = base.indiceUsuarioPorEmail(mail.text!)
-        if isValidEmail(mail.text!) == false || indUsuario == -1
+        if isValidEmail(mail.text!) == false
         {
             erroemail.hidden=false
+            errocadastro.hidden = true
             return
         }
+        else
+        {
+            if indUsuario == -1
+            {
+                errocadastro.hidden = false
+                erroemail.hidden = true
+                return
+            }
+        }
         erroemail.hidden=true
-        
+        errocadastro.hidden=true
         // senha valida
         if base.listaUsuarios[indUsuario].senha != senha.text! {
-            //errosenha.hidden=false // descomentar depois de adicionar na storyboard
+            errosenhas.hidden=false
             return
         }
         
