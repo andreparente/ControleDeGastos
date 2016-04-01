@@ -26,8 +26,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-        //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
-        //        view.addGestureRecognizer(tap)
+                let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("dismissKeyboard"))
+                view.addGestureRecognizer(tap)
         
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
@@ -40,11 +40,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         navigationItem.title = "Gasto"
         
         // Create left and right button for navigation item
-        //        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(GastoManualViewController.btn_clicked(_:)))
+        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:("btn_clicked:"))
         
         
         // Create two buttons for the navigation item
-        //        navigationItem.leftBarButtonItem = leftButton
+                navigationItem.leftBarButtonItem = leftButton
         
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
