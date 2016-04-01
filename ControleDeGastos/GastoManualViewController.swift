@@ -23,6 +23,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     var dataNs = NSDate()
     var dateFormatter = NSDateFormatter()
     let calendar = NSCalendar.currentCalendar()
+    var cont = 0
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
@@ -153,9 +154,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                     alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
                     self.presentViewController(alert2,animated: true, completion: nil)
                 } else {
-                    base.usuarioLogado?.addCategoriaGasto(textField.text!)
-                    self.categoria.text = textField.text
+                    self.cont+=1
                 }
+            }
+            if (self.cont == base.usuarioLogado?.categoriasGastos.count)
+            {
+            base.usuarioLogado?.addCategoriaGasto(textField.text!)
+            self.categoria.text = textField.text
             }
         }))
         self.presentViewController(alert,animated: true, completion: nil)
