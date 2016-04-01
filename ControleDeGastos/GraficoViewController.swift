@@ -37,7 +37,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         dataMesDatePicker.hidden = true
         dataMesTextField.inputView = dataMesDatePicker
         printaLimite(base.usuarioLogado!)
-        dateFormatter.dateFormat = "yyyy-MM"
+        dateFormatter.dateFormat = "yyyy/MM"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
 
         
@@ -88,7 +88,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         
         for i in 0..<vetCatAux.count {
             for valGasto in gastosMes {
-                if(valGasto!.categoria == usuario.categoriasGastos[i]) {
+                if(valGasto!.categoria == vetCatAux[i]) {
                     vetValAux[i] = vetValAux[i]! + Double(valGasto!.valor)
                 }
             }
@@ -128,7 +128,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         
-        chartDataSet.colors = ChartColorTemplates.liberty()
+        chartDataSet.colors = ChartColorTemplates.colorful()
         
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
         chartView.data = chartData
@@ -176,14 +176,14 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     @IBAction func DatePickerChanged(sender: AnyObject) {
         
 
-        
+        dataNs = dataMesDatePicker.date
         dataString = dateFormatter.stringFromDate(dataNs)
         print("dataString: ", dataString)
         dataMesTextField.text = dataString
         vetorGastosMes = (base.usuarioLogado?.getGastosMês(dataString))!
-        print("vetor final: ", vetorGastosMes)
         (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
-        print("vetor final depois do organizaVetores: ")
+        print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
+        print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
         setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
         
     }

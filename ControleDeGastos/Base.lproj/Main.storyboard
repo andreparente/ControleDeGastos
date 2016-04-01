@@ -550,7 +550,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="chartView" destination="VZb-Dh-qqU" id="zIZ-Uk-hIQ"/>
-                        <outlet property="data" destination="LwU-ZW-9Ci" id="tf3-ay-u0F"/>
                         <outlet property="dataMesDatePicker" destination="LwU-ZW-9Ci" id="Ilc-l6-vL3"/>
                         <outlet property="dataMesTextField" destination="fDg-lM-EMw" id="G4q-1F-6OF"/>
                         <outlet property="limiteLabel" destination="eXw-VO-phP" id="jIh-8f-Uji"/>

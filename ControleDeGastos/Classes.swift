@@ -78,6 +78,7 @@ public class Usuario {
         for gasto in self.gastos {
             if gasto.data.rangeOfString(mesAno) != nil {
                 print("\(gasto.data)")
+                
                 gastosMes.append(gasto)
             }
         }
@@ -112,15 +113,7 @@ public class Gasto {
         self.ehDinheiro = false
         self.cartao = cartao
     }
-    /*
-    func setFoto(foto: UIImage) {
-        self.foto = foto
-    }
 
-    func getFoto() -> UIImage {
-        return self.foto!
-    }
-    */
 }
 
 public class Cartao {
