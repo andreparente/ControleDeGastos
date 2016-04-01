@@ -26,9 +26,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     var cont = 0
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-                let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
-                view.addGestureRecognizer(tap)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
@@ -55,7 +57,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
         calendar.components([.Day , .Month , .Year], fromDate: dataNs)
         
-        super.viewDidLoad()
         categoriaPickerView.delegate = self
         categoriaPickerView.dataSource = self
         categoriaPickerView.hidden = true
@@ -73,7 +74,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         valor.keyboardType = .NumberPad
         if data != nil
         {
-        dateLabel.text = data
+            dateLabel.text = data
         }
         else
         {
@@ -114,7 +115,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        print(base.usuarioLogado?.categoriasGastos.count)
+        //print(base.usuarioLogado?.categoriasGastos.count)
         return (base.usuarioLogado?.categoriasGastos.count)!
     }
     
@@ -149,7 +150,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
-            print("Text field: \(textField.text!)")
+            //print("Text field: \(textField.text!)")
             for categ in (base.usuarioLogado?.categoriasGastos)!
             {
                 if textField.text == categ {
@@ -162,8 +163,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             }
             if (self.cont == base.usuarioLogado?.categoriasGastos.count)
             {
-            base.usuarioLogado?.addCategoriaGasto(textField.text!)
-            self.categoria.text = textField.text
+                base.usuarioLogado?.addCategoriaGasto(textField.text!)
+                self.categoria.text = textField.text
             }
         }))
         self.presentViewController(alert,animated: true, completion: nil)

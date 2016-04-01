@@ -71,16 +71,16 @@ public class Usuario {
         return self.limiteMes
     }
     
-    //funçao que retorna o vetor de gastos de um determinado mês (de 01 a 12)
-    func getGastosMês(mesAno: String) -> [Gasto?] {
+    // funcao retorna os gastos do ultimo mes
+    // exemplo, se for chamada no dia 2016-03-14, 
+    // vai retornar os gastos de 03-01 a 03-14
+    func getGastosMês() -> [Gasto?] {
         var gastosMes: [Gasto?] = []
-        print("print getgastosMes era pra ser mes e ano só: ", mesAno)
         for gasto in self.gastos {
-            if gasto.data.rangeOfString(mesAno) != nil {
-                print("\(gasto.data)")
+            //if gasto.data.rangeOfString(mesAno) != nil {
                 
                 gastosMes.append(gasto)
-            }
+            //}
         }
         return gastosMes
     }
