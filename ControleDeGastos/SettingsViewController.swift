@@ -82,7 +82,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
             if (naoExiste)
             {
                 // adiciona na RAM
-                base.usuarioLogado?.addCategoriaGasto(textField.text!)
+                base.usuarioLogado!.addCategoriaGasto(textField.text!)
                 // adiciona no disco
                 base.editarUsuario(base.usuarioLogado!)
             }
