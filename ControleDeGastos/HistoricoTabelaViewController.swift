@@ -15,6 +15,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     @IBOutlet weak var botaoOrdenar: UIButton!
     @IBOutlet weak var botaoFiltrar: UIButton!
     
+    var gastos = [Gasto]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
@@ -26,6 +28,11 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         self.botaoFiltrar.backgroundColor = UIColor.orangeColor()
         self.botaoOrdenar.backgroundColor = UIColor.yellowColor()
         
+        if (self.gastos.count <= 0) {
+            // por padrao, filtra os gastos pelo ultimo mes
+            self.gastos = base.usuarioLogado!.getGastosUltimoMês()
+        }
+        
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
@@ -35,7 +42,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     //funçao que diz a quantidade de células
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cellsNumber = base.usuarioLogado!.gastos.count
+        let cellsNumber = self.gastos.count
         return (cellsNumber > 0) ? cellsNumber : 1
     }
     
@@ -46,13 +53,13 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             self.tableView.dequeueReusableCellWithIdentifier(
                 "TableViewCell", forIndexPath: indexPath)
                 as! TableViewCell
-        let cellsNumber = base.usuarioLogado?.gastos.count
+        let cellsNumber = self.gastos.count
         cell.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         
         if (cellsNumber > 0) {
-            cell.labelNomeGasto.text = "Gasto:\((base.usuarioLogado?.gastos[indexPath.row].nome)!)"
-            cell.labelCat.text = "Tipo:\((base.usuarioLogado?.gastos[indexPath.row].categoria)!)"
-            cell.labelValor.text = "R$: " + String(base.usuarioLogado!.gastos[indexPath.row].valor)
+            cell.labelNomeGasto.text = "Gasto:\(self.gastos[indexPath.row].nome)"
+            cell.labelCat.text = "Tipo:\(self.gastos[indexPath.row].categoria)"
+            cell.labelValor.text = "R$: " + String(self.gastos[indexPath.row].valor)
         } else {
             cell.labelNomeGasto.text = "Você Não Possui Gastos!"
             cell.labelNomeGasto.center = cell.center
