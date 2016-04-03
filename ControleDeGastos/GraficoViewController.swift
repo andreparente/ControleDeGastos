@@ -178,7 +178,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         dataString = dateFormatter.stringFromDate(dataNs)
         print("dataString: ", dataString)
         dataMesTextField.text = dataString
-        vetorGastosMes = (base.usuarioLogado?.getGastosMês())!
+       // vetorGastosMes = (base.usuarioLogado?.getGastosMês())!
         (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)

@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
         {
             valortotal += valor.valor
         }
-        totalgastos.text = "Seu total de gastos é: \(valortotal)"
+        totalgastos.text = "Seu total de gastos é: R$ \(valortotal)"
         totaldisponivel.numberOfLines = 2
         if(base.usuarioLogado?.limiteMes != 0)
         {
@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
             limite.text = "Você não disponibilizou o limite por mês"
         }
         else {
-            limite.text = "Seu limite é \(usuario.limiteMes)"
+            limite.text = "Seu limite é R$ \(usuario.limiteMes)"
         }
     }
     
