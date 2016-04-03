@@ -126,13 +126,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-AX-XUB">
-                                <rect key="frame" x="294" y="28" width="48" height="48"/>
-                                <state key="normal" title="Settings" image="ic_settings_48px-128"/>
-                                <connections>
-                                    <segue destination="kOo-RQ-Xmt" kind="show" id="xsX-Mx-VU8"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vID-WR-fxp">
                                 <rect key="frame" x="141" y="179" width="92" height="30"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="18"/>
@@ -159,6 +152,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-AX-XUB">
+                                <rect key="frame" x="294" y="28" width="48" height="48"/>
+                                <state key="normal" title="Settings" image="ic_settings_48px-128"/>
+                                <connections>
+                                    <segue destination="kOo-RQ-Xmt" kind="show" id="ZwO-F9-qYj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -190,7 +190,7 @@
                                 <rect key="frame" x="120" y="239" width="133" height="30"/>
                                 <state key="normal" title="Adicionar categoria"/>
                                 <connections>
-                                    <action selector="categoria:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="PTA-Qr-NBJ"/>
+                                    <action selector="categoria:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="I64-DM-mIs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76s-jX-fi7">
@@ -211,7 +211,7 @@
                                 <rect key="frame" x="144" y="132" width="87" height="30"/>
                                 <state key="normal" title="Alterar limite"/>
                                 <connections>
-                                    <action selector="limite:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="r0N-s2-jxM"/>
+                                    <action selector="limite:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="rW8-f9-EUy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -219,8 +219,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="7e0-v9-ANp" kind="show" identifier="SettingsToMain" id="enk-Hl-U5o"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SettingsToLogin" id="JPP-2I-nDT"/>
+                        <segue destination="7e0-v9-ANp" kind="show" identifier="SettingsToMain" id="400-pd-DHt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9G-V5-7xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -433,24 +433,18 @@
         <scene sceneID="jIy-Yg-P4a">
             <objects>
                 <tableViewController id="K8M-vq-bPt" customClass="HistoricoTabelaViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" id="YjH-76-fbT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="18" sectionFooterHeight="18" id="YjH-76-fbT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="55" id="lBJ-vi-tCM" customClass="TableViewCell" customModule="ControleDeGastos" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="49.5" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lBJ-vi-tCM" id="w99-jX-sMh">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-6L-I0z">
-                                            <rect key="frame" x="8" y="8" width="201" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
                                             <rect key="frame" x="8" y="33" width="100" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -459,6 +453,12 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pp0-xu-8Uh">
                                             <rect key="frame" x="217" y="8" width="150" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-6L-I0z">
+                                            <rect key="frame" x="8" y="8" width="201" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -605,9 +605,9 @@
         <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JPP-2I-nDT"/>
-        <segue reference="xsX-Mx-VU8"/>
-        <segue reference="enk-Hl-U5o"/>
+        <segue reference="400-pd-DHt"/>
+        <segue reference="ZwO-F9-qYj"/>
         <segue reference="QRM-YM-FfM"/>
+        <segue reference="JPP-2I-nDT"/>
     </inferredMetricsTieBreakers>
 </document>

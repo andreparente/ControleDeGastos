@@ -50,14 +50,13 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Cadastro"
-        /* NAO DESCOMENTAR
+
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(CadastroViewController.btn_clicked(_:)))
         
         
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = leftButton
-        */
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
         
@@ -112,18 +111,30 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
             return
         }
         
-        // realizando o cadastro:
-        let usuario = Usuario(nome: name!, email: mailsalvo!, senha: senhasalva!)
-        // adiciona usuario na lista de usuarios da RAM
-        base.ramUsuarios.append(usuario)
-        // adiciona usuario na lista de usuarios do disco
-        base.adicionarUsuario(usuario)
-        // adiciona o usuario na entrada ultimoUsuario da base
-        base.salvarUltimoUsuario(usuario)
-        // configura o usuarioLogado para ser o de agora
-        base.usuarioLogado = usuario
+        realiza_cadastro()
         
         performSegueWithIdentifier("CadastroToLogin", sender: self)
+    }
+    
+    func realiza_cadastro() {
+        let usuario = Usuario(nome: nome.text!, email: Email.text!, senha: senha.text!)
+        
+        // adiciona categorias padrao
+        usuario.addCategoriaGasto("Outros")
+        usuario.addCategoriaGasto("Alimentação")
+        usuario.addCategoriaGasto("Transporte")
+        
+        // adiciona usuario na lista de usuarios da RAM
+        base.ramUsuarios.append(usuario)
+        
+        // adiciona usuario na lista de usuarios do disco
+        base.adicionarUsuario(usuario)
+        
+        // adiciona o usuario na entrada ultimoUsuario da base
+        base.salvarUltimoUsuario(usuario)
+        
+        // configura o usuarioLogado para ser o de agora
+        base.usuarioLogado = usuario
     }
     
     func dismissKeyboard() {
