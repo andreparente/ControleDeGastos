@@ -70,28 +70,62 @@ public class Usuario {
         return self.limiteMes
     }
     
-    // funcao retorna os gastos do ultimo mes
-    // exemplo, se for chamada no dia 2016-03-14, 
-    // vai retornar os gastos de 03-01 a 03-14
-    func getGastosMês() -> [Gasto?] {
-        // descobre ano e mes atuais
-        let hoje = NSDate()
-        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
-        let mesAtual = components.month
-        let anoAtual = components.year
-        
+    
+    // passando zero retorna os gastos de hoje
+    func getGastosMes(mes: Int, ano: Int) -> [Gasto] {
         // gera o novo vetor
-        var gastosMes: [Gasto?] = []
+        var gastosMes: [Gasto] = []
         for gasto in self.gastos {
             let data = gasto.data.componentsSeparatedByString("-")
             // data == [ano, mes, dia]
-            let mes = Int(data[1])
-            let ano = Int(data[0])
-            if (mes == mesAtual && ano == anoAtual) {
+            let mesGasto = Int(data[1])
+            let anoGasto = Int(data[0])
+            if (mesGasto == mes && ano == anoGasto) {
                 gastosMes.append(gasto)
             }
         }
         return gastosMes
+    }
+    
+    // passando zero retorna os gastos de hoje
+    func getGastosUltimosDias(dias: Int) -> [Gasto] {
+        // descobre ano, mes e dia atuais
+        let hoje = NSDate()
+        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+        let mesAtual = components.month
+        let anoAtual = components.year
+        let diaAtual = components.day
+        
+        // gera o novo vetor
+        var gastosUltimosDias: [Gasto] = []
+        for gasto in self.gastos {
+            let data = gasto.data.componentsSeparatedByString("-")
+            // data == [ano, mes, dia]
+            let dia = Int(data[2])
+            let mes = Int(data[1])
+            let ano = Int(data[0])
+            if (mes == mesAtual && ano == anoAtual && dia >= (diaAtual - dias)) {
+                gastosUltimosDias.append(gasto)
+            }
+        }
+        return gastosUltimosDias
+    }
+    
+    func getGastosHoje() -> [Gasto] {
+        return getGastosUltimosDias(0)
+    }
+    
+    // funcao retorna os gastos do ultimo mes
+    // exemplo, se for chamada no dia 2016-03-14,
+    // vai retornar os gastos de 03-01 a 03-14
+    func getGastosUltimoMês() -> [Gasto] {
+        // descobre ano e mes atuais
+        let hoje = NSDate()
+        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+        let diaAtual = components.day
+        
+        // subtrai 1 pq os dias do mes nao comecam no zero
+        return getGastosUltimosDias(diaAtual-1)
     }
 }
 
