@@ -22,6 +22,10 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
         
+        // apenas para poder enxergar os botoes
+        self.botaoFiltrar.backgroundColor = UIColor.orangeColor()
+        self.botaoOrdenar.backgroundColor = UIColor.yellowColor()
+        
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
@@ -69,6 +73,12 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     override func viewWillAppear(animated: Bool) {
         //print("ViewWillAppear eh chamada sempre")
+    }
+    
+    @IBAction func apertouBotaoOrdenar(sender: AnyObject) {
+    }
+    
+    @IBAction func apertouBotaoFiltrar(sender: AnyObject) {
     }
     
     /*

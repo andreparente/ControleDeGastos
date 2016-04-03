@@ -447,6 +447,9 @@
                                     <variation key="widthClass=compact" fixedFrame="YES">
                                         <rect key="frame" x="8" y="23" width="175" height="30"/>
                                     </variation>
+                                    <connections>
+                                        <action selector="apertouBotaoOrdenar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="7dx-co-RKj"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-jC-DFb">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -454,6 +457,9 @@
                                     <variation key="widthClass=compact" fixedFrame="YES">
                                         <rect key="frame" x="191" y="23" width="176" height="30"/>
                                     </variation>
+                                    <connections>
+                                        <action selector="apertouBotaoFiltrar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="rEq-ka-pK6"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
