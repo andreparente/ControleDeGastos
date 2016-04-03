@@ -429,6 +429,40 @@
             </objects>
             <point key="canvasLocation" x="46.5" y="-598.5"/>
         </scene>
+        <!--Ordenar View Controller-->
+        <scene sceneID="hv2-l2-0Ov">
+            <objects>
+                <viewController id="Iwo-rT-6sO" customClass="OrdenarViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uFF-Rn-Ecz"/>
+                        <viewControllerLayoutGuide type="bottom" id="tGZ-8E-mjS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sVU-dm-HJ9">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAo-qv-BwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="295.5" y="-1514"/>
+        </scene>
+        <!--Filtrar View Controller-->
+        <scene sceneID="sTX-Pq-qVF">
+            <objects>
+                <viewController id="vag-xE-urf" customClass="FiltrarViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q7k-jW-WrJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="imB-97-0eo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W3c-YQ-fGN">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zw4-jP-Kl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="-1508"/>
+        </scene>
         <!--Historico Tabela View Controller-->
         <scene sceneID="jIy-Yg-P4a">
             <objects>
@@ -449,6 +483,7 @@
                                     </variation>
                                     <connections>
                                         <action selector="apertouBotaoOrdenar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="7dx-co-RKj"/>
+                                        <segue destination="Iwo-rT-6sO" kind="presentation" id="hX3-pK-l9P"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-jC-DFb">
@@ -459,6 +494,7 @@
                                     </variation>
                                     <connections>
                                         <action selector="apertouBotaoFiltrar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="rEq-ka-pK6"/>
+                                        <segue destination="vag-xE-urf" kind="presentation" id="sSt-sq-vTT"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -559,7 +595,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hb0-GL-HX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256.5" y="-616.5"/>
+            <point key="canvasLocation" x="1670.25" y="-684.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4x5-HQ-jd8">
