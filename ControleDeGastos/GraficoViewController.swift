@@ -25,6 +25,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     let calendar = NSCalendar.currentCalendar()
     var dataString: String!
     var vetorFinal: [Double?] = []
+    var vetorFinalCat: [String?] = []
     var vetorGastosMes: [Gasto?] = []
     var vetorFinalCatMes: [String?] = []
     var vetorFinalGastosMes: [Double?] = []
@@ -47,20 +48,42 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     }
     
     //Funcao para organizar o grafico
-    func organizaVetores(usuario: Usuario) -> ([Double?]) {
+    func organizaVetores(usuario: Usuario) -> ([Double?],[String?]) {
         
         var vetValAux = [Double?](count: usuario.categoriasGastos.count,repeatedValue: nil)
+        var vetValAux2: [Double?] = []
+        var vetCatAux: [String?] = []
         for i in 0..<usuario.categoriasGastos.count {
             vetValAux[i] = 0
         }
         for i in 0..<usuario.categoriasGastos.count {
             for valGasto in usuario.gastos {
                 if(valGasto.categoria == usuario.categoriasGastos[i]) {
+                    if(existeCategoria(vetCatAux, categoria: valGasto.categoria) == false) {
+                        vetCatAux.append(valGasto.categoria)
+                    }
                     vetValAux[i] = vetValAux[i]! + Double(valGasto.valor)
                 }
             }
         }
-        return vetValAux
+        
+        for i in 0..<vetValAux.count {
+            if(vetValAux[i] > 0) {
+                vetValAux2.append(vetValAux[i])
+            }
+        }
+        
+        return (vetValAux2,vetCatAux)
+    }
+    
+    func existeCategoria(vetor: [String?],categoria: String) -> Bool {
+        
+        for auxVet in vetor {
+            if(auxVet == categoria) {
+                return true
+            }
+        }
+        return false
     }
     
     func organizaVetoresMes(usuario: Usuario, gastosMes: [Gasto?]) -> ([Double?],[String?]) {
@@ -166,8 +189,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             for gasto in base.usuarioLogado!.gastos {
                 total = total+Double(gasto.valor)
             }
-            vetorFinal = organizaVetores(base.usuarioLogado!)
-            setChart((base.usuarioLogado!.categoriasGastos), values: vetorFinal)
+            (vetorFinal,vetorFinalCat) = organizaVetores(base.usuarioLogado!)
+            print("vetor de valores", vetorFinal)
+            print("vetor de categorias", vetorFinalCat)
+            setChart(vetorFinalCat, values: vetorFinal)
             totalLabel.text = "Total: R$"+String(total)
         }
     }
