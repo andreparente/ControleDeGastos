@@ -40,13 +40,12 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Gasto"
-/*
+
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:(#selector(GastoManualViewController.btn_clicked(_:))))
         
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = leftButton
-  */  
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
         
@@ -140,7 +139,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     @IBAction func datePickerChanged(sender: AnyObject) {
         dataNs = date.date
         data = dateFormatter.stringFromDate(dataNs)
-        dateLabel.text = data
+        let dataaux = data.stringByReplacingOccurrencesOfString("/", withString: "-")
+        let fullNameArr = dataaux.componentsSeparatedByString("-")
+        let stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [0] + "-" + fullNameArr[1]
+        dateLabel.text = stringfinal
     }
     @IBAction func novacategoria(sender: UIButton) {
         let alert=UIAlertController(title:"Categoria", message: "Insira uma nova categoria abaixo", preferredStyle: UIAlertControllerStyle.Alert)
