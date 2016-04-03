@@ -37,7 +37,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         dataMesDatePicker.hidden = true
         dataMesTextField.inputView = dataMesDatePicker
         printaLimite(base.usuarioLogado!)
-        dateFormatter.dateFormat = "yyyy/MM"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
 
         
@@ -175,10 +174,15 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     
     @IBAction func DatePickerChanged(sender: AnyObject) {
         dataNs = dataMesDatePicker.date
-        dataString = dateFormatter.stringFromDate(dataNs)
+        dataString = dateFormatter.stringFromDate(dataMesDatePicker.date)
         print("dataString: ", dataString)
         dataMesTextField.text = dataString
-        vetorGastosMes = (base.usuarioLogado?.getGastosMês())!
+        let data = dataString.componentsSeparatedByString("/")
+        // data == [mes, dia, ano]
+        print(data)
+        let mesGasto = Int(data[0])
+        let anoGasto = Int(data[2])
+        vetorGastosMes = (base.usuarioLogado?.getGastosMes(mesGasto!,ano: anoGasto!))!
         (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
