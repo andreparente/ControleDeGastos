@@ -437,6 +437,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="val-6X-0lC">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-co-EVe">
+                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <state key="normal" title="Ordenar"/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="8" y="23" width="175" height="30"/>
+                                    </variation>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-jC-DFb">
+                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <state key="normal" title="Filtrar"/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="191" y="23" width="176" height="30"/>
+                                    </variation>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="mlw-co-EVe"/>
+                                    <exclude reference="fzr-jC-DFb"/>
+                                </mask>
+                            </variation>
+                            <variation key="widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="mlw-co-EVe"/>
+                                    <include reference="fzr-jC-DFb"/>
+                                </mask>
+                            </variation>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="55" id="lBJ-vi-tCM" customClass="TableViewCell" customModule="ControleDeGastos" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="49.5" width="375" height="55"/>
@@ -481,10 +514,15 @@
                     <tabBarItem key="tabBarItem" systemItem="history" id="K9N-Yg-A0B"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="botaoFiltrar" destination="fzr-jC-DFb" id="mBr-HD-OtN"/>
+                        <outlet property="botaoOrdenar" destination="mlw-co-EVe" id="Fag-Gt-c4H"/>
+                        <outlet property="viewSuperior" destination="val-6X-0lC" id="3nA-D2-tG5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v27-fk-LrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746.5" y="-684.5"/>
+            <point key="canvasLocation" x="746.25" y="-684.5"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="miV-1B-ksb">
@@ -606,8 +644,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="w9G-UC-YqS"/>
-        <segue reference="JPP-2I-nDT"/>
-        <segue reference="ZwO-F9-qYj"/>
+        <segue reference="sQ1-Os-lJ1"/>
         <segue reference="400-pd-DHt"/>
+        <segue reference="ZwO-F9-qYj"/>
     </inferredMetricsTieBreakers>
 </document>

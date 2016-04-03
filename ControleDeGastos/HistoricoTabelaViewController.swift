@@ -10,6 +10,11 @@ import UIKit
 
 class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerDelegate  {
     
+    @IBOutlet weak var viewSuperior: UIView!
+    
+    @IBOutlet weak var botaoOrdenar: UIButton!
+    @IBOutlet weak var botaoFiltrar: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
