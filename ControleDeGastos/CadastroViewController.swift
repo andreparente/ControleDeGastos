@@ -50,7 +50,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Cadastro"
-
+        /*
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(CadastroViewController.btn_clicked(_:)))
         
@@ -59,7 +59,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         navigationItem.leftBarButtonItem = leftButton
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-        
+        */
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.
