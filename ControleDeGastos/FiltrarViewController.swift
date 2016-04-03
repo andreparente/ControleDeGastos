@@ -18,6 +18,10 @@ class FiltrarViewController: UIViewController {
     
     @IBOutlet weak var pickerCategorias: UIPickerView!
     
+    @IBOutlet weak var botaoCancelar: UIButton!
+    @IBOutlet weak var botaoSalvar: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +33,11 @@ class FiltrarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func apertouBotaoCancelar(sender: AnyObject) {
+    }
+    
+    @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+    }
 
     /*
     // MARK: - Navigation

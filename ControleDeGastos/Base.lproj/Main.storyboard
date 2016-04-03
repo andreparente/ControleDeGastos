@@ -521,6 +521,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="25" y="617" width="143" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="apertouBotaoCancelar:" destination="vag-xE-urf" eventType="touchUpInside" id="pSl-Hp-7PD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9a-iO-boV">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -528,6 +531,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="213" y="617" width="142" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="apertouBotaoSalvar:" destination="vag-xE-urf" eventType="touchUpInside" id="38W-MB-Lk3"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="vhz-hp-lcF">
                                 <rect key="frame" x="43" y="314" width="288" height="105"/>
@@ -570,6 +576,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="botaoCancelar" destination="c8t-5g-Wte" id="eKg-ox-gbd"/>
+                        <outlet property="botaoSalvar" destination="O9a-iO-boV" id="Pyc-B4-bdw"/>
                         <outlet property="pickerCategorias" destination="RY3-ut-HlU" id="xfY-DK-RNp"/>
                         <outlet property="pickerDataMax" destination="U7B-w3-ePJ" id="24z-DV-AOd"/>
                         <outlet property="pickerDataMin" destination="vhz-hp-lcF" id="jEH-3Y-4ul"/>
