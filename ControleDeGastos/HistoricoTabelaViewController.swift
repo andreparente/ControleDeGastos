@@ -26,16 +26,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     //funçao que diz a quantidade de células
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
-        if(base.usuarioLogado!.gastos.count == 0) {
-            return 1
-        }
-            
-        else {
-            
-            return base.usuarioLogado!.gastos.count
-        }
-
+        let cellsNumber = base.usuarioLogado!.gastos.count
+        return (cellsNumber > 0) ? cellsNumber : 1
     }
     
     //funçao que seta as células
