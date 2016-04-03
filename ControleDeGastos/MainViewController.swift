@@ -17,11 +17,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gastos = base.usuarioLogado!.getGastosMês()
-        for gasto in gastos {
-            print (gasto!.data)
-        }
-
         print ("login feito com o usuario \(base.usuarioLogado!.nome), de email \(base.usuarioLogado!.email)")
         
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
