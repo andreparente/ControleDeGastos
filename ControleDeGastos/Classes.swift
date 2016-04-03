@@ -74,15 +74,20 @@ public class Usuario {
     // exemplo, se for chamada no dia 2016-03-14, 
     // vai retornar os gastos de 03-01 a 03-14
     func getGastosMês() -> [Gasto?] {
-        var gastosMes: [Gasto?] = []
+        // descobre ano e mes atuais
         let hoje = NSDate()
         let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
         let mesAtual = components.month
+        let anoAtual = components.year
+        
+        // gera o novo vetor
+        var gastosMes: [Gasto?] = []
         for gasto in self.gastos {
             let data = gasto.data.componentsSeparatedByString("-")
             // data == [ano, mes, dia]
             let mes = Int(data[1])
-            if (mes == mesAtual) {
+            let ano = Int(data[0])
+            if (mes == mesAtual && ano == anoAtual) {
                 gastosMes.append(gasto)
             }
         }
