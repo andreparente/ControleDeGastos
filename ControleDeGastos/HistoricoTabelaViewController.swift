@@ -83,9 +83,11 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     }
     
     @IBAction func apertouBotaoOrdenar(sender: AnyObject) {
+        performSegueWithIdentifier("HistoricoTabelaToOrdenar", sender: nil)
     }
     
     @IBAction func apertouBotaoFiltrar(sender: AnyObject) {
+        performSegueWithIdentifier("HistoricoTabelaToFiltrar", sender: nil)
     }
     
     /*

@@ -10,6 +10,14 @@ import UIKit
 
 class FiltrarViewController: UIViewController {
 
+    @IBOutlet weak var textValorMin: UITextField!
+    @IBOutlet weak var textValorMax: UITextField!
+    
+    @IBOutlet weak var pickerDataMin: UIDatePicker!
+    @IBOutlet weak var pickerDataMax: UIDatePicker!
+    
+    @IBOutlet weak var pickerCategorias: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

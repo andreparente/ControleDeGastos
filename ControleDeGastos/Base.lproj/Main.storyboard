@@ -456,12 +456,130 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="W3c-YQ-fGN">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mV-2T-FSs">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="28" width="56" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZJ-62-Ifq">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="126" width="56" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="min" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdZ-2c-qsw">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="60" y="57" width="123" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="max" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0K-or-iyJ">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="191" y="57" width="123" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCM-Xr-fGW">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="140" y="456" width="94" height="21"/>
+                                </variation>
+                            </label>
+                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="U7B-w3-ePJ">
+                                <rect key="frame" x="43" y="314" width="288" height="105"/>
+                                <date key="date" timeIntervalSinceReferenceDate="480947909.87446201">
+                                    <!--2016-03-29 12:38:29 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="300" width="288" height="105"/>
+                                </variation>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RY3-ut-HlU">
+                                <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="492" width="335" height="87"/>
+                                </variation>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-5g-Wte">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cancelar"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="25" y="617" width="143" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9a-iO-boV">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Salvar"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="213" y="617" width="142" height="30"/>
+                                </variation>
+                            </button>
+                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="vhz-hp-lcF">
+                                <rect key="frame" x="43" y="314" width="288" height="105"/>
+                                <date key="date" timeIntervalSinceReferenceDate="480947909.87446201">
+                                    <!--2016-03-29 12:38:29 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="163" width="288" height="105"/>
+                                </variation>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="4mV-2T-FSs"/>
+                                <exclude reference="rZJ-62-Ifq"/>
+                                <exclude reference="tdZ-2c-qsw"/>
+                                <exclude reference="D0K-or-iyJ"/>
+                                <exclude reference="OCM-Xr-fGW"/>
+                                <exclude reference="U7B-w3-ePJ"/>
+                                <exclude reference="RY3-ut-HlU"/>
+                                <exclude reference="c8t-5g-Wte"/>
+                                <exclude reference="O9a-iO-boV"/>
+                                <exclude reference="vhz-hp-lcF"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="4mV-2T-FSs"/>
+                                <include reference="rZJ-62-Ifq"/>
+                                <include reference="tdZ-2c-qsw"/>
+                                <include reference="D0K-or-iyJ"/>
+                                <include reference="OCM-Xr-fGW"/>
+                                <include reference="U7B-w3-ePJ"/>
+                                <include reference="RY3-ut-HlU"/>
+                                <include reference="c8t-5g-Wte"/>
+                                <include reference="O9a-iO-boV"/>
+                                <include reference="vhz-hp-lcF"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="pickerCategorias" destination="RY3-ut-HlU" id="xfY-DK-RNp"/>
+                        <outlet property="pickerDataMax" destination="U7B-w3-ePJ" id="24z-DV-AOd"/>
+                        <outlet property="pickerDataMin" destination="vhz-hp-lcF" id="jEH-3Y-4ul"/>
+                        <outlet property="textValorMax" destination="D0K-or-iyJ" id="D7w-zw-yPO"/>
+                        <outlet property="textValorMin" destination="tdZ-2c-qsw" id="QkQ-J9-47t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zw4-jP-Kl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="-1508"/>
+            <point key="canvasLocation" x="1070.25" y="-1508.5"/>
         </scene>
         <!--Historico Tabela View Controller-->
         <scene sceneID="jIy-Yg-P4a">
@@ -483,7 +601,6 @@
                                     </variation>
                                     <connections>
                                         <action selector="apertouBotaoOrdenar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="7dx-co-RKj"/>
-                                        <segue destination="Iwo-rT-6sO" kind="presentation" id="hX3-pK-l9P"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-jC-DFb">
@@ -494,7 +611,6 @@
                                     </variation>
                                     <connections>
                                         <action selector="apertouBotaoFiltrar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="rEq-ka-pK6"/>
-                                        <segue destination="vag-xE-urf" kind="presentation" id="sSt-sq-vTT"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -560,6 +676,8 @@
                         <outlet property="botaoFiltrar" destination="fzr-jC-DFb" id="mBr-HD-OtN"/>
                         <outlet property="botaoOrdenar" destination="mlw-co-EVe" id="Fag-Gt-c4H"/>
                         <outlet property="viewSuperior" destination="val-6X-0lC" id="3nA-D2-tG5"/>
+                        <segue destination="vag-xE-urf" kind="presentation" identifier="HistoricoTabelaToFiltrar" id="6ie-cd-edk"/>
+                        <segue destination="Iwo-rT-6sO" kind="show" identifier="HistoricoTabelaToOrdenar" id="OyK-sN-QeA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v27-fk-LrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -685,9 +803,9 @@
         <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w9G-UC-YqS"/>
+        <segue reference="NL6-cS-gUU"/>
         <segue reference="sQ1-Os-lJ1"/>
-        <segue reference="400-pd-DHt"/>
         <segue reference="ZwO-F9-qYj"/>
+        <segue reference="w9G-UC-YqS"/>
     </inferredMetricsTieBreakers>
 </document>

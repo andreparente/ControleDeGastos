@@ -100,11 +100,11 @@
 				8A54D3CB1CA2CCDF00E63645 /* GastoManualViewController.swift */,
 				8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */,
 				8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */,
-				8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */,
 				8A54D3D31CA2CFFA00E63645 /* CadastroCartaoViewController.swift */,
 				9C4429711CAAA544005D0530 /* CadastroViewController.swift */,
 				9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */,
 				8A1AFD261CB07DF000382D1B /* TableViewCell.swift */,
+				8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */,
 				E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */,
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
 			);
