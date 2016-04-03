@@ -8,52 +8,59 @@
 
 import UIKit
 
-class HistoricoTabelaViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate  {
-    
-    var tableView: UITableView = UITableView()
-    var labelCat: UILabel = UILabel()
+class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+
+        tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
+        tableView.estimatedRowHeight = 50
         
-        tableView.frame = CGRectMake(0,screenSize.minY+22,screenSize.width,screenSize.height)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-        
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        view.addSubview(tableView)
+        tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
     //funçao que diz a quantidade de células
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cellsNumber = base.usuarioLogado!.gastos.count
-        return (cellsNumber > 0) ? cellsNumber : 1
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      
+        if(base.usuarioLogado!.gastos.count == 0) {
+            return 1
+        }
+            
+        else {
+            
+            return base.usuarioLogado!.gastos.count
+        }
+
     }
     
     //funçao que seta as células
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell =
+            self.tableView.dequeueReusableCellWithIdentifier(
+                "TableViewCell", forIndexPath: indexPath)
+                as! TableViewCell
         let cellsNumber = base.usuarioLogado?.gastos.count
         cell.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         
         if (cellsNumber > 0) {
-            cell.textLabel?.text = (base.usuarioLogado?.gastos[indexPath.row].nome)! + " " + (base.usuarioLogado?.gastos[indexPath.row].categoria)!
-            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(15))
-            cell.detailTextLabel?.text = "R$: " + String(base.usuarioLogado!.gastos[indexPath.row].valor)
-            cell.detailTextLabel?.font = UIFont.systemFontOfSize(CGFloat(10))
+            cell.labelNomeGasto.text = (base.usuarioLogado?.gastos[indexPath.row].nome)!
+            cell.labelCat.text = (base.usuarioLogado?.gastos[indexPath.row].categoria)!
+            cell.labelValor.text = "R$: " + String(base.usuarioLogado!.gastos[indexPath.row].valor)
         } else {
-            cell.textLabel?.text = "Você Não Possui Gastos!"
-            cell.textLabel?.font = UIFont.systemFontOfSize(CGFloat(20))
-            cell.textLabel?.center = cell.center
+            cell.labelNomeGasto.text = "Você Não Possui Gastos!"
+            cell.labelNomeGasto.center = cell.center
         }
         return cell
     }
     
     //funçao que é chamada ao clicar em determinada célula
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You selected cell #\(indexPath.row)!")
     }
     
