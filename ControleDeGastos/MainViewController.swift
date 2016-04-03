@@ -16,6 +16,11 @@ class MainViewController: UIViewController {
     var available:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gastos = base.usuarioLogado!.getGastosMês()
+        for gasto in gastos {
+            print (gasto!.data)
+        }
 
         print ("login feito com o usuario \(base.usuarioLogado!.nome), de email \(base.usuarioLogado!.email)")
         

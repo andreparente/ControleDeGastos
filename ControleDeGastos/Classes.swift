@@ -75,11 +75,16 @@ public class Usuario {
     // vai retornar os gastos de 03-01 a 03-14
     func getGastosMês() -> [Gasto?] {
         var gastosMes: [Gasto?] = []
+        let hoje = NSDate()
+        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+        let mesAtual = components.month
         for gasto in self.gastos {
-            //if gasto.data.rangeOfString(mesAno) != nil {
-                
+            let data = gasto.data.componentsSeparatedByString("-")
+            // data == [ano, mes, dia]
+            let mes = Int(data[1])
+            if (mes == mesAtual) {
                 gastosMes.append(gasto)
-            //}
+            }
         }
         return gastosMes
     }
