@@ -126,13 +126,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-AX-XUB">
-                                <rect key="frame" x="294" y="28" width="48" height="48"/>
-                                <state key="normal" title="Settings" image="ic_settings_48px-128"/>
-                                <connections>
-                                    <segue destination="kOo-RQ-Xmt" kind="show" id="xsX-Mx-VU8"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vID-WR-fxp">
                                 <rect key="frame" x="141" y="179" width="92" height="30"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="18"/>
@@ -159,6 +152,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-AX-XUB">
+                                <rect key="frame" x="294" y="28" width="48" height="48"/>
+                                <state key="normal" title="Settings" image="ic_settings_48px-128"/>
+                                <connections>
+                                    <segue destination="kOo-RQ-Xmt" kind="show" id="ZwO-F9-qYj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -190,7 +190,7 @@
                                 <rect key="frame" x="120" y="239" width="133" height="30"/>
                                 <state key="normal" title="Adicionar categoria"/>
                                 <connections>
-                                    <action selector="categoria:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="PTA-Qr-NBJ"/>
+                                    <action selector="categoria:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="I64-DM-mIs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76s-jX-fi7">
@@ -211,7 +211,7 @@
                                 <rect key="frame" x="144" y="132" width="87" height="30"/>
                                 <state key="normal" title="Alterar limite"/>
                                 <connections>
-                                    <action selector="limite:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="r0N-s2-jxM"/>
+                                    <action selector="limite:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="rW8-f9-EUy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -219,8 +219,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="7e0-v9-ANp" kind="show" identifier="SettingsToMain" id="enk-Hl-U5o"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SettingsToLogin" id="JPP-2I-nDT"/>
+                        <segue destination="7e0-v9-ANp" kind="show" identifier="SettingsToMain" id="400-pd-DHt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9G-V5-7xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -605,9 +605,9 @@
         <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JPP-2I-nDT"/>
-        <segue reference="xsX-Mx-VU8"/>
-        <segue reference="enk-Hl-U5o"/>
+        <segue reference="400-pd-DHt"/>
+        <segue reference="ZwO-F9-qYj"/>
         <segue reference="QRM-YM-FfM"/>
+        <segue reference="JPP-2I-nDT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -117,7 +117,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     }
     
     func realiza_cadastro() {
-        let usuario = Usuario(nome: name!, email: mailsalvo!, senha: senhasalva!)
+        let usuario = Usuario(nome: nome.text!, email: Email.text!, senha: senha.text!)
         
         // adiciona categorias padrao
         usuario.addCategoriaGasto("Outros")
