@@ -112,18 +112,30 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
             return
         }
         
-        // realizando o cadastro:
-        let usuario = Usuario(nome: name!, email: mailsalvo!, senha: senhasalva!)
-        // adiciona usuario na lista de usuarios da RAM
-        base.ramUsuarios.append(usuario)
-        // adiciona usuario na lista de usuarios do disco
-        base.adicionarUsuario(usuario)
-        // adiciona o usuario na entrada ultimoUsuario da base
-        base.salvarUltimoUsuario(usuario)
-        // configura o usuarioLogado para ser o de agora
-        base.usuarioLogado = usuario
+        realiza_cadastro()
         
         performSegueWithIdentifier("CadastroToLogin", sender: self)
+    }
+    
+    func realiza_cadastro() {
+        let usuario = Usuario(nome: name!, email: mailsalvo!, senha: senhasalva!)
+        
+        // adiciona categorias padrao
+        usuario.addCategoriaGasto("Outros")
+        usuario.addCategoriaGasto("Alimentação")
+        usuario.addCategoriaGasto("Transporte")
+        
+        // adiciona usuario na lista de usuarios da RAM
+        base.ramUsuarios.append(usuario)
+        
+        // adiciona usuario na lista de usuarios do disco
+        base.adicionarUsuario(usuario)
+        
+        // adiciona o usuario na entrada ultimoUsuario da base
+        base.salvarUltimoUsuario(usuario)
+        
+        // configura o usuarioLogado para ser o de agora
+        base.usuarioLogado = usuario
     }
     
     func dismissKeyboard() {
