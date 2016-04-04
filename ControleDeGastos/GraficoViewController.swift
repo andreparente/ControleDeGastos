@@ -91,9 +91,9 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         var vetCatAux: [String] = []
         var vetValAux: [Double] = []
         for i in 0..<gastosMes.count {
-            for categorias in usuario.categoriasGastos {
-                if(gastosMes[i]!.categoria == categorias) {
-                    vetCatAux.append(categorias!)
+            for categoria in usuario.categoriasGastos {
+                if(gastosMes[i]!.categoria == categoria) {
+                    vetCatAux.append(categoria)
                     vetValAux.append(0)
                 }
             }
@@ -150,7 +150,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
-        print("\(entry.value) in \(base.usuarioLogado?.categoriasGastos[entry.xIndex])")
+        print("\(entry.value) in \(base.usuarioLogado!.categoriasGastos[entry.xIndex])")
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
@@ -169,7 +169,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             //print("gasto ", gasto.nome)
         }
         total = 0.0
-        if(base.usuarioLogado?.gastos.count == 0) {
+        if(base.usuarioLogado!.gastos.count == 0) {
             
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "Você não possui nenhum gasto!"
@@ -202,7 +202,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         print(data)
         let mesGasto = Int(data[1])
         let anoGasto = Int(data[0])
-        vetorGastosMes = (base.usuarioLogado?.getGastosMes(mesGasto!,ano: anoGasto!))!
+        vetorGastosMes = base.usuarioLogado!.getGastosMes(mesGasto!,ano: anoGasto!)
         (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)

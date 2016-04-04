@@ -55,11 +55,11 @@ public class AIO {
     func login (usuario: Usuario) {
         usuarioLogado = usuario
         // se os cartoes ainda nao foram carregados, carrega
-        if (self.usuarioLogado?.getCartoes().count <= 0) {
+        if (self.usuarioLogado!.getCartoes().count <= 0) {
             carregarCartoes(self.usuarioLogado!)
         }
         // se os gastos ainda nao foram carregados, carrega
-        if (self.usuarioLogado?.getGastos().count <= 0) {
+        if (self.usuarioLogado!.getGastos().count <= 0) {
             carregarGastos(self.usuarioLogado!)
         }
     }
@@ -261,7 +261,7 @@ public class AIO {
                     // substitui o objeto pelo editado
                     gasto = gastoEditado
                     // edita na RAM
-                    usuarioLogado?.gastos[i] = gasto
+                    usuarioLogado!.gastos[i] = gasto
                 }
                 // substitui o objeto pelo editado
                 result += gastoToString(gasto)
@@ -299,7 +299,7 @@ public class AIO {
         newEntrie += "\(gasto.valor)\(attributeSeparator)"
         newEntrie += "\(gasto.data)"
         if !gasto.ehDinheiro { // se tiver cartao, escreve o cartao
-            newEntrie += "\(attributeSeparator)\(gasto.cartao?.nome)"
+            newEntrie += "\(attributeSeparator)\(gasto.cartao!.nome)"
         }
         newEntrie += "\(objectSeparator)"
         return newEntrie

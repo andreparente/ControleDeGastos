@@ -52,13 +52,12 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             print("Text field: \(textField.text)")
-            base.usuarioLogado?.setLimiteMes(Int(textField.text!)!)
+            base.usuarioLogado!.setLimiteMes(Int(textField.text!)!)
         }))
         self.presentViewController(alert,animated: true, completion: nil)
     }
     
     func btn_clicked(sender: UIBarButtonItem) {
-        // Do something
         performSegueWithIdentifier("SettingsToMain", sender: self)
     }
     
@@ -70,7 +69,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             var naoExiste = true
-            for categ in (base.usuarioLogado?.categoriasGastos)!
+            for categ in (base.usuarioLogado!.categoriasGastos)
             {
                 if textField.text == categ {
                     let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)

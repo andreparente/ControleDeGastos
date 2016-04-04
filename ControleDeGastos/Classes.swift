@@ -19,7 +19,7 @@ public class Usuario {
     var limiteMes = 0
     var cartoes = [Cartao]()
     var gastos = [Gasto]()
-    var categoriasGastos = [String?]()
+    var categoriasGastos = [String]()
 
     init(){}
     
@@ -33,7 +33,7 @@ public class Usuario {
         self.categoriasGastos.append(categ)
     }
 
-    func getCategoriasGastos() -> [String?] {
+    func getCategoriasGastos() -> [String] {
         return self.categoriasGastos
     }
 

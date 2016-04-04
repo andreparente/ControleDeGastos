@@ -22,13 +22,13 @@ class MainViewController: UIViewController {
         view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         var valortotal: Double = 0.0
         printaLimite(base.usuarioLogado!)
-        for valor in (base.usuarioLogado?.gastos)!
+        for valor in (base.usuarioLogado!.gastos)
         {
             valortotal += valor.valor
         }
         totalgastos.text = "Seu total de gastos é: R$ \(valortotal)"
         totaldisponivel.numberOfLines = 2
-        if(base.usuarioLogado?.limiteMes != 0)
+        if(base.usuarioLogado!.limiteMes != 0)
         {
         available = Double(base.usuarioLogado!.limiteMes) - valortotal
         if(available >= 100)
@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
             }
             else
             {
-                totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valortotal - Double((base.usuarioLogado?.limiteMes)!))"
+                totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valortotal - Double(base.usuarioLogado!.limiteMes))"
             }
         }
             totaldisponivel.hidden=false

@@ -34,8 +34,8 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         self.gastos = base.usuarioLogado!.getGastos()
         pickerCategorias.delegate = self
         pickerCategorias.dataSource = self
-        botaoCancelar.titleLabel?.textColor = UIColor.whiteColor()
-        botaoSalvar.titleLabel?.textColor = UIColor.whiteColor()
+        botaoCancelar.titleLabel!.textColor = UIColor.whiteColor()
+        botaoSalvar.titleLabel!.textColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
     }
 
@@ -67,10 +67,10 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         return 1
     }
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return (base.usuarioLogado?.categoriasGastos.count)!
+        return (base.usuarioLogado!.categoriasGastos.count)
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return (base.usuarioLogado!.categoriasGastos[row])!
+        return (base.usuarioLogado!.categoriasGastos[row])
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoria = base.usuarioLogado!.categoriasGastos[row]

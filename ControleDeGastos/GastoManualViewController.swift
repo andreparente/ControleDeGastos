@@ -114,12 +114,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        //print(base.usuarioLogado?.categoriasGastos.count)
-        return (base.usuarioLogado?.categoriasGastos.count)!
+        return (base.usuarioLogado!.categoriasGastos.count)
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return (base.usuarioLogado!.categoriasGastos[row])!
+        return (base.usuarioLogado!.categoriasGastos[row])
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
@@ -156,7 +155,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             let textField = alert.textFields![0] as UITextField
             //print("Text field: \(textField.text!)")
             var naoExiste = true
-            for categ in (base.usuarioLogado?.categoriasGastos)!
+            for categ in (base.usuarioLogado!.categoriasGastos)
             {
                 if textField.text == categ {
                     let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
@@ -171,6 +170,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 base.usuarioLogado!.addCategoriaGasto(textField.text!)
                 // adiciona no disco
                 base.editarUsuario(base.usuarioLogado!)
+                // atualiza label de categoria
                 self.categoria.text = textField.text
                 // atualiza pickerView
                 self.categoriaPickerView.reloadAllComponents()
@@ -213,7 +213,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         } else {
             let gasto = Gasto(nome: nome!, categoria: categoria!, valor: valorgasto!, data: data!)
             // adiciona na RAM
-            base.usuarioLogado?.addGasto(gasto)
+            base.usuarioLogado!.addGasto(gasto)
             // adiciona no disco
             base.adicionarGasto(gasto, usuario: base.usuarioLogado!)
             // faz o segue
