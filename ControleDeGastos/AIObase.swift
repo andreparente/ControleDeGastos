@@ -17,7 +17,8 @@ public class AIO {
     internal let arraySeparator = " && "
     
     // se der erro, tem que criar essas pastas na mao
-    internal let dir = "/Users/Shared/app/app-gastos"
+    //internal let dir = "/Users/Shared/app/app-gastos"
+    internal let dir = String(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0])
     
     // formato padrao dos nomes dos arquivos da base
     internal let file_usuarios = "usuarios"
@@ -39,6 +40,7 @@ public class AIO {
         if (hasLaunchedOnce) {
             login(self.usuarioLogado!)
         }
+        print (dir)
     }
     
     // rodar antes de fechar o app
