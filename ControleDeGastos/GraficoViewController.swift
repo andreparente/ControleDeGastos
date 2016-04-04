@@ -87,14 +87,15 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         return false
     }
     
-    func organizaVetoresMes(usuario: Usuario, gastosMes: [Gasto?]) -> ([Double],[String]) {
+    func organizaVetoresMes(usuario: Usuario, gastosMes: [Gasto]) -> ([Double],[String]) {
 
         var vetCatAux: [String] = []
         var vetValAux: [Double] = []
         for i in 0..<gastosMes.count {
-            for categoria in usuario.categoriasGastos {
-                if(gastosMes[i]!.categoria == categoria) {
-                    vetCatAux.append(categoria)
+
+            for categorias in usuario.categoriasGastos {
+                if(gastosMes[i].categoria == categorias) {
+                    vetCatAux.append(categorias)
                     vetValAux.append(0)
                 }
             }
@@ -102,8 +103,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
 
         for i in 0..<vetCatAux.count {
             for valGasto in gastosMes {
-                if(valGasto!.categoria == vetCatAux[i]) {
-                    vetValAux[i] = vetValAux[i] + valGasto!.valor
+                if(valGasto.categoria == vetCatAux[i]) {
+                    vetValAux[i] = vetValAux[i] + valGasto.valor
                 }
             }
         }
