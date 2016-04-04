@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FiltrarViewController: UIViewController {
+class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
 
     @IBOutlet weak var textValorMin: UITextField!
     @IBOutlet weak var textValorMax: UITextField!
@@ -22,7 +22,7 @@ class FiltrarViewController: UIViewController {
     @IBOutlet weak var botaoSalvar: UIButton!
     
     var gastos = [Gasto]()
-    
+    var categoria : String!
     var delegate = HistoricoTabelaViewController()
     
     override func viewDidLoad() {
@@ -32,7 +32,8 @@ class FiltrarViewController: UIViewController {
         
         // inicialmente carrega todos os gastos
         self.gastos = base.usuarioLogado!.getGastos()
-
+        pickerCategorias.delegate = self
+        pickerCategorias.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -54,12 +55,25 @@ class FiltrarViewController: UIViewController {
         } else if (textValorMax.text != "") {
             filtraValorMax(Int(textValorMax.text!)!)
         }
-
+        
         // altera os dados da historicoTabela
         self.delegate.gastos = self.gastos
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
     }
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return (base.usuarioLogado?.categoriasGastos.count)!
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return (base.usuarioLogado!.categoriasGastos[row])!
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categoria = base.usuarioLogado!.categoriasGastos[row]
+    }
+
     /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destino = segue.destinationViewController as! HistoricoTabelaViewController
@@ -129,6 +143,5 @@ class FiltrarViewController: UIViewController {
         }
         self.gastos = gastosFiltrado
     }
-    
 
 }
