@@ -57,9 +57,9 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         cell.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         
         if (cellsNumber > 0) {
-            cell.labelNomeGasto.text = "Gasto:\(self.gastos[indexPath.row].nome)"
-            cell.labelCat.text = "Tipo:\(self.gastos[indexPath.row].categoria)"
-            cell.labelValor.text = "R$: " + String(self.gastos[indexPath.row].valor)
+            cell.labelNomeGasto.text = "\(self.gastos[indexPath.row].nome)"
+            cell.labelCat.text = "\(self.gastos[indexPath.row].categoria)"
+            cell.labelValor.text = "R$ " + String(self.gastos[indexPath.row].valor)
         } else {
             cell.labelNomeGasto.text = "Você Não Possui Gastos!"
             cell.labelNomeGasto.center = cell.center
