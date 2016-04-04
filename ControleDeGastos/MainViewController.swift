@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var limite: UILabel!
     @IBOutlet weak var totaldisponivel: UILabel!
     @IBOutlet weak var totalgastos: UILabel!
+    @IBOutlet weak var totalDisponivelMes: UILabel!
     var available: Double!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,31 @@ class MainViewController: UIViewController {
         
         view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         var valortotal: Double = 0.0
+        var valorTotalMes: Double = 0.0
         printaLimite(base.usuarioLogado!)
-        for valor in (base.usuarioLogado!.gastos)
-        {
+        let hoje = NSDate()
+        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+        let mesAtual = components.month
+        let anoAtual = components.year
+        
+        for valor in (base.usuarioLogado!.gastos) {
+    
             valortotal += valor.valor
+            
         }
+        for valor in (base.usuarioLogado!.gastos) {
+            let data = valor.data.componentsSeparatedByString("-")
+            if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
+                valorTotalMes += valor.valor
+            }
+        }
+        
         totalgastos.text = "Seu total de gastos é: R$ \(valortotal)"
         totaldisponivel.numberOfLines = 2
+        
         if(base.usuarioLogado!.limiteMes != 0)
         {
-        available = Double(base.usuarioLogado!.limiteMes) - valortotal
+        available = Double(base.usuarioLogado!.limiteMes) - valorTotalMes
         if(available >= 100)
         {
             totaldisponivel.text = "Você ainda tem R$ \(available) para gastar nesse mês"
@@ -43,7 +59,7 @@ class MainViewController: UIViewController {
             }
             else
             {
-                totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valortotal - Double(base.usuarioLogado!.limiteMes))"
+                totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valorTotalMes - Double(base.usuarioLogado!.limiteMes))"
             }
         }
             totaldisponivel.hidden=false
@@ -65,7 +81,7 @@ class MainViewController: UIViewController {
             limite.text = "Você não disponibilizou o limite por mês"
         }
         else {
-            limite.text = "Seu limite é R$ \(usuario.limiteMes)"
+            limite.text = "Seu limite por mês é \(usuario.limiteMes) reais"
         }
     }
     

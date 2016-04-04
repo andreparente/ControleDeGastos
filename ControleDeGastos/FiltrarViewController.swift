@@ -69,6 +69,9 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
             self.gastos = filtraCategoria(self.categoriaSelecionada, gastos: self.gastos)
         }
         
+        // filtro de data
+        self.gastos =  filtroData(pickerDataMin.date, data2: pickerDataMax.date, gastos: self.gastos)
+        
         // altera os dados da historicoTabela
         self.delegate.gastos = self.gastos
         // desfaz o segue

@@ -59,7 +59,40 @@ public func filtraCategoria(categoriaFiltro: String, gastos: [Gasto]) -> [Gasto]
     }
     return gastosFiltrados
 }
-
+public func comparadata(data1:NSDate,date2:NSDate) ->(Int)
+{
+    if data1.compare(date2) == NSComparisonResult.OrderedDescending
+    {
+        NSLog("date1 after date2");
+        return 1
+    } else if data1.compare(date2) == NSComparisonResult.OrderedAscending
+    {
+        NSLog("date1 before date2");
+        return -1
+    } else
+    {
+        NSLog("dates are equal");
+        return 0
+    }
+}
+public func filtroData(data1:NSDate,data2:NSDate,gastos:[Gasto]) ->([Gasto])
+{
+    var compara:Int!
+    var i = 0
+    var gastosFiltrados: [Gasto] = []
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    for i in 0..<gastos.count {
+       if ((comparadata(data1, date2: dateFormatter.dateFromString(gastos[i].data)!) == -1 || comparadata(data1, date2: dateFormatter.dateFromString(gastos[i].data)!) == 0) && (comparadata(data2, date2: dateFormatter.dateFromString(gastos[i].data)!) == 0 || comparadata(data2,date2:dateFormatter.dateFromString(gastos[i].data)!) == 1))
+        {
+        gastosFiltrados.append(gastos[i])
+        }
+       else{
+        print("Filtrei esse palhaco:\(gastos[i].data)")
+        }
+    }
+    return gastosFiltrados
+}
 /*
 // passando zero retorna os gastos de hoje
 func filtraUltimosDias(dias: Int) {
