@@ -8,13 +8,7 @@
 
 import UIKit
 import AVFoundation
-extension Double {
-    /// Rounds the double to decimal places value
-    func roundToPlaces(places:Int) -> Double {
-        let divisor = pow(10.0, Double(places))
-        return round(self * divisor) / divisor
-    }
-}
+
 class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var messageLabel: UILabel!
@@ -181,8 +175,8 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destination:GastoManualViewController = segue.destinationViewController as! GastoManualViewController
-        destination.valortotal=Double(valorfinal)?.roundToPlaces(2)
-        destination.data=datafinalmente
+        destination.valortotal = Double(valorfinal)?.roundToPlaces(2)
+        destination.data = datafinalmente
         
     }
     

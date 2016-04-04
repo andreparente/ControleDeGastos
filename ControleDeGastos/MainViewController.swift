@@ -13,14 +13,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var limite: UILabel!
     @IBOutlet weak var totaldisponivel: UILabel!
     @IBOutlet weak var totalgastos: UILabel!
-    var available:Int!
+    var available: Double!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print ("login feito com o usuario \(base.usuarioLogado!.nome), de email \(base.usuarioLogado!.email)")
         
         view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
-        var valortotal:Int = 0
+        var valortotal: Double = 0.0
         printaLimite(base.usuarioLogado!)
         for valor in (base.usuarioLogado?.gastos)!
         {
@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
         totaldisponivel.numberOfLines = 2
         if(base.usuarioLogado?.limiteMes != 0)
         {
-        available = (base.usuarioLogado?.limiteMes)! - valortotal
+        available = Double(base.usuarioLogado!.limiteMes) - valortotal
         if(available >= 100)
         {
             totaldisponivel.text = "Você ainda tem R$ \(available) para gastar nesse mês"
@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
             }
             else
             {
-                totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valortotal - (base.usuarioLogado?.limiteMes)!)"
+                totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valortotal - Double((base.usuarioLogado?.limiteMes)!))"
             }
         }
             totaldisponivel.hidden=false

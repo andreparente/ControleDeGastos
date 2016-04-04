@@ -132,7 +132,7 @@ public class Usuario {
 
 public class Gasto {
     var nome = String()
-    var valor = Int() // temporariamente para que o AIO funcione
+    var valor = Double() // temporariamente para que o AIO funcione
     var data = String() // formato "yyyy-MM-dd-hh-mm-ss"
     //var foto: UIImage?
     var ehDinheiro = Bool()
@@ -140,7 +140,7 @@ public class Gasto {
     var cartao: Cartao?
 
     // init para gasto em dinheiro
-    init(nome: String, categoria: String, valor: Int, data: String) {
+    init(nome: String, categoria: String, valor: Double, data: String) {
         self.nome = nome
         self.categoria = categoria
         self.valor = valor
@@ -149,7 +149,7 @@ public class Gasto {
     }
 
     // init para gasto em cartao
-    init(nome: String, categoria: String, valor: Int, data: String, cartao: Cartao) {
+    init(nome: String, categoria: String, valor: Double, data: String, cartao: Cartao) {
         self.nome = nome
         self.categoria = categoria
         self.valor = valor

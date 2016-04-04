@@ -17,7 +17,8 @@ public class AIO {
     internal let arraySeparator = " && "
     
     // se der erro, tem que criar essas pastas na mao
-    internal let dir = "/Users/Shared/app/app-gastos"
+    //internal let dir = "/Users/Shared/app/app-gastos"
+    internal let dir = String(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0])
     
     // formato padrao dos nomes dos arquivos da base
     internal let file_usuarios = "usuarios"
@@ -39,6 +40,7 @@ public class AIO {
         if (hasLaunchedOnce) {
             login(self.usuarioLogado!)
         }
+        print (dir)
     }
     
     // rodar antes de fechar o app
@@ -315,7 +317,7 @@ public class AIO {
     internal func stringToGasto(str: String, usuario: Usuario) -> Gasto {
         let attributes = str.componentsSeparatedByString(attributeSeparator)
         let numParametros = attributes.count
-        let novoGasto = Gasto(nome: attributes[0], categoria: attributes[1], valor: Int(attributes[2])!, data: attributes[3])
+        let novoGasto = Gasto(nome: attributes[0], categoria: attributes[1], valor: attributes[2].toDouble()!, data: attributes[3])
         
         let indUsuario = indiceUsuarioPorEmail(usuario.email)
         if (numParametros == 5) { // quando possui cartao, adiciona o cartao
