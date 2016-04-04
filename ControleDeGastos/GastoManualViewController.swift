@@ -74,6 +74,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         if data != nil
         {
             dateLabel.text = data
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let datefromstring = dateFormatter.dateFromString(data)
+            date.date = datefromstring!
+            
         }
         else
         {
