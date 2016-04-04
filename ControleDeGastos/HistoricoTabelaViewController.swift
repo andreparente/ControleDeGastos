@@ -20,7 +20,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
-
+        viewSuperior.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
         
