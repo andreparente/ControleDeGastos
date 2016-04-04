@@ -76,11 +76,11 @@ public class Usuario {
         // gera o novo vetor
         var gastosMes: [Gasto] = []
         for gasto in self.gastos {
-            let data = gasto.data.componentsSeparatedByString("/")
+            let data = gasto.data.componentsSeparatedByString("-")
             // data == [ano, mes, dia]
             print("data no arquivo ta: ", data)
-            let mesGasto = Int(data[0])
-            let anoGasto = Int(data[2])
+            let mesGasto = Int(data[1])
+            let anoGasto = Int(data[0])
             if (mesGasto == mes && ano == anoGasto) {
                 gastosMes.append(gasto)
             }
