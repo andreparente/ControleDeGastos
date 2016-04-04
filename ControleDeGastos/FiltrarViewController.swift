@@ -35,8 +35,8 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         self.gastos = base.usuarioLogado!.getGastos()
         
         // preenche vetor de categorias e adiciona "Todas"
-        self.categorias = base.usuarioLogado!.getCategoriasGastos()
         self.categorias.append("Todas")
+        self.categorias.appendContentsOf(base.usuarioLogado!.getCategoriasGastos())
         
         // inicialmente, o valor da categoria selecionada eh Todas
         self.categoriaSelecionada = "Todas"
