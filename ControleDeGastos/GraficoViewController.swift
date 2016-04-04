@@ -192,13 +192,16 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     @IBAction func DatePickerChanged(sender: AnyObject) {
         dataNs = dataMesDatePicker.date
         dataString = dateFormatter.stringFromDate(dataMesDatePicker.date)
-        print("dataString: ", dataString)
+        let dataaux = dataString.stringByReplacingOccurrencesOfString("/", withString: "-")
+        let fullNameArr = dataaux.componentsSeparatedByString("-")
+        let stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [0] + "-" + fullNameArr[1]
+        print("dataString: ", stringfinal)
         dataMesTextField.text = dataString
-        let data = dataString.componentsSeparatedByString("/")
+        let data = stringfinal.componentsSeparatedByString("-")
         // data == [mes, dia, ano]
         print(data)
-        let mesGasto = Int(data[0])
-        let anoGasto = Int(data[2])
+        let mesGasto = Int(data[1])
+        let anoGasto = Int(data[0])
         vetorGastosMes = (base.usuarioLogado?.getGastosMes(mesGasto!,ano: anoGasto!))!
         (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
