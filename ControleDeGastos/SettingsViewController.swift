@@ -90,8 +90,6 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         self.presentViewController(alert,animated: true, completion: nil)
     }
     
-    @IBAction func mudaremail(sender: UIButton) {
-    }
     
     @IBAction func logOut(sender: UIButton) {
         base.logout()

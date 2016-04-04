@@ -207,15 +207,6 @@
                                     <action selector="logOut:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="Vf8-Yu-EW8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEq-3v-enE">
-                                <rect key="frame" x="145" y="428" width="85" height="30"/>
-                                <state key="normal" title="Mudar email">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="mudaremail:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="iNV-It-MGz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-gd-AnK">
                                 <rect key="frame" x="144" y="149" width="87" height="30"/>
                                 <state key="normal" title="Alterar limite">
