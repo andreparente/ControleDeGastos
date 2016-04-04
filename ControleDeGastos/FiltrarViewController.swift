@@ -34,6 +34,8 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         self.gastos = base.usuarioLogado!.getGastos()
         pickerCategorias.delegate = self
         pickerCategorias.dataSource = self
+        botaoCancelar.titleLabel?.textColor = UIColor.whiteColor()
+        botaoSalvar.titleLabel?.textColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
     }
 
