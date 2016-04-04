@@ -44,6 +44,17 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         pickerCategorias.delegate = self
         pickerCategorias.dataSource = self
         
+        // configurando os valores iniciais dos pickerView de data
+        // pega a data de hoje e seus components
+        let dataHoje = NSDate()
+        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: dataHoje)
+        // altera o dia pra 1
+        components.day = 1
+        // pega a data gerada com dia 1
+        let primeiroDiaMes = NSDate().createFromDate(components.day, mes: components.month, ano: components.year)
+        // altera o pickerDate minimo
+        self.pickerDataMin.setDate(primeiroDiaMes, animated: false)
+        
         botaoCancelar.titleLabel!.textColor = UIColor.whiteColor()
         botaoSalvar.titleLabel!.textColor = UIColor.whiteColor()
     }
@@ -54,14 +65,14 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     
     @IBAction func apertouBotaoSalvar(sender: AnyObject) {
         // filtros de valor minimo e maximo
-        let min = (textValorMin.text!).toDouble()!
-        let max = (textValorMax.text!).toDouble()!
-        if (!min.isZero && !max.isZero) {
-            self.gastos = filtraValor( min, max: max, gastos: self.gastos )
-        } else if (!min.isZero) {
-            self.gastos = filtraValorMin( min, gastos: self.gastos )
-        } else if (!max.isZero) {
-            self.gastos = filtraValorMax( max, gastos: self.gastos )
+        let minVal = (textValorMin.text!).toDouble()!
+        let maxVal = (textValorMax.text!).toDouble()!
+        if (!minVal.isZero && !maxVal.isZero) {
+            self.gastos = filtraValor( minVal, max: maxVal, gastos: self.gastos )
+        } else if (!minVal.isZero) {
+            self.gastos = filtraValorMin( minVal, gastos: self.gastos )
+        } else if (!maxVal.isZero) {
+            self.gastos = filtraValorMax( maxVal, gastos: self.gastos )
         }
         
         // filtro de categorias
@@ -70,7 +81,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         }
         
         // filtro de data
-        self.gastos =  filtroData(pickerDataMin.date, data2: pickerDataMax.date, gastos: self.gastos)
+        self.gastos =  filtroData(pickerDataMin.date, fim: pickerDataMax.date, gastos: self.gastos)
         
         // altera os dados da historicoTabela
         self.delegate.gastos = self.gastos

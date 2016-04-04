@@ -59,36 +59,45 @@ public func filtraCategoria(categoriaFiltro: String, gastos: [Gasto]) -> [Gasto]
     }
     return gastosFiltrados
 }
-public func comparadata(data1:NSDate,date2:NSDate) ->(Int)
+
+public func comparadata(data1: NSDate, date2: NSDate) ->(Int)
 {
+    //data1.changeDaysBy(-1)
     if data1.compare(date2) == NSComparisonResult.OrderedDescending
     {
-        NSLog("date1 after date2");
+        //NSLog("date1 after date2");
         return 1
     } else if data1.compare(date2) == NSComparisonResult.OrderedAscending
     {
-        NSLog("date1 before date2");
+        //NSLog("date1 before date2");
         return -1
     } else
     {
-        NSLog("dates are equal");
+        //NSLog("dates are equal");
         return 0
     }
 }
-public func filtroData(data1:NSDate,data2:NSDate,gastos:[Gasto]) ->([Gasto])
+
+public func filtroData(inicio:NSDate, fim:NSDate, gastos:[Gasto]) ->([Gasto])
 {
-    var compara:Int!
-    var i = 0
     var gastosFiltrados: [Gasto] = []
     let dateFormatter = NSDateFormatter()
+    
+    // eh necessario zerar a hora, os minutos e os segundos antes de comecar
+    let cal: NSCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+    let inicio_ = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: inicio, options: NSCalendarOptions())!
+    let fim_ = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: fim, options: NSCalendarOptions())!
+    
     dateFormatter.dateFormat = "yyyy-MM-dd"
-    for i in 0..<gastos.count {
-       if ((comparadata(data1, date2: dateFormatter.dateFromString(gastos[i].data)!) == -1 || comparadata(data1, date2: dateFormatter.dateFromString(gastos[i].data)!) == 0) && (comparadata(data2, date2: dateFormatter.dateFromString(gastos[i].data)!) == 0 || comparadata(data2,date2:dateFormatter.dateFromString(gastos[i].data)!) == 1))
+    for var i in 0..<gastos.count {
+        let dataGasto = dateFormatter.dateFromString(gastos[i].data)!
+        //print (dataGasto, " --- ", fim, " --- ", inicio)
+        if ( (comparadata(inicio_, date2: dataGasto) == -1
+            || comparadata(inicio_, date2: dataGasto) == 0)
+            && (comparadata(fim_, date2: dataGasto) == 0
+            || comparadata(fim_,date2: dataGasto) == 1) )
         {
-        gastosFiltrados.append(gastos[i])
-        }
-       else{
-        print("Filtrei esse palhaco:\(gastos[i].data)")
+            gastosFiltrados.append(gastos[i])
         }
     }
     return gastosFiltrados
@@ -96,26 +105,26 @@ public func filtroData(data1:NSDate,data2:NSDate,gastos:[Gasto]) ->([Gasto])
 /*
 // passando zero retorna os gastos de hoje
 func filtraUltimosDias(dias: Int) {
-    // descobre ano, mes e dia atuais
-    let hoje = NSDate()
-    let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
-    let mesAtual = components.month
-    let anoAtual = components.year
-    let diaAtual = components.day
-    
-    // gera o novo vetor
-    var gastosUltimosDias: [Gasto] = []
-    for gasto in self.gastos {
-        let data = gasto.data.componentsSeparatedByString("-")
-        // data == [ano, mes, dia]
-        let dia = Int(data[2])
-        let mes = Int(data[1])
-        let ano = Int(data[0])
-        if (mes == mesAtual && ano == anoAtual && dia >= (diaAtual - dias)) {
-            gastosUltimosDias.append(gasto)
-        }
-    }
-    self.gastos = gastosUltimosDias
+// descobre ano, mes e dia atuais
+let hoje = NSDate()
+let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+let mesAtual = components.month
+let anoAtual = components.year
+let diaAtual = components.day
+
+// gera o novo vetor
+var gastosUltimosDias: [Gasto] = []
+for gasto in self.gastos {
+let data = gasto.data.componentsSeparatedByString("-")
+// data == [ano, mes, dia]
+let dia = Int(data[2])
+let mes = Int(data[1])
+let ano = Int(data[0])
+if (mes == mesAtual && ano == anoAtual && dia >= (diaAtual - dias)) {
+gastosUltimosDias.append(gasto)
+}
+}
+self.gastos = gastosUltimosDias
 }
 */
 

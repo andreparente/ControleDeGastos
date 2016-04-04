@@ -24,3 +24,23 @@ extension String {
         return NSNumberFormatter().numberFromString(self)?.doubleValue
     }
 }
+
+extension NSDate {
+    func changeDaysBy(days : Int) -> NSDate {
+        let currentDate = NSDate()
+        let dateComponents = NSDateComponents()
+        dateComponents.day = days
+        return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: currentDate, options: NSCalendarOptions(rawValue: 0))!
+    }
+}
+
+extension NSDate {
+    func createFromDate(dia: Int, mes: Int, ano: Int) -> NSDate {
+        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: NSDate())
+        components.day = dia
+        components.month = mes
+        components.year = ano
+        let timeInterval = (NSCalendar(identifier: NSCalendarIdentifierGregorian)?.dateFromComponents(components)!.timeIntervalSince1970)!
+        return NSDate(timeIntervalSince1970: timeInterval)
+    }
+}
