@@ -40,7 +40,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Gasto"
-
+/*
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:(#selector(GastoManualViewController.btn_clicked(_:))))
         
@@ -48,7 +48,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         navigationItem.leftBarButtonItem = leftButton
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-        
+*/      
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         
