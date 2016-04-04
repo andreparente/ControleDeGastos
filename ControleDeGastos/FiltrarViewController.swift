@@ -49,13 +49,15 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     }
     
     @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+        let min = (textValorMin.text!).toDouble()!
+        let max = (textValorMax.text!).toDouble()!
         // filtros de valor minimo e maximo
-        if (textValorMax.text != "" && textValorMin.text != "") {
-            filtraValor( (textValorMin.text!).toDouble()!, max: (textValorMax.text!).toDouble()!)
-        } else if (textValorMin.text != "") {
-            filtraValorMin( (textValorMin.text!).toDouble()! )
-        } else if (textValorMax.text != "") {
-            filtraValorMax( (textValorMax.text!).toDouble()! )
+        if (!min.isZero && !max.isZero) {
+            self.gastos = filtraValor( min, max: max, gastos: self.gastos )
+        } else if (!min.isZero) {
+            self.gastos = filtraValorMin( min, gastos: self.gastos )
+        } else if (!max.isZero) {
+            self.gastos = filtraValorMax( max, gastos: self.gastos )
         }
         
         // altera os dados da historicoTabela
@@ -107,43 +109,5 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         self.gastos = gastosUltimosDias
     }
     */
-    // filtra o vetor de gastos pelo intervalo de valores
-    func filtraValor(min: Double, max: Double) {
-        // gera o novo vetor
-        var gastosFiltrado: [Gasto] = []
-        for gasto in self.gastos {
-            let valor = gasto.valor
-            if (valor >= min && valor <= max) {
-                gastosFiltrado.append(gasto)
-            }
-        }
-        self.gastos = gastosFiltrado
-    }
-    
-    // filtra o vetor de gastos pelo valor minimo
-    func filtraValorMin(min: Double) {
-        // gera o novo vetor
-        var gastosFiltrado: [Gasto] = []
-        for gasto in self.gastos {
-            let valor = gasto.valor
-            if (valor >= min) {
-                gastosFiltrado.append(gasto)
-            }
-        }
-        self.gastos = gastosFiltrado
-    }
-    
-    // filtra o vetor de gastos pelo valor maximo
-    func filtraValorMax(max: Double) {
-        // gera o novo vetor
-        var gastosFiltrado: [Gasto] = []
-        for gasto in self.gastos {
-            let valor = gasto.valor
-            if (valor <= max) {
-                gastosFiltrado.append(gasto)
-            }
-        }
-        self.gastos = gastosFiltrado
-    }
 
 }

@@ -30,6 +30,7 @@
 		E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */; };
 		E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */; };
 		E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559BFA71CA96CDD00B3CD5A /* AIObase.swift */; };
+		E5BD5CAD1CB2D76900481089 /* Filtros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CAC1CB2D76900481089 /* Filtros.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrarViewController.swift; sourceTree = "<group>"; };
 		E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdenarViewController.swift; sourceTree = "<group>"; };
 		E559BFA71CA96CDD00B3CD5A /* AIObase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIObase.swift; sourceTree = "<group>"; };
+		E5BD5CAC1CB2D76900481089 /* Filtros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */,
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
 				9C047D711CB2A1D40099A13C /* extensions.swift */,
+				E5BD5CAC1CB2D76900481089 /* Filtros.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				8A71E0171C9C2F6B00C055F8 /* AppDelegate.swift in Sources */,
 				E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */,
 				9C047D721CB2A1D40099A13C /* extensions.swift in Sources */,
+				E5BD5CAD1CB2D76900481089 /* Filtros.swift in Sources */,
 				8A1AFD271CB07DF000382D1B /* TableViewCell.swift in Sources */,
 				9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */,
 				8A1AFCFF1CAACC7400382D1B /* GastoManualViewController.swift in Sources */,
