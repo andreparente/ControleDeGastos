@@ -38,19 +38,19 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         erromail.text="E-mail inválido"
         errosenhas.hidden=true
         errosenhas.text="Senhas não são iguais"
- 
+ /*
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
 
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
-        
+
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
-        
+        */
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Cadastro"
-       
+       /*
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(CadastroViewController.btn_clicked(_:)))
         
@@ -59,10 +59,11 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         navigationItem.leftBarButtonItem = leftButton
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-    
+
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.
+*/
     }
     
     override func didReceiveMemoryWarning() {
