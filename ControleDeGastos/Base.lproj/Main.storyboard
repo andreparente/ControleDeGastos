@@ -191,28 +191,36 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgQ-fe-lJf">
                                 <rect key="frame" x="121" y="263" width="133" height="30"/>
-                                <state key="normal" title="Adicionar categoria"/>
+                                <state key="normal" title="Adicionar categoria">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="categoria:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="I64-DM-mIs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76s-jX-fi7">
                                 <rect key="frame" x="160" y="552" width="55" height="30"/>
-                                <state key="normal" title="Log Out"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logOut:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="Vf8-Yu-EW8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEq-3v-enE">
                                 <rect key="frame" x="145" y="428" width="85" height="30"/>
-                                <state key="normal" title="Mudar email"/>
+                                <state key="normal" title="Mudar email">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="mudaremail:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="iNV-It-MGz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-gd-AnK">
                                 <rect key="frame" x="144" y="149" width="87" height="30"/>
-                                <state key="normal" title="Alterar limite"/>
+                                <state key="normal" title="Alterar limite">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="limite:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="rW8-f9-EUy"/>
                                 </connections>
