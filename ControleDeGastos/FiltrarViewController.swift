@@ -51,11 +51,11 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     @IBAction func apertouBotaoSalvar(sender: AnyObject) {
         // filtros de valor minimo e maximo
         if (textValorMax.text != "" && textValorMin.text != "") {
-            filtraValor(Int(textValorMin.text!)!, max: Int(textValorMax.text!)!)
+            filtraValor( (textValorMin.text!).toDouble()!, max: (textValorMax.text!).toDouble()!)
         } else if (textValorMin.text != "") {
-            filtraValorMin(Int(textValorMin.text!)!)
+            filtraValorMin( (textValorMin.text!).toDouble()! )
         } else if (textValorMax.text != "") {
-            filtraValorMax(Int(textValorMax.text!)!)
+            filtraValorMax( (textValorMax.text!).toDouble()! )
         }
         
         // altera os dados da historicoTabela
@@ -108,7 +108,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     }
     */
     // filtra o vetor de gastos pelo intervalo de valores
-    func filtraValor(min: Int, max: Int) {
+    func filtraValor(min: Double, max: Double) {
         // gera o novo vetor
         var gastosFiltrado: [Gasto] = []
         for gasto in self.gastos {
@@ -121,7 +121,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     }
     
     // filtra o vetor de gastos pelo valor minimo
-    func filtraValorMin(min: Int) {
+    func filtraValorMin(min: Double) {
         // gera o novo vetor
         var gastosFiltrado: [Gasto] = []
         for gasto in self.gastos {
@@ -134,7 +134,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     }
     
     // filtra o vetor de gastos pelo valor maximo
-    func filtraValorMax(max: Int) {
+    func filtraValorMax(max: Double) {
         // gera o novo vetor
         var gastosFiltrado: [Gasto] = []
         for gasto in self.gastos {

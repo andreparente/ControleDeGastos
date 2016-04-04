@@ -62,7 +62,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
                     if(existeCategoria(vetCatAux, categoria: valGasto.categoria) == false) {
                         vetCatAux.append(valGasto.categoria)
                     }
-                    vetValAux[i] = vetValAux[i]! + Double(valGasto.valor)
+                    vetValAux[i] = vetValAux[i]! + valGasto.valor
                 }
             }
         }
@@ -102,7 +102,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         for i in 0..<vetCatAux.count {
             for valGasto in gastosMes {
                 if(valGasto!.categoria == vetCatAux[i]) {
-                    vetValAux[i] = vetValAux[i] + Double(valGasto!.valor)
+                    vetValAux[i] = vetValAux[i] + valGasto!.valor
                 }
             }
         }
@@ -179,7 +179,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
         else {
             for gasto in base.usuarioLogado!.gastos {
-                total = total+Double(gasto.valor)
+                total = total + gasto.valor
             }
             (vetorFinal,vetorFinalCat) = organizaVetores(base.usuarioLogado!)
             print("vetor de valores", vetorFinal)

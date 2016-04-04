@@ -203,7 +203,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
-            let gasto = Gasto(nome: nome!, categoria: categoria!, valor: Int(valorgasto!), data: data!)
+            let gasto = Gasto(nome: nome!, categoria: categoria!, valor: valorgasto!, data: data!)
             // adiciona na RAM
             base.usuarioLogado?.addGasto(gasto)
             // adiciona no disco

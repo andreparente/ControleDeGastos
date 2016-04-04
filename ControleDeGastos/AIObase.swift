@@ -315,7 +315,7 @@ public class AIO {
     internal func stringToGasto(str: String, usuario: Usuario) -> Gasto {
         let attributes = str.componentsSeparatedByString(attributeSeparator)
         let numParametros = attributes.count
-        let novoGasto = Gasto(nome: attributes[0], categoria: attributes[1], valor: Int(attributes[2])!, data: attributes[3])
+        let novoGasto = Gasto(nome: attributes[0], categoria: attributes[1], valor: attributes[2].toDouble()!, data: attributes[3])
         
         let indUsuario = indiceUsuarioPorEmail(usuario.email)
         if (numParametros == 5) { // quando possui cartao, adiciona o cartao
