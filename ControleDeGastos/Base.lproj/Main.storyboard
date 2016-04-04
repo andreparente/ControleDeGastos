@@ -246,22 +246,20 @@
                                 <rect key="frame" x="89" y="122" width="197" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="102" y="87" width="198" height="30"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="43" y="71" width="96" height="30"/>
                                 </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0e-CU-qUk">
-                                <rect key="frame" x="27" y="341" width="165" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="165" id="xA3-E0-sYp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do Gasto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-UQ-HLq">
                                 <rect key="frame" x="27" y="69" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="73" y="49" width="227" height="30"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="236" width="121.5" height="30"/>
                                 </variation>
@@ -271,6 +269,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="480947909.87446201">
                                     <!--2016-03-29 12:38:29 +0000-->
                                 </date>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="43" y="206" width="288" height="95.5"/>
+                                </variation>
                                 <connections>
                                     <action selector="datePickerChanged:" destination="goP-2V-gWf" eventType="valueChanged" id="jsW-ia-vYI"/>
                                 </connections>
@@ -285,12 +286,6 @@
                                     <action selector="novacategoria:" destination="goP-2V-gWf" eventType="touchUpInside" id="MDK-n2-n5q"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM/DD/YY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-0d-VcF">
-                                <rect key="frame" x="43" y="160" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj6-V4-gwE">
                                 <rect key="frame" x="273" y="69" width="58" height="30"/>
                                 <constraints>
@@ -299,6 +294,9 @@
                                 <state key="normal" title="QRCode">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="273" y="49" width="58" height="30"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="191" y="70" width="58" height="30"/>
                                 </variation>
@@ -311,6 +309,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="73" y="96.5" width="21.5" height="20.5"/>
+                                </variation>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8Y-Gk-BLT">
                                 <rect key="frame" x="0.0" y="390" width="375" height="92"/>
@@ -340,47 +341,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="163" y="160" width="48" height="29"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tS3-0d-VcF" firstAttribute="leading" secondItem="ZGc-Yf-SUb" secondAttribute="leading" id="4cK-ua-Pvk"/>
-                            <constraint firstItem="ZGc-Yf-SUb" firstAttribute="top" secondItem="tS3-0d-VcF" secondAttribute="bottom" constant="16" id="5bH-gl-xVI"/>
                             <constraint firstItem="jj6-V4-gwE" firstAttribute="leading" secondItem="Gph-UQ-HLq" secondAttribute="trailing" constant="26" id="6XU-ej-eIf"/>
                             <constraint firstItem="toe-R6-viE" firstAttribute="top" secondItem="y8Y-Gk-BLT" secondAttribute="bottom" constant="83" id="88C-17-NKl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zlw-oW-o0k" secondAttribute="trailing" constant="-8" id="9b6-rX-Y9A"/>
                             <constraint firstItem="Gph-UQ-HLq" firstAttribute="leading" secondItem="z7Y-kM-Rpj" secondAttribute="leadingMargin" constant="11" id="9eb-8p-f29"/>
                             <constraint firstItem="Gph-UQ-HLq" firstAttribute="top" secondItem="jj6-V4-gwE" secondAttribute="top" id="9nf-qt-SzB"/>
-                            <constraint firstItem="y8Y-Gk-BLT" firstAttribute="top" secondItem="a0e-CU-qUk" secondAttribute="bottom" constant="19" id="ABr-x8-4l6"/>
                             <constraint firstItem="zlw-oW-o0k" firstAttribute="top" secondItem="ZGc-Yf-SUb" secondAttribute="bottom" constant="33" id="B6A-Hd-B9J"/>
-                            <constraint firstItem="tS3-0d-VcF" firstAttribute="top" secondItem="N4I-4I-Z2v" secondAttribute="bottom" constant="8" symbolic="YES" id="CSF-rg-DyW"/>
-                            <constraint firstItem="tS3-0d-VcF" firstAttribute="leading" secondItem="z7Y-kM-Rpj" secondAttribute="leadingMargin" constant="27" id="Com-aH-ptw"/>
-                            <constraint firstItem="jj6-V4-gwE" firstAttribute="trailing" secondItem="tS3-0d-VcF" secondAttribute="trailing" id="E8k-tq-R0v"/>
                             <constraint firstItem="Gph-UQ-HLq" firstAttribute="top" secondItem="zN2-QO-Yxc" secondAttribute="bottom" constant="49" id="Gwh-se-AjH"/>
                             <constraint firstItem="N4I-4I-Z2v" firstAttribute="top" secondItem="Gph-UQ-HLq" secondAttribute="bottom" constant="23" id="HMF-NE-kvV"/>
-                            <constraint firstItem="a0e-CU-qUk" firstAttribute="top" secondItem="ZGc-Yf-SUb" secondAttribute="bottom" constant="39" id="I1k-EP-4Mk"/>
-                            <constraint firstItem="zlw-oW-o0k" firstAttribute="leading" secondItem="a0e-CU-qUk" secondAttribute="trailing" id="R0q-QL-Smr"/>
                             <constraint firstItem="MuI-TC-XVL" firstAttribute="leading" secondItem="z7Y-kM-Rpj" secondAttribute="leadingMargin" constant="43" id="TmJ-wA-8E1"/>
-                            <constraint firstItem="Gph-UQ-HLq" firstAttribute="leading" secondItem="a0e-CU-qUk" secondAttribute="leading" id="UqX-O5-sFf"/>
                             <constraint firstItem="y8Y-Gk-BLT" firstAttribute="leading" secondItem="z7Y-kM-Rpj" secondAttribute="leading" id="ZCl-OK-bjy"/>
                             <constraint firstItem="qsB-Km-Wpw" firstAttribute="top" secondItem="toe-R6-viE" secondAttribute="bottom" constant="23" id="aRH-zS-VuJ"/>
                             <constraint firstItem="y8Y-Gk-BLT" firstAttribute="top" secondItem="zlw-oW-o0k" secondAttribute="bottom" constant="17" id="bIa-dF-ZAs"/>
                             <constraint firstItem="y8Y-Gk-BLT" firstAttribute="centerX" secondItem="toe-R6-viE" secondAttribute="centerX" id="buQ-GL-gc8"/>
-                            <constraint firstItem="tS3-0d-VcF" firstAttribute="trailing" secondItem="ZGc-Yf-SUb" secondAttribute="trailing" id="chx-Et-SGz"/>
                             <constraint firstItem="ZGc-Yf-SUb" firstAttribute="centerX" secondItem="y8Y-Gk-BLT" secondAttribute="centerX" id="fx6-0b-9qA"/>
-                            <constraint firstItem="tS3-0d-VcF" firstAttribute="top" secondItem="MuI-TC-XVL" secondAttribute="bottom" constant="8" symbolic="YES" id="mZY-R1-ZmV"/>
                             <constraint firstItem="N4I-4I-Z2v" firstAttribute="leading" secondItem="MuI-TC-XVL" secondAttribute="trailing" constant="8" symbolic="YES" id="onT-a9-jPb"/>
-                            <constraint firstItem="N4I-4I-Z2v" firstAttribute="centerX" secondItem="tS3-0d-VcF" secondAttribute="centerX" id="qvg-9q-jSc"/>
                             <constraint firstAttribute="trailing" secondItem="y8Y-Gk-BLT" secondAttribute="trailing" id="rYS-MX-0Fv"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="botaoQRCode" destination="jj6-V4-gwE" id="2Wq-Wk-QRd"/>
-                        <outlet property="categoria" destination="a0e-CU-qUk" id="omF-i9-Ik7"/>
                         <outlet property="categoriaPickerView" destination="y8Y-Gk-BLT" id="8f2-sg-28u"/>
-                        <outlet property="date" destination="ZGc-Yf-SUb" id="phM-t6-T8b"/>
-                        <outlet property="dateLabel" destination="tS3-0d-VcF" id="XIQ-hZ-O2L"/>
+                        <outlet property="datePicker" destination="ZGc-Yf-SUb" id="pBa-fl-abD"/>
                         <outlet property="nomeGasto" destination="Gph-UQ-HLq" id="7kS-lw-Tqk"/>
                         <outlet property="valor" destination="N4I-4I-Z2v" id="CDX-s4-7wH"/>
                         <segue destination="7e0-v9-ANp" kind="show" identifier="GastoToMain" id="mSI-rX-yBy"/>
@@ -389,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mr0-d5-1u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105.5" y="205.5"/>
+            <point key="canvasLocation" x="2105.25" y="205.5"/>
         </scene>
         <!--Cadastro Cartao View Controller-->
         <scene sceneID="mt3-on-LzT">
@@ -575,12 +565,6 @@
                                     <rect key="frame" x="43" y="300" width="288" height="105"/>
                                 </variation>
                             </datePicker>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RY3-ut-HlU">
-                                <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="492" width="335" height="87"/>
-                                </variation>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-5g-Wte">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Cancelar">
@@ -614,6 +598,12 @@
                                     <rect key="frame" x="43" y="163" width="288" height="105"/>
                                 </variation>
                             </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RY3-ut-HlU">
+                                <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="477" width="335" height="87"/>
+                                </variation>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -624,10 +614,10 @@
                                 <exclude reference="D0K-or-iyJ"/>
                                 <exclude reference="OCM-Xr-fGW"/>
                                 <exclude reference="U7B-w3-ePJ"/>
-                                <exclude reference="RY3-ut-HlU"/>
                                 <exclude reference="c8t-5g-Wte"/>
                                 <exclude reference="O9a-iO-boV"/>
                                 <exclude reference="vhz-hp-lcF"/>
+                                <exclude reference="RY3-ut-HlU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -638,10 +628,10 @@
                                 <include reference="D0K-or-iyJ"/>
                                 <include reference="OCM-Xr-fGW"/>
                                 <include reference="U7B-w3-ePJ"/>
-                                <include reference="RY3-ut-HlU"/>
                                 <include reference="c8t-5g-Wte"/>
                                 <include reference="O9a-iO-boV"/>
                                 <include reference="vhz-hp-lcF"/>
+                                <include reference="RY3-ut-HlU"/>
                             </mask>
                         </variation>
                     </view>
@@ -887,8 +877,8 @@
         <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JPP-2I-nDT"/>
+        <segue reference="mSI-rX-yBy"/>
         <segue reference="ZwO-F9-qYj"/>
-        <segue reference="400-pd-DHt"/>
+        <segue reference="JPP-2I-nDT"/>
     </inferredMetricsTieBreakers>
 </document>

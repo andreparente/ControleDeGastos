@@ -11,19 +11,24 @@ import UIKit
 
 class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UINavigationBarDelegate {
     
-    @IBOutlet weak var date: UIDatePicker!
-    @IBOutlet weak var categoria: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var valor: UITextField!
     @IBOutlet weak var nomeGasto: UITextField!
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var categoriaPickerView: UIPickerView!
     @IBOutlet weak var botaoQRCode: UIButton!
     
+    // variaveis do QRCode
     var valortotal:Double!
-    var data:String!
+    var dataQR: String!
+    
+    // variaveis internas para controle de tempo
     var dataNs = NSDate()
-    var dateFormatter = NSDateFormatter()
+    let dateFormatter = NSDateFormatter()
     let calendar = NSCalendar.currentCalendar()
+    
+    // variaveis internas para controle de dados
+    var dataStr = String()
+    var categoria = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,10 +64,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         categoriaPickerView.delegate = self
         categoriaPickerView.dataSource = self
         
-        categoria.delegate = self
-        nomeGasto.delegate = self
         valor.delegate = self
-        categoria.inputView = categoriaPickerView
+        
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         if valortotal != nil
@@ -71,24 +74,20 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         }
         print(valor.text!)
         valor.keyboardType = .NumberPad
-        if data != nil
+        if dataQR != nil
         {
-            dateLabel.text = data
+            dataStr = dataQR
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
-            let datefromstring = dateFormatter.dateFromString(data)
-            date.date = datefromstring!
+            let datefromstring = dateFormatter.dateFromString(dataQR)
+            datePicker.date = datefromstring!
             
         }
         else
         {
-            let datacrazy = NSDate()
-            let calendar = NSCalendar.currentCalendar()
-            let components = calendar.components([.Day , .Month , .Year], fromDate: datacrazy)
-            self.dateLabel.text = "\(components.year)-\(components.month)-\(components.day)"
+            let components = self.calendar.components([.Day , .Month , .Year], fromDate: self.dataNs)
+            self.dataStr = "\(components.year)-\(components.month)-\(components.day)"
         }
-        
-        dateLabel.hidden = true
     }
     
     func dismissKeyboard() {
@@ -112,7 +111,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoria.text = base.usuarioLogado!.categoriasGastos[row]
+        self.categoria = base.usuarioLogado!.categoriasGastos[row]
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -137,12 +136,12 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     @IBAction func datePickerChanged(sender: AnyObject) {
-        dataNs = date.date
-        data = dateFormatter.stringFromDate(dataNs)
-        let dataaux = data.stringByReplacingOccurrencesOfString("/", withString: "-")
+        dataNs = datePicker.date
+        dataQR = dateFormatter.stringFromDate(dataNs)
+        let dataaux = dataQR.stringByReplacingOccurrencesOfString("/", withString: "-")
         let fullNameArr = dataaux.componentsSeparatedByString("-")
         let stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [0] + "-" + fullNameArr[1]
-        dateLabel.text = stringfinal
+        dataStr = stringfinal
     }
     
     @IBAction func novacategoria(sender: UIButton) {
@@ -170,7 +169,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 // adiciona no disco
                 base.editarUsuario(base.usuarioLogado!)
                 // atualiza label de categoria
-                self.categoria.text = textField.text
+                self.categoria = textField.text!
                 // atualiza pickerView
                 self.categoriaPickerView.reloadAllComponents()
             }
@@ -185,16 +184,15 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     @IBAction func gasteiAction(sender: AnyObject) {
         let nome = nomeGasto.text
-        let categoria = self.categoria.text
         let valorgasto = Double(valor.text!)?.roundToPlaces(2)
-        let data = dateLabel.text
+        
         // nao pode usar variavel sem verificar se eh nil antes
         if(valorgasto == nil) {
             let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
-        } else if(data == nil || data!.isEmpty) {
+        } else if(self.dataStr == "" || self.dataStr.isEmpty) {
             let alert = UIAlertController(title: "Warning", message: "Você não preencheu a data", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
@@ -204,13 +202,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
-        } else if(categoria == nil || categoria!.isEmpty) {
+        } else if(categoria == "") {
             let alert = UIAlertController(title: "Warning", message: "Você não preencheu a categoria", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
-            let gasto = Gasto(nome: nome!, categoria: categoria!, valor: valorgasto!, data: data!)
+            let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
             // adiciona na RAM
             base.usuarioLogado!.addGasto(gasto)
             // adiciona no disco
