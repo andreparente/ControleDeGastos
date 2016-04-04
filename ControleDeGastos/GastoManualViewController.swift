@@ -58,7 +58,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
         categoriaPickerView.delegate = self
         categoriaPickerView.dataSource = self
-        categoriaPickerView.hidden = true
+        
         categoria.delegate = self
         nomeGasto.delegate = self
         valor.delegate = self
@@ -92,7 +92,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func btn_clicked(sender: UIBarButtonItem) {
-        // Do something
         performSegueWithIdentifier("GastoToMain", sender: self)
     }
     
@@ -109,7 +108,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoria.text = base.usuarioLogado!.categoriasGastos[row]
-        categoriaPickerView.hidden = true
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -125,14 +123,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        if(textField.placeholder == "Categoria") {
-            categoriaPickerView.hidden = false
-            return false
-        }
-        else {
-            categoriaPickerView.hidden = true
-        }
-        return true
+        return !(textField.placeholder == "Categoria")
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
