@@ -72,14 +72,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         print("You selected cell #\(indexPath.row)!")
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     override func viewWillAppear(animated: Bool) {
-        //print("ViewWillAppear eh chamada sempre")
+        self.tableView.reloadData()
     }
     
     @IBAction func apertouBotaoOrdenar(sender: AnyObject) {
@@ -90,14 +84,14 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         performSegueWithIdentifier("HistoricoTabelaToFiltrar", sender: nil)
     }
     
-    /*
-    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        if segue.identifier == "HistoricoTabelaToFiltrar" {
+            let filtroVC = segue.destinationViewController as! FiltrarViewController
+            filtroVC.delegate = self
+        } else if segue.identifier == "HistoricoTabelaToOrdenar" {
+            let ordemVC = segue.destinationViewController as! OrdenarViewController
+            ordemVC.delegate = self
+        }
     }
-    */
-    
 }

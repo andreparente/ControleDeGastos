@@ -10,6 +10,8 @@ import UIKit
 
 class OrdenarViewController: UIViewController {
 
+    var delegate = HistoricoTabelaViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
