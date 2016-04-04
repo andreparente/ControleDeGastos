@@ -29,10 +29,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
-        /*
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        */
+        
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
@@ -41,7 +41,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Gasto"
-/*
+
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:(#selector(GastoManualViewController.btn_clicked(_:))))
         
@@ -49,11 +49,12 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         navigationItem.leftBarButtonItem = leftButton
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-*/      
+      
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         
         calendar.components([.Day , .Month , .Year], fromDate: dataNs)
+        
         
         categoriaPickerView.delegate = self
         categoriaPickerView.dataSource = self
@@ -79,8 +80,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             let datacrazy = NSDate()
             let calendar = NSCalendar.currentCalendar()
             let components = calendar.components([.Day , .Month , .Year], fromDate: datacrazy)
-            dateLabel.text = "\(components.year)-\(components.month)-\(components.day)"
+            self.dateLabel.text = "\(components.year)-\(components.month)-\(components.day)"
         }
+        
+        dateLabel.hidden = true
     }
     
     func dismissKeyboard() {

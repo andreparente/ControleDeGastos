@@ -60,6 +60,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             cell.labelNomeGasto.text = "\(self.gastos[indexPath.row].nome)"
             cell.labelCat.text = "\(self.gastos[indexPath.row].categoria)"
             cell.labelValor.text = "R$ " + String(self.gastos[indexPath.row].valor)
+            cell.labeldata.text = "\(self.gastos[indexPath.row].data)"
         } else {
             cell.labelNomeGasto.text = "Você Não Possui Gastos!"
             cell.labelNomeGasto.center = cell.center
