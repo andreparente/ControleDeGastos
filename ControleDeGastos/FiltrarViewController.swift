@@ -22,7 +22,8 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     @IBOutlet weak var botaoSalvar: UIButton!
     
     var gastos = [Gasto]()
-    var categoria : String!
+    var categoriaSelecionada : String! // armazena o valor do pickerView categorias
+    var categorias = [String]()
     var delegate = HistoricoTabelaViewController()
     
     override func viewDidLoad() {
@@ -32,16 +33,19 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         
         // inicialmente carrega todos os gastos
         self.gastos = base.usuarioLogado!.getGastos()
+        
+        // preenche vetor de categorias e adiciona "Todas"
+        self.categorias = base.usuarioLogado!.getCategoriasGastos()
+        self.categorias.append("Todas")
+        
+        // inicialmente, o valor da categoria selecionada eh Todas
+        self.categoriaSelecionada = "Todas"
+        
         pickerCategorias.delegate = self
         pickerCategorias.dataSource = self
+        
         botaoCancelar.titleLabel!.textColor = UIColor.whiteColor()
         botaoSalvar.titleLabel!.textColor = UIColor.whiteColor()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func apertouBotaoCancelar(sender: AnyObject) {
@@ -49,9 +53,9 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     }
     
     @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+        // filtros de valor minimo e maximo
         let min = (textValorMin.text!).toDouble()!
         let max = (textValorMax.text!).toDouble()!
-        // filtros de valor minimo e maximo
         if (!min.isZero && !max.isZero) {
             self.gastos = filtraValor( min, max: max, gastos: self.gastos )
         } else if (!min.isZero) {
@@ -60,22 +64,31 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
             self.gastos = filtraValorMax( max, gastos: self.gastos )
         }
         
+        // filtro de categorias
+        if (categoriaSelecionada != "Todas") {
+            self.gastos = filtraCategoria(self.categoriaSelecionada, gastos: self.gastos)
+        }
+        
         // altera os dados da historicoTabela
         self.delegate.gastos = self.gastos
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return (base.usuarioLogado!.categoriasGastos.count)
+        return self.categorias.count
     }
+    
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return (base.usuarioLogado!.categoriasGastos[row])
+        return self.categorias[row]
     }
+    
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoria = base.usuarioLogado!.categoriasGastos[row]
+        categoriaSelecionada = self.categorias[row]
     }
 
     /*
@@ -83,31 +96,4 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         let destino = segue.destinationViewController as! HistoricoTabelaViewController
     }
     */
-    
-    /*
-    // passando zero retorna os gastos de hoje
-    func filtraUltimosDias(dias: Int) {
-        // descobre ano, mes e dia atuais
-        let hoje = NSDate()
-        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
-        let mesAtual = components.month
-        let anoAtual = components.year
-        let diaAtual = components.day
-        
-        // gera o novo vetor
-        var gastosUltimosDias: [Gasto] = []
-        for gasto in self.gastos {
-            let data = gasto.data.componentsSeparatedByString("-")
-            // data == [ano, mes, dia]
-            let dia = Int(data[2])
-            let mes = Int(data[1])
-            let ano = Int(data[0])
-            if (mes == mesAtual && ano == anoAtual && dia >= (diaAtual - dias)) {
-                gastosUltimosDias.append(gasto)
-            }
-        }
-        self.gastos = gastosUltimosDias
     }
-    */
-
-}
