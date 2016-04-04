@@ -17,6 +17,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     @IBOutlet weak var nomeGasto: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var categoriaPickerView: UIPickerView!
+    @IBOutlet weak var botaoQRCode: UIButton!
     
     var valortotal:Double!
     var data:String!
@@ -95,10 +96,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "GastoToMain" {
-            
             let vc = segue.destinationViewController as! UITabBarController
             vc.selectedIndex = 1
-            
+        } else if segue.identifier == "GastoManualToQRCode" {
+            let vc = segue.destinationViewController as! QRCodeViewController
+            vc.delegate = self
         }
     }
     
@@ -144,6 +146,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         let stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [0] + "-" + fullNameArr[1]
         dateLabel.text = stringfinal
     }
+    
     @IBAction func novacategoria(sender: UIButton) {
         let alert=UIAlertController(title:"Categoria", message: "Insira uma nova categoria abaixo", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
@@ -175,6 +178,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         }))
         self.presentViewController(alert,animated: true, completion: nil)
     }
+    
+    @IBAction func apertouBotaoQRCode(sender: AnyObject) {
+        performSegueWithIdentifier("GastoManualToQRCode", sender: self)
+    }
+    
     
     @IBAction func gasteiAction(sender: AnyObject) {
         let nome = nomeGasto.text

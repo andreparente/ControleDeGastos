@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uwQ-dY-A3P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uwQ-dY-A3P">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -296,7 +296,7 @@
                                     <rect key="frame" x="191" y="70" width="58" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="G5x-cB-V2J" kind="show" id="XVY-vd-HLN"/>
+                                    <action selector="apertouBotaoQRCode:" destination="goP-2V-gWf" eventType="touchUpInside" id="no7-bV-fte"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-TC-XVL">
@@ -326,6 +326,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="botaoQRCode" destination="jj6-V4-gwE" id="2Wq-Wk-QRd"/>
                         <outlet property="categoria" destination="a0e-CU-qUk" id="omF-i9-Ik7"/>
                         <outlet property="categoriaPickerView" destination="y8Y-Gk-BLT" id="8f2-sg-28u"/>
                         <outlet property="date" destination="ZGc-Yf-SUb" id="phM-t6-T8b"/>
@@ -333,6 +334,7 @@
                         <outlet property="nomeGasto" destination="Gph-UQ-HLq" id="7kS-lw-Tqk"/>
                         <outlet property="valor" destination="N4I-4I-Z2v" id="CDX-s4-7wH"/>
                         <segue destination="7e0-v9-ANp" kind="show" identifier="GastoToMain" id="mSI-rX-yBy"/>
+                        <segue destination="G5x-cB-V2J" kind="presentation" identifier="GastoManualToQRCode" id="Hg8-UY-dri"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mr0-d5-1u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -474,7 +476,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mV-2T-FSs">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="159" y="28" width="56" height="21"/>
@@ -483,7 +485,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZJ-62-Ifq">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="159" y="126" width="56" height="21"/>
@@ -508,7 +510,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCM-Xr-fGW">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="140" y="456" width="94" height="21"/>
@@ -734,7 +736,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="messageLabel" destination="rCp-qD-wSg" id="T81-v3-4T6"/>
-                        <segue destination="goP-2V-gWf" kind="show" identifier="QRCodeToGastoManual" id="w9G-UC-YqS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hb0-GL-HX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -829,9 +830,8 @@
         <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZwO-F9-qYj"/>
-        <segue reference="400-pd-DHt"/>
-        <segue reference="QRM-YM-FfM"/>
         <segue reference="JPP-2I-nDT"/>
+        <segue reference="ZwO-F9-qYj"/>
+        <segue reference="mSI-rX-yBy"/>
     </inferredMetricsTieBreakers>
 </document>

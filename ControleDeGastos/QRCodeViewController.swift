@@ -20,6 +20,8 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     var qrCodeFrameView:UIView?
     var contglobal=0
     
+    var delegate = GastoManualViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         messageLabel.text="No QR code is detected"
@@ -74,13 +76,18 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
             qrCodeFrameView?.frame = barCodeObject.bounds;
             
-            if metadataObj.stringValue != nil  && contglobal==0{
+            if metadataObj.stringValue != nil  && contglobal==0 {
                 print(metadataObj.stringValue)
                 link = metadataObj.stringValue
                 (valorfinal,datafinalmente)=reconheceUrl(link)
                 print(datafinalmente)
                 print(valorfinal)
-                performSegueWithIdentifier("QRCodeToGastoManual", sender: self)
+                
+                // desfaz o segue
+                self.delegate.valortotal = Double(valorfinal)?.roundToPlaces(2)
+                self.delegate.data = datafinalmente
+                dismissViewControllerAnimated(true, completion: nil)
+                
                 contglobal += 1
                 return
             }
@@ -171,13 +178,4 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         }
         return String(characters)
     }
-    // MARK: - Navigation
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination:GastoManualViewController = segue.destinationViewController as! GastoManualViewController
-        destination.valortotal = Double(valorfinal)?.roundToPlaces(2)
-        destination.data = datafinalmente
-        
-    }
-    
 }
