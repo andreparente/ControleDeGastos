@@ -49,10 +49,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         errosenhas.text="Senha inválida"
         errocadastro.hidden=true
         errocadastro.text = "Usuário não cadastrado"
-        /* NAO DESCOMENTAR
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        */
+        
     }
 
     @IBAction func confirma(sender: UIButton)
