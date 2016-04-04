@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
         
         print ("login feito com o usuario \(base.usuarioLogado!.nome), de email \(base.usuarioLogado!.email)")
         
-        view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         var valortotal:Int = 0
         printaLimite(base.usuarioLogado!)
         for valor in (base.usuarioLogado?.gastos)!

@@ -19,7 +19,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
 
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
@@ -54,7 +54,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
                 "TableViewCell", forIndexPath: indexPath)
                 as! TableViewCell
         let cellsNumber = self.gastos.count
-        cell.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        cell.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         
         if (cellsNumber > 0) {
             cell.labelNomeGasto.text = "Gasto:\(self.gastos[indexPath.row].nome)"

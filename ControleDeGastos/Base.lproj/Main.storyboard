@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uwQ-dY-A3P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uwQ-dY-A3P">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -127,9 +127,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vID-WR-fxp">
-                                <rect key="frame" x="141" y="179" width="92" height="30"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="18"/>
-                                <state key="normal" title="GASTAR"/>
+                                <rect key="frame" x="20" y="133" width="322" height="76"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="29"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="GASTAR!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="goP-2V-gWf" kind="show" id="QRM-YM-FfM"/>
                                 </connections>
@@ -141,19 +144,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBW-pr-crG">
-                                <rect key="frame" x="20" y="366" width="335" height="21"/>
+                                <rect key="frame" x="20" y="365" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-m4-c0C">
-                                <rect key="frame" x="20" y="438" width="330" height="77"/>
+                                <rect key="frame" x="25" y="439" width="330" height="77"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-AX-XUB">
-                                <rect key="frame" x="294" y="28" width="48" height="48"/>
+                                <rect key="frame" x="307" y="28" width="48" height="48"/>
                                 <state key="normal" title="Settings" image="ic_settings_48px-128"/>
                                 <connections>
                                     <segue destination="kOo-RQ-Xmt" kind="show" id="ZwO-F9-qYj"/>
@@ -187,28 +190,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgQ-fe-lJf">
-                                <rect key="frame" x="120" y="239" width="133" height="30"/>
+                                <rect key="frame" x="121" y="263" width="133" height="30"/>
                                 <state key="normal" title="Adicionar categoria"/>
                                 <connections>
                                     <action selector="categoria:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="I64-DM-mIs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76s-jX-fi7">
-                                <rect key="frame" x="162" y="452" width="51" height="30"/>
-                                <state key="normal" title="LogOut"/>
+                                <rect key="frame" x="160" y="552" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOut:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="Vf8-Yu-EW8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEq-3v-enE">
-                                <rect key="frame" x="144" y="350" width="85" height="30"/>
+                                <rect key="frame" x="145" y="428" width="85" height="30"/>
                                 <state key="normal" title="Mudar email"/>
                                 <connections>
                                     <action selector="mudaremail:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="iNV-It-MGz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-gd-AnK">
-                                <rect key="frame" x="144" y="132" width="87" height="30"/>
+                                <rect key="frame" x="144" y="149" width="87" height="30"/>
                                 <state key="normal" title="Alterar limite"/>
                                 <connections>
                                     <action selector="limite:" destination="kOo-RQ-Xmt" eventType="touchUpInside" id="rW8-f9-EUy"/>
@@ -272,7 +275,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlw-oW-o0k">
                                 <rect key="frame" x="188" y="146" width="162" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Nova Categoria"/>
+                                <state key="normal" title="Nova Categoria">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="novacategoria:" destination="goP-2V-gWf" eventType="touchUpInside" id="MDK-n2-n5q"/>
                                 </connections>
@@ -285,7 +290,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj6-V4-gwE">
                                 <rect key="frame" x="279" y="70" width="58" height="30"/>
-                                <state key="normal" title="QRCode"/>
+                                <state key="normal" title="QRCode">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="191" y="70" width="58" height="30"/>
                                 </variation>
@@ -306,8 +313,11 @@
                                 </variation>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toe-R6-viE">
-                                <rect key="frame" x="163" y="439" width="48" height="30"/>
-                                <state key="normal" title="Gastei!"/>
+                                <rect key="frame" x="120" y="439" width="134" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Gastei!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="gasteiAction:" destination="goP-2V-gWf" eventType="touchUpInside" id="wWF-s7-LNz"/>
                                 </connections>
@@ -385,13 +395,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9R-Cw-SWp">
-                                <rect key="frame" x="154" y="422" width="63" height="30"/>
-                                <state key="normal" title="Confirma"/>
-                                <connections>
-                                    <action selector="confirma:" destination="rab-8m-gdV" eventType="touchUpInside" id="xTg-qO-8Bd"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbM-Zn-izP">
                                 <rect key="frame" x="20" y="63" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -410,6 +413,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9R-Cw-SWp">
+                                <rect key="frame" x="115" y="422" width="144" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Confirma">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirma:" destination="rab-8m-gdV" eventType="touchUpInside" id="xTg-qO-8Bd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -640,10 +653,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="55" id="lBJ-vi-tCM" customClass="TableViewCell" customModule="ControleDeGastos" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="177.5" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="178" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lBJ-vi-tCM" id="w99-jX-sMh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
@@ -813,9 +826,9 @@
         <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NL6-cS-gUU"/>
-        <segue reference="sQ1-Os-lJ1"/>
         <segue reference="ZwO-F9-qYj"/>
-        <segue reference="w9G-UC-YqS"/>
+        <segue reference="400-pd-DHt"/>
+        <segue reference="QRM-YM-FfM"/>
+        <segue reference="JPP-2I-nDT"/>
     </inferredMetricsTieBreakers>
 </document>

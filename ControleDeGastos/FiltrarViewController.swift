@@ -28,6 +28,8 @@ class FiltrarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
+        
         // inicialmente carrega todos os gastos
         self.gastos = base.usuarioLogado!.getGastos()
 
