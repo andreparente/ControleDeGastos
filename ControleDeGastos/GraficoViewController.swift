@@ -167,9 +167,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     }
     
     override func viewWillAppear(animated: Bool) {
-        for gasto in base.usuarioLogado!.gastos {
-            //print("gasto ", gasto.nome)
-        }
         total = 0.0
         if(base.usuarioLogado!.gastos.count == 0) {
             
