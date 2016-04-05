@@ -102,29 +102,29 @@ public func filtroData(inicio:NSDate, fim:NSDate, gastos:[Gasto]) ->([Gasto])
     }
     return gastosFiltrados
 }
-/*
-// passando zero retorna os gastos de hoje
-func filtraUltimosDias(dias: Int) {
-// descobre ano, mes e dia atuais
-let hoje = NSDate()
-let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
-let mesAtual = components.month
-let anoAtual = components.year
-let diaAtual = components.day
 
-// gera o novo vetor
-var gastosUltimosDias: [Gasto] = []
-for gasto in self.gastos {
-let data = gasto.data.componentsSeparatedByString("-")
-// data == [ano, mes, dia]
-let dia = Int(data[2])
-let mes = Int(data[1])
-let ano = Int(data[0])
-if (mes == mesAtual && ano == anoAtual && dia >= (diaAtual - dias)) {
-gastosUltimosDias.append(gasto)
-}
-}
-self.gastos = gastosUltimosDias
-}
-*/
+ // passando zero retorna os gastos de hoje
+func filtraUltimosDias(dias: Int,gastos:[Gasto]) ->([Gasto]) {
+ // descobre ano, mes e dia atuais
+ let hoje = NSDate()
+ let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+ let mesAtual = components.month
+ let anoAtual = components.year
+ let diaAtual = components.day
+ 
+ // gera o novo vetor
+ var gastosUltimosDias: [Gasto] = []
+ for gasto in gastos {
+    let data = gasto.data.componentsSeparatedByString("-")
+    // data == [ano, mes, dia]
+    let dia = Int(data[2])
+    let mes = Int(data[1])
+    let ano = Int(data[0])
+    if (mes == mesAtual && ano == anoAtual && dia >= (diaAtual - dias)) {
+        gastosUltimosDias.append(gasto)
+    }
+    }
+    return gastosUltimosDias
+    }
+
 
