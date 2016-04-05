@@ -19,21 +19,21 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
-        
+/*
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Settings"
-/*
+
     // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.btn_clicked(_:)))
         
         
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = leftButton
-*/
+
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-        
+*/
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.
