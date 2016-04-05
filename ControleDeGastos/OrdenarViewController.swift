@@ -12,18 +12,28 @@ class OrdenarViewController: UIViewController {
 
     var delegate = HistoricoTabelaViewController()
     
+    @IBOutlet weak var pickerTipoOrdenacao: UIPickerView!
+    @IBOutlet weak var switchDecrescente: UISwitch!
+    
+    var decrescente = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        // linkando funcao ao switch
+        switchDecrescente.addTarget(self, action: "switchClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+        // altera switch para o valor atual
+        switchDecrescente.setOn(self.decrescente, animated: true)
     }
     
-
+    func switchClicked(sender:UIButton)
+    {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.decrescente = !self.decrescente
+            print (self.decrescente)
+        });
+    }
+    
     /*
     // MARK: - Navigation
 

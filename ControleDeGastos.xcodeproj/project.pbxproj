@@ -31,6 +31,7 @@
 		E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */; };
 		E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559BFA71CA96CDD00B3CD5A /* AIObase.swift */; };
 		E5BD5CAD1CB2D76900481089 /* Filtros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CAC1CB2D76900481089 /* Filtros.swift */; };
+		E5BD5CAF1CB3106700481089 /* Ordenacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CAE1CB3106700481089 /* Ordenacao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdenarViewController.swift; sourceTree = "<group>"; };
 		E559BFA71CA96CDD00B3CD5A /* AIObase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIObase.swift; sourceTree = "<group>"; };
 		E5BD5CAC1CB2D76900481089 /* Filtros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
+		E5BD5CAE1CB3106700481089 /* Ordenacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ordenacao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
 				9C047D711CB2A1D40099A13C /* extensions.swift */,
 				E5BD5CAC1CB2D76900481089 /* Filtros.swift */,
+				E5BD5CAE1CB3106700481089 /* Ordenacao.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				8A54D3C31CA2CBA700E63645 /* LoginViewController.swift in Sources */,
 				9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */,
 				8A54D3CE1CA2CCFC00E63645 /* GraficoViewController.swift in Sources */,
+				E5BD5CAF1CB3106700481089 /* Ordenacao.swift in Sources */,
 				8A71E0171C9C2F6B00C055F8 /* AppDelegate.swift in Sources */,
 				E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */,
 				9C047D721CB2A1D40099A13C /* extensions.swift in Sources */,
