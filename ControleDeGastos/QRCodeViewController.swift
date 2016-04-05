@@ -87,6 +87,12 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 self.delegate.valortotal = Double(valorfinal)?.roundToPlaces(2)
                 self.delegate.dataQR = datafinalmente
                 
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let datefromstring = dateFormatter.dateFromString(self.delegate.dataQR)
+                self.delegate.datePicker.date = datefromstring!
+    
+                self.delegate.valor.text=String(self.delegate.valortotal)
                 dismissViewControllerAnimated(true, completion: nil)
                 
                 contglobal += 1

@@ -52,7 +52,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
-        navigationItem.title = "Gasto"
+        navigationItem.title = "Gasto Manual"
 
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:(#selector(GastoManualViewController.btn_clicked(_:))))
@@ -96,7 +96,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             self.dataStr = "\(components.year)-\(components.month)-\(components.day)"
         }
     }
-    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
