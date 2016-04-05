@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.5" y="186.5"/>
+            <point key="canvasLocation" x="-944.25" y="1142.5"/>
         </scene>
         <!--Launch View Controller-->
         <scene sceneID="RUo-ux-V8c">
@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SML-Oe-o04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-545.5" y="185.5"/>
+            <point key="canvasLocation" x="-1521.75" y="205.5"/>
         </scene>
         <!--Main-->
         <scene sceneID="Tlb-kS-LJA">
@@ -142,6 +142,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="323" width="335" height="52"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBW-pr-crG">
                                 <rect key="frame" x="20" y="383" width="335" height="21"/>
@@ -175,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxh-nN-ady" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454.5" y="186.5"/>
+            <point key="canvasLocation" x="1190.25" y="178.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="zuq-0A-QSK">
@@ -227,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9G-V5-7xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1272.5" y="1126.5"/>
+            <point key="canvasLocation" x="761.25" y="990.5"/>
         </scene>
         <!--Gasto Manual View Controller-->
         <scene sceneID="OT6-4x-4c5">
@@ -325,6 +328,15 @@
                                     <action selector="novacategoria:" destination="goP-2V-gWf" eventType="touchUpInside" id="QoD-bZ-R1F"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar gasto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyg-dy-Bw7">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.46553020285843216" green="1" blue="0.82762646091587833" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="37" width="123" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -338,6 +350,7 @@
                                 <exclude reference="inn-pp-Cey"/>
                                 <exclude reference="rBV-V9-y1m"/>
                                 <exclude reference="8FP-Ug-BtK"/>
+                                <exclude reference="Oyg-dy-Bw7"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -351,6 +364,7 @@
                                 <include reference="inn-pp-Cey"/>
                                 <include reference="rBV-V9-y1m"/>
                                 <include reference="8FP-Ug-BtK"/>
+                                <include reference="Oyg-dy-Bw7"/>
                             </mask>
                         </variation>
                     </view>
@@ -367,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mr0-d5-1u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105.25" y="205.5"/>
+            <point key="canvasLocation" x="1715.25" y="-736.5"/>
         </scene>
         <!--Cadastro Cartao View Controller-->
         <scene sceneID="mt3-on-LzT">
@@ -390,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ox5-v9-2pL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2738.5" y="186.5"/>
+            <point key="canvasLocation" x="2246.25" y="818.5"/>
         </scene>
         <!--Cadastro View Controller-->
         <scene sceneID="WHU-51-ApQ">
@@ -469,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jw-Fu-wml" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.5" y="-598.5"/>
+            <point key="canvasLocation" x="-1886.25" y="1142.5"/>
         </scene>
         <!--Ordenar View Controller-->
         <scene sceneID="hv2-l2-0Ov">
@@ -569,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAo-qv-BwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295.5" y="-1514"/>
+            <point key="canvasLocation" x="-233.25" y="-1638.5"/>
         </scene>
         <!--Filtrar View Controller-->
         <scene sceneID="sTX-Pq-qVF">
@@ -730,7 +744,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zw4-jP-Kl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070.25" y="-1508.5"/>
+            <point key="canvasLocation" x="596.25" y="-1644.5"/>
         </scene>
         <!--Historico Tabela View Controller-->
         <scene sceneID="jIy-Yg-P4a">
@@ -746,9 +760,11 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-co-EVe">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="Ordenar"/>
+                                    <state key="normal" title="Ordenar">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="8" y="23" width="175" height="30"/>
+                                        <rect key="frame" x="8" y="72" width="175" height="30"/>
                                     </variation>
                                     <connections>
                                         <action selector="apertouBotaoOrdenar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="7dx-co-RKj"/>
@@ -756,9 +772,11 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-jC-DFb">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="Filtrar"/>
+                                    <state key="normal" title="Filtrar">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="191" y="23" width="176" height="30"/>
+                                        <rect key="frame" x="191" y="72" width="176" height="30"/>
                                     </variation>
                                     <connections>
                                         <action selector="apertouBotaoFiltrar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="rEq-ka-pK6"/>
@@ -860,7 +878,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v27-fk-LrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744.75" y="-684.5"/>
+            <point key="canvasLocation" x="-39.75" y="-728.5"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="miV-1B-ksb">
@@ -890,12 +908,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hb0-GL-HX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670.25" y="-684.5"/>
+            <point key="canvasLocation" x="2528.25" y="-736.5"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="4x5-HQ-jd8">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7e0-v9-ANp" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7e0-v9-ANp" customClass="MainTabBarController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="K4w-wg-EJq">
                         <autoresizingMask key="autoresizingMask"/>
@@ -909,7 +927,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8y6-8X-0w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747" y="186"/>
+            <point key="canvasLocation" x="-123" y="172"/>
         </scene>
         <!--Gráfico-->
         <scene sceneID="SNO-Iq-bCZ">
@@ -971,7 +989,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvM-w5-cKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570.5" y="1092.5"/>
+            <point key="canvasLocation" x="-116.25" y="1708.5"/>
         </scene>
     </scenes>
     <resources>
@@ -981,8 +999,8 @@
         <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="400-pd-DHt"/>
+        <segue reference="mSI-rX-yBy"/>
         <segue reference="ZwO-F9-qYj"/>
-        <segue reference="JPP-2I-nDT"/>
+        <segue reference="sQ1-Os-lJ1"/>
     </inferredMetricsTieBreakers>
 </document>

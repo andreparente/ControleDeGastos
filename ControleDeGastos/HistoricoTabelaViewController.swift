@@ -19,14 +19,18 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
-        viewSuperior.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
+        
+        view.backgroundColor = corAzul
+        viewSuperior.backgroundColor = corAzul
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
         
         // apenas para poder enxergar os botoes
-        self.botaoFiltrar.backgroundColor = UIColor.orangeColor()
-        self.botaoOrdenar.backgroundColor = UIColor.yellowColor()
+        self.botaoFiltrar.backgroundColor = corVerde
+        self.botaoOrdenar.backgroundColor = corVerde
+        self.botaoFiltrar.titleLabel?.textColor = UIColor.whiteColor()
+        self.botaoOrdenar.titleLabel?.textColor = UIColor.whiteColor()
+        
         if (self.gastos.count <= 0) {
             // por padrao, filtra os gastos pelo ultimo mes
             self.gastos = base.usuarioLogado!.getGastosUltimoMês()
@@ -55,7 +59,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
                 "TableViewCell", forIndexPath: indexPath)
                 as! TableViewCell
         let cellsNumber = self.gastos.count
-        cell.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
+        
+        cell.backgroundColor = corAzul
         
         if (cellsNumber > 0) {
             cell.hideInfo(false)

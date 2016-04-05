@@ -20,7 +20,8 @@ class MainViewController: UIViewController {
         
         print ("login feito com o usuario \(base.usuarioLogado!.nome), de email \(base.usuarioLogado!.email)")
         
-        view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
+        view.backgroundColor = corAzul
+        
         var valortotal: Double = 0.0
         var valorTotalMes: Double = 0.0
         printaLimite(base.usuarioLogado!)
@@ -53,9 +54,9 @@ class MainViewController: UIViewController {
         }
         else
         {
-            if (available > 0 && available < 100)
+            if (available > 0 && available < (0.2 * Double(base.usuarioLogado!.limiteMes)) )
             {
-                totaldisponivel.text = "Atenção!Você só tem mais R$ \(available) para gastar nesse mês"
+                totaldisponivel.text = "Atenção! Você só tem mais R$ \(available) para gastar nesse mês"
             }
             else
             {
@@ -78,10 +79,10 @@ class MainViewController: UIViewController {
     
     func printaLimite(usuario: Usuario) {
         if(usuario.limiteMes == 0) {
-            limite.text = "Você não disponibilizou o limite por mês"
+            limite.text = "O limite mensal ainda não foi cadastrado\nClique em configuraçōes para realizar o cadastro"
         }
         else {
-            limite.text = "Seu limite por mês é R$ \(usuario.limiteMes)"
+            limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)"
         }
     }
     

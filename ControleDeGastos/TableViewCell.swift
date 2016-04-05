@@ -16,7 +16,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var labeldata: UILabel!
     @IBOutlet weak var labelSemGastos: UILabel!
     
-    
     func hideInfo (status: Bool) {
         self.labelCat.hidden = status
         self.labeldata.hidden = status

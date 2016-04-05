@@ -47,6 +47,7 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
         botaoSalvar.titleLabel!.textColor = UIColor.whiteColor()
         
         view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
+        view.backgroundColor = corAzul
     }
     
     func switchClicked(sender:UIButton)

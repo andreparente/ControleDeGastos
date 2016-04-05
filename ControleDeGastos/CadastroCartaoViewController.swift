@@ -12,10 +12,11 @@ class CadastroCartaoViewController: UIViewController,UINavigationBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
+        
+        view.backgroundColor = corAzul
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
-        navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        navigationBar.backgroundColor = corVerde
         navigationBar.delegate = self;
         
         // Create a navigation item with a title

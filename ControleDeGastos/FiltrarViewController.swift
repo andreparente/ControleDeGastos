@@ -29,7 +29,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
+        view.backgroundColor = corAzul
         
         // inicialmente, o vetor eh o do usuario
         self.gastos = base.usuarioLogado!.getGastos()
