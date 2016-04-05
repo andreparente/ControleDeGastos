@@ -27,7 +27,6 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         // apenas para poder enxergar os botoes
         self.botaoFiltrar.backgroundColor = UIColor.orangeColor()
         self.botaoOrdenar.backgroundColor = UIColor.yellowColor()
-        
         if (self.gastos.count <= 0) {
             // por padrao, filtra os gastos pelo ultimo mes
             self.gastos = base.usuarioLogado!.getGastosUltimoMês()
@@ -35,7 +34,9 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -71,10 +72,6 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     //funçao que é chamada ao clicar em determinada célula
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You selected cell #\(indexPath.row)!")
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.tableView.reloadData()
     }
     
     @IBAction func apertouBotaoOrdenar(sender: AnyObject) {

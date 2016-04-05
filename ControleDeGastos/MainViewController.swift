@@ -81,7 +81,7 @@ class MainViewController: UIViewController {
             limite.text = "Você não disponibilizou o limite por mês"
         }
         else {
-            limite.text = "Seu limite por mês é \(usuario.limiteMes) reais"
+            limite.text = "Seu limite por mês é R$ \(usuario.limiteMes)"
         }
     }
     

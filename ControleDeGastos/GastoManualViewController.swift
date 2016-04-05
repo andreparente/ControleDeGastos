@@ -172,6 +172,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 self.categoria = textField.text!
                 // atualiza pickerView
                 self.categoriaPickerView.reloadAllComponents()
+                self.categoriaPickerView.selectRow((base.usuarioLogado!.categoriasGastos.count)-1, inComponent: 0, animated: true)
+                print("passou")
             }
         }))
         self.presentViewController(alert,animated: true, completion: nil)
