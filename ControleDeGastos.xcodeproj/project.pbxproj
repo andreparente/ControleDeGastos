@@ -90,6 +90,9 @@
 		8A54D3BF1CA2CAF200E63645 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C047D711CB2A1D40099A13C /* extensions.swift */,
+				E5BD5CAC1CB2D76900481089 /* Filtros.swift */,
+				E5BD5CB01CB353C300481089 /* quickSort.swift */,
 				8A54D3D81CA317C400E63645 /* DAOClasses.swift */,
 				8A54D3D51CA3157A00E63645 /* Classes.swift */,
 				E559BFA71CA96CDD00B3CD5A /* AIObase.swift */,
@@ -113,9 +116,6 @@
 				8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */,
 				E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */,
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
-				9C047D711CB2A1D40099A13C /* extensions.swift */,
-				E5BD5CAC1CB2D76900481089 /* Filtros.swift */,
-				E5BD5CB01CB353C300481089 /* quickSort.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

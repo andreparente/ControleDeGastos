@@ -70,7 +70,6 @@ public class Usuario {
         return self.limiteMes
     }
     
-    
     // passando zero retorna os gastos de hoje
     func getGastosMes(mes: Int, ano: Int) -> [Gasto] {
         // gera o novo vetor
