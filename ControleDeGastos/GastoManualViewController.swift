@@ -34,7 +34,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         super.viewDidLoad()
         
         view.backgroundColor = corAzul
-        /*
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -42,11 +42,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
 
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
-        */
+        
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Gasto"
-/*
+
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:(#selector(GastoManualViewController.btn_clicked(_:))))
         
@@ -57,7 +57,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
 
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
-        */
+        
         calendar.components([.Day , .Month , .Year], fromDate: dataNs)
         
         

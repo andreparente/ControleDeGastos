@@ -39,7 +39,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         erromail.text="E-mail inválido"
         errosenhas.hidden=true
         errosenhas.text="Senhas não são iguais"
- /*
+ 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
 
@@ -47,11 +47,11 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
 
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
-        */
+ 
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Cadastro"
-       /*
+       
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(CadastroViewController.btn_clicked(_:)))
         
@@ -64,7 +64,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.
-*/
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,6 +94,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         // valida email
         if isValidEmail(Email.text!) == false
         {
+            erromail.text = "E-mail inválido"
             erromail.hidden=false
             return
         }
@@ -109,6 +110,8 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         // verifica se usuario ja existe
         if (usuarioJaExiste()) {
             // TODO: avisar o usuario
+            erromail.text = "E-mail já cadastrado!"
+            erromail.hidden = false
             print("email ja cadastrado!")
             return
         }

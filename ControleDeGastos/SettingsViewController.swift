@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
-/*
+
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Settings"
@@ -34,7 +34,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
 
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-*/
+
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.

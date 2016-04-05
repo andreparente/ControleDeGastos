@@ -131,7 +131,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     
     //FUNCAO QUE SETTA TODO O GRAFICO
     func setChart(dataPoints: [String], values: [Double]) {
-        chartView.descriptionText = "Resumo"
+        
         
         var dataEntries: [ChartDataEntry] = []
         
