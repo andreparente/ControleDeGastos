@@ -104,8 +104,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
 
             for categorias in usuario.categoriasGastos {
                 if(gastosMes[i].categoria == categorias) {
+                    if(!existeCategoria(vetCatAux, categoria: categorias)) {
                     vetCatAux.append(categorias)
                     vetValAux.append(0)
+                    }
                 }
             }
         }
@@ -212,6 +214,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         let anoGasto = Int(data[0])
         vetorGastosMes = base.usuarioLogado!.getGastosMes(mesGasto!,ano: anoGasto!)
         (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
+        
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
         setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
