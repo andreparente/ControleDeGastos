@@ -58,13 +58,14 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         cell.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         
         if (cellsNumber > 0) {
+            cell.hideInfo(false)
             cell.labelNomeGasto.text = "\(self.gastos[indexPath.row].nome)"
             cell.labelCat.text = "\(self.gastos[indexPath.row].categoria)"
             cell.labelValor.text = "R$ " + String(self.gastos[indexPath.row].valor)
             cell.labeldata.text = "\(self.gastos[indexPath.row].data)"
         } else {
-            cell.labelNomeGasto.text = "Você Não Possui Gastos!"
-            cell.labelNomeGasto.center = cell.center
+            cell.hideInfo(true)
+            cell.labelSemGastos.text = "Nenhum gasto para exibir!"
         }
         return cell
     }
@@ -86,7 +87,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         if segue.identifier == "HistoricoTabelaToFiltrar" {
             let destino = segue.destinationViewController as! FiltrarViewController
             destino.delegate = self
-            destino.gastos = self.gastos
+            //destino.gastos = self.gastos
         } else if segue.identifier == "HistoricoTabelaToOrdenar" {
             let destino = segue.destinationViewController as! OrdenarViewController
             destino.delegate = self

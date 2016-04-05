@@ -86,6 +86,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 // desfaz o segue
                 self.delegate.valortotal = Double(valorfinal)?.roundToPlaces(2)
                 self.delegate.dataQR = datafinalmente
+                
                 dismissViewControllerAnimated(true, completion: nil)
                 
                 contglobal += 1

@@ -811,11 +811,31 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelSemGastos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sb-rV-YPs" userLabel="labelSemGastos">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="16" width="359" height="21"/>
+                                            </variation>
+                                        </label>
                                     </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="1sb-rV-YPs"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="1sb-rV-YPs"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="labelCat" destination="Pp0-xu-8Uh" id="CDK-Jv-GiH"/>
                                     <outlet property="labelNomeGasto" destination="wtb-6L-I0z" id="ail-Hl-xM1"/>
+                                    <outlet property="labelSemGastos" destination="1sb-rV-YPs" id="59P-Bq-FJ2"/>
                                     <outlet property="labelValor" destination="EgG-ZP-eSQ" id="pqk-XW-vB0"/>
                                     <outlet property="labeldata" destination="uOf-pn-S2T" id="5Nb-3Z-xSx"/>
                                 </connections>
@@ -840,7 +860,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v27-fk-LrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745.5" y="-684.5"/>
+            <point key="canvasLocation" x="744.75" y="-684.5"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="miV-1B-ksb">
@@ -930,6 +950,7 @@
                                 <date key="date" timeIntervalSinceReferenceDate="481218274.36300898">
                                     <!--2016-04-01 15:44:34 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="pt_BR"/>
                                 <connections>
                                     <action selector="DatePickerChanged:" destination="qDv-K7-cHH" eventType="valueChanged" id="Kku-nX-Iqq"/>
                                 </connections>
@@ -960,8 +981,8 @@
         <image name="pie_chart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JPP-2I-nDT"/>
+        <segue reference="400-pd-DHt"/>
         <segue reference="ZwO-F9-qYj"/>
-        <segue reference="mSI-rX-yBy"/>
+        <segue reference="JPP-2I-nDT"/>
     </inferredMetricsTieBreakers>
 </document>
