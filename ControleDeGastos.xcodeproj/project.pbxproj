@@ -64,7 +64,6 @@
 		E559BFA71CA96CDD00B3CD5A /* AIObase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIObase.swift; sourceTree = "<group>"; };
 		E5BD5CAC1CB2D76900481089 /* Filtros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
 		E5BD5CB01CB353C300481089 /* quickSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quickSort.swift; sourceTree = "<group>"; };
-		E5BD5CB21CB356DD00481089 /* ControleDeGastos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ControleDeGastos-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +116,6 @@
 				9C047D711CB2A1D40099A13C /* extensions.swift */,
 				E5BD5CAC1CB2D76900481089 /* Filtros.swift */,
 				E5BD5CB01CB353C300481089 /* quickSort.swift */,
-				E5BD5CB21CB356DD00481089 /* ControleDeGastos-Bridging-Header.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
