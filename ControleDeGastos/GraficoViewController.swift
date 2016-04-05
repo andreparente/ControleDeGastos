@@ -35,6 +35,15 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = corAzul
+        if (eamarela)
+        {
+            view.backgroundColor = corAmarela
+        }
+        if (evermelha)
+        {
+            view.backgroundColor = corVermelha
+        }
+
         dataMesTextField.delegate = self
         dataMesDatePicker.hidden = true
         dataMesTextField.inputView = dataMesDatePicker
@@ -134,7 +143,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         
         
         var dataEntries: [ChartDataEntry] = []
-        
+        chartView.descriptionText = "Gastos"
         //ESSE FOR PREENCHE O VETOR DE ENTRADA DE DADOS, PRA CADA INDEX,
         for i in 0..<values.count {
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)

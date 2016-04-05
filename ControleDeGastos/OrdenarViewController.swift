@@ -25,7 +25,6 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // linkando funcao ao switch
         switchDecrescente.addTarget(self, action: "switchClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         // altera switch para o valor atual
@@ -48,6 +47,14 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
         
         view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         view.backgroundColor = corAzul
+        if (eamarela)
+        {
+            view.backgroundColor = corAmarela
+        }
+        if (evermelha)
+        {
+            view.backgroundColor = corVermelha
+        }
     }
     
     func switchClicked(sender:UIButton)

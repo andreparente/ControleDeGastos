@@ -16,6 +16,15 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         super.viewDidLoad()
         
         view.backgroundColor = corAzul
+        if (eamarela)
+        {
+            view.backgroundColor = corAmarela
+        }
+        if (evermelha)
+        {
+            view.backgroundColor = corVermelha
+        }
+
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)

@@ -34,7 +34,14 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         super.viewDidLoad()
         
         view.backgroundColor = corAzul
-        
+        if (eamarela)
+        {
+            view.backgroundColor = corAmarela
+        }
+        if (evermelha)
+        {
+            view.backgroundColor = corVermelha
+        }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         

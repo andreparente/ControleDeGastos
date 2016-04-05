@@ -19,18 +19,25 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = corAzul
         viewSuperior.backgroundColor = corAzul
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
-        
         // apenas para poder enxergar os botoes
         self.botaoFiltrar.backgroundColor = corVerde
         self.botaoOrdenar.backgroundColor = corVerde
         self.botaoFiltrar.titleLabel?.textColor = UIColor.whiteColor()
         self.botaoOrdenar.titleLabel?.textColor = UIColor.whiteColor()
-        
+        if (eamarela)
+        {
+            view.backgroundColor = corAmarela
+            viewSuperior.backgroundColor = corAmarela
+        }
+        if (evermelha)
+        {
+            view.backgroundColor = corVermelha
+            viewSuperior.backgroundColor = corVermelha
+        }
         if (self.gastos.count <= 0) {
             // por padrao, filtra os gastos pelo ultimo mes
             self.gastos = base.usuarioLogado!.getGastosUltimoMês()
@@ -68,6 +75,14 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             cell.labelCat.text = "\(self.gastos[indexPath.row].categoria)"
             cell.labelValor.text = "R$ " + String(self.gastos[indexPath.row].valor)
             cell.labeldata.text = "\(self.gastos[indexPath.row].data)"
+            if (eamarela)
+            {
+              cell.backgroundColor = corAmarela
+            }
+            if (evermelha)
+            {
+                cell.backgroundColor = corVermelha
+            }
         } else {
             cell.hideInfo(true)
             cell.labelSemGastos.text = "Nenhum gasto para exibir!"
