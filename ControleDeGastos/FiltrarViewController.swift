@@ -31,9 +31,6 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         
         view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         
-        // inicialmente carrega todos os gastos
-        self.gastos = base.usuarioLogado!.getGastos()
-        
         // preenche vetor de categorias e adiciona "Todas"
         self.categorias.append("Todas")
         self.categorias.appendContentsOf(base.usuarioLogado!.getCategoriasGastos())

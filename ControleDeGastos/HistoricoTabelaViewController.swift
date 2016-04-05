@@ -85,14 +85,15 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         performSegueWithIdentifier("HistoricoTabelaToFiltrar", sender: nil)
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "HistoricoTabelaToFiltrar" {
-            let filtroVC = segue.destinationViewController as! FiltrarViewController
-            filtroVC.delegate = self
+            let destino = segue.destinationViewController as! FiltrarViewController
+            destino.delegate = self
+            destino.gastos = self.gastos
         } else if segue.identifier == "HistoricoTabelaToOrdenar" {
-            let ordemVC = segue.destinationViewController as! OrdenarViewController
-            ordemVC.delegate = self
+            let destino = segue.destinationViewController as! OrdenarViewController
+            destino.delegate = self
+            destino.gastos = self.gastos
         }
     }
 }

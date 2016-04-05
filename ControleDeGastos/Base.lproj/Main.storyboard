@@ -501,22 +501,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="115" y="28" width="144" height="21"/>
-                                </variation>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hce-xW-JJA">
-                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="411" width="51" height="31"/>
-                                </variation>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordenar decrescentemente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMW-lj-FbJ">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="81" y="416" width="211" height="21"/>
+                                    <rect key="frame" x="115" y="55" width="144" height="21"/>
                                 </variation>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgY-kK-V3Y">
@@ -525,26 +510,71 @@
                                     <rect key="frame" x="0.0" y="66" width="375" height="216"/>
                                 </variation>
                             </pickerView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hce-xW-JJA">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="51" y="290" width="51" height="31"/>
+                                </variation>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordenar decrescentemente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMW-lj-FbJ">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="112" y="295" width="211" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7H-c1-Txl">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cancelar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="41" y="564" width="143" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="apertouBotaoCancelar:" destination="Iwo-rT-6sO" eventType="touchUpInside" id="R3J-6l-uVG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtQ-z2-AMR">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Salvar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="192" y="564" width="142" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="apertouBotaoSalvar:" destination="Iwo-rT-6sO" eventType="touchUpInside" id="obJ-Nd-nzM"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="lYT-7N-l3y"/>
+                                <exclude reference="VgY-kK-V3Y"/>
                                 <exclude reference="Hce-xW-JJA"/>
                                 <exclude reference="OMW-lj-FbJ"/>
-                                <exclude reference="VgY-kK-V3Y"/>
+                                <exclude reference="i7H-c1-Txl"/>
+                                <exclude reference="NtQ-z2-AMR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="lYT-7N-l3y"/>
+                                <include reference="VgY-kK-V3Y"/>
                                 <include reference="Hce-xW-JJA"/>
                                 <include reference="OMW-lj-FbJ"/>
-                                <include reference="VgY-kK-V3Y"/>
+                                <include reference="i7H-c1-Txl"/>
+                                <include reference="NtQ-z2-AMR"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="botaoCancelar" destination="i7H-c1-Txl" id="DjG-xg-6DZ"/>
+                        <outlet property="botaoSalvar" destination="NtQ-z2-AMR" id="ePG-Js-SFR"/>
                         <outlet property="pickerTipoOrdenacao" destination="VgY-kK-V3Y" id="yN7-tC-cZg"/>
                         <outlet property="switchDecrescente" destination="Hce-xW-JJA" id="4Bj-Wa-gz7"/>
                     </connections>

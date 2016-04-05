@@ -8,14 +8,20 @@
 
 import UIKit
 
-class OrdenarViewController: UIViewController {
+class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource {
 
     var delegate = HistoricoTabelaViewController()
+    var decrescente = false
     
     @IBOutlet weak var pickerTipoOrdenacao: UIPickerView!
     @IBOutlet weak var switchDecrescente: UISwitch!
     
-    var decrescente = false
+    @IBOutlet weak var botaoCancelar: UIButton!
+    @IBOutlet weak var botaoSalvar: UIButton!
+    
+    var ordenacoes = [String]()
+    var ordenacaoEscolhida = String()
+    var gastos = [Gasto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,23 @@ class OrdenarViewController: UIViewController {
         switchDecrescente.addTarget(self, action: "switchClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         // altera switch para o valor atual
         switchDecrescente.setOn(self.decrescente, animated: true)
+        
+        pickerTipoOrdenacao.delegate = self
+        pickerTipoOrdenacao.dataSource = self
+        
+        // adiciona opcoes de ordenacao
+        self.ordenacoes.append("Data")
+        self.ordenacoes.append("Valor")
+        self.ordenacoes.append("Nome")
+        
+        // inicializa ordenacao escolhida
+        self.ordenacaoEscolhida = self.ordenacoes[0]
+        
+        // pinta texto dos botoes
+        botaoCancelar.titleLabel!.textColor = UIColor.whiteColor()
+        botaoSalvar.titleLabel!.textColor = UIColor.whiteColor()
+        
+        view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
     }
     
     func switchClicked(sender:UIButton)
@@ -34,14 +57,35 @@ class OrdenarViewController: UIViewController {
         });
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.ordenacoes.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.ordenacoes[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.ordenacaoEscolhida = self.ordenacoes[row]
+    }
+    
+    @IBAction func apertouBotaoCancelar(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+        let quickSorter = QuickSorterGasto()
+        quickSorter.v = self.gastos
+        quickSorter.callQuickSort(self.ordenacaoEscolhida, decrescente: self.decrescente)
+        self.gastos = quickSorter.v
+        
+        // altera os dados da historicoTabela
+        self.delegate.gastos = self.gastos
+        // desfaz o segue
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }

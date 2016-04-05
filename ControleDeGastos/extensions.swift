@@ -32,9 +32,7 @@ extension NSDate {
         dateComponents.day = days
         return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: currentDate, options: NSCalendarOptions(rawValue: 0))!
     }
-}
-
-extension NSDate {
+    
     func createFromDate(dia: Int, mes: Int, ano: Int) -> NSDate {
         let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: NSDate())
         components.day = dia

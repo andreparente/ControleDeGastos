@@ -31,7 +31,7 @@
 		E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */; };
 		E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559BFA71CA96CDD00B3CD5A /* AIObase.swift */; };
 		E5BD5CAD1CB2D76900481089 /* Filtros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CAC1CB2D76900481089 /* Filtros.swift */; };
-		E5BD5CAF1CB3106700481089 /* Ordenacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CAE1CB3106700481089 /* Ordenacao.swift */; };
+		E5BD5CB11CB353C300481089 /* quickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CB01CB353C300481089 /* quickSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,8 @@
 		E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdenarViewController.swift; sourceTree = "<group>"; };
 		E559BFA71CA96CDD00B3CD5A /* AIObase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIObase.swift; sourceTree = "<group>"; };
 		E5BD5CAC1CB2D76900481089 /* Filtros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
-		E5BD5CAE1CB3106700481089 /* Ordenacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ordenacao.swift; sourceTree = "<group>"; };
+		E5BD5CB01CB353C300481089 /* quickSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quickSort.swift; sourceTree = "<group>"; };
+		E5BD5CB21CB356DD00481089 /* ControleDeGastos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ControleDeGastos-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +116,8 @@
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
 				9C047D711CB2A1D40099A13C /* extensions.swift */,
 				E5BD5CAC1CB2D76900481089 /* Filtros.swift */,
-				E5BD5CAE1CB3106700481089 /* Ordenacao.swift */,
+				E5BD5CB01CB353C300481089 /* quickSort.swift */,
+				E5BD5CB21CB356DD00481089 /* ControleDeGastos-Bridging-Header.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -296,9 +298,9 @@
 				8A54D3C31CA2CBA700E63645 /* LoginViewController.swift in Sources */,
 				9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */,
 				8A54D3CE1CA2CCFC00E63645 /* GraficoViewController.swift in Sources */,
-				E5BD5CAF1CB3106700481089 /* Ordenacao.swift in Sources */,
 				8A71E0171C9C2F6B00C055F8 /* AppDelegate.swift in Sources */,
 				E559BFA81CA96CDD00B3CD5A /* AIObase.swift in Sources */,
+				E5BD5CB11CB353C300481089 /* quickSort.swift in Sources */,
 				9C047D721CB2A1D40099A13C /* extensions.swift in Sources */,
 				E5BD5CAD1CB2D76900481089 /* Filtros.swift in Sources */,
 				8A1AFD271CB07DF000382D1B /* TableViewCell.swift in Sources */,
@@ -424,6 +426,7 @@
 			baseConfigurationReference = 55440201E2595A4545A36F1C /* Pods-ControleDeGastos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
@@ -433,6 +436,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ControleDeGastos/ControleDeGastos-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -441,6 +446,7 @@
 			baseConfigurationReference = 56307421CB692CF9FCD566F8 /* Pods-ControleDeGastos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
@@ -450,6 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ControleDeGastos/ControleDeGastos-Bridging-Header.h";
 			};
 			name = Release;
 		};
