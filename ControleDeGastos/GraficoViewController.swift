@@ -18,7 +18,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var limiteLabel: UILabel!
     @IBOutlet weak var dataMesDatePicker: UIDatePicker!
-    
     var gastos: [Gasto]!
     var total = 0.0
     var dataNs = NSDate()

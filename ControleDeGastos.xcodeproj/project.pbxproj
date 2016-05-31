@@ -24,6 +24,7 @@
 		8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */; };
 		8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01F1C9C2F6B00C055F8 /* LaunchScreen.storyboard */; };
 		9C047D721CB2A1D40099A13C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C047D711CB2A1D40099A13C /* extensions.swift */; };
+		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
 		9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */; };
 		D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */; };
@@ -58,6 +59,7 @@
 		8A71E0201C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A71E0221C9C2F6B00C055F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C047D711CB2A1D40099A13C /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E511105B1CB3849D00B9D52D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */,
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
 				E511105B1CB3849D00B9D52D /* MainTabBarController.swift */,
+				9C08CB3F1CFDD75F005133E7 /* PickerView.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				8A1AFD271CB07DF000382D1B /* TableViewCell.swift in Sources */,
 				9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */,
 				8A1AFCFF1CAACC7400382D1B /* GastoManualViewController.swift in Sources */,
+				9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */,
 				E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */,
 				8A54D3C81CA2CC5B00E63645 /* MainViewController.swift in Sources */,
 				8A54D3CA1CA2CCCF00E63645 /* QRCodeViewController.swift in Sources */,
