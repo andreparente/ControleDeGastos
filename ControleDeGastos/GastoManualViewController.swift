@@ -32,7 +32,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        categoria = "Outros"
         view.backgroundColor = corAzul
         if (eamarela)
         {
