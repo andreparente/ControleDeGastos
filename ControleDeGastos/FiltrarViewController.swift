@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
 
     @IBOutlet weak var textValorMin: UITextField!
     @IBOutlet weak var textValorMax: UITextField!
@@ -28,6 +28,10 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
         view.backgroundColor = corAzul
         if (eamarela)
         {
@@ -64,6 +68,10 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         
         botaoCancelar.titleLabel!.textColor = UIColor.whiteColor()
         botaoSalvar.titleLabel!.textColor = UIColor.whiteColor()
+        textValorMax.delegate = self
+        textValorMin.delegate = self
+        textValorMin.keyboardType = .DecimalPad
+        textValorMax.keyboardType = .DecimalPad
     }
     
     @IBAction func apertouBotaoCancelar(sender: AnyObject) {
@@ -110,6 +118,14 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoriaSelecionada = self.categorias[row]
+    }
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 
     /*
