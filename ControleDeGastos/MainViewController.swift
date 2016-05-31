@@ -92,8 +92,8 @@ class MainViewController: UIViewController {
     }
     
     func printaLimite(usuario: Usuario) {
-        if(usuario.limiteMes == 0) {
-            limite.text = "O limite mensal ainda não foi cadastrado\nClique em configuraçōes para realizar o cadastro"
+        if(base.usuarioLogado!.limiteMes == 0) {
+            limite.text = "O limite mensal ainda não foi cadastrado. \n Clique em configuraçōes para realizar o cadastro"
         }
         else {
             limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)"

@@ -26,7 +26,7 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         // linkando funcao ao switch
-        switchDecrescente.addTarget(self, action: "switchClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+        switchDecrescente.addTarget(self, action: #selector(OrdenarViewController.switchClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         // altera switch para o valor atual
         switchDecrescente.setOn(self.decrescente, animated: true)
         
