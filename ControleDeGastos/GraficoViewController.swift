@@ -18,6 +18,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var limiteLabel: UILabel!
     @IBOutlet weak var dataMesDatePicker: UIDatePicker!
+    @IBOutlet weak var pickermesano: MonthYearPickerView!
     var gastos: [Gasto]!
     var total = 0.0
     var dataNs = NSDate()
@@ -45,6 +46,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
 
         dataMesTextField.delegate = self
         dataMesDatePicker.hidden = true
+        pickermesano.hidden = true
         dataMesTextField.inputView = dataMesDatePicker
         printaLimite(base.usuarioLogado!)
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
@@ -167,11 +169,14 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if(textField.placeholder == "Escolha o mês e ano") {
-            dataMesDatePicker.hidden = false
+            //dataMesDatePicker.hidden = false
+            dataMesDatePicker.hidden = true
+            pickermesano.hidden = false
             return false
         }
         else {
             dataMesDatePicker.hidden = true
+            pickermesano.hidden = true
         }
         return true
     }
@@ -197,6 +202,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             totalLabel.text = "Total: R$"+String(total)
         }
     }
+    
     
     @IBAction func DatePickerChanged(sender: AnyObject) {
         dataNs = dataMesDatePicker.date

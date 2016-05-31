@@ -971,6 +971,9 @@
                                     <action selector="DatePickerChanged:" destination="qDv-K7-cHH" eventType="valueChanged" id="Kku-nX-Iqq"/>
                                 </connections>
                             </datePicker>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEt-D5-eaI" customClass="MonthYearPickerView" customModule="ControleDeGastos" customModuleProvider="target">
+                                <rect key="frame" x="30" y="423" width="314" height="203"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -982,12 +985,13 @@
                         <outlet property="dataMesDatePicker" destination="LwU-ZW-9Ci" id="Ilc-l6-vL3"/>
                         <outlet property="dataMesTextField" destination="fDg-lM-EMw" id="G4q-1F-6OF"/>
                         <outlet property="limiteLabel" destination="eXw-VO-phP" id="jIh-8f-Uji"/>
+                        <outlet property="pickermesano" destination="KEt-D5-eaI" id="sCf-lh-3XO"/>
                         <outlet property="totalLabel" destination="R7U-2V-vb1" id="7Ad-FH-47I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvM-w5-cKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116.25" y="1708.5"/>
+            <point key="canvasLocation" x="-116.5" y="1708.5"/>
         </scene>
     </scenes>
     <resources>

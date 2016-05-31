@@ -44,7 +44,7 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         var years: [Int] = []
         if years.count == 0 {
             var year = NSCalendar(identifier: NSCalendarIdentifierGregorian)!.component(.Year, fromDate: NSDate())
-            for _ in 1...15 {
+            for _ in 1...5 {
                 years.append(year)
                 year += 1
             }
@@ -95,6 +95,7 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         
         self.month = month
         self.year = year
+        
     }
     
 }
