@@ -159,7 +159,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         chartDataSet.colors = ChartColorTemplates.colorful()
         
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
-        chartView!.data = chartData
+        chartView.data = chartData
     }
    
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA

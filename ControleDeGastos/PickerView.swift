@@ -104,5 +104,5 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
         GraficoViewController().setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
     }
-    
+
 }
