@@ -30,7 +30,8 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         super.viewDidLoad()
         
         
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FiltrarViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         view.backgroundColor = corAzul
         if (eamarela)

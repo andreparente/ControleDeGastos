@@ -14,8 +14,9 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     var years: [Int]!
-    
-    
+    var vetorFinalCatMes: [String] = []
+    var vetorFinalGastosMes: [Double] = []
+    var vetorGastosMes: [Gasto] = []
     var month: Int = 0 {
         didSet {
             selectRow(month-1, inComponent: 0, animated: false)
@@ -92,10 +93,16 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         if let block = onDateSelected {
             block(month: month, year: year)
         }
-        
         self.month = month
         self.year = year
-        
+        let mes :Int =  month
+        let ano :Int = year
+        print(month);print(year)
+        vetorGastosMes = base.usuarioLogado!.getGastosMes(mes,ano: ano)
+        (vetorFinalGastosMes,vetorFinalCatMes) = GraficoViewController().organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
+        print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
+        print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
+        GraficoViewController().setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
     }
     
 }

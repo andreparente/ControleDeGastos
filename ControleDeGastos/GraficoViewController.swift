@@ -59,7 +59,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     }
     
     //Funcao para organizar o grafico
-    func organizaVetores(usuario: Usuario) -> ([Double],[String]) {
+   func organizaVetores(usuario: Usuario) -> ([Double],[String]) {
         
         var vetValAux = [Double?](count: usuario.categoriasGastos.count,repeatedValue: nil)
         var vetValAux2: [Double] = []
@@ -86,7 +86,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         
         return (vetValAux2,vetCatAux)
     }
-    
+
     func existeCategoria(vetor: [String],categoria: String) -> Bool {
         
         for auxVet in vetor {
@@ -96,7 +96,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
         return false
     }
-    
+
     func organizaVetoresMes(usuario: Usuario, gastosMes: [Gasto]) -> ([Double],[String]) {
 
         var vetCatAux: [String] = []
@@ -126,7 +126,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         
         
     }
-    
+
     //FUNCAO QUE PRINTA LIMITE
     func printaLimite(usuario: Usuario) {
         if(usuario.limiteMes == 0) {
@@ -159,9 +159,9 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         chartDataSet.colors = ChartColorTemplates.colorful()
         
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
-        chartView.data = chartData
+        chartView!.data = chartData
     }
-    
+   
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         print("\(entry.value) in \(base.usuarioLogado!.categoriasGastos[entry.xIndex])")
@@ -204,7 +204,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     }
     
     
-    @IBAction func DatePickerChanged(sender: AnyObject) {
+/*   @IBAction func DatePickerChanged(sender: AnyObject) {
         dataNs = dataMesDatePicker.date
         dataString = dateFormatter.stringFromDate(dataMesDatePicker.date)
         let dataaux = dataString.stringByReplacingOccurrencesOfString("/", withString: "-")
@@ -215,9 +215,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         let data = stringfinal.componentsSeparatedByString("-")
         // data == [mes, dia, ano]
         print(data)
-        let mesGasto = Int(data[1])
-        let anoGasto = Int(data[0])
-        vetorGastosMes = base.usuarioLogado!.getGastosMes(mesGasto!,ano: anoGasto!)
+        let mesGasto = Int(data[1])!
+        let anoGasto = Int(data[0])!
+    print(mesGasto);print(anoGasto)
+        vetorGastosMes = base.usuarioLogado!.getGastosMes(mesGasto,ano: anoGasto)
         (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
         
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
@@ -225,6 +226,5 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
         
     }
-    
+ */
 }
-
