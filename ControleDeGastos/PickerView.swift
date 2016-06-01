@@ -87,7 +87,7 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         }
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+   /* func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let month = self.selectedRowInComponent(0)+1
         let year = years[self.selectedRowInComponent(1)]
         if let block = onDateSelected {
@@ -103,6 +103,6 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
         GraficoViewController().setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
-    }
+    }*/
 
 }

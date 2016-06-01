@@ -101,6 +101,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
    /* func organizaVetoresMes(usuario: Usuario, gastosMes: [Gasto]) -> ([Double],[String]) {
 
 
+
         var vetCatAux: [String] = []
         var vetValAux: [Double] = []
         for i in 0..<gastosMes.count {
@@ -125,8 +126,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         
         return (vetValAux,vetCatAux)
 
-    }*/
 
+    }*/
 
     //FUNCAO QUE PRINTA LIMITE
    /* func printaLimite(usuario: Usuario) {
@@ -205,7 +206,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     }
     
     
-/*   @IBAction func DatePickerChanged(sender: AnyObject) {
+   @IBAction func DatePickerChanged(sender: AnyObject) {
         dataNs = dataMesDatePicker.date
         dataString = dateFormatter.stringFromDate(dataMesDatePicker.date)
         let dataaux = dataString.stringByReplacingOccurrencesOfString("/", withString: "-")
@@ -225,7 +226,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
         setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
-        
-    }*/
-    
-} s
+ 
+    }
+}*/
+}
