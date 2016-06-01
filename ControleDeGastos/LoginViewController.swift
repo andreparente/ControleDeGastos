@@ -23,10 +23,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var senha: UITextField!
     @IBOutlet weak var errocadastro: UILabel!
-    var usuarioAux: Usuario?
+    var usuarioAux: User?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let bundle = NSBundle.mainBundle().pathForResource("User", ofType: "plist")
         
         view.backgroundColor = corAzul
         
@@ -49,10 +51,17 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         errosenhas.text="Senha inválida"
         errocadastro.hidden=true
         errocadastro.text = "Usuário não cadastrado"
-        /*
+        
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnNotificationSuccessLogin), name: "notificationSuccessLogin", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnNotificationErrorPassword), name: "notificationErrorPassword", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnnotificationErrorEmail), name: "notificationErrorEmail", object: nil)
+
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        */
+        
     }
 
     @IBAction func confirma(sender: UIButton)
@@ -65,37 +74,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         }
         errocampovazio.hidden=true
         
-        // email no formato valido e existente na base
-        let indUsuario = base.indiceUsuarioPorEmail(mail.text!)
+        // email no formato valido
         if isValidEmail(mail.text!) == false
         {
             erroemail.hidden=false
             errocadastro.hidden = true
             return
         }
-        else
-        {
-            if indUsuario == -1
-            {
-                errocadastro.hidden = false
-                erroemail.hidden = true
-                return
-            }
-        }
-        erroemail.hidden=true
-        errocadastro.hidden=true
-        // senha valida
-        if base.ramUsuarios[indUsuario].senha != senha.text! {
-            errosenhas.hidden=false
-            return
-        }
         
-        // faz o login
-        let usuario = base.ramUsuarios[indUsuario]
-        base.login(usuario)
+        print("da ruim no fetchuserbyEmail")
+        DAOCloudKit().fetchUserByEmail(mail.text!, password: senha.text!)
         
-        // faz o segue
-        performSegueWithIdentifier("LoginToMain", sender: self)
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -108,6 +98,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     
     func dismissKeyboard() {
+        
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -118,7 +109,41 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func cadastro(sender: UIButton) {
+        
         performSegueWithIdentifier("LoginToCadastro", sender: self)
+        
+    }
+    
+    
+    func actOnNotificationSuccessLogin() {
+        
+        // faz o segue
+        dispatch_async(dispatch_get_main_queue(),{
+            
+            var data = [String:AnyObject]()
+            data["email"] = self.mail.text!
+            data["password"] = self.senha.text!
+            data["name"] = userLogged.name
+            
+            plist.saveData(data)
+            
+            self.performSegueWithIdentifier("LoginToMain", sender: self)
+        })
+    }
+    
+    func actOnNotificationErrorPassword() {
+        
+        dispatch_async(dispatch_get_main_queue(),{
+            self.errosenhas.hidden = false
+        })
+    }
+    
+    func actOnnotificationErrorEmail() {
+
+        dispatch_async(dispatch_get_main_queue(),{
+            self.errocadastro.hidden = false
+        })
+        
     }
     /*
     // MARK: - Navigation

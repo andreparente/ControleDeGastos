@@ -12,12 +12,22 @@ class LaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // hasLaunchedOnce eh definida na abertura do app (appDelegate)
-        let destino = hasLaunchedOnce ? "LaunchToMain" : "LaunchToLogin"
-        print (hasLaunchedOnce, destino)
-        dispatch_async(dispatch_get_main_queue()) {
-            self.performSegueWithIdentifier(destino, sender: self)
+        
+        if (plist.getData().count == 0) {
+            dispatch_async(dispatch_get_main_queue(),{
+                
+            self.performSegueWithIdentifier("LaunchToLogin", sender: self)
+            })
         }
+        else {
+            
+            dispatch_async(dispatch_get_main_queue(),{
+            var dict = plist.getData()
+            userLogged = User(name: dict["name"] as! String, email: dict["email"] as! String, password: dict["password"] as! String)
+            self.performSegueWithIdentifier("LaunchToMain", sender: self)
+            })
+        }
+
     }
     
     override func didReceiveMemoryWarning() {

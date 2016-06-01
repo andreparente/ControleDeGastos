@@ -126,9 +126,14 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     }
     
     func realiza_cadastro() {
-        let usuario = Usuario(nome: nome.text!, email: Email.text!, senha: senha.text!)
         
-        // adiciona categorias padrao
+        let user = User(name: nome.text!, email: Email.text!, password: senha.text!)
+        
+        //salvando usuário no CloudKit e atribuindo ao usuarioLogado
+        DAOCloudKit().saveUser(user)
+        
+        
+     /*   // adiciona categorias padrao
         usuario.addCategoriaGasto("Outros")
         usuario.addCategoriaGasto("Alimentação")
         usuario.addCategoriaGasto("Transporte")
@@ -144,9 +149,11 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         
         // configura o usuarioLogado para ser o de agora
         base.usuarioLogado = usuario
+   */
     }
     
     func dismissKeyboard() {
+        
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }

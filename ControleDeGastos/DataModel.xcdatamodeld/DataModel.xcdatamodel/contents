@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
     <entity name="Cartao" representedClassName="Cartao" syncable="YES">
         <attribute name="cor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="limite" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -13,19 +13,14 @@
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="valor" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
-    <entity name="Usuario" representedClassName="Usuario" syncable="YES">
-        <attribute name="categoriasGastos" optional="YES" attributeType="Transformable" syncable="YES"/>
+    <entity name="User" representedClassName="Usuario" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="limiteMes" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
-        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Usuario"/>
-        </fetchedProperty>
     </entity>
     <elements>
         <element name="Cartao" positionX="-36" positionY="45" width="128" height="90"/>
         <element name="Gasto" positionX="-54" positionY="18" width="128" height="135"/>
-        <element name="Usuario" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>
