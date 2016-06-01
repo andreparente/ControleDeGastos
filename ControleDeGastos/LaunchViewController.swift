@@ -13,18 +13,20 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (plist.getData().count == 0) {
+        if let dic = plist.getData() {
             dispatch_async(dispatch_get_main_queue(),{
-                
-            self.performSegueWithIdentifier("LaunchToLogin", sender: self)
+                var dict = plist.getData()
+                userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
+                self.performSegueWithIdentifier("LaunchToMain", sender: self)
+
+
             })
         }
         else {
             
             dispatch_async(dispatch_get_main_queue(),{
-            var dict = plist.getData()
-            userLogged = User(name: dict["name"] as! String, email: dict["email"] as! String, password: dict["password"] as! String)
-            self.performSegueWithIdentifier("LaunchToMain", sender: self)
+        
+                self.performSegueWithIdentifier("LaunchToLogin", sender: self)
             })
         }
 

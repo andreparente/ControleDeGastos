@@ -33,8 +33,8 @@ public class SimplePList {
     }
     
     
-    func getData()->[String:AnyObject] {
+    func getData()->[String:AnyObject]? {
         let content = NSDictionary(contentsOfFile: path)
-        return content as! [String:AnyObject]
+        return content as? [String:AnyObject]
     }
 }

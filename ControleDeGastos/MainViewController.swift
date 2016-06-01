@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
         
         
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
-        print("no plist temos o nome: \(userPlistDic["name"]), e o email: \(userPlistDic["email"])")
+        print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
         
         view.backgroundColor = corAzul
         var valortotal: Double = 0.0
