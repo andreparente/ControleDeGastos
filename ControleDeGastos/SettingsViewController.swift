@@ -55,14 +55,15 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
     }
     
     @IBAction func limite(sender: UIButton) {
-        let alert=UIAlertController(title:" Seu limite e:\(base.usuarioLogado!.getLimiteMes())", message: "Mude seu limite abaixo:", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let alert=UIAlertController(title:" Seu limite e:\(userLogged.getLimiteMes())", message: "Mude seu limite abaixo:", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
             field.placeholder = "Insira seu limite"})
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             print("Text field: \(textField.text)")
-            base.usuarioLogado!.setLimiteMes(Int(textField.text!)!)
+            userLogged.setLimiteMes(Double(textField.text!)!)
         }))
         self.presentViewController(alert,animated: true, completion: nil)
     }
@@ -79,7 +80,8 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             var naoExiste = true
-            for categ in (base.usuarioLogado!.categoriasGastos)
+            
+            for categ in (userLogged.categorias)
             {
                 if textField.text == categ {
                     let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
@@ -88,20 +90,26 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
                     naoExiste = false
                 }
             }
+            
             if (naoExiste)
             {
                 // adiciona na RAM
-                base.usuarioLogado!.addCategoriaGasto(textField.text!)
+                userLogged.addCategoriaGasto(textField.text!)
+                
                 // adiciona no disco
-                base.editarUsuario(base.usuarioLogado!)
+                //base.editarUsuario(base.usuarioLogado!)
             }
         }))
+        
         self.presentViewController(alert,animated: true, completion: nil)
     }
     
     
     @IBAction func logOut(sender: UIButton) {
-        base.logout()
+        
+        // deletar o arquivo plist!!!
+        
+        //base.logout()
         performSegueWithIdentifier("SettingsToLogin", sender: self)
     }
     

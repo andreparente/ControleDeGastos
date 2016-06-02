@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var totalgastos: UILabel!
     @IBOutlet weak var totalDisponivelMes: UILabel!
     var available: Double!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -96,8 +97,8 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func printaLimite(usuario: Usuario) {
-        if(base.usuarioLogado!.limiteMes == 0) {
+    func printaLimite(usuario: User) {
+        if(userLogged.limiteMes == 0) {
             limite.text = "O limite mensal ainda não foi cadastrado. \n Clique em configuraçōes para realizar o cadastro"
         }
         else {

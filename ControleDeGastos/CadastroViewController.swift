@@ -164,8 +164,10 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     }
     
     func usuarioJaExiste () -> Bool {
-        let i = base.indiceUsuarioPorEmail(Email.text!)
-        return i != -1
+        
+       // let i = base.indiceUsuarioPorEmail(Email.text!)
+       // return i != -1
+        return true
     }
     
     /*

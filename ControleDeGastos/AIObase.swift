@@ -5,7 +5,7 @@
 //  created by cAIO fAbIO valente on 2016-03-27
 //  Copyright © 2016 Andre Machado Parente. All rights reserved.
 //
-import Foundation
+/*import Foundation
 
 public var base = AIO()
 public var hasLaunchedOnce = Bool()
@@ -458,4 +458,4 @@ public class AIO {
         }
         return indice
     }
-}
+}*/

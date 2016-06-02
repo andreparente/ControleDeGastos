@@ -117,7 +117,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.categoria = base.usuarioLogado!.categoriasGastos[row]
+        //self.categoria = base.usuarioLogado!.categoriasGastos[row]
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -125,11 +125,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return (base.usuarioLogado!.categoriasGastos.count)
+       // return (base.usuarioLogado!.categoriasGastos.count)
+        return 1
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return (base.usuarioLogado!.categoriasGastos[row])
+       // return (base.usuarioLogado!.categoriasGastos[row])
+        return "teste"
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
@@ -151,6 +153,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     @IBAction func novacategoria(sender: UIButton) {
+        
         let alert=UIAlertController(title:"Categoria", message: "Insira uma nova categoria abaixo", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
             field.placeholder = "Insira nova categoria"})
@@ -159,7 +162,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             let textField = alert.textFields![0] as UITextField
             //print("Text field: \(textField.text!)")
             var naoExiste = true
-            for categ in (base.usuarioLogado!.categoriasGastos)
+            for categ in userLogged.categorias /*(base.usuarioLogado!.categoriasGastos)*/ //aqui vai a lista ou array de categorias de um usuario
             {
                 if textField.text == categ {
                     let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
@@ -170,6 +173,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             }
             if (naoExiste)
             {
+                /*
                 // adiciona na RAM
                 base.usuarioLogado!.addCategoriaGasto(textField.text!)
                 // adiciona no disco
@@ -179,7 +183,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 // atualiza pickerView
                 self.categoriaPickerView.reloadAllComponents()
                 self.categoriaPickerView.selectRow((base.usuarioLogado!.categoriasGastos.count)-1, inComponent: 0, animated: true)
-                print("passou")
+                print("passou") */
             }
         }))
         self.presentViewController(alert,animated: true, completion: nil)
@@ -216,11 +220,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
+            
+            /*
             let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
             // adiciona na RAM
             base.usuarioLogado!.addGasto(gasto)
             // adiciona no disco
-            base.adicionarGasto(gasto, usuario: base.usuarioLogado!)
+            base.adicionarGasto(gasto, usuario: base.usuarioLogado!) */
             // faz o segue
             performSegueWithIdentifier("GastoToMain", sender: self)
         }
