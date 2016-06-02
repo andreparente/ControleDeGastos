@@ -7,10 +7,10 @@
 //
 /*import Foundation
 
-public var base = AIO()
-public var hasLaunchedOnce = Bool()
+//public var base = AIO()
+//public var hasLaunchedOnce = Bool()
 
-public class AIO {
+/*public class AIO {
     // separadores de texto da base
     internal let objectSeparator = "\n +++ \n"
     internal let attributeSeparator = " - \n"
@@ -458,4 +458,6 @@ public class AIO {
         }
         return indice
     }
+
 }*/
+
