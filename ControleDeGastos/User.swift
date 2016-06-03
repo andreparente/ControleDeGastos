@@ -19,7 +19,7 @@ public class User {
     var name: String!
     var email: String!
     var password: String!
-    var categorias: [String] = []
+    var categorias: [String] = ["Outras"]
     var limiteMes: Double = 0
     
     init(name: String, email: String, password: String) {

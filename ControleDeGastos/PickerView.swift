@@ -12,7 +12,7 @@ import UIKit
 
 class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    let months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
     var years: [Int]!
     var vetorFinalCatMes: [String] = []
     var vetorFinalGastosMes: [Double] = []

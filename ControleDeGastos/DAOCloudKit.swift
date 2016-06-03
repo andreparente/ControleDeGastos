@@ -24,6 +24,7 @@ class DAOCloudKit {
             if error == nil {
                 
                 print("Already exists user!!")
+                NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorRegister", object: nil)
                 
             }
                 
@@ -35,6 +36,7 @@ class DAOCloudKit {
                     record.setObject(user.name, forKey: "name")
                     record.setObject(user.email, forKey: "email")
                     record.setObject(user.password, forKey: "password")
+                    record.setObject(user.categorias, forKey: "categories")
                     
                     
                     publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in

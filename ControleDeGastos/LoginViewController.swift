@@ -82,7 +82,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             return
         }
         
-        print("da ruim no fetchuserbyEmail")
         DAOCloudKit().fetchUserByEmail(mail.text!, password: senha.text!)
         
 
@@ -124,7 +123,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             data["email"] = self.mail.text!
             data["password"] = self.senha.text!
             data["name"] = userLogged.name
-            
+            data["isLogged"] = "isLogged"
             plist.saveData(data)
             
             self.performSegueWithIdentifier("LoginToMain", sender: self)

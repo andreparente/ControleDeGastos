@@ -13,7 +13,9 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let dic = plist.getData() {
+        var dict1 = plist.getData()
+        print(plist.plistName)
+        if plist.getData() != nil && dict1!["isLogged"] as! String != "loggedOut" {
             dispatch_async(dispatch_get_main_queue(),{
                 var dict = plist.getData()
                 userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
@@ -45,15 +47,4 @@ class LaunchViewController: UIViewController {
             vc.selectedIndex = 1
         }
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

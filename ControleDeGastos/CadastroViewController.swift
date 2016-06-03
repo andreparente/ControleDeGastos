@@ -18,6 +18,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     @IBOutlet weak var erromail: UILabel!
     @IBOutlet weak var errosenhas: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +44,8 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         erromail.text="E-mail inválido"
         errosenhas.hidden=true
         errosenhas.text="Senhas não são iguais"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CadastroViewController.actOnNotificationErrorRegister), name: "notificationErrorRegister", object: nil)
  
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -167,7 +170,14 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         
        // let i = base.indiceUsuarioPorEmail(Email.text!)
        // return i != -1
-        return true
+        return false
+    }
+    
+    func actOnNotificationErrorRegister() {
+        
+        let alert2=UIAlertController(title:"Erro", message: "Email já cadastrado", preferredStyle: UIAlertControllerStyle.Alert)
+        alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
+        self.presentViewController(alert2,animated: true, completion: nil)
     }
     
     /*

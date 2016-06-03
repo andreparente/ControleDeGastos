@@ -110,6 +110,12 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         // deletar o arquivo plist!!!
         
         //base.logout()
+        var data = [String:AnyObject]()
+        data["email"] = nil
+        data["password"] = nil
+        data["name"] = nil
+        data["isLogged"] = "loggedOut"
+        plist.deleteData(data)
         performSegueWithIdentifier("SettingsToLogin", sender: self)
     }
     

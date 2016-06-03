@@ -25,6 +25,11 @@ public class SimplePList {
         return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String + "/" + plistName + ".plist"
     }
     
+    func deleteData(dataToSave:[String:AnyObject]) {
+       let content = dataToSave as NSDictionary
+        content.writeToFile(path, atomically: false)
+    }
+    
     
     func saveData(dataToSave:[String:AnyObject])->Bool {
         let content = dataToSave as NSDictionary
