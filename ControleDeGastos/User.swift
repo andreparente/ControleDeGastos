@@ -19,8 +19,10 @@ public class User {
     var name: String!
     var email: String!
     var password: String!
-    var categorias: [String] = ["Outras"]
+    var categories: [String] = ["Outras"]
     var limiteMes: Double = 0
+    var arrayGastos: [CKReference] = []
+    public var gastos: [Gasto] = []
     
     init(name: String, email: String, password: String) {
         self.name = name
@@ -34,20 +36,20 @@ public class User {
     }
     
     func addCategoriaGasto(categ: String) {
-        self.categorias.append(categ)
+        self.categories.append(categ)
     }
     
     func getCategoriasGastos() -> [String] {
-        return self.categorias
+        return self.categories
     }
     
-    /*func addGasto(gasto: Gasto) {
+    func addGasto(gasto: Gasto) {
         self.gastos.append(gasto)
     }
     
     func getGastos() -> [Gasto] {
-        return self.gastos
-    }*/
+        return gastos
+    }
     
     /*func addCartao(cartao: Cartao) {
         self.cartoes.append(cartao)

@@ -22,6 +22,10 @@ class MainViewController: UIViewController {
         
         let userPlistDic = plist.getData()
         
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            DAOCloudKit().fetchUser(userLogged)
+        }
         
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
@@ -29,31 +33,31 @@ class MainViewController: UIViewController {
         view.backgroundColor = corAzul
         var valortotal: Double = 0.0
         var valorTotalMes: Double = 0.0
-        //  printaLimite(base.usuarioLogado!)
+        printaLimite(userLogged)
         let hoje = NSDate()
         let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
         let mesAtual = components.month
         let anoAtual = components.year
         
-        /* for valor in (base.usuarioLogado!.gastos) {
-         
-         valortotal += valor.valor
-         
-         }
-         for valor in (base.usuarioLogado!.gastos) {
-         let data = valor.data.componentsSeparatedByString("-")
-         if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
-         valorTotalMes += valor.valor
-         }
-         }*/
+        for valor in (userLogged.gastos) {
+            
+            valortotal += valor.value
+            
+        }
+        for valor in (userLogged.gastos) {
+            let data = valor.date.componentsSeparatedByString("-")
+            if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
+                valorTotalMes += valor.value
+            }
+        }
         
         totalgastos.text = "Seu total de gastos é: R$ \(valortotal)"
         totaldisponivel.numberOfLines = 2
         
-      /*  if(base.usuarioLogado!.limiteMes != 0)
+        if(userLogged.limiteMes != 0)
         {
-            available = Double(base.usuarioLogado!.limiteMes) - valorTotalMes
-            if(available >= 100 && available > (0.2 * Double(base.usuarioLogado!.limiteMes)) )
+            available = userLogged.limiteMes - valorTotalMes
+            if(available >= 100 && available > (0.2 * userLogged.limiteMes) )
             {
                 totaldisponivel.text = "Você ainda tem R$ \(available) para gastar nesse mês"
                 eamarela = false
@@ -61,7 +65,7 @@ class MainViewController: UIViewController {
             }
             else
             {
-                if (available > 0 && available < (0.2 * Double(base.usuarioLogado!.limiteMes)) )
+                if (available > 0 && available < (0.2 * userLogged.limiteMes) )
                 {
                     totaldisponivel.text = "Atenção! Você só tem mais R$ \(available) para gastar nesse mês"
                     eamarela = true
@@ -69,7 +73,7 @@ class MainViewController: UIViewController {
                 }
                 else
                 {
-                    totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valorTotalMes - Double(base.usuarioLogado!.limiteMes))"
+                    totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valorTotalMes - userLogged.limiteMes)"
                     eamarela = false
                     evermelha = true
                 }
@@ -88,7 +92,7 @@ class MainViewController: UIViewController {
         else
         {
             totaldisponivel.hidden=true
-        }*/
+        }
         // Do any additional setup after loading the view.
     }
     

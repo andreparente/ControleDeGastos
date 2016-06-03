@@ -49,7 +49,7 @@ print (randomNumbers)
 
 
 */
-
+/*
 class QuickSorterGasto {
     var v = [Gasto]()
     var decrescente = false
@@ -145,4 +145,4 @@ class QuickSorterGasto {
             quicksortValor(pivotIndex + 1, right: right)
         }
     }
-}
+}*/

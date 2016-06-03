@@ -8,7 +8,7 @@
 
 import Foundation
 
-// filtra o vetor de gastos pelo intervalo de valores
+/*// filtra o vetor de gastos pelo intervalo de valores
 public func filtraValor(min: Double, max: Double, gastos: [Gasto]) -> [Gasto] {
     // gera o novo vetor
     var gastosFiltrados: [Gasto] = []
@@ -126,5 +126,5 @@ func filtraUltimosDias(dias: Int,gastos:[Gasto]) ->([Gasto]) {
     }
     return gastosUltimosDias
 }
-
+*/
 

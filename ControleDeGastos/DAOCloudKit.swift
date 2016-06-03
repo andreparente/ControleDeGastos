@@ -13,7 +13,7 @@ import NotificationCenter
 class DAOCloudKit {
     
     func saveUser(user: User) {
-
+        
         let recordId = CKRecordID(recordName: "User " + user.name)
         let record = CKRecord(recordType: "User", recordID: recordId)
         let container = CKContainer.defaultContainer()
@@ -36,7 +36,7 @@ class DAOCloudKit {
                     record.setObject(user.name, forKey: "name")
                     record.setObject(user.email, forKey: "email")
                     record.setObject(user.password, forKey: "password")
-                    record.setObject(user.categorias, forKey: "categories")
+                    record.setObject(user.categories, forKey: "categories")
                     
                     
                     publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
@@ -49,6 +49,68 @@ class DAOCloudKit {
         }
     }
     
+    func addCategory(user: User) {
+        
+        let recordId = CKRecordID(recordName: "User " + user.name)
+        let record = CKRecord(recordType: "User", recordID: recordId)
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        
+        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+            
+            if error == nil {
+                
+                print("Already exists user!!")
+                record["categories"] = nil
+                record.setObject(user.categories, forKey: "categories")
+                
+                publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
+                    if (error != nil) {
+                        print(error)
+                    }
+                })
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("notificationCategoryAdded", object: nil)
+                
+            }
+                
+            else {
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorAddCategory", object: nil)
+                
+                
+            }
+        }
+    }
+    
+    func addGasto(gasto: Gasto) {
+        
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        
+        let myRecord = CKRecord(recordType: "Gasto")
+        let reference = CKReference(recordID: myRecord.recordID, action: .DeleteSelf)
+        
+        myRecord.setObject(gasto.name, forKey: "name")
+        myRecord.setObject(gasto.date, forKey: "data")
+        myRecord.setObject(gasto.category, forKey: "category")
+        myRecord.setObject(gasto.value, forKey: "value")
+        
+        publicDatabase.saveRecord(myRecord, completionHandler:
+            ({returnRecord, error in
+                if let err = error {
+                    print(error)
+                    //  NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveError", object: nil)
+                    
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        // NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveSuccess", object: nil)
+                    }
+                    
+                }
+            }))
+        
+    }
     //NS NOTIFICATION CENTER
     
     func fetchUserByEmail(email: String,password: String) {
@@ -65,7 +127,7 @@ class DAOCloudKit {
                 print(error)
             }
             else {
-
+                
                 for result in results! {
                     if(result.valueForKey("email") as? String == email) {
                         if(result.valueForKey("password") as? String == password) {
@@ -88,4 +150,52 @@ class DAOCloudKit {
         }
     }
     
+    
+    func changeLimit(user: User) {
+        
+        let recordId = CKRecordID(recordName: "User " + user.name)
+        let record = CKRecord(recordType: "User", recordID: recordId)
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        
+        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+            
+            if error == nil {
+                
+                print("Already exists user!!")
+                record.setObject(userLogged.limiteMes, forKey: "monthLimit")
+            }
+                
+            else {
+                print(error)
+            }
+        }
+    }
+    
+    func fetchUser(user: User) {
+        
+        
+        let recordId = CKRecordID(recordName: "User " + user.name)
+        let record = CKRecord(recordType: "User", recordID: recordId)
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+                
+                if error == nil {
+                    
+                    print("Already exists user!!")
+                    
+                }
+                    
+                else {
+                    print(error)
+                }
+            }
+        }
+    }
 }
+
+

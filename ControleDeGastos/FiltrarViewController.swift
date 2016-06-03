@@ -79,7 +79,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+ /*   @IBAction func apertouBotaoSalvar(sender: AnyObject) {
         // filtros de valor minimo e maximo
         let minVal = (textValorMin.text!).toDouble()!
         let maxVal = (textValorMax.text!).toDouble()!
@@ -103,7 +103,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         self.delegate.gastos = self.gastos
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
-    }
+    }*/
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1

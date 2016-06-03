@@ -117,7 +117,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //self.categoria = base.usuarioLogado!.categoriasGastos[row]
+        self.categoria = userLogged.categories[row]
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -125,13 +125,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       // return (base.usuarioLogado!.categoriasGastos.count)
-        return 1
+       return (userLogged.categories.count)
+
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       // return (base.usuarioLogado!.categoriasGastos[row])
-        return "teste"
+        return (userLogged.categories[row])
+
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
@@ -162,8 +162,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             let textField = alert.textFields![0] as UITextField
             //print("Text field: \(textField.text!)")
             var naoExiste = true
-            for categ in userLogged.categorias /*(base.usuarioLogado!.categoriasGastos)*/ //aqui vai a lista ou array de categorias de um usuario
-            {
+            for categ in userLogged.categories             {
                 if textField.text == categ {
                     let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
                     alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
@@ -173,17 +172,21 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             }
             if (naoExiste)
             {
-                /*
                 // adiciona na RAM
-                base.usuarioLogado!.addCategoriaGasto(textField.text!)
-                // adiciona no disco
-                base.editarUsuario(base.usuarioLogado!)
+                userLogged.addCategoriaGasto(textField.text!)
+                
+                // adiciona no cloud
+                dispatch_async(dispatch_get_main_queue(),{
+                    
+                    DAOCloudKit().addCategory(userLogged)
+                })
+                
                 // atualiza label de categoria
                 self.categoria = textField.text!
                 // atualiza pickerView
                 self.categoriaPickerView.reloadAllComponents()
-                self.categoriaPickerView.selectRow((base.usuarioLogado!.categoriasGastos.count)-1, inComponent: 0, animated: true)
-                print("passou") */
+                self.categoriaPickerView.selectRow((userLogged.categories.count)-1, inComponent: 0, animated: true)
+                print("passou")
             }
         }))
         self.presentViewController(alert,animated: true, completion: nil)
@@ -221,12 +224,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
             
-            /*
+
             let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
             // adiciona na RAM
-            base.usuarioLogado!.addGasto(gasto)
+            userLogged.addGasto(gasto)
             // adiciona no disco
-            base.adicionarGasto(gasto, usuario: base.usuarioLogado!) */
+            DAOCloudKit().addGasto(gasto)
+            //base.adicionarGasto(gasto, usuario: base.usuarioLogado!)
             // faz o segue
             performSegueWithIdentifier("GastoToMain", sender: self)
         }

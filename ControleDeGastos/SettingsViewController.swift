@@ -63,7 +63,9 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             print("Text field: \(textField.text)")
+            
             userLogged.setLimiteMes(Double(textField.text!)!)
+            DAOCloudKit().changeLimit(userLogged)
         }))
         self.presentViewController(alert,animated: true, completion: nil)
     }
@@ -81,7 +83,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
             let textField = alert.textFields![0] as UITextField
             var naoExiste = true
             
-            for categ in (userLogged.categorias)
+            for categ in (userLogged.categories)
             {
                 if textField.text == categ {
                     let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
@@ -96,8 +98,11 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
                 // adiciona na RAM
                 userLogged.addCategoriaGasto(textField.text!)
                 
-                // adiciona no disco
-                //base.editarUsuario(base.usuarioLogado!)
+                // adiciona no cloud
+                dispatch_async(dispatch_get_main_queue(),{
+                    
+                    DAOCloudKit().addCategory(userLogged)
+                })
             }
         }))
         

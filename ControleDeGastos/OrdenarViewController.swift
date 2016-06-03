@@ -85,7 +85,7 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+  /*  @IBAction func apertouBotaoSalvar(sender: AnyObject) {
         let quickSorter = QuickSorterGasto()
         quickSorter.v = self.gastos
         quickSorter.callQuickSort(self.ordenacaoEscolhida, decrescente: self.decrescente)
@@ -95,5 +95,5 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
         self.delegate.gastos = self.gastos
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
-    }
+    }*/
 }
