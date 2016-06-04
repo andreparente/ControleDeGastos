@@ -465,6 +465,12 @@
                                     <action selector="confirma:" destination="rab-8m-gdV" eventType="touchUpInside" id="xTg-qO-8Bd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgN-9G-h91">
+                                <rect key="frame" x="20" y="137" width="330" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -474,6 +480,7 @@
                         <outlet property="confirmasenha1" destination="eUe-et-Bkd" id="jbh-bB-e5l"/>
                         <outlet property="erroincompleto" destination="fbM-Zn-izP" id="jch-Dq-3kX"/>
                         <outlet property="erromail" destination="p1q-jH-Q7Z" id="ecw-7c-DdB"/>
+                        <outlet property="erronome" destination="HgN-9G-h91" id="xVf-C0-rwF"/>
                         <outlet property="errosenhas" destination="XfC-vP-96T" id="ZQh-9X-t19"/>
                         <outlet property="nome" destination="2Wy-Tz-My9" id="4uW-a5-ues"/>
                         <outlet property="senha" destination="YMa-mj-S2o" id="ZbO-Wx-9QG"/>
@@ -482,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jw-Fu-wml" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1886.25" y="1142.5"/>
+            <point key="canvasLocation" x="-1886.5" y="1142.5"/>
         </scene>
         <!--Ordenar View Controller-->
         <scene sceneID="hv2-l2-0Ov">

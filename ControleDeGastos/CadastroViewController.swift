@@ -17,6 +17,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     @IBOutlet weak var erroincompleto: UILabel!
     @IBOutlet weak var erromail: UILabel!
     @IBOutlet weak var errosenhas: UILabel!
+    @IBOutlet weak var erronome: UILabel!
     
     
     override func viewDidLoad() {
@@ -44,7 +45,8 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         erromail.text="E-mail inválido"
         errosenhas.hidden=true
         errosenhas.text="Senhas não são iguais"
-        
+        erronome.text = "Coloque pelo menos um sobrenome"
+        erronome.hidden = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CadastroViewController.actOnNotificationErrorRegister), name: "notificationErrorRegister", object: nil)
  
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
@@ -89,7 +91,11 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         let mailsalvo=Email.text
         let senhasalva=senha.text
         let confirmasenha=confirmasenha1.text
-        
+        if nomevalido(name) == false{
+            erronome.hidden = false
+            return
+        }
+        erronome.hidden = true
         // valida preenchimento dos campos
         if (senhasalva!.isEmpty || mailsalvo!.isEmpty||confirmasenha!.isEmpty||name!.isEmpty)
         {
@@ -179,7 +185,18 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
         self.presentViewController(alert2,animated: true, completion: nil)
     }
-    
+    func nomevalido(nome:String!) ->(Bool)
+    {
+        let char:String = " "
+        if nome.containsString(char)
+        {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
     /*
     // MARK: - Navigation
     

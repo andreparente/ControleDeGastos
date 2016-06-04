@@ -70,7 +70,7 @@ class DAOCloudKit {
             if error == nil {
                 
                 print("Already exists user!!")
-                record["categories"] = nil
+                //record["categories"] = nil
                 record.setObject(user.categories, forKey: "categories")
                 
                 publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
