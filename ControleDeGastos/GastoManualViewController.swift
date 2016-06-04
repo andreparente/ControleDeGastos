@@ -198,7 +198,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     
     @IBAction func gasteiAction(sender: AnyObject) {
-        let nome = nomeGasto.text
+        var nome = nomeGasto.text
         let valorgasto = Double(valor.text!)?.roundToPlaces(2)
         
         // nao pode usar variavel sem verificar se eh nil antes
@@ -213,10 +213,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
         } else if(nome == nil || nome!.isEmpty) {
-            let alert = UIAlertController(title: "Warning", message: "Você não preencheu o nome", preferredStyle: UIAlertControllerStyle.Alert)
-            let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-            alert.addAction(alertAction)
-            self.presentViewController(alert, animated: true, completion: nil)
+            nome = "Gasto do dia \(dataStr)"
+            //let alert = UIAlertController(title: "Warning", message: "Você não preencheu o nome", preferredStyle: UIAlertControllerStyle.Alert)
+            //let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+            //alert.addAction(alertAction)
+            //self.presentViewController(alert, animated: true, completion: nil)
         } else if(categoria == "") {
             let alert = UIAlertController(title: "Warning", message: "Você não preencheu a categoria", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)

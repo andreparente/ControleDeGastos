@@ -13,7 +13,7 @@ public var arrayGastoRecords: Array<CKRecord> = []
 
 
 public class Gasto {
-    var name = String()
+    var name : String?
     var value = Double()
     var date = String() // formato "yyyy-MM-dd-hh-mm-ss"
     //var ehDinheiro = Bool()

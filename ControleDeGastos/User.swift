@@ -78,46 +78,50 @@ public class User {
   
     
     // -------------------------------------------- MUDAR ESSAS FUNCOES PARA CLOUDKIT-------------------------------
-    /*
     
+    /*
 
     func getGastosMes(mes: Int, ano: Int,user:User) -> [Gasto] {
         // gera o novo vetor
         var gastosMes: [Gasto] = []
         let recordId = CKRecordID(recordName: "Gasto " + user.name)
         let record = CKRecord(recordType: "Gasto", recordID: recordId)
-        let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let dataatual=NSDate()
+        let pred = NSPredicate(value: true)
+        let sort = NSSortDescriptor(key: "data", ascending: false)
+        let query = CKQuery(recordType: "Gasto", predicate: pred)
+        query.sortDescriptors = [sort]
         
-        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
-            
-            if error == nil {
-                
-                print("Already exists user!!")
-                    NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorRegister", object: nil)
-                fetchedRecord?.creationDate
-            }
-                
-            else {
-                
-                if(fetchedRecord == nil) {
-                    
-                    print("primeira vez que ta criando")
-                    record.setObject(user.name, forKey: "name")
-                    record.setObject(user.email, forKey: "email")
-                    record.setObject(user.password, forKey: "password")
-                    record.setObject(user.categories, forKey: "categories")
-                    
-                    
-                    publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
-                        if (error != nil) {
-                            print(error)
-                        }
-                    })
-                }
-            }
-
-            let data = gasto.data.componentsSeparatedByString("-")
+        let operation = CKQueryOperation(query: query)
+        operation.recordFetchedBlock{(record) in
+        let gasto = Gasto()
+        gasto.date = record["date"] as! String
+        gasto.name = record["name"] as! String
+        gasto.value = record["value"] as! String
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
+            let data = Gasto.date.componentsSeparatedByString("-")
             // data == [ano, mes, dia]
             let mesGasto = Int(data[1])
             let anoGasto = Int(data[0])
