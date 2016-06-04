@@ -12,6 +12,15 @@ import NotificationCenter
 
 class DAOCloudKit {
     
+    func cloudAvailable()->(Bool)
+    {
+        if let token = NSFileManager.defaultManager().ubiquityIdentityToken{
+            return true
+        }
+        else{
+            return false
+        }
+    }
     func saveUser(user: User) {
         
         let recordId = CKRecordID(recordName: "User " + user.name)

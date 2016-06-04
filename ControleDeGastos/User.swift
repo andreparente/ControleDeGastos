@@ -80,11 +80,43 @@ public class User {
     // -------------------------------------------- MUDAR ESSAS FUNCOES PARA CLOUDKIT-------------------------------
     /*
     
-    // passando zero retorna os gastos de hoje
-    func getGastosMes(mes: Int, ano: Int) -> [Gasto] {
+
+    func getGastosMes(mes: Int, ano: Int,user:User) -> [Gasto] {
         // gera o novo vetor
         var gastosMes: [Gasto] = []
-        for gasto in self.gastos {
+        let recordId = CKRecordID(recordName: "Gasto " + user.name)
+        let record = CKRecord(recordType: "Gasto", recordID: recordId)
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        
+        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+            
+            if error == nil {
+                
+                print("Already exists user!!")
+                    NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorRegister", object: nil)
+                fetchedRecord?.creationDate
+            }
+                
+            else {
+                
+                if(fetchedRecord == nil) {
+                    
+                    print("primeira vez que ta criando")
+                    record.setObject(user.name, forKey: "name")
+                    record.setObject(user.email, forKey: "email")
+                    record.setObject(user.password, forKey: "password")
+                    record.setObject(user.categories, forKey: "categories")
+                    
+                    
+                    publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
+                        if (error != nil) {
+                            print(error)
+                        }
+                    })
+                }
+            }
+
             let data = gasto.data.componentsSeparatedByString("-")
             // data == [ano, mes, dia]
             let mesGasto = Int(data[1])
