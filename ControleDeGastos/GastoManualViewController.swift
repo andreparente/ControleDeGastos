@@ -230,7 +230,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             // adiciona na RAM
             userLogged.addGasto(gasto)
             // adiciona no disco
-            DAOCloudKit().addGasto(gasto)
+            DAOCloudKit().addGasto(gasto,user: userLogged)
             //base.adicionarGasto(gasto, usuario: base.usuarioLogado!)
             // faz o segue
             performSegueWithIdentifier("GastoToMain", sender: self)

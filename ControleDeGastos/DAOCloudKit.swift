@@ -23,7 +23,7 @@ class DAOCloudKit {
     }
     func saveUser(user: User) {
         
-        let recordId = CKRecordID(recordName: "User " + user.name)
+        let recordId = CKRecordID(recordName: user.email)
         let record = CKRecord(recordType: "User", recordID: recordId)
         let container = CKContainer.defaultContainer()
         let publicDatabase = container.publicCloudDatabase
@@ -60,7 +60,7 @@ class DAOCloudKit {
     
     func addCategory(user: User) {
         
-        let recordId = CKRecordID(recordName: "User " + user.name)
+        let recordId = CKRecordID(recordName: user.email)
         let record = CKRecord(recordType: "User", recordID: recordId)
         let container = CKContainer.defaultContainer()
         let publicDatabase = container.publicCloudDatabase
@@ -92,18 +92,20 @@ class DAOCloudKit {
         }
     }
     
-    func addGasto(gasto: Gasto) {
+    func addGasto(gasto: Gasto, user: User) {
         
         let container = CKContainer.defaultContainer()
         let publicDatabase = container.publicCloudDatabase
         
         let myRecord = CKRecord(recordType: "Gasto")
-        let reference = CKReference(recordID: myRecord.recordID, action: .DeleteSelf)
+        
+        let reference = CKReference(recordID: CKRecordID(recordName: user.email!), action: .DeleteSelf)
         
         myRecord.setObject(gasto.name, forKey: "name")
         myRecord.setObject(gasto.date, forKey: "data")
         myRecord.setObject(gasto.category, forKey: "category")
         myRecord.setObject(gasto.value, forKey: "value")
+        myRecord.setObject(reference, forKey: "user")
         
         publicDatabase.saveRecord(myRecord, completionHandler:
             ({returnRecord, error in
@@ -162,7 +164,7 @@ class DAOCloudKit {
     
     func changeLimit(user: User) {
         
-        let recordId = CKRecordID(recordName: "User " + user.name)
+        let recordId = CKRecordID(recordName: user.email)
         let record = CKRecord(recordType: "User", recordID: recordId)
         let container = CKContainer.defaultContainer()
         let publicDatabase = container.publicCloudDatabase
@@ -173,6 +175,12 @@ class DAOCloudKit {
                 
                 print("Already exists user!!")
                 record.setObject(userLogged.limiteMes, forKey: "monthLimit")
+                
+                publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
+                    if (error != nil) {
+                        print(error)
+                    }
+                })
             }
                 
             else {
@@ -184,7 +192,7 @@ class DAOCloudKit {
     func fetchUser(user: User) {
         
         
-        let recordId = CKRecordID(recordName: "User " + user.name)
+        let recordId = CKRecordID(recordName: user.email)
         let record = CKRecord(recordType: "User", recordID: recordId)
         let container = CKContainer.defaultContainer()
         let publicDatabase = container.publicCloudDatabase
@@ -201,6 +209,39 @@ class DAOCloudKit {
                     
                 else {
                     print(error)
+                }
+            }
+        }
+    }
+    
+    //BUSCA OS GASTOS DE ACORDO COM A PK DO EMAIL DO USER LOGADO
+    func fetchGastosFromUser(user: User) {
+        
+        
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        let predicate = NSPredicate(value: true)
+        
+        let query = CKQuery(recordType: "Gasto", predicate: predicate)
+        let userReference = CKReference(recordID: CKRecordID(recordName: user.email), action: .DeleteSelf)
+        
+        publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
+            if error != nil {
+                print(error)
+            }
+            else {
+                
+                userLogged.gastos.removeAll()
+                
+                for result in results! {
+                    if(result.valueForKey("user") as? CKReference  == userReference) {
+                        
+                        
+                        userLogged.gastos.append(Gasto(nome: result.valueForKey("name") as! String, categoria: result.valueForKey("category") as! String, valor: result.valueForKey("value") as! Double, data: result.valueForKey("data") as! String))
+                        print(result.valueForKey("user"))
+                        print(result.valueForKey("name"))
+                        
+                    }
                 }
             }
         }

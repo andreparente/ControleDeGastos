@@ -12,7 +12,7 @@ import CloudKit
 
 public var userLogged: User!
 public var arrayUserRecords: Array<CKRecord> = []
-public var users: [User] = []
+
 
 public class User {
     

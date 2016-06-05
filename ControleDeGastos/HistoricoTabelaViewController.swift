@@ -18,6 +18,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     var gastos = [Gasto]()
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         view.backgroundColor = corAzul
         viewSuperior.backgroundColor = corAzul

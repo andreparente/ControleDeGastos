@@ -185,6 +185,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
         self.presentViewController(alert2,animated: true, completion: nil)
     }
+    
     func nomevalido(nome:String!) ->(Bool)
     {
         let char:String = " "

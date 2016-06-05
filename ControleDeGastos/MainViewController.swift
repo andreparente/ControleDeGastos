@@ -25,6 +25,8 @@ class MainViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
             
             DAOCloudKit().fetchUser(userLogged)
+            DAOCloudKit().fetchGastosFromUser(userLogged)
+
         }
         
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
