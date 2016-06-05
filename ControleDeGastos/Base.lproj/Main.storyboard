@@ -134,6 +134,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="botaogastar:" destination="i28-Vj-dol" eventType="touchUpInside" id="lbz-HG-FGe"/>
                                     <segue destination="goP-2V-gWf" kind="show" id="QRM-YM-FfM"/>
                                 </connections>
                             </button>
@@ -156,6 +157,7 @@
                                 <rect key="frame" x="307" y="28" width="48" height="48"/>
                                 <state key="normal" title="Settings" image="ic_settings_48px-128"/>
                                 <connections>
+                                    <action selector="botaosettings:" destination="i28-Vj-dol" eventType="touchUpInside" id="QQF-NN-sFH"/>
                                     <segue destination="kOo-RQ-Xmt" kind="show" id="ZwO-F9-qYj"/>
                                 </connections>
                             </button>

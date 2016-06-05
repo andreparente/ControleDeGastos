@@ -16,7 +16,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var totalgastos: UILabel!
     @IBOutlet weak var totalDisponivelMes: UILabel!
     var available: Double!
-    
+    var totalgastos1:Double!
+    var valortotal: Double = 0.0
+    var valorTotalMes: Double = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,8 +35,6 @@ class MainViewController: UIViewController {
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
         
         view.backgroundColor = corAzul
-        var valortotal: Double = 0.0
-        var valorTotalMes: Double = 0.0
         printaLimite(userLogged)
         let hoje = NSDate()
         let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
@@ -111,7 +111,14 @@ class MainViewController: UIViewController {
             limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)"
         }
     }
+
+    @IBAction func botaogastar(sender: UIButton) {
+        totalgastos1 = valortotal
+    }
     
+    @IBAction func botaosettings(sender: UIButton) {
+        totalgastos1 = valortotal
+    }
     /*
      // MARK: - Navigation
      

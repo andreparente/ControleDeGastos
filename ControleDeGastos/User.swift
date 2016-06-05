@@ -19,7 +19,7 @@ public class User {
     var name: String!
     var email: String!
     var password: String!
-    var categories: [String] = ["Outras"]
+    var categories: [String] = ["Outras","Alimentação","Transporte"]
     var limiteMes: Double = 0
     var arrayGastos: [CKReference] = []
     public var gastos: [Gasto] = []
