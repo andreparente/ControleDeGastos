@@ -64,7 +64,28 @@ class DAOCloudKit {
         let record = CKRecord(recordType: "User", recordID: recordId)
         let container = CKContainer.defaultContainer()
         let publicDatabase = container.publicCloudDatabase
+        var gastos = [CKRecordID]()
+        for employeeReference in record.objectForKey("expenses") as! [CKReference] {
+            gastos.append(employeeReference.recordID)
+        }
         
+        var fetchOperation = CKFetchRecordsOperation(recordIDs: gastos)
+        fetchOperation.fetchRecordsCompletionBlock = {
+            records, error in
+            if error != nil {
+                print("\(error)")
+            } else {
+                for (recordId, record) in records! {
+                    print("\(record)")
+                }
+            }
+        }
+        
+        
+        CKContainer.defaultContainer().publicCloudDatabase.addOperation(fetchOperation)
+    }
+    
+        /*
         publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
             
             if error == nil {
@@ -93,6 +114,8 @@ class DAOCloudKit {
     }
     
     func addGasto(gasto: Gasto, user: User) {
+    */
+    func addGasto(gasto: Gasto) {
         
         let container = CKContainer.defaultContainer()
         let publicDatabase = container.publicCloudDatabase
