@@ -252,7 +252,7 @@ class DAOCloudKit {
             }
             else {
                 
-                userLogged.gastos.removeAll()
+               // userLogged.gastos.removeAll()
                 
                 for result in results! {
                     if(result.valueForKey("user") as? CKReference  == userReference) {

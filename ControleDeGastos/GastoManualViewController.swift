@@ -80,7 +80,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             valor.text=String(valortotal)
         }
         print(valor.text!)
-        valor.keyboardType = .NumberPad
+        valor.keyboardType = .DecimalPad
         if dataQR != nil
         {
             dataStr = dataQR

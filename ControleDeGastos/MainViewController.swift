@@ -40,12 +40,12 @@ class MainViewController: UIViewController {
         let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
         let mesAtual = components.month
         let anoAtual = components.year
-        
         for valor in (userLogged.gastos) {
-            
+            print(userLogged.gastos)
             valortotal += valor.value
             
         }
+        print(valortotal)
         for valor in (userLogged.gastos) {
             let data = valor.date.componentsSeparatedByString("-")
             if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
