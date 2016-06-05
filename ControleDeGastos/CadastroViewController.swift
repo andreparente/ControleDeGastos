@@ -188,16 +188,24 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     
     func nomevalido(nome:String!) ->(Bool)
     {
-        let char:String = " "
-        if nome.containsString(char)
+        let string1 = Array(nome.characters)
+        print(string1)
+        for i in 0...string1.count-1
         {
-            return true
+            if string1[i] == " " && i+1<string1.count-1
+            {
+                if (string1[i+1]>="A" && string1[i+1] <= "Z") || string1[i+1]>="a" && string1[i+1] <= "z"
+                {
+                    return true
+                }
+                else{
+                    return false
+                }
+            }
         }
-        else
-        {
-            return false
-        }
+        return false
     }
+
     /*
     // MARK: - Navigation
     

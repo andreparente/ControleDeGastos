@@ -112,10 +112,8 @@ class DAOCloudKit {
             }
         }
     }
-    
-    func addGasto(gasto: Gasto, user: User) {
     */
-    func addGasto(gasto: Gasto) {
+    func addGasto(gasto: Gasto, user: User) {
         
         let container = CKContainer.defaultContainer()
         let publicDatabase = container.publicCloudDatabase
