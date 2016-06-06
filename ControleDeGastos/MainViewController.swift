@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var firsttime = true
 class MainViewController: UIViewController {
     
     
@@ -19,83 +19,82 @@ class MainViewController: UIViewController {
     var totalgastos1:Double!
     var valortotal: Double = 0.0
     var valorTotalMes: Double = 0.0
-    override func viewWillAppear(animated: Bool) {
-
-        let delay = 5.0 * Double(NSEC_PER_SEC)
-        let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time1, dispatch_get_main_queue(), {
-            print("load")
-            DAOCloudKit().fetchUser(userLogged)
-            DAOCloudKit().fetchGastosFromUser(userLogged)
-        })
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        if firsttime == true
+        {
+        view.hidden = true
+        let delay = 3.0 * Double(NSEC_PER_SEC)
+        let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         print("view")
         let userPlistDic = plist.getData()
+        DAOCloudKit().fetchUser(userLogged)
+        DAOCloudKit().fetchGastosFromUser(userLogged)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
-        
-        view.backgroundColor = corAzul
-        printaLimite(userLogged)
+        dispatch_after(time1, dispatch_get_main_queue(), {
+        self.view.hidden = false
+        self.view.backgroundColor = corAzul
+        self.printaLimite(userLogged)
         let hoje = NSDate()
         let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
         let mesAtual = components.month
         let anoAtual = components.year
         for valor in (userLogged.gastos) {
             print(userLogged.gastos)
-            valortotal += valor.value
+            self.valortotal += valor.value
             
         }
-        print(valortotal)
+        print(self.valortotal)
         for valor in (userLogged.gastos) {
             let data = valor.date.componentsSeparatedByString("-")
             if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
-                valorTotalMes += valor.value
+                self.valorTotalMes += valor.value
             }
         }
         
-        totalgastos.text = "Seu total de gastos é: R$ \(valortotal)"
-        totaldisponivel.numberOfLines = 2
+        self.totalgastos.text = "Seu total de gastos é: R$ \(self.valortotal)"
+        self.totaldisponivel.numberOfLines = 2
         
         if(userLogged.limiteMes != 0)
         {
-            available = userLogged.limiteMes - valorTotalMes
-            if(available >= 100 && available > (0.2 * userLogged.limiteMes) )
+            self.available = userLogged.limiteMes - self.valorTotalMes
+            if(self.available >= 100 && self.available > (0.2 * userLogged.limiteMes) )
             {
-                totaldisponivel.text = "Você ainda tem R$ \(available) para gastar nesse mês"
+                self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
                 eamarela = false
                 evermelha = false
             }
             else
             {
-                if (available > 0 && available < (0.2 * userLogged.limiteMes) )
+                if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
                 {
-                    totaldisponivel.text = "Atenção! Você só tem mais R$ \(available) para gastar nesse mês"
+                    self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês"
                     eamarela = true
                     evermelha = false
                 }
                 else
                 {
-                    totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(valorTotalMes - userLogged.limiteMes)"
+                    self.totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(self.valorTotalMes - userLogged.limiteMes)"
                     eamarela = false
                     evermelha = true
                 }
             }
             if (eamarela)
             {
-                view.backgroundColor = corAmarela
+                self.view.backgroundColor = corAmarela
             }
             if (evermelha)
             {
-                view.backgroundColor = corVermelha
+                self.view.backgroundColor = corVermelha
             }
             
-            totaldisponivel.hidden=false
+            self.totaldisponivel.hidden=false
         }
         else
         {
-            totaldisponivel.hidden=true
+            self.totaldisponivel.hidden=true
+            }})
         }
         // Do any additional setup after loading the view.
     }
