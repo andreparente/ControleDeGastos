@@ -19,18 +19,20 @@ class MainViewController: UIViewController {
     var totalgastos1:Double!
     var valortotal: Double = 0.0
     var valorTotalMes: Double = 0.0
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let userPlistDic = plist.getData()
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            
+    override func viewWillAppear(animated: Bool) {
+
+        let delay = 5.0 * Double(NSEC_PER_SEC)
+        let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time1, dispatch_get_main_queue(), {
+            print("load")
             DAOCloudKit().fetchUser(userLogged)
             DAOCloudKit().fetchGastosFromUser(userLogged)
-
-        }
-        
+        })
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("view")
+        let userPlistDic = plist.getData()
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
         
@@ -97,7 +99,6 @@ class MainViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
