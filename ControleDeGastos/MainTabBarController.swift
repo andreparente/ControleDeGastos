@@ -12,7 +12,13 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.hidden = true
+        let delay = 3.0 * Double(NSEC_PER_SEC)
+        let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time1, dispatch_get_main_queue(), {
         self.tabBar.backgroundColor = corVerde
+           self.tabBar.hidden = false
+        })
     }
 
     override func didReceiveMemoryWarning() {
