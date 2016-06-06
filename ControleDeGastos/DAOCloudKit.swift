@@ -200,9 +200,12 @@ class DAOCloudKit {
                 publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
                     if (error != nil) {
                         print(error)
+                        let alert=UIAlertController(title:"Erro", message: "Nāo foi possivel alterar seu  limite", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+                        SettingsViewController().presentViewController(alert,animated: true, completion: nil)
                     }
-                })
-            }
+                    })
+                }
                 
             else {
                 print(error)
@@ -229,6 +232,10 @@ class DAOCloudKit {
                 }
                     
                 else {
+                    /*let alert=UIAlertController(title:"Erro", message: "Nāo foi possivel acessar seu usuario", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+                    MainViewController().presentViewController(alert,animated: true, completion: nil)
+ */
                     print(error)
                 }
             }
@@ -249,6 +256,10 @@ class DAOCloudKit {
         publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
             if error != nil {
                 print(error)
+               /* let alert=UIAlertController(title:"Erro", message: "Nāo foi possivel recuperar seus gastos", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+                MainViewController().presentViewController(alert,animated: true, completion: nil)
+ */
             }
             else {
                 

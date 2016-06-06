@@ -29,8 +29,8 @@ class MainViewController: UIViewController {
         totalgastos.hidden = true
         settingsbutton.hidden = true
         //totalDisponivelMes.hidden = true
-        let delay = 3.0 * Double(NSEC_PER_SEC)
-        let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+       // let delay = 3.0 * Double(NSEC_PER_SEC)
+       // let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         print("view")
         
         let userPlistDic = plist.getData()
