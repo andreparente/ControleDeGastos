@@ -7,7 +7,6 @@
 //
 
 import UIKit
-var firsttime = true
 class MainViewController: UIViewController {
     
     @IBOutlet weak var settingsbutton: UIButton!
@@ -23,8 +22,6 @@ class MainViewController: UIViewController {
     var valorTotalMes: Double = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
-        if firsttime == true
-        {
         act.startAnimating()
         //view.hidden = true
         limite.hidden = true
@@ -35,17 +32,43 @@ class MainViewController: UIViewController {
         let delay = 3.0 * Double(NSEC_PER_SEC)
         let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         print("view")
+        
         let userPlistDic = plist.getData()
         DAOCloudKit().fetchUser(userLogged)
         DAOCloudKit().fetchGastosFromUser(userLogged)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
-        dispatch_after(time1, dispatch_get_main_queue(), {
-            self.limite.hidden = false
-            self.totaldisponivel.hidden=false
-            self.totalgastos.hidden = false
-           // self.totalDisponivelMes.hidden = false
-            self.settingsbutton.hidden = false
+        // Do any additional setup after loading the view.
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func printaLimite(usuario: User) {
+        if(userLogged.limiteMes == 0) {
+            limite.text = "O limite mensal ainda não foi cadastrado. \n Clique em configuraçōes para realizar o cadastro"
+        }
+        else {
+            limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)"
+        }
+    }
+    
+    @IBAction func botaogastar(sender: UIButton) {
+        totalgastos1 = valortotal
+    }
+    
+    @IBAction func botaosettings(sender: UIButton) {
+        totalgastos1 = valortotal
+    }
+    func actOnNotificationSuccessLoad()
+    {
+        self.limite.hidden = false
+        self.totaldisponivel.hidden=false
+        self.totalgastos.hidden = false
+        // self.totalDisponivelMes.hidden = false
+        self.settingsbutton.hidden = false
         self.act.stopAnimating()
         self.view.hidden = false
         self.view.backgroundColor = corAzul
@@ -108,39 +131,17 @@ class MainViewController: UIViewController {
         else
         {
             self.totaldisponivel.hidden=true
-            }})
-        }
-        // Do any additional setup after loading the view.
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func printaLimite(usuario: User) {
-        if(userLogged.limiteMes == 0) {
-            limite.text = "O limite mensal ainda não foi cadastrado. \n Clique em configuraçōes para realizar o cadastro"
-        }
-        else {
-            limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)"
         }
     }
-
-    @IBAction func botaogastar(sender: UIButton) {
-        totalgastos1 = valortotal
-    }
-    
-    @IBAction func botaosettings(sender: UIButton) {
-        totalgastos1 = valortotal
-    }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */
+

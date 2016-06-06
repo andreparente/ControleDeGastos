@@ -264,6 +264,7 @@ class DAOCloudKit {
                         
                     }
                 }
+                NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
             }
         }
     }
