@@ -10,7 +10,9 @@ import UIKit
 var firsttime = true
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var settingsbutton: UIButton!
     
+    @IBOutlet weak var act: UIActivityIndicatorView!
     @IBOutlet weak var limite: UILabel!
     @IBOutlet weak var totaldisponivel: UILabel!
     @IBOutlet weak var totalgastos: UILabel!
@@ -23,7 +25,13 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         if firsttime == true
         {
-        view.hidden = true
+        act.startAnimating()
+        //view.hidden = true
+        limite.hidden = true
+        totaldisponivel.hidden=true
+        totalgastos.hidden = true
+        settingsbutton.hidden = true
+        //totalDisponivelMes.hidden = true
         let delay = 3.0 * Double(NSEC_PER_SEC)
         let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         print("view")
@@ -33,6 +41,12 @@ class MainViewController: UIViewController {
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
         dispatch_after(time1, dispatch_get_main_queue(), {
+            self.limite.hidden = false
+            self.totaldisponivel.hidden=false
+            self.totalgastos.hidden = false
+           // self.totalDisponivelMes.hidden = false
+            self.settingsbutton.hidden = false
+        self.act.stopAnimating()
         self.view.hidden = false
         self.view.backgroundColor = corAzul
         self.printaLimite(userLogged)

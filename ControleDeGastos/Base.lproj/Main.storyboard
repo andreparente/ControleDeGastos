@@ -167,13 +167,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sr6-Y8-QRJ">
+                                <rect key="frame" x="169" y="236" width="37" height="37"/>
+                                <color key="color" red="0.32120369339999999" green="0.55812718039999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="icone home" id="dn7-U9-lTy"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="act" destination="Sr6-Y8-QRJ" id="D6U-bW-Aui"/>
                         <outlet property="limite" destination="854-k0-bpT" id="iDa-SS-BBD"/>
+                        <outlet property="settingsbutton" destination="aOG-AX-XUB" id="dfs-9t-RHM"/>
                         <outlet property="totaldisponivel" destination="Gzj-m4-c0C" id="n9H-Kq-Rfv"/>
                         <outlet property="totalgastos" destination="qBW-pr-crG" id="Ken-Yp-xyz"/>
                         <outlet property="view" destination="7Gb-Go-fx3" id="QmY-tY-ARg"/>
