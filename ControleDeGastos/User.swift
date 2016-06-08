@@ -99,28 +99,7 @@ public class User {
         gasto.date = record["date"] as! String
         gasto.name = record["name"] as! String
         gasto.value = record["value"] as! String
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
       
             let data = Gasto.date.componentsSeparatedByString("-")
             // data == [ano, mes, dia]
@@ -131,7 +110,7 @@ public class User {
             }
         }
         return gastosMes
-    }
+    }*/
     
     // passando zero retorna os gastos de hoje
     func getGastosUltimosDias(dias: Int) -> [Gasto] {
@@ -145,7 +124,7 @@ public class User {
         // gera o novo vetor
         var gastosUltimosDias: [Gasto] = []
         for gasto in self.gastos {
-            let data = gasto.data.componentsSeparatedByString("-")
+            let data = gasto.date.componentsSeparatedByString("-")
             // data == [ano, mes, dia]
             let dia = Int(data[2])
             let mes = Int(data[1])
@@ -164,6 +143,7 @@ public class User {
     // funcao retorna os gastos do ultimo mes
     // exemplo, se for chamada no dia 2016-03-14,
     // vai retornar os gastos de 03-01 a 03-14
+    
     func getGastosUltimoMês() -> [Gasto] {
         // descobre ano e mes atuais
         let hoje = NSDate()
@@ -173,8 +153,4 @@ public class User {
         // subtrai 1 pq os dias do mes nao comecam no zero
         return getGastosUltimosDias(diaAtual-1)
     }
-
-    */
-
-    
 }

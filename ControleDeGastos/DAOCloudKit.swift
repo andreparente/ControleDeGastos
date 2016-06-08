@@ -308,7 +308,7 @@ class DAOCloudKit {
             // print(fetchedRecord)
             
             if error == nil {
-                
+                print(fetchedRecord!.objectForKey("gastos"))
                 if let teste = fetchedRecord!.objectForKey("gastos") {
                     print("quantidade de gastos registrados: ", (fetchedRecord!.objectForKey("gastos") as! [CKRecordValue]).count)
                     
@@ -325,7 +325,6 @@ class DAOCloudKit {
                             
                             
                             for (_, result) in records! {
-                                print("ta entrando no for")
                                 userLogged.arrayGastos.append(CKReference(recordID: result.recordID, action: .None))
                                 userLogged.gastos.append(Gasto(nome: result.valueForKey("name") as! String, categoria: result.valueForKey("category") as! String, valor: result.valueForKey("value") as! Double, data: result.valueForKey("data") as! String))
                             }

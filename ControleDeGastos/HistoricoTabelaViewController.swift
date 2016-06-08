@@ -41,10 +41,13 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             viewSuperior.backgroundColor = corVermelha
         }
         
-       /* if (self.gastos.count <= 0) {
+        if (self.gastos.count <= 0) {
             // por padrao, filtra os gastos pelo ultimo mes
-            self.gastos = base.usuarioLogado!.getGastosUltimoMês()
-        }*/
+            self.gastos = userLogged.getGastosUltimoMês()
+        }
+        else {
+            self.gastos = userLogged.getGastos()
+        }
         
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
@@ -57,8 +60,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     //funçao que diz a quantidade de células
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let cellsNumber = self.gastos.count
-        return /*(cellsNumber > 0) ? cellsNumber :*/ 1
+        let cellsNumber = self.gastos.count
+        return (cellsNumber > 0) ? cellsNumber : 1
     }
     
     //funçao que seta as células
@@ -72,12 +75,12 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         cell.backgroundColor = corAzul
         
-       /* if (cellsNumber > 0) {
+        if (cellsNumber > 0) {
             cell.hideInfo(false)
-            cell.labelNomeGasto.text = "\(self.gastos[indexPath.row].nome)"
-            cell.labelCat.text = "\(self.gastos[indexPath.row].categoria)"
-            cell.labelValor.text = "R$ " + String(self.gastos[indexPath.row].valor)
-            cell.labeldata.text = "\(self.gastos[indexPath.row].data)"
+            cell.labelNomeGasto.text = "\(self.gastos[indexPath.row].name!)"
+            cell.labelCat.text = "\(self.gastos[indexPath.row].category)"
+            cell.labelValor.text = "R$ " + String(self.gastos[indexPath.row].value)
+            cell.labeldata.text = "\(self.gastos[indexPath.row].date)"
             if (eamarela)
             {
               cell.backgroundColor = corAmarela
@@ -86,10 +89,10 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             {
                 cell.backgroundColor = corVermelha
             }
-        }*/ //else {
+        } else {
             cell.hideInfo(true)
             cell.labelSemGastos.text = "Nenhum gasto para exibir!"
-      //  }*/
+        }
         return cell
     }
     
