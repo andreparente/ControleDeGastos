@@ -182,7 +182,9 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
         return true
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        executar = false
+    }
  /*   override func viewWillAppear(animated: Bool) {
         total = 0.0
         if(base.usuarioLogado!.gastos.count == 0) {

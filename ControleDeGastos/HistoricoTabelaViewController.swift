@@ -21,6 +21,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         
         super.viewDidLoad()
+        executar = false
         view.backgroundColor = corAzul
         viewSuperior.backgroundColor = corAzul
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
@@ -52,6 +53,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
     override func viewWillAppear(animated: Bool) {
+        executar = false
         self.tableView.reloadData()
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

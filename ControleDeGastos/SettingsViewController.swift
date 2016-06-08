@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var alteroulim = false
 class SettingsViewController: UIViewController, UINavigationBarDelegate{
     
     var field:UITextField!
@@ -67,11 +67,20 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
             userLogged.setLimiteMes(Double(textField.text!)!)
             DAOCloudKit().changeLimit(userLogged)
         }))
+        alteroulim = true
         self.presentViewController(alert,animated: true, completion: nil)
     }
     
     func btn_clicked(sender: UIBarButtonItem) {
-        performSegueWithIdentifier("SettingsToMain", sender: self)
+        if alteroulim == true
+        {
+            executar = true
+        }
+        else
+        {
+            executar = false
+        }
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func categoria(sender: UIButton) {

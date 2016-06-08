@@ -33,6 +33,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         categoria = "Outros"
+        executar = false
         view.backgroundColor = corAzul
         if (eamarela)
         {
@@ -102,7 +103,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func btn_clicked(sender: UIBarButtonItem) {
-        performSegueWithIdentifier("GastoToMain", sender: self)
+        executar = false
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -189,6 +191,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 print("passou")
             }
         }))
+        executar = false
         self.presentViewController(alert,animated: true, completion: nil)
     }
     
@@ -233,7 +236,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             DAOCloudKit().addGasto(gasto,user: userLogged)
             //base.adicionarGasto(gasto, usuario: base.usuarioLogado!)
             // faz o segue
-            performSegueWithIdentifier("GastoToMain", sender: self)
+            executar = true
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
 }
