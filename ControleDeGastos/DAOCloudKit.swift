@@ -262,7 +262,6 @@ class DAOCloudKit {
             }
         }
     }
-    
     func fetchUser(user: User) {
         
         

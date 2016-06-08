@@ -48,7 +48,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         dataMesDatePicker.hidden = true
         pickermesano.hidden = true
         dataMesTextField.inputView = dataMesDatePicker
-        //printaLimite(base.usuarioLogado!)
+        printaLimite(userLogged)
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
 
         
@@ -59,22 +59,22 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     }
     
     //Funcao para organizar o grafico
-   func organizaVetores(usuario: Usuario) -> ([Double],[String]) {
+   func organizaVetores(usuario: User) -> ([Double],[String]) {
         
-       // var vetValAux = [Double?](count: usuario.categoriasGastos.count,repeatedValue: nil)
+        var vetValAux = [Double?](count: userLogged.getCategoriasGastos().count,repeatedValue: nil)
         var vetValAux2: [Double] = []
         var vetCatAux: [String] = []
        
-        /*for i in 0..<usuario.categoriasGastos.count {
+        for i in 0..<userLogged.getCategoriasGastos().count  {
             vetValAux[i] = 0
         }
-        for i in 0..<usuario.categoriasGastos.count {
+        for i in 0..<userLogged.getCategoriasGastos().count {
             for valGasto in usuario.gastos {
-                if(valGasto.categoria == usuario.categoriasGastos[i]) {
-                    if(existeCategoria(vetCatAux, categoria: valGasto.categoria) == false) {
-                        vetCatAux.append(valGasto.categoria)
+                if(valGasto.category == usuario.getCategoriasGastos()[i]) {
+                    if(existeCategoria(vetCatAux, categoria: valGasto.category) == false) {
+                        vetCatAux.append(valGasto.category)
                     }
-                    vetValAux[i] = vetValAux[i]! + valGasto.valor
+                    vetValAux[i] = vetValAux[i]! + valGasto.value
                 }
             }
         }
@@ -83,7 +83,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             if(vetValAux[i] > 0) {
                 vetValAux2.append(vetValAux[i]!)
             }
-        }*/
+        }
         
         return (vetValAux2,vetCatAux)
     }
@@ -98,7 +98,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         return false
     }
     
-   /* func organizaVetoresMes(usuario: Usuario, gastosMes: [Gasto]) -> ([Double],[String]) {
+    func organizaVetoresMes(usuario: User, gastosMes: [Gasto]) -> ([Double],[String]) {
 
 
 
@@ -106,8 +106,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         var vetValAux: [Double] = []
         for i in 0..<gastosMes.count {
 
-            for categorias in usuario.categoriasGastos {
-                if(gastosMes[i].categoria == categorias) {
+            for categorias in userLogged.getCategoriasGastos()  {
+                if(gastosMes[i].category == categorias) {
                     if(!existeCategoria(vetCatAux, categoria: categorias)) {
                     vetCatAux.append(categorias)
                     vetValAux.append(0)
@@ -118,8 +118,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
 
         for i in 0..<vetCatAux.count {
             for valGasto in gastosMes {
-                if(valGasto.categoria == vetCatAux[i]) {
-                    vetValAux[i] = vetValAux[i] + valGasto.valor
+                if(valGasto.category == vetCatAux[i]) {
+                    vetValAux[i] = vetValAux[i] + valGasto.value
                 }
             }
         }
@@ -127,10 +127,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         return (vetValAux,vetCatAux)
 
 
-    }*/
+    }
 
     //FUNCAO QUE PRINTA LIMITE
-   /* func printaLimite(usuario: Usuario) {
+    func printaLimite(usuario: User) {
         if(usuario.limiteMes == 0) {
             limiteLabel.text = "Você não disponibilizou o limite por mês"
         }
@@ -141,7 +141,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             chartView.animate(xAxisDuration: 1)
             limiteLabel.text = "Seu limite é \(usuario.limiteMes)"
         }
-    }*/
+    }
     
     //FUNCAO QUE SETTA TODO O GRAFICO
     func setChart(dataPoints: [String], values: [Double]) {
@@ -184,10 +184,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     }
     override func viewWillAppear(animated: Bool) {
         executar = false
-    }
- /*   override func viewWillAppear(animated: Bool) {
         total = 0.0
-        if(base.usuarioLogado!.gastos.count == 0) {
+        if(userLogged.gastos.count == 0) {
             
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "Você não possui nenhum gasto!"
@@ -196,17 +194,17 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             
         }
         else {
-            for gasto in base.usuarioLogado!.gastos {
-                total = total + gasto.valor
+            for gasto in userLogged.getGastos() {
+                total = total + gasto.value
             }
-            (vetorFinal,vetorFinalCat) = organizaVetores(base.usuarioLogado!)
+            (vetorFinal,vetorFinalCat) = organizaVetores(userLogged)
             print("vetor de valores", vetorFinal)
             print("vetor de categorias", vetorFinalCat)
             setChart(vetorFinalCat, values: vetorFinal)
             totalLabel.text = "Total: R$"+String(total)
         }
     }
-    
+    /*
     
    @IBAction func DatePickerChanged(sender: AnyObject) {
         dataNs = dataMesDatePicker.date

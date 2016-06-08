@@ -117,6 +117,7 @@ class MainViewController: UIViewController {
         let userPlistDic = plist.getData()
         DAOCloudKit().fetchUser(userLogged)
         DAOCloudKit().fetchGastosFromUser(userLogged)
+       // DAOCloudKit().fetchLimitfromUser(userLogged)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
