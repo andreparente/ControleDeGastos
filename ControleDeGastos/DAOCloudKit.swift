@@ -278,7 +278,7 @@ class DAOCloudKit {
                 if error == nil {
                     
                     print("Already exists user!!")
-                 
+                    
                     
                 }
                     
@@ -305,37 +305,44 @@ class DAOCloudKit {
         
         publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
             
-           // print(fetchedRecord)
+            // print(fetchedRecord)
             
             if error == nil {
                 
-                     print("quantidade de gastos registrados: ", (fetchedRecord!.objectForKey("gastos") as! [CKRecordValue]).count)
-                
-                for gastoReference in fetchedRecord!.objectForKey("gastos") as! [CKReference] {
-                    gastosRecordIds.append(gastoReference.recordID)
-                }
-                
-                let fetchOperation = CKFetchRecordsOperation(recordIDs: gastosRecordIds)
-                fetchOperation.fetchRecordsCompletionBlock = {
-                    records, error in
-                    if error != nil {
-                        print(error)
-                    } else {
-                        
-                   
-                        for (_, result) in records! {
-                            print("ta entrando no for")
-                            userLogged.arrayGastos.append(CKReference(recordID: result.recordID, action: .None))
-                            userLogged.gastos.append(Gasto(nome: result.valueForKey("name") as! String, categoria: result.valueForKey("category") as! String, valor: result.valueForKey("value") as! Double, data: result.valueForKey("data") as! String))
-                        }
-                        NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
-
-
+                if let teste = fetchedRecord!.objectForKey("gastos") {
+                    print("quantidade de gastos registrados: ", (fetchedRecord!.objectForKey("gastos") as! [CKRecordValue]).count)
+                    
+                    for gastoReference in fetchedRecord!.objectForKey("gastos") as! [CKReference] {
+                        gastosRecordIds.append(gastoReference.recordID)
                     }
+                    
+                    let fetchOperation = CKFetchRecordsOperation(recordIDs: gastosRecordIds)
+                    fetchOperation.fetchRecordsCompletionBlock = {
+                        records, error in
+                        if error != nil {
+                            print(error)
+                        } else {
+                            
+                            
+                            for (_, result) in records! {
+                                print("ta entrando no for")
+                                userLogged.arrayGastos.append(CKReference(recordID: result.recordID, action: .None))
+                                userLogged.gastos.append(Gasto(nome: result.valueForKey("name") as! String, categoria: result.valueForKey("category") as! String, valor: result.valueForKey("value") as! Double, data: result.valueForKey("data") as! String))
+                            }
+                            NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
+                            
+                            
+                        }
+                    }
+                    CKContainer.defaultContainer().publicCloudDatabase.addOperation(fetchOperation)
                 }
-                CKContainer.defaultContainer().publicCloudDatabase.addOperation(fetchOperation)
-            }
+                    
+                else {
+                    NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
+
+                }
                 
+            }
             else {
                 print(error)
             }
