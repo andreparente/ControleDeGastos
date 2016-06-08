@@ -178,6 +178,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="act" destination="Sr6-Y8-QRJ" id="D6U-bW-Aui"/>
+                        <outlet property="gastei" destination="vID-WR-fxp" id="Gdz-le-cxF"/>
                         <outlet property="limite" destination="854-k0-bpT" id="iDa-SS-BBD"/>
                         <outlet property="settingsbutton" destination="aOG-AX-XUB" id="dfs-9t-RHM"/>
                         <outlet property="totaldisponivel" destination="Gzj-m4-c0C" id="n9H-Kq-Rfv"/>

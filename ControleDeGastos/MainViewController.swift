@@ -11,6 +11,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var settingsbutton: UIButton!
     
+    @IBOutlet weak var gastei: UIButton!
     @IBOutlet weak var act: UIActivityIndicatorView!
     @IBOutlet weak var limite: UILabel!
     @IBOutlet weak var totaldisponivel: UILabel!
@@ -27,6 +28,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         act.startAnimating()
         //view.hidden = true
+        gastei.hidden = true
         limite.hidden = true
         totaldisponivel.hidden=true
         totalgastos.hidden = true
@@ -67,7 +69,7 @@ class MainViewController: UIViewController {
         
         dispatch_async(dispatch_get_main_queue()) {
 
-            
+            self.gastei.hidden = false
             print(userLogged.gastos)
             self.limite.hidden = false
             self.totaldisponivel.hidden=false
