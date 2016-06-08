@@ -19,7 +19,10 @@ class MainViewController: UIViewController {
     var available: Double!
     var totalgastos1:Double!
     var valortotal: Double = 0.0
-    var valorTotalMes: Double = 0.0
+    var valorTotalMes: Double = 0.0 /*{ didSet {
+        totalDisponivelMes.text = String(valorTotalMes)
+        }
+    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
         act.startAnimating()
@@ -28,9 +31,6 @@ class MainViewController: UIViewController {
         totaldisponivel.hidden=true
         totalgastos.hidden = true
         settingsbutton.hidden = true
-        //totalDisponivelMes.hidden = true
-       // let delay = 3.0 * Double(NSEC_PER_SEC)
-       // let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         print("view")
         
         let userPlistDic = plist.getData()
@@ -64,75 +64,82 @@ class MainViewController: UIViewController {
     }
     func actOnNotificationSuccessLoad()
     {
-        self.limite.hidden = false
-        self.totaldisponivel.hidden=false
-        self.totalgastos.hidden = false
-        // self.totalDisponivelMes.hidden = false
-        self.settingsbutton.hidden = false
-        self.act.stopAnimating()
-        self.view.hidden = false
-        self.view.backgroundColor = corAzul
-        self.printaLimite(userLogged)
-        let hoje = NSDate()
-        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
-        let mesAtual = components.month
-        let anoAtual = components.year
-        for valor in (userLogged.gastos) {
-            print(userLogged.gastos)
-            self.valortotal += valor.value
+        
+        dispatch_async(dispatch_get_main_queue()) {
+
             
-        }
-        print(self.valortotal)
-        for valor in (userLogged.gastos) {
-            let data = valor.date.componentsSeparatedByString("-")
-            if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
-                self.valorTotalMes += valor.value
+            print(userLogged.gastos)
+            self.limite.hidden = false
+            self.totaldisponivel.hidden=false
+            self.totalgastos.hidden = false
+            // self.totalDisponivelMes.hidden = false
+            self.settingsbutton.hidden = false
+            self.act.stopAnimating()
+            self.view.hidden = false
+            self.view.backgroundColor = corAzul
+            self.printaLimite(userLogged)
+            let hoje = NSDate()
+            let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+            let mesAtual = components.month
+            let anoAtual = components.year
+            for valor in (userLogged.gastos) {
+                print(userLogged.gastos)
+                self.valortotal += valor.value
+                
             }
-        }
-        
-        self.totalgastos.text = "Seu total de gastos é: R$ \(self.valortotal)"
-        self.totaldisponivel.numberOfLines = 2
-        
-        if(userLogged.limiteMes != 0)
-        {
-            self.available = userLogged.limiteMes - self.valorTotalMes
-            if(self.available >= 100 && self.available > (0.2 * userLogged.limiteMes) )
-            {
-                self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
-                eamarela = false
-                evermelha = false
+            for valor in (userLogged.gastos) {
+                let data = valor.date.componentsSeparatedByString("-")
+                if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
+                    self.valorTotalMes += valor.value
+                }
             }
-            else
+            
+            self.totalgastos.text = "Seu total de gastos é: R$ \(self.valortotal)"
+            self.totaldisponivel.numberOfLines = 2
+            
+            if(userLogged.limiteMes != 0)
             {
-                if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
+                self.available = userLogged.limiteMes - self.valorTotalMes
+                if(self.available >= 100 && self.available > (0.2 * userLogged.limiteMes) )
                 {
-                    self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês"
-                    eamarela = true
+                    self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
+                    eamarela = false
                     evermelha = false
                 }
                 else
                 {
-                    self.totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(self.valorTotalMes - userLogged.limiteMes)"
-                    eamarela = false
-                    evermelha = true
+                    if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
+                    {
+                        self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês"
+                        eamarela = true
+                        evermelha = false
+                    }
+                    else
+                    {
+                        self.totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(self.valorTotalMes - userLogged.limiteMes)"
+                        eamarela = false
+                        evermelha = true
+                    }
                 }
+                if (eamarela)
+                {
+                    self.view.backgroundColor = corAmarela
+                }
+                if (evermelha)
+                {
+                    self.view.backgroundColor = corVermelha
+                }
+                
+                self.totaldisponivel.hidden=false
             }
-            if (eamarela)
+            else
             {
-                self.view.backgroundColor = corAmarela
+                self.totaldisponivel.hidden=true
             }
-            if (evermelha)
-            {
-                self.view.backgroundColor = corVermelha
-            }
-            
-            self.totaldisponivel.hidden=false
-        }
-        else
-        {
-            self.totaldisponivel.hidden=true
         }
     }
+    
+    
     
 }
 /*

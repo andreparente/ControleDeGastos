@@ -33,6 +33,7 @@ public class User {
     init(email: String, password: String) {
         self.email = email
         self.password = password
+        
     }
     
     func addCategoriaGasto(categ: String) {

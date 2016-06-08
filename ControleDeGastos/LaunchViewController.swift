@@ -16,6 +16,7 @@ class LaunchViewController: UIViewController {
         var dict1 = plist.getData()
         print(plist.plistName)
         if plist.getData() != nil && dict1!["isLogged"] as! String != "loggedOut" {
+            
             dispatch_async(dispatch_get_main_queue(),{
                 var dict = plist.getData()
                 userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)

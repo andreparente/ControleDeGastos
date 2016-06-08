@@ -24,7 +24,10 @@ class MainTabBarController: UITabBarController {
     
      func actOnNotificationSuccessLoad()
      {
+        dispatch_async(dispatch_get_main_queue()) {
+
         self.tabBar.hidden = false
+        }
     }
     /*
     // MARK: - Navigation
