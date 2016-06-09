@@ -44,11 +44,11 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         }
 
         // inicialmente, o vetor eh o do usuario
-        //self.gastos = base.usuarioLogado!.getGastos()
+        self.gastos = userLogged.getGastos()
         
         // preenche vetor de categorias e adiciona "Todas"
         self.categorias.append("Todas")
-       // self.categorias.appendContentsOf(base.usuarioLogado!.getCategoriasGastos())
+        self.categorias.appendContentsOf(userLogged.getCategorias())
         
         // inicialmente, o valor da categoria selecionada eh Todas
         self.categoriaSelecionada = "Todas"
@@ -79,7 +79,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         dismissViewControllerAnimated(true, completion: nil)
     }
     
- /*   @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+   @IBAction func apertouBotaoSalvar(sender: AnyObject) {
         // filtros de valor minimo e maximo
         let minVal = (textValorMin.text!).toDouble()!
         let maxVal = (textValorMax.text!).toDouble()!
@@ -103,7 +103,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         self.delegate.gastos = self.gastos
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
-    }*/
+    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1

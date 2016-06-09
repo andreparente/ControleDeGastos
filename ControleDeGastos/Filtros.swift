@@ -8,12 +8,12 @@
 
 import Foundation
 
-/*// filtra o vetor de gastos pelo intervalo de valores
+// filtra o vetor de gastos pelo intervalo de valores
 public func filtraValor(min: Double, max: Double, gastos: [Gasto]) -> [Gasto] {
     // gera o novo vetor
     var gastosFiltrados: [Gasto] = []
     for gasto in gastos {
-        let valor = gasto.valor
+        let valor = gasto.value
         if (valor >= min && valor <= max) {
             gastosFiltrados.append(gasto)
         }
@@ -26,7 +26,7 @@ public func filtraValorMin(min: Double, gastos: [Gasto]) -> [Gasto] {
     // gera o novo vetor
     var gastosFiltrados: [Gasto] = []
     for gasto in gastos {
-        let valor = gasto.valor
+        let valor = gasto.value
         if (valor >= min) {
             gastosFiltrados.append(gasto)
         }
@@ -39,7 +39,7 @@ public func filtraValorMax(max: Double, gastos: [Gasto]) -> [Gasto] {
     // gera o novo vetor
     var gastosFiltrados: [Gasto] = []
     for gasto in gastos {
-        let valor = gasto.valor
+        let valor = gasto.value
         if (valor <= max) {
             gastosFiltrados.append(gasto)
         }
@@ -52,7 +52,7 @@ public func filtraCategoria(categoriaFiltro: String, gastos: [Gasto]) -> [Gasto]
     // gera o novo vetor
     var gastosFiltrados: [Gasto] = []
     for gasto in gastos {
-        let categ = gasto.categoria
+        let categ = gasto.category
         if (categ == categoriaFiltro) {
             gastosFiltrados.append(gasto)
         }
@@ -90,7 +90,7 @@ public func filtroData(inicio:NSDate, fim:NSDate, gastos:[Gasto]) ->([Gasto])
     
     dateFormatter.dateFormat = "yyyy-MM-dd"
     for var i in 0..<gastos.count {
-        let dataGasto = dateFormatter.dateFromString(gastos[i].data)!
+        let dataGasto = dateFormatter.dateFromString(gastos[i].date)!
         //print (dataGasto, " --- ", fim, " --- ", inicio)
         if ( (comparadata(inicio_, date2: dataGasto) == -1
             || comparadata(inicio_, date2: dataGasto) == 0)
@@ -115,7 +115,7 @@ func filtraUltimosDias(dias: Int,gastos:[Gasto]) ->([Gasto]) {
     // gera o novo vetor
     var gastosUltimosDias: [Gasto] = []
     for gasto in gastos {
-        let data = gasto.data.componentsSeparatedByString("-")
+        let data = gasto.date.componentsSeparatedByString("-")
         // data == [ano, mes, dia]
         let dia = Int(data[2])
         let mes = Int(data[1])
@@ -126,5 +126,5 @@ func filtraUltimosDias(dias: Int,gastos:[Gasto]) ->([Gasto]) {
     }
     return gastosUltimosDias
 }
-*/
+
 

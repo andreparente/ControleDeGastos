@@ -8,7 +8,7 @@
 
 import Foundation
 
-/*
+
 class QuickSortClass {
     var v = [Int]()
     
@@ -37,19 +37,7 @@ class QuickSortClass {
     }
 }
 
-// exemplo de uso:
 
-var randomNumbers = [42, 12, 88, 62, 63, 56, 1, 77, 88, 97, 97, 20, 45, 91, 62, 2, 15, 31, 59, 5]
-print (randomNumbers)
-let QS = QuickSortClass()
-QS.v = randomNumbers
-QS.callQuickSort()
-randomNumbers = QS.v
-print (randomNumbers)
-
-
-*/
-/*
 class QuickSorterGasto {
     var v = [Gasto]()
     var decrescente = false
@@ -68,7 +56,7 @@ class QuickSorterGasto {
     internal func partitionData(left: Int, right: Int) -> Int {
         var i = left
         for j in (left + 1)..<(right + 1) {
-            var precisaTrocar = v[j].data < v[left].data
+            var precisaTrocar = v[j].date < v[left].date
             
             // inverte a verificacao para ordenar ao contrario
             if (self.decrescente) {
@@ -95,7 +83,7 @@ class QuickSorterGasto {
     internal func partitionNome(left: Int, right: Int) -> Int {
         var i = left
         for j in (left + 1)..<(right + 1) {
-            var precisaTrocar = v[j].nome < v[left].nome
+            var precisaTrocar = v[j].name < v[left].name
             
             // inverte a verificacao para ordenar ao contrario
             if (self.decrescente) {
@@ -122,7 +110,7 @@ class QuickSorterGasto {
     internal func partitionValor(left: Int, right: Int) -> Int {
         var i = left
         for j in (left + 1)..<(right + 1) {
-            var precisaTrocar = v[j].valor < v[left].valor
+            var precisaTrocar = v[j].value < v[left].value
             
             // inverte a verificacao para ordenar ao contrario
             if (self.decrescente) {
@@ -145,4 +133,4 @@ class QuickSorterGasto {
             quicksortValor(pivotIndex + 1, right: right)
         }
     }
-}*/
+}
