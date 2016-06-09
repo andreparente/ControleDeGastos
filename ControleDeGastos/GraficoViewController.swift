@@ -61,30 +61,43 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     //Funcao para organizar o grafico
    func organizaVetores(usuario: User) -> ([Double],[String]) {
         
-        var vetValAux = [Double?](count: userLogged.getCategoriasGastos().count,repeatedValue: nil)
+        var vetValAux = [Double?](count: userLogged.categories.count,repeatedValue: nil)
         var vetValAux2: [Double] = []
         var vetCatAux: [String] = []
        
-        for i in 0..<userLogged.getCategoriasGastos().count  {
+        for i in 0..<userLogged.categories.count  {
             vetValAux[i] = 0
         }
-        for i in 0..<userLogged.getCategoriasGastos().count {
-            for valGasto in usuario.gastos {
-                if(valGasto.category == usuario.getCategoriasGastos()[i]) {
-                    if(existeCategoria(vetCatAux, categoria: valGasto.category) == false) {
-                        vetCatAux.append(valGasto.category)
+    
+    print( " VETOR QUANTIDADE DE CATEGORIAS E VALORES ZERADOS: ", vetValAux)
+    
+        for i in 0..<userLogged.categories.count {
+            
+            for gasto in usuario.gastos {
+                print(gasto.category)
+                print(usuario.categories[i])
+                if(gasto.category == usuario.categories[i]) {
+                    if(existeCategoria(vetCatAux, categoria: gasto.category) == false) {
+                        vetCatAux.append(gasto.category)
                     }
-                    vetValAux[i] = vetValAux[i]! + valGasto.value
+                    print(vetValAux)
+                    print(gasto.value)
+                    vetValAux[i] = vetValAux[i]! + gasto.value
+                    
                 }
             }
         }
         
         for i in 0..<vetValAux.count {
+            
             if(vetValAux[i] > 0) {
+                print(vetValAux2)
                 vetValAux2.append(vetValAux[i]!)
             }
         }
-        
+    
+    print(vetValAux2)
+    print(vetCatAux)
         return (vetValAux2,vetCatAux)
     }
 
@@ -106,7 +119,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         var vetValAux: [Double] = []
         for i in 0..<gastosMes.count {
 
-            for categorias in userLogged.getCategoriasGastos()  {
+            for categorias in userLogged.getCategorias()  {
                 if(gastosMes[i].category == categorias) {
                     if(!existeCategoria(vetCatAux, categoria: categorias)) {
                     vetCatAux.append(categorias)
@@ -194,9 +207,11 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             
         }
         else {
+            
             for gasto in userLogged.getGastos() {
                 total = total + gasto.value
             }
+            print("--------- TOTAL DE TODOS OS GASTOS DO USUARIO DA VIDA:  ", total)
             (vetorFinal,vetorFinalCat) = organizaVetores(userLogged)
             print("vetor de valores", vetorFinal)
             print("vetor de categorias", vetorFinalCat)
