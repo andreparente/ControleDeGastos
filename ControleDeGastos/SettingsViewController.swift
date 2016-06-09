@@ -65,9 +65,12 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
             print("Text field: \(textField.text)")
             
             userLogged.setLimiteMes(Double(textField.text!)!)
+            print("LIMITE DO USUARIO USERLOGGED LOCAL::::", userLogged.limiteMes)
             DAOCloudKit().changeLimit(userLogged)
+            alteroulim = true
         }))
-        alteroulim = true
+        
+        
         self.presentViewController(alert,animated: true, completion: nil)
     }
     

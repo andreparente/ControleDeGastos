@@ -244,10 +244,10 @@ class DAOCloudKit {
             
             if error == nil {
                 
-                print("Already exists user!!")
-                record.setObject(userLogged.limiteMes, forKey: "monthLimit")
+                print("MUDANDO O LIMITE POR MES DE UM USUARIO EXISTENTE")
+                fetchedRecord!.setObject(userLogged.limiteMes, forKey: "monthLimit")
                 
-                publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
+                publicDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
                     if (error != nil) {
                         print(error)
                         let alert=UIAlertController(title:"Erro", message: "Nāo foi possivel alterar seu  limite", preferredStyle: UIAlertControllerStyle.Alert)
@@ -262,35 +262,7 @@ class DAOCloudKit {
             }
         }
     }
-    func fetchUser(user: User) {
-        
-        
-        let recordId = CKRecordID(recordName: user.email)
-        let record = CKRecord(recordType: "User", recordID: recordId)
-        let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
-                
-                if error == nil {
-                    
-                    print("Already exists user!!")
-                    
-                    
-                }
-                    
-                else {
-                    /*let alert=UIAlertController(title:"Erro", message: "Nāo foi possivel acessar seu usuario", preferredStyle: UIAlertControllerStyle.Alert)
-                     alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
-                     MainViewController().presentViewController(alert,animated: true, completion: nil)
-                     */
-                    print(error)
-                }
-            }
-        }
-    }
+
     
     //BUSCA OS GASTOS DE ACORDO COM A PK DO EMAIL DO USER LOGADO
     func fetchGastosFromUser(user: User) {
@@ -310,6 +282,17 @@ class DAOCloudKit {
                 print(fetchedRecord!.objectForKey("gastos"))
                 if let teste = fetchedRecord!.objectForKey("gastos") {
                     print("quantidade de gastos registrados: ", (fetchedRecord!.objectForKey("gastos") as! [CKRecordValue]).count)
+                    
+                    print(fetchedRecord?.objectForKey("monthLimit"))
+                    
+                    if let limit = fetchedRecord?.objectForKey("monthLimit") {
+                        
+                        userLogged.limiteMes = limit as! Double
+                    }
+                    else {
+                        
+                        userLogged.limiteMes = 0
+                    }
                     
                     for gastoReference in fetchedRecord!.objectForKey("gastos") as! [CKReference] {
                         gastosRecordIds.append(gastoReference.recordID)

@@ -25,84 +25,7 @@ class MainViewController: UIViewController {
         totalDisponivelMes.text = String(valorTotalMes)
         }
     }*/
-    override func viewWillAppear(animated: Bool) {
-        print("Oi main")
-        if(executar == true)
-        {
-        valortotal = 0
-        valorTotalMes = 0
-        self.gastei.hidden = false
-        print(userLogged.gastos)
-        self.limite.hidden = false
-        self.totaldisponivel.hidden=false
-        self.totalgastos.hidden = false
-        // self.totalDisponivelMes.hidden = false
-        self.settingsbutton.hidden = false
-        self.act.stopAnimating()
-        self.view.hidden = false
-        self.view.backgroundColor = corAzul
-        self.printaLimite(userLogged)
-        let hoje = NSDate()
-        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
-        let mesAtual = components.month
-        let anoAtual = components.year
-        for valor in (userLogged.gastos) {
-            print(userLogged.gastos)
-            self.valortotal += valor.value
-            
-        }
-        for valor in (userLogged.gastos) {
-            let data = valor.date.componentsSeparatedByString("-")
-            if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
-                self.valorTotalMes += valor.value
-            }
-        }
-        
-        self.totalgastos.text = "Seu total de gastos é: R$ \(self.valortotal)"
-        self.totaldisponivel.numberOfLines = 2
-        
-        if(userLogged.limiteMes != 0)
-        {
-            self.available = userLogged.limiteMes - self.valorTotalMes
-            if(self.available >= 100 && self.available > (0.2 * userLogged.limiteMes) )
-            {
-                self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
-                eamarela = false
-                evermelha = false
-            }
-            else
-            {
-                if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
-                {
-                    self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês"
-                    eamarela = true
-                    evermelha = false
-                }
-                else
-                {
-                    self.totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(self.valorTotalMes - userLogged.limiteMes)"
-                    eamarela = false
-                    evermelha = true
-                }
-            }
-            if (eamarela)
-            {
-                self.view.backgroundColor = corAmarela
-            }
-            if (evermelha)
-            {
-                self.view.backgroundColor = corVermelha
-            }
-            
-            self.totaldisponivel.hidden=false
-        }
-        else
-        {
-            self.totaldisponivel.hidden=true
-        }
-        }
-    }
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         print("load")
         act.startAnimating()
@@ -115,9 +38,9 @@ class MainViewController: UIViewController {
         print("view")
         
         let userPlistDic = plist.getData()
-        DAOCloudKit().fetchUser(userLogged)
+        //DAOCloudKit().fetchUser(userLogged)
         DAOCloudKit().fetchGastosFromUser(userLogged)
-       // DAOCloudKit().fetchLimitfromUser(userLogged)
+       // DAOCloudKit().fetchLimitFromUser(userLogged)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
@@ -221,6 +144,85 @@ class MainViewController: UIViewController {
         }
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        print("Oi main")
+        if(executar == true)
+        {
+            valortotal = 0
+            valorTotalMes = 0
+            self.gastei.hidden = false
+            print(userLogged.gastos)
+            self.limite.hidden = false
+            self.totaldisponivel.hidden=false
+            self.totalgastos.hidden = false
+            // self.totalDisponivelMes.hidden = false
+            self.settingsbutton.hidden = false
+            self.act.stopAnimating()
+            self.view.hidden = false
+            self.view.backgroundColor = corAzul
+            self.printaLimite(userLogged)
+            let hoje = NSDate()
+            let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+            let mesAtual = components.month
+            let anoAtual = components.year
+            for valor in (userLogged.gastos) {
+                print(userLogged.gastos)
+                self.valortotal += valor.value
+                
+            }
+            for valor in (userLogged.gastos) {
+                let data = valor.date.componentsSeparatedByString("-")
+                if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
+                    self.valorTotalMes += valor.value
+                }
+            }
+            
+            self.totalgastos.text = "Seu total de gastos é: R$ \(self.valorTotalMes)"
+            self.totaldisponivel.numberOfLines = 2
+            
+            if(userLogged.limiteMes != 0)
+            {
+                self.available = userLogged.limiteMes - self.valorTotalMes
+                if(self.available >= 100 && self.available > (0.2 * userLogged.limiteMes) )
+                {
+                    self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
+                    eamarela = false
+                    evermelha = false
+                }
+                else
+                {
+                    if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
+                    {
+                        self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês"
+                        eamarela = true
+                        evermelha = false
+                    }
+                    else
+                    {
+                        self.totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(self.valorTotalMes - userLogged.limiteMes)"
+                        eamarela = false
+                        evermelha = true
+                    }
+                }
+                if (eamarela)
+                {
+                    self.view.backgroundColor = corAmarela
+                }
+                if (evermelha)
+                {
+                    self.view.backgroundColor = corVermelha
+                }
+                
+                self.totaldisponivel.hidden=false
+            }
+            else
+            {
+                self.totaldisponivel.hidden=true
+            }
+        }
+    }
+
     
     
 }
