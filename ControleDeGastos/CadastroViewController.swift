@@ -83,7 +83,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     
     func btn_clicked(sender: UIBarButtonItem) {
         // Do something
-        performSegueWithIdentifier("CadastroToLogin", sender: self)
+        dismissViewControllerAnimated(false, completion: nil)
     }
     
     @IBAction func confirma(sender: UIButton) {
@@ -131,7 +131,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         
         realiza_cadastro()
         
-        performSegueWithIdentifier("CadastroToLogin", sender: self)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func realiza_cadastro() {
