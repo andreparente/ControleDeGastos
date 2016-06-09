@@ -64,7 +64,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         var vetValAux = [Double?](count: userLogged.categories.count,repeatedValue: nil)
         var vetValAux2: [Double] = []
         var vetCatAux: [String] = []
-       
         for i in 0..<userLogged.categories.count  {
             vetValAux[i] = 0
         }
