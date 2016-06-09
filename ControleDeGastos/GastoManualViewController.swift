@@ -217,10 +217,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             self.presentViewController(alert, animated: true, completion: nil)
         } else if(nome == nil || nome!.isEmpty) {
             nome = "Gasto do dia \(dataStr)"
-            //let alert = UIAlertController(title: "Warning", message: "Você não preencheu o nome", preferredStyle: UIAlertControllerStyle.Alert)
-            //let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-            //alert.addAction(alertAction)
-            //self.presentViewController(alert, animated: true, completion: nil)
+            print(nome)
         } else if(categoria == "") {
             let alert = UIAlertController(title: "Warning", message: "Você não preencheu a categoria", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
@@ -234,7 +231,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             userLogged.addGasto(gasto)
             // adiciona no disco
             DAOCloudKit().addGasto(gasto,user: userLogged)
-            //base.adicionarGasto(gasto, usuario: base.usuarioLogado!)
             // faz o segue
             executar = true
             dismissViewControllerAnimated(true, completion: nil)
