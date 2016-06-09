@@ -80,28 +80,14 @@ public class User {
     
     // -------------------------------------------- MUDAR ESSAS FUNCOES PARA CLOUDKIT-------------------------------
     
-    /*
+    
 
-    func getGastosMes(mes: Int, ano: Int,user:User) -> [Gasto] {
+    func getGastosMes(mes: Int, ano: Int) -> [Gasto] {
         // gera o novo vetor
         var gastosMes: [Gasto] = []
-        let recordId = CKRecordID(recordName: "Gasto " + user.name)
-        let record = CKRecord(recordType: "Gasto", recordID: recordId)
-        let dataatual=NSDate()
-        let pred = NSPredicate(value: true)
-        let sort = NSSortDescriptor(key: "data", ascending: false)
-        let query = CKQuery(recordType: "Gasto", predicate: pred)
-        query.sortDescriptors = [sort]
-        
-        let operation = CKQueryOperation(query: query)
-        operation.recordFetchedBlock{(record) in
-        let gasto = Gasto()
-        gasto.date = record["date"] as! String
-        gasto.name = record["name"] as! String
-        gasto.value = record["value"] as! String
-
-      
-            let data = Gasto.date.componentsSeparatedByString("-")
+        for gasto in self.gastos
+        {
+            let data = gasto.date.componentsSeparatedByString("-")
             // data == [ano, mes, dia]
             let mesGasto = Int(data[1])
             let anoGasto = Int(data[0])
@@ -110,7 +96,7 @@ public class User {
             }
         }
         return gastosMes
-    }*/
+    }
     
     // passando zero retorna os gastos de hoje
     func getGastosUltimosDias(dias: Int) -> [Gasto] {

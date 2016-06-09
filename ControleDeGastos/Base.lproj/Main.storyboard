@@ -998,16 +998,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LwU-ZW-9Ci">
-                                <rect key="frame" x="0.0" y="467" width="375" height="151"/>
-                                <date key="date" timeIntervalSinceReferenceDate="481218274.36300898">
-                                    <!--2016-04-01 15:44:34 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="pt_BR"/>
-                                <connections>
-                                    <action selector="DatePickerChanged:" destination="qDv-K7-cHH" eventType="valueChanged" id="Kku-nX-Iqq"/>
-                                </connections>
-                            </datePicker>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEt-D5-eaI" customClass="MonthYearPickerView" customModule="ControleDeGastos" customModuleProvider="target">
                                 <rect key="frame" x="30" y="423" width="314" height="203"/>
                             </pickerView>
@@ -1019,7 +1009,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="chartView" destination="VZb-Dh-qqU" id="zIZ-Uk-hIQ"/>
-                        <outlet property="dataMesDatePicker" destination="LwU-ZW-9Ci" id="Ilc-l6-vL3"/>
                         <outlet property="dataMesTextField" destination="fDg-lM-EMw" id="G4q-1F-6OF"/>
                         <outlet property="limiteLabel" destination="eXw-VO-phP" id="jIh-8f-Uji"/>
                         <outlet property="pickermesano" destination="KEt-D5-eaI" id="sCf-lh-3XO"/>

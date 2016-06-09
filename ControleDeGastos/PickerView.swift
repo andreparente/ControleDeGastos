@@ -12,6 +12,8 @@ import UIKit
 
 class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var grafico = GraficoViewController()
+    
     let months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
     var years: [Int]!
     var vetorFinalCatMes: [String] = []
@@ -87,7 +89,7 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         }
     }
     
-   /* func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let month = self.selectedRowInComponent(0)+1
         let year = years[self.selectedRowInComponent(1)]
         if let block = onDateSelected {
@@ -98,11 +100,12 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         let mes :Int =  month
         let ano :Int = year
         print(month);print(year)
-        vetorGastosMes = base.usuarioLogado!.getGastosMes(mes,ano: ano)
-        (vetorFinalGastosMes,vetorFinalCatMes) = GraficoViewController().organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
+        vetorGastosMes = userLogged.getGastosMes(mes, ano: ano)
+        (vetorFinalGastosMes,vetorFinalCatMes) = GraficoViewController().organizaVetoresMes(userLogged, gastosMes: vetorGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
-        GraficoViewController().setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
-    }*/
+        grafico.setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
+        grafico.dataMesTextField.text = "\(mes)" + " " + "\(ano)"
+    }
 
 }

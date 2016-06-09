@@ -17,7 +17,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     @IBOutlet weak var dataMesTextField: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var limiteLabel: UILabel!
-    @IBOutlet weak var dataMesDatePicker: UIDatePicker!
     @IBOutlet weak var pickermesano: MonthYearPickerView!
     var gastos: [Gasto]!
     var total = 0.0
@@ -34,6 +33,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickermesano.grafico = self
         view.backgroundColor = corAzul
         if (eamarela)
         {
@@ -45,9 +45,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
 
         dataMesTextField.delegate = self
-        dataMesDatePicker.hidden = true
         pickermesano.hidden = true
-        dataMesTextField.inputView = dataMesDatePicker
+        dataMesTextField.inputView = pickermesano
         printaLimite(userLogged)
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
 
@@ -185,12 +184,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if(textField.placeholder == "Escolha o mês e ano") {
             //dataMesDatePicker.hidden = false
-            dataMesDatePicker.hidden = true
             pickermesano.hidden = false
             return false
         }
         else {
-            dataMesDatePicker.hidden = true
             pickermesano.hidden = true
         }
         return true
@@ -220,7 +217,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
     }
     /*
-    
    @IBAction func DatePickerChanged(sender: AnyObject) {
         dataNs = dataMesDatePicker.date
         dataString = dateFormatter.stringFromDate(dataMesDatePicker.date)
@@ -235,13 +231,14 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         let mesGasto = Int(data[1])!
         let anoGasto = Int(data[0])!
     print(mesGasto);print(anoGasto)
-        vetorGastosMes = base.usuarioLogado!.getGastosMes(mesGasto,ano: anoGasto)
-        (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(base.usuarioLogado!, gastosMes: vetorGastosMes)
+        vetorGastosMes = userLogged.getGastosUltimoMês()
+        (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(userLogged, gastosMes: vetorGastosMes)
         
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
         setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
  
     }
-}*/
+ */
 }
+
