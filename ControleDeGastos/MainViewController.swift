@@ -27,7 +27,6 @@ class MainViewController: UIViewController {
     }*/
         override func viewDidLoad() {
         super.viewDidLoad()
-        print("load")
         act.startAnimating()
         //view.hidden = true
         gastei.hidden = true
@@ -35,7 +34,6 @@ class MainViewController: UIViewController {
         totaldisponivel.hidden=true
         totalgastos.hidden = true
         settingsbutton.hidden = true
-        print("view")
         
         let userPlistDic = plist.getData()
         //DAOCloudKit().fetchUser(userLogged)
@@ -69,11 +67,12 @@ class MainViewController: UIViewController {
     }
     func actOnNotificationSuccessLoad()
     {
+        print(userLogged.getCategorias())
+        print("BAD")
         var gastosmes:[Gasto]!
         dispatch_async(dispatch_get_main_queue()) {
             gastosmes = userLogged.getGastosUltimoMês()
             self.gastei.hidden = false
-            print(userLogged.gastos)
             self.limite.hidden = false
             self.totaldisponivel.hidden=false
             self.totalgastos.hidden = false
@@ -88,7 +87,6 @@ class MainViewController: UIViewController {
             let mesAtual = components.month
             let anoAtual = components.year
             for valor in (gastosmes) {
-                print(gastosmes)
                 self.valortotal += valor.value
                 
             }
@@ -152,7 +150,6 @@ class MainViewController: UIViewController {
             valortotal = 0
             valorTotalMes = 0
             self.gastei.hidden = false
-            print(userLogged.gastos)
             self.limite.hidden = false
             self.totaldisponivel.hidden=false
             self.totalgastos.hidden = false
@@ -167,7 +164,6 @@ class MainViewController: UIViewController {
             let mesAtual = components.month
             let anoAtual = components.year
             for valor in (userLogged.gastos) {
-                print(userLogged.gastos)
                 self.valortotal += valor.value
                 
             }
