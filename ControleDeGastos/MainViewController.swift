@@ -69,9 +69,9 @@ class MainViewController: UIViewController {
     }
     func actOnNotificationSuccessLoad()
     {
-        
+        var gastosmes:[Gasto]!
         dispatch_async(dispatch_get_main_queue()) {
-
+            gastosmes = userLogged.getGastosUltimoMês()
             self.gastei.hidden = false
             print(userLogged.gastos)
             self.limite.hidden = false
@@ -87,12 +87,12 @@ class MainViewController: UIViewController {
             let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
             let mesAtual = components.month
             let anoAtual = components.year
-            for valor in (userLogged.gastos) {
-                print(userLogged.gastos)
+            for valor in (gastosmes) {
+                print(gastosmes)
                 self.valortotal += valor.value
                 
             }
-            for valor in (userLogged.gastos) {
+            for valor in (gastosmes) {
                 let data = valor.date.componentsSeparatedByString("-")
                 if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
                     self.valorTotalMes += valor.value

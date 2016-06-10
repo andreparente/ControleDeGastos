@@ -47,7 +47,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         dataMesTextField.delegate = self
         pickermesano.hidden = true
         dataMesTextField.inputView = pickermesano
-        printaLimite(userLogged)
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
 
         
@@ -177,9 +176,9 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     }
    
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
-  /*  func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
-        print("\(entry.value) in \(base.usuarioLogado!.categoriasGastos[entry.xIndex])")
-    }*/
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
+        print("\(entry.value) in \(userLogged.categories[entry.xIndex])")
+    }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if(textField.placeholder == "Escolha o mês e ano") {
@@ -195,6 +194,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     override func viewWillAppear(animated: Bool) {
         executar = false
         total = 0.0
+        printaLimite(userLogged)
         if(userLogged.gastos.count == 0) {
             
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
@@ -205,7 +205,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
         else {
             
-            for gasto in userLogged.getGastos() {
+            for gasto in userLogged.getGastosUltimoMês(){
                 total = total + gasto.value
             }
             print("--------- TOTAL DE TODOS OS GASTOS DO USUARIO DA VIDA:  ", total)
@@ -215,6 +215,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             setChart(vetorFinalCat, values: vetorFinal)
             totalLabel.text = "Total: R$"+String(total)
         }
+    }
+    override func viewWillDisappear(animated: Bool) {
+        pickermesano.hidden = true
+        dataMesTextField.text = ""
     }
     /*
    @IBAction func DatePickerChanged(sender: AnyObject) {
