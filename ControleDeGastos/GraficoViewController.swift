@@ -204,45 +204,23 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             
         }
         else {
-            
-            for gasto in userLogged.getGastosUltimoMês(){
+             var year = NSCalendar(identifier: NSCalendarIdentifierGregorian)!.component(.Year, fromDate: NSDate())
+            let month = NSCalendar(identifier: NSCalendarIdentifierGregorian)!.component(.Month, fromDate: NSDate())
+
+            for gasto in userLogged.getGastosMes(month, ano: year){
                 total = total + gasto.value
             }
-            print("--------- TOTAL DE TODOS OS GASTOS DO USUARIO DA VIDA:  ", total)
+            print("--------- TOTAL DE TODOS OS GASTOS DO USUARIO DO Mes:  ", total)
             (vetorFinal,vetorFinalCat) = organizaVetores(userLogged)
             print("vetor de valores", vetorFinal)
             print("vetor de categorias", vetorFinalCat)
             setChart(vetorFinalCat, values: vetorFinal)
-            totalLabel.text = "Total: R$"+String(total)
+            totalLabel.text = "Total desse mês: R$"+String(total)
         }
     }
     override func viewWillDisappear(animated: Bool) {
         pickermesano.hidden = true
         dataMesTextField.text = ""
     }
-    /*
-   @IBAction func DatePickerChanged(sender: AnyObject) {
-        dataNs = dataMesDatePicker.date
-        dataString = dateFormatter.stringFromDate(dataMesDatePicker.date)
-        let dataaux = dataString.stringByReplacingOccurrencesOfString("/", withString: "-")
-        let fullNameArr = dataaux.componentsSeparatedByString("-")
-        let stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [0] + "-" + fullNameArr[1]
-        print("dataString: ", stringfinal)
-        dataMesTextField.text = dataString
-        let data = stringfinal.componentsSeparatedByString("-")
-        // data == [mes, dia, ano]
-        print(data)
-        let mesGasto = Int(data[1])!
-        let anoGasto = Int(data[0])!
-    print(mesGasto);print(anoGasto)
-        vetorGastosMes = userLogged.getGastosUltimoMês()
-        (vetorFinalGastosMes,vetorFinalCatMes) = organizaVetoresMes(userLogged, gastosMes: vetorGastosMes)
-        
-        print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
-        print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
-        setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
- 
-    }
- */
 }
 
