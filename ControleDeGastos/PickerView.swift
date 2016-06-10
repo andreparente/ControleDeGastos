@@ -91,6 +91,7 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let month = self.selectedRowInComponent(0)+1
+        var total = 0.0
         let year = years[self.selectedRowInComponent(1)]
         if let block = onDateSelected {
             block(month: month, year: year)
@@ -106,6 +107,11 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
         grafico.setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
         grafico.dataMesTextField.text = "\(mes)" + " " + "\(ano)"
+        for gasto in userLogged.getGastosMes(month, ano: year){
+            total = total + gasto.value
+        }
+
+        grafico.totalLabel.text = "Total desse mês: R$" + String(total)
     }
 
 }
