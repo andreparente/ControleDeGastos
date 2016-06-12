@@ -24,7 +24,7 @@ class EsqueciSenhaViewController: UIViewController,MFMailComposeViewControllerDe
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func confirma(sender: UIButton) {
+  /*  @IBAction func confirma(sender: UIButton) {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.presentViewController(mailComposeViewController, animated: true, completion: nil)
@@ -50,7 +50,6 @@ class EsqueciSenhaViewController: UIViewController,MFMailComposeViewControllerDe
         controller.dismissViewControllerAnimated(true, completion: nil)
         
     }
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
