@@ -31,6 +31,7 @@
 		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
 		9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */; };
+		9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */; };
 		D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */; };
 		E511105C1CB3849D00B9D52D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511105B1CB3849D00B9D52D /* MainTabBarController.swift */; };
 		E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */; };
@@ -70,6 +71,7 @@
 		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsqueciSenhaViewController.swift; sourceTree = "<group>"; };
 		E511105B1CB3849D00B9D52D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrarViewController.swift; sourceTree = "<group>"; };
 		E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdenarViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
 				E511105B1CB3849D00B9D52D /* MainTabBarController.swift */,
 				9C08CB3F1CFDD75F005133E7 /* PickerView.swift */,
+				9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				8A1AFD271CB07DF000382D1B /* TableViewCell.swift in Sources */,
 				9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */,
 				8A1AFCFF1CAACC7400382D1B /* GastoManualViewController.swift in Sources */,
+				9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */,
 				9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */,
 				E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */,
 				8A54D3C81CA2CC5B00E63645 /* MainViewController.swift in Sources */,
