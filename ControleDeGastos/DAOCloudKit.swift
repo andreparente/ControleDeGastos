@@ -212,18 +212,23 @@ class DAOCloudKit {
                 
                 for result in results! {
                     if(result.valueForKey("email") as? String == email) {
-                            
-                            print("user existe!")
-                            
-                            //Inicializa o user Logado
-                            userLogged = User(name: result.valueForKey("name") as! String, email: email, password: password)
-                            NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
-                            return;
-                    }
-                        else {
-                            NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorPassword", object: nil)
+                        
+                        print("user existe!")
+                        
+                        //Inicializa o user Logado
+                        userLogged = User(name: result.valueForKey("name") as! String, email: email, password: password)
+                        userLogged.categories.removeAll()
+                        for categ in result.valueForKey("categories") as! [String]
+                        {
+                            userLogged.categories.append(categ)
                         }
+                        NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
+                        return;
                     }
+                    else {
+                        NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorPassword", object: nil)
+                    }
+                }
                 
                 NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorEmail", object: nil)
             }
@@ -260,7 +265,7 @@ class DAOCloudKit {
             }
         }
     }
-
+    
     
     //BUSCA OS GASTOS DE ACORDO COM A PK DO EMAIL DO USER LOGADO
     func fetchGastosFromUser(user: User) {
@@ -318,7 +323,7 @@ class DAOCloudKit {
                     
                 else {
                     NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
-
+                    
                 }
                 
             }
