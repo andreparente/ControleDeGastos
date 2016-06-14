@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
         settingsbutton.hidden = true
         
         let userPlistDic = plist.getData()
-        //DAOCloudKit().fetchUser(userLogged)
+        DAOCloudKit().fetchUser(userLogged)
         DAOCloudKit().fetchGastosFromUser(userLogged)
        // DAOCloudKit().fetchLimitFromUser(userLogged)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)

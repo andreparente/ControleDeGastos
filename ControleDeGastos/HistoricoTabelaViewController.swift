@@ -42,13 +42,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             viewSuperior.backgroundColor = corVermelha
         }
         
-        if (self.gastos.count <= 0) {
-            // por padrao, filtra os gastos pelo ultimo mes
-            self.gastos = userLogged.getGastosUltimoMês()
-        }
-        else {
             self.gastos = userLogged.getGastos()
-        }
         
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }

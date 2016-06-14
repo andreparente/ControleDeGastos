@@ -77,8 +77,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
                     if(existeCategoria(vetCatAux, categoria: gasto.category) == false) {
                         vetCatAux.append(gasto.category)
                     }
-                    print(vetValAux)
-                    print(gasto.value)
+                    
                     vetValAux[i] = vetValAux[i]! + gasto.value
                     
                 }
@@ -88,13 +87,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         for i in 0..<vetValAux.count {
             
             if(vetValAux[i] > 0) {
-                print(vetValAux2)
                 vetValAux2.append(vetValAux[i]!)
             }
         }
     
-    print(vetValAux2)
-    print(vetCatAux)
         return (vetValAux2,vetCatAux)
     }
 

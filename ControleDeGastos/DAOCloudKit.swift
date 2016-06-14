@@ -195,6 +195,45 @@ class DAOCloudKit {
     }
     //NS NOTIFICATION CENTER
     
+    func fetchUser(user: User) {
+        
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        let predicate = NSPredicate(value: true)
+        
+        let query = CKQuery(recordType: "User", predicate: predicate)
+        print("passou pela criacao da query")
+        
+        publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
+            if error != nil {
+                print(error)
+            }
+            else {
+                
+                for result in results! {
+                    if(result.valueForKey("email") as? String == user.email) {
+                        
+                        print("user existe!")
+                        
+                        //Inicializa o user Logado
+                        userLogged.categories.removeAll()
+                        for categ in result.valueForKey("categories") as! [String]
+                        {
+                            userLogged.categories.append(categ)
+                        }
+                        //NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
+                        return;
+                    }
+                    else {
+                        //NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorPassword", object: nil)
+                    }
+                }
+                
+                //NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorEmail", object: nil)
+            }
+        }
+    }
+    
     func fetchUserByEmail(email: String,password: String) {
         
         let container = CKContainer.defaultContainer()
@@ -217,11 +256,11 @@ class DAOCloudKit {
                         
                         //Inicializa o user Logado
                         userLogged = User(name: result.valueForKey("name") as! String, email: email, password: password)
-                        userLogged.categories.removeAll()
+                       /* userLogged.categories.removeAll()
                         for categ in result.valueForKey("categories") as! [String]
                         {
                             userLogged.categories.append(categ)
-                        }
+                        }*/
                         NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
                         return;
                     }
