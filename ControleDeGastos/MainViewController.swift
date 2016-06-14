@@ -143,6 +143,13 @@ class MainViewController: UIViewController {
         }
     }
      func actOnNotificationErrorLoad()
+     {
+        let alert=UIAlertController(title:"Acabou", message: "Fim da edição", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title:"Dismiss",style: UIAlertActionStyle.Destructive,handler: nil))
+        alert.addAction(UIAlertAction(title:"Cancel",style: UIAlertActionStyle.Cancel,handler: nil))
+        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alert,animated: true, completion: nil)
+     }
     
     override func viewWillAppear(animated: Bool) {
         print("Oi main")
