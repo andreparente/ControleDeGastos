@@ -28,15 +28,4 @@ public class Gasto {
         self.date = data
 //        self.ehDinheiro = true
     }
-    
-    // init para gasto em cartao
-    init(nome: String, categoria: String, valor: Double, data: String, cartao: Cartao) {
-        self.name = nome
-        self.category = categoria
-        self.value = valor
-        self.date = data
-//        self.ehDinheiro = false
-//        self.cartao = cartao
-    }
-    
 }
