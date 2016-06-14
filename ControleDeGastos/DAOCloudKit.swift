@@ -362,7 +362,7 @@ class DAOCloudKit {
                 }
                     
                 else {
-                    NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
+                    NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorLoadUser", object: nil)
                     
                 }
                 

@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
         DAOCloudKit().fetchGastosFromUser(userLogged)
        // DAOCloudKit().fetchLimitFromUser(userLogged)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
         // Do any additional setup after loading the view.
@@ -141,7 +142,7 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
+     func actOnNotificationErrorLoad()
     
     override func viewWillAppear(animated: Bool) {
         print("Oi main")
