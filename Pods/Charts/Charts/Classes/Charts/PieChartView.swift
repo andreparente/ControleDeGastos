@@ -104,7 +104,7 @@ public class PieChartView: PieRadarChartViewBase
         
         renderer!.drawValues(context: context)
         
-        _legendRenderer.renderLegend(context: context)
+      //  _legendRenderer.renderLegend(context: context)
         
         drawDescription(context: context)
         
@@ -420,11 +420,11 @@ public class PieChartView: PieRadarChartViewBase
         }
     }
     
-    internal override var requiredLegendOffset: CGFloat
+   /* internal override var requiredLegendOffset: CGFloat
     {
-        return _legend.font.pointSize * 2.0
+    return _legend.font.pointSize * 2.0
     }
-    
+    */
     internal override var requiredBaseOffset: CGFloat
     {
         return 0.0

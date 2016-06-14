@@ -18,7 +18,7 @@ import CoreGraphics
     import UIKit
 #endif
 
-
+/*
 public class ChartLegendRenderer: ChartRendererBase
 {
     /// the legend object this renderer renders
@@ -427,3 +427,4 @@ public class ChartLegendRenderer: ChartRendererBase
         ChartUtils.drawText(context: context, text: label, point: CGPoint(x: x, y: y), align: .Left, attributes: [NSFontAttributeName: font, NSForegroundColorAttributeName: textColor])
     }
 }
+ */

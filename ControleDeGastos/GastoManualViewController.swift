@@ -218,6 +218,14 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         } else if(nome == nil || nome!.isEmpty) {
             nome = "Gasto do dia \(dataStr)"
             print(nome)
+            let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
+            // adiciona na RAM
+            userLogged.addGasto(gasto)
+            // adiciona no disco
+            DAOCloudKit().addGasto(gasto,user: userLogged)
+            // faz o segue
+            executar = true
+            dismissViewControllerAnimated(true, completion: nil)
         } else if(categoria == "") {
             let alert = UIAlertController(title: "Warning", message: "Você não preencheu a categoria", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)

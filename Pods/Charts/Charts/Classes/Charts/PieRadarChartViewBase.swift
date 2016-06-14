@@ -80,11 +80,11 @@ public class PieRadarChartViewBase: ChartViewBase
     {
         calcMinMax()
         
-        if let data = _data where _legend !== nil
+       /* if let data = _data where _legend !== nil
         {
             _legendRenderer.computeLegend(data)
         }
-        
+     */
         calculateOffsets()
         
         setNeedsDisplay()
@@ -97,7 +97,7 @@ public class PieRadarChartViewBase: ChartViewBase
         var legendBottom = CGFloat(0.0)
         var legendTop = CGFloat(0.0)
 
-        if (_legend != nil && _legend.enabled)
+      /*  if (_legend != nil && _legend.enabled)
         {
             var fullLegendWidth = min(_legend.neededWidth, _viewPortHandler.chartWidth * _legend.maxSizePercent)
             fullLegendWidth += _legend.formSize + _legend.formToTextSpace
@@ -209,7 +209,7 @@ public class PieRadarChartViewBase: ChartViewBase
         legendRight += self.extraRightOffset
         legendBottom += self.extraBottomOffset
         legendLeft += self.extraLeftOffset
-        
+        */
         var minOffset = self.minOffset
         
         if (self.isKindOfClass(RadarChartView))

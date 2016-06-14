@@ -19,7 +19,7 @@ import CoreGraphics
     import UIKit
 #endif
 
-
+/*
 public class ChartLegend: ChartComponentBase
 {
     @objc
@@ -439,7 +439,6 @@ public class ChartLegend: ChartComponentBase
         self._extraLabels = ChartUtils.bridgedObjCGetStringArray(objc: labels)
         self._extraColors = ChartUtils.bridgedObjCGetNSUIColorArray(objc: colors)
     }
-    
     /// Sets a custom legend's labels and colors arrays.
     /// The colors count should match the labels count.
     /// * Each color is for the form drawn at the same index.
@@ -459,3 +458,4 @@ public class ChartLegend: ChartComponentBase
         _isLegendCustom = true
     }
 }
+ */
