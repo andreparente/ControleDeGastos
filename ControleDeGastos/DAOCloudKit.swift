@@ -261,6 +261,7 @@ class DAOCloudKit {
                         {
                             userLogged.categories.append(categ)
                         }*/
+
                         NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
                         return;
                     }

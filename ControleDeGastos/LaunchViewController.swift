@@ -12,7 +12,6 @@ class LaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         var dict1 = plist.getData()
         print(plist.plistName)
         if dict1 != nil && dict1!["isLogged"] as! String != "loggedOut" {
