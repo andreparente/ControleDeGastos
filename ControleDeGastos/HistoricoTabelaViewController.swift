@@ -42,7 +42,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             viewSuperior.backgroundColor = corVermelha
         }
         
-            self.gastos = userLogged.getGastos()
+        
         
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
@@ -56,7 +56,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     //funçao que diz a quantidade de células
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cellsNumber = self.gastos.count
+        let cellsNumber = userLogged.gastos.count
         return (cellsNumber > 0) ? cellsNumber : 1
     }
     
@@ -67,16 +67,16 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             self.tableView.dequeueReusableCellWithIdentifier(
                 "TableViewCell", forIndexPath: indexPath)
                 as! TableViewCell
-        let cellsNumber = self.gastos.count
+        let cellsNumber = userLogged.gastos.count
         
         cell.backgroundColor = corAzul
         
         if (cellsNumber > 0) {
             cell.hideInfo(false)
-            cell.labelNomeGasto.text = "\(self.gastos[indexPath.row].name!)"
-            cell.labelCat.text = "\(self.gastos[indexPath.row].category)"
-            cell.labelValor.text = "R$ " + String(self.gastos[indexPath.row].value)
-            cell.labeldata.text = "\(self.gastos[indexPath.row].date)"
+            cell.labelNomeGasto.text = "\(userLogged.gastos[indexPath.row].name!)"
+            cell.labelCat.text = "\(userLogged.gastos[indexPath.row].category)"
+            cell.labelValor.text = "R$ " + String(userLogged.gastos[indexPath.row].value)
+            cell.labeldata.text = "\(userLogged.gastos[indexPath.row].date)"
             if (eamarela)
             {
               cell.backgroundColor = corAmarela
@@ -109,11 +109,11 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         if segue.identifier == "HistoricoTabelaToFiltrar" {
             let destino = segue.destinationViewController as! FiltrarViewController
             destino.delegate = self
-            //destino.gastos = self.gastos
+      
         } else if segue.identifier == "HistoricoTabelaToOrdenar" {
             let destino = segue.destinationViewController as! OrdenarViewController
             destino.delegate = self
-            destino.gastos = self.gastos
+            destino.gastos = userLogged.gastos
         }
     }
 }
