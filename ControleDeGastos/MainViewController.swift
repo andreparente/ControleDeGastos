@@ -142,7 +142,9 @@ class MainViewController: UIViewController {
             }
         }
     }
-     func actOnNotificationErrorLoad()
+    func actOnNotificationErrorLoad() {
+        
+    }
     
     override func viewWillAppear(animated: Bool) {
         print("Oi main")
