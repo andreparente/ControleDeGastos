@@ -33,6 +33,13 @@
 		9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */; };
 		9C9AFEC81D1051A300EA551B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9AFEC11D10516F00EA551B /* Charts.framework */; };
 		9C9AFEC91D1051A300EA551B /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9AFEC11D10516F00EA551B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C9AFED51D1052DA00EA551B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFED31D1052DA00EA551B /* Interface.storyboard */; };
+		9C9AFED71D1052DA00EA551B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFED61D1052DA00EA551B /* Assets.xcassets */; };
+		9C9AFEDE1D1052DB00EA551B /* WatchGastei Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C9AFEDD1D1052DB00EA551B /* WatchGastei Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C9AFEE31D1052DB00EA551B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9AFEE21D1052DB00EA551B /* InterfaceController.swift */; };
+		9C9AFEE51D1052DB00EA551B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9AFEE41D1052DB00EA551B /* ExtensionDelegate.swift */; };
+		9C9AFEE71D1052DB00EA551B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFEE61D1052DB00EA551B /* Assets.xcassets */; };
+		9C9AFEEB1D1052DB00EA551B /* WatchGastei.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9C9AFED11D1052DA00EA551B /* WatchGastei.app */; };
 		9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */; };
 		D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */; };
 		E511105C1CB3849D00B9D52D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511105B1CB3849D00B9D52D /* MainTabBarController.swift */; };
@@ -78,6 +85,20 @@
 			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
 			remoteInfo = "Charts-iOS";
 		};
+		9C9AFEDF1D1052DB00EA551B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A71E00B1C9C2F6B00C055F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C9AFEDC1D1052DB00EA551B;
+			remoteInfo = "WatchGastei Extension";
+		};
+		9C9AFEE91D1052DB00EA551B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A71E00B1C9C2F6B00C055F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C9AFED01D1052DA00EA551B;
+			remoteInfo = WatchGastei;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +111,28 @@
 				9C9AFEC91D1051A300EA551B /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9AFEF41D1052DB00EA551B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9C9AFEDE1D1052DB00EA551B /* WatchGastei Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9AFEF61D1052DB00EA551B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				9C9AFEEB1D1052DB00EA551B /* WatchGastei.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -126,6 +169,15 @@
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9C9AFEB91D10516F00EA551B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		9C9AFED11D1052DA00EA551B /* WatchGastei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchGastei.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9AFED41D1052DA00EA551B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		9C9AFED61D1052DA00EA551B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C9AFED81D1052DA00EA551B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C9AFEDD1D1052DB00EA551B /* WatchGastei Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchGastei Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9AFEE21D1052DB00EA551B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		9C9AFEE41D1052DB00EA551B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		9C9AFEE61D1052DB00EA551B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C9AFEE81D1052DB00EA551B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsqueciSenhaViewController.swift; sourceTree = "<group>"; };
 		E511105B1CB3849D00B9D52D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrarViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +194,13 @@
 				9C9AFEC81D1051A300EA551B /* Charts.framework in Frameworks */,
 				D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */,
 				8A1756D91CFF63F000CC0535 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9AFEDA1D1052DB00EA551B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				8A71E0151C9C2F6B00C055F8 /* ControleDeGastos */,
+				9C9AFED21D1052DA00EA551B /* WatchGastei */,
+				9C9AFEE11D1052DB00EA551B /* WatchGastei Extension */,
 				8A71E0141C9C2F6B00C055F8 /* Products */,
 				4FB5B4F43BCA3513C8A62FEA /* Pods */,
 				D479B003279013494019DDC7 /* Frameworks */,
@@ -218,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				8A71E0131C9C2F6B00C055F8 /* ControleDeGastos.app */,
+				9C9AFED11D1052DA00EA551B /* WatchGastei.app */,
+				9C9AFEDD1D1052DB00EA551B /* WatchGastei Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +311,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9C9AFED21D1052DA00EA551B /* WatchGastei */ = {
+			isa = PBXGroup;
+			children = (
+				9C9AFED31D1052DA00EA551B /* Interface.storyboard */,
+				9C9AFED61D1052DA00EA551B /* Assets.xcassets */,
+				9C9AFED81D1052DA00EA551B /* Info.plist */,
+			);
+			path = WatchGastei;
+			sourceTree = "<group>";
+		};
+		9C9AFEE11D1052DB00EA551B /* WatchGastei Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9C9AFEE21D1052DB00EA551B /* InterfaceController.swift */,
+				9C9AFEE41D1052DB00EA551B /* ExtensionDelegate.swift */,
+				9C9AFEE61D1052DB00EA551B /* Assets.xcassets */,
+				9C9AFEE81D1052DB00EA551B /* Info.plist */,
+			);
+			path = "WatchGastei Extension";
+			sourceTree = "<group>";
+		};
 		D479B003279013494019DDC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,16 +356,52 @@
 				DD52A65F9AF46078F35E56EB /* Embed Pods Frameworks */,
 				DA1989CC6C1FA75294075094 /* Copy Pods Resources */,
 				9C9AFECC1D1051A400EA551B /* Embed Frameworks */,
+				9C9AFEF61D1052DB00EA551B /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				9C9AFECB1D1051A300EA551B /* PBXTargetDependency */,
+				9C9AFEEA1D1052DB00EA551B /* PBXTargetDependency */,
 			);
 			name = ControleDeGastos;
 			productName = ControleDeGastos;
 			productReference = 8A71E0131C9C2F6B00C055F8 /* ControleDeGastos.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9C9AFED01D1052DA00EA551B /* WatchGastei */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C9AFEF51D1052DB00EA551B /* Build configuration list for PBXNativeTarget "WatchGastei" */;
+			buildPhases = (
+				9C9AFECF1D1052DA00EA551B /* Resources */,
+				9C9AFEF41D1052DB00EA551B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C9AFEE01D1052DB00EA551B /* PBXTargetDependency */,
+			);
+			name = WatchGastei;
+			productName = WatchGastei;
+			productReference = 9C9AFED11D1052DA00EA551B /* WatchGastei.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		9C9AFEDC1D1052DB00EA551B /* WatchGastei Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C9AFEF31D1052DB00EA551B /* Build configuration list for PBXNativeTarget "WatchGastei Extension" */;
+			buildPhases = (
+				9C9AFED91D1052DB00EA551B /* Sources */,
+				9C9AFEDA1D1052DB00EA551B /* Frameworks */,
+				9C9AFEDB1D1052DB00EA551B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchGastei Extension";
+			productName = "WatchGastei Extension";
+			productReference = 9C9AFEDD1D1052DB00EA551B /* WatchGastei Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -289,7 +409,7 @@
 		8A71E00B1C9C2F6B00C055F8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Andre Machado Parente";
 				TargetAttributes = {
@@ -301,6 +421,13 @@
 								enabled = 1;
 							};
 						};
+					};
+					9C9AFED01D1052DA00EA551B = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XBEPC2JPC9;
+					};
+					9C9AFEDC1D1052DB00EA551B = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -324,6 +451,8 @@
 			projectRoot = "";
 			targets = (
 				8A71E0121C9C2F6B00C055F8 /* ControleDeGastos */,
+				9C9AFED01D1052DA00EA551B /* WatchGastei */,
+				9C9AFEDC1D1052DB00EA551B /* WatchGastei Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +497,23 @@
 				8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */,
 				8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */,
 				8A1756DD1CFF764100CC0535 /* User.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9AFECF1D1052DA00EA551B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9AFED71D1052DA00EA551B /* Assets.xcassets in Resources */,
+				9C9AFED51D1052DA00EA551B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9AFEDB1D1052DB00EA551B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9AFEE71D1052DB00EA551B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +600,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9C9AFED91D1052DB00EA551B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9AFEE51D1052DB00EA551B /* ExtensionDelegate.swift in Sources */,
+				9C9AFEE31D1052DB00EA551B /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -461,6 +616,16 @@
 			isa = PBXTargetDependency;
 			name = "Charts-iOS";
 			targetProxy = 9C9AFECA1D1051A300EA551B /* PBXContainerItemProxy */;
+		};
+		9C9AFEE01D1052DB00EA551B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C9AFEDC1D1052DB00EA551B /* WatchGastei Extension */;
+			targetProxy = 9C9AFEDF1D1052DB00EA551B /* PBXContainerItemProxy */;
+		};
+		9C9AFEEA1D1052DB00EA551B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C9AFED01D1052DA00EA551B /* WatchGastei */;
+			targetProxy = 9C9AFEE91D1052DB00EA551B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -479,6 +644,14 @@
 				8A71E0201C9C2F6B00C055F8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9C9AFED31D1052DA00EA551B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C9AFED41D1052DA00EA551B /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -603,6 +776,74 @@
 			};
 			name = Release;
 		};
+		9C9AFEEC1D1052DB00EA551B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = WatchGastei_Extension;
+				INFOPLIST_FILE = WatchGastei/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		9C9AFEED1D1052DB00EA551B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = WatchGastei_Extension;
+				INFOPLIST_FILE = WatchGastei/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		9C9AFEEE1D1052DB00EA551B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "WatchGastei Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		9C9AFEEF1D1052DB00EA551B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "WatchGastei Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -623,6 +864,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9C9AFEF31D1052DB00EA551B /* Build configuration list for PBXNativeTarget "WatchGastei Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C9AFEEE1D1052DB00EA551B /* Debug */,
+				9C9AFEEF1D1052DB00EA551B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9C9AFEF51D1052DB00EA551B /* Build configuration list for PBXNativeTarget "WatchGastei" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C9AFEEC1D1052DB00EA551B /* Debug */,
+				9C9AFEED1D1052DB00EA551B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
