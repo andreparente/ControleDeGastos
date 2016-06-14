@@ -11,10 +11,18 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
+    @IBOutlet var myLabel: WKInterfaceLabel!
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
+        let textChoices :[String] =  ["1","10","15"]
+        presentTextInputControllerWithSuggestions(textChoices,allowedInputMode: WKTextInputMode.Plain,completion: {(results) -> Void in
+            if results != nil && results!.count > 0 { //selection made
+               // let aResult = results?[0] as? String{
+                 //   self.myLabel.setText(aResult)
+                //}
+            }
+        })
         // Configure interface objects here.
     }
 
