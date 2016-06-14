@@ -872,6 +872,7 @@
 				9C9AFEEF1D1052DB00EA551B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C9AFEF51D1052DB00EA551B /* Build configuration list for PBXNativeTarget "WatchGastei" */ = {
 			isa = XCConfigurationList;
@@ -880,6 +881,7 @@
 				9C9AFEED1D1052DB00EA551B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
