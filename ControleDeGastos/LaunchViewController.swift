@@ -12,17 +12,7 @@ class LaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Reachability.isConnectedToNetwork() == false
-        {
-            let alert=UIAlertController(title:"iCloud não disponível", message: "Você nāo está conectado à internet", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{(action) -> Void in
-                exit(0)
-                }))
-            dispatch_async(dispatch_get_main_queue(),{
-                self.presentViewController(alert,animated: true, completion: nil)
-            })
-        }
-        else if DAOCloudKit().cloudAvailable() == false{
+        if DAOCloudKit().cloudAvailable() == false{
             let alert=UIAlertController(title:"iCloud não disponível", message: "Você nāo está logado na sua conta do iCloud", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{(action) -> Void in
                 exit(0)
@@ -31,28 +21,33 @@ class LaunchViewController: UIViewController {
                 self.presentViewController(alert,animated: true, completion: nil)
             })
         }
-        else
+       else if Reachability.isConnectedToNetwork() == false
         {
-        var dict1 = plist.getData()
-        print(plist.plistName)
-        if dict1 != nil && dict1!["isLogged"] as! String != "loggedOut" {
-            
+            let alert=UIAlertController(title:"Internet não disponível", message: "Você nāo está conectado à internet", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{(action) -> Void in
+                var dict1 = plist.getData()
+                print(plist.plistName)
+                if dict1 != nil && dict1!["isLogged"] as! String != "loggedOut" {
+                    
+                    dispatch_async(dispatch_get_main_queue(),{
+                        var dict = plist.getData()
+                        userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
+                        self.performSegueWithIdentifier("LaunchToMain", sender: self)
+                        
+                    })
+                }
+                else {
+                    
+                    dispatch_async(dispatch_get_main_queue(),{
+                        
+                        self.performSegueWithIdentifier("LaunchToLogin", sender: self)
+                    })
+                }
+
+                }))
             dispatch_async(dispatch_get_main_queue(),{
-                var dict = plist.getData()
-                userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
-                self.performSegueWithIdentifier("LaunchToMain", sender: self)
-
-
+                self.presentViewController(alert,animated: true, completion: nil)
             })
-        }
-        else {
-            
-            dispatch_async(dispatch_get_main_queue(),{
-        
-                self.performSegueWithIdentifier("LaunchToLogin", sender: self)
-            })
-        }
-
     }
     }
     override func didReceiveMemoryWarning() {
