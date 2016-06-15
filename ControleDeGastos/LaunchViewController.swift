@@ -22,6 +22,15 @@ class LaunchViewController: UIViewController {
                 self.presentViewController(alert,animated: true, completion: nil)
             })
         }
+        else if DAOCloudKit().cloudAvailable() == false{
+            let alert=UIAlertController(title:"iCloud não disponível", message: "Você nāo está logado na sua conta do iCloud", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{(action) -> Void in
+                exit(0)
+            }))
+            dispatch_async(dispatch_get_main_queue(),{
+                self.presentViewController(alert,animated: true, completion: nil)
+            })
+        }
         else
         {
         var dict1 = plist.getData()
