@@ -68,6 +68,9 @@ class MainViewController: UIViewController {
     }
     func actOnNotificationSuccessLoad()
     {
+        if userLogged.gastos.count == 0
+        {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
         print(userLogged.getCategorias())
         print("BAD")
         var gastosmes:[Gasto]!
@@ -150,7 +153,10 @@ class MainViewController: UIViewController {
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alert,animated: true, completion: nil)
      }
-
+func fazisso()
+{
+    
+}
     
     override func viewWillAppear(animated: Bool) {
         print("Oi main")
