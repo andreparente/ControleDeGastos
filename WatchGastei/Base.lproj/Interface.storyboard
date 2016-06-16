@@ -10,13 +10,38 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchGastei" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Label" id="Rik-ol-EF7"/>
+                        <group width="134" height="32" alignment="left" id="8Ug-Rh-SSH">
+                            <items>
+                                <button width="38" height="31.5" alignment="left" title="1" id="1N5-Iy-nA8"/>
+                                <button width="38" height="31.5" alignment="left" title="2" id="w6u-On-gNl"/>
+                                <button width="38" height="31.5" alignment="left" title="3" id="crV-fX-KHT"/>
+                            </items>
+                        </group>
+                        <group width="134" height="31.5" alignment="left" id="fBE-AL-1N4">
+                            <items>
+                                <button width="38" height="31.5" alignment="left" title="4" id="00c-ck-FkK"/>
+                                <button width="38" height="31.5" alignment="left" title="5" id="WXb-qV-3gE"/>
+                                <button width="38" height="31.5" alignment="left" title="6" id="nr3-sq-9F6"/>
+                            </items>
+                        </group>
+                        <group width="134" height="31.5" alignment="left" id="4Lw-cb-TmL">
+                            <items>
+                                <button width="38" height="31.5" alignment="left" title="7" id="mbi-A0-60N"/>
+                                <button width="38" height="31.5" alignment="left" title="8" id="g7G-Mo-bTB"/>
+                                <button width="38" height="31.5" alignment="left" title="9" id="WoP-VT-ZNX"/>
+                            </items>
+                        </group>
+                        <group width="134" height="31.5" alignment="left" id="nsM-bw-4vH">
+                            <items>
+                                <button width="38" height="31.5" alignment="left" title="." id="mC8-fr-1Lo"/>
+                                <button width="38" height="31.5" alignment="left" title="0" id="j2d-ea-Hxb"/>
+                                <button width="38" height="31.5" alignment="left" title="-&gt;" id="qEl-EK-GvN"/>
+                            </items>
+                        </group>
                     </items>
-                    <connections>
-                        <outlet property="myLabel" destination="Rik-ol-EF7" id="Pj9-sf-yua"/>
-                    </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="222" y="238"/>
         </scene>
     </scenes>
 </document>
