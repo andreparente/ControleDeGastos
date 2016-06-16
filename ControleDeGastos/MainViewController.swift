@@ -91,7 +91,7 @@ class MainViewController: UIViewController {
                 }
             }
             
-            self.totalgastos.text = "Seu total de gastos é: R$ \(self.valortotal)"
+            self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valortotal)"
             self.totaldisponivel.numberOfLines = 2
             
             if(userLogged.limiteMes != 0)
@@ -145,9 +145,7 @@ class MainViewController: UIViewController {
     }
     func actOnNotificationSuccessLoad()
     {
-       
-        
-            fazisso()
+        fazisso()
     }
      func actOnNotificationErrorLoad()
      {
@@ -187,7 +185,7 @@ class MainViewController: UIViewController {
                 }
             }
             
-            self.totalgastos.text = "Seu total de gastos é: R$ \(self.valorTotalMes)"
+            self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
             self.totaldisponivel.numberOfLines = 2
             
             if(userLogged.limiteMes != 0)
