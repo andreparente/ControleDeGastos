@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
         DAOCloudKit().fetchGastosFromUser(userLogged)
        // DAOCloudKit().fetchLimitFromUser(userLogged)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
         // Do any additional setup after loading the view.
@@ -59,18 +59,8 @@ class MainViewController: UIViewController {
         }
     }
     
-    @IBAction func botaogastar(sender: UIButton) {
-        totalgastos1 = valortotal
-    }
-    
-    @IBAction func botaosettings(sender: UIButton) {
-        totalgastos1 = valortotal
-    }
-    func actOnNotificationSuccessLoad()
+    func fazisso()
     {
-        if userLogged.gastos.count == 0
-        {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
         print(userLogged.getCategorias())
         print("BAD")
         var gastosmes:[Gasto]!
@@ -145,18 +135,26 @@ class MainViewController: UIViewController {
             }
         }
     }
+
+    @IBAction func botaogastar(sender: UIButton) {
+        totalgastos1 = valortotal
+    }
+    
+    @IBAction func botaosettings(sender: UIButton) {
+        totalgastos1 = valortotal
+    }
+    func actOnNotificationSuccessLoad()
+    {
+       
+        
+            fazisso()
+    }
      func actOnNotificationErrorLoad()
      {
-        let alert=UIAlertController(title:"Acabou", message: "Fim da edição", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title:"Dismiss",style: UIAlertActionStyle.Destructive,handler: nil))
-        alert.addAction(UIAlertAction(title:"Cancel",style: UIAlertActionStyle.Cancel,handler: nil))
+        let alert=UIAlertController(title:"Erro", message: "Erro ao dar fetch no user", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alert,animated: true, completion: nil)
      }
-func fazisso()
-{
-    
-}
     
     override func viewWillAppear(animated: Bool) {
         print("Oi main")

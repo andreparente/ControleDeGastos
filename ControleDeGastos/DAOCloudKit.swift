@@ -234,12 +234,12 @@ class DAOCloudKit {
         }
     }
     
-    func fetchUserByEmail(email: String,password: String) {
+    func fetchUserByEmail(email: String!,password: String!) {
         
         let container = CKContainer.defaultContainer()
         let publicDatabase = container.publicCloudDatabase
         let predicate = NSPredicate(value: true)
-        
+        print(email);print(password)
         let query = CKQuery(recordType: "User", predicate: predicate)
         print("passou pela criacao da query")
         
@@ -255,7 +255,8 @@ class DAOCloudKit {
                         print("user existe!")
                         
                         //Inicializa o user Logado
-                        userLogged = User(name: result.valueForKey("name") as! String, email: email, password: password)
+                        userLogged = User(name: result.valueForKey("name") as! String, email: email!, password: password!)
+                        print(userLogged)
                        /* userLogged.categories.removeAll()
                         for categ in result.valueForKey("categories") as! [String]
                         {
@@ -362,10 +363,16 @@ class DAOCloudKit {
                 }
                     
                 else {
-                    NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorLoadUser", object: nil)
+                    if userLogged.gastos.count == 0
+                    {
+                        NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
+                    }
+                    else{
+                        NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorLoadUser", object: nil)
                     
                 }
                 
+            }
             }
             else {
                 print(error)
