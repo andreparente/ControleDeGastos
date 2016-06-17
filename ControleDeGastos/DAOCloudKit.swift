@@ -253,7 +253,8 @@ class DAOCloudKit {
                     if(result.valueForKey("email") as? String == email) {
                         
                         print("user existe!")
-                        
+                        if (result.valueForKey("password") as? String == password)
+                        {
                         //Inicializa o user Logado
                         userLogged = User(name: result.valueForKey("name") as! String, email: email!, password: password!)
                         print(userLogged)
@@ -264,13 +265,14 @@ class DAOCloudKit {
                         }*/
 
                         NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
-                        return;
+                        return
                     }
                     else {
                         NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorPassword", object: nil)
+                            return
                     }
                 }
-                
+                }
                 NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorEmail", object: nil)
             }
         }
