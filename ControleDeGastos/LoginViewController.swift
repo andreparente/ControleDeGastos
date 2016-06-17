@@ -30,17 +30,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         let bundle = NSBundle.mainBundle().pathForResource("User", ofType: "plist")
         
-        view.backgroundColor = corAzul
+        //view.backgroundColor = corAzul
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         
-        mail.attributedPlaceholder = NSAttributedString(string:"Email",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
-        mail.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        mail.attributedPlaceholder = NSAttributedString(string:"E-mail",
+            attributes:[NSForegroundColorAttributeName: UIColor(red: 52/255, green: 102/255, blue: 139/255, alpha: 1.0)])
+        mail.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)
         
         mail.delegate = self
         mail.keyboardType = .EmailAddress
         senha.attributedPlaceholder = NSAttributedString(string:"Senha",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
-        senha.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+            attributes:[NSForegroundColorAttributeName: UIColor(red: 52/255, green: 102/255, blue: 139/255, alpha: 1.0)])
+        senha.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)
         senha.secureTextEntry=true
         senha.delegate = self
         errocampovazio.hidden=true

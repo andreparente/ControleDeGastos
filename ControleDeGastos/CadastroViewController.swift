@@ -23,22 +23,23 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = corAzul
-        nome.placeholder = "nome"
+        // view.backgroundColor = corAzul
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        nome.placeholder = "Nome"
         nome.delegate=self
-        nome.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-        Email.placeholder = "Email"
+        nome.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)
+        Email.placeholder = "E-mail"
         Email.delegate=self
         Email.keyboardType = .EmailAddress
-        Email.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        Email.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)
         senha.placeholder = "Senha"
         senha.delegate=self
         senha.secureTextEntry=true
-        senha.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
-        confirmasenha1.placeholder="Confirma Senha"
+        senha.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)
+        confirmasenha1.placeholder="Confirmar Senha"
         confirmasenha1.delegate=self
         confirmasenha1.secureTextEntry=true
-        confirmasenha1.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        confirmasenha1.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)
         erroincompleto.hidden=true
         erroincompleto.text="Todos os dados são obrigatórios"
         erromail.hidden=true
