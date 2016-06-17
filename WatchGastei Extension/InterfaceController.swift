@@ -33,9 +33,9 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    @IBAction func Tapped1() {
+    /*@IBAction func Tapped1() {
         totalValue.setText(<#T##text: String?##String?#>)
-    }
+    }*/
     
     @IBAction func Tapped2() {
     }

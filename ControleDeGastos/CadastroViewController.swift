@@ -46,22 +46,22 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         erromail.text="E-mail inválido"
         errosenhas.hidden=true
         errosenhas.text="Senhas não são iguais"
-        erronome.text = "Coloque pelo menos um sobrenome"
+        erronome.text = "O nome é composto por um nome e sobrenome!"
         erronome.hidden = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CadastroViewController.actOnNotificationErrorRegister), name: "notificationErrorRegister", object: nil)
- 
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-
+        
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
-
+        
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
- 
+        
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Cadastro"
-       
+        
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(CadastroViewController.btn_clicked(_:)))
         
@@ -70,11 +70,11 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         navigationItem.leftBarButtonItem = leftButton
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-
+        
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -143,23 +143,23 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         DAOCloudKit().saveUser(user)
         
         
-     /*   // adiciona categorias padrao
-        usuario.addCategoriaGasto("Outros")
-        usuario.addCategoriaGasto("Alimentação")
-        usuario.addCategoriaGasto("Transporte")
-        
-        // adiciona usuario na lista de usuarios da RAM
-        base.ramUsuarios.append(usuario)
-        
-        // adiciona usuario na lista de usuarios do disco
-        base.adicionarUsuario(usuario)
-        
-        // adiciona o usuario na entrada ultimoUsuario da base
-        base.salvarUltimoUsuario(usuario)
-        
-        // configura o usuarioLogado para ser o de agora
-        base.usuarioLogado = usuario
-   */
+        /*   // adiciona categorias padrao
+         usuario.addCategoriaGasto("Outros")
+         usuario.addCategoriaGasto("Alimentação")
+         usuario.addCategoriaGasto("Transporte")
+         
+         // adiciona usuario na lista de usuarios da RAM
+         base.ramUsuarios.append(usuario)
+         
+         // adiciona usuario na lista de usuarios do disco
+         base.adicionarUsuario(usuario)
+         
+         // adiciona o usuario na entrada ultimoUsuario da base
+         base.salvarUltimoUsuario(usuario)
+         
+         // configura o usuarioLogado para ser o de agora
+         base.usuarioLogado = usuario
+         */
     }
     
     func dismissKeyboard() {
@@ -175,8 +175,8 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     
     func usuarioJaExiste () -> Bool {
         
-       // let i = base.indiceUsuarioPorEmail(Email.text!)
-       // return i != -1
+        // let i = base.indiceUsuarioPorEmail(Email.text!)
+        // return i != -1
         return false
     }
     
@@ -191,30 +191,33 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     {
         let string1 = Array(nome.characters)
         print(string1)
-        for i in 0...string1.count-1
-        {
-            if string1[i] == " " && i+1<string1.count-1
+        
+        if(string1.count > 0) {
+            for i in 0...string1.count-1
             {
-                if (string1[i+1]>="A" && string1[i+1] <= "Z") || string1[i+1]>="a" && string1[i+1] <= "z"
+                if string1[i] == " " && i+1<string1.count-1
                 {
-                    return true
-                }
-                else{
-                    return false
+                    if (string1[i+1]>="A" && string1[i+1] <= "Z") || string1[i+1]>="a" && string1[i+1] <= "z"
+                    {
+                        return true
+                    }
+                    else{
+                        return false
+                    }
                 }
             }
         }
         return false
     }
-
-    /*
-    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
