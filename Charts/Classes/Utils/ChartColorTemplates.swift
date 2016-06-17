@@ -29,7 +29,10 @@ public class ChartColorTemplates: NSObject
             NSUIColor(red: 148/255.0, green: 212/255.0, blue: 212/255.0, alpha: 1.0),
             NSUIColor(red: 136/255.0, green: 180/255.0, blue: 187/255.0, alpha: 1.0),
             NSUIColor(red: 118/255.0, green: 174/255.0, blue: 175/255.0, alpha: 1.0),
-            NSUIColor(red: 42/255.0, green: 109/255.0, blue: 130/255.0, alpha: 1.0)
+            NSUIColor(red: 42/255.0, green: 109/255.0, blue: 130/255.0, alpha: 1.0),
+            NSUIColor(red: 35/255.0, green: 90/255.0, blue: 100/255.0, alpha: 1.0),
+            NSUIColor(red: 25/255.0, green: 70/255.0, blue: 80/255.0, alpha: 1.0),
+            NSUIColor(red: 15/255.0, green: 50/255.0, blue: 60/255.0, alpha: 1.0)
         ]
     }
     

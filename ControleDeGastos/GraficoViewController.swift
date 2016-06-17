@@ -144,7 +144,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "You need to enter some data"
             chartView.delegate = self
-            chartView.animate(xAxisDuration: 1)
+            chartView.animate(xAxisDuration: 3)
             limiteLabel.text = "Seu limite é \(usuario.limiteMes)"
         }
     }
@@ -155,7 +155,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         
         
         var dataEntries: [ChartDataEntry] = []
-        chartView.descriptionText = "Gastos"
+        chartView.descriptionText = ""
         //ESSE FOR PREENCHE O VETOR DE ENTRADA DE DADOS, PRA CADA INDEX,
         for i in 0..<values.count {
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
@@ -165,7 +165,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         
-        chartDataSet.colors = ChartColorTemplates.joyful()
+        chartDataSet.colors = ChartColorTemplates.liberty()
         
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
         chartView.data = chartData

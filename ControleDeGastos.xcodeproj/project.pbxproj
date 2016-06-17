@@ -27,6 +27,7 @@
 		8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01A1C9C2F6B00C055F8 /* Main.storyboard */; };
 		8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */; };
 		8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01F1C9C2F6B00C055F8 /* LaunchScreen.storyboard */; };
+		8AB2ABE81D1392A50050AD85 /* teste.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB2ABE71D1392A50050AD85 /* teste.plist */; };
 		9C047D721CB2A1D40099A13C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C047D711CB2A1D40099A13C /* extensions.swift */; };
 		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
@@ -164,6 +165,7 @@
 		8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A71E0201C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A71E0221C9C2F6B00C055F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AB2ABE71D1392A50050AD85 /* teste.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = teste.plist; path = ../teste.plist; sourceTree = "<group>"; };
 		9C047D711CB2A1D40099A13C /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */,
 				8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */,
 				8A71E0221C9C2F6B00C055F8 /* Info.plist */,
+				8AB2ABE71D1392A50050AD85 /* teste.plist */,
 				8A1756DC1CFF764100CC0535 /* User.plist */,
 			);
 			path = ControleDeGastos;
@@ -495,6 +498,7 @@
 			files = (
 				8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */,
 				8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */,
+				8AB2ABE81D1392A50050AD85 /* teste.plist in Resources */,
 				8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */,
 				8A1756DD1CFF764100CC0535 /* User.plist in Resources */,
 			);
