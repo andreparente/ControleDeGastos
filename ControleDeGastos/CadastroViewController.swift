@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var j=0
 class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationBarDelegate{
     
     @IBOutlet weak var nome: UITextField!
@@ -90,7 +90,11 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     
     @IBAction func confirma(sender: UIButton) {
         // verifica se usuario ja existe
+        j+=1
+        if j==1
+        {
         DAOCloudKit().fetchUserOnlyMail(Email.text!)
+        }
     }
     
     func actOnNotificationFailCadastro()

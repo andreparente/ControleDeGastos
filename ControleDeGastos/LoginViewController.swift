@@ -14,7 +14,7 @@ func isValidEmail(testStr:String) -> Bool {
     let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
     return emailTest.evaluateWithObject(testStr)
 }
-
+var i=0
 class LoginViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var errosenhas: UILabel!
@@ -59,6 +59,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
 
     @IBAction func confirma(sender: UIButton)
     {
+        i += 1
         // campos vazios
         if ((mail.text == nil) || senha.text == nil)
         {
@@ -74,12 +75,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             errocadastro.hidden = true
             return
         }
-        
+        if(i==1)
+        {
         DAOCloudKit().fetchUserByEmail(mail.text!, password: senha.text!)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnNotificationSuccessLogin), name: "notificationSuccessLogin", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnNotificationErrorPassword), name: "notificationErrorPassword", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnnotificationErrorEmail), name: "notificationErrorEmail", object: nil)
+        }
         
 
     }
