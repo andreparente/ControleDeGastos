@@ -278,7 +278,32 @@ class DAOCloudKit {
         }
     }
     
-    
+    func fetchUserOnlyMail(email: String!) {
+        
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "User", predicate: predicate)
+        print("passou pela criacao da query")
+        publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
+            if error != nil {
+                print(error)
+            }
+            else {
+                
+                for result in results! {
+                    if(result.valueForKey("email") as? String == email) {
+                        NSNotificationCenter.defaultCenter().postNotificationName("notificationFailCadastro", object: nil)
+                            return
+                        }
+                    
+                    }
+                NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessCadastro", object: nil)
+                return
+                    }
+                }
+        
+    }
     func changeLimit(user: User) {
         
         let recordId = CKRecordID(recordName: user.email)

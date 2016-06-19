@@ -48,7 +48,6 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         errosenhas.text="Senhas não são iguais"
         erronome.text = "O nome é composto por um nome e sobrenome!"
         erronome.hidden = true
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CadastroViewController.actOnNotificationErrorRegister), name: "notificationErrorRegister", object: nil)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -74,6 +73,8 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CadastroViewController.actOnNotificationFailCadastro), name: "notificationFailCadastro", object: nil)
+          NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CadastroViewController.actOnNotificationSuccessCadastro), name: "notificationSuccessCadastro", object: nil)
         
     }
     
@@ -88,6 +89,19 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     }
     
     @IBAction func confirma(sender: UIButton) {
+        // verifica se usuario ja existe
+        DAOCloudKit().fetchUserOnlyMail(Email.text!)
+    }
+    
+    func actOnNotificationFailCadastro()
+    {
+        erromail.text = "E-mail já cadastrado!"
+        erromail.hidden = false
+        print("email ja cadastrado!")
+
+    }
+   func actOnNotificationSuccessCadastro()
+   {
         let name=nome.text
         let mailsalvo=Email.text
         let senhasalva=senha.text
@@ -104,8 +118,8 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
             return
         }
         erroincompleto.hidden=true
-        
-        // valida email
+    
+    // valida email
         if isValidEmail(Email.text!) == false
         {
             erromail.text = "E-mail inválido"
@@ -113,28 +127,17 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
             return
         }
         erromail.hidden=true
-        
-        // valida dois campos de senha
+    
+    // valida dois campos de senha
         if !(senhasalva == confirmasenha)
         {
-            errosenhas.hidden=false
-            return
+        errosenhas.hidden=false
+        return
         }
-        
-        // verifica se usuario ja existe
-        if (usuarioJaExiste()) {
-            // TODO: avisar o usuario
-            erromail.text = "E-mail já cadastrado!"
-            erromail.hidden = false
-            print("email ja cadastrado!")
-            return
-        }
-        
         realiza_cadastro()
-        
+    
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
     func realiza_cadastro() {
         
         let user = User(name: nome.text!, email: Email.text!, password: senha.text!)
@@ -172,21 +175,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         view.endEditing(true)
         return true
     }
-    
-    func usuarioJaExiste () -> Bool {
-        
-        // let i = base.indiceUsuarioPorEmail(Email.text!)
-        // return i != -1
-        return false
-    }
-    
-    func actOnNotificationErrorRegister() {
-        
-        let alert2=UIAlertController(title:"Erro", message: "Email já cadastrado", preferredStyle: UIAlertControllerStyle.Alert)
-        alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
-        self.presentViewController(alert2,animated: true, completion: nil)
-    }
-    
+
     func nomevalido(nome:String!) ->(Bool)
     {
         let string1 = Array(nome.characters)
