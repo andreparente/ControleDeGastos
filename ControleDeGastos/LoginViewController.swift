@@ -64,6 +64,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         if ((mail.text == nil) || senha.text == nil)
         {
             errocampovazio.hidden=false
+            i=0
             return
         }
         errocampovazio.hidden=true
@@ -73,6 +74,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         {
             erroemail.hidden=false
             errocadastro.hidden = true
+            i=0
             return
         }
         if(i==1)

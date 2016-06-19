@@ -99,48 +99,57 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     
     func actOnNotificationFailCadastro()
     {
-        erromail.text = "E-mail já cadastrado!"
-        erromail.hidden = false
+        dispatch_async(dispatch_get_main_queue(),{
+        self.erromail.text = "E-mail já cadastrado!"
+        self.erromail.hidden = false
         print("email ja cadastrado!")
+        j=0
+        })
 
     }
    func actOnNotificationSuccessCadastro()
    {
-        let name=nome.text
-        let mailsalvo=Email.text
-        let senhasalva=senha.text
-        let confirmasenha=confirmasenha1.text
-        if nomevalido(name) == false{
-            erronome.hidden = false
+     dispatch_async(dispatch_get_main_queue(),{
+        let name=self.nome.text
+        let mailsalvo=self.Email.text
+        let senhasalva=self.senha.text
+        let confirmasenha=self.confirmasenha1.text
+        if self.nomevalido(name) == false{
+            self.erronome.hidden = false
+            j=0
             return
         }
-        erronome.hidden = true
+        self.erronome.hidden = true
         // valida preenchimento dos campos
         if (senhasalva!.isEmpty || mailsalvo!.isEmpty||confirmasenha!.isEmpty||name!.isEmpty)
         {
-            erroincompleto.hidden=false
+            self.erroincompleto.hidden=false
+            j=0
             return
         }
-        erroincompleto.hidden=true
+       self.erroincompleto.hidden=true
     
     // valida email
-        if isValidEmail(Email.text!) == false
+        if isValidEmail(self.Email.text!) == false
         {
-            erromail.text = "E-mail inválido"
-            erromail.hidden=false
+            self.erromail.text = "E-mail inválido"
+            self.erromail.hidden=false
+            j=0
             return
         }
-        erromail.hidden=true
+        self.erromail.hidden=true
     
     // valida dois campos de senha
         if !(senhasalva == confirmasenha)
         {
-        errosenhas.hidden=false
+        self.errosenhas.hidden=false
+        j=0
         return
         }
-        realiza_cadastro()
+        self.realiza_cadastro()
     
-        dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
+    })
     }
     func realiza_cadastro() {
         
