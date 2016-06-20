@@ -42,7 +42,6 @@
 		9C9AFEE71D1052DB00EA551B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFEE61D1052DB00EA551B /* Assets.xcassets */; };
 		9C9AFEEB1D1052DB00EA551B /* WatchGastei.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9C9AFED11D1052DA00EA551B /* WatchGastei.app */; };
 		9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */; };
-		D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */; };
 		E511105C1CB3849D00B9D52D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511105B1CB3849D00B9D52D /* MainTabBarController.swift */; };
 		E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */; };
 		E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */; };
@@ -139,7 +138,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ControleDeGastos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55440201E2595A4545A36F1C /* Pods-ControleDeGastos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.debug.xcconfig"; sourceTree = "<group>"; };
 		56307421CB692CF9FCD566F8 /* Pods-ControleDeGastos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.release.xcconfig"; sourceTree = "<group>"; };
 		8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOCloudKit.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9AFEC81D1051A300EA551B /* Charts.framework in Frameworks */,
-				D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */,
 				8A1756D91CFF63F000CC0535 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,7 +336,6 @@
 			isa = PBXGroup;
 			children = (
 				8A1756D81CFF63F000CC0535 /* CloudKit.framework */,
-				239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */,
 				9C9AFEB91D10516F00EA551B /* Charts.xcodeproj */,
 			);
 			name = Frameworks;
