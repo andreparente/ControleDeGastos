@@ -21,7 +21,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     @IBOutlet weak var botaoCancelar: UIButton!
     @IBOutlet weak var botaoSalvar: UIButton!
     
-    var gastos = [Gasto]()
+
     var categoriaSelecionada : String! // armazena o valor do pickerView categorias
     var categorias = [String]()
     var delegate = HistoricoTabelaViewController()
@@ -44,7 +44,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         }
 
         // inicialmente, o vetor eh o do usuario
-        self.gastos = userLogged.getGastos()
+        gastosGlobal = userLogged.getGastos()
         
         // preenche vetor de categorias e adiciona "Todas"
         self.categorias.append("Todas")
@@ -84,23 +84,23 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         let minVal = (textValorMin.text!).toDouble()!
         let maxVal = (textValorMax.text!).toDouble()!
         if (!minVal.isZero && !maxVal.isZero) {
-            self.gastos = filtraValor( minVal, max: maxVal, gastos: self.gastos )
+            gastosGlobal = filtraValor( minVal, max: maxVal, gastos: gastosGlobal )
         } else if (!minVal.isZero) {
-            self.gastos = filtraValorMin( minVal, gastos: self.gastos )
+            gastosGlobal = filtraValorMin( minVal, gastos: gastosGlobal )
         } else if (!maxVal.isZero) {
-            self.gastos = filtraValorMax( maxVal, gastos: self.gastos )
+            gastosGlobal = filtraValorMax( maxVal, gastos: gastosGlobal)
         }
         
         // filtro de categorias
         if (categoriaSelecionada != "Todas") {
-            self.gastos = filtraCategoria(self.categoriaSelecionada, gastos: self.gastos)
+            gastosGlobal = filtraCategoria(self.categoriaSelecionada, gastos: gastosGlobal)
         }
         
         // filtro de data
-        self.gastos =  filtroData(pickerDataMin.date, fim: pickerDataMax.date, gastos: self.gastos)
+        gastosGlobal =  filtroData(pickerDataMin.date, fim: pickerDataMax.date, gastos: gastosGlobal)
         
         // altera os dados da historicoTabela
-        self.delegate.gastos = self.gastos
+    
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
     }

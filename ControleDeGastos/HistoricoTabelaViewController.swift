@@ -56,7 +56,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     //funçao que diz a quantidade de células
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cellsNumber = userLogged.gastos.count
+        let cellsNumber = gastosGlobal.count
         return (cellsNumber > 0) ? cellsNumber : 1
     }
     
@@ -67,16 +67,16 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             self.tableView.dequeueReusableCellWithIdentifier(
                 "TableViewCell", forIndexPath: indexPath)
                 as! TableViewCell
-        let cellsNumber = userLogged.gastos.count
+        let cellsNumber = gastosGlobal.count
         
         cell.backgroundColor = corAzul
         
         if (cellsNumber > 0) {
             cell.hideInfo(false)
-            cell.labelNomeGasto.text = "\(userLogged.gastos[indexPath.row].name!)"
-            cell.labelCat.text = "\(userLogged.gastos[indexPath.row].category)"
-            cell.labelValor.text = "R$ " + String(userLogged.gastos[indexPath.row].value)
-            cell.labeldata.text = "\(userLogged.gastos[indexPath.row].date)"
+            cell.labelNomeGasto.text = "\(gastosGlobal[indexPath.row].name!)"
+            cell.labelCat.text = "\(gastosGlobal[indexPath.row].category)"
+            cell.labelValor.text = "R$ " + String(gastosGlobal[indexPath.row].value)
+            cell.labeldata.text = "\(gastosGlobal[indexPath.row].date)"
             if (eamarela)
             {
               cell.backgroundColor = corAmarela
@@ -113,7 +113,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         } else if segue.identifier == "HistoricoTabelaToOrdenar" {
             let destino = segue.destinationViewController as! OrdenarViewController
             destino.delegate = self
-            destino.gastos = userLogged.gastos
+            
         }
     }
 }

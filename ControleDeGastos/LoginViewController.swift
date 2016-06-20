@@ -136,6 +136,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         dispatch_async(dispatch_get_main_queue(),{
             self.errosenhas.hidden = false
+            i=0
         })
     }
     
@@ -143,6 +144,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
 
         dispatch_async(dispatch_get_main_queue(),{
             self.errocadastro.hidden = false
+            i=0
         })
         
     }

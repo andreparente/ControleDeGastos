@@ -146,6 +146,7 @@ class MainViewController: UIViewController {
     func actOnNotificationSuccessLoad()
     {
         fazisso()
+        gastosGlobal = userLogged.gastos
     }
      func actOnNotificationErrorLoad()
      {
@@ -155,7 +156,7 @@ class MainViewController: UIViewController {
      }
     
     override func viewWillAppear(animated: Bool) {
-        print("Oi main")
+        gastosGlobal = userLogged.gastos
         if(executar == true)
         {
             valortotal = 0
