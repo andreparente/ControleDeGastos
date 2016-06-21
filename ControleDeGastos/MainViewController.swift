@@ -21,14 +21,12 @@ class MainViewController: UIViewController {
     var available: Double!
     var totalgastos1:Double!
     var valortotal: Double = 0.0
-    var valorTotalMes: Double = 0.0 /*{ didSet {
-        totalDisponivelMes.text = String(valorTotalMes)
-        }
-    }*/
-        override func viewDidLoad() {
+    var valorTotalMes: Double = 0.0
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         act.startAnimating()
-        //view.hidden = true
+        
         gastei.hidden = true
         limite.hidden = true
         totaldisponivel.hidden=true
@@ -38,9 +36,9 @@ class MainViewController: UIViewController {
         let userPlistDic = plist.getData()
         DAOCloudKit().fetchUser(userLogged)
         DAOCloudKit().fetchGastosFromUser(userLogged)
-       // DAOCloudKit().fetchLimitFromUser(userLogged)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
         // Do any additional setup after loading the view.
@@ -62,15 +60,16 @@ class MainViewController: UIViewController {
     func fazisso()
     {
         print(userLogged.getCategorias())
-        print("BAD")
+        
         var gastosmes:[Gasto]!
+        self.valorTotalMes = 0
         dispatch_async(dispatch_get_main_queue()) {
+            
             gastosmes = userLogged.getGastosUltimoMês()
             self.gastei.hidden = false
             self.limite.hidden = false
             self.totaldisponivel.hidden=false
             self.totalgastos.hidden = false
-            // self.totalDisponivelMes.hidden = false
             self.settingsbutton.hidden = false
             self.act.stopAnimating()
             self.view.hidden = false
@@ -80,10 +79,12 @@ class MainViewController: UIViewController {
             let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
             let mesAtual = components.month
             let anoAtual = components.year
+            
             for valor in (gastosmes) {
                 self.valortotal += valor.value
                 
             }
+            
             for valor in (gastosmes) {
                 let data = valor.date.componentsSeparatedByString("-")
                 if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
@@ -135,7 +136,7 @@ class MainViewController: UIViewController {
             }
         }
     }
-
+    
     @IBAction func botaogastar(sender: UIButton) {
         totalgastos1 = valortotal
     }
@@ -146,16 +147,17 @@ class MainViewController: UIViewController {
     func actOnNotificationSuccessLoad()
     {
         fazisso()
+        gastosGlobal = userLogged.gastos
     }
-     func actOnNotificationErrorLoad()
-     {
+    func actOnNotificationErrorLoad()
+    {
         let alert=UIAlertController(title:"Erro", message: "Erro ao dar fetch no user", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alert,animated: true, completion: nil)
-     }
+    }
     
     override func viewWillAppear(animated: Bool) {
-        print("Oi main")
+        gastosGlobal = userLogged.gastos
         if(executar == true)
         {
             valortotal = 0
@@ -229,17 +231,5 @@ class MainViewController: UIViewController {
             }
         }
     }
-
-    
-    
 }
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
 

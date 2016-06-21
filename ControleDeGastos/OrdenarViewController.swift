@@ -9,7 +9,7 @@
 import UIKit
 
 class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource {
-
+    
     var delegate = HistoricoTabelaViewController()
     var decrescente = false
     
@@ -21,7 +21,7 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
     
     var ordenacoes = [String]()
     var ordenacaoEscolhida = String()
-    var gastos = [Gasto]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,12 +87,12 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
     
     @IBAction func apertouBotaoSalvar(sender: AnyObject) {
         let quickSorter = QuickSorterGasto()
-        quickSorter.v = self.gastos
+        quickSorter.v = gastosGlobal
         quickSorter.callQuickSort(self.ordenacaoEscolhida, decrescente: self.decrescente)
-        self.gastos = quickSorter.v
+        gastosGlobal = quickSorter.v
         
         // altera os dados da historicoTabela
-        self.delegate.gastos = self.gastos
+        
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
     }

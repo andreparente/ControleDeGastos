@@ -110,8 +110,8 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         for gasto in userLogged.getGastosMes(month, ano: year){
             total = total + gasto.value
         }
-
+        
         grafico.totalLabel.text = "Total desse mês: R$" + String(total)
     }
-
+    
 }

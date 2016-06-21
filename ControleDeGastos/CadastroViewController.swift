@@ -40,14 +40,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         confirmasenha1.delegate=self
         confirmasenha1.secureTextEntry=true
         confirmasenha1.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)
-        erroincompleto.hidden=true
-        erroincompleto.text="Todos os dados são obrigatórios"
-        erromail.hidden=true
-        erromail.text="E-mail inválido"
-        errosenhas.hidden=true
-        errosenhas.text="Senhas não são iguais"
-        erronome.text = "O nome é composto por um nome e sobrenome!"
-        erronome.hidden = true
+        
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -74,7 +67,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CadastroViewController.actOnNotificationFailCadastro), name: "notificationFailCadastro", object: nil)
-          NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CadastroViewController.actOnNotificationSuccessCadastro), name: "notificationSuccessCadastro", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CadastroViewController.actOnNotificationSuccessCadastro), name: "notificationSuccessCadastro", object: nil)
         
     }
     
@@ -93,63 +86,74 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         j+=1
         if j==1
         {
-        DAOCloudKit().fetchUserOnlyMail(Email.text!)
+            let name=self.nome.text
+            let mailsalvo=self.Email.text
+            let senhasalva=self.senha.text
+            let confirmasenha=self.confirmasenha1.text
+            
+            // valida preenchimento dos campos
+            if (senhasalva!.isEmpty || mailsalvo!.isEmpty||confirmasenha!.isEmpty||name!.isEmpty)
+            {
+                let alert=UIAlertController(title:"Erro", message: "Preencha todos os campos", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alert,animated: true, completion: nil)
+                j=0
+                return
+            }
+            
+            if self.nomevalido(name) == false{
+                let alert=UIAlertController(title:"Erro", message: "Nome Errado", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alert,animated: true, completion: nil)
+                j=0
+                return
+            }
+            
+            self.erroincompleto.hidden=true
+            
+            // valida email
+            if isValidEmail(self.Email.text!) == false
+            {
+                let alert=UIAlertController(title:"Erro", message: "E-mail Inválido", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alert,animated: true, completion: nil)
+                j=0
+                return
+            }
+            self.erromail.hidden=true
+            
+            // valida dois campos de senha
+            if !(senhasalva == confirmasenha)
+            {
+                let alert=UIAlertController(title:"Erro", message: "As senhas precisam ser iguais", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alert,animated: true, completion: nil)
+                j=0
+                return
+            }
+            
+            DAOCloudKit().fetchUserOnlyMail(Email.text!)
         }
     }
     
     func actOnNotificationFailCadastro()
     {
         dispatch_async(dispatch_get_main_queue(),{
-        self.erromail.text = "E-mail já cadastrado!"
-        self.erromail.hidden = false
-        print("email ja cadastrado!")
-        j=0
+            let alert=UIAlertController(title:"Erro", message: "E-mail já cadastrado!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alert,animated: true, completion: nil)
+            j=0
         })
-
+        
     }
-   func actOnNotificationSuccessCadastro()
-   {
-     dispatch_async(dispatch_get_main_queue(),{
-        let name=self.nome.text
-        let mailsalvo=self.Email.text
-        let senhasalva=self.senha.text
-        let confirmasenha=self.confirmasenha1.text
-        if self.nomevalido(name) == false{
-            self.erronome.hidden = false
-            j=0
-            return
-        }
-        self.erronome.hidden = true
-        // valida preenchimento dos campos
-        if (senhasalva!.isEmpty || mailsalvo!.isEmpty||confirmasenha!.isEmpty||name!.isEmpty)
-        {
-            self.erroincompleto.hidden=false
-            j=0
-            return
-        }
-       self.erroincompleto.hidden=true
-    
-    // valida email
-        if isValidEmail(self.Email.text!) == false
-        {
-            self.erromail.text = "E-mail inválido"
-            self.erromail.hidden=false
-            j=0
-            return
-        }
-        self.erromail.hidden=true
-    
-    // valida dois campos de senha
-        if !(senhasalva == confirmasenha)
-        {
-        self.errosenhas.hidden=false
-        j=0
-        return
-        }
-        self.realiza_cadastro()
-    
-        self.dismissViewControllerAnimated(true, completion: nil)
-    })
+    func actOnNotificationSuccessCadastro()
+    {
+        dispatch_async(dispatch_get_main_queue(),{
+            
+            self.realiza_cadastro()
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
     }
     func realiza_cadastro() {
         
@@ -159,23 +163,6 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         DAOCloudKit().saveUser(user)
         
         
-        /*   // adiciona categorias padrao
-         usuario.addCategoriaGasto("Outros")
-         usuario.addCategoriaGasto("Alimentação")
-         usuario.addCategoriaGasto("Transporte")
-         
-         // adiciona usuario na lista de usuarios da RAM
-         base.ramUsuarios.append(usuario)
-         
-         // adiciona usuario na lista de usuarios do disco
-         base.adicionarUsuario(usuario)
-         
-         // adiciona o usuario na entrada ultimoUsuario da base
-         base.salvarUltimoUsuario(usuario)
-         
-         // configura o usuarioLogado para ser o de agora
-         base.usuarioLogado = usuario
-         */
     }
     
     func dismissKeyboard() {
@@ -188,7 +175,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         view.endEditing(true)
         return true
     }
-
+    
     func nomevalido(nome:String!) ->(Bool)
     {
         let string1 = Array(nome.characters)

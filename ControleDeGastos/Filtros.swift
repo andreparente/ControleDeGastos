@@ -89,7 +89,7 @@ public func filtroData(inicio:NSDate, fim:NSDate, gastos:[Gasto]) ->([Gasto])
     let fim_ = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: fim, options: NSCalendarOptions())!
     
     dateFormatter.dateFormat = "yyyy-MM-dd"
-    for var i in 0..<gastos.count {
+    for i in 0..<gastos.count {
         let dataGasto = dateFormatter.dateFromString(gastos[i].date)!
         //print (dataGasto, " --- ", fim, " --- ", inicio)
         if ( (comparadata(inicio_, date2: dataGasto) == -1

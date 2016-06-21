@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		771E21661D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */; };
 		771E21671D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */; };
 		771E21681D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */; };
+		8A0921C11D19730F0090FBF8 /* User.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A0921C01D19730F0090FBF8 /* User.plist */; };
 		8A1756D61CFF63D500CC0535 /* DAOCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */; };
 		8A1756D91CFF63F000CC0535 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1756D81CFF63F000CC0535 /* CloudKit.framework */; };
 		8A1756DB1CFF65BE00CC0535 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756DA1CFF65BE00CC0535 /* User.swift */; };
-		8A1756DD1CFF764100CC0535 /* User.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A1756DC1CFF764100CC0535 /* User.plist */; };
 		8A1756DF1CFF766C00CC0535 /* SimplePList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756DE1CFF766C00CC0535 /* SimplePList.swift */; };
 		8A1756E11D005BDF00CC0535 /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756E01D005BDF00CC0535 /* Gasto.swift */; };
 		8A1AFCFF1CAACC7400382D1B /* GastoManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3CB1CA2CCDF00E63645 /* GastoManualViewController.swift */; };
@@ -24,13 +25,11 @@
 		8A54D3CE1CA2CCFC00E63645 /* GraficoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */; };
 		8A54D3D01CA2CF7200E63645 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */; };
 		8A54D3D21CA2CFD100E63645 /* HistoricoTabelaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */; };
-		8A54D3D41CA2CFFA00E63645 /* CadastroCartaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3D31CA2CFFA00E63645 /* CadastroCartaoViewController.swift */; };
 		8A54D3D61CA3157A00E63645 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3D51CA3157A00E63645 /* Classes.swift */; };
 		8A71E0171C9C2F6B00C055F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */; };
 		8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01A1C9C2F6B00C055F8 /* Main.storyboard */; };
 		8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */; };
 		8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01F1C9C2F6B00C055F8 /* LaunchScreen.storyboard */; };
-		8AB2ABE81D1392A50050AD85 /* teste.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB2ABE71D1392A50050AD85 /* teste.plist */; };
 		9C047D721CB2A1D40099A13C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C047D711CB2A1D40099A13C /* extensions.swift */; };
 		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
@@ -45,7 +44,6 @@
 		9C9AFEE71D1052DB00EA551B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFEE61D1052DB00EA551B /* Assets.xcassets */; };
 		9C9AFEEB1D1052DB00EA551B /* WatchGastei.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9C9AFED11D1052DA00EA551B /* WatchGastei.app */; };
 		9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */; };
-		D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */; };
 		E511105C1CB3849D00B9D52D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511105B1CB3849D00B9D52D /* MainTabBarController.swift */; };
 		E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */; };
 		E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */; };
@@ -142,15 +140,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ControleDeGastos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55440201E2595A4545A36F1C /* Pods-ControleDeGastos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.debug.xcconfig"; sourceTree = "<group>"; };
 		56307421CB692CF9FCD566F8 /* Pods-ControleDeGastos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.release.xcconfig"; sourceTree = "<group>"; };
 		771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiBMaruGothic.ttc; path = ../../../../../Library/Fonts/TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
+		8A0921C01D19730F0090FBF8 /* User.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = User.plist; path = ../../../../.Trash/User.plist; sourceTree = "<group>"; };
 		8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOCloudKit.swift; sourceTree = "<group>"; };
 		8A1756D71CFF63EA00CC0535 /* ControleDeGastos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ControleDeGastos.entitlements; sourceTree = "<group>"; };
 		8A1756D81CFF63F000CC0535 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		8A1756DA1CFF65BE00CC0535 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		8A1756DC1CFF764100CC0535 /* User.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = User.plist; sourceTree = "<group>"; };
 		8A1756DE1CFF766C00CC0535 /* SimplePList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePList.swift; sourceTree = "<group>"; };
 		8A1756E01D005BDF00CC0535 /* Gasto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gasto.swift; sourceTree = "<group>"; };
 		8A1AFD261CB07DF000382D1B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -161,7 +158,6 @@
 		8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraficoViewController.swift; sourceTree = "<group>"; };
 		8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricoTabelaViewController.swift; sourceTree = "<group>"; };
-		8A54D3D31CA2CFFA00E63645 /* CadastroCartaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroCartaoViewController.swift; sourceTree = "<group>"; };
 		8A54D3D51CA3157A00E63645 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		8A71E0131C9C2F6B00C055F8 /* ControleDeGastos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControleDeGastos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +165,6 @@
 		8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A71E0201C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A71E0221C9C2F6B00C055F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8AB2ABE71D1392A50050AD85 /* teste.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = teste.plist; path = ../teste.plist; sourceTree = "<group>"; };
 		9C047D711CB2A1D40099A13C /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -198,7 +193,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9AFEC81D1051A300EA551B /* Charts.framework in Frameworks */,
-				D38974BF58473BCC3881A340 /* Pods_ControleDeGastos.framework in Frameworks */,
 				8A1756D91CFF63F000CC0535 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,7 +242,6 @@
 				8A54D3CB1CA2CCDF00E63645 /* GastoManualViewController.swift */,
 				8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */,
 				8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */,
-				8A54D3D31CA2CFFA00E63645 /* CadastroCartaoViewController.swift */,
 				8A1AFD261CB07DF000382D1B /* TableViewCell.swift */,
 				8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */,
 				E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */,
@@ -301,9 +294,8 @@
 				8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */,
 				8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */,
 				771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */,
+				8A0921C01D19730F0090FBF8 /* User.plist */,
 				8A71E0221C9C2F6B00C055F8 /* Info.plist */,
-				8AB2ABE71D1392A50050AD85 /* teste.plist */,
-				8A1756DC1CFF764100CC0535 /* User.plist */,
 			);
 			path = ControleDeGastos;
 			sourceTree = "<group>";
@@ -344,7 +336,6 @@
 			isa = PBXGroup;
 			children = (
 				8A1756D81CFF63F000CC0535 /* CloudKit.framework */,
-				239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */,
 				9C9AFEB91D10516F00EA551B /* Charts.xcodeproj */,
 			);
 			name = Frameworks;
@@ -423,7 +414,7 @@
 				TargetAttributes = {
 					8A71E0121C9C2F6B00C055F8 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = XBEPC2JPC9;
+						DevelopmentTeam = C5676RKFWG;
 						SystemCapabilities = {
 							com.apple.iCloud = {
 								enabled = 1;
@@ -432,7 +423,7 @@
 					};
 					9C9AFED01D1052DA00EA551B = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = XBEPC2JPC9;
+						DevelopmentTeam = C5676RKFWG;
 					};
 					9C9AFEDC1D1052DB00EA551B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -502,11 +493,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */,
+				8A0921C11D19730F0090FBF8 /* User.plist in Resources */,
 				8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */,
-				8AB2ABE81D1392A50050AD85 /* teste.plist in Resources */,
 				771E21661D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */,
 				8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */,
-				8A1756DD1CFF764100CC0535 /* User.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +597,6 @@
 				8A54D3D21CA2CFD100E63645 /* HistoricoTabelaViewController.swift in Sources */,
 				8A54D3D01CA2CF7200E63645 /* SettingsViewController.swift in Sources */,
 				8A54D3D61CA3157A00E63645 /* Classes.swift in Sources */,
-				8A54D3D41CA2CFFA00E63645 /* CadastroCartaoViewController.swift in Sources */,
 				8A1756D61CFF63D500CC0535 /* DAOCloudKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -795,11 +784,13 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchGastei_Extension;
 				INFOPLIST_FILE = WatchGastei/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -814,11 +805,13 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchGastei_Extension;
 				INFOPLIST_FILE = WatchGastei/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;

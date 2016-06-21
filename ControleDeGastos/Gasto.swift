@@ -10,7 +10,7 @@ import Foundation
 import CloudKit
 
 public var arrayGastoRecords: Array<CKRecord> = []
-
+public var gastosGlobal: [Gasto] = []
 
 public class Gasto {
     var name : String?

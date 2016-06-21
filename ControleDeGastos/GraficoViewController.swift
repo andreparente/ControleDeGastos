@@ -29,7 +29,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     var vetorGastosMes: [Gasto] = []
     var vetorFinalCatMes: [String] = []
     var vetorFinalGastosMes: [Double] = []
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,21 +43,21 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         {
             view.backgroundColor = corVermelha
         }
-
+        
         dataMesTextField.delegate = self
         pickermesano.hidden = true
         dataMesTextField.inputView = pickermesano
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-
+        
         
         calendar.components([.Year , .Month], fromDate: dataNs)
         chartView.delegate = self
         chartView.backgroundColor = corVerde
-
+        
     }
     
     //Funcao para organizar o grafico
-   func organizaVetores(usuario: User) -> ([Double],[String]) {
+    func organizaVetores(usuario: User) -> ([Double],[String]) {
         
         var vetValAux = [Double?](count: userLogged.categories.count,repeatedValue: nil)
         var vetValAux2: [Double] = []
@@ -65,9 +65,9 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         for i in 0..<userLogged.categories.count  {
             vetValAux[i] = 0
         }
-    
-    print( " VETOR QUANTIDADE DE CATEGORIAS E VALORES ZERADOS: ", vetValAux)
-    
+        
+        print( " VETOR QUANTIDADE DE CATEGORIAS E VALORES ZERADOS: ", vetValAux)
+        
         for i in 0..<userLogged.categories.count {
             
             for gasto in usuario.gastos {
@@ -90,10 +90,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
                 vetValAux2.append(vetValAux[i]!)
             }
         }
-    
+        
         return (vetValAux2,vetCatAux)
     }
-
+    
     func existeCategoria(vetor: [String],categoria: String) -> Bool {
         
         for auxVet in vetor {
@@ -105,23 +105,23 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     }
     
     func organizaVetoresMes(usuario: User, gastosMes: [Gasto]) -> ([Double],[String]) {
-
-
-
+        
+        
+        
         var vetCatAux: [String] = []
         var vetValAux: [Double] = []
         for i in 0..<gastosMes.count {
-
+            
             for categorias in userLogged.getCategorias()  {
                 if(gastosMes[i].category == categorias) {
                     if(!existeCategoria(vetCatAux, categoria: categorias)) {
-                    vetCatAux.append(categorias)
-                    vetValAux.append(0)
+                        vetCatAux.append(categorias)
+                        vetValAux.append(0)
                     }
                 }
             }
         }
-
+        
         for i in 0..<vetCatAux.count {
             for valGasto in gastosMes {
                 if(valGasto.category == vetCatAux[i]) {
@@ -131,10 +131,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
         
         return (vetValAux,vetCatAux)
-
-
+        
+        
     }
-
+    
     //FUNCAO QUE PRINTA LIMITE
     func printaLimite(usuario: User) {
         if(usuario.limiteMes == 0) {
@@ -161,7 +161,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
         }
-
+        
         //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         
@@ -170,7 +170,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
         chartView.data = chartData
     }
-   
+    
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         print("\(entry.value) in \(userLogged.categories[entry.xIndex])")
@@ -200,9 +200,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             
         }
         else {
-             var year = NSCalendar(identifier: NSCalendarIdentifierGregorian)!.component(.Year, fromDate: NSDate())
+            
+            let year = NSCalendar(identifier: NSCalendarIdentifierGregorian)!.component(.Year, fromDate: NSDate())
             let month = NSCalendar(identifier: NSCalendarIdentifierGregorian)!.component(.Month, fromDate: NSDate())
-
+            
             for gasto in userLogged.getGastosMes(month, ano: year){
                 total = total + gasto.value
             }

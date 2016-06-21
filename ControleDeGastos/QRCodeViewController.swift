@@ -91,7 +91,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 let datefromstring = dateFormatter.dateFromString(self.delegate.dataQR)
                 self.delegate.datePicker.date = datefromstring!
-    
+                
                 self.delegate.valor.text=String(self.delegate.valortotal)
                 dismissViewControllerAnimated(true, completion: nil)
                 
