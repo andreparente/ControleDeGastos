@@ -26,7 +26,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         act.startAnimating()
-        
+        valortotal = 0
+        valorTotalMes = 0
         gastei.hidden = true
         limite.hidden = true
         totaldisponivel.hidden=true
@@ -60,9 +61,11 @@ class MainViewController: UIViewController {
     func fazisso()
     {
         print(userLogged.getCategorias())
-        
+        executar = false
         var gastosmes:[Gasto]!
+        gastosGlobal = userLogged.gastos
         self.valorTotalMes = 0
+        self.valortotal = 0
         dispatch_async(dispatch_get_main_queue()) {
             
             gastosmes = userLogged.getGastosUltimoMês()
@@ -139,6 +142,8 @@ class MainViewController: UIViewController {
     
     @IBAction func botaogastar(sender: UIButton) {
         totalgastos1 = valortotal
+        print(valortotal)
+        print(totalgastos1)
     }
     
     @IBAction func botaosettings(sender: UIButton) {
@@ -160,76 +165,7 @@ class MainViewController: UIViewController {
         gastosGlobal = userLogged.gastos
         if(executar == true)
         {
-            valortotal = 0
-            valorTotalMes = 0
-            self.gastei.hidden = false
-            self.limite.hidden = false
-            self.totaldisponivel.hidden=false
-            self.totalgastos.hidden = false
-            // self.totalDisponivelMes.hidden = false
-            self.settingsbutton.hidden = false
-            self.act.stopAnimating()
-            self.view.hidden = false
-            self.view.backgroundColor = corAzul
-            self.printaLimite(userLogged)
-            let hoje = NSDate()
-            let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
-            let mesAtual = components.month
-            let anoAtual = components.year
-            for valor in (userLogged.gastos) {
-                self.valortotal += valor.value
-                
-            }
-            for valor in (userLogged.gastos) {
-                let data = valor.date.componentsSeparatedByString("-")
-                if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
-                    self.valorTotalMes += valor.value
-                }
-            }
-            
-            self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
-            self.totaldisponivel.numberOfLines = 2
-            
-            if(userLogged.limiteMes != 0)
-            {
-                self.available = userLogged.limiteMes - self.valorTotalMes
-                if(self.available > 0  && self.available > (0.2 * userLogged.limiteMes) )
-                {
-                    self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
-                    eamarela = false
-                    evermelha = false
-                }
-                else
-                {
-                    if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
-                    {
-                        self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês"
-                        eamarela = true
-                        evermelha = false
-                    }
-                    else
-                    {
-                        self.totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(self.valorTotalMes - userLogged.limiteMes)"
-                        eamarela = false
-                        evermelha = true
-                    }
-                }
-                if (eamarela)
-                {
-                    self.view.backgroundColor = corAmarela
-                }
-                if (evermelha)
-                {
-                    self.view.backgroundColor = corVermelha
-                }
-                
-                self.totaldisponivel.hidden=false
-            }
-            else
-            {
-                self.totaldisponivel.hidden=true
-            }
+            fazisso()
         }
-    }
 }
-
+}
