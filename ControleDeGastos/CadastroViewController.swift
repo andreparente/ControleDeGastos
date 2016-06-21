@@ -109,7 +109,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
                 return
             }
             
-            self.erroincompleto.hidden=true
+            //self.erroincompleto.hidden=true
             
             // valida email
             if isValidEmail(self.Email.text!) == false
@@ -120,7 +120,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
                 j=0
                 return
             }
-            self.erromail.hidden=true
+            //self.erromail.hidden=true
             
             // valida dois campos de senha
             if !(senhasalva == confirmasenha)

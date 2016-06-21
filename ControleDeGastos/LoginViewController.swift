@@ -62,7 +62,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             i=0
             return
         }
-        errocampovazio.hidden=true
+        //errocampovazio.hidden=true
         
         // email no formato valido
         if isValidEmail(mail.text!) == false
