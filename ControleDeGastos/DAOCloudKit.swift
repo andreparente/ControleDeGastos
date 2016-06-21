@@ -14,7 +14,7 @@ class DAOCloudKit {
     
     func cloudAvailable()->(Bool)
     {
-        if let token = NSFileManager.defaultManager().ubiquityIdentityToken{
+        if NSFileManager.defaultManager().ubiquityIdentityToken != nil{
             return true
         }
         else{
@@ -27,9 +27,9 @@ class DAOCloudKit {
         let recordId = CKRecordID(recordName: user.email)
         let record = CKRecord(recordType: "User", recordID: recordId)
         let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
         
-        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+        privateDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
             
             if error == nil {
                 
@@ -51,7 +51,7 @@ class DAOCloudKit {
                     record.setObject(user.categories, forKey: "categories")
                     
                     
-                    publicDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
+                    privateDatabase.saveRecord(record, completionHandler: { (record, error) -> Void in
                         if (error != nil) {
                             print(error)
                         }
@@ -65,9 +65,9 @@ class DAOCloudKit {
         
         let recordId = CKRecordID(recordName: user.email)
         let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
         
-        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+        privateDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
             
             print(fetchedRecord)
             
@@ -76,7 +76,7 @@ class DAOCloudKit {
                 print("Already exists user!!")
                 fetchedRecord!.setObject(user.categories, forKey: "categories")
                 
-                publicDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
+                privateDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
                     if (error != nil) {
                         print(error)
                     }
@@ -99,9 +99,9 @@ class DAOCloudKit {
         
         let recordId = CKRecordID(recordName: user.email)
         let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
         
-        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+        privateDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
             
             print(fetchedRecord)
             
@@ -110,7 +110,7 @@ class DAOCloudKit {
                 print("Already exists user!!")
                 fetchedRecord!.setObject(user.categories, forKey: "categories")
                 
-                publicDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
+                privateDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
                     if (error != nil) {
                         print(error)
                     }
@@ -141,7 +141,7 @@ class DAOCloudKit {
         myRecord.setObject(gasto.date, forKey: "data")
         myRecord.setObject(gasto.category, forKey: "category")
         myRecord.setObject(gasto.value, forKey: "value")
-        let gastoReference = CKReference(recordID: myRecord.recordID, action: .DeleteSelf)
+        let gastoReference = CKReference(recordID: myRecord.recordID, action: .None)
         
         print("---------------------- Referencia do gasto: ", gastoReference)
         user.arrayGastos.append(gastoReference)
@@ -149,7 +149,7 @@ class DAOCloudKit {
         
         publicDatabase.saveRecord(myRecord, completionHandler:
             ({returnRecord, error in
-                if let err = error {
+                if error != nil {
                     print(error)
                     //  NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveError", object: nil)
                     
@@ -162,7 +162,7 @@ class DAOCloudKit {
             }))
         
         
-        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+        container.privateCloudDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
             
             print(fetchedRecord)
             
@@ -172,7 +172,7 @@ class DAOCloudKit {
                 print("---------------------- Referencia dos gastos: ", user.arrayGastos)
                 fetchedRecord!.setObject(user.arrayGastos, forKey: "gastos")
                 
-                publicDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
+                container.privateCloudDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
                     if (error != nil) {
                         print(error)
                     }
@@ -198,13 +198,13 @@ class DAOCloudKit {
     func fetchUser(user: User) {
         
         let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
         let predicate = NSPredicate(value: true)
         
         let query = CKQuery(recordType: "User", predicate: predicate)
         print("passou pela criacao da query")
         
-        publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
+        privateDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
             if error != nil {
                 print(error)
             }
@@ -237,13 +237,13 @@ class DAOCloudKit {
     func fetchUserByEmail(email: String!,password: String!) {
         
         let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
         let predicate = NSPredicate(value: true)
         print(email);print(password)
         let query = CKQuery(recordType: "User", predicate: predicate)
         print("passou pela criacao da query")
         
-        publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
+        privateDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
             if error != nil {
                 print(error)
             }
@@ -281,11 +281,11 @@ class DAOCloudKit {
     func fetchUserOnlyMail(email: String!) {
         
         let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "User", predicate: predicate)
-        print("passou pela criacao da query")
-        publicDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
+        
+        privateDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
             if error != nil {
                 print(error)
             }
@@ -304,21 +304,21 @@ class DAOCloudKit {
                 }
         
     }
+    
     func changeLimit(user: User) {
         
         let recordId = CKRecordID(recordName: user.email)
-        let record = CKRecord(recordType: "User", recordID: recordId)
         let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
         
-        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+        privateDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
             
             if error == nil {
                 
                 print("MUDANDO O LIMITE POR MES DE UM USUARIO EXISTENTE")
                 fetchedRecord!.setObject(userLogged.limiteMes, forKey: "monthLimit")
                 
-                publicDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
+                privateDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
                     if (error != nil) {
                         print(error)
                         let alert=UIAlertController(title:"Erro", message: "Nāo foi possivel alterar seu  limite", preferredStyle: UIAlertControllerStyle.Alert)
@@ -340,19 +340,19 @@ class DAOCloudKit {
         
         let recordId = CKRecordID(recordName: user.email)
         let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
         
         
         var gastosRecordIds = [CKRecordID]()
         
-        publicDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+        privateDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
             
             // print(fetchedRecord)
             
             if error == nil {
                 print(fetchedRecord!.objectForKey("gastos"))
                 if let teste = fetchedRecord!.objectForKey("gastos") {
-                    print("quantidade de gastos registrados: ", (fetchedRecord!.objectForKey("gastos") as! [CKRecordValue]).count)
+                    print("quantidade de gastos registrados: ", (teste as! [CKRecordValue]).count)
                     
                     print(fetchedRecord?.objectForKey("monthLimit"))
                     

@@ -1330,52 +1330,6 @@
             </objects>
             <point key="canvasLocation" x="2642.25" y="-736.875"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="6Ve-c5-r81">
-            <objects>
-                <viewController id="aoQ-zB-Xty" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="T5N-hR-ZKW"/>
-                        <viewControllerLayoutGuide type="bottom" id="C5Q-59-1V6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="N4M-Yu-dKT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahv-8T-tox">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" backgroundImage="andre"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="177" y="20" width="46" height="46"/>
-                                </variation>
-                            </button>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gi-Xn-zxv">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                </variation>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="ahv-8T-tox"/>
-                                <exclude reference="7gi-Xn-zxv"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="ahv-8T-tox"/>
-                                <include reference="7gi-Xn-zxv"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QPS-dD-dNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3321.75" y="-736.875"/>
-        </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="4x5-HQ-jd8">
             <objects>
@@ -1452,7 +1406,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="andre" width="46" height="46"/>
         <image name="ic_settings_48px-128" width="128" height="128"/>
         <image name="icone home" width="55" height="52"/>
         <image name="money" width="208" height="67"/>

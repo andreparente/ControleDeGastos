@@ -28,7 +28,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bundle = NSBundle.mainBundle().pathForResource("User", ofType: "plist")
+        _ = NSBundle.mainBundle().pathForResource("User", ofType: "plist")
         
         //view.backgroundColor = corAzul
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)

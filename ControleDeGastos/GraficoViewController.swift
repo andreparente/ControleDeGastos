@@ -200,7 +200,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             
         }
         else {
-             var year = NSCalendar(identifier: NSCalendarIdentifierGregorian)!.component(.Year, fromDate: NSDate())
+            
+            let year = NSCalendar(identifier: NSCalendarIdentifierGregorian)!.component(.Year, fromDate: NSDate())
             let month = NSCalendar(identifier: NSCalendarIdentifierGregorian)!.component(.Month, fromDate: NSDate())
 
             for gasto in userLogged.getGastosMes(month, ano: year){
