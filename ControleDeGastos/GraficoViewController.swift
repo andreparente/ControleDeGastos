@@ -52,7 +52,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         
         calendar.components([.Year , .Month], fromDate: dataNs)
         chartView.delegate = self
-        chartView.backgroundColor = corVerde
+        chartView.backgroundColor = UIColor(white: 1, alpha: 0)
         
     }
     

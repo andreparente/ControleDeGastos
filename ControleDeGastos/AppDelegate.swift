@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        //base.carregarBaseDeDados()
         return true
     }
     func applicationWillResignActive(application: UIApplication) {
@@ -39,9 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-       // base.logout()
-        //self.saveContext()
-        //print("rodei a funcao final do app")
     }
 }
 

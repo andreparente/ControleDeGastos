@@ -98,7 +98,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         if segue.identifier == "LoginToMain" {
             
             let vc = segue.destinationViewController as! UITabBarController
-            vc.selectedIndex = 1
+            vc.selectedIndex = 0
         }
     }
     

@@ -198,10 +198,10 @@
                                 <exclude reference="37e-cL-knd"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="544-7s-47i"/>
-                                <exclude reference="sjl-N3-yEi"/>
                                 <exclude reference="GSL-w2-34z"/>
                                 <exclude reference="XCe-fC-Q6y"/>
+                                <exclude reference="544-7s-47i"/>
+                                <exclude reference="sjl-N3-yEi"/>
                                 <exclude reference="KKB-2J-YXW"/>
                                 <exclude reference="5x9-fb-YTk"/>
                                 <exclude reference="K2C-hl-TeB"/>
@@ -220,10 +220,10 @@
                                 <include reference="37e-cL-knd"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="544-7s-47i"/>
-                                <include reference="sjl-N3-yEi"/>
                                 <include reference="GSL-w2-34z"/>
                                 <include reference="XCe-fC-Q6y"/>
+                                <include reference="544-7s-47i"/>
+                                <include reference="sjl-N3-yEi"/>
                                 <include reference="KKB-2J-YXW"/>
                                 <include reference="5x9-fb-YTk"/>
                                 <include reference="K2C-hl-TeB"/>
@@ -469,7 +469,7 @@ novo gasto!</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gastos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6Q-gB-xgX">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="21" y="79" width="66" height="21"/>
@@ -478,7 +478,7 @@ novo gasto!</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaC-Uy-aaU">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="21" y="270" width="66" height="21"/>
@@ -1463,6 +1463,6 @@ novo gasto!</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JPP-2I-nDT"/>
-        <segue reference="NL6-cS-gUU"/>
+        <segue reference="16U-4i-2bc"/>
     </inferredMetricsTieBreakers>
 </document>

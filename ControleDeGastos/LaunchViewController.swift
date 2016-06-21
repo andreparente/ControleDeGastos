@@ -32,6 +32,7 @@ class LaunchViewController: UIViewController {
                     dispatch_async(dispatch_get_main_queue(),{
                         var dict = plist.getData()
                         userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
+                        print("passou pelo segue launchToMain")
                         self.performSegueWithIdentifier("LaunchToMain", sender: self)
                         
                     })
@@ -39,7 +40,7 @@ class LaunchViewController: UIViewController {
                 else {
                     
                     dispatch_async(dispatch_get_main_queue(),{
-                        
+                        print("passou pelo segue launchToLogin")
                         self.performSegueWithIdentifier("LaunchToLogin", sender: self)
                     })
                 }
@@ -58,6 +59,7 @@ class LaunchViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue(),{
                     var dict = plist.getData()
                     userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
+                    print("passou pelo segue launchToMain")
                     self.performSegueWithIdentifier("LaunchToMain", sender: self)
                     
                 })
@@ -65,7 +67,7 @@ class LaunchViewController: UIViewController {
             else {
                 
                 dispatch_async(dispatch_get_main_queue(),{
-                    
+                    print("passou pelo segue launchToLogin")
                     self.performSegueWithIdentifier("LaunchToLogin", sender: self)
                 })
             }
@@ -82,7 +84,7 @@ class LaunchViewController: UIViewController {
         if segue.identifier == "LaunchToMain" {
             
             let vc = segue.destinationViewController as! UITabBarController
-            vc.selectedIndex = 1
+            vc.selectedIndex = 0
         }
     }
 }

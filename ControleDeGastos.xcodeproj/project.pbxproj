@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		771E22411D19BB4700D83A36 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E22401D19BB4700D83A36 /* TsukushiBMaruGothic.ttc */; };
 		8A1756D61CFF63D500CC0535 /* DAOCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */; };
 		8A1756D91CFF63F000CC0535 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1756D81CFF63F000CC0535 /* CloudKit.framework */; };
 		8A1756DB1CFF65BE00CC0535 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756DA1CFF65BE00CC0535 /* User.swift */; };
@@ -139,7 +138,7 @@
 /* Begin PBXFileReference section */
 		55440201E2595A4545A36F1C /* Pods-ControleDeGastos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.debug.xcconfig"; sourceTree = "<group>"; };
 		56307421CB692CF9FCD566F8 /* Pods-ControleDeGastos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.release.xcconfig"; sourceTree = "<group>"; };
-		771E22401D19BB4700D83A36 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiBMaruGothic.ttc; path = ../../../../../Library/Fonts/TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
+		8A0CE1BB1D19CBB30055EBBB /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiBMaruGothic.ttc; path = ../../../../Downloads/TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
 		8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOCloudKit.swift; sourceTree = "<group>"; };
 		8A1756D71CFF63EA00CC0535 /* ControleDeGastos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ControleDeGastos.entitlements; sourceTree = "<group>"; };
 		8A1756D81CFF63F000CC0535 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -290,7 +289,7 @@
 				8A54D3BF1CA2CAF200E63645 /* Model */,
 				8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */,
 				8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */,
-				771E22401D19BB4700D83A36 /* TsukushiBMaruGothic.ttc */,
+				8A0CE1BB1D19CBB30055EBBB /* TsukushiBMaruGothic.ttc */,
 				9CA712781D1990070074E21C /* User.plist */,
 				8A71E0221C9C2F6B00C055F8 /* Info.plist */,
 			);
@@ -489,7 +488,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				771E22411D19BB4700D83A36 /* TsukushiBMaruGothic.ttc in Resources */,
 				8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */,
 				8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */,
 				9CA712791D1990070074E21C /* User.plist in Resources */,
