@@ -92,13 +92,13 @@ class MainViewController: UIViewController {
                 }
             }
             
-            self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valortotal)"
+            self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
             self.totaldisponivel.numberOfLines = 2
             
             if(userLogged.limiteMes != 0)
             {
                 self.available = userLogged.limiteMes - self.valorTotalMes
-                if(self.available >= 100 && self.available > (0.2 * userLogged.limiteMes) )
+                if(self.available >  0 && self.available > (0.2 * userLogged.limiteMes) )
                 {
                     self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
                     eamarela = false
@@ -193,7 +193,7 @@ class MainViewController: UIViewController {
             if(userLogged.limiteMes != 0)
             {
                 self.available = userLogged.limiteMes - self.valorTotalMes
-                if(self.available >= 100 && self.available > (0.2 * userLogged.limiteMes) )
+                if(self.available > 0  && self.available > (0.2 * userLogged.limiteMes) )
                 {
                     self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
                     eamarela = false

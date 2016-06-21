@@ -132,6 +132,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         data["name"] = nil
         data["isLogged"] = "loggedOut"
         plist.deleteData(data)
+        userLogged.gastos.removeAll()
         performSegueWithIdentifier("SettingsToLogin", sender: self)
     }
     
