@@ -135,7 +135,9 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         userLogged.gastos.removeAll()
         userLogged.arrayGastos.removeAll()
         userLogged.categories.removeAll()
-        performSegueWithIdentifier("SettingsToLogin", sender: self)
+        dispatch_async(dispatch_get_main_queue()) {
+        self.performSegueWithIdentifier("SettingsToLogin", sender: self)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

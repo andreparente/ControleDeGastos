@@ -22,7 +22,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        j=0
         // view.backgroundColor = corAzul
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         nome.placeholder = "Nome"

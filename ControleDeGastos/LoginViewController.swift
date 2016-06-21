@@ -28,6 +28,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        i=0
         _ = NSBundle.mainBundle().pathForResource("User", ofType: "plist")
         
         //view.backgroundColor = corAzul
@@ -132,6 +133,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             data["isLogged"] = "isLogged"
             plist.saveData(data)
             i=0;
+            executarLoad = true
             self.performSegueWithIdentifier("LoginToMain", sender: self)
         })
     }

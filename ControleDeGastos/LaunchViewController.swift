@@ -32,7 +32,7 @@ class LaunchViewController: UIViewController {
                     dispatch_async(dispatch_get_main_queue(),{
                         var dict = plist.getData()
                         userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
-                        print("passou pelo segue launchToMain")
+                        executarLoad = true
                         self.performSegueWithIdentifier("LaunchToMain", sender: self)
                         
                     })
@@ -59,7 +59,7 @@ class LaunchViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue(),{
                     var dict = plist.getData()
                     userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
-                    print("passou pelo segue launchToMain")
+                    executarLoad = true
                     self.performSegueWithIdentifier("LaunchToMain", sender: self)
                     
                 })

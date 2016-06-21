@@ -8,6 +8,7 @@
 
 import UIKit
 var executar = false
+var executarLoad = false
 class MainViewController: UIViewController {
     
     @IBOutlet weak var settingsbutton: UIButton!
@@ -24,10 +25,12 @@ class MainViewController: UIViewController {
     var valorTotalMes: Double = 0.0
     
     override func viewDidLoad() {
+        print("Executou Load")
         super.viewDidLoad()
         act.startAnimating()
         valortotal = 0
         valorTotalMes = 0
+         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         gastei.hidden = true
         limite.hidden = true
         totaldisponivel.hidden=true
@@ -35,6 +38,10 @@ class MainViewController: UIViewController {
         settingsbutton.hidden = true
         
         let userPlistDic = plist.getData()
+
+        if executarLoad == true
+        {
+        executarLoad = false
         DAOCloudKit().fetchUser(userLogged)
         DAOCloudKit().fetchGastosFromUser(userLogged)
         
@@ -42,13 +49,13 @@ class MainViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
+        }
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     func printaLimite(usuario: User) {
         if(userLogged.limiteMes == 0) {
             limite.text = "O limite mensal ainda não foi cadastrado. \n Clique em configuraçōes para realizar o cadastro"
@@ -57,10 +64,34 @@ class MainViewController: UIViewController {
             limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)"
         }
     }
+    @IBAction func botaogastar(sender: UIButton) {
+        totalgastos1 = valortotal
+    }
     
-    func fazisso()
+    @IBAction func botaosettings(sender: UIButton) {
+        totalgastos1 = valortotal
+    }
+    func actOnNotificationSuccessLoad()
     {
-        print(userLogged.getCategorias())
+        setView()
+    }
+    func actOnNotificationErrorLoad()
+    {
+        let alert=UIAlertController(title:"Erro", message: "Erro ao dar fetch no user", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alert,animated: true, completion: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if(executar == true)
+        {
+            print("Executou appear")
+            setView()
+        }
+    }
+
+    func setView()
+    {
         executar = false
         var gastosmes:[Gasto]!
         gastosGlobal = userLogged.gastos
@@ -76,7 +107,6 @@ class MainViewController: UIViewController {
             self.settingsbutton.hidden = false
             self.act.stopAnimating()
             self.view.hidden = false
-            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
             self.printaLimite(userLogged)
             let hoje = NSDate()
             let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
@@ -85,16 +115,12 @@ class MainViewController: UIViewController {
             
             for valor in (gastosmes) {
                 self.valortotal += valor.value
-                
-            }
-            
-            for valor in (gastosmes) {
                 let data = valor.date.componentsSeparatedByString("-")
                 if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
                     self.valorTotalMes += valor.value
                 }
+
             }
-            
             self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
             self.totaldisponivel.numberOfLines = 2
             
@@ -140,32 +166,4 @@ class MainViewController: UIViewController {
         }
     }
     
-    @IBAction func botaogastar(sender: UIButton) {
-        totalgastos1 = valortotal
-        print(valortotal)
-        print(totalgastos1)
     }
-    
-    @IBAction func botaosettings(sender: UIButton) {
-        totalgastos1 = valortotal
-    }
-    func actOnNotificationSuccessLoad()
-    {
-        fazisso()
-        gastosGlobal = userLogged.gastos
-    }
-    func actOnNotificationErrorLoad()
-    {
-        let alert=UIAlertController(title:"Erro", message: "Erro ao dar fetch no user", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alert,animated: true, completion: nil)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        gastosGlobal = userLogged.gastos
-        if(executar == true)
-        {
-            fazisso()
-        }
-}
-}
