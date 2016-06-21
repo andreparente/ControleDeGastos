@@ -47,14 +47,14 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         view.addGestureRecognizer(tap)
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
-
+        
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
         
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Gasto Manual"
-
+        
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:(#selector(GastoManualViewController.btn_clicked(_:))))
         
@@ -62,7 +62,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         navigationItem.leftBarButtonItem = leftButton
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-
+        
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         
@@ -127,13 +127,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       return (userLogged.categories.count)
-
+        return (userLogged.categories.count)
+        
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return (userLogged.categories[row])
-
+        
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
@@ -233,7 +233,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
             
-
+            
             let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
             // adiciona na RAM
             userLogged.addGasto(gasto)

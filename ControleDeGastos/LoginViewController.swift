@@ -68,9 +68,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         if isValidEmail(mail.text!) == false
         {
             if(mail.text! != "") {
-            let alert=UIAlertController(title:"Erro", message: "E-mail Inválido", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
-            self.presentViewController(alert,animated: true, completion: nil)
+                let alert=UIAlertController(title:"Erro", message: "E-mail Inválido", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alert,animated: true, completion: nil)
             }
             else {
                 let alert=UIAlertController(title:"Erro", message: "Preencha os campos", preferredStyle: UIAlertControllerStyle.Alert)

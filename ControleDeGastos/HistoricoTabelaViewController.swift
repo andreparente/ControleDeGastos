@@ -79,7 +79,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             cell.labeldata.text = "\(gastosGlobal[indexPath.row].date)"
             if (eamarela)
             {
-              cell.backgroundColor = corAmarela
+                cell.backgroundColor = corAmarela
             }
             if (evermelha)
             {
@@ -109,7 +109,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         if segue.identifier == "HistoricoTabelaToFiltrar" {
             let destino = segue.destinationViewController as! FiltrarViewController
             destino.delegate = self
-      
+            
         } else if segue.identifier == "HistoricoTabelaToOrdenar" {
             let destino = segue.destinationViewController as! OrdenarViewController
             destino.delegate = self

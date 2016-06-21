@@ -23,10 +23,10 @@ class MainViewController: UIViewController {
     var valortotal: Double = 0.0
     var valorTotalMes: Double = 0.0
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         act.startAnimating()
-
+        
         gastei.hidden = true
         limite.hidden = true
         totaldisponivel.hidden=true
@@ -36,9 +36,9 @@ class MainViewController: UIViewController {
         let userPlistDic = plist.getData()
         DAOCloudKit().fetchUser(userLogged)
         DAOCloudKit().fetchGastosFromUser(userLogged)
-
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
         // Do any additional setup after loading the view.
@@ -136,7 +136,7 @@ class MainViewController: UIViewController {
             }
         }
     }
-
+    
     @IBAction func botaogastar(sender: UIButton) {
         totalgastos1 = valortotal
     }
@@ -149,12 +149,12 @@ class MainViewController: UIViewController {
         fazisso()
         gastosGlobal = userLogged.gastos
     }
-     func actOnNotificationErrorLoad()
-     {
+    func actOnNotificationErrorLoad()
+    {
         let alert=UIAlertController(title:"Erro", message: "Erro ao dar fetch no user", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alert,animated: true, completion: nil)
-     }
+    }
     
     override func viewWillAppear(animated: Bool) {
         gastosGlobal = userLogged.gastos

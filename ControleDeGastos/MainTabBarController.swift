@@ -9,7 +9,7 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.hidden = true
@@ -17,26 +17,26 @@ class MainTabBarController: UITabBarController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainTabBarController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-     func actOnNotificationSuccessLoad()
-     {
+    func actOnNotificationSuccessLoad()
+    {
         dispatch_async(dispatch_get_main_queue()) {
-
-        self.tabBar.hidden = false
+            
+            self.tabBar.hidden = false
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

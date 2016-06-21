@@ -9,7 +9,7 @@
 import UIKit
 
 class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource {
-
+    
     var delegate = HistoricoTabelaViewController()
     var decrescente = false
     
@@ -21,7 +21,7 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
     
     var ordenacoes = [String]()
     var ordenacaoEscolhida = String()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +92,7 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
         gastosGlobal = quickSorter.v
         
         // altera os dados da historicoTabela
-
+        
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
     }

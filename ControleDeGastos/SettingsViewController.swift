@@ -24,26 +24,26 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         {
             view.backgroundColor = corVermelha
         }
-
+        
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
         navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
         navigationBar.delegate = self;
-
+        
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
         navigationItem.title = "Settings"
-
-    // Create left and right button for navigation item
+        
+        // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.btn_clicked(_:)))
         
         
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = leftButton
-
+        
         // Assign the navigation item to the navigation bar
         navigationBar.items = [navigationItem]
-
+        
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         // Do any additional setup after loading the view.
@@ -124,9 +124,8 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
     
     @IBAction func logOut(sender: UIButton) {
         
-        // deletar o arquivo plist!!!
+        // "deletar" o arquivo plist!!!
         
-        //base.logout()
         var data = [String:AnyObject]()
         data["email"] = nil
         data["password"] = nil
@@ -144,16 +143,5 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
             vc.selectedIndex = 1
             
         }
-        
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
-
+    
     @IBOutlet weak var textValorMin: UITextField!
     @IBOutlet weak var textValorMax: UITextField!
     
@@ -21,7 +21,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     @IBOutlet weak var botaoCancelar: UIButton!
     @IBOutlet weak var botaoSalvar: UIButton!
     
-
+    
     var categoriaSelecionada : String! // armazena o valor do pickerView categorias
     var categorias = [String]()
     var delegate = HistoricoTabelaViewController()
@@ -42,7 +42,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         {
             view.backgroundColor = corVermelha
         }
-
+        
         // inicialmente, o vetor eh o do usuario
         gastosGlobal = userLogged.getGastos()
         
@@ -79,7 +79,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-   @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+    @IBAction func apertouBotaoSalvar(sender: AnyObject) {
         // filtros de valor minimo e maximo
         let minVal = (textValorMin.text!).toDouble()!
         let maxVal = (textValorMax.text!).toDouble()!
@@ -100,7 +100,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         gastosGlobal =  filtroData(pickerDataMin.date, fim: pickerDataMax.date, gastos: gastosGlobal)
         
         // altera os dados da historicoTabela
-    
+        
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -128,10 +128,10 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         view.endEditing(true)
         return true
     }
-
+    
     /*
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destino = segue.destinationViewController as! HistoricoTabelaViewController
-    }
-    */
-    }
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     let destino = segue.destinationViewController as! HistoricoTabelaViewController
+     }
+     */
+}

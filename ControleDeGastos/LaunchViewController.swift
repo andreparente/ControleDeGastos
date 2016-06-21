@@ -21,7 +21,7 @@ class LaunchViewController: UIViewController {
                 self.presentViewController(alert,animated: true, completion: nil)
             })
         }
-       else if Reachability.isConnectedToNetwork() == false
+        else if Reachability.isConnectedToNetwork() == false
         {
             let alert=UIAlertController(title:"Internet não disponível", message: "Você nāo está conectado à internet", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{(action) -> Void in
@@ -43,12 +43,12 @@ class LaunchViewController: UIViewController {
                         self.performSegueWithIdentifier("LaunchToLogin", sender: self)
                     })
                 }
-
-                }))
+                
+            }))
             dispatch_async(dispatch_get_main_queue(),{
                 self.presentViewController(alert,animated: true, completion: nil)
             })
-    }
+        }
         else
         {
             var dict1 = plist.getData()
@@ -69,7 +69,7 @@ class LaunchViewController: UIViewController {
                     self.performSegueWithIdentifier("LaunchToLogin", sender: self)
                 })
             }
-
+            
         }
     }
     override func didReceiveMemoryWarning() {

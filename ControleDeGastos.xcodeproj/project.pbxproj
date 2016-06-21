@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A0921C11D19730F0090FBF8 /* User 19-19-48-284.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A0921C01D19730F0090FBF8 /* User 19-19-48-284.plist */; };
+		8A0921C11D19730F0090FBF8 /* User.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A0921C01D19730F0090FBF8 /* User.plist */; };
 		8A1756D61CFF63D500CC0535 /* DAOCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */; };
 		8A1756D91CFF63F000CC0535 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1756D81CFF63F000CC0535 /* CloudKit.framework */; };
 		8A1756DB1CFF65BE00CC0535 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756DA1CFF65BE00CC0535 /* User.swift */; };
@@ -21,7 +21,6 @@
 		8A54D3CE1CA2CCFC00E63645 /* GraficoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */; };
 		8A54D3D01CA2CF7200E63645 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */; };
 		8A54D3D21CA2CFD100E63645 /* HistoricoTabelaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */; };
-		8A54D3D41CA2CFFA00E63645 /* CadastroCartaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3D31CA2CFFA00E63645 /* CadastroCartaoViewController.swift */; };
 		8A54D3D61CA3157A00E63645 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3D51CA3157A00E63645 /* Classes.swift */; };
 		8A71E0171C9C2F6B00C055F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */; };
 		8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01A1C9C2F6B00C055F8 /* Main.storyboard */; };
@@ -139,7 +138,7 @@
 /* Begin PBXFileReference section */
 		55440201E2595A4545A36F1C /* Pods-ControleDeGastos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.debug.xcconfig"; sourceTree = "<group>"; };
 		56307421CB692CF9FCD566F8 /* Pods-ControleDeGastos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.release.xcconfig"; sourceTree = "<group>"; };
-		8A0921C01D19730F0090FBF8 /* User 19-19-48-284.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "User 19-19-48-284.plist"; path = "../../../../.Trash/User 19-19-48-284.plist"; sourceTree = "<group>"; };
+		8A0921C01D19730F0090FBF8 /* User.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = User.plist; path = ../../../../.Trash/User.plist; sourceTree = "<group>"; };
 		8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOCloudKit.swift; sourceTree = "<group>"; };
 		8A1756D71CFF63EA00CC0535 /* ControleDeGastos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ControleDeGastos.entitlements; sourceTree = "<group>"; };
 		8A1756D81CFF63F000CC0535 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -154,7 +153,6 @@
 		8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraficoViewController.swift; sourceTree = "<group>"; };
 		8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricoTabelaViewController.swift; sourceTree = "<group>"; };
-		8A54D3D31CA2CFFA00E63645 /* CadastroCartaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroCartaoViewController.swift; sourceTree = "<group>"; };
 		8A54D3D51CA3157A00E63645 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		8A71E0131C9C2F6B00C055F8 /* ControleDeGastos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControleDeGastos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -239,7 +237,6 @@
 				8A54D3CB1CA2CCDF00E63645 /* GastoManualViewController.swift */,
 				8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */,
 				8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */,
-				8A54D3D31CA2CFFA00E63645 /* CadastroCartaoViewController.swift */,
 				8A1AFD261CB07DF000382D1B /* TableViewCell.swift */,
 				8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */,
 				E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */,
@@ -291,7 +288,7 @@
 				8A54D3BF1CA2CAF200E63645 /* Model */,
 				8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */,
 				8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */,
-				8A0921C01D19730F0090FBF8 /* User 19-19-48-284.plist */,
+				8A0921C01D19730F0090FBF8 /* User.plist */,
 				8A71E0221C9C2F6B00C055F8 /* Info.plist */,
 			);
 			path = ControleDeGastos;
@@ -490,7 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */,
-				8A0921C11D19730F0090FBF8 /* User 19-19-48-284.plist in Resources */,
+				8A0921C11D19730F0090FBF8 /* User.plist in Resources */,
 				8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */,
 				8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */,
 			);
@@ -591,7 +588,6 @@
 				8A54D3D21CA2CFD100E63645 /* HistoricoTabelaViewController.swift in Sources */,
 				8A54D3D01CA2CF7200E63645 /* SettingsViewController.swift in Sources */,
 				8A54D3D61CA3157A00E63645 /* Classes.swift in Sources */,
-				8A54D3D41CA2CFFA00E63645 /* CadastroCartaoViewController.swift in Sources */,
 				8A1756D61CFF63D500CC0535 /* DAOCloudKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
