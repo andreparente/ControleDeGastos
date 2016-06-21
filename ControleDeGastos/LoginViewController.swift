@@ -133,7 +133,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             data["isLogged"] = "isLogged"
             plist.saveData(data)
             i=0;
-            executarLoad = true
             self.performSegueWithIdentifier("LoginToMain", sender: self)
         })
     }

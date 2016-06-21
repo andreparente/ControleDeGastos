@@ -8,7 +8,6 @@
 
 import UIKit
 var executar = false
-var executarLoad = false
 class MainViewController: UIViewController {
     
     @IBOutlet weak var settingsbutton: UIButton!
@@ -30,7 +29,7 @@ class MainViewController: UIViewController {
         act.startAnimating()
         valortotal = 0
         valorTotalMes = 0
-         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         gastei.hidden = true
         limite.hidden = true
         totaldisponivel.hidden=true
@@ -39,9 +38,6 @@ class MainViewController: UIViewController {
         
         let userPlistDic = plist.getData()
 
-        if executarLoad == true
-        {
-        executarLoad = false
         DAOCloudKit().fetchUser(userLogged)
         DAOCloudKit().fetchGastosFromUser(userLogged)
         
@@ -49,7 +45,7 @@ class MainViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
-        }
+
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
@@ -106,7 +102,6 @@ class MainViewController: UIViewController {
             self.totalgastos.hidden = false
             self.settingsbutton.hidden = false
             self.act.stopAnimating()
-            self.view.hidden = false
             self.printaLimite(userLogged)
             let hoje = NSDate()
             let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
