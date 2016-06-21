@@ -48,9 +48,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        i=0
+    }
     @IBAction func confirma(sender: UIButton)
     {
         i += 1
@@ -63,7 +64,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             i=0
             return
         }
-        //errocampovazio.hidden=true
         
         // email no formato valido
         if isValidEmail(mail.text!) == false

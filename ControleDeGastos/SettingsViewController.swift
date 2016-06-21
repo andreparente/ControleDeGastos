@@ -138,9 +138,9 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         print(userLogged.gastos)
         print(userLogged.arrayGastos)
         print(userLogged.categories)
-        dispatch_async(dispatch_get_main_queue()) {
+        //dispatch_async(dispatch_get_main_queue()) {
         self.performSegueWithIdentifier("SettingsToLogin", sender: self)
-        }
+        //}
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

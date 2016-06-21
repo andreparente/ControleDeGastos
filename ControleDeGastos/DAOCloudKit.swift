@@ -373,11 +373,13 @@ class DAOCloudKit {
                             print(error)
                         } else {
                             
-                            
+                            userLogged.gastos.removeAll()
+                            userLogged.arrayGastos.removeAll()
                             for (_, result) in records! {
                                 userLogged.arrayGastos.append(CKReference(recordID: result.recordID, action: .None))
                                 userLogged.gastos.append(Gasto(nome: result.valueForKey("name") as! String, categoria: result.valueForKey("category") as! String, valor: result.valueForKey("value") as! Double, data: result.valueForKey("data") as! String))
                             }
+                            print(userLogged.gastos.count)
                             NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
                             
                             

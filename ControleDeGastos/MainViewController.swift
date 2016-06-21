@@ -19,7 +19,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var totalgastos: UILabel!
     @IBOutlet weak var totalDisponivelMes: UILabel!
     var available: Double!
-    var totalgastos1:Double!
     var valortotal: Double = 0.0
     var valorTotalMes: Double = 0.0
     
@@ -45,7 +44,6 @@ class MainViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
         print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
         print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
-
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
@@ -61,15 +59,14 @@ class MainViewController: UIViewController {
         }
     }
     @IBAction func botaogastar(sender: UIButton) {
-        totalgastos1 = valortotal
     }
     
     @IBAction func botaosettings(sender: UIButton) {
-        totalgastos1 = valortotal
     }
     func actOnNotificationSuccessLoad()
     {
         setView()
+
     }
     func actOnNotificationErrorLoad()
     {
@@ -79,6 +76,7 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        print("Executou appear")
         if(executar == true)
         {
             print("Executou appear")
