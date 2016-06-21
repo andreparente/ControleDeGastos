@@ -386,10 +386,12 @@ class DAOCloudKit {
                             
                         }
                     }
+                    
                     CKContainer.defaultContainer().publicCloudDatabase.addOperation(fetchOperation)
                 }
                     
                 else {
+                    
                     if userLogged.gastos.count == 0
                     {
                         NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
@@ -402,6 +404,11 @@ class DAOCloudKit {
             }
             }
             else {
+                if userLogged.gastos.count == 0
+                {
+                    NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
+                }
+
                 print(error)
             }
         }

@@ -80,6 +80,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             i=0
             return
         }
+        
         if(i==1)
         {
             DAOCloudKit().fetchUserByEmail(mail.text!, password: senha.text!)
