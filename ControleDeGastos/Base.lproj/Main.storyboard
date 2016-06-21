@@ -239,12 +239,12 @@
                                 <exclude reference="37e-cL-knd"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="5cO-WY-R0q"/>
+                                <exclude reference="GSL-w2-34z"/>
                                 <exclude reference="544-7s-47i"/>
                                 <exclude reference="JSO-br-Dmk"/>
                                 <exclude reference="5II-vi-x29"/>
                                 <exclude reference="e7h-4b-1a4"/>
-                                <exclude reference="5cO-WY-R0q"/>
-                                <exclude reference="GSL-w2-34z"/>
                                 <exclude reference="Pyk-yu-ggR"/>
                                 <exclude reference="bwD-2p-zuV"/>
                                 <exclude reference="cQ7-HT-WUR"/>
@@ -273,12 +273,12 @@
                                 <include reference="37e-cL-knd"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="5cO-WY-R0q"/>
+                                <include reference="GSL-w2-34z"/>
                                 <include reference="544-7s-47i"/>
                                 <include reference="JSO-br-Dmk"/>
                                 <include reference="5II-vi-x29"/>
                                 <include reference="e7h-4b-1a4"/>
-                                <include reference="5cO-WY-R0q"/>
-                                <include reference="GSL-w2-34z"/>
                                 <include reference="Pyk-yu-ggR"/>
                                 <include reference="bwD-2p-zuV"/>
                                 <include reference="cQ7-HT-WUR"/>
@@ -1467,10 +1467,10 @@ novo gasto!</string>
         </scene>
     </scenes>
     <resources>
-        <image name="ic_settings_48px-128" width="128" height="128"/>
-        <image name="icone home" width="55" height="52"/>
-        <image name="money" width="208" height="67"/>
-        <image name="pie_chart" width="32" height="32"/>
+        <image name="configur" width="72" height="72"/>
+        <image name="grafico" width="30" height="30"/>
+        <image name="historico" width="30" height="30"/>
+        <image name="principal" width="30" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JPP-2I-nDT"/>
