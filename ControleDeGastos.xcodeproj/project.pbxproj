@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771E21661D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */; };
+		771E21671D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */; };
+		771E21681D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */; };
 		8A1756D61CFF63D500CC0535 /* DAOCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */; };
 		8A1756D91CFF63F000CC0535 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1756D81CFF63F000CC0535 /* CloudKit.framework */; };
 		8A1756DB1CFF65BE00CC0535 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756DA1CFF65BE00CC0535 /* User.swift */; };
@@ -142,6 +145,7 @@
 		239644CEDFF40A59A3EE968B /* Pods_ControleDeGastos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ControleDeGastos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55440201E2595A4545A36F1C /* Pods-ControleDeGastos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.debug.xcconfig"; sourceTree = "<group>"; };
 		56307421CB692CF9FCD566F8 /* Pods-ControleDeGastos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.release.xcconfig"; sourceTree = "<group>"; };
+		771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiBMaruGothic.ttc; path = ../../../../../Library/Fonts/TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
 		8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOCloudKit.swift; sourceTree = "<group>"; };
 		8A1756D71CFF63EA00CC0535 /* ControleDeGastos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ControleDeGastos.entitlements; sourceTree = "<group>"; };
 		8A1756D81CFF63F000CC0535 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -296,6 +300,7 @@
 				8A54D3BF1CA2CAF200E63645 /* Model */,
 				8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */,
 				8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */,
+				771E21651D185B7700D83A36 /* TsukushiBMaruGothic.ttc */,
 				8A71E0221C9C2F6B00C055F8 /* Info.plist */,
 				8AB2ABE71D1392A50050AD85 /* teste.plist */,
 				8A1756DC1CFF764100CC0535 /* User.plist */,
@@ -499,6 +504,7 @@
 				8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */,
 				8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */,
 				8AB2ABE81D1392A50050AD85 /* teste.plist in Resources */,
+				771E21661D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */,
 				8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */,
 				8A1756DD1CFF764100CC0535 /* User.plist in Resources */,
 			);
@@ -508,6 +514,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771E21671D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */,
 				9C9AFED71D1052DA00EA551B /* Assets.xcassets in Resources */,
 				9C9AFED51D1052DA00EA551B /* Interface.storyboard in Resources */,
 			);
@@ -518,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9AFEE71D1052DB00EA551B /* Assets.xcassets in Resources */,
+				771E21681D185B7700D83A36 /* TsukushiBMaruGothic.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

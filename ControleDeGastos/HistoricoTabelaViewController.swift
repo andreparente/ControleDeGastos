@@ -22,8 +22,9 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         super.viewDidLoad()
         executar = false
-        view.backgroundColor = corAzul
-        viewSuperior.backgroundColor = corAzul
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        //viewSuperior.backgroundColor = corAzul
+        viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
         // apenas para poder enxergar os botoes
@@ -69,7 +70,9 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
                 as! TableViewCell
         let cellsNumber = userLogged.gastos.count
         
-        cell.backgroundColor = corAzul
+        //cell.backgroundColor = UIColor(red: 20/255, green: 71/255, blue: 103/255, alpha: 1)
+        //cell.backgroundColor = corAzul
+        cell.backgroundColor = UIColor.clearColor()
         
         if (cellsNumber > 0) {
             cell.hideInfo(false)

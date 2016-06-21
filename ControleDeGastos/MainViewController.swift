@@ -74,7 +74,7 @@ class MainViewController: UIViewController {
             self.settingsbutton.hidden = false
             self.act.stopAnimating()
             self.view.hidden = false
-            self.view.backgroundColor = corAzul
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
             self.printaLimite(userLogged)
             let hoje = NSDate()
             let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)

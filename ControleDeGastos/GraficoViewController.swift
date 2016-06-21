@@ -34,7 +34,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         pickermesano.grafico = self
-        view.backgroundColor = corAzul
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         if (eamarela)
         {
             view.backgroundColor = corAmarela
