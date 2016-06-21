@@ -202,7 +202,6 @@ class DAOCloudKit {
         let predicate = NSPredicate(value: true)
         
         let query = CKQuery(recordType: "User", predicate: predicate)
-        print("passou pela criacao da query")
         
         privateDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
             if error != nil {
@@ -213,7 +212,6 @@ class DAOCloudKit {
                 for result in results! {
                     if(result.valueForKey("email") as? String == user.email) {
                         
-                        print("user existe!")
                         
                         //Inicializa o user Logado
                         userLogged.categories.removeAll()
@@ -239,7 +237,7 @@ class DAOCloudKit {
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
         let predicate = NSPredicate(value: true)
-        print(email);print(password)
+
         let query = CKQuery(recordType: "User", predicate: predicate)
         print("passou pela criacao da query")
         
@@ -350,11 +348,10 @@ class DAOCloudKit {
             // print(fetchedRecord)
             
             if error == nil {
-                print(fetchedRecord!.objectForKey("gastos"))
+       
                 if let teste = fetchedRecord!.objectForKey("gastos") {
                     print("quantidade de gastos registrados: ", (teste as! [CKRecordValue]).count)
                     
-                    print(fetchedRecord?.objectForKey("monthLimit"))
                     
                     if let limit = fetchedRecord?.objectForKey("monthLimit") {
                         
