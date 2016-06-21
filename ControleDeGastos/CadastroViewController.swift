@@ -40,14 +40,6 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         confirmasenha1.delegate=self
         confirmasenha1.secureTextEntry=true
         confirmasenha1.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)
-        erroincompleto.hidden=true
-        erroincompleto.text="Todos os dados são obrigatórios"
-        erromail.hidden=true
-        erromail.text="E-mail inválido"
-        errosenhas.hidden=true
-        errosenhas.text="Senhas não são iguais"
-        erronome.text = "O nome é composto por um nome e sobrenome!"
-        erronome.hidden = true
         
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CadastroViewController.dismissKeyboard))
