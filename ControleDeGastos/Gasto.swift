@@ -7,18 +7,14 @@
 //
 
 import Foundation
-import CloudKit
 
-public var arrayGastoRecords: Array<CKRecord> = []
 public var gastosGlobal: [Gasto] = []
 
 public class Gasto {
     var name : String?
     var value = Double()
     var date = String() // formato "yyyy-MM-dd-hh-mm-ss"
-    //var ehDinheiro = Bool()
     var category = String()
-   // var cartao: Cartao?
     
     // init para gasto em dinheiro
     init(nome: String, categoria: String, valor: Double, data: String) {
@@ -26,6 +22,5 @@ public class Gasto {
         self.category = categoria
         self.value = valor
         self.date = data
-//        self.ehDinheiro = true
     }
 }

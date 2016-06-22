@@ -8,7 +8,8 @@
 
 import UIKit
 var executar = false
-class MainViewController: UIViewController {
+import WatchConnectivity
+class MainViewController: UIViewController,WCSessionDelegate {
     
     @IBOutlet weak var settingsbutton: UIButton!
     
@@ -64,6 +65,7 @@ class MainViewController: UIViewController {
         }
     }
     @IBAction func botaogastar(sender: UIButton) {
+
     }
     
     @IBAction func botaosettings(sender: UIButton) {
@@ -71,7 +73,12 @@ class MainViewController: UIViewController {
     func actOnNotificationSuccessLoad()
     {
         setView()
-
+        if (WCSession.isSupported()) {
+            let session = WCSession.defaultSession()
+            session.delegate = self // conforms to WCSessionDelegate
+            session.activateSession()
+            session.sendMessage(["message":userLogged.gastos], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
+        }
     }
     func actOnNotificationErrorLoad()
     {

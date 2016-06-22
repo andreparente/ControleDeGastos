@@ -9,7 +9,7 @@
 import Foundation
 import CloudKit
 import NotificationCenter
-
+public var arrayGastoRecords: Array<CKRecord> = []
 class DAOCloudKit {
     
     func cloudAvailable()->(Bool)
