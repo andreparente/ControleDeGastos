@@ -73,11 +73,20 @@ class MainViewController: UIViewController,WCSessionDelegate {
     func actOnNotificationSuccessLoad()
     {
         setView()
+        var arrayCategories = [String]()
+        var arrayValor = [String]()
+        var i = 0
+        for _ in userLogged.gastos
+        {
+            arrayCategories.append(userLogged.gastos[i].category)
+            arrayValor.append(String(userLogged.gastos[i].value))
+            i+=1
+        }
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
             session.delegate = self 
             session.activateSession()
-            session.sendMessage(["message":userLogged.gastos], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
+            session.sendMessage(["message":[arrayCategories,arrayValor]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
         }
     }
     func actOnNotificationErrorLoad()

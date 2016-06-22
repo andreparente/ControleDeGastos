@@ -34,7 +34,6 @@
 		9C9AFED51D1052DA00EA551B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFED31D1052DA00EA551B /* Interface.storyboard */; };
 		9C9AFED71D1052DA00EA551B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFED61D1052DA00EA551B /* Assets.xcassets */; };
 		9C9AFEDE1D1052DB00EA551B /* WatchGastei Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C9AFEDD1D1052DB00EA551B /* WatchGastei Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9C9AFEE31D1052DB00EA551B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9AFEE21D1052DB00EA551B /* InterfaceController.swift */; };
 		9C9AFEE51D1052DB00EA551B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9AFEE41D1052DB00EA551B /* ExtensionDelegate.swift */; };
 		9C9AFEE71D1052DB00EA551B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFEE61D1052DB00EA551B /* Assets.xcassets */; };
 		9C9AFEEB1D1052DB00EA551B /* WatchGastei.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9C9AFED11D1052DA00EA551B /* WatchGastei.app */; };
@@ -43,6 +42,7 @@
 		9CA7128A1D1ACA280074E21C /* MyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712891D1ACA280074E21C /* MyRow.swift */; };
 		9CA7128B1D1ACF700074E21C /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756E01D005BDF00CC0535 /* Gasto.swift */; };
 		9CA712901D1AD9EF0074E21C /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756E01D005BDF00CC0535 /* Gasto.swift */; };
+		9CA712931D1AE4D00074E21C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712921D1AE4D00074E21C /* InterfaceController.swift */; };
 		9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */; };
 		E511105C1CB3849D00B9D52D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511105B1CB3849D00B9D52D /* MainTabBarController.swift */; };
 		E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */; };
@@ -174,13 +174,13 @@
 		9C9AFED61D1052DA00EA551B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C9AFED81D1052DA00EA551B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C9AFEDD1D1052DB00EA551B /* WatchGastei Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchGastei Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C9AFEE21D1052DB00EA551B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		9C9AFEE41D1052DB00EA551B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		9C9AFEE61D1052DB00EA551B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C9AFEE81D1052DB00EA551B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA712781D1990070074E21C /* User.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = User.plist; sourceTree = "<group>"; };
 		9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceControllerTable.swift; sourceTree = "<group>"; };
 		9CA712891D1ACA280074E21C /* MyRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRow.swift; sourceTree = "<group>"; };
+		9CA712921D1AE4D00074E21C /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsqueciSenhaViewController.swift; sourceTree = "<group>"; };
 		E511105B1CB3849D00B9D52D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrarViewController.swift; sourceTree = "<group>"; };
@@ -326,12 +326,12 @@
 		9C9AFEE11D1052DB00EA551B /* WatchGastei Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9C9AFEE21D1052DB00EA551B /* InterfaceController.swift */,
 				9C9AFEE41D1052DB00EA551B /* ExtensionDelegate.swift */,
 				9C9AFEE61D1052DB00EA551B /* Assets.xcassets */,
 				9C9AFEE81D1052DB00EA551B /* Info.plist */,
 				9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */,
 				9CA712891D1ACA280074E21C /* MyRow.swift */,
+				9CA712921D1AE4D00074E21C /* InterfaceController.swift */,
 			);
 			path = "WatchGastei Extension";
 			sourceTree = "<group>";
@@ -607,11 +607,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA712931D1AE4D00074E21C /* InterfaceController.swift in Sources */,
 				9CA7128A1D1ACA280074E21C /* MyRow.swift in Sources */,
 				9CA7128B1D1ACF700074E21C /* Gasto.swift in Sources */,
 				9CA712851D1ACA0C0074E21C /* InterfaceControllerTable.swift in Sources */,
 				9C9AFEE51D1052DB00EA551B /* ExtensionDelegate.swift in Sources */,
-				9C9AFEE31D1052DB00EA551B /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,14 +28,14 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
         // Configure interface objects here.
     }
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
-        let text = message["message"] as! [Gasto]
+        let text = message["message"] as! [String]
         print(text)
        // var names : [String] = [text]
         var names = [String]()
         var i = 0
         for _ in text
         {
-            names.append(text[i].name!)
+            names.append(text[i])
             i+=1
         }
         print(names)

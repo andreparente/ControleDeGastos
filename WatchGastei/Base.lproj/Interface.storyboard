@@ -6,100 +6,24 @@
     </dependencies>
     <scenes>
         <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
+        <scene sceneID="tb5-2D-6GD">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchGastei" customModuleProvider="target">
+                <controller id="haH-LD-UD5" customClass="InterfaceController" customModule="WatchGastei_Extension">
                     <items>
-                        <label width="10" height="18.5" alignment="left" text="0" textAlignment="left" id="OHC-4K-jce"/>
-                        <group width="124" height="22" alignment="left" id="8Ug-Rh-SSH">
-                            <items>
-                                <button width="38" height="31.5" alignment="left" title="1" id="1N5-Iy-nA8">
-                                    <connections>
-                                        <action selector="Tapped1" destination="AgC-eL-Hgc" id="9yl-OL-VAY"/>
-                                    </connections>
-                                </button>
-                                <button width="38" height="31.5" alignment="left" title="2" id="w6u-On-gNl">
-                                    <connections>
-                                        <action selector="Tapped2" destination="AgC-eL-Hgc" id="gTX-kt-sDa"/>
-                                    </connections>
-                                </button>
-                                <button width="38" height="31.5" alignment="left" title="3" id="crV-fX-KHT">
-                                    <connections>
-                                        <action selector="Tapped3" destination="AgC-eL-Hgc" id="1aJ-qL-Gfb"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                        <group width="134" height="21.5" alignment="left" id="fBE-AL-1N4">
-                            <items>
-                                <button width="38" height="31.5" alignment="left" title="4" id="00c-ck-FkK">
-                                    <connections>
-                                        <action selector="Tapped4" destination="AgC-eL-Hgc" id="hsC-qG-J0J"/>
-                                    </connections>
-                                </button>
-                                <button width="38" height="31.5" alignment="left" title="5" id="WXb-qV-3gE">
-                                    <connections>
-                                        <action selector="Tapped5" destination="AgC-eL-Hgc" id="gVv-AZ-zgr"/>
-                                    </connections>
-                                </button>
-                                <button width="38" height="31.5" alignment="left" title="6" id="nr3-sq-9F6">
-                                    <connections>
-                                        <action selector="Tapped6" destination="AgC-eL-Hgc" id="ccG-Uj-CZP"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                        <group width="133" height="21.5" alignment="left" id="4Lw-cb-TmL">
-                            <items>
-                                <button width="38" height="31.5" alignment="left" title="7" id="mbi-A0-60N">
-                                    <connections>
-                                        <action selector="Tapped7" destination="AgC-eL-Hgc" id="U9r-52-kw6"/>
-                                    </connections>
-                                </button>
-                                <button width="38" height="31.5" alignment="left" title="8" id="g7G-Mo-bTB">
-                                    <connections>
-                                        <action selector="Tapped8" destination="AgC-eL-Hgc" id="RaI-5r-oiJ"/>
-                                    </connections>
-                                </button>
-                                <button width="38" height="31.5" alignment="left" title="9" id="WoP-VT-ZNX">
-                                    <connections>
-                                        <action selector="Tapped9" destination="AgC-eL-Hgc" id="vss-fV-LBB"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                        <group width="134" height="20.5" alignment="left" id="nsM-bw-4vH">
-                            <items>
-                                <button width="38" height="31.5" alignment="left" title="." id="mC8-fr-1Lo">
-                                    <connections>
-                                        <action selector="TappedDot" destination="AgC-eL-Hgc" id="Ziw-dx-FEr"/>
-                                    </connections>
-                                </button>
-                                <button width="38" height="31.5" alignment="left" title="0" id="j2d-ea-Hxb">
-                                    <connections>
-                                        <action selector="Tapped0" destination="AgC-eL-Hgc" id="l7a-sN-gOk"/>
-                                    </connections>
-                                </button>
-                                <button width="38" height="31.5" alignment="left" title="-&gt;" id="qEl-EK-GvN">
-                                    <connections>
-                                        <action selector="TappedNext" destination="AgC-eL-Hgc" id="Vc5-Yx-SEB"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                        <button width="1" height="23.5" alignment="left" title="Clear" id="lXs-x0-Hxg">
+                        <button width="1" alignment="left" title="Gastos do dia" id="6KQ-WC-Pf4">
                             <connections>
-                                <action selector="TappedClear" destination="AgC-eL-Hgc" id="9dk-J2-l4o"/>
+                                <action selector="toTable" destination="haH-LD-UD5" id="vnO-uD-pDc"/>
+                                <segue destination="uhK-pg-LR9" kind="push" id="bEK-ha-c80"/>
                             </connections>
                         </button>
+                        <label width="131.5" alignment="left" text="Label" id="Oce-Dw-Px3"/>
                     </items>
                     <connections>
-                        <outlet property="number" destination="w6u-On-gNl" id="Maa-qO-5rn"/>
-                        <outlet property="totalValue" destination="OHC-4K-jce" id="kvc-po-Hve"/>
+                        <outlet property="total" destination="Oce-Dw-Px3" id="N26-RQ-rg6"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="222" y="232"/>
+            <point key="canvasLocation" x="222" y="238"/>
         </scene>
         <!--Interface Controller Table-->
         <scene sceneID="oEE-yc-wcQ">
@@ -126,7 +50,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="222" y="525"/>
+            <point key="canvasLocation" x="222" y="638"/>
         </scene>
     </scenes>
 </document>
