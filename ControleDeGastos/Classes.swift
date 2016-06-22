@@ -17,5 +17,5 @@ public let corAmarela = UIColor(red:(204.0/255),green:(204.0/255),blue:0,alpha: 
 public let corVermelha = UIColor(red:1,green:0,blue:0,alpha:1.0)
 public var eamarela = false
 public var evermelha = false
-
+public var eazul = true
 //public let corVerde = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)

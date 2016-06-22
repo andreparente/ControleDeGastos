@@ -125,6 +125,7 @@ class MainViewController: UIViewController {
                     self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
                     eamarela = false
                     evermelha = false
+                    eazul = true
                 }
                 else
                 {
@@ -133,12 +134,14 @@ class MainViewController: UIViewController {
                         self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês"
                         eamarela = true
                         evermelha = false
+                        eazul = false
                     }
                     else
                     {
                         self.totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(self.valorTotalMes - userLogged.limiteMes)"
                         eamarela = false
                         evermelha = true
+                        eazul = false
                     }
                 }
                 if (eamarela)
@@ -149,7 +152,10 @@ class MainViewController: UIViewController {
                 {
                     self.view.backgroundColor = corVermelha
                 }
-                
+                if (eazul)
+                {
+                    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+                }
                 self.totaldisponivel.hidden=false
             }
             else
