@@ -91,6 +91,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         } else {
             cell.hideInfo(true)
             cell.labelSemGastos.text = "Nenhum gasto para exibir!"
+            cell.labelSemGastos.font = UIFont(name: "Tsukushi B Round Gothic", size: 16)
         }
         return cell
     }

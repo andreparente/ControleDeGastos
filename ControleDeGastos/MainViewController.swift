@@ -22,6 +22,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     
     @IBOutlet weak var RS: UILabel!
     @IBOutlet weak var gastos: UILabel!
+    @IBOutlet weak var imagemCarteira: UIImageView!
     
     var available: Double!
     var valortotal: Double = 0.0
@@ -38,7 +39,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         gastei.hidden = true
         limite.hidden = true
-        totaldisponivel.hidden=true
+        totaldisponivel.hidden = true
         totalgastos.hidden = true
         settingsbutton.hidden = true
         RS.hidden = true
@@ -154,12 +155,13 @@ class MainViewController: UIViewController,WCSessionDelegate {
             gastosmes = userLogged.getGastosUltimoMês()
             self.gastei.hidden = false
             self.limite.hidden = false
-            self.totaldisponivel.hidden=false
+            self.totaldisponivel.hidden = false
             self.totalgastos.hidden = false
             self.settingsbutton.hidden = false
             self.tabBarController?.tabBar.hidden = false
             self.RS.hidden = false
             self.gastos.hidden = false
+            self.imagemCarteira.hidden = false
             self.act.stopAnimating()
             self.printaLimite(userLogged)
             let hoje = NSDate()

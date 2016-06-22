@@ -34,21 +34,24 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         super.viewDidLoad()
         categoria = "Outros"
         executar = false
-        view.backgroundColor = corAzul
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         if (eamarela)
         {
             view.backgroundColor = corAmarela
         }
         if (evermelha)
         {
-            view.backgroundColor = corVermelha
+            view.backgroundColor = corVermelha // <<<<<<<<<<<<------------ BOTAR VERMELHA
+
         }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
-        navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        //navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        navigationBar.barTintColor = UIColor.blackColor()
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Tsukushi B Round Gothic", size: 18)!]
         navigationBar.delegate = self;
         
         // Create a navigation item with a title
@@ -57,6 +60,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action:(#selector(GastoManualViewController.btn_clicked(_:))))
+        leftButton.tintColor = UIColor.whiteColor()
+        leftButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Tsukushi B Round Gothic", size: 15)!], forState: UIControlState.Normal)
         
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = leftButton
@@ -129,6 +134,12 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return (userLogged.categories.count)
         
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? { //KARINA KARINA KARIAN KARINA
+        let titleData = userLogged.categories[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Tsukushi B Round Gothic", size: 15.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        return myTitle
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

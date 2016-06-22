@@ -45,6 +45,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
         
         dataMesTextField.delegate = self
+        dataMesTextField.font = UIFont(name: "Tsukushi B Round Gothic", size: 16)
         pickermesano.hidden = true
         dataMesTextField.inputView = pickermesano
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
@@ -138,7 +139,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     //FUNCAO QUE PRINTA LIMITE
     func printaLimite(usuario: User) {
         if(usuario.limiteMes == 0) {
-            limiteLabel.text = "Você não disponibilizou o limite por mês"
+            limiteLabel.text = "Você não disponibilizou o limite por mês."
         }
         else {
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
@@ -196,7 +197,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "Você não possui nenhum gasto!"
             chartView.infoTextColor = UIColor.whiteColor()
-            chartView.infoFont = UIFont(name: "Arial", size: 16)
+            chartView.infoFont = UIFont(name: "Tsukushi B Round Gothic", size: 16)
             chartView.delegate = self
             chartView.animate(xAxisDuration: 1)
             

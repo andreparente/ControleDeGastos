@@ -17,19 +17,21 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = corAzul
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         if (eamarela)
         {
             view.backgroundColor = corAmarela
         }
         if (evermelha)
         {
-            view.backgroundColor = corVermelha
+            view.backgroundColor = corVermelha // <<<<<<<<<<<<------------ BOTAR VERMELHA
         }
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
-        navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        //navigationBar.backgroundColor = UIColor.blackColor()
+        navigationBar.barTintColor = UIColor.blackColor()
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Tsukushi B Round Gothic", size: 18)!]
         navigationBar.delegate = self;
         
         // Create a navigation item with a title
@@ -38,6 +40,9 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.btn_clicked(_:)))
+        leftButton.tintColor = UIColor.whiteColor()
+        leftButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Tsukushi B Round Gothic", size: 15)!], forState: UIControlState.Normal)
+        
         
         
         // Create two buttons for the navigation item
