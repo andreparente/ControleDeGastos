@@ -84,7 +84,7 @@ public func filtroData(inicio:NSDate, fim:NSDate, gastos:[Gasto]) ->([Gasto])
     let dateFormatter = NSDateFormatter()
     
     // eh necessario zerar a hora, os minutos e os segundos antes de comecar
-    let cal: NSCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+    let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
     let inicio_ = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: inicio, options: NSCalendarOptions())!
     let fim_ = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: fim, options: NSCalendarOptions())!
     

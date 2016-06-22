@@ -38,7 +38,8 @@ class MainViewController: UIViewController {
         totaldisponivel.hidden=true
         totalgastos.hidden = true
         settingsbutton.hidden = true
-        
+        RS.hidden = true
+        gastos.hidden = true
         let userPlistDic = plist.getData()
 
         DAOCloudKit().fetchUser(userLogged)
@@ -103,6 +104,8 @@ class MainViewController: UIViewController {
             self.totaldisponivel.hidden=false
             self.totalgastos.hidden = false
             self.settingsbutton.hidden = false
+            self.RS.hidden = false
+            self.gastos.hidden = false
             self.act.stopAnimating()
             self.printaLimite(userLogged)
             let hoje = NSDate()
