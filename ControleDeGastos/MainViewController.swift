@@ -114,7 +114,8 @@ class MainViewController: UIViewController {
                 }
 
             }
-            self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
+            // self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
+            self.totalgastos.text = "\(self.valorTotalMes)"
             self.totaldisponivel.numberOfLines = 2
             
             if(userLogged.limiteMes != 0)
