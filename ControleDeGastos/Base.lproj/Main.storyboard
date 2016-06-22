@@ -38,7 +38,7 @@
             <string>TsukuBRdGothic-Bold</string>
             <string>TsukuBRdGothic-Bold</string>
             <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
+           <string>TsukuBRdGothic-Bold</string>
             <string>TsukuBRdGothic-Bold</string>
         </mutableArray>
     </customFonts>
@@ -534,24 +534,24 @@
                                 <exclude reference="Z1B-1U-4Jk"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="RrH-PK-TjB"/>
-                                <exclude reference="UAp-sa-QnV"/>
-                                <exclude reference="Z4Q-ci-4sM"/>
-                                <exclude reference="PH6-bt-Q1o"/>
-                                <exclude reference="nB3-XE-B4n"/>
-                                <exclude reference="1It-Bw-Ojh"/>
-                                <exclude reference="uJe-DV-HJY"/>
-                                <exclude reference="Eiz-UU-02h"/>
-                                <exclude reference="Qrg-VZ-qxn"/>
+                                <exclude reference="2zr-uK-TGZ"/>
+                                <exclude reference="ukv-7D-WP5"/>
+                                <exclude reference="vaJ-1f-ihC"/>
                                 <exclude reference="CNq-eU-9C9"/>
                                 <exclude reference="KjL-zt-CpP"/>
                                 <exclude reference="Ksy-Gn-s3k"/>
-                                <exclude reference="2zr-uK-TGZ"/>
-                                <exclude reference="ukv-7D-WP5"/>
+                                <exclude reference="UAp-sa-QnV"/>
+                                <exclude reference="qcC-Mw-I7h"/>
                                 <exclude reference="1UV-lH-Hct"/>
                                 <exclude reference="8Ih-Xs-nBq"/>
                                 <exclude reference="dOk-06-lnB"/>
                                 <exclude reference="iZX-5a-XeA"/>
+                                <exclude reference="Eiz-UU-02h"/>
+                                <exclude reference="Qrg-VZ-qxn"/>
+                                <exclude reference="HYK-kT-183"/>
+                                <exclude reference="PH6-bt-Q1o"/>
+                                <exclude reference="Aya-qz-jcI"/>
+                                <exclude reference="Ric-aE-j5D"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -561,24 +561,24 @@
                                 <include reference="Z1B-1U-4Jk"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="RrH-PK-TjB"/>
-                                <include reference="UAp-sa-QnV"/>
-                                <include reference="Z4Q-ci-4sM"/>
-                                <include reference="PH6-bt-Q1o"/>
-                                <include reference="nB3-XE-B4n"/>
-                                <include reference="1It-Bw-Ojh"/>
-                                <include reference="uJe-DV-HJY"/>
-                                <include reference="Eiz-UU-02h"/>
-                                <include reference="Qrg-VZ-qxn"/>
+                                <include reference="2zr-uK-TGZ"/>
+                                <include reference="ukv-7D-WP5"/>
+                                <include reference="vaJ-1f-ihC"/>
                                 <include reference="CNq-eU-9C9"/>
                                 <include reference="KjL-zt-CpP"/>
                                 <include reference="Ksy-Gn-s3k"/>
-                                <include reference="2zr-uK-TGZ"/>
-                                <include reference="ukv-7D-WP5"/>
+                                <include reference="UAp-sa-QnV"/>
+                                <include reference="qcC-Mw-I7h"/>
                                 <include reference="1UV-lH-Hct"/>
                                 <include reference="8Ih-Xs-nBq"/>
                                 <include reference="dOk-06-lnB"/>
                                 <include reference="iZX-5a-XeA"/>
+                                <include reference="Eiz-UU-02h"/>
+                                <include reference="Qrg-VZ-qxn"/>
+                                <include reference="HYK-kT-183"/>
+                                <include reference="PH6-bt-Q1o"/>
+                                <include reference="Aya-qz-jcI"/>
+                                <include reference="Ric-aE-j5D"/>
                             </mask>
                         </variation>
                     </view>
