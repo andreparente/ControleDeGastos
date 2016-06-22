@@ -29,6 +29,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         i=0
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnNotificationSuccessLogin), name: "notificationSuccessLogin", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnNotificationErrorPassword), name: "notificationErrorPassword", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnnotificationErrorEmail), name: "notificationErrorEmail", object: nil)
+        
         _ = NSBundle.mainBundle().pathForResource("User", ofType: "plist")
         
         //view.backgroundColor = corAzul
@@ -51,6 +57,23 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     override func viewWillAppear(animated: Bool) {
         i=0
+        
+        
+        var dict1 = plist.getData()
+        print(plist.plistName)
+        if dict1 != nil && dict1!["isLogged"] as! String != "loggedOut" {
+            
+            dispatch_async(dispatch_get_main_queue(),{
+                self.view.hidden = true
+                var dict = plist.getData()
+                
+                userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
+                self.performSegueWithIdentifier("LoginToMain", sender: self)
+                
+            })
+        }
+        senha.text = ""
+        self.view.hidden = false
     }
     @IBAction func confirma(sender: UIButton)
     {
@@ -85,10 +108,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         if(i==1)
         {
             DAOCloudKit().fetchUserByEmail(mail.text!, password: senha.text!)
-            
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnNotificationSuccessLogin), name: "notificationSuccessLogin", object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnNotificationErrorPassword), name: "notificationErrorPassword", object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnnotificationErrorEmail), name: "notificationErrorEmail", object: nil)
         }
         
         

@@ -195,7 +195,7 @@ class DAOCloudKit {
     }
     //NS NOTIFICATION CENTER
     
-    func fetchUser(user: User) {
+    func fetchCategoriesForUser(user: User) {
         
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
@@ -219,14 +219,11 @@ class DAOCloudKit {
                         {
                             userLogged.categories.append(categ)
                         }
-                    return;
+                        return
                     }
                     else {
-                        //NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorPassword", object: nil)
                     }
                 }
-                
-                //NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorEmail", object: nil)
             }
         }
     }
@@ -236,7 +233,7 @@ class DAOCloudKit {
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
         let predicate = NSPredicate(value: true)
-
+        
         let query = CKQuery(recordType: "User", predicate: predicate)
         
         privateDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
@@ -252,17 +249,16 @@ class DAOCloudKit {
                         if (result.valueForKey("password") as? String == password)
                         {
                             
-                        //Inicializa o user Logado
-                        userLogged = User(name: result.valueForKey("name") as! String, email: email!, password: password!)
-                        print(userLogged)
-                        NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
-                        return
-                    }
-                    else {
-                        NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorPassword", object: nil)
+                            //Inicializa o user Logado
+                            userLogged = User(name: result.valueForKey("name") as! String, email: email!, password: password!)
+                            NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
                             return
+                        }
+                        else {
+                            NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorPassword", object: nil)
+                            return
+                        }
                     }
-                }
                 }
                 NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorEmail", object: nil)
             }
@@ -285,14 +281,14 @@ class DAOCloudKit {
                 for result in results! {
                     if(result.valueForKey("email") as? String == email) {
                         NSNotificationCenter.defaultCenter().postNotificationName("notificationFailCadastro", object: nil)
-                            return
-                        }
-                    
+                        return
                     }
+                    
+                }
                 NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessCadastro", object: nil)
                 return
-                    }
-                }
+            }
+        }
         
     }
     
@@ -341,7 +337,7 @@ class DAOCloudKit {
             // print(fetchedRecord)
             
             if error == nil {
-       
+                
                 if let teste = fetchedRecord!.objectForKey("gastos") {
                     print("quantidade de gastos registrados: ", (teste as! [CKRecordValue]).count)
                     
@@ -390,17 +386,17 @@ class DAOCloudKit {
                     }
                     else{
                         NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorLoadUser", object: nil)
+                        
+                    }
                     
                 }
-                
-            }
             }
             else {
                 if userLogged.gastos.count == 0
                 {
                     NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
                 }
-
+                
                 print(error)
             }
         }

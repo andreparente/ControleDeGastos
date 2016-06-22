@@ -6,7 +6,7 @@
 //  Copyright © 2016 Andre Machado Parente. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 
 class MainTabBarController: UITabBarController {
     
@@ -39,4 +39,4 @@ class MainTabBarController: UITabBarController {
      }
      */
     
-}
+}*/

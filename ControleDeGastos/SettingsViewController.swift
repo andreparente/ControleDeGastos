@@ -11,6 +11,8 @@ var alteroulim = false
 class SettingsViewController: UIViewController, UINavigationBarDelegate{
     
     var field:UITextField!
+    var flagLogout: Bool!
+    var mainVC = UIViewController() as? MainViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +85,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         {
             executar = false
         }
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -138,9 +141,10 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         print(userLogged.gastos)
         print(userLogged.arrayGastos)
         print(userLogged.categories)
-        //dispatch_async(dispatch_get_main_queue()) {
-        self.performSegueWithIdentifier("SettingsToLogin", sender: self)
-        //}
+        
+        mainVC?.flagLogout = true
+        dismissViewControllerAnimated(false, completion: nil)
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -26,10 +26,12 @@ class MainViewController: UIViewController,WCSessionDelegate {
     var available: Double!
     var valortotal: Double = 0.0
     var valorTotalMes: Double = 0.0
+    var flagLogout: Bool = false;
     
     override func viewDidLoad() {
         print("Executou Load")
         super.viewDidLoad()
+        // Do any additional setup after loading the view
         act.startAnimating()
         valortotal = 0
         valorTotalMes = 0
@@ -41,22 +43,22 @@ class MainViewController: UIViewController,WCSessionDelegate {
         settingsbutton.hidden = true
         RS.hidden = true
         gastos.hidden = true
-        let userPlistDic = plist.getData()
-
-        DAOCloudKit().fetchUser(userLogged)
+        self.tabBarController?.tabBar.hidden = true
+        
+        DAOCloudKit().fetchCategoriesForUser(userLogged)
         DAOCloudKit().fetchGastosFromUser(userLogged)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
-        print ("login feito com o usuario \(userLogged.name), de email \(userLogged.email)")
-        print("no plist temos o nome: \(userPlistDic!["name"]), e o email: \(userPlistDic!["email"])")
-        // Do any additional setup after loading the view.
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     func printaLimite(usuario: User) {
+        
         if(userLogged.limiteMes == 0) {
             limite.text = "O limite mensal ainda não foi cadastrado.\nClique em configurações para realizar o cadastro."
         }
@@ -65,11 +67,25 @@ class MainViewController: UIViewController,WCSessionDelegate {
         }
     }
     @IBAction func botaogastar(sender: UIButton) {
-
+        
     }
     
     @IBAction func botaosettings(sender: UIButton) {
+        
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "MainToSettings" {
+            
+            let vc = segue.destinationViewController as! SettingsViewController
+            vc.mainVC = segue.sourceViewController as? MainViewController
+            
+            
+        }
+    }
+    
+    
     func actOnNotificationSuccessLoad()
     {
         setView()
@@ -84,7 +100,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         }
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
-            session.delegate = self 
+            session.delegate = self
             session.activateSession()
             session.sendMessage(["message":[arrayCategories,arrayValor]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
         }
@@ -97,14 +113,26 @@ class MainViewController: UIViewController,WCSessionDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("Executou appear")
+        
+        print("entrou na viewWillAppear")
+        
+        var dict1 = plist.getData()
+        
+        
+        if(flagLogout) {
+            
+            print("entrou na viewWillAppear, flagLogout é true")
+            self.view.hidden = true
+            dismissViewControllerAnimated(false, completion: nil)
+        }
+        
         if(executar == true)
         {
             print("Executou appear")
             setView()
         }
     }
-
+    
     func setView()
     {
         executar = false
@@ -120,6 +148,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             self.totaldisponivel.hidden=false
             self.totalgastos.hidden = false
             self.settingsbutton.hidden = false
+            self.tabBarController?.tabBar.hidden = false
             self.RS.hidden = false
             self.gastos.hidden = false
             self.act.stopAnimating()
@@ -135,7 +164,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
                     self.valorTotalMes += valor.value
                 }
-
             }
             // self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
             self.totalgastos.text = "\(self.valorTotalMes)"
@@ -188,5 +216,4 @@ class MainViewController: UIViewController,WCSessionDelegate {
             }
         }
     }
-    
-    }
+}

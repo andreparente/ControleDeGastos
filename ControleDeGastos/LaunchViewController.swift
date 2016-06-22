@@ -25,25 +25,7 @@ class LaunchViewController: UIViewController {
         {
             let alert=UIAlertController(title:"Internet não disponível", message: "Você nāo está conectado à internet", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{(action) -> Void in
-                var dict1 = plist.getData()
-                print(plist.plistName)
-                if dict1 != nil && dict1!["isLogged"] as! String != "loggedOut" {
-                    
-                    dispatch_async(dispatch_get_main_queue(),{
-                        var dict = plist.getData()
-                        userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
-                        self.performSegueWithIdentifier("LaunchToMain", sender: self)
-                        
-                    })
-                }
-                else {
-                    
-                    dispatch_async(dispatch_get_main_queue(),{
-                        print("passou pelo segue launchToLogin")
-                        self.performSegueWithIdentifier("LaunchToLogin", sender: self)
-                    })
-                }
-                
+                exit(0)
             }))
             dispatch_async(dispatch_get_main_queue(),{
                 self.presentViewController(alert,animated: true, completion: nil)
@@ -51,16 +33,19 @@ class LaunchViewController: UIViewController {
         }
         else
         {
+            dispatch_async(dispatch_get_main_queue(),{
+                
+                self.performSegueWithIdentifier("LaunchToLogin", sender: self)
+            })
             
-
-            var dict1 = plist.getData()
+           /* var dict1 = plist.getData()
             print(plist.plistName)
             if dict1 != nil && dict1!["isLogged"] as! String != "loggedOut" {
                 
                 dispatch_async(dispatch_get_main_queue(),{
                     var dict = plist.getData()
                     userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
-                    self.performSegueWithIdentifier("LaunchToMain", sender: self)
+                    self.performSegueWithIdentifier("LaunchToLogin", sender: self)
                     
                 })
             }
@@ -70,7 +55,7 @@ class LaunchViewController: UIViewController {
                     print("passou pelo segue launchToLogin")
                     self.performSegueWithIdentifier("LaunchToLogin", sender: self)
                 })
-            }
+            }*/
             
         }
     }
@@ -86,6 +71,10 @@ class LaunchViewController: UIViewController {
             let vc = segue.destinationViewController as! UITabBarController
             vc.selectedIndex = 0
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear da launch")
     }
 }
 public class Reachability {
@@ -104,4 +93,6 @@ public class Reachability {
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
     }
+    
+    
 }
