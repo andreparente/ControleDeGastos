@@ -219,8 +219,7 @@ class DAOCloudKit {
                         {
                             userLogged.categories.append(categ)
                         }
-                        //NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
-                        return;
+                    return;
                     }
                     else {
                         //NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorPassword", object: nil)
@@ -239,7 +238,6 @@ class DAOCloudKit {
         let predicate = NSPredicate(value: true)
 
         let query = CKQuery(recordType: "User", predicate: predicate)
-        print("passou pela criacao da query")
         
         privateDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
             if error != nil {
@@ -253,15 +251,10 @@ class DAOCloudKit {
                         print("user existe!")
                         if (result.valueForKey("password") as? String == password)
                         {
+                            
                         //Inicializa o user Logado
                         userLogged = User(name: result.valueForKey("name") as! String, email: email!, password: password!)
                         print(userLogged)
-                       /* userLogged.categories.removeAll()
-                        for categ in result.valueForKey("categories") as! [String]
-                        {
-                            userLogged.categories.append(categ)
-                        }*/
-
                         NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLogin", object: nil)
                         return
                     }
