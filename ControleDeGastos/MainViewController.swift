@@ -85,7 +85,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
         }
     }
     
-    
     func actOnNotificationSuccessLoad()
     {
         setView()
@@ -102,7 +101,17 @@ class MainViewController: UIViewController,WCSessionDelegate {
             let session = WCSession.defaultSession()
             session.delegate = self
             session.activateSession()
-            session.sendMessage(["message":[arrayCategories,arrayValor]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
+            session.sendMessage(["categorias":[arrayCategories,arrayValor]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
+            /* do {
+             try  session.updateApplicationContext(["message":[arrayCategories,arrayValor]])
+             } catch let error as NSError {
+             NSLog("Updating the context failed: " + error.localizedDescription)
+             }
+             }
+             else{
+             print("cry")
+             }
+             */
         }
     }
     func actOnNotificationErrorLoad()

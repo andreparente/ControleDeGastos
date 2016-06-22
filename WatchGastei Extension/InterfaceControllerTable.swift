@@ -9,7 +9,8 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
-
+var valor = [String]()
+var categorias = [String]()
 class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
 
     @IBOutlet var myTable: WKInterfaceTable!
@@ -27,30 +28,46 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
 
         // Configure interface objects here.
     }
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
-        let text = message["message"] as! [String]
-        print(text)
-       // var names : [String] = [text]
-        var names = [String]()
-        var i = 0
-        for _ in text
-        {
-            names.append(text[i])
-            i+=1
-        }
-        print(names)
-        self.myTable.setNumberOfRows(names.count, withRowType: "cell")
-        for(index,item) in names.enumerate(){
-            let namescontroller = myTable.rowControllerAtIndex(index) as! MyRow
-            namescontroller.label1.setText(item)
-        }
-    }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
+        var i = 0
+        self.myTable.setNumberOfRows(valor.count, withRowType: "cell")
+        for(index,item) in valor.enumerate(){
+            let namescontroller = myTable.rowControllerAtIndex(index) as! MyRow
+            namescontroller.label1.setText(item)
+            namescontroller.labelcateg.setText(categorias[i])
+            i+=1
+        }
         super.willActivate()
     }
-
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+        categorias.removeAll()
+        valor.removeAll()
+    let text = message["categorias"] as! [[String]]
+        var j = 0
+        var i = 0
+        for _ in j...text[0].count - 1
+        {
+            categorias.append(text[0][j])
+            j+=1
+        }
+        j=0
+        for _ in j...text[1].count - 1
+        {
+            valor.append(text[1][j])
+            j+=1
+        }
+        print(categorias)
+        print(valor)
+        self.myTable.setNumberOfRows(valor.count, withRowType: "cell")
+        for(index,item) in valor.enumerate(){
+            let namescontroller = myTable.rowControllerAtIndex(index) as! MyRow
+            namescontroller.label1.setText(item)
+            namescontroller.labelcateg.setText(categorias[i])
+            i+=1
+        }
+        
+    }
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()

@@ -8,10 +8,11 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
+class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
-class InterfaceController: WKInterfaceController {
-
+     var outro = InterfaceControllerTable()
     @IBOutlet var total: WKInterfaceLabel!
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -20,8 +21,35 @@ class InterfaceController: WKInterfaceController {
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+    }
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+        categorias.removeAll()
+        valor.removeAll()
+        let text = message["categorias"] as! [[String]]
+        var j = 0
+        var i = 0
+        for _ in j...text[0].count - 1
+        {
+            categorias.append(text[0][j])
+            j+=1
+        }
+        j=0
+        for _ in j...text[1].count - 1
+        {
+            valor.append(text[1][j])
+            j+=1
+        }
+        print(categorias)
+        print(valor)
+        outro.myTable.setNumberOfRows(valor.count, withRowType: "cell")
+        for(index,item) in valor.enumerate(){
+            let namescontroller = outro.myTable.rowControllerAtIndex(index) as! MyRow
+            namescontroller.label1.setText(item)
+            namescontroller.labelcateg.setText(categorias[i])
+            i+=1
+        }
+        
     }
 
     override func didDeactivate() {

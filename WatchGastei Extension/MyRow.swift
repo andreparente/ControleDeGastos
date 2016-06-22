@@ -12,5 +12,6 @@ import WatchKit
 class MyRow:NSObject
 {
     @IBOutlet var label1: WKInterfaceLabel!
+    @IBOutlet var labelcateg: WKInterfaceLabel!
     
 }
