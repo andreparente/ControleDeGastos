@@ -126,7 +126,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
         
         print("entrou na viewWillAppear")
         
-        var dict1 = plist.getData()
         
         
         if(flagLogout) {
