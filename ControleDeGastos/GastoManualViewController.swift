@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-
-class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UINavigationBarDelegate {
+class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UINavigationBarDelegate,WCSessionDelegate {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var valor: UITextField!
@@ -241,6 +241,22 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             DAOCloudKit().addGasto(gasto,user: userLogged)
             // faz o segue
             executar = true
+            var arrayCategories = [String]()
+            var arrayValor = [String]()
+            var i = 0
+            for _ in userLogged.gastos
+            {
+                arrayCategories.append(userLogged.gastos[i].category)
+                arrayValor.append(String(userLogged.gastos[i].value))
+                i+=1
+            }
+            if (WCSession.isSupported()) {
+                let session = WCSession.defaultSession()
+                session.delegate = self
+                session.activateSession()
+                session.sendMessage(["categorias":[arrayCategories,arrayValor]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
+            }
+
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
