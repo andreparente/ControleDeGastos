@@ -18,6 +18,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var totaldisponivel: UILabel!
     @IBOutlet weak var totalgastos: UILabel!
     @IBOutlet weak var totalDisponivelMes: UILabel!
+    
+    @IBOutlet weak var RS: UILabel!
+    @IBOutlet weak var gastos: UILabel!
+    
     var available: Double!
     var valortotal: Double = 0.0
     var valorTotalMes: Double = 0.0
