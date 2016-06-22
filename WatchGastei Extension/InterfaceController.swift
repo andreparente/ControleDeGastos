@@ -12,7 +12,7 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
-     var outro = InterfaceControllerTable()
+    var outro = InterfaceControllerTable()
     @IBOutlet var total: WKInterfaceLabel!
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
