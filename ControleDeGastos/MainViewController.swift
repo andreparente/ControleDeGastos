@@ -75,7 +75,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         setView()
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
-            session.delegate = self // conforms to WCSessionDelegate
+            session.delegate = self 
             session.activateSession()
             session.sendMessage(["message":userLogged.gastos], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
         }

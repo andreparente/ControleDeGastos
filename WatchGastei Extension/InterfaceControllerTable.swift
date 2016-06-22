@@ -17,7 +17,7 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
         super.awakeWithContext(context)
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
-            session.delegate = self // conforms to WCSessionDelegate
+            session.delegate = self 
             session.activateSession()
         }
         else{
@@ -30,6 +30,7 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
         let text = message["message"] as! [Gasto]
         print(text)
+       // var names : [String] = [text]
         var names = [String]()
         var i = 0
         for _ in text
@@ -37,6 +38,7 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
             names.append(text[i].name!)
             i+=1
         }
+        print(names)
         self.myTable.setNumberOfRows(names.count, withRowType: "cell")
         for(index,item) in names.enumerate(){
             let namescontroller = myTable.rowControllerAtIndex(index) as! MyRow
