@@ -58,10 +58,10 @@ class MainViewController: UIViewController,WCSessionDelegate {
     }
     func printaLimite(usuario: User) {
         if(userLogged.limiteMes == 0) {
-            limite.text = "O limite mensal ainda não foi cadastrado. \n Clique em configuraçōes para realizar o cadastro"
+            limite.text = "O limite mensal ainda não foi cadastrado.\nClique em configurações para realizar o cadastro."
         }
         else {
-            limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)"
+            limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)."
         }
     }
     @IBAction func botaogastar(sender: UIButton) {

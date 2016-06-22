@@ -28,8 +28,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
         // apenas para poder enxergar os botoes
-        self.botaoFiltrar.backgroundColor = corVerde
-        self.botaoOrdenar.backgroundColor = corVerde
+        self.botaoFiltrar.backgroundColor = UIColor.blackColor()
+        self.botaoOrdenar.backgroundColor = UIColor.blackColor()
         self.botaoFiltrar.titleLabel?.textColor = UIColor.whiteColor()
         self.botaoOrdenar.titleLabel?.textColor = UIColor.whiteColor()
         if (eamarela)

@@ -195,6 +195,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "Você não possui nenhum gasto!"
+            chartView.infoTextColor = UIColor.whiteColor()
+            chartView.infoFont = UIFont(name: "Arial", size: 16)
             chartView.delegate = self
             chartView.animate(xAxisDuration: 1)
             

@@ -34,6 +34,10 @@
             <string>TsukuBRdGothic-Bold</string>
             <string>TsukuBRdGothic-Bold</string>
             <string>TsukuBRdGothic-Bold</string>
+            <string>TsukuBRdGothic-Bold</string>
+            <string>TsukuBRdGothic-Bold</string>
+            <string>TsukuBRdGothic-Bold</string>
+            <string>TsukuBRdGothic-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -333,95 +337,219 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Limite de gastos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="854-k0-bpT">
-                                <rect key="frame" x="20" y="323" width="335" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="222" width="335" height="30"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBW-pr-crG">
                                 <rect key="frame" x="20" y="383" width="335" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="47"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="Hwr-1h-KrX"/>
+                                    <constraint firstAttribute="height" constant="55" id="hro-7s-KQ1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="56"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="82" width="71" height="55"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Hwr-1h-KrX"/>
+                                        <exclude reference="hro-7s-KQ1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="143" y="84" width="88" height="55"/>
+                                    <mask key="constraints">
+                                        <include reference="Hwr-1h-KrX"/>
+                                        <include reference="hro-7s-KQ1"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-AX-XUB">
                                 <rect key="frame" x="307" y="28" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="3kT-BU-L0o"/>
+                                    <constraint firstAttribute="width" constant="38" id="DEX-W0-fCb"/>
+                                </constraints>
                                 <state key="normal" title="Settings" image="configur"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3kT-BU-L0o"/>
+                                        <exclude reference="DEX-W0-fCb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="310" y="32" width="38" height="38"/>
+                                    <mask key="constraints">
+                                        <include reference="3kT-BU-L0o"/>
+                                        <include reference="DEX-W0-fCb"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="botaosettings:" destination="i28-Vj-dol" eventType="touchUpInside" id="QQF-NN-sFH"/>
                                     <segue destination="kOo-RQ-Xmt" kind="show" id="ZwO-F9-qYj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total disponível" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-m4-c0C">
+                                <rect key="frame" x="22" y="412" width="330" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="Y2q-G5-bcN"/>
+                                    <constraint firstAttribute="height" constant="67" id="nFb-j3-wNi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Y2q-G5-bcN"/>
+                                        <exclude reference="nFb-j3-wNi"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="299" width="335" height="67"/>
+                                    <mask key="constraints">
+                                        <include reference="Y2q-G5-bcN"/>
+                                        <include reference="nFb-j3-wNi"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sr6-Y8-QRJ">
                                 <rect key="frame" x="169" y="236" width="37" height="37"/>
                                 <color key="color" red="0.32120369339999999" green="0.55812718039999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallet" translatesAutoresizingMaskIntoConstraints="NO" id="suU-fa-ztA">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="39" y="427" width="64" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="OPq-Rk-die"/>
+                                    <constraint firstAttribute="height" constant="65" id="tHr-F4-Icw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OPq-Rk-die"/>
+                                        <exclude reference="tHr-F4-Icw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="39" y="426" width="64" height="65"/>
+                                    <mask key="constraints">
+                                        <include reference="OPq-Rk-die"/>
+                                        <include reference="tHr-F4-Icw"/>
+                                    </mask>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzP-P2-CFj">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="122" y="97" width="27" height="25"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="108" y="98" width="32" height="31"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gastos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1B-1U-4Jk">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="156" y="136" width="62" height="22"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="150" y="139" width="74" height="37"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vID-WR-fxp">
                                 <rect key="frame" x="26" y="189" width="322" height="76"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="JWy-1Z-tSf"/>
+                                    <constraint firstAttribute="height" constant="80" id="SB6-Eh-faa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="30"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <string key="title">Adicione um
  novo gasto!</string>
-                                    <color key="titleColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="59" y="352" width="296" height="215"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JWy-1Z-tSf"/>
+                                        <exclude reference="SB6-Eh-faa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="111" y="419" width="193" height="80"/>
+                                    <mask key="constraints">
+                                        <include reference="JWy-1Z-tSf"/>
+                                        <include reference="SB6-Eh-faa"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="botaogastar:" destination="i28-Vj-dol" eventType="touchUpInside" id="lbz-HG-FGe"/>
                                     <segue destination="goP-2V-gWf" kind="show" id="QRM-YM-FfM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total disponível" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-m4-c0C">
-                                <rect key="frame" x="22" y="412" width="330" height="77"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Limite de gastos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="854-k0-bpT">
+                                <rect key="frame" x="20" y="323" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="SpO-Ax-u3J"/>
+                                    <constraint firstAttribute="width" constant="335" id="Z92-46-1k1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="297" width="335" height="37"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SpO-Ax-u3J"/>
+                                        <exclude reference="Z92-46-1k1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="184" width="335" height="111"/>
+                                    <mask key="constraints">
+                                        <include reference="SpO-Ax-u3J"/>
+                                        <include reference="Z92-46-1k1"/>
+                                    </mask>
                                 </variation>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="vID-WR-fxp" firstAttribute="leading" secondItem="suU-fa-ztA" secondAttribute="trailing" constant="8" id="1It-Bw-Ojh"/>
+                            <constraint firstItem="Gzj-m4-c0C" firstAttribute="centerY" secondItem="7Gb-Go-fx3" secondAttribute="centerY" id="1UV-lH-Hct"/>
+                            <constraint firstItem="qBW-pr-crG" firstAttribute="leading" secondItem="RzP-P2-CFj" secondAttribute="trailing" constant="3" id="2zr-uK-TGZ"/>
+                            <constraint firstItem="Gzj-m4-c0C" firstAttribute="top" secondItem="854-k0-bpT" secondAttribute="bottom" constant="3" id="8Ih-Xs-nBq"/>
+                            <constraint firstItem="854-k0-bpT" firstAttribute="top" secondItem="Z1B-1U-4Jk" secondAttribute="bottom" constant="20" id="CNq-eU-9C9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aOG-AX-XUB" secondAttribute="trailing" constant="7" id="Eiz-UU-02h"/>
+                            <constraint firstItem="854-k0-bpT" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" id="KjL-zt-CpP"/>
+                            <constraint firstItem="854-k0-bpT" firstAttribute="top" secondItem="RzP-P2-CFj" secondAttribute="bottom" constant="55" id="Ksy-Gn-s3k"/>
+                            <constraint firstItem="suU-fa-ztA" firstAttribute="leading" secondItem="7Gb-Go-fx3" secondAttribute="leadingMargin" constant="19" id="PH6-bt-Q1o"/>
+                            <constraint firstItem="aOG-AX-XUB" firstAttribute="top" secondItem="Fhy-6b-Bqe" secondAttribute="bottom" constant="12" id="Qrg-VZ-qxn"/>
+                            <constraint firstItem="Z1B-1U-4Jk" firstAttribute="top" secondItem="qBW-pr-crG" secondAttribute="bottom" id="RrH-PK-TjB"/>
+                            <constraint firstItem="Z1B-1U-4Jk" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" id="UAp-sa-QnV"/>
+                            <constraint firstItem="Z1B-1U-4Jk" firstAttribute="top" secondItem="qBW-pr-crG" secondAttribute="bottom" id="Z4Q-ci-4sM"/>
+                            <constraint firstItem="Gzj-m4-c0C" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" id="dOk-06-lnB"/>
+                            <constraint firstItem="Gzj-m4-c0C" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" id="iZX-5a-XeA"/>
+                            <constraint firstItem="suU-fa-ztA" firstAttribute="top" secondItem="Gzj-m4-c0C" secondAttribute="bottom" constant="60" id="nB3-XE-B4n"/>
+                            <constraint firstItem="vID-WR-fxp" firstAttribute="top" secondItem="Gzj-m4-c0C" secondAttribute="bottom" constant="53" id="uJe-DV-HJY"/>
+                            <constraint firstItem="qBW-pr-crG" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" id="ukv-7D-WP5"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="suU-fa-ztA"/>
                                 <exclude reference="RzP-P2-CFj"/>
                                 <exclude reference="Z1B-1U-4Jk"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2zr-uK-TGZ"/>
+                                <exclude reference="ukv-7D-WP5"/>
+                                <exclude reference="CNq-eU-9C9"/>
+                                <exclude reference="KjL-zt-CpP"/>
+                                <exclude reference="Ksy-Gn-s3k"/>
+                                <exclude reference="RrH-PK-TjB"/>
+                                <exclude reference="UAp-sa-QnV"/>
+                                <exclude reference="Z4Q-ci-4sM"/>
+                                <exclude reference="1UV-lH-Hct"/>
+                                <exclude reference="8Ih-Xs-nBq"/>
+                                <exclude reference="dOk-06-lnB"/>
+                                <exclude reference="iZX-5a-XeA"/>
+                                <exclude reference="Eiz-UU-02h"/>
+                                <exclude reference="Qrg-VZ-qxn"/>
+                                <exclude reference="PH6-bt-Q1o"/>
+                                <exclude reference="nB3-XE-B4n"/>
+                                <exclude reference="1It-Bw-Ojh"/>
+                                <exclude reference="uJe-DV-HJY"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -429,6 +557,26 @@
                                 <include reference="suU-fa-ztA"/>
                                 <include reference="RzP-P2-CFj"/>
                                 <include reference="Z1B-1U-4Jk"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2zr-uK-TGZ"/>
+                                <include reference="ukv-7D-WP5"/>
+                                <include reference="CNq-eU-9C9"/>
+                                <include reference="KjL-zt-CpP"/>
+                                <include reference="Ksy-Gn-s3k"/>
+                                <include reference="RrH-PK-TjB"/>
+                                <include reference="UAp-sa-QnV"/>
+                                <include reference="Z4Q-ci-4sM"/>
+                                <include reference="1UV-lH-Hct"/>
+                                <include reference="8Ih-Xs-nBq"/>
+                                <include reference="dOk-06-lnB"/>
+                                <include reference="iZX-5a-XeA"/>
+                                <include reference="Eiz-UU-02h"/>
+                                <include reference="Qrg-VZ-qxn"/>
+                                <include reference="PH6-bt-Q1o"/>
+                                <include reference="nB3-XE-B4n"/>
+                                <include reference="1It-Bw-Ojh"/>
+                                <include reference="uJe-DV-HJY"/>
                             </mask>
                         </variation>
                     </view>
@@ -560,7 +708,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="SettingsToLogin" id="JPP-2I-nDT"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="SettingsToLogin" action="showViewController:sender:" id="JPP-2I-nDT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9G-V5-7xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1248,9 +1396,15 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-co-EVe">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="15"/>
                                     <state key="normal" title="Ordenar">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="9"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                     <variation key="widthClass=compact" fixedFrame="YES">
                                         <rect key="frame" x="8" y="72" width="175" height="30"/>
                                     </variation>
@@ -1260,9 +1414,15 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-jC-DFb">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="15"/>
                                     <state key="normal" title="Filtrar">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="9"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                     <variation key="widthClass=compact" fixedFrame="YES">
                                         <rect key="frame" x="191" y="72" width="176" height="30"/>
                                     </variation>
@@ -1403,8 +1563,9 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7e0-v9-ANp" customClass="MainTabBarController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="K4w-wg-EJq">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" barStyle="black" id="K4w-wg-EJq">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
@@ -1438,24 +1599,48 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-Dh-qqU" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="20" y="66" width="335" height="335"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="179" width="335" height="283"/>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7U-2V-vb1">
                                 <rect key="frame" x="20" y="409" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.52549019610000003" green="0.098039215690000001" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-VO-phP">
-                                <rect key="frame" x="20" y="438" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="490" width="335" height="21"/>
+                                </variation>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEt-D5-eaI" customClass="MonthYearPickerView" customModule="ControleDeGastos" customModuleProvider="target">
                                 <rect key="frame" x="30" y="423" width="314" height="203"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="30" y="77" width="314" height="89"/>
+                                </variation>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-VO-phP">
+                                <rect key="frame" x="20" y="438" width="335" height="21"/>
+                                <color key="backgroundColor" red="0.52549019610000003" green="0.098039215690000001" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="530" width="335" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KEt-D5-eaI"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="KEt-D5-eaI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Gráfico" image="grafico" id="ma6-dk-5vZ"/>
@@ -1470,7 +1655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvM-w5-cKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-123.75" y="1634.625"/>
+            <point key="canvasLocation" x="-123.75" y="1634.5"/>
         </scene>
     </scenes>
     <resources>
@@ -1484,7 +1669,7 @@
         <image name="wallet" width="126" height="154"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="NL6-cS-gUU"/>
         <segue reference="JPP-2I-nDT"/>
-        <segue reference="16U-4i-2bc"/>
     </inferredMetricsTieBreakers>
 </document>
