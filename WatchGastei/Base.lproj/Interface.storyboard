@@ -10,14 +10,16 @@
             <objects>
                 <controller id="haH-LD-UD5" customClass="InterfaceController" customModule="WatchGastei_Extension">
                     <items>
-                        <button width="1" alignment="left" title="Gastos do dia" id="6KQ-WC-Pf4">
-                            <color key="titleColor" red="0.96862745098039216" green="0.90588235294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <button width="1" height="42.5" alignment="left" title="Gastos do dia" id="6KQ-WC-Pf4">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.21449064505345178" green="0.5374331412291351" blue="0.78764022435897441" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="16"/>
                             <connections>
                                 <action selector="toTable" destination="haH-LD-UD5" id="vnO-uD-pDc"/>
                                 <segue destination="uhK-pg-LR9" kind="push" id="bEK-ha-c80"/>
                             </connections>
                         </button>
-                        <label width="135" height="32.5" alignment="left" text="Label" id="Oce-Dw-Px3"/>
+                        <label width="135" height="32.5" alignment="left" text="Label limite" id="Oce-Dw-Px3"/>
                     </items>
                     <connections>
                         <outlet property="total" destination="Oce-Dw-Px3" id="N26-RQ-rg6"/>

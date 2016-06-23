@@ -40,7 +40,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         }
         if (evermelha)
         {
-            view.backgroundColor = corVermelha
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         
         // inicialmente, o vetor eh o do usuario

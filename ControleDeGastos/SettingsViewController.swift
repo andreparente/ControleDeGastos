@@ -24,7 +24,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         }
         if (evermelha)
         {
-            view.backgroundColor = corVermelha // <<<<<<<<<<<<------------ BOTAR VERMELHA
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
-        navigationItem.title = "Settings"
+        navigationItem.title = "Configurações"
         
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.btn_clicked(_:)))
@@ -63,9 +63,9 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
     
     @IBAction func limite(sender: UIButton) {
         
-        let alert=UIAlertController(title:" Seu limite e:\(userLogged.getLimiteMes())", message: "Mude seu limite abaixo:", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert=UIAlertController(title:" Seu limite é de:\(userLogged.getLimiteMes()) reais", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
-            field.placeholder = "Insira seu limite"})
+            field.placeholder = "Insira seu limite mensal"})
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField

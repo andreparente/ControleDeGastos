@@ -86,7 +86,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             }
             if (evermelha)
             {
-                cell.backgroundColor = corVermelha
+                cell.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
             }
         } else {
             cell.hideInfo(true)

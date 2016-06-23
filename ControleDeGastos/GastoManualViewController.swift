@@ -41,7 +41,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         }
         if (evermelha)
         {
-            view.backgroundColor = corVermelha // <<<<<<<<<<<<------------ BOTAR VERMELHA
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
 
         }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
@@ -167,9 +167,9 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     @IBAction func novacategoria(sender: UIButton) {
         
-        let alert=UIAlertController(title:"Categoria", message: "Insira uma nova categoria abaixo", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert=UIAlertController(title:"Nova categoria", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
-            field.placeholder = "Insira nova categoria"})
+            field.placeholder = "Nome"})
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField

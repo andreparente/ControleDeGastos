@@ -41,7 +41,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
         if (evermelha)
         {
-            view.backgroundColor = corVermelha
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         
         dataMesTextField.delegate = self

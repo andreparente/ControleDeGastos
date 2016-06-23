@@ -53,7 +53,7 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
         }
         if (evermelha)
         {
-            view.backgroundColor = corVermelha
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
     }
     

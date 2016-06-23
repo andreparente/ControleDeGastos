@@ -82,7 +82,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     func printaLimite(usuario: User) {
         
         if(userLogged.limiteMes == 0) {
-            limite.text = "O limite mensal ainda não foi cadastrado.\nClique em configurações para realizar o cadastro."
+            limite.text = "O limite mensal ainda não foi cadastrado.\nRealize-o nas configurações."
         }
         else {
             limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)."
@@ -243,7 +243,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 }
                 if (evermelha)
                 {
-                    self.view.backgroundColor = corVermelha
+                    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
                 }
                 if (eazul)
                 {
