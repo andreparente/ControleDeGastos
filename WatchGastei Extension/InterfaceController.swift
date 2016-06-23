@@ -28,6 +28,7 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
     }
 
     override func willActivate() {
+        //setNotification()
         super.willActivate()
     }
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
@@ -59,4 +60,4 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
     }
     @IBAction func toTable() {
     }
-}
+   }

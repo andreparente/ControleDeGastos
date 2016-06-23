@@ -9,6 +9,28 @@
 import UIKit
 var executar = false
 import WatchConnectivity
+func setNotification() {
+    
+    var timeValue = NSTimeInterval()
+    timeValue = 24
+    var localNotification:UILocalNotification =
+        UILocalNotification()
+    
+    localNotification.alertTitle = "Reminder"
+    
+    localNotification.alertBody = "Wake Up!"
+    
+    localNotification.fireDate = NSDate(timeIntervalSinceNow:
+        timeValue)
+    localNotification.soundName =
+    UILocalNotificationDefaultSoundName
+    localNotification.category = "REMINDER_CATEGORY"
+    
+    
+    UIApplication.sharedApplication().scheduleLocalNotification(
+        localNotification)
+}
+
 class MainViewController: UIViewController,WCSessionDelegate {
     
     @IBOutlet weak var settingsbutton: UIButton!
@@ -136,7 +158,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         
         print("entrou na viewWillAppear")
         
-        
+      //  setNotification()
         if(flagLogout) {
             
             print("entrou na viewWillAppear, flagLogout é true")

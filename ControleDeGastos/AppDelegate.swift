@@ -16,6 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+       /* var repeatAction: UIMutableUserNotificationAction =
+            UIMutableUserNotificationAction()
+        repeatAction.identifier = "REPEAT_IDENTIFIER"
+        repeatAction.title = "Repeat"
+        repeatAction.destructive = false
+        repeatAction.authenticationRequired = false
+        repeatAction.activationMode =
+            UIUserNotificationActivationMode.Background
+        var modifyAction :UIMutableUserNotificationAction =
+            UIMutableUserNotificationAction()
+        modifyAction.identifier = "MODIFY_IDENTIFIER"
+        modifyAction.title = "Modify"
+        modifyAction.destructive = false
+        modifyAction.authenticationRequired = false
+        modifyAction.activationMode =
+            UIUserNotificationActivationMode.Foreground
+        var notificationCategory:UIMutableUserNotificationCategory =
+            UIMutableUserNotificationCategory()
+        
+        notificationCategory.identifier = "REMINDER_CATEGORY"
+        
+        notificationCategory.setActions([repeatAction, modifyAction],
+                                        forContext: UIUserNotificationActionContext.Default)
+        
+        application.registerUserNotificationSettings(
+            UIUserNotificationSettings(forTypes:
+                UIUserNotificationType.Sound
+                    | UIUserNotificationType.Alert
+                    | UIUserNotificationType.Badge,
+                categories: NSSet(array:[notificationCategory]) 
+                    as Set<NSObject>))
+ */
         return true
     }
     func applicationWillResignActive(application: UIApplication) {
