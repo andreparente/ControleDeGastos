@@ -46,6 +46,8 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
             valor.append(text[1][j])
             j+=1
         }
+        totalmes = Double(text[2][0])!
+        total.setText("Total do mes:\(totalmes)")
         print(categorias)
         print(valor)
         

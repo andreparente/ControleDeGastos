@@ -11,6 +11,7 @@ import Foundation
 import WatchConnectivity
 var valor = [String]()
 var categorias = [String]()
+var totalmes = Double()
 class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
 
     @IBOutlet var myTable: WKInterfaceTable!
@@ -43,7 +44,7 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
         categorias.removeAll()
         valor.removeAll()
-    let text = message["categorias"] as! [[String]]
+        let text = message["categorias"] as! [[String]]
         var j = 0
         var i = 0
         for _ in j...text[0].count - 1

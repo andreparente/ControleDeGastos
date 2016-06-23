@@ -28,7 +28,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
     var valortotal: Double = 0.0
     var valorTotalMes: Double = 0.0
     var flagLogout: Bool = false;
-    
     override func viewDidLoad() {
         print("Executou Load")
         super.viewDidLoad()
@@ -91,18 +90,35 @@ class MainViewController: UIViewController,WCSessionDelegate {
         setView()
         var arrayCategories = [String]()
         var arrayValor = [String]()
+        var total = [String]()
+        let hoje = NSDate()
+        var gastosmes:[Gasto]!
+        gastosmes = userLogged.getGastosUltimoMês()
+        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+        let mesAtual = components.month
+        let anoAtual = components.year
+        
+        for valor in (gastosmes) {
+            self.valortotal += valor.value
+            let data = valor.date.componentsSeparatedByString("-")
+            if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
+                self.valorTotalMes += valor.value
+            }
+        }
+
+        total.append(String(valorTotalMes))
         var i = 0
         for _ in userLogged.gastos
         {
             arrayCategories.append(userLogged.gastos[i].category)
-            arrayValor.append(String(userLogged.gastos[i].value))
+            arrayValor.append(String(userLogged.getGastosHoje()[i].value))
             i+=1
         }
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
             session.delegate = self
             session.activateSession()
-            session.sendMessage(["categorias":[arrayCategories,arrayValor]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
+            session.sendMessage(["categorias":[arrayCategories,arrayValor,total]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
             /* do {
              try  session.updateApplicationContext(["message":[arrayCategories,arrayValor]])
              } catch let error as NSError {

@@ -16,7 +16,7 @@
                                 <segue destination="uhK-pg-LR9" kind="push" id="bEK-ha-c80"/>
                             </connections>
                         </button>
-                        <label width="131.5" alignment="left" text="Label" id="Oce-Dw-Px3"/>
+                        <label width="135" height="32.5" alignment="left" text="Label" id="Oce-Dw-Px3"/>
                     </items>
                     <connections>
                         <outlet property="total" destination="Oce-Dw-Px3" id="N26-RQ-rg6"/>
@@ -35,8 +35,8 @@
                                 <tableRow identifier="cell" id="wuC-Zu-zkp" customClass="MyRow" customModule="WatchGastei_Extension">
                                     <group key="rootItem" width="1" height="44.5" alignment="left" layout="vertical" id="q6A-2q-67h">
                                         <items>
-                                            <label alignment="left" text="Label" id="URh-3s-1HB"/>
-                                            <label alignment="left" text="Label" id="dAF-fa-nDR"/>
+                                            <label width="129.5" alignment="left" text="Label" id="URh-3s-1HB"/>
+                                            <label width="129.5" alignment="left" text="Label" id="dAF-fa-nDR"/>
                                         </items>
                                     </group>
                                     <connections>
