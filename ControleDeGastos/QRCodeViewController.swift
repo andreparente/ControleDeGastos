@@ -50,7 +50,12 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         qrCodeFrameView?.layer.borderWidth = 2
         view.addSubview(qrCodeFrameView!)
         view.bringSubviewToFront(qrCodeFrameView!)
-        
+        let delay = 15.0 * Double(NSEC_PER_SEC)
+        let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time1, dispatch_get_main_queue(), {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        })
+
     }
     
     override func didReceiveMemoryWarning() {
