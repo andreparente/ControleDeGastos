@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SystemConfiguration
+
 class LaunchViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -37,26 +37,6 @@ class LaunchViewController: UIViewController {
                 
                 self.performSegueWithIdentifier("LaunchToLogin", sender: self)
             })
-            
-           /* var dict1 = plist.getData()
-            print(plist.plistName)
-            if dict1 != nil && dict1!["isLogged"] as! String != "loggedOut" {
-                
-                dispatch_async(dispatch_get_main_queue(),{
-                    var dict = plist.getData()
-                    userLogged = User(name: dict!["name"] as! String, email: dict!["email"] as! String, password: dict!["password"] as! String)
-                    self.performSegueWithIdentifier("LaunchToLogin", sender: self)
-                    
-                })
-            }
-            else {
-                
-                dispatch_async(dispatch_get_main_queue(),{
-                    print("passou pelo segue launchToLogin")
-                    self.performSegueWithIdentifier("LaunchToLogin", sender: self)
-                })
-            }*/
-            
         }
     }
     override func didReceiveMemoryWarning() {
@@ -76,23 +56,4 @@ class LaunchViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         print("viewWillAppear da launch")
     }
-}
-public class Reachability {
-    class func isConnectedToNetwork() -> Bool {
-        var zeroAddress = sockaddr_in()
-        zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
-        zeroAddress.sin_family = sa_family_t(AF_INET)
-        let defaultRouteReachability = withUnsafePointer(&zeroAddress) {
-            SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
-        }
-        var flags = SCNetworkReachabilityFlags()
-        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
-            return false
-        }
-        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
-        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
-        return (isReachable && !needsConnection)
-    }
-    
-    
 }

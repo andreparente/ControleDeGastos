@@ -255,10 +255,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             var arrayCategories = [String]()
             var arrayValor = [String]()
             var i = 0
-            for _ in userLogged.gastos
+            for _ in userLogged.getGastosHoje()
             {
-                arrayCategories.append(userLogged.gastos[i].category)
-                arrayValor.append(String(userLogged.gastos[i].value))
+                arrayCategories.append(userLogged.getGastosHoje()[i].category)
+                arrayValor.append(String(userLogged.getGastosHoje()[i].value))
                 i+=1
             }
             if (WCSession.isSupported()) {
@@ -267,7 +267,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 session.activateSession()
                 session.sendMessage(["categorias":[arrayCategories,arrayValor]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
             }
-
+            else
+            {
+                print("Nao está conectado ao watch")
+            }
             dismissViewControllerAnimated(true, completion: nil)
         }
     }

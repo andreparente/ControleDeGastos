@@ -328,9 +328,9 @@
 			children = (
 				9C9AFEE41D1052DB00EA551B /* ExtensionDelegate.swift */,
 				9C9AFEE61D1052DB00EA551B /* Assets.xcassets */,
+				9CA712891D1ACA280074E21C /* MyRow.swift */,
 				9C9AFEE81D1052DB00EA551B /* Info.plist */,
 				9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */,
-				9CA712891D1ACA280074E21C /* MyRow.swift */,
 				9CA712921D1AE4D00074E21C /* InterfaceController.swift */,
 			);
 			path = "WatchGastei Extension";

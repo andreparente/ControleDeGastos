@@ -16,7 +16,7 @@
                                 <segue destination="uhK-pg-LR9" kind="push" id="bEK-ha-c80"/>
                             </connections>
                         </button>
-                        <label width="131.5" alignment="left" text="Label" id="Oce-Dw-Px3"/>
+                        <label width="135" height="32.5" alignment="left" text="Label" id="Oce-Dw-Px3"/>
                     </items>
                     <connections>
                         <outlet property="total" destination="Oce-Dw-Px3" id="N26-RQ-rg6"/>
@@ -24,6 +24,24 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="222" y="238"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="7Ui-4d-GW8">
+            <objects>
+                <notificationController id="YHl-j2-M69">
+                    <items>
+                        <label width="134" height="22.5" alignment="left" text="Cuidado! " id="1TB-1l-gyr">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label width="132" height="99.5" alignment="left" text="Você só tem 20% do seu limite para gastar e ainda faltam 10 dias no mês." numberOfLines="6" id="ism-Lg-qZz"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="jkL-fh-p29"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="1TB-1l-gyr" id="35s-EM-YdT"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="518" y="238"/>
         </scene>
         <!--Interface Controller Table-->
         <scene sceneID="oEE-yc-wcQ">
@@ -35,8 +53,8 @@
                                 <tableRow identifier="cell" id="wuC-Zu-zkp" customClass="MyRow" customModule="WatchGastei_Extension">
                                     <group key="rootItem" width="1" height="44.5" alignment="left" layout="vertical" id="q6A-2q-67h">
                                         <items>
-                                            <label alignment="left" text="Label" id="URh-3s-1HB"/>
-                                            <label alignment="left" text="Label" id="dAF-fa-nDR"/>
+                                            <label width="129.5" alignment="left" text="Label" id="URh-3s-1HB"/>
+                                            <label width="129.5" alignment="left" text="Label" id="dAF-fa-nDR"/>
                                         </items>
                                     </group>
                                     <connections>

@@ -95,7 +95,7 @@ class DAOCloudKit {
         }
     }
     
-    func addGastoToUser(gast: Gasto, user: User) {
+   /* func addGastoToUser(gast: Gasto, user: User) {
         
         let recordId = CKRecordID(recordName: user.email)
         let container = CKContainer.defaultContainer()
@@ -127,12 +127,12 @@ class DAOCloudKit {
                 
             }
         }
-    }
+    }*/
     
     func addGasto(gasto: Gasto, user: User) {
         
         let container = CKContainer.defaultContainer()
-        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
         
         let myRecord = CKRecord(recordType: "Gasto")
         let recordId = CKRecordID(recordName: user.email)
@@ -147,7 +147,7 @@ class DAOCloudKit {
         user.arrayGastos.append(gastoReference)
         
         
-        publicDatabase.saveRecord(myRecord, completionHandler:
+        privateDatabase.saveRecord(myRecord, completionHandler:
             ({returnRecord, error in
                 if error != nil {
                     print(error)
@@ -375,7 +375,7 @@ class DAOCloudKit {
                         }
                     }
                     
-                    CKContainer.defaultContainer().publicCloudDatabase.addOperation(fetchOperation)
+                    CKContainer.defaultContainer().privateCloudDatabase.addOperation(fetchOperation)
                 }
                     
                 else {
