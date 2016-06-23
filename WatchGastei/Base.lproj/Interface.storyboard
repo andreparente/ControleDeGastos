@@ -11,6 +11,7 @@
                 <controller id="haH-LD-UD5" customClass="InterfaceController" customModule="WatchGastei_Extension">
                     <items>
                         <button width="1" alignment="left" title="Gastos do dia" id="6KQ-WC-Pf4">
+                            <color key="titleColor" red="0.96862745098039216" green="0.90588235294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="toTable" destination="haH-LD-UD5" id="vnO-uD-pDc"/>
                                 <segue destination="uhK-pg-LR9" kind="push" id="bEK-ha-c80"/>
