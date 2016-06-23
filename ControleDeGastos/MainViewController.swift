@@ -13,7 +13,7 @@ func setNotification() {
     
     var timeValue = NSTimeInterval()
     timeValue = 24
-    var localNotification:UILocalNotification =
+    let localNotification:UILocalNotification =
         UILocalNotification()
     
     localNotification.alertTitle = "Reminder"
@@ -141,6 +141,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         executar = false
         var gastosmes:[Gasto]!
         gastosGlobal = userLogged.gastos
+        //print(gastosGlobal)
         self.valorTotalMes = 0
         self.valortotal = 0
         dispatch_async(dispatch_get_main_queue()) {
@@ -162,6 +163,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             let mesAtual = components.month
             let anoAtual = components.year
             
+            print("GASTOS MES:::::::::::::::", gastosmes)
             for valor in (gastosmes) {
                 self.valortotal += valor.value
                 let data = valor.date.componentsSeparatedByString("-")
@@ -172,7 +174,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             // self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
             self.totalgastos.text = "\(self.valorTotalMes)"
             self.totaldisponivel.numberOfLines = 2
-            
+            print("VALOR TOTAL MES :::::::::::::: ", self.valorTotalMes)
             if(userLogged.limiteMes != 0)
             {
                 self.available = userLogged.limiteMes - self.valorTotalMes
