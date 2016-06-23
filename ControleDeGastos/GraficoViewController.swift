@@ -54,7 +54,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         calendar.components([.Year , .Month], fromDate: dataNs)
         chartView.delegate = self
         chartView.backgroundColor = UIColor(white: 1, alpha: 0)
-        
+        chartView.holeColor = UIColor(white: 1, alpha: 0)
     }
     
     //Funcao para organizar o grafico
@@ -138,15 +138,16 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     
     //FUNCAO QUE PRINTA LIMITE
     func printaLimite(usuario: User) {
+        
         if(usuario.limiteMes == 0) {
-            limiteLabel.text = "Você não disponibilizou o limite por mês."
+            limiteLabel.hidden = true
         }
         else {
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "You need to enter some data"
             chartView.delegate = self
-            chartView.animate(xAxisDuration: 3)
-            limiteLabel.text = "Seu limite é \(usuario.limiteMes)"
+            chartView.animate(xAxisDuration: 2)
+            limiteLabel.text = "Limite mensal de \(usuario.limiteMes)"
         }
     }
     
