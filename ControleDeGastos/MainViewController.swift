@@ -110,42 +110,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
     func actOnNotificationSuccessLoad()
     {
         setView()
-        var arrayCategories = [String]()
-        var arrayValor = [String]()
-        var total = [String]()
-        let hoje = NSDate()
-        var gastosmes:[Gasto]!
-        gastosmes = userLogged.getGastosUltimoMês()
-        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
-        let mesAtual = components.month
-        let anoAtual = components.year
-        
-        for valor in (gastosmes) {
-            self.valortotal += valor.value
-            let data = valor.date.componentsSeparatedByString("-")
-            if(Int(data[1]) == mesAtual && Int(data[0]) == anoAtual) {
-                self.valorTotalMes += valor.value
-            }
-        }
-
-        total.append(String(valorTotalMes))
-        var i = 0
-        for _ in userLogged.getGastosHoje()
-        {
-            arrayCategories.append(userLogged.getGastosHoje()[i].category)
-            arrayValor.append(String(userLogged.getGastosHoje()[i].value))
-            i+=1
-        }
-        if (WCSession.isSupported()) {
-            let session = WCSession.defaultSession()
-            session.delegate = self
-            session.activateSession()
-            session.sendMessage(["categorias":[arrayCategories,arrayValor,total]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
-        }
-        else
-        {
-            print("Nao está conectado ao watch")
-        }
     }
     func actOnNotificationErrorLoad()
     {
@@ -157,7 +121,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
     override func viewWillAppear(animated: Bool) {
         
         print("entrou na viewWillAppear")
-        
       //  setNotification()
         if(flagLogout) {
             
@@ -255,6 +218,30 @@ class MainViewController: UIViewController,WCSessionDelegate {
             {
                 self.totaldisponivel.hidden=true
             }
-        }
+            
+            var arrayCategories = [String]()
+            var arrayValor = [String]()
+            var total = [String]()
+            
+            total.append(String(self.valorTotalMes))
+            var i = 0
+            for _ in userLogged.getGastosHoje()
+            {
+                arrayCategories.append(userLogged.getGastosHoje()[i].category)
+                arrayValor.append(String(userLogged.getGastosHoje()[i].value))
+                i+=1
+            }
+            if (WCSession.isSupported()) {
+                let session = WCSession.defaultSession()
+                session.delegate = self
+                session.activateSession()
+                session.sendMessage(["categorias":[arrayCategories,arrayValor,total]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
+            }
+            else
+            {
+                print("Nao está conectado ao watch")
+            }
+            
     }
+}
 }

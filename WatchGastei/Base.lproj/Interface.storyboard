@@ -19,7 +19,7 @@
                                 <segue destination="uhK-pg-LR9" kind="push" id="bEK-ha-c80"/>
                             </connections>
                         </button>
-                        <label width="135" height="32.5" alignment="left" text="Label limite" id="Oce-Dw-Px3"/>
+                        <label width="134" height="46.5" alignment="left" text="Label limite" numberOfLines="2" id="Oce-Dw-Px3"/>
                     </items>
                     <connections>
                         <outlet property="total" destination="Oce-Dw-Px3" id="N26-RQ-rg6"/>

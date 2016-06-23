@@ -19,7 +19,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
     var contglobal=0
-    
+    var foi = 0
     var delegate = GastoManualViewController()
     
     override func viewDidLoad() {
@@ -53,7 +53,10 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         let delay = 10.0 * Double(NSEC_PER_SEC)
         let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time1, dispatch_get_main_queue(), {
+        if self.foi == 0
+        {
         self.dismissViewControllerAnimated(true, completion: nil)
+        }
         })
 
     }
@@ -99,6 +102,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 
                 self.delegate.valor.text=String(self.delegate.valortotal)
                 dismissViewControllerAnimated(true, completion: nil)
+                foi+=1
                 
                 contglobal += 1
                 return
