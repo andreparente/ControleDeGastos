@@ -267,7 +267,10 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 session.activateSession()
                 session.sendMessage(["categorias":[arrayCategories,arrayValor]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
             }
-
+            else
+            {
+                print("Nao está conectado ao watch")
+            }
             dismissViewControllerAnimated(true, completion: nil)
         }
     }

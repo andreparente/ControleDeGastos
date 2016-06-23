@@ -111,7 +111,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         for _ in userLogged.gastos
         {
             arrayCategories.append(userLogged.gastos[i].category)
-            arrayValor.append(String(userLogged.getGastosHoje()[i].value))
+            arrayValor.append(String(userLogged.gastos[i].value))
             i+=1
         }
         if (WCSession.isSupported()) {
@@ -119,16 +119,10 @@ class MainViewController: UIViewController,WCSessionDelegate {
             session.delegate = self
             session.activateSession()
             session.sendMessage(["categorias":[arrayCategories,arrayValor,total]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
-            /* do {
-             try  session.updateApplicationContext(["message":[arrayCategories,arrayValor]])
-             } catch let error as NSError {
-             NSLog("Updating the context failed: " + error.localizedDescription)
-             }
-             }
-             else{
-             print("cry")
-             }
-             */
+        }
+        else
+        {
+            print("Nao está conectado ao watch")
         }
     }
     func actOnNotificationErrorLoad()
