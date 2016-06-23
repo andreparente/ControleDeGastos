@@ -52,23 +52,6 @@ public class User {
         return gastos
     }
     
-    /*func addCartao(cartao: Cartao) {
-        self.cartoes.append(cartao)
-    }
-    
-    func getCartoes() -> [Cartao] {
-        return self.cartoes
-    }
-    
-    func getCartaoIndex(nomeCartao: String) -> Int {
-        for j in 0..<self.cartoes.count {
-            if (self.cartoes[j].nome == nomeCartao) {
-                return j
-            }
-        }
-        return -1
-    }*/
-    
     func setLimiteMes(limite: Double) {
         self.limiteMes = limite
     }
@@ -137,6 +120,57 @@ public class User {
         let diaAtual = components.day
         
         // subtrai 1 pq os dias do mes nao comecam no zero
+      
         return getGastosUltimosDias(diaAtual-1)
+    }
+    
+    func calculaMediaPorDia(user: User) -> Double {
+        
+        var mediaPorDia: Double!
+        
+        let hoje = NSDate()
+        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+        
+        let dateComponents = NSDateComponents()
+        dateComponents.year = components.year
+        dateComponents.month = components.month
+        let diaAtual = components.day
+        
+        let calendar = NSCalendar.currentCalendar()
+        let date = calendar.dateFromComponents(dateComponents)!
+        let range = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: date)
+        let numDays = range.length
+        
+        let numDaysLeft = Double(numDays - diaAtual)
+        
+        mediaPorDia = user.limiteMes/numDaysLeft
+        
+        return mediaPorDia
+    }
+    
+    func calculaGastosNoDia(user: User) -> Double {
+        
+        var totNoDia: Double = 0
+        
+        let gastosDoDia: [Gasto] = getGastosHoje()
+        
+        for gasto in gastosDoDia {
+            totNoDia += gasto.value
+        }
+        
+        
+        return totNoDia
+    }
+    
+    func abaixoDaMedia(user: User) -> Bool {
+        
+        if(calculaMediaPorDia(user) > calculaGastosNoDia(user)) {
+            return false
+        }
+        else {
+            return true
+        }
+        
+        
     }
 }
