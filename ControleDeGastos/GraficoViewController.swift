@@ -136,10 +136,12 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         
     }
     
+
+    
     //FUNCAO QUE PRINTA LIMITE
     func printaLimite(usuario: User) {
         if(usuario.limiteMes == 0) {
-            limiteLabel.text = "Você não disponibilizou o limite por mês."
+            limiteLabel.text = "Limite mensal não definido."
         }
         else {
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO

@@ -45,8 +45,8 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
         botaoCancelar.titleLabel!.textColor = UIColor.whiteColor()
         botaoSalvar.titleLabel!.textColor = UIColor.whiteColor()
         
-        view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
-        view.backgroundColor = corAzul
+        //view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         if (eamarela)
         {
             view.backgroundColor = corAmarela
@@ -79,6 +79,13 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.ordenacaoEscolhida = self.ordenacoes[row]
+    }
+    
+    //karina - funcao para deixar a fonte do picker branca
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = ordenacoes[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Tsukushi B Round Gothic", size: 15.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        return myTitle
     }
     
     @IBAction func apertouBotaoCancelar(sender: AnyObject) {

@@ -33,7 +33,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FiltrarViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        view.backgroundColor = corAzul
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         if (eamarela)
         {
             view.backgroundColor = corAmarela
@@ -120,6 +120,14 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoriaSelecionada = self.categorias[row]
     }
+    
+    //karina - funcao para deixar a fonte do picker branca
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = categorias[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Tsukushi B Round Gothic", size: 15.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        return myTitle
+    }
+    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)

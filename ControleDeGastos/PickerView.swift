@@ -89,6 +89,14 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         }
     }
     
+    //karina - funcao para deixar a fonte do picker branca
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = months[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Tsukushi B Round Gothic", size: 15.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        return myTitle
+    }
+
+    
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let month = self.selectedRowInComponent(0)+1
         var total = 0.0
