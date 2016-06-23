@@ -431,6 +431,7 @@
 					};
 					9C9AFEDC1D1052DB00EA551B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = C5676RKFWG;
 					};
 				};
 			};
@@ -828,6 +829,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "WatchGastei Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp.watchkitextension;
@@ -843,6 +845,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "WatchGastei Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp.watchkitextension;
