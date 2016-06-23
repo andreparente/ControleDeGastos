@@ -17,6 +17,7 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         super.awakeWithContext(context)
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
+            //let session2 = WCSession.activateSession(<#T##WCSession#>)
             session.delegate = self
             session.activateSession()
         }
@@ -26,11 +27,10 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
         // Configure interface objects here.
     }
-
     override func willActivate() {
         //setNotification()
- 
         super.willActivate()
+        total.setText("Total do mes:\(totalmes)")
     }
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
         categorias.removeAll()
