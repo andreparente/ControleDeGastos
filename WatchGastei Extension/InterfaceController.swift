@@ -12,11 +12,18 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
-    var outro = InterfaceControllerTable()
     @IBOutlet var total: WKInterfaceLabel!
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
+        if (WCSession.isSupported()) {
+            let session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
+        else{
+            print("já era")
+        }
+
         // Configure interface objects here.
     }
 
@@ -28,7 +35,6 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         valor.removeAll()
         let text = message["categorias"] as! [[String]]
         var j = 0
-        var i = 0
         for _ in j...text[0].count - 1
         {
             categorias.append(text[0][j])
@@ -42,13 +48,6 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         }
         print(categorias)
         print(valor)
-        outro.myTable.setNumberOfRows(valor.count, withRowType: "cell")
-        for(index,item) in valor.enumerate(){
-            let namescontroller = outro.myTable.rowControllerAtIndex(index) as! MyRow
-            namescontroller.label1.setText(item)
-            namescontroller.labelcateg.setText(categorias[i])
-            i+=1
-        }
         
     }
 
@@ -58,5 +57,4 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
     }
     @IBAction func toTable() {
     }
-
 }

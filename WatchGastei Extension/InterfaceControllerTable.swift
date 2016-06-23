@@ -14,7 +14,6 @@ var categorias = [String]()
 class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
 
     @IBOutlet var myTable: WKInterfaceTable!
-    var aux : InterfaceController!
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         if (WCSession.isSupported()) {

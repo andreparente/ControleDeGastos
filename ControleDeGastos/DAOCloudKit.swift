@@ -375,7 +375,7 @@ class DAOCloudKit {
                         }
                     }
                     
-                    CKContainer.defaultContainer().publicCloudDatabase.addOperation(fetchOperation)
+                    CKContainer.defaultContainer().privateCloudDatabase.addOperation(fetchOperation)
                 }
                     
                 else {
