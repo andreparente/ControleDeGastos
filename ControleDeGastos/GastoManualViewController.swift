@@ -35,10 +35,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         categoria = "Outros"
         executar = false
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-        if (eamarela)
+      /*  if (eamarela)
         {
             view.backgroundColor = corAmarela
         }
+ */
         if (evermelha)
         {
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)

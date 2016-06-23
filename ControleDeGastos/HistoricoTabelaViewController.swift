@@ -32,11 +32,12 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         self.botaoOrdenar.backgroundColor = UIColor.blackColor()
         self.botaoFiltrar.titleLabel?.textColor = UIColor.whiteColor()
         self.botaoOrdenar.titleLabel?.textColor = UIColor.whiteColor()
-        if (eamarela)
+     /*   if (eamarela)
         {
             view.backgroundColor = corAmarela
             viewSuperior.backgroundColor = corAmarela
         }
+ */
         if (evermelha)
         {
             view.backgroundColor = corVermelha
@@ -80,10 +81,11 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             cell.labelCat.text = "\(gastosGlobal[indexPath.row].category)"
             cell.labelValor.text = "R$ " + String(gastosGlobal[indexPath.row].value)
             cell.labeldata.text = "\(gastosGlobal[indexPath.row].date)"
-            if (eamarela)
+           /* if (eamarela)
             {
                 cell.backgroundColor = corAmarela
             }
+ */
             if (evermelha)
             {
                 cell.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
