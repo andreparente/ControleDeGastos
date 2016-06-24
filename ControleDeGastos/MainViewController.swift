@@ -73,35 +73,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
     }
     
     @IBAction func botaosettings(sender: UIButton) {
-    /*    if userLogged.abaixoDaMedia(userLogged)
-        {
-            let alertTime = NSDate().dateByAddingTimeInterval(50)
-            
-            let notifyAlarm = UILocalNotification()
-            
-            notifyAlarm.fireDate = alertTime
-            notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
-            notifyAlarm.soundName = UILocalNotificationDefaultSoundName
-            notifyAlarm.category = "Aviso_CATEGORY"
-            notifyAlarm.alertTitle = "Cuidado"
-            notifyAlarm.alertBody = "Você está gastando muito hoje"
-            UIApplication().scheduleLocalNotification(notifyAlarm)
-        }
-        else{
-            let alertTime = NSDate().dateByAddingTimeInterval(50)
-            
-            let notifyAlarm = UILocalNotification()
-            
-            notifyAlarm.fireDate = alertTime
-            notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
-            notifyAlarm.soundName = UILocalNotificationDefaultSoundName
-            notifyAlarm.category = "Aviso_CATEGORY"
-            notifyAlarm.alertTitle = "Ok"
-            notifyAlarm.alertBody = "Você não está gastando muito hoje"
-            UIApplication().scheduleLocalNotification(notifyAlarm)
-        }
-*/
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
