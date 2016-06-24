@@ -19,12 +19,15 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
     var contglobal=0
-    var foi = 0
     var delegate = GastoManualViewController()
-    
+    let back = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
         messageLabel.text="No QR code is detected"
+        back.setTitle("Voltar", forState: .Normal)
+        back.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        back.frame = CGRectMake(15, 15, 100, 100)
+        back.addTarget(self, action: #selector(QRCodeViewController.pressed(_:)), forControlEvents: .TouchUpInside)
         let captureDevice=AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         var input : AnyObject!
         
@@ -50,22 +53,13 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         qrCodeFrameView?.layer.borderWidth = 2
         view.addSubview(qrCodeFrameView!)
         view.bringSubviewToFront(qrCodeFrameView!)
-        let delay = 10.0 * Double(NSEC_PER_SEC)
-        let time1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time1, dispatch_get_main_queue(), {
-        if self.foi == 0
-        {
-        self.dismissViewControllerAnimated(true, completion: nil)
-        }
-        })
+        view.addSubview(back)
+        view.bringSubviewToFront(back)
 
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func pressed(sender: UIButton!) {
+       dismissViewControllerAnimated(true, completion: nil)
     }
-    
     // MARK: - Identifica QRCode
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         
@@ -102,7 +96,6 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 
                 self.delegate.valor.text=String(self.delegate.valortotal)
                 dismissViewControllerAnimated(true, completion: nil)
-                foi+=1
                 
                 contglobal += 1
                 return
