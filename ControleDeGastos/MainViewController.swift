@@ -176,7 +176,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                         self.totaldisponivel.text = "Atenção! Você só tem mais \n R$ \(self.available) para gastar nesse mês"
                       //  eamarela = true
                         evermelha = false
-                        eazul = false
+                        eazul = true
                     }
                     else
                     {
