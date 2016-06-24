@@ -8,7 +8,7 @@
 
 import UIKit
 import WatchConnectivity
-
+import WatchKit
 class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UINavigationBarDelegate,WCSessionDelegate {
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -214,6 +214,18 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     @IBAction func gasteiAction(sender: AnyObject) {
         var nome = nomeGasto.text
+        let valor2 = valor.text!
+        var characters2 = Array(valor2.characters)
+        let j = characters2.count
+        for val in 0...j - 1
+        {
+            if (characters2[val] == ",")
+            {
+                characters2[val] = "."
+            }
+           // ia+=1
+        }
+        valor.text = String(characters2)
         let valorgasto = Double(valor.text!)?.roundToPlaces(2)
         
         // nao pode usar variavel sem verificar se eh nil antes
@@ -298,6 +310,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 notifyAlarm.alertBody = "Você não está gastando muito hoje"
                 app.scheduleLocalNotification(notifyAlarm)
             }
+           /* let complicationServer = CLKComplicationServer.sharedInstance()
+            for complication in complicationServer.activeComplications {
+                complicationServer.reloadTimelineForComplication(complication)
+            }
+ */
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
