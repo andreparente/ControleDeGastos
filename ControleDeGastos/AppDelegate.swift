@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+
         let notificationSettings = UIUserNotificationSettings(forTypes:
-            UIUserNotificationType.Alert,categories: nil)
+            UIUserNotificationType.Alert, categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
         return true
     }

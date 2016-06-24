@@ -16,7 +16,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     @IBOutlet weak var nomeGasto: UITextField!
     @IBOutlet weak var categoriaPickerView: UIPickerView!
     @IBOutlet weak var botaoQRCode: UIButton!
-    let app = UIApplication.sharedApplication()
+    //let app = UIApplication.sharedApplication()
     // variaveis do QRCode
     var valortotal:Double!
     var dataQR: String!
@@ -283,7 +283,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             {
                 print("Nao está conectado ao watch")
             }
-            if userLogged.abaixoDaMedia(userLogged)
+         /*   if userLogged.abaixoDaMedia(userLogged)
             {
             let alertTime = NSDate().dateByAddingTimeInterval(5)
             let notifyAlarm = UILocalNotification()
@@ -310,7 +310,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 app.scheduleLocalNotification(notifyAlarm)
             }
  
-           /* let complicationServer = CLKComplicationServer.sharedInstance()
+             let complicationServer = CLKComplicationServer.sharedInstance()
             for complication in complicationServer.activeComplications {
                 complicationServer.reloadTimelineForComplication(complication)
             }

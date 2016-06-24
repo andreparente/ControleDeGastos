@@ -13,7 +13,7 @@ import WatchConnectivity
 class MainViewController: UIViewController,WCSessionDelegate {
     
     @IBOutlet weak var settingsbutton: UIButton!
-    
+    let app = UIApplication.sharedApplication()
     @IBOutlet weak var gastei: UIButton!
     @IBOutlet weak var act: UIActivityIndicatorView!
     @IBOutlet weak var limite: UILabel!
@@ -70,10 +70,30 @@ class MainViewController: UIViewController,WCSessionDelegate {
     }
    
     @IBAction func botaogastar(sender: UIButton) {
+        let alertTime = NSDate().dateByAddingTimeInterval(5)
         
+        let notifyAlarm = UILocalNotification()
+        
+        notifyAlarm.fireDate = alertTime
+        notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
+        notifyAlarm.soundName = UILocalNotificationDefaultSoundName
+        notifyAlarm.category = "Aviso_Category"
+        notifyAlarm.alertTitle = "Ok"
+        notifyAlarm.alertBody = "Você não está gastando muito hoje"
+        app.scheduleLocalNotification(notifyAlarm)
     }
     
     @IBAction func botaosettings(sender: UIButton) {
+        let alertTime = NSDate().dateByAddingTimeInterval(5)
+        let notifyAlarm = UILocalNotification()
+        
+        notifyAlarm.fireDate = alertTime
+        notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
+        notifyAlarm.soundName = UILocalNotificationDefaultSoundName
+        notifyAlarm.category = "Aviso_Category"
+        notifyAlarm.alertTitle = "Cuidado"
+        notifyAlarm.alertBody = "Você está gastando muito hoje"
+        app.scheduleLocalNotification(notifyAlarm)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
