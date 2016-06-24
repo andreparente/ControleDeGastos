@@ -9,27 +9,6 @@
 import UIKit
 var executar = false
 import WatchConnectivity
-func setNotification() {
-    
-    var timeValue = NSTimeInterval()
-    timeValue = 24
-    let localNotification:UILocalNotification =
-        UILocalNotification()
-    
-    localNotification.alertTitle = "Reminder"
-    
-    localNotification.alertBody = "Wake Up!"
-    
-    localNotification.fireDate = NSDate(timeIntervalSinceNow:
-        timeValue)
-    localNotification.soundName =
-    UILocalNotificationDefaultSoundName
-    localNotification.category = "REMINDER_CATEGORY"
-    
-    
-    UIApplication.sharedApplication().scheduleLocalNotification(
-        localNotification)
-}
 
 class MainViewController: UIViewController,WCSessionDelegate {
     
@@ -88,11 +67,40 @@ class MainViewController: UIViewController,WCSessionDelegate {
             limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)."
         }
     }
+   
     @IBAction func botaogastar(sender: UIButton) {
         
     }
     
     @IBAction func botaosettings(sender: UIButton) {
+    /*    if userLogged.abaixoDaMedia(userLogged)
+        {
+            let alertTime = NSDate().dateByAddingTimeInterval(50)
+            
+            let notifyAlarm = UILocalNotification()
+            
+            notifyAlarm.fireDate = alertTime
+            notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
+            notifyAlarm.soundName = UILocalNotificationDefaultSoundName
+            notifyAlarm.category = "Aviso_CATEGORY"
+            notifyAlarm.alertTitle = "Cuidado"
+            notifyAlarm.alertBody = "Você está gastando muito hoje"
+            UIApplication().scheduleLocalNotification(notifyAlarm)
+        }
+        else{
+            let alertTime = NSDate().dateByAddingTimeInterval(50)
+            
+            let notifyAlarm = UILocalNotification()
+            
+            notifyAlarm.fireDate = alertTime
+            notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
+            notifyAlarm.soundName = UILocalNotificationDefaultSoundName
+            notifyAlarm.category = "Aviso_CATEGORY"
+            notifyAlarm.alertTitle = "Ok"
+            notifyAlarm.alertBody = "Você não está gastando muito hoje"
+            UIApplication().scheduleLocalNotification(notifyAlarm)
+        }
+*/
         
     }
     
@@ -111,6 +119,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     {
         setView()
     }
+
     func actOnNotificationErrorLoad()
     {
         let alert=UIAlertController(title:"Erro", message: "Erro ao dar fetch no user", preferredStyle: UIAlertControllerStyle.Alert)
@@ -234,6 +243,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 arrayValor.append(String(userLogged.getGastosHoje()[i].value))
                 i+=1
             }
+            
             if (WCSession.isSupported()) {
                 let session = WCSession.defaultSession()
                 session.delegate = self

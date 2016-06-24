@@ -29,6 +29,7 @@
 		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
 		9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */; };
+		9C82EA581D1D399B0088B306 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C82EA571D1D399B0088B306 /* NotificationController.swift */; };
 		9C9AFEC81D1051A300EA551B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9AFEC11D10516F00EA551B /* Charts.framework */; };
 		9C9AFEC91D1051A300EA551B /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9AFEC11D10516F00EA551B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C9AFED51D1052DA00EA551B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFED31D1052DA00EA551B /* Interface.storyboard */; };
@@ -168,6 +169,7 @@
 		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		9C82EA571D1D399B0088B306 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		9C9AFEB91D10516F00EA551B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		9C9AFED11D1052DA00EA551B /* WatchGastei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchGastei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9AFED41D1052DA00EA551B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				9C9AFEE81D1052DB00EA551B /* Info.plist */,
 				9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */,
 				9CA712921D1AE4D00074E21C /* InterfaceController.swift */,
+				9C82EA571D1D399B0088B306 /* NotificationController.swift */,
 			);
 			path = "WatchGastei Extension";
 			sourceTree = "<group>";
@@ -420,6 +423,9 @@
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = C5676RKFWG;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -608,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C82EA581D1D399B0088B306 /* NotificationController.swift in Sources */,
 				9CA712931D1AE4D00074E21C /* InterfaceController.swift in Sources */,
 				9CA7128A1D1ACA280074E21C /* MyRow.swift in Sources */,
 				9CA7128B1D1ACF700074E21C /* Gasto.swift in Sources */,

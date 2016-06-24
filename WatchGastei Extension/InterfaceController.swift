@@ -37,6 +37,10 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         valor.removeAll()
         let text = message["categorias"] as! [[String]]
         var j = 0
+        print(text[0].count)
+        print(text[1].count)
+        if text[0].count != 0
+        {
         for _ in j...text[0].count - 1
         {
             categorias.append(text[0][j])
@@ -48,12 +52,18 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
             valor.append(text[1][j])
             j+=1
         }
+        }
+        else
+        {
+            valor.append("Sem gastos hoje")
+        }
         totalmes = Double(text[2][0])!
         total.setText("Total do mes:\(totalmes)")
         print(categorias)
         print(valor)
         
-    }
+    
+}
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible

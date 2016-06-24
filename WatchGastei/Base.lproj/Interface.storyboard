@@ -33,14 +33,12 @@
             <objects>
                 <notificationController id="YHl-j2-M69">
                     <items>
-                        <label width="134" height="22.5" alignment="left" text="Cuidado! " id="1TB-1l-gyr">
-                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </label>
-                        <label width="132" height="99.5" alignment="left" text="Você só tem 20% do seu limite para gastar e ainda faltam 10 dias no mês." numberOfLines="6" id="ism-Lg-qZz"/>
+                        <label width="134" height="22.5" alignment="left" text="Alert Label" id="1TB-1l-gyr"/>
                     </items>
-                    <notificationCategory key="notificationCategory" id="jkL-fh-p29"/>
+                    <notificationCategory key="notificationCategory" identifier="Aviso_Category" id="jkL-fh-p29"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="1TB-1l-gyr" id="35s-EM-YdT"/>
+                        <segue destination="xrv-li-tX1" kind="relationship" relationship="dynamicNotificationInterface" id="hCL-Lf-Klc"/>
                     </connections>
                 </notificationController>
             </objects>
@@ -74,6 +72,22 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="222" y="638"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ecj-Wp-lW3">
+            <objects>
+                <controller id="xrv-li-tX1" customClass="NotificationController" customModule="WatchGastei_Extension">
+                    <items>
+                        <label width="136" height="27.5" alignment="left" text="Label" id="QSu-Gg-CQA"/>
+                        <label width="135.5" alignment="left" text="Label" id="DK5-QT-Gv8"/>
+                    </items>
+                    <connections>
+                        <outlet property="labeldescricao" destination="DK5-QT-Gv8" id="Dp5-LL-Duk"/>
+                        <outlet property="labeltitulo" destination="QSu-Gg-CQA" id="Nur-0m-nnz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="818" y="238"/>
         </scene>
     </scenes>
 </document>
