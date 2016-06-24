@@ -16,7 +16,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     @IBOutlet weak var nomeGasto: UITextField!
     @IBOutlet weak var categoriaPickerView: UIPickerView!
     @IBOutlet weak var botaoQRCode: UIButton!
-    //let app = UIApplication.sharedApplication()
     // variaveis do QRCode
     var valortotal:Double!
     var dataQR: String!
@@ -283,38 +282,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             {
                 print("Nao está conectado ao watch")
             }
-         /*   if userLogged.abaixoDaMedia(userLogged)
-            {
-            let alertTime = NSDate().dateByAddingTimeInterval(5)
-            let notifyAlarm = UILocalNotification()
-            
-            notifyAlarm.fireDate = alertTime
-            notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
-            notifyAlarm.soundName = UILocalNotificationDefaultSoundName
-            notifyAlarm.category = "Aviso_Category"
-            notifyAlarm.alertTitle = "Cuidado"
-            notifyAlarm.alertBody = "Você está gastando muito hoje"
-            app.scheduleLocalNotification(notifyAlarm)
-            }
-            else{
-                let alertTime = NSDate().dateByAddingTimeInterval(5)
-                
-                let notifyAlarm = UILocalNotification()
-                
-                notifyAlarm.fireDate = alertTime
-                notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
-                notifyAlarm.soundName = UILocalNotificationDefaultSoundName
-                notifyAlarm.category = "Aviso_Category"
-                notifyAlarm.alertTitle = "Ok"
-                notifyAlarm.alertBody = "Você não está gastando muito hoje"
-                app.scheduleLocalNotification(notifyAlarm)
-            }
- 
-             let complicationServer = CLKComplicationServer.sharedInstance()
+            /*  let complicationServer = CLKComplicationServer.sharedInstance()
             for complication in complicationServer.activeComplications {
                 complicationServer.reloadTimelineForComplication(complication)
             }
- */
+             */
             self.dismissViewControllerAnimated(true, completion: nil)
           
         }
