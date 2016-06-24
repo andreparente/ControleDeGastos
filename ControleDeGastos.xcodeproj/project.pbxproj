@@ -30,6 +30,7 @@
 		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
 		9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */; };
+		9C82EA581D1D399B0088B306 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C82EA571D1D399B0088B306 /* NotificationController.swift */; };
 		9C9AFEC81D1051A300EA551B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9AFEC11D10516F00EA551B /* Charts.framework */; };
 		9C9AFEC91D1051A300EA551B /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9AFEC11D10516F00EA551B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C9AFED51D1052DA00EA551B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9AFED31D1052DA00EA551B /* Interface.storyboard */; };
@@ -45,7 +46,6 @@
 		9CA712901D1AD9EF0074E21C /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756E01D005BDF00CC0535 /* Gasto.swift */; };
 		9CA712931D1AE4D00074E21C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712921D1AE4D00074E21C /* InterfaceController.swift */; };
 		9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */; };
-		E511105C1CB3849D00B9D52D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E511105B1CB3849D00B9D52D /* MainTabBarController.swift */; };
 		E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */; };
 		E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */; };
 		E5BD5CAD1CB2D76900481089 /* Filtros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CAC1CB2D76900481089 /* Filtros.swift */; };
@@ -170,6 +170,7 @@
 		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		9C82EA571D1D399B0088B306 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		9C9AFEB91D10516F00EA551B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		9C9AFED11D1052DA00EA551B /* WatchGastei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchGastei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9AFED41D1052DA00EA551B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -184,7 +185,6 @@
 		9CA712891D1ACA280074E21C /* MyRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRow.swift; sourceTree = "<group>"; };
 		9CA712921D1AE4D00074E21C /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsqueciSenhaViewController.swift; sourceTree = "<group>"; };
-		E511105B1CB3849D00B9D52D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrarViewController.swift; sourceTree = "<group>"; };
 		E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdenarViewController.swift; sourceTree = "<group>"; };
 		E5BD5CAC1CB2D76900481089 /* Filtros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
@@ -250,7 +250,6 @@
 				8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */,
 				E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */,
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
-				E511105B1CB3849D00B9D52D /* MainTabBarController.swift */,
 				9C08CB3F1CFDD75F005133E7 /* PickerView.swift */,
 				9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */,
 			);
@@ -335,6 +334,7 @@
 				9C9AFEE81D1052DB00EA551B /* Info.plist */,
 				9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */,
 				9CA712921D1AE4D00074E21C /* InterfaceController.swift */,
+				9C82EA571D1D399B0088B306 /* NotificationController.swift */,
 			);
 			path = "WatchGastei Extension";
 			sourceTree = "<group>";
@@ -423,6 +423,9 @@
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = C5676RKFWG;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -584,7 +587,6 @@
 				E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */,
 				8A54D3C31CA2CBA700E63645 /* LoginViewController.swift in Sources */,
 				8A1756DF1CFF766C00CC0535 /* SimplePList.swift in Sources */,
-				E511105C1CB3849D00B9D52D /* MainTabBarController.swift in Sources */,
 				8A1756DB1CFF65BE00CC0535 /* User.swift in Sources */,
 				9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */,
 				8A54D3CE1CA2CCFC00E63645 /* GraficoViewController.swift in Sources */,
@@ -612,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C82EA581D1D399B0088B306 /* NotificationController.swift in Sources */,
 				9CA712931D1AE4D00074E21C /* InterfaceController.swift in Sources */,
 				9CA7128A1D1ACA280074E21C /* MyRow.swift in Sources */,
 				9CA7128B1D1ACF700074E21C /* Gasto.swift in Sources */,
@@ -834,10 +837,12 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WatchGastei Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -850,10 +855,12 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WatchGastei Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;

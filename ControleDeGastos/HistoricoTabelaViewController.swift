@@ -32,11 +32,12 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         self.botaoOrdenar.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1)
         self.botaoFiltrar.titleLabel?.textColor = UIColor.whiteColor()
         self.botaoOrdenar.titleLabel?.textColor = UIColor.whiteColor()
-        if (eamarela)
+     /*   if (eamarela)
         {
             view.backgroundColor = corAmarela
             viewSuperior.backgroundColor = corAmarela
         }
+ */
         if (evermelha)
         {
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
@@ -80,10 +81,11 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             cell.labelCat.text = "\(gastosGlobal[indexPath.row].category)"
             cell.labelValor.text = "R$ " + String(gastosGlobal[indexPath.row].value)
             cell.labeldata.text = "\(gastosGlobal[indexPath.row].date)"
-            if (eamarela)
+           /* if (eamarela)
             {
                 cell.backgroundColor = UIColor.clearColor()
             }
+ */
             if (evermelha)
             {
                 cell.backgroundColor = UIColor.clearColor()
@@ -118,6 +120,19 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             let destino = segue.destinationViewController as! OrdenarViewController
             destino.delegate = self
             
+        }
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            
+            DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged)
+            tableView.reloadData()
+            // handle delete (by removing the data from your array and updating the tableview)
         }
     }
 }

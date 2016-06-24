@@ -17,6 +17,7 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         super.awakeWithContext(context)
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
+            //let session2 = WCSession.activateSession(<#T##WCSession#>)
             session.delegate = self
             session.activateSession()
         }
@@ -26,17 +27,20 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
         // Configure interface objects here.
     }
-
     override func willActivate() {
         //setNotification()
- 
         super.willActivate()
+        total.setText("Total do mes:\(totalmes)")
     }
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
         categorias.removeAll()
         valor.removeAll()
         let text = message["categorias"] as! [[String]]
         var j = 0
+        print(text[0].count)
+        print(text[1].count)
+        if text[0].count != 0
+        {
         for _ in j...text[0].count - 1
         {
             categorias.append(text[0][j])
@@ -48,12 +52,18 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
             valor.append(text[1][j])
             j+=1
         }
+        }
+        else
+        {
+            valor.append("Sem gastos hoje")
+        }
         totalmes = Double(text[2][0])!
         total.setText("Total do mes:\(totalmes)")
         print(categorias)
         print(valor)
         
-    }
+    
+}
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible

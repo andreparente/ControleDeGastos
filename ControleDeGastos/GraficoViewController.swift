@@ -35,10 +35,11 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         super.viewDidLoad()
         pickermesano.grafico = self
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-        if (eamarela)
+     /*   if (eamarela)
         {
             view.backgroundColor = corAmarela
         }
+ */
         if (evermelha)
         {
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
@@ -170,7 +171,16 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         
-        chartDataSet.colors = ChartColorTemplates.liberty()
+        var r,g,b: CGFloat!
+
+            chartDataSet.colors.removeAll()
+            for i in 0...userLogged.categories.count {
+                
+                r=CGFloat(Double(i)*10 + 20)
+                g=CGFloat(Double(i)*15 + 30)
+                b=CGFloat(Double(i)*20 + 40)
+                chartDataSet.colors.append(NSUIColor(red: r/255, green: g/255, blue: b/255, alpha: 1))
+            }
         
         let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
         chartView.data = chartData

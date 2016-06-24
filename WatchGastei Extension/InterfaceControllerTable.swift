@@ -36,8 +36,15 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
         for(index,item) in valor.enumerate(){
             let namescontroller = myTable.rowControllerAtIndex(index) as! MyRow
             namescontroller.label1.setText(item)
+            if categorias.count != 0
+            {
             namescontroller.labelcateg.setText(categorias[i])
             i+=1
+            namescontroller.labelcateg.setHidden(false)
+            }
+            else{
+                namescontroller.labelcateg.setHidden(true)
+            }
         }
         super.willActivate()
     }
@@ -47,29 +54,44 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
         let text = message["categorias"] as! [[String]]
         var j = 0
         var i = 0
-        for _ in j...text[0].count - 1
+        print(text[0].count)
+        print(text[1].count)
+        if text[0].count != 0
         {
-            categorias.append(text[0][j])
-            j+=1
+            for _ in j...text[0].count - 1
+            {
+                categorias.append(text[0][j])
+                j+=1
+            }
+            j=0
+            for _ in j...text[1].count - 1
+            {
+                valor.append(text[1][j])
+                j+=1
+            }
         }
-        j=0
-        for _ in j...text[1].count - 1
+        else
         {
-            valor.append(text[1][j])
-            j+=1
+            valor.append("Sem gastos hoje")
         }
         print(categorias)
-        print(valor)
         self.myTable.setNumberOfRows(valor.count, withRowType: "cell")
         for(index,item) in valor.enumerate(){
             let namescontroller = myTable.rowControllerAtIndex(index) as! MyRow
             namescontroller.label1.setText(item)
-            namescontroller.labelcateg.setText(categorias[i])
-            i+=1
+            if categorias.count != 0
+            {
+                namescontroller.labelcateg.setText(categorias[i])
+                i+=1
+                namescontroller.labelcateg.setHidden(false)
+            }
+            else{
+                namescontroller.labelcateg.setHidden(true)
+            }
         }
         
     }
-    override func didDeactivate() {
+        override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }

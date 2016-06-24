@@ -32,6 +32,7 @@ class EsqueciSenhaViewController: UIViewController,MFMailComposeViewControllerDe
             self.showSendMailErrorAlert()
         }
     }
+     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self

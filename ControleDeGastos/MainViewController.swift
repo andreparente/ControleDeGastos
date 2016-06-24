@@ -9,27 +9,6 @@
 import UIKit
 var executar = false
 import WatchConnectivity
-func setNotification() {
-    
-    var timeValue = NSTimeInterval()
-    timeValue = 24
-    var localNotification:UILocalNotification =
-        UILocalNotification()
-    
-    localNotification.alertTitle = "Reminder"
-    
-    localNotification.alertBody = "Wake Up!"
-    
-    localNotification.fireDate = NSDate(timeIntervalSinceNow:
-        timeValue)
-    localNotification.soundName =
-    UILocalNotificationDefaultSoundName
-    localNotification.category = "REMINDER_CATEGORY"
-    
-    
-    UIApplication.sharedApplication().scheduleLocalNotification(
-        localNotification)
-}
 
 class MainViewController: UIViewController,WCSessionDelegate {
     
@@ -89,12 +68,12 @@ class MainViewController: UIViewController,WCSessionDelegate {
             limite.text = "Seu limite mensal é de R$ \(usuario.limiteMes)"
         }
     }
+   
     @IBAction func botaogastar(sender: UIButton) {
         
     }
     
     @IBAction func botaosettings(sender: UIButton) {
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -112,6 +91,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     {
         setView()
     }
+
     func actOnNotificationErrorLoad()
     {
         let alert=UIAlertController(title:"Erro", message: "Erro ao dar fetch no user", preferredStyle: UIAlertControllerStyle.Alert)
@@ -123,6 +103,8 @@ class MainViewController: UIViewController,WCSessionDelegate {
         
         print("entrou na viewWillAppear")
       //  setNotification()
+        
+        
         if(flagLogout) {
             
             print("entrou na viewWillAppear, flagLogout é true")
@@ -142,6 +124,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         executar = false
         var gastosmes:[Gasto]!
         gastosGlobal = userLogged.gastos
+        //print(gastosGlobal)
         self.valorTotalMes = 0
         self.valortotal = 0
         dispatch_async(dispatch_get_main_queue()) {
@@ -163,6 +146,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             let mesAtual = components.month
             let anoAtual = components.year
             
+            print("GASTOS MES:::::::::::::::", gastosmes)
             for valor in (gastosmes) {
                 self.valortotal += valor.value
                 let data = valor.date.componentsSeparatedByString("-")
@@ -173,14 +157,15 @@ class MainViewController: UIViewController,WCSessionDelegate {
             // self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
             self.totalgastos.text = "\(self.valorTotalMes)"
             self.totaldisponivel.numberOfLines = 2
-            
+            print("VALOR TOTAL MES :::::::::::::: ", self.valorTotalMes)
             if(userLogged.limiteMes != 0)
             {
                 self.available = userLogged.limiteMes - self.valorTotalMes
                 if(self.available >  0 && self.available > (0.2 * userLogged.limiteMes) )
                 {
-                    self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês."
-                    eamarela = false
+
+                    self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
+                   // eamarela = false
                     evermelha = false
                     eazul = true
                 }
@@ -188,23 +173,24 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 {
                     if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
                     {
-                        self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês."
-                        eamarela = true
+                        self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês"
+                      //  eamarela = true
                         evermelha = false
                         eazul = false
                     }
                     else
                     {
-                        self.totaldisponivel.text = "Você estourou seu limite mensal \n por R$\(self.valorTotalMes - userLogged.limiteMes)"
-                        eamarela = false
+                        self.totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(self.valorTotalMes - userLogged.limiteMes)"
+                       // eamarela = false
                         evermelha = true
                         eazul = false
                     }
                 }
-                if (eamarela)
+              /*  if (eamarela)
                 {
                     self.view.backgroundColor = corAmarela
                 }
+ */
                 if (evermelha)
                 {
                     self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
@@ -232,6 +218,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 arrayValor.append(String(userLogged.getGastosHoje()[i].value))
                 i+=1
             }
+            
             if (WCSession.isSupported()) {
                 let session = WCSession.defaultSession()
                 session.delegate = self

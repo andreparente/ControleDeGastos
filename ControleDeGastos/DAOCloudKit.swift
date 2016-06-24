@@ -95,39 +95,6 @@ class DAOCloudKit {
         }
     }
     
-   /* func addGastoToUser(gast: Gasto, user: User) {
-        
-        let recordId = CKRecordID(recordName: user.email)
-        let container = CKContainer.defaultContainer()
-        let privateDatabase = container.privateCloudDatabase
-        
-        privateDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
-            
-            print(fetchedRecord)
-            
-            if error == nil {
-                
-                print("Already exists user!!")
-                fetchedRecord!.setObject(user.categories, forKey: "categories")
-                
-                privateDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
-                    if (error != nil) {
-                        print(error)
-                    }
-                })
-                
-                NSNotificationCenter.defaultCenter().postNotificationName("notificationCategoryAdded", object: nil)
-                
-            }
-                
-            else {
-                
-                NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorAddCategory", object: nil)
-                
-                
-            }
-        }
-    }*/
     
     func addGasto(gasto: Gasto, user: User) {
         
@@ -169,6 +136,7 @@ class DAOCloudKit {
             if error == nil {
                 
                 print("Already exists user!!")
+                
                 print("---------------------- Referencia dos gastos: ", user.arrayGastos)
                 fetchedRecord!.setObject(user.arrayGastos, forKey: "gastos")
                 
@@ -189,10 +157,50 @@ class DAOCloudKit {
                 
             }
         }
-        
-        
-        
     }
+    
+    func deleteGasto(gastoToDelete: CKReference, user: User) {
+        
+        let container = CKContainer.defaultContainer()
+        let privateDatabase = container.privateCloudDatabase
+       
+        print("GASTO A SER DELETADO!!!! ::::", gastoToDelete)
+        
+        privateDatabase.deleteRecordWithID(gastoToDelete.recordID,completionHandler:
+            ({returnRecord, error in
+                if error != nil {
+                    print(error)
+                    //  NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveError", object: nil)
+                    
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        // NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveSuccess", object: nil)
+                    }
+                    
+                }
+            }))
+        
+        //AGORA TEM QUE DELETAR DA REFERENCIA DO USUARIO!!a
+        
+        /*container.privateCloudDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+            
+            print(fetchedRecord)
+            
+            if error == nil {
+                
+                print("Already exists user!!")
+                print("---------------------- Referencia dos gastos: ", user.arrayGastos)
+                fetchedRecord!.setObject(user.arrayGastos, forKey: "gastos")
+                
+                container.privateCloudDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
+                    if (error != nil) {
+                        print(error)
+                    }
+                })
+            }
+        }*/
+    }
+    
     //NS NOTIFICATION CENTER
     
     func fetchCategoriesForUser(user: User) {
@@ -364,11 +372,13 @@ class DAOCloudKit {
                             
                             userLogged.gastos.removeAll()
                             userLogged.arrayGastos.removeAll()
+                            
                             for (_, result) in records! {
+                                
                                 userLogged.arrayGastos.append(CKReference(recordID: result.recordID, action: .None))
                                 userLogged.gastos.append(Gasto(nome: result.valueForKey("name") as! String, categoria: result.valueForKey("category") as! String, valor: result.valueForKey("value") as! Double, data: result.valueForKey("data") as! String))
                             }
-                            print(userLogged.gastos.count)
+                            
                             NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)
                             
                             

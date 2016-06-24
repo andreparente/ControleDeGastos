@@ -34,10 +34,11 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         view.addGestureRecognizer(tap)
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-        if (eamarela)
+       /* if (eamarela)
         {
             view.backgroundColor = corAmarela
         }
+ */
         if (evermelha)
         {
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
