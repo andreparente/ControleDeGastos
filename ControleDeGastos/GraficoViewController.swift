@@ -171,14 +171,29 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         
-        var r,g,b: CGFloat!
+        var r, g, b: CGFloat!
 
             chartDataSet.colors.removeAll()
+        print(eazul)
+        print(evermelha)
             for i in 0...userLogged.categories.count {
                 
-                r=CGFloat(Double(i)*10 + 20)
-                g=CGFloat(Double(i)*15 + 30)
-                b=CGFloat(Double(i)*20 + 40)
+                if (eazul) {
+                r = CGFloat(Double(i)*10 + 64)
+                g = CGFloat(Double(i)*20 + 138)
+                b = CGFloat(Double(i)*30 + 202)
+                }
+                
+                else if (evermelha) {
+                    r = CGFloat(Double(i)*10 + 146)
+                    g = CGFloat(Double(i)*20 + 16)
+                    b = CGFloat(Double(i)*30 + 16)
+                }
+                
+                //r=CGFloat(Double(i)*10 + 20)
+                //g=CGFloat(Double(i)*15 + 30)
+                //b=CGFloat(Double(i)*20 + 40)
+                
                 chartDataSet.colors.append(NSUIColor(red: r/255, green: g/255, blue: b/255, alpha: 1))
             }
         
