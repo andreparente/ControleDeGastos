@@ -13,7 +13,6 @@
 		8A1756DF1CFF766C00CC0535 /* SimplePList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756DE1CFF766C00CC0535 /* SimplePList.swift */; };
 		8A1AFCFF1CAACC7400382D1B /* GastoManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3CB1CA2CCDF00E63645 /* GastoManualViewController.swift */; };
 		8A1AFD271CB07DF000382D1B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1AFD261CB07DF000382D1B /* TableViewCell.swift */; };
-		8A4E55051D1AE90C00982C60 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 8A4E55041D1AE90C00982C60 /* TsukushiBMaruGothic.ttc */; };
 		8A54D3C31CA2CBA700E63645 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3C21CA2CBA700E63645 /* LoginViewController.swift */; };
 		8A54D3C81CA2CC5B00E63645 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3C71CA2CC5B00E63645 /* MainViewController.swift */; };
 		8A54D3CA1CA2CCCF00E63645 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3C91CA2CCCF00E63645 /* QRCodeViewController.swift */; };
@@ -27,6 +26,8 @@
 		8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01F1C9C2F6B00C055F8 /* LaunchScreen.storyboard */; };
 		9C047D721CB2A1D40099A13C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C047D711CB2A1D40099A13C /* extensions.swift */; };
 		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
+		9C0FBAD81D1DB2E200C53B87 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FBAD71D1DB2E200C53B87 /* TsukushiBMaruGothic.ttc */; };
+		9C0FBADD1D1DB33400C53B87 /* TsukushiAMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FBADC1D1DB33400C53B87 /* TsukushiAMaruGothic.ttc */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
 		9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */; };
 		9C82EA581D1D399B0088B306 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C82EA571D1D399B0088B306 /* NotificationController.swift */; };
@@ -150,8 +151,6 @@
 		8A1756DE1CFF766C00CC0535 /* SimplePList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePList.swift; sourceTree = "<group>"; };
 		8A1756E01D005BDF00CC0535 /* Gasto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gasto.swift; sourceTree = "<group>"; };
 		8A1AFD261CB07DF000382D1B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		8A43D3381D1DA2A800088D98 /* TsukushiAMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiAMaruGothic.ttc; sourceTree = "<group>"; };
-		8A4E55041D1AE90C00982C60 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
 		8A54D3C21CA2CBA700E63645 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8A54D3C71CA2CC5B00E63645 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8A54D3C91CA2CCCF00E63645 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +167,8 @@
 		8A71E0221C9C2F6B00C055F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C047D711CB2A1D40099A13C /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		9C0FBAD71D1DB2E200C53B87 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiBMaruGothic.ttc; path = "../../Downloads/Telegram Desktop/TsukushiBMaruGothic.ttc"; sourceTree = "<group>"; };
+		9C0FBADC1D1DB33400C53B87 /* TsukushiAMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiAMaruGothic.ttc; path = "../../Downloads/Telegram Desktop/TsukushiAMaruGothic.ttc"; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9C82EA571D1D399B0088B306 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -291,8 +292,8 @@
 		8A71E0151C9C2F6B00C055F8 /* ControleDeGastos */ = {
 			isa = PBXGroup;
 			children = (
-				8A4E55041D1AE90C00982C60 /* TsukushiBMaruGothic.ttc */,
-				8A43D3381D1DA2A800088D98 /* TsukushiAMaruGothic.ttc */,
+				9C0FBADC1D1DB33400C53B87 /* TsukushiAMaruGothic.ttc */,
+				9C0FBAD71D1DB2E200C53B87 /* TsukushiBMaruGothic.ttc */,
 				8A1756D71CFF63EA00CC0535 /* ControleDeGastos.entitlements */,
 				8A54D3C11CA2CB0800E63645 /* View */,
 				8A54D3C01CA2CAFC00E63645 /* Controller */,
@@ -505,9 +506,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C0FBADD1D1DB33400C53B87 /* TsukushiAMaruGothic.ttc in Resources */,
 				8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */,
 				8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */,
-				8A4E55051D1AE90C00982C60 /* TsukushiBMaruGothic.ttc in Resources */,
+				9C0FBAD81D1DB2E200C53B87 /* TsukushiBMaruGothic.ttc in Resources */,
 				9CA712791D1990070074E21C /* User.plist in Resources */,
 				8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */,
 			);
