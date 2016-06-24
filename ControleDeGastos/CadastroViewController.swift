@@ -47,7 +47,8 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
-        navigationBar.backgroundColor = UIColor(red: 105/255, green: 181/255, blue: 120/255, alpha: 0.9)
+        navigationBar.barTintColor = UIColor.blackColor()
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Tsukushi A Round Gothic", size: 18)!]
         navigationBar.delegate = self;
         
         // Create a navigation item with a title
@@ -56,6 +57,8 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(CadastroViewController.btn_clicked(_:)))
+        leftButton.tintColor = UIColor.whiteColor()
+        leftButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Tsukushi A Round Gothic", size: 15)!], forState: UIControlState.Normal)
         
         
         // Create two buttons for the navigation item

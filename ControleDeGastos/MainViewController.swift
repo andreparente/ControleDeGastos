@@ -65,6 +65,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         settingsbutton.hidden = true
         RS.hidden = true
         gastos.hidden = true
+        imagemCarteira.hidden = true
         self.tabBarController?.tabBar.hidden = true
         
         DAOCloudKit().fetchCategoriesForUser(userLogged)
@@ -85,7 +86,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             limite.text = "O limite mensal ainda não foi cadastrado.\nRealize-o nas configurações."
         }
         else {
-            limite.text = "Seu limite por mês é de R$ \(usuario.limiteMes)."
+            limite.text = "Seu limite mensal é de R$ \(usuario.limiteMes)"
         }
     }
     @IBAction func botaogastar(sender: UIButton) {
@@ -178,7 +179,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 self.available = userLogged.limiteMes - self.valorTotalMes
                 if(self.available >  0 && self.available > (0.2 * userLogged.limiteMes) )
                 {
-                    self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês"
+                    self.totaldisponivel.text = "Você ainda tem R$ \(self.available) para gastar nesse mês."
                     eamarela = false
                     evermelha = false
                     eazul = true
@@ -187,14 +188,14 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 {
                     if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
                     {
-                        self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês"
+                        self.totaldisponivel.text = "Atenção! Você só tem mais R$ \(self.available) para gastar nesse mês."
                         eamarela = true
                         evermelha = false
                         eazul = false
                     }
                     else
                     {
-                        self.totaldisponivel.text = "Você estourou seu limite de gastos do mês por R$\(self.valorTotalMes - userLogged.limiteMes)"
+                        self.totaldisponivel.text = "Você estourou seu limite mensal \n por R$\(self.valorTotalMes - userLogged.limiteMes)"
                         eamarela = false
                         evermelha = true
                         eazul = false

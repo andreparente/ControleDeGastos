@@ -30,8 +30,8 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account
         
         //navigationBar.backgroundColor = UIColor.blackColor()
-        navigationBar.barTintColor = UIColor.blackColor()
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Tsukushi B Round Gothic", size: 18)!]
+        navigationBar.barTintColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Tsukushi A Round Gothic", size: 18)!]
         navigationBar.delegate = self;
         
         // Create a navigation item with a title
@@ -41,7 +41,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         // Create left and right button for navigation item
         let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.btn_clicked(_:)))
         leftButton.tintColor = UIColor.whiteColor()
-        leftButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Tsukushi B Round Gothic", size: 15)!], forState: UIControlState.Normal)
+        leftButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Tsukushi A Round Gothic", size: 15)!], forState: UIControlState.Normal)
         
         
         
@@ -63,9 +63,9 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
     
     @IBAction func limite(sender: UIButton) {
         
-        let alert=UIAlertController(title:" Seu limite é de:\(userLogged.getLimiteMes()) reais", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert=UIAlertController(title:" Seu limite é de R$\(userLogged.getLimiteMes())", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
-            field.placeholder = "Insira seu limite mensal"})
+            field.placeholder = "Novo limite mensal"})
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
@@ -95,9 +95,9 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
     }
     
     @IBAction func categoria(sender: UIButton) {
-        let alert=UIAlertController(title:"Categoria", message: "Insira uma nova categoria abaixo", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert=UIAlertController(title:"Nova categoria", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler({ (field) -> Void in
-            field.placeholder = "Insira nova categoria"})
+            field.placeholder = "Nome"})
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
@@ -106,7 +106,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
             for categ in (userLogged.categories)
             {
                 if textField.text == categ {
-                    let alert2=UIAlertController(title:"Erro", message: "Categoria já existe", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert2=UIAlertController(title:"Erro", message: "Categoria já existe.", preferredStyle: UIAlertControllerStyle.Alert)
                     alert2.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Cancel,handler: nil))
                     self.presentViewController(alert2,animated: true, completion: nil)
                     naoExiste = false

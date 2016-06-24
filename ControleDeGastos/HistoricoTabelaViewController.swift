@@ -28,8 +28,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
         // apenas para poder enxergar os botoes
-        self.botaoFiltrar.backgroundColor = UIColor.blackColor()
-        self.botaoOrdenar.backgroundColor = UIColor.blackColor()
+        self.botaoFiltrar.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1)
+        self.botaoOrdenar.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1)
         self.botaoFiltrar.titleLabel?.textColor = UIColor.whiteColor()
         self.botaoOrdenar.titleLabel?.textColor = UIColor.whiteColor()
         if (eamarela)
@@ -39,8 +39,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         }
         if (evermelha)
         {
-            view.backgroundColor = corVermelha
-            viewSuperior.backgroundColor = corVermelha
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         
         
@@ -82,16 +82,16 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             cell.labeldata.text = "\(gastosGlobal[indexPath.row].date)"
             if (eamarela)
             {
-                cell.backgroundColor = corAmarela
+                cell.backgroundColor = UIColor.clearColor()
             }
             if (evermelha)
             {
-                cell.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+                cell.backgroundColor = UIColor.clearColor()
             }
         } else {
             cell.hideInfo(true)
             cell.labelSemGastos.text = "Nenhum gasto para exibir!"
-            cell.labelSemGastos.font = UIFont(name: "Tsukushi B Round Gothic", size: 16)
+            cell.labelSemGastos.font = UIFont(name: "Tsukushi A Round Gothic", size: 16)
         }
         return cell
     }

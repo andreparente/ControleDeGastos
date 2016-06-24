@@ -45,7 +45,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
         
         dataMesTextField.delegate = self
-        dataMesTextField.font = UIFont(name: "Tsukushi B Round Gothic", size: 16)
+        dataMesTextField.font = UIFont(name: "Tsukushi A Round Gothic", size: 16)
         pickermesano.hidden = true
         dataMesTextField.inputView = pickermesano
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
@@ -201,7 +201,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "Você não possui nenhum gasto!"
             chartView.infoTextColor = UIColor.whiteColor()
-            chartView.infoFont = UIFont(name: "Tsukushi B Round Gothic", size: 16)
+            chartView.infoFont = UIFont(name: "Tsukushi A Round Gothic", size: 16)
             chartView.delegate = self
             chartView.animate(xAxisDuration: 1)
             

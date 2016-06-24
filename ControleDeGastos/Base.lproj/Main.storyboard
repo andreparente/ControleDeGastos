@@ -6,55 +6,59 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="TsukushiAMaruGothic.ttc">
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Regular</string>
+            <string>TsukuARdGothic-Regular</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Bold</string>
+            <string>TsukuARdGothic-Regular</string>
+        </mutableArray>
         <mutableArray key="TsukushiBMaruGothic.ttc">
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Regular</string>
-            <string>TsukuBRdGothic-Regular</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
-            <string>TsukuBRdGothic-Bold</string>
             <string>TsukuBRdGothic-Bold</string>
             <string>TsukuBRdGothic-Bold</string>
             <string>TsukuBRdGothic-Bold</string>
@@ -83,7 +87,7 @@
                                     <constraint firstAttribute="width" constant="225" id="gzh-9B-xkB"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -131,7 +135,7 @@
                                     <constraint firstAttribute="height" constant="58" id="J18-Kx-m29"/>
                                     <constraint firstAttribute="width" constant="182" id="tHh-g6-fw1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="54"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="54"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -154,7 +158,7 @@
                                     <constraint firstAttribute="width" constant="225" id="rM9-cf-BZW"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -172,7 +176,7 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37e-cL-knd">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="55"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="55"/>
                                 <color key="textColor" red="0.96862745098039216" green="0.90588235294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
@@ -181,11 +185,12 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj8-7R-Nlv">
                                 <rect key="frame" x="73" y="404" width="63" height="30"/>
-                                <color key="backgroundColor" red="0.074509803921568626" green="0.082352941176470587" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="31R-f8-KrV"/>
                                     <constraint firstAttribute="width" constant="142" id="UCF-40-LlR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Confirmar"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -194,12 +199,14 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="31R-f8-KrV"/>
                                         <exclude reference="UCF-40-LlR"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="114" y="402" width="142" height="37"/>
                                     <mask key="constraints">
+                                        <include reference="31R-f8-KrV"/>
                                         <include reference="UCF-40-LlR"/>
                                     </mask>
                                 </variation>
@@ -313,7 +320,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8o-Tf-D0N">
                                 <rect key="frame" x="156" y="136" width="63" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Confirma">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -383,7 +390,7 @@
                                     <constraint firstAttribute="width" constant="189" id="Hwr-1h-KrX"/>
                                     <constraint firstAttribute="height" constant="55" id="hro-7s-KQ1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="56"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="56"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -424,13 +431,13 @@
                                     <segue destination="kOo-RQ-Xmt" kind="show" identifier="MainToSettings" id="ZwO-F9-qYj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total disponível" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-m4-c0C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total disponível" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-m4-c0C">
                                 <rect key="frame" x="22" y="412" width="330" height="77"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="Y2q-G5-bcN"/>
+                                    <constraint firstAttribute="width" constant="317" id="Y2q-G5-bcN"/>
                                     <constraint firstAttribute="height" constant="67" id="nFb-j3-wNi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -440,14 +447,14 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="299" width="335" height="67"/>
+                                    <rect key="frame" x="31" y="303" width="317" height="64"/>
                                     <mask key="constraints">
                                         <include reference="Y2q-G5-bcN"/>
                                         <include reference="nFb-j3-wNi"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sr6-Y8-QRJ">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sr6-Y8-QRJ">
                                 <rect key="frame" x="169" y="236" width="37" height="37"/>
                                 <color key="color" red="0.32120369339999999" green="0.55812718039999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
@@ -463,62 +470,40 @@
                                         <exclude reference="sS5-iw-tdu"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="35" y="451" width="63" height="65"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="EXb-Ox-VrT"/>
                                         <include reference="sS5-iw-tdu"/>
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Limite de gastos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="854-k0-bpT">
-                                <rect key="frame" x="20" y="323" width="335" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="111" id="SpO-Ax-u3J"/>
-                                    <constraint firstAttribute="width" constant="335" id="Z92-46-1k1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="19"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="SpO-Ax-u3J"/>
-                                        <exclude reference="Z92-46-1k1"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="184" width="335" height="111"/>
-                                    <mask key="constraints">
-                                        <include reference="SpO-Ax-u3J"/>
-                                        <include reference="Z92-46-1k1"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gastos " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1B-1U-4Jk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1B-1U-4Jk">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="23"/>
+                                <string key="text">gastos 
+</string>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Regular" family="Tsukushi A Round Gothic" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="147" y="138" width="76" height="28"/>
+                                    <rect key="frame" x="140" y="141" width="75" height="62"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzP-P2-CFj">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Regular" family="Tsukushi A Round Gothic" pointSize="23"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="94" y="104" width="29" height="27"/>
+                                    <rect key="frame" x="93" y="104" width="29" height="27"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vID-WR-fxp">
                                 <rect key="frame" x="26" y="189" width="322" height="76"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="244" id="5HZ-df-kto"/>
+                                    <constraint firstAttribute="width" constant="229" id="5HZ-df-kto"/>
                                     <constraint firstAttribute="height" constant="152" id="erh-J4-C0l"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="27"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="27"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <string key="title">Adicione um
@@ -532,8 +517,7 @@
                                         <exclude reference="erh-J4-C0l"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="35" y="422" width="244" height="152"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="5HZ-df-kto"/>
                                         <include reference="erh-J4-C0l"/>
@@ -544,29 +528,51 @@
                                     <segue destination="goP-2V-gWf" kind="show" id="QRM-YM-FfM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Limite de gastos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="854-k0-bpT">
+                                <rect key="frame" x="20" y="323" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="SpO-Ax-u3J"/>
+                                    <constraint firstAttribute="width" constant="335" id="Z92-46-1k1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SpO-Ax-u3J"/>
+                                        <exclude reference="Z92-46-1k1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="204" width="335" height="84"/>
+                                    <mask key="constraints">
+                                        <include reference="SpO-Ax-u3J"/>
+                                        <include reference="Z92-46-1k1"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
+                        <color key="backgroundColor" red="0.37254901959999998" green="0.1333333333" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Gzj-m4-c0C" firstAttribute="centerY" secondItem="7Gb-Go-fx3" secondAttribute="centerY" id="1UV-lH-Hct"/>
                             <constraint firstItem="qBW-pr-crG" firstAttribute="leading" secondItem="RzP-P2-CFj" secondAttribute="trailing" constant="3" id="2zr-uK-TGZ"/>
                             <constraint firstItem="Sr6-Y8-QRJ" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" id="6hr-rP-YJe"/>
-                            <constraint firstItem="Gzj-m4-c0C" firstAttribute="top" secondItem="854-k0-bpT" secondAttribute="bottom" constant="3" id="8Ih-Xs-nBq"/>
-                            <constraint firstItem="vID-WR-fxp" firstAttribute="leading" secondItem="suU-fa-ztA" secondAttribute="trailing" constant="58" id="Aya-qz-jcI"/>
-                            <constraint firstItem="854-k0-bpT" firstAttribute="top" secondItem="Z1B-1U-4Jk" secondAttribute="bottom" constant="20" id="CNq-eU-9C9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aOG-AX-XUB" secondAttribute="trailing" constant="7" id="Eiz-UU-02h"/>
+                            <constraint firstItem="suU-fa-ztA" firstAttribute="top" secondItem="Gzj-m4-c0C" secondAttribute="bottom" constant="88" id="GBl-fO-amu"/>
                             <constraint firstItem="RzP-P2-CFj" firstAttribute="top" secondItem="Fhy-6b-Bqe" secondAttribute="bottom" constant="84" id="Gx6-r2-ebn"/>
-                            <constraint firstItem="suU-fa-ztA" firstAttribute="top" secondItem="Gzj-m4-c0C" secondAttribute="bottom" constant="85" id="HYK-kT-183"/>
                             <constraint firstItem="Sr6-Y8-QRJ" firstAttribute="centerY" secondItem="7Gb-Go-fx3" secondAttribute="centerY" id="IrU-vr-6kh"/>
                             <constraint firstItem="854-k0-bpT" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" id="KjL-zt-CpP"/>
-                            <constraint firstItem="suU-fa-ztA" firstAttribute="leading" secondItem="7Gb-Go-fx3" secondAttribute="leadingMargin" constant="19" id="PH6-bt-Q1o"/>
                             <constraint firstItem="aOG-AX-XUB" firstAttribute="top" secondItem="Fhy-6b-Bqe" secondAttribute="bottom" constant="12" id="Qrg-VZ-qxn"/>
-                            <constraint firstItem="vID-WR-fxp" firstAttribute="top" secondItem="Gzj-m4-c0C" secondAttribute="bottom" constant="50" id="Ric-aE-j5D"/>
+                            <constraint firstItem="854-k0-bpT" firstAttribute="top" secondItem="Z1B-1U-4Jk" secondAttribute="bottom" constant="1" id="R5S-8J-r6u"/>
+                            <constraint firstItem="vID-WR-fxp" firstAttribute="top" secondItem="Gzj-m4-c0C" secondAttribute="bottom" constant="57" id="Ric-aE-j5D"/>
                             <constraint firstItem="Z1B-1U-4Jk" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" constant="-2" id="UAp-sa-QnV"/>
+                            <constraint firstItem="Z1B-1U-4Jk" firstAttribute="top" secondItem="qBW-pr-crG" secondAttribute="bottom" constant="2" id="Wjq-Nu-ByJ"/>
                             <constraint firstItem="Gzj-m4-c0C" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" id="dOk-06-lnB"/>
+                            <constraint firstItem="suU-fa-ztA" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" constant="-88" id="fuF-sp-hQd"/>
                             <constraint firstItem="Gzj-m4-c0C" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" id="iZX-5a-XeA"/>
-                            <constraint firstItem="vID-WR-fxp" firstAttribute="leading" secondItem="7Gb-Go-fx3" secondAttribute="leadingMargin" constant="15" id="ipj-KO-MD9"/>
-                            <constraint firstItem="Z1B-1U-4Jk" firstAttribute="top" secondItem="Fhy-6b-Bqe" secondAttribute="bottom" constant="118" id="qcC-Mw-I7h"/>
-                            <constraint firstItem="qBW-pr-crG" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" constant="32" id="ukv-7D-WP5"/>
+                            <constraint firstItem="qBW-pr-crG" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" constant="37" id="ukv-7D-WP5"/>
                             <constraint firstItem="qBW-pr-crG" firstAttribute="top" secondItem="Fhy-6b-Bqe" secondAttribute="bottom" constant="64" id="vaJ-1f-ihC"/>
+                            <constraint firstItem="vID-WR-fxp" firstAttribute="centerX" secondItem="7Gb-Go-fx3" secondAttribute="centerX" constant="-2" id="ywy-cp-lsE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -579,17 +585,18 @@
                                 <exclude reference="2zr-uK-TGZ"/>
                                 <exclude reference="ukv-7D-WP5"/>
                                 <exclude reference="vaJ-1f-ihC"/>
-                                <exclude reference="CNq-eU-9C9"/>
-                                <exclude reference="KjL-zt-CpP"/>
                                 <exclude reference="UAp-sa-QnV"/>
-                                <exclude reference="qcC-Mw-I7h"/>
-                                <exclude reference="6hr-rP-YJe"/>
-                                <exclude reference="IrU-vr-6kh"/>
+                                <exclude reference="Wjq-Nu-ByJ"/>
+                                <exclude reference="KjL-zt-CpP"/>
+                                <exclude reference="R5S-8J-r6u"/>
                                 <exclude reference="1UV-lH-Hct"/>
-                                <exclude reference="8Ih-Xs-nBq"/>
                                 <exclude reference="dOk-06-lnB"/>
                                 <exclude reference="iZX-5a-XeA"/>
-                                <exclude reference="ipj-KO-MD9"/>
+                                <exclude reference="6hr-rP-YJe"/>
+                                <exclude reference="IrU-vr-6kh"/>
+                                <exclude reference="ywy-cp-lsE"/>
+                                <exclude reference="GBl-fO-amu"/>
+                                <exclude reference="fuF-sp-hQd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -603,17 +610,18 @@
                                 <include reference="2zr-uK-TGZ"/>
                                 <include reference="ukv-7D-WP5"/>
                                 <include reference="vaJ-1f-ihC"/>
-                                <include reference="CNq-eU-9C9"/>
-                                <include reference="KjL-zt-CpP"/>
                                 <include reference="UAp-sa-QnV"/>
-                                <include reference="qcC-Mw-I7h"/>
-                                <include reference="6hr-rP-YJe"/>
-                                <include reference="IrU-vr-6kh"/>
+                                <include reference="Wjq-Nu-ByJ"/>
+                                <include reference="KjL-zt-CpP"/>
+                                <include reference="R5S-8J-r6u"/>
                                 <include reference="1UV-lH-Hct"/>
-                                <include reference="8Ih-Xs-nBq"/>
                                 <include reference="dOk-06-lnB"/>
                                 <include reference="iZX-5a-XeA"/>
-                                <include reference="ipj-KO-MD9"/>
+                                <include reference="6hr-rP-YJe"/>
+                                <include reference="IrU-vr-6kh"/>
+                                <include reference="ywy-cp-lsE"/>
+                                <include reference="GBl-fO-amu"/>
+                                <include reference="fuF-sp-hQd"/>
                             </mask>
                         </variation>
                     </view>
@@ -650,7 +658,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-gd-AnK">
                                 <rect key="frame" x="144" y="149" width="87" height="30"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                 <state key="normal" title="                   Alterar limite">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -663,7 +671,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="76s-jX-fi7">
                                 <rect key="frame" x="160" y="384" width="55" height="30"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                 <state key="normal">
                                     <string key="title">                   Log Out
 </string>
@@ -678,7 +686,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gastos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6Q-gB-xgX">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -687,7 +695,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaC-Uy-aaU">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -714,7 +722,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hgQ-fe-lJf">
                                 <rect key="frame" x="121" y="263" width="133" height="30"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                 <state key="normal">
                                     <string key="title">                   Adicionar categoria
 </string>
@@ -780,7 +788,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="32" y="428" width="311" height="100"/>
+                                    <rect key="frame" x="32" y="449" width="311" height="100"/>
                                     <mask key="constraints">
                                         <include reference="8Lq-wY-MOl"/>
                                         <include reference="IVo-2U-hiD"/>
@@ -821,13 +829,13 @@
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descrição (opcional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sK2-FM-gRA">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <color key="backgroundColor" red="0.60784313725490191" green="0.76078431372549016" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.86033121535807566" green="0.88903098188893082" blue="0.92578125" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="243" id="hH3-dA-a3K"/>
                                     <constraint firstAttribute="height" constant="40" id="yBR-dX-BWa"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -847,13 +855,13 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-mf-Bsy">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <color key="backgroundColor" red="0.60784313725490191" green="0.76078431372549016" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.86033121535807566" green="0.88903098188893082" blue="0.92578125" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="243" id="GpH-l2-77c"/>
                                     <constraint firstAttribute="height" constant="40" id="Vbn-gi-Juf"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -861,8 +869,7 @@
                                         <exclude reference="Vbn-gi-Juf"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="78" y="88" width="243" height="40"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="GpH-l2-77c"/>
                                         <include reference="Vbn-gi-Juf"/>
@@ -878,7 +885,7 @@
                                     <constraint firstAttribute="height" constant="32" id="Jg9-f6-oh4"/>
                                     <constraint firstAttribute="width" constant="95" id="Xuc-WK-x5Y"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -894,24 +901,15 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nova" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBV-V9-y1m">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="311" y="408" width="40" height="20"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FP-Ug-BtK">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="CYc-xW-bK3"/>
                                     <constraint firstAttribute="height" constant="20" id="FAN-hZ-TjB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Regular" family="Tsukushi A Round Gothic" pointSize="29"/>
                                 <state key="normal" title="+">
-                                    <color key="titleColor" red="0.12156862745098039" green="0.43529411764705883" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.61176470588235299" green="0.60784313725490191" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -919,8 +917,7 @@
                                         <exclude reference="FAN-hZ-TjB"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="285" y="406" width="18" height="20"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="CYc-xW-bK3"/>
                                         <include reference="FAN-hZ-TjB"/>
@@ -932,12 +929,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahY-aO-Tnt">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.2185697115384615" green="0.2185697115384615" blue="0.2185697115384615" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="142" id="FMi-A5-1fh"/>
                                     <constraint firstAttribute="height" constant="37" id="jq4-oD-8iB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Gastei!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -953,7 +950,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="116" y="536" width="142" height="37"/>
+                                    <rect key="frame" x="116" y="557" width="142" height="37"/>
                                     <mask key="constraints">
                                         <include reference="FMi-A5-1fh"/>
                                         <include reference="jq4-oD-8iB"/>
@@ -969,7 +966,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="10" y="271" width="76" height="27"/>
+                                    <rect key="frame" x="10" y="279" width="43" height="20"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="littlemoney" translatesAutoresizingMaskIntoConstraints="NO" id="OMG-UX-Gh2">
@@ -1012,12 +1009,12 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEC-kI-HcT">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Escanear QR Code">
-                                    <color key="titleColor" red="0.14382572742303662" green="0.51637684376675552" blue="0.8185296474358974" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.68639823717948723" green="0.68639823717948723" blue="0.68639823717948723" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="105" y="211" width="164" height="53"/>
+                                    <rect key="frame" x="106" y="211" width="160" height="53"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="218" y="129" width="137" height="32"/>
@@ -1026,8 +1023,14 @@
                                     <action selector="apertouBotaoQRCode:" destination="goP-2V-gWf" eventType="touchUpInside" id="tEA-um-Y1O"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nova" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBV-V9-y1m">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.37254901959999998" green="0.1333333333" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Do9-YA-aoo" firstAttribute="top" secondItem="inn-pp-Cey" secondAttribute="bottom" constant="1" id="0sF-eG-fjE"/>
                             <constraint firstItem="sK2-FM-gRA" firstAttribute="top" secondItem="Clb-mf-Bsy" secondAttribute="bottom" constant="23" id="1JC-Ja-efu"/>
@@ -1035,11 +1038,11 @@
                             <constraint firstItem="sK2-FM-gRA" firstAttribute="leading" secondItem="I6T-bJ-dzY" secondAttribute="trailing" constant="8" id="3pQ-Ml-odd"/>
                             <constraint firstItem="inn-pp-Cey" firstAttribute="leading" secondItem="z7Y-kM-Rpj" secondAttribute="leadingMargin" constant="-6" id="6Ky-DE-6Ne"/>
                             <constraint firstItem="Do9-YA-aoo" firstAttribute="top" secondItem="inn-pp-Cey" secondAttribute="bottom" id="6ZI-Kd-j8U"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rBV-V9-y1m" secondAttribute="trailing" constant="8" id="7dh-Jh-Fzs"/>
                             <constraint firstItem="Clb-mf-Bsy" firstAttribute="centerX" secondItem="z7Y-kM-Rpj" secondAttribute="centerX" constant="12" id="AnA-Tx-6ck"/>
                             <constraint firstItem="kEC-kI-HcT" firstAttribute="centerX" secondItem="z7Y-kM-Rpj" secondAttribute="centerX" id="DJa-HB-HhP"/>
                             <constraint firstItem="kEC-kI-HcT" firstAttribute="top" secondItem="sK2-FM-gRA" secondAttribute="bottom" priority="750" constant="22" id="Dab-lu-laU"/>
                             <constraint firstItem="dHn-P1-piG" firstAttribute="leading" secondItem="z7Y-kM-Rpj" secondAttribute="leadingMargin" constant="-6" id="E84-E6-wd9"/>
+                            <constraint firstItem="rBV-V9-y1m" firstAttribute="trailing" secondItem="z7Y-kM-Rpj" secondAttribute="trailingMargin" constant="6" id="Hya-d5-2E8"/>
                             <constraint firstItem="I6T-bJ-dzY" firstAttribute="top" secondItem="OMG-UX-Gh2" secondAttribute="bottom" constant="30" id="IMx-k4-ZKB"/>
                             <constraint firstItem="fCY-ZG-clI" firstAttribute="centerX" secondItem="z7Y-kM-Rpj" secondAttribute="centerX" priority="750" id="Kwb-h0-1lD"/>
                             <constraint firstItem="Do9-YA-aoo" firstAttribute="centerX" secondItem="z7Y-kM-Rpj" secondAttribute="centerX" constant="-1" id="OXk-xe-RL6"/>
@@ -1049,10 +1052,10 @@
                             <constraint firstItem="Clb-mf-Bsy" firstAttribute="leading" secondItem="OMG-UX-Gh2" secondAttribute="trailing" constant="8" id="XG6-vA-GiA"/>
                             <constraint firstItem="Clb-mf-Bsy" firstAttribute="leading" secondItem="OMG-UX-Gh2" secondAttribute="trailing" constant="8" id="g5n-8b-pFO"/>
                             <constraint firstItem="rBV-V9-y1m" firstAttribute="top" secondItem="Do9-YA-aoo" secondAttribute="bottom" constant="10" id="i8C-qF-FDn"/>
+                            <constraint firstItem="rBV-V9-y1m" firstAttribute="leading" secondItem="8FP-Ug-BtK" secondAttribute="trailing" constant="3" id="iDB-p7-MtG"/>
                             <constraint firstItem="Clb-mf-Bsy" firstAttribute="top" secondItem="zN2-QO-Yxc" secondAttribute="bottom" priority="750" constant="66" id="jYp-9i-IqS"/>
-                            <constraint firstItem="8FP-Ug-BtK" firstAttribute="top" secondItem="Do9-YA-aoo" secondAttribute="bottom" constant="8" id="kdp-e9-zhd"/>
                             <constraint firstItem="ahY-aO-Tnt" firstAttribute="top" secondItem="fCY-ZG-clI" secondAttribute="bottom" constant="8" id="lFy-Zz-7co"/>
-                            <constraint firstItem="rBV-V9-y1m" firstAttribute="leading" secondItem="8FP-Ug-BtK" secondAttribute="trailing" constant="8" id="rxx-og-hpk"/>
+                            <constraint firstItem="8FP-Ug-BtK" firstAttribute="top" secondItem="Do9-YA-aoo" secondAttribute="bottom" constant="5" id="pY6-QA-MWa"/>
                             <constraint firstItem="Do9-YA-aoo" firstAttribute="top" secondItem="kEC-kI-HcT" secondAttribute="bottom" constant="35" id="svu-wM-Sho"/>
                             <constraint firstItem="OMG-UX-Gh2" firstAttribute="top" secondItem="zN2-QO-Yxc" secondAttribute="bottom" constant="73" id="w8g-YN-n9f"/>
                             <constraint firstItem="dHn-P1-piG" firstAttribute="top" secondItem="Do9-YA-aoo" secondAttribute="bottom" constant="2" id="x3Q-T5-jZN"/>
@@ -1064,13 +1067,13 @@
                                 <exclude reference="sK2-FM-gRA"/>
                                 <exclude reference="Clb-mf-Bsy"/>
                                 <exclude reference="dHn-P1-piG"/>
-                                <exclude reference="rBV-V9-y1m"/>
                                 <exclude reference="8FP-Ug-BtK"/>
                                 <exclude reference="ahY-aO-Tnt"/>
                                 <exclude reference="inn-pp-Cey"/>
                                 <exclude reference="OMG-UX-Gh2"/>
                                 <exclude reference="I6T-bJ-dzY"/>
                                 <exclude reference="kEC-kI-HcT"/>
+                                <exclude reference="rBV-V9-y1m"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="w8g-YN-n9f"/>
@@ -1092,9 +1095,10 @@
                                 <exclude reference="svu-wM-Sho"/>
                                 <exclude reference="E84-E6-wd9"/>
                                 <exclude reference="x3Q-T5-jZN"/>
-                                <exclude reference="7dh-Jh-Fzs"/>
+                                <exclude reference="pY6-QA-MWa"/>
+                                <exclude reference="Hya-d5-2E8"/>
                                 <exclude reference="i8C-qF-FDn"/>
-                                <exclude reference="rxx-og-hpk"/>
+                                <exclude reference="iDB-p7-MtG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1104,13 +1108,13 @@
                                 <include reference="sK2-FM-gRA"/>
                                 <include reference="Clb-mf-Bsy"/>
                                 <include reference="dHn-P1-piG"/>
-                                <include reference="rBV-V9-y1m"/>
                                 <include reference="8FP-Ug-BtK"/>
                                 <include reference="ahY-aO-Tnt"/>
                                 <include reference="inn-pp-Cey"/>
                                 <include reference="OMG-UX-Gh2"/>
                                 <include reference="I6T-bJ-dzY"/>
                                 <include reference="kEC-kI-HcT"/>
+                                <include reference="rBV-V9-y1m"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="w8g-YN-n9f"/>
@@ -1132,9 +1136,10 @@
                                 <include reference="svu-wM-Sho"/>
                                 <include reference="E84-E6-wd9"/>
                                 <include reference="x3Q-T5-jZN"/>
-                                <include reference="7dh-Jh-Fzs"/>
+                                <include reference="pY6-QA-MWa"/>
+                                <include reference="Hya-d5-2E8"/>
                                 <include reference="i8C-qF-FDn"/>
-                                <include reference="rxx-og-hpk"/>
+                                <include reference="iDB-p7-MtG"/>
                             </mask>
                         </variation>
                     </view>
@@ -1171,7 +1176,7 @@
                                     <constraint firstAttribute="width" constant="225" id="fF5-Nz-zSU"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1194,7 +1199,7 @@
                                     <constraint firstAttribute="width" constant="225" id="oME-hH-IIJ"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1217,7 +1222,7 @@
                                     <constraint firstAttribute="width" constant="225" id="eOP-2A-ei1"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1233,14 +1238,37 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Wy-Tz-My9">
+                                <rect key="frame" x="20" y="99" width="335" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1fE-4M-HPE"/>
+                                    <constraint firstAttribute="width" constant="225" id="O5p-bf-fqT"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1fE-4M-HPE"/>
+                                        <exclude reference="O5p-bf-fqT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="74" y="95" width="225" height="40"/>
+                                    <mask key="constraints">
+                                        <include reference="1fE-4M-HPE"/>
+                                        <include reference="O5p-bf-fqT"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9R-Cw-SWp">
                                 <rect key="frame" x="115" y="422" width="144" height="30"/>
-                                <color key="backgroundColor" red="0.062745098039215685" green="0.066666666666666666" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="142" id="aM2-eq-FaA"/>
                                     <constraint firstAttribute="height" constant="37" id="r1u-iU-wNG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Confirmar">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1266,29 +1294,6 @@
                                     <action selector="confirma:" destination="rab-8m-gdV" eventType="touchUpInside" id="xTg-qO-8Bd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Wy-Tz-My9">
-                                <rect key="frame" x="20" y="99" width="335" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="1fE-4M-HPE"/>
-                                    <constraint firstAttribute="width" constant="225" id="O5p-bf-fqT"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1fE-4M-HPE"/>
-                                        <exclude reference="O5p-bf-fqT"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="74" y="95" width="225" height="40"/>
-                                    <mask key="constraints">
-                                        <include reference="1fE-4M-HPE"/>
-                                        <include reference="O5p-bf-fqT"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1384,7 +1389,7 @@
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <string key="text">Tipo de ordenação
 </string>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
@@ -1419,7 +1424,7 @@
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordenar decrescentemente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMW-lj-FbJ">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
@@ -1428,12 +1433,12 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtQ-z2-AMR">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Ov9-ug-raK"/>
                                     <constraint firstAttribute="width" constant="140" id="dkK-Vb-GsK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Salvar">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1461,12 +1466,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7H-c1-Txl">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="5AX-2t-E7e"/>
                                     <constraint firstAttribute="height" constant="37" id="CQ1-mK-Alf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Cancelar">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1582,7 +1587,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mV-2T-FSs">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
@@ -1591,39 +1596,16 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data inicial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZJ-62-Ifq">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="16" y="138" width="89" height="21"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mín" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdZ-2c-qsw">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <color key="backgroundColor" red="0.54117647058823526" green="0.70588235294117652" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="Sgf-SU-DMi"/>
-                                    <constraint firstAttribute="height" constant="30" id="jxf-wy-qtT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Sgf-SU-DMi"/>
-                                        <exclude reference="jxf-wy-qtT"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="23" y="93" width="123" height="30"/>
-                                    <mask key="constraints">
-                                        <include reference="Sgf-SU-DMi"/>
-                                        <include reference="jxf-wy-qtT"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCM-Xr-fGW">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
@@ -1662,12 +1644,12 @@
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-5g-Wte">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="6cr-4G-5du"/>
                                     <constraint firstAttribute="height" constant="37" id="fF7-cm-2fo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Cancelar">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1695,12 +1677,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9a-iO-boV">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="Epf-hZ-UTM"/>
                                     <constraint firstAttribute="height" constant="37" id="PmD-Cc-9aH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Salvar">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1716,7 +1698,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="219" y="531" width="140" height="37"/>
+                                    <rect key="frame" x="220" y="531" width="140" height="37"/>
                                     <mask key="constraints">
                                         <include reference="Epf-hZ-UTM"/>
                                         <include reference="PmD-Cc-9aH"/>
@@ -1778,7 +1760,7 @@
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data final" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-Wm-wFC">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
@@ -1787,12 +1769,12 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Máx" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0K-or-iyJ">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <color key="backgroundColor" red="0.54117647058823526" green="0.70588235294117652" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Xip-Sd-VxD"/>
                                     <constraint firstAttribute="width" constant="123" id="zH8-CF-Icr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1800,10 +1782,34 @@
                                         <exclude reference="zH8-CF-Icr"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="229" y="90" width="123" height="30"/>
                                     <mask key="constraints">
                                         <include reference="Xip-Sd-VxD"/>
                                         <include reference="zH8-CF-Icr"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mín" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdZ-2c-qsw">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.91925080128205128" green="0.91925080128205128" blue="0.91925080128205128" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="Sgf-SU-DMi"/>
+                                    <constraint firstAttribute="height" constant="30" id="jxf-wy-qtT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Sgf-SU-DMi"/>
+                                        <exclude reference="jxf-wy-qtT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="25" y="90" width="123" height="30"/>
+                                    <mask key="constraints">
+                                        <include reference="Sgf-SU-DMi"/>
+                                        <include reference="jxf-wy-qtT"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -1819,19 +1825,19 @@
                             <constraint firstItem="c8t-5g-Wte" firstAttribute="leading" secondItem="W3c-YQ-fGN" secondAttribute="leadingMargin" id="Ci4-3G-ZeE"/>
                             <constraint firstItem="cKr-Wm-wFC" firstAttribute="top" secondItem="vhz-hp-lcF" secondAttribute="bottom" constant="8" id="E0A-oK-cfr"/>
                             <constraint firstItem="tdZ-2c-qsw" firstAttribute="top" secondItem="4mV-2T-FSs" secondAttribute="bottom" constant="14" id="E2v-5s-eIE"/>
-                            <constraint firstItem="tdZ-2c-qsw" firstAttribute="leading" secondItem="W3c-YQ-fGN" secondAttribute="leadingMargin" constant="7" id="FQc-P9-q3F"/>
                             <constraint firstItem="vhz-hp-lcF" firstAttribute="centerX" secondItem="W3c-YQ-fGN" secondAttribute="centerX" id="I5D-iT-Yhy"/>
                             <constraint firstItem="RY3-ut-HlU" firstAttribute="centerX" secondItem="W3c-YQ-fGN" secondAttribute="centerX" id="MAl-eN-8Bq"/>
                             <constraint firstItem="OCM-Xr-fGW" firstAttribute="leading" secondItem="W3c-YQ-fGN" secondAttribute="leadingMargin" id="MMU-bH-vfr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O9a-iO-boV" secondAttribute="trailing" id="Nll-lA-OiH"/>
                             <constraint firstItem="U7B-w3-ePJ" firstAttribute="centerX" secondItem="W3c-YQ-fGN" secondAttribute="centerX" id="SZ1-0z-CaT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D0K-or-iyJ" secondAttribute="trailing" constant="14" id="UAC-DD-h2s"/>
                             <constraint firstItem="rZJ-62-Ifq" firstAttribute="leading" secondItem="W3c-YQ-fGN" secondAttribute="leadingMargin" id="buC-hl-dWr"/>
                             <constraint firstItem="U7B-w3-ePJ" firstAttribute="top" secondItem="cKr-Wm-wFC" secondAttribute="bottom" constant="3" id="cHH-My-ut6"/>
                             <constraint firstItem="rZJ-62-Ifq" firstAttribute="top" secondItem="tdZ-2c-qsw" secondAttribute="bottom" constant="15" id="jz2-J4-eZh"/>
                             <constraint firstItem="4mV-2T-FSs" firstAttribute="top" secondItem="Q7k-jW-WrJ" secondAttribute="bottom" constant="38" id="mQH-dC-ee9"/>
                             <constraint firstItem="O9a-iO-boV" firstAttribute="top" secondItem="RY3-ut-HlU" secondAttribute="bottom" constant="8" id="stQ-cS-zOQ"/>
+                            <constraint firstItem="tdZ-2c-qsw" firstAttribute="leading" secondItem="W3c-YQ-fGN" secondAttribute="leadingMargin" constant="14" id="tGG-6P-NNu"/>
                             <constraint firstItem="cKr-Wm-wFC" firstAttribute="leading" secondItem="W3c-YQ-fGN" secondAttribute="leadingMargin" id="tMu-LY-eki"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="D0K-or-iyJ" secondAttribute="trailing" constant="7" id="xcQ-hS-9iT"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
@@ -1842,7 +1848,6 @@
                             <mask key="subviews">
                                 <exclude reference="4mV-2T-FSs"/>
                                 <exclude reference="rZJ-62-Ifq"/>
-                                <exclude reference="tdZ-2c-qsw"/>
                                 <exclude reference="OCM-Xr-fGW"/>
                                 <exclude reference="U7B-w3-ePJ"/>
                                 <exclude reference="c8t-5g-Wte"/>
@@ -1851,37 +1856,37 @@
                                 <exclude reference="RY3-ut-HlU"/>
                                 <exclude reference="cKr-Wm-wFC"/>
                                 <exclude reference="D0K-or-iyJ"/>
+                                <exclude reference="tdZ-2c-qsw"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9CH-qD-6Ws"/>
-                                <exclude reference="MAl-eN-8Bq"/>
-                                <exclude reference="6Dz-GR-6Ci"/>
-                                <exclude reference="xcQ-hS-9iT"/>
-                                <exclude reference="E2v-5s-eIE"/>
-                                <exclude reference="FQc-P9-q3F"/>
-                                <exclude reference="Nll-lA-OiH"/>
-                                <exclude reference="stQ-cS-zOQ"/>
-                                <exclude reference="2oT-fP-OOw"/>
-                                <exclude reference="Ci4-3G-ZeE"/>
                                 <exclude reference="CdS-vH-IhF"/>
                                 <exclude reference="mQH-dC-ee9"/>
-                                <exclude reference="6Pk-V3-DdY"/>
-                                <exclude reference="MMU-bH-vfr"/>
-                                <exclude reference="E0A-oK-cfr"/>
-                                <exclude reference="tMu-LY-eki"/>
+                                <exclude reference="E2v-5s-eIE"/>
+                                <exclude reference="tGG-6P-NNu"/>
                                 <exclude reference="buC-hl-dWr"/>
                                 <exclude reference="jz2-J4-eZh"/>
-                                <exclude reference="SZ1-0z-CaT"/>
-                                <exclude reference="cHH-My-ut6"/>
                                 <exclude reference="A10-GY-hB3"/>
                                 <exclude reference="I5D-iT-Yhy"/>
+                                <exclude reference="6Dz-GR-6Ci"/>
+                                <exclude reference="UAC-DD-h2s"/>
+                                <exclude reference="E0A-oK-cfr"/>
+                                <exclude reference="tMu-LY-eki"/>
+                                <exclude reference="SZ1-0z-CaT"/>
+                                <exclude reference="cHH-My-ut6"/>
+                                <exclude reference="6Pk-V3-DdY"/>
+                                <exclude reference="MMU-bH-vfr"/>
+                                <exclude reference="9CH-qD-6Ws"/>
+                                <exclude reference="MAl-eN-8Bq"/>
+                                <exclude reference="2oT-fP-OOw"/>
+                                <exclude reference="Ci4-3G-ZeE"/>
+                                <exclude reference="Nll-lA-OiH"/>
+                                <exclude reference="stQ-cS-zOQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="4mV-2T-FSs"/>
                                 <include reference="rZJ-62-Ifq"/>
-                                <include reference="tdZ-2c-qsw"/>
                                 <include reference="OCM-Xr-fGW"/>
                                 <include reference="U7B-w3-ePJ"/>
                                 <include reference="c8t-5g-Wte"/>
@@ -1890,30 +1895,31 @@
                                 <include reference="RY3-ut-HlU"/>
                                 <include reference="cKr-Wm-wFC"/>
                                 <include reference="D0K-or-iyJ"/>
+                                <include reference="tdZ-2c-qsw"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9CH-qD-6Ws"/>
-                                <include reference="MAl-eN-8Bq"/>
-                                <include reference="6Dz-GR-6Ci"/>
-                                <include reference="xcQ-hS-9iT"/>
-                                <include reference="E2v-5s-eIE"/>
-                                <include reference="FQc-P9-q3F"/>
-                                <include reference="Nll-lA-OiH"/>
-                                <include reference="stQ-cS-zOQ"/>
-                                <include reference="2oT-fP-OOw"/>
-                                <include reference="Ci4-3G-ZeE"/>
                                 <include reference="CdS-vH-IhF"/>
                                 <include reference="mQH-dC-ee9"/>
-                                <include reference="6Pk-V3-DdY"/>
-                                <include reference="MMU-bH-vfr"/>
-                                <include reference="E0A-oK-cfr"/>
-                                <include reference="tMu-LY-eki"/>
+                                <include reference="E2v-5s-eIE"/>
+                                <include reference="tGG-6P-NNu"/>
                                 <include reference="buC-hl-dWr"/>
                                 <include reference="jz2-J4-eZh"/>
-                                <include reference="SZ1-0z-CaT"/>
-                                <include reference="cHH-My-ut6"/>
                                 <include reference="A10-GY-hB3"/>
                                 <include reference="I5D-iT-Yhy"/>
+                                <include reference="6Dz-GR-6Ci"/>
+                                <include reference="UAC-DD-h2s"/>
+                                <include reference="E0A-oK-cfr"/>
+                                <include reference="tMu-LY-eki"/>
+                                <include reference="SZ1-0z-CaT"/>
+                                <include reference="cHH-My-ut6"/>
+                                <include reference="6Pk-V3-DdY"/>
+                                <include reference="MMU-bH-vfr"/>
+                                <include reference="9CH-qD-6Ws"/>
+                                <include reference="MAl-eN-8Bq"/>
+                                <include reference="2oT-fP-OOw"/>
+                                <include reference="Ci4-3G-ZeE"/>
+                                <include reference="Nll-lA-OiH"/>
+                                <include reference="stQ-cS-zOQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -1945,12 +1951,12 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-jC-DFb">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.17056239822973818" green="0.19766545182367404" blue="0.23515624999999996" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="140" id="Qiz-gL-1l7"/>
                                         <constraint firstAttribute="height" constant="37" id="nDG-eT-bU2"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                     <state key="normal" title="Filtrar">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -1965,7 +1971,8 @@
                                             <exclude reference="nDG-eT-bU2"/>
                                         </mask>
                                     </variation>
-                                    <variation key="widthClass=compact">
+                                    <variation key="widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="200" y="72" width="140" height="37"/>
                                         <mask key="constraints">
                                             <include reference="Qiz-gL-1l7"/>
                                             <include reference="nDG-eT-bU2"/>
@@ -1977,12 +1984,12 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-co-EVe">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.12549019607843137" green="0.14509803921568629" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="140" id="F4V-b0-Co4"/>
                                         <constraint firstAttribute="height" constant="37" id="rpg-3m-pgI"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                     <state key="normal" title="Ordenar">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -1997,7 +2004,8 @@
                                             <exclude reference="rpg-3m-pgI"/>
                                         </mask>
                                     </variation>
-                                    <variation key="widthClass=compact">
+                                    <variation key="widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="35" y="72" width="140" height="37"/>
                                         <mask key="constraints">
                                             <include reference="F4V-b0-Co4"/>
                                             <include reference="rpg-3m-pgI"/>
@@ -2010,9 +2018,9 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="mlw-co-EVe" firstAttribute="leading" secondItem="val-6X-0lC" secondAttribute="leading" constant="15" id="9vA-AK-nEY"/>
+                                <constraint firstItem="mlw-co-EVe" firstAttribute="leading" secondItem="val-6X-0lC" secondAttribute="leading" constant="14" id="J77-Pz-9Bj"/>
                                 <constraint firstItem="fzr-jC-DFb" firstAttribute="top" secondItem="val-6X-0lC" secondAttribute="top" constant="72" id="gj9-iP-bq5"/>
-                                <constraint firstAttribute="trailing" secondItem="fzr-jC-DFb" secondAttribute="trailing" constant="15" id="hzJ-Fr-SXt"/>
+                                <constraint firstAttribute="trailing" secondItem="fzr-jC-DFb" secondAttribute="trailing" constant="14" id="kVu-Rc-jt0"/>
                                 <constraint firstItem="mlw-co-EVe" firstAttribute="top" secondItem="val-6X-0lC" secondAttribute="top" constant="72" id="tyE-Z7-J1K"/>
                             </constraints>
                             <variation key="default">
@@ -2021,10 +2029,10 @@
                                     <exclude reference="mlw-co-EVe"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="gj9-iP-bq5"/>
-                                    <exclude reference="hzJ-Fr-SXt"/>
-                                    <exclude reference="9vA-AK-nEY"/>
+                                    <exclude reference="J77-Pz-9Bj"/>
                                     <exclude reference="tyE-Z7-J1K"/>
+                                    <exclude reference="gj9-iP-bq5"/>
+                                    <exclude reference="kVu-Rc-jt0"/>
                                 </mask>
                             </variation>
                             <variation key="widthClass=compact">
@@ -2033,35 +2041,33 @@
                                     <include reference="mlw-co-EVe"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="gj9-iP-bq5"/>
-                                    <include reference="hzJ-Fr-SXt"/>
-                                    <include reference="9vA-AK-nEY"/>
+                                    <include reference="J77-Pz-9Bj"/>
                                     <include reference="tyE-Z7-J1K"/>
+                                    <include reference="gj9-iP-bq5"/>
+                                    <include reference="kVu-Rc-jt0"/>
                                 </mask>
                             </variation>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="75" id="lBJ-vi-tCM" customClass="TableViewCell" customModule="ControleDeGastos" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="177.5" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="177.5" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lBJ-vi-tCM" id="w99-jX-sMh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
                                             <rect key="frame" x="8" y="33" width="100" height="21"/>
-                                            <color key="backgroundColor" red="1" green="0.41268255871517567" blue="0.75589236651729608" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" misplaced="YES">
                                                 <rect key="frame" x="261" y="8" width="100" height="31"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-6L-I0z">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-6L-I0z">
                                             <rect key="frame" x="8" y="8" width="201" height="24"/>
-                                            <color key="backgroundColor" red="1" green="0.41268255871517567" blue="0.75589236651729608" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" misplaced="YES">
@@ -2070,8 +2076,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-pn-S2T">
                                             <rect key="frame" x="217" y="32" width="150" height="21"/>
-                                            <color key="backgroundColor" red="1" green="0.41268255871517567" blue="0.75589236651729608" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" misplaced="YES">
@@ -2080,17 +2085,16 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelSemGastos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sb-rV-YPs" userLabel="labelSemGastos">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="8" y="32" width="359" height="20"/>
+                                                <rect key="frame" x="125" y="28" width="125" height="20"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pp0-xu-8Uh">
                                             <rect key="frame" x="217" y="8" width="150" height="24"/>
-                                            <color key="backgroundColor" red="1" green="0.41268255871517567" blue="0.75589236651729608" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" misplaced="YES">
@@ -2115,16 +2119,16 @@
                                             <exclude reference="1sb-rV-YPs"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="JvC-Hd-KY4"/>
-                                            <exclude reference="vMs-Oz-vD0"/>
                                             <exclude reference="GZG-n1-DO8"/>
                                             <exclude reference="OVJ-I7-A4B"/>
+                                            <exclude reference="JvC-Hd-KY4"/>
+                                            <exclude reference="vMs-Oz-vD0"/>
+                                            <exclude reference="8rj-87-SwI"/>
+                                            <exclude reference="dQv-Hw-oo1"/>
                                             <exclude reference="eHL-br-Mrm"/>
                                             <exclude reference="hTQ-rl-u21"/>
                                             <exclude reference="5MY-6J-U8u"/>
                                             <exclude reference="baf-AV-0fZ"/>
-                                            <exclude reference="8rj-87-SwI"/>
-                                            <exclude reference="dQv-Hw-oo1"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -2132,16 +2136,16 @@
                                             <include reference="1sb-rV-YPs"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="JvC-Hd-KY4"/>
-                                            <include reference="vMs-Oz-vD0"/>
                                             <include reference="GZG-n1-DO8"/>
                                             <include reference="OVJ-I7-A4B"/>
+                                            <include reference="JvC-Hd-KY4"/>
+                                            <include reference="vMs-Oz-vD0"/>
+                                            <include reference="8rj-87-SwI"/>
+                                            <include reference="dQv-Hw-oo1"/>
                                             <include reference="eHL-br-Mrm"/>
                                             <include reference="hTQ-rl-u21"/>
                                             <include reference="5MY-6J-U8u"/>
                                             <include reference="baf-AV-0fZ"/>
-                                            <include reference="8rj-87-SwI"/>
-                                            <include reference="dQv-Hw-oo1"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -2212,8 +2216,13 @@
                     <toolbarItems/>
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" barStyle="black" id="K4w-wg-EJq">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.93333333330000001" green="0.84670934499038442" blue="0.92213160114664505" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="i28-Vj-dol" kind="relationship" relationship="viewControllers" id="qRV-4C-eBq"/>
@@ -2237,22 +2246,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7U-2V-vb1">
-                                <rect key="frame" x="20" y="409" width="335" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="503" width="335" height="21"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-VO-phP">
                                 <rect key="frame" x="20" y="438" width="335" height="21"/>
-                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Bold" family="Tsukushi B Round Gothic" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="532" width="335" height="51"/>
+                                    <rect key="frame" x="20" y="539" width="335" height="39"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha o mês e ano" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDg-lM-EMw">
@@ -2262,7 +2262,7 @@
                                     <constraint firstAttribute="width" constant="280" id="Gqc-75-V9y"/>
                                     <constraint firstAttribute="height" constant="30" id="zdf-Ps-uco"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -2296,7 +2296,7 @@
                                     </mask>
                                 </variation>
                             </pickerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-Dh-qqU" customClass="PieChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-Dh-qqU" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="20" y="66" width="335" height="335"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="CzE-MN-h8L"/>
@@ -2315,18 +2315,27 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7U-2V-vb1">
+                                <rect key="frame" x="20" y="409" width="335" height="21"/>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="503" width="335" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.37254901959999998" green="0.1333333333" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fDg-lM-EMw" firstAttribute="top" secondItem="q4f-nB-hbk" secondAttribute="bottom" constant="27" id="1ab-h8-q0t"/>
                             <constraint firstItem="eXw-VO-phP" firstAttribute="leading" secondItem="zmR-da-6Xv" secondAttribute="leadingMargin" id="EMK-g9-QW7"/>
                             <constraint firstItem="VZb-Dh-qqU" firstAttribute="centerX" secondItem="zmR-da-6Xv" secondAttribute="centerX" id="Egw-xF-6xF"/>
                             <constraint firstItem="R7U-2V-vb1" firstAttribute="leading" secondItem="zmR-da-6Xv" secondAttribute="leadingMargin" id="LhW-SQ-TpR"/>
-                            <constraint firstItem="14y-Hs-Y9K" firstAttribute="top" secondItem="eXw-VO-phP" secondAttribute="bottom" constant="35" id="VMk-Kn-gfH"/>
                             <constraint firstItem="KEt-D5-eaI" firstAttribute="top" secondItem="fDg-lM-EMw" secondAttribute="bottom" constant="15" id="Z37-Pf-UX6"/>
                             <constraint firstItem="fDg-lM-EMw" firstAttribute="centerX" secondItem="zmR-da-6Xv" secondAttribute="centerX" id="ZzZ-pv-5M0"/>
-                            <constraint firstItem="eXw-VO-phP" firstAttribute="top" secondItem="R7U-2V-vb1" secondAttribute="bottom" constant="8" id="ace-Yd-oy8"/>
-                            <constraint firstItem="VZb-Dh-qqU" firstAttribute="centerY" secondItem="zmR-da-6Xv" secondAttribute="centerY" constant="21" id="ew7-nn-9rd"/>
+                            <constraint firstItem="eXw-VO-phP" firstAttribute="top" secondItem="R7U-2V-vb1" secondAttribute="bottom" constant="15" id="ace-Yd-oy8"/>
+                            <constraint firstItem="VZb-Dh-qqU" firstAttribute="centerY" secondItem="zmR-da-6Xv" secondAttribute="centerY" constant="11" id="ew7-nn-9rd"/>
+                            <constraint firstItem="R7U-2V-vb1" firstAttribute="top" secondItem="VZb-Dh-qqU" secondAttribute="bottom" constant="22" id="fty-Aw-eAA"/>
                             <constraint firstItem="KEt-D5-eaI" firstAttribute="centerX" secondItem="zmR-da-6Xv" secondAttribute="centerX" id="p1M-uG-Jbf"/>
                         </constraints>
                         <variation key="default">
@@ -2341,9 +2350,9 @@
                                 <exclude reference="Egw-xF-6xF"/>
                                 <exclude reference="ew7-nn-9rd"/>
                                 <exclude reference="LhW-SQ-TpR"/>
+                                <exclude reference="fty-Aw-eAA"/>
                                 <exclude reference="EMK-g9-QW7"/>
                                 <exclude reference="ace-Yd-oy8"/>
-                                <exclude reference="VMk-Kn-gfH"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2358,9 +2367,9 @@
                                 <include reference="Egw-xF-6xF"/>
                                 <include reference="ew7-nn-9rd"/>
                                 <include reference="LhW-SQ-TpR"/>
+                                <include reference="fty-Aw-eAA"/>
                                 <include reference="EMK-g9-QW7"/>
                                 <include reference="ace-Yd-oy8"/>
-                                <include reference="VMk-Kn-gfH"/>
                             </mask>
                         </variation>
                     </view>
