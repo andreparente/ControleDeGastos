@@ -104,7 +104,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         print("entrou na viewWillAppear")
       //  setNotification()
         
-        
+        print(executar)
         if(flagLogout) {
             
             print("entrou na viewWillAppear, flagLogout é true")

@@ -87,8 +87,6 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     @IBAction func confirma(sender: UIButton) {
         // verifica se usuario ja existe
         j+=1
-        if j==1
-        {
             let name=self.nome.text
             let mailsalvo=self.Email.text
             let senhasalva=self.senha.text
@@ -134,9 +132,10 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
                 j=0
                 return
             }
-            
+            if j==1
+            {
             DAOCloudKit().fetchUserOnlyMail(Email.text!)
-        }
+            }
     }
     
     func actOnNotificationFailCadastro()
