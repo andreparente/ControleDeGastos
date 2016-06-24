@@ -40,7 +40,7 @@ class NotificationController: WKUserNotificationInterfaceController {
             
             if localNotification.alertTitle == "Ok" {
                 labeltitulo.setText("Ok")
-                labeldescricao.setText("Gastou muito")
+                labeldescricao.setText("Gastou pouco")
             }
             
             completionHandler(.Custom)
