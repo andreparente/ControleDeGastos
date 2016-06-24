@@ -74,6 +74,7 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
         {
             valor.append("Sem gastos hoje")
         }
+        totalmes = Double(text[2][0])!
         print(categorias)
         self.myTable.setNumberOfRows(valor.count, withRowType: "cell")
         for(index,item) in valor.enumerate(){

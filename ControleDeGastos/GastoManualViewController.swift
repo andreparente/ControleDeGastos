@@ -285,17 +285,16 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             }
             if userLogged.abaixoDaMedia(userLogged)
             {
-                let alertTime = NSDate().dateByAddingTimeInterval(5)
-                
-                let notifyAlarm = UILocalNotification()
-                
-                notifyAlarm.fireDate = alertTime
-                notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
-                notifyAlarm.soundName = UILocalNotificationDefaultSoundName
-                notifyAlarm.category = "Aviso_Category"
-                notifyAlarm.alertTitle = "Cuidado"
-                notifyAlarm.alertBody = "Você está gastando muito hoje"
-                app.scheduleLocalNotification(notifyAlarm)
+            let alertTime = NSDate().dateByAddingTimeInterval(5)
+            let notifyAlarm = UILocalNotification()
+            
+            notifyAlarm.fireDate = alertTime
+            notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
+            notifyAlarm.soundName = UILocalNotificationDefaultSoundName
+            notifyAlarm.category = "Aviso_Category"
+            notifyAlarm.alertTitle = "Cuidado"
+            notifyAlarm.alertBody = "Você está gastando muito hoje"
+            app.scheduleLocalNotification(notifyAlarm)
             }
             else{
                 let alertTime = NSDate().dateByAddingTimeInterval(5)
@@ -310,12 +309,14 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 notifyAlarm.alertBody = "Você não está gastando muito hoje"
                 app.scheduleLocalNotification(notifyAlarm)
             }
+ 
            /* let complicationServer = CLKComplicationServer.sharedInstance()
             for complication in complicationServer.activeComplications {
                 complicationServer.reloadTimelineForComplication(complication)
             }
  */
-            dismissViewControllerAnimated(true, completion: nil)
+            self.dismissViewControllerAnimated(true, completion: nil)
+          
         }
     }
 }
