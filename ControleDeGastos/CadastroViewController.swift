@@ -95,7 +95,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
             // valida preenchimento dos campos
             if (senhasalva!.isEmpty || mailsalvo!.isEmpty||confirmasenha!.isEmpty||name!.isEmpty)
             {
-                let alert=UIAlertController(title:"Erro", message: "Preencha todos os campos", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert=UIAlertController(title:"Erro", message: "Preencha todos os campos.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alert,animated: true, completion: nil)
                 j=0
@@ -103,7 +103,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
             }
             
             if self.nomevalido(name) == false{
-                let alert=UIAlertController(title:"Erro", message: "Nome Errado", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert=UIAlertController(title:"Erro", message: "Insira pelo menos um sobrenome.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alert,animated: true, completion: nil)
                 j=0
@@ -115,7 +115,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
             // valida email
             if isValidEmail(self.Email.text!) == false
             {
-                let alert=UIAlertController(title:"Erro", message: "E-mail Inválido", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert=UIAlertController(title:"Erro", message: "E-mail Inválido.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alert,animated: true, completion: nil)
                 j=0
@@ -126,7 +126,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
             // valida dois campos de senha
             if !(senhasalva == confirmasenha)
             {
-                let alert=UIAlertController(title:"Erro", message: "As senhas precisam ser iguais", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert=UIAlertController(title:"Erro", message: "Senhas diferentes.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alert,animated: true, completion: nil)
                 j=0
@@ -141,7 +141,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
     func actOnNotificationFailCadastro()
     {
         dispatch_async(dispatch_get_main_queue(),{
-            let alert=UIAlertController(title:"Erro", message: "E-mail já cadastrado!", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert=UIAlertController(title:"Erro", message: "E-mail já cadastrado.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alert,animated: true, completion: nil)
             j=0

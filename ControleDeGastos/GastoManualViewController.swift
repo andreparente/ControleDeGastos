@@ -230,12 +230,12 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
         // nao pode usar variavel sem verificar se eh nil antes
         if(valorgasto == nil) {
-            let alert = UIAlertController(title: "Warning", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Aviso", message: "Você não preencheu o valor do gasto", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
         } else if(self.dataStr == "" || self.dataStr.isEmpty) {
-            let alert = UIAlertController(title: "Warning", message: "Você não preencheu a data", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Aviso", message: "Você não preencheu a data", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
@@ -251,7 +251,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             executar = true
             dismissViewControllerAnimated(true, completion: nil)
         } else if(categoria == "") {
-            let alert = UIAlertController(title: "Warning", message: "Você não preencheu a categoria", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Aviso", message: "Você não preencheu a categoria", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)

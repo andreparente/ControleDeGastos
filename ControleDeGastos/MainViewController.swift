@@ -94,7 +94,8 @@ class MainViewController: UIViewController,WCSessionDelegate {
 
     func actOnNotificationErrorLoad()
     {
-        let alert=UIAlertController(title:"Erro", message: "Erro ao dar fetch no user", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert=UIAlertController(title:"Erro", message: "Favor verificar se está conectado no iCloud.", preferredStyle: UIAlertControllerStyle.Alert)
+        print("Erro ao dar fetch do usuário")
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alert,animated: true, completion: nil)
     }

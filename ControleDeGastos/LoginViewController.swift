@@ -81,7 +81,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         // campos vazios
         if ((mail.text == nil) || senha.text == nil)
         {
-            let alert=UIAlertController(title:"Erro", message: "Todos os campos são obrigatórios", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert=UIAlertController(title:"Erro", message: "Todos os campos são obrigatórios.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alert,animated: true, completion: nil)
             i=0
@@ -92,12 +92,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         if isValidEmail(mail.text!) == false
         {
             if(mail.text! != "") {
-                let alert=UIAlertController(title:"Erro", message: "E-mail Inválido", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert=UIAlertController(title:"Erro", message: "E-mail inválido.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alert,animated: true, completion: nil)
             }
             else {
-                let alert=UIAlertController(title:"Erro", message: "Preencha os campos", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert=UIAlertController(title:"Erro", message: "Preencha os campos.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alert,animated: true, completion: nil)
             }
@@ -159,7 +159,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     func actOnNotificationErrorPassword() {
         
         dispatch_async(dispatch_get_main_queue(),{
-            let alert=UIAlertController(title:"Erro", message: "Senha Incorreta", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert=UIAlertController(title:"Erro", message: "Senha incorreta.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alert,animated: true, completion: nil)
             i=0
@@ -169,7 +169,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     func actOnnotificationErrorEmail() {
         
         dispatch_async(dispatch_get_main_queue(),{
-            let alert=UIAlertController(title:"Erro", message: "E-mail não cadastrado", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert=UIAlertController(title:"Erro", message: "E-mail não cadastrado.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alert,animated: true, completion: nil)
             i=0

@@ -34,7 +34,9 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         pickermesano.grafico = self
+        if (eazul) {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        }
      /*   if (eamarela)
         {
             view.backgroundColor = corAmarela
@@ -151,7 +153,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             chartView.noDataText = "You need to enter some data"
             chartView.delegate = self
             chartView.animate(xAxisDuration: 2)
-            limiteLabel.text = "Limite mensal de \(usuario.limiteMes)"
+            limiteLabel.text = "Limite mensal: R$ \(usuario.limiteMes)"
         }
     }
     
@@ -244,7 +246,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             print("vetor de valores", vetorFinal)
             print("vetor de categorias", vetorFinalCat)
             setChart(vetorFinalCat, values: vetorFinal)
-            totalLabel.text = "Total desse mês: R$"+String(total)
+            totalLabel.text = "Total desse mês: R$ "+String(total)
         }
     }
     override func viewWillDisappear(animated: Bool) {
