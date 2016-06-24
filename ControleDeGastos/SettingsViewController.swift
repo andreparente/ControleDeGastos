@@ -133,7 +133,6 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
     
     @IBAction func logOut(sender: UIButton) {
         
-        // "deletar" o arquivo plist!!!
         
         var data = [String:AnyObject]()
         data["email"] = nil
@@ -142,7 +141,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         data["isLogged"] = "loggedOut"
         plist.deleteData(data)
         userLogged.gastos.removeAll()
-        userLogged.arrayGastos.removeAll()
+       // userLogged.arrayGastos.removeAll()
         userLogged.categories.removeAll()
         print(userLogged.gastos)
         print(userLogged.arrayGastos)

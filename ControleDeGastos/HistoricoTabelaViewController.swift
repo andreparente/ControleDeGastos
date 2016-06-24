@@ -122,4 +122,17 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             
         }
     }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            
+            DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged)
+            tableView.reloadData()
+            // handle delete (by removing the data from your array and updating the tableview)
+        }
+    }
 }
