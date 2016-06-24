@@ -75,12 +75,12 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
             valor.append("Sem gastos hoje")
         }
         totalmes = Double(text[2][0])!
-        var data = [String:AnyObject]()
+       /* var data = [String:AnyObject]()
         data["Total"] = Double(text[2][0])!
         data["Categorias"] = text[0][0]
         data["Valores"] = text[1][0]
         plist.saveData(data)
-        
+        */
         print(categorias)
         self.myTable.setNumberOfRows(valor.count, withRowType: "cell")
         for(index,item) in valor.enumerate(){
