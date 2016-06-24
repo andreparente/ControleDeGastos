@@ -28,6 +28,8 @@
 		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
 		9C0FBAD81D1DB2E200C53B87 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FBAD71D1DB2E200C53B87 /* TsukushiBMaruGothic.ttc */; };
 		9C0FBADD1D1DB33400C53B87 /* TsukushiAMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FBADC1D1DB33400C53B87 /* TsukushiAMaruGothic.ttc */; };
+		9C0FBAE11D1DBC8400C53B87 /* AppleWatchPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C0FBAE01D1DBC8400C53B87 /* AppleWatchPlist.plist */; };
+		9C0FBAE61D1DBDBA00C53B87 /* PlistWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FBAE51D1DBDBA00C53B87 /* PlistWatch.swift */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
 		9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */; };
 		9C82EA581D1D399B0088B306 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C82EA571D1D399B0088B306 /* NotificationController.swift */; };
@@ -169,6 +171,8 @@
 		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		9C0FBAD71D1DB2E200C53B87 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiBMaruGothic.ttc; path = "../../Downloads/Telegram Desktop/TsukushiBMaruGothic.ttc"; sourceTree = "<group>"; };
 		9C0FBADC1D1DB33400C53B87 /* TsukushiAMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiAMaruGothic.ttc; path = "../../Downloads/Telegram Desktop/TsukushiAMaruGothic.ttc"; sourceTree = "<group>"; };
+		9C0FBAE01D1DBC8400C53B87 /* AppleWatchPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppleWatchPlist.plist; sourceTree = "<group>"; };
+		9C0FBAE51D1DBDBA00C53B87 /* PlistWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistWatch.swift; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9C82EA571D1D399B0088B306 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -338,6 +342,8 @@
 				9CA712921D1AE4D00074E21C /* InterfaceController.swift */,
 				9C82EA571D1D399B0088B306 /* NotificationController.swift */,
 				9C82EA5C1D1D8E6B0088B306 /* Complication.swift */,
+				9C0FBAE01D1DBC8400C53B87 /* AppleWatchPlist.plist */,
+				9C0FBAE51D1DBDBA00C53B87 /* PlistWatch.swift */,
 			);
 			path = "WatchGastei Extension";
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C0FBAE11D1DBC8400C53B87 /* AppleWatchPlist.plist in Resources */,
 				9C9AFEE71D1052DB00EA551B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,6 +630,7 @@
 				9C82EA5D1D1D8E6B0088B306 /* Complication.swift in Sources */,
 				9CA7128B1D1ACF700074E21C /* Gasto.swift in Sources */,
 				9CA712851D1ACA0C0074E21C /* InterfaceControllerTable.swift in Sources */,
+				9C0FBAE61D1DBDBA00C53B87 /* PlistWatch.swift in Sources */,
 				9C9AFEE51D1052DB00EA551B /* ExtensionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

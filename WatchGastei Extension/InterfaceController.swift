@@ -29,6 +29,12 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
     }
     override func willActivate() {
         //setNotification()
+        var dict1 = plist.getData()
+        if dict1 != nil{
+        valor = dict1!["Valores"] as! Array
+        categorias = dict1!["Categorias"] as! Array
+        totalmes = dict1!["Total"] as! Double
+        }
         super.willActivate()
         total.setText("Total do mes:\(totalmes)")
     }
@@ -59,6 +65,11 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         }
         totalmes = Double(text[2][0])!
         total.setText("Total do mes:\(totalmes)")
+        var data = [String:AnyObject]()
+        data["Total"] = Double(text[2][0])!
+        data["Categorias"] = text[0][0]
+        data["Valores"] = text[1][0]
+        plist.saveData(data)
         print(categorias)
         print(valor)
         
