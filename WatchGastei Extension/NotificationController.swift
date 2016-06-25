@@ -35,12 +35,12 @@ class NotificationController: WKUserNotificationInterfaceController {
             print("chegou notification")
             if localNotification.alertTitle == "Cuidado" {
                 labeltitulo.setText("Cuidado")
-                labeldescricao.setText("Gastou muito")
+                labeldescricao.setText("Nesse ritmo seu limite vai estourar antes do fim do mês.")
             }
             
-            if localNotification.alertTitle == "Ok" {
-                labeltitulo.setText("Ok")
-                labeldescricao.setText("Gastou pouco")
+            if localNotification.alertTitle == "Atenção" {
+                labeltitulo.setText("Atenção")
+                labeldescricao.setText("Você gastou muito hoje!")
             }
             
             completionHandler(.Custom)
