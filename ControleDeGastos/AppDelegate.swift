@@ -26,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WCSessionDelegate {
         if WCSession.isSupported() {
             session.activateSession()
         }
+        let transfers = session.outstandingUserInfoTransfers
+        if transfers.count > 0 {
+            let transfer = transfers.first!
+            transfer.cancel()
+        }
         
         return true
     }

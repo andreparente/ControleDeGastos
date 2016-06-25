@@ -172,7 +172,7 @@ public class User {
         }
     }
     
-    func mediaGastosPorDia(user: User) -> Double {
+    func previsaogastosmes(user: User) -> Double {
         
         var result: Double!
         var gastos: [Gasto]?
@@ -199,7 +199,7 @@ public class User {
             }
                 
             else {
-                result = total/Double(diaAtual);
+                result = total + ((total/Double((diaAtual))) * Double(30 - diaAtual))
                 
                 
                 return result

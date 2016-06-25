@@ -9,11 +9,12 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
-let defaults = NSUserDefaults.standardUserDefaults()
+//let defaults = NSUserDefaults.standardUserDefaults()
+var dictionarytudo :[String:AnyObject] = [:]
 class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
     @IBOutlet var total: WKInterfaceLabel!
-    
+    var items: [NSDictionary] = []
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         if (WCSession.isSupported()) {
@@ -28,15 +29,20 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         // Configure interface objects here.
     }
     override func willActivate() {
-        if let categories = defaults.objectForKey("categories")
-        {
-            categorias = categories as! [String]
-            valor = defaults.objectForKey("valor") as! [String]
-            totalmes = defaults.objectForKey("total") as! Double
+        self.items.removeAll()
+        if let newItems = NSUserDefaults.standardUserDefaults().objectForKey("items") as? [NSDictionary] {
+            self.items = newItems
+            for i in 0...self.items.count
+            {
+            categorias = self.items[i]["categories"] as! [String]
+            valor = self.items[i]["valor"] as! [String]
+            totalmes = self.items[i]["total"] as! Double
+            }
         }
         super.willActivate()
         total.setText("Total do mes:\(totalmes)")
     }
+    /*
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
         categorias.removeAll()
         valor.removeAll()
@@ -72,6 +78,7 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         
     
 }
+ */
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible

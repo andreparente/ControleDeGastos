@@ -67,8 +67,9 @@ class MainViewController: UIViewController,WCSessionDelegate {
     }
    
     @IBAction func botaogastar(sender: UIButton) {
-        if userLogged.abaixoDaMedia(userLogged)
-        {
+        
+            if userLogged.previsaogastosmes(userLogged) > userLogged.limiteMes
+            {
             let alertTime = NSDate().dateByAddingTimeInterval(60)
             let notifyAlarm = UILocalNotification()
             
@@ -77,10 +78,12 @@ class MainViewController: UIViewController,WCSessionDelegate {
             notifyAlarm.soundName = UILocalNotificationDefaultSoundName
             notifyAlarm.category = "Aviso_Category"
             notifyAlarm.alertTitle = "Cuidado"
-            notifyAlarm.alertBody = "Você está gastando muito hoje"
+            notifyAlarm.alertBody = "Seu limite mensal é \(userLogged.limiteMes) e a sua previsão de gastos para o mês é :\(userLogged.previsaogastosmes(userLogged))"
             app.scheduleLocalNotification(notifyAlarm)
         }
         else{
+            if userLogged.abaixoDaMedia(userLogged)
+            {
             let alertTime = NSDate().dateByAddingTimeInterval(60)
             
             let notifyAlarm = UILocalNotification()
@@ -89,9 +92,10 @@ class MainViewController: UIViewController,WCSessionDelegate {
             notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
             notifyAlarm.soundName = UILocalNotificationDefaultSoundName
             notifyAlarm.category = "Aviso_Category"
-            notifyAlarm.alertTitle = "Ok"
-            notifyAlarm.alertBody = "Você não está gastando muito hoje"
+            notifyAlarm.alertTitle = "Atenção"
+            notifyAlarm.alertBody = "Você está gastando muito hoje.Previsão para o mês:\(userLogged.previsaogastosmes(userLogged)))"
             app.scheduleLocalNotification(notifyAlarm)
+            }
         }
         
 
@@ -248,7 +252,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             if let newItems = NSUserDefaults.standardUserDefaults().objectForKey("items") as? [NSDictionary] {
                 self.items = newItems
             }
-            
+            print(self.items)
             WCSession.defaultSession().transferUserInfo(item)
            /* if (WCSession.isSupported()) {
                 let session = WCSession.defaultSession()

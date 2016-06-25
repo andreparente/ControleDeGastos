@@ -48,6 +48,7 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
         }
         super.willActivate()
     }
+    /*
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
         categorias.removeAll()
         valor.removeAll()
@@ -95,6 +96,7 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
         }
         
     }
+ */
         override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()

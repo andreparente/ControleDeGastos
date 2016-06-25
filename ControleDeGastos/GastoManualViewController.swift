@@ -272,7 +272,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 arrayValor.append(String(userLogged.getGastosHoje()[i].value))
                 i+=1
             }
-            if (WCSession.isSupported()) {
+          /*  if (WCSession.isSupported()) {
                 let session = WCSession.defaultSession()
                 session.delegate = self
                 session.activateSession()
@@ -282,7 +282,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             {
                 print("Nao está conectado ao watch")
             }
-            /*  let complicationServer = CLKComplicationServer.sharedInstance()
+             let complicationServer = CLKComplicationServer.sharedInstance()
             for complication in complicationServer.activeComplications {
                 complicationServer.reloadTimelineForComplication(complication)
             }
