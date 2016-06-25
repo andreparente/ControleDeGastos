@@ -242,7 +242,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
                 total = total + gasto.value
             }
             print("--------- TOTAL DE TODOS OS GASTOS DO USUARIO DO Mes:  ", total)
-            (vetorFinal,vetorFinalCat) = organizaVetores(userLogged)
+            (vetorFinal,vetorFinalCat) = organizaVetoresMes(userLogged,gastosMes:
+            userLogged.getGastosUltimoMês())
             print("vetor de valores", vetorFinal)
             print("vetor de categorias", vetorFinalCat)
             setChart(vetorFinalCat, values: vetorFinal)

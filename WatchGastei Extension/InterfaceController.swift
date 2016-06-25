@@ -9,15 +9,15 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
-
+let defaults = NSUserDefaults.standardUserDefaults()
 class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
     @IBOutlet var total: WKInterfaceLabel!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
-            //let session2 = WCSession.activateSession(<#T##WCSession#>)
             session.delegate = self
             session.activateSession()
         }
@@ -28,14 +28,12 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         // Configure interface objects here.
     }
     override func willActivate() {
-        //setNotification()
-       /* var dict1 = plist.getData()
-        if dict1 != nil{
-        valor = dict1!["Valores"] as! Array
-        categorias = dict1!["Categorias"] as! Array
-        totalmes = dict1!["Total"] as! Double
+        if let categories = defaults.objectForKey("categories")
+        {
+            categorias = categories as! [String]
+            valor = defaults.objectForKey("valor") as! [String]
+            totalmes = defaults.objectForKey("total") as! Double
         }
- */
         super.willActivate()
         total.setText("Total do mes:\(totalmes)")
     }
@@ -66,12 +64,9 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         }
         totalmes = Double(text[2][0])!
         total.setText("Total do mes:\(totalmes)")
-        /*var data = [String:AnyObject]()
-        data["Total"] = Double(text[2][0])!
-        data["Categorias"] = text[0][0]
-        data["Valores"] = text[1][0]
-        plist.saveData(data)
- */
+        defaults.setObject(text[0], forKey: "categories")
+        defaults.setObject(text[1], forKey: "valor")
+        defaults.setDouble(Double(text[2][0])!, forKey: "total")
         print(categorias)
         print(valor)
         
