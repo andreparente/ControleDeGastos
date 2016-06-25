@@ -44,7 +44,10 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         
-        
+        let quickSorter = QuickSorterGasto()
+        quickSorter.v = gastosGlobal
+        quickSorter.callQuickSort("Data", decrescente: true)
+        gastosGlobal = quickSorter.v
         
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }

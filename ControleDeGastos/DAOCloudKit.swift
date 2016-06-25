@@ -247,6 +247,7 @@ class DAOCloudKit {
         privateDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
             if error != nil {
                 print(error)
+                //NETWORK FAILURE DA UMA OLHADA NISSO, DAR UM ALERT PRO USUARIO DE REPENTE!
             }
             else {
                 

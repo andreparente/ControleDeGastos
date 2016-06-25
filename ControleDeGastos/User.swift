@@ -59,12 +59,12 @@ public class User {
     func getLimiteMes() -> Double {
         return self.limiteMes
     }
-  
+    
     
     // -------------------------------------------- MUDAR ESSAS FUNCOES PARA CLOUDKIT-------------------------------
     
     
-
+    
     func getGastosMes(mes: Int, ano: Int) -> [Gasto] {
         // gera o novo vetor
         var gastosMes: [Gasto] = []
@@ -120,7 +120,7 @@ public class User {
         let diaAtual = components.day
         
         // subtrai 1 pq os dias do mes nao comecam no zero
-      
+        
         return getGastosUltimosDias(diaAtual-1)
     }
     
@@ -170,7 +170,43 @@ public class User {
         else {
             return true
         }
+    }
+    
+    func mediaGastosPorDia(user: User) -> Double {
         
+        var result: Double!
+        var gastos: [Gasto]?
+        var total: Double = 0
+        let hoje = NSDate()
+        let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
         
+        let dateComponents = NSDateComponents()
+        dateComponents.year = components.year
+        dateComponents.month = components.month
+        let diaAtual = components.day
+        
+        gastos = self.getGastosUltimoMês()
+        
+        if(gastos != nil) {
+            
+            
+            for gasto in gastos! {
+                total += gasto.value
+            }
+            
+            if(total == 0) {
+                return 0
+            }
+                
+            else {
+                result = total/Double(diaAtual);
+                
+                
+                return result
+            }
+        }
+        else {
+            return 0
+        }
     }
 }
