@@ -184,6 +184,7 @@ public class User {
         dateComponents.year = components.year
         dateComponents.month = components.month
         let diaAtual = components.day
+        let mesAtual = components.month
         
         gastos = self.getGastosUltimoMês()
         
@@ -199,8 +200,19 @@ public class User {
             }
                 
             else {
-                result = total + ((total/Double((diaAtual))) * Double(30 - diaAtual))
-                
+                if mesAtual == 1 || mesAtual == 3 || mesAtual == 5 || mesAtual == 7 || mesAtual == 8 || mesAtual == 10 || mesAtual == 12
+                {
+                result = total + ((total/Double((diaAtual))) * Double(31 - diaAtual))
+                }
+                else{
+                    if mesAtual == 2
+                    {
+                     result = total + ((total/Double((diaAtual))) * Double(28 - diaAtual))
+                    }
+                    else{
+                        result = total + ((total/Double((diaAtual))) * Double(30 - diaAtual))
+                    }
+                }
                 
                 return result
             }
