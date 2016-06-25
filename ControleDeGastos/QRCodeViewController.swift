@@ -145,6 +145,8 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         }
         j=0
         w=0
+        if datatotal != nil
+        {
         while(datatotal[j] != "5" && datatotal[j+1] != "4")
         {
             data.insert(datatotal[j],atIndex: w)
@@ -161,6 +163,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             }
         }
         datafinal=hexStringtoAscii(valoremhexa)
+        }
         //Quando quebrar o loop passa o valor pra uma string só
         if valor != nil
         {

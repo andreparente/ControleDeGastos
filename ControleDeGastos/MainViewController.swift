@@ -23,7 +23,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     @IBOutlet weak var RS: UILabel!
     @IBOutlet weak var gastos: UILabel!
     @IBOutlet weak var imagemCarteira: UIImageView!
-    
+    var items: [NSDictionary] = []
     var available: Double!
     var valortotal: Double = 0.0
     var valorTotalMes: Double = 0.0
@@ -51,8 +51,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
-        
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -236,7 +234,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             var arrayCategories = [String]()
             var arrayValor = [String]()
             var total = [String]()
-            
+
             total.append(String(self.valorTotalMes))
             var i = 0
             for _ in userLogged.getGastosHoje()
@@ -245,8 +243,14 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 arrayValor.append(String(userLogged.getGastosHoje()[i].value))
                 i+=1
             }
+             let item = ["categories": arrayCategories, "valor": arrayValor,"total":total]
+            self.items.append(item)
+            if let newItems = NSUserDefaults.standardUserDefaults().objectForKey("items") as? [NSDictionary] {
+                self.items = newItems
+            }
             
-            if (WCSession.isSupported()) {
+            WCSession.defaultSession().transferUserInfo(item)
+           /* if (WCSession.isSupported()) {
                 let session = WCSession.defaultSession()
                 session.delegate = self
                 session.activateSession()
@@ -256,7 +260,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             {
                 print("Nao está conectado ao watch")
             }
-            
+            */
     }
 }
 }

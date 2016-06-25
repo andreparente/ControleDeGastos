@@ -8,18 +8,25 @@
 
 import UIKit
 import CoreData
-
+import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,WCSessionDelegate {
     
     var window: UIWindow?
-    
+    var session: WCSession!
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         let notificationSettings = UIUserNotificationSettings(forTypes:
             UIUserNotificationType.Alert, categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
+        session = WCSession.defaultSession()
+        session.delegate = self
+        
+        if WCSession.isSupported() {
+            session.activateSession()
+        }
+        
         return true
     }
     func applicationWillResignActive(application: UIApplication) {
