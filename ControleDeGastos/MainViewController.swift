@@ -51,6 +51,8 @@ class MainViewController: UIViewController,WCSessionDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorInternet), name: "notificationErrorInternet", object: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,11 +67,11 @@ class MainViewController: UIViewController,WCSessionDelegate {
             limite.text = "Seu limite mensal é de R$ \(usuario.limiteMes)"
         }
     }
-   
+    
     @IBAction func botaogastar(sender: UIButton) {
         
-            if userLogged.previsaogastosmes(userLogged) > userLogged.limiteMes
-            {
+        if userLogged.previsaogastosmes(userLogged) > userLogged.limiteMes
+        {
             let alertTime = NSDate().dateByAddingTimeInterval(60)
             let notifyAlarm = UILocalNotification()
             
@@ -84,21 +86,21 @@ class MainViewController: UIViewController,WCSessionDelegate {
         else{
             if userLogged.abaixoDaMedia(userLogged)
             {
-            let alertTime = NSDate().dateByAddingTimeInterval(60)
-            
-            let notifyAlarm = UILocalNotification()
-            
-            notifyAlarm.fireDate = alertTime
-            notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
-            notifyAlarm.soundName = UILocalNotificationDefaultSoundName
-            notifyAlarm.category = "Aviso_Category"
-            notifyAlarm.alertTitle = "Atenção"
-            notifyAlarm.alertBody = "Você está gastando muito hoje.Previsão para o mês:\(userLogged.previsaogastosmes(userLogged)))"
-            app.scheduleLocalNotification(notifyAlarm)
+                let alertTime = NSDate().dateByAddingTimeInterval(60)
+                
+                let notifyAlarm = UILocalNotification()
+                
+                notifyAlarm.fireDate = alertTime
+                notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
+                notifyAlarm.soundName = UILocalNotificationDefaultSoundName
+                notifyAlarm.category = "Aviso_Category"
+                notifyAlarm.alertTitle = "Atenção"
+                notifyAlarm.alertBody = "Você está gastando muito hoje.Previsão para o mês:\(userLogged.previsaogastosmes(userLogged)))"
+                app.scheduleLocalNotification(notifyAlarm)
             }
         }
         
-
+        
     }
     
     @IBAction func botaosettings(sender: UIButton) {
@@ -119,11 +121,18 @@ class MainViewController: UIViewController,WCSessionDelegate {
     {
         setView()
     }
-
+    
+    func actOnNotificationErrorInternet() {
+        
+        let alert=UIAlertController(title:"Erro", message: "Verifique a sua conexão com a internet, erro ao acessar a Cloud.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alert,animated: true, completion: nil)
+        exit(0)
+    }
+    
     func actOnNotificationErrorLoad()
     {
         let alert=UIAlertController(title:"Erro", message: "Favor verificar se está conectado no iCloud.", preferredStyle: UIAlertControllerStyle.Alert)
-        print("Erro ao dar fetch do usuário")
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alert,animated: true, completion: nil)
     }
@@ -131,7 +140,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     override func viewWillAppear(animated: Bool) {
         
         print("entrou na viewWillAppear")
-      //  setNotification()
+        //  setNotification()
         
         print(executar)
         if(flagLogout) {
@@ -140,11 +149,13 @@ class MainViewController: UIViewController,WCSessionDelegate {
             self.view.hidden = true
             dismissViewControllerAnimated(false, completion: nil)
         }
-        
-        if(executar == true)
-        {
-            print("Executou appear")
-            setView()
+            
+        else {
+            if(executar == true)
+            {
+                print("Executou appear")
+                setView()
+            }
         }
     }
     
@@ -192,9 +203,9 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 self.available = userLogged.limiteMes - self.valorTotalMes
                 if(self.available >  0 && self.available > (0.2 * userLogged.limiteMes) )
                 {
-
+                    
                     self.totaldisponivel.text = "Você ainda tem R$ \(self.available) \n para gastar nesse mês"
-                   // eamarela = false
+                    // eamarela = false
                     evermelha = false
                     eazul = true
                 }
@@ -203,23 +214,19 @@ class MainViewController: UIViewController,WCSessionDelegate {
                     if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
                     {
                         self.totaldisponivel.text = "Atenção! Você só tem mais \n R$ \(self.available) para gastar nesse mês"
-                      //  eamarela = true
+                        //  eamarela = true
                         evermelha = false
                         eazul = true
                     }
                     else
                     {
                         self.totaldisponivel.text = "Você estourou seu limite \n mensal por R$\(self.valorTotalMes - userLogged.limiteMes)"
-                       // eamarela = false
+                        // eamarela = false
                         evermelha = true
                         eazul = false
                     }
                 }
-              /*  if (eamarela)
-                {
-                    self.view.backgroundColor = corAmarela
-                }
- */
+                
                 if (evermelha)
                 {
                     self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
@@ -238,7 +245,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             var arrayCategories = [String]()
             var arrayValor = [String]()
             var total = [String]()
-
+            
             total.append(String(self.valorTotalMes))
             var i = 0
             for _ in userLogged.getGastosHoje()
@@ -247,24 +254,24 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 arrayValor.append(String(userLogged.getGastosHoje()[i].value))
                 i+=1
             }
-             let item = ["categories": arrayCategories, "valor": arrayValor,"total":total]
+            let item = ["categories": arrayCategories, "valor": arrayValor,"total":total]
             self.items.append(item)
             if let newItems = NSUserDefaults.standardUserDefaults().objectForKey("items") as? [NSDictionary] {
                 self.items = newItems
             }
             print(self.items)
             WCSession.defaultSession().transferUserInfo(item)
-           /* if (WCSession.isSupported()) {
-                let session = WCSession.defaultSession()
-                session.delegate = self
-                session.activateSession()
-                session.sendMessage(["categorias":[arrayCategories,arrayValor,total]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
-            }
-            else
-            {
-                print("Nao está conectado ao watch")
-            }
-            */
+            /* if (WCSession.isSupported()) {
+             let session = WCSession.defaultSession()
+             session.delegate = self
+             session.activateSession()
+             session.sendMessage(["categorias":[arrayCategories,arrayValor,total]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
+             }
+             else
+             {
+             print("Nao está conectado ao watch")
+             }
+             */
+        }
     }
-}
 }

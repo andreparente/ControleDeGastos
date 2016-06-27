@@ -222,7 +222,9 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     override func viewWillAppear(animated: Bool) {
         executar = false
         total = 0.0
+        
         printaLimite(userLogged)
+        
         if(userLogged.gastos.count == 0) {
             
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO

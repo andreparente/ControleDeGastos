@@ -21,7 +21,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         
         super.viewDidLoad()
-        executar = false
+        //executar = false
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         //viewSuperior.backgroundColor = corAzul
         viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
@@ -52,7 +52,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
     override func viewWillAppear(animated: Bool) {
-        executar = false
+       // executar = false
         self.tableView.reloadData()
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -132,10 +132,14 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            
-            DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged)
-            tableView.reloadData()
             // handle delete (by removing the data from your array and updating the tableview)
+
+            DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged,index: indexPath.row)
+            gastosGlobal.removeAtIndex(indexPath.row)
+            userLogged.gastos = gastosGlobal
+            tableView.reloadData()
+            executar = true
+
         }
     }
 }
