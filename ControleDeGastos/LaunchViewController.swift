@@ -38,6 +38,8 @@ class LaunchViewController: UIViewController {
                 self.performSegueWithIdentifier("LaunchToLogin", sender: self)
             })
         }
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

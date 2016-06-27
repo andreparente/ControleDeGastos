@@ -176,8 +176,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         var r, g, b: CGFloat!
 
             chartDataSet.colors.removeAll()
-        print(eazul)
-        print(evermelha)
+
             for i in 0...userLogged.categories.count {
                 
                 if (eazul) {
@@ -199,8 +198,10 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
                 chartDataSet.colors.append(NSUIColor(red: r/255, green: g/255, blue: b/255, alpha: 1))
             }
         
-        let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
-        chartView.data = chartData
+            let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
+            chartView.data = chartData
+
+        
     }
     
     // FUNCAO CHAMADA QUANDO CLICAMOS EM CIMA DE UM PEDACO DA PIZZA
@@ -220,7 +221,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         return true
     }
     override func viewWillAppear(animated: Bool) {
-        executar = false
+        //executar = false
         total = 0.0
         
         printaLimite(userLogged)
@@ -228,11 +229,14 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         if(userLogged.gastos.count == 0) {
             
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
+            chartView.clear()
+
             chartView.noDataText = "Você não possui nenhum gasto!"
             chartView.infoTextColor = UIColor.whiteColor()
             chartView.infoFont = UIFont(name: "Tsukushi A Round Gothic", size: 16)
             chartView.delegate = self
             chartView.animate(xAxisDuration: 1)
+            totalLabel.hidden = true
             
         }
         else {

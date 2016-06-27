@@ -46,6 +46,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         let quickSorter = QuickSorterGasto()
         quickSorter.v = gastosGlobal
+        quickSorter.a = userLogged.arrayGastos
         quickSorter.callQuickSort("Data", decrescente: true)
         gastosGlobal = quickSorter.v
         

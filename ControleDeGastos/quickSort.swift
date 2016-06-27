@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CloudKit
 
 class QuickSortClass {
     var v = [Int]()
@@ -40,16 +40,21 @@ class QuickSortClass {
 
 class QuickSorterGasto {
     var v = [Gasto]()
+    var a = [CKReference]()
     var decrescente = false
     
     func callQuickSort (ordenacao: String, decrescente: Bool) {
         self.decrescente = decrescente
         if (ordenacao == "Data") {
             quicksortData(0, right: v.count-1)
+            quicksortData(0, right: a.count-1)
+
         } else if (ordenacao == "Nome") {
             quicksortNome(0, right: v.count-1)
+            quicksortNome(0, right: a.count-1)
         } else if (ordenacao == "Valor") {
             quicksortValor(0, right: v.count-1)
+            quicksortValor(0, right: a.count-1)
         }
     }
     
@@ -57,7 +62,7 @@ class QuickSorterGasto {
         var i = left
         for j in (left + 1)..<(right + 1) {
             var precisaTrocar = v[j].date < v[left].date
-            
+
             // inverte a verificacao para ordenar ao contrario
             if (self.decrescente) {
                 precisaTrocar = !precisaTrocar
@@ -66,9 +71,11 @@ class QuickSorterGasto {
             if precisaTrocar {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
+                (a[i], a[j]) = (a[j], a[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
+        (a[i], a[left]) = (a[left], a[i])
         return i
     }
     
@@ -93,9 +100,11 @@ class QuickSorterGasto {
             if precisaTrocar {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
+                (a[i], a[j]) = (a[j], a[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
+        (a[i], a[left]) = (a[left], a[i])
         return i
     }
     
@@ -120,9 +129,11 @@ class QuickSorterGasto {
             if precisaTrocar {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
+                (a[i], a[j]) = (a[j], a[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
+        (a[i], a[left]) = (a[left], a[i])
         return i
     }
     
