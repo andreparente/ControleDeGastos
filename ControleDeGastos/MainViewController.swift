@@ -118,6 +118,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     func actOnNotificationSuccessLoad()
     {
         setView()
+        print(userLogged.previsaogastosmes(userLogged))
     }
 
     func actOnNotificationErrorLoad()
@@ -247,14 +248,15 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 arrayValor.append(String(userLogged.getGastosHoje()[i].value))
                 i+=1
             }
-             let item = ["categories": arrayCategories, "valor": arrayValor,"total":total]
+          /*   let item = ["categories": arrayCategories, "valor": arrayValor,"total":total]
             self.items.append(item)
             if let newItems = NSUserDefaults.standardUserDefaults().objectForKey("items") as? [NSDictionary] {
                 self.items = newItems
             }
             print(self.items)
             WCSession.defaultSession().transferUserInfo(item)
-           /* if (WCSession.isSupported()) {
+ */
+            if (WCSession.isSupported()) {
                 let session = WCSession.defaultSession()
                 session.delegate = self
                 session.activateSession()
@@ -264,7 +266,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
             {
                 print("Nao está conectado ao watch")
             }
-            */
     }
 }
 }
