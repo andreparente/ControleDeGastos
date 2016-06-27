@@ -35,7 +35,8 @@ class MainViewController: UIViewController,WCSessionDelegate {
         act.startAnimating()
         valortotal = 0
         valorTotalMes = 0
-        view.backgroundColor = UIColor.whiteColor()/*(patternImage: UIImage(named: "background_blue.png")!)*/
+        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        view.backgroundColor = UIColor.whiteColor()
         gastei.hidden = true
         limite.hidden = true
         totaldisponivel.hidden = true
