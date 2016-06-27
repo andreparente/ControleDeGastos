@@ -159,7 +159,9 @@ class DAOCloudKit {
         }
     }
     
-    func deleteGasto(gastoToDelete: CKReference, user: User) {
+    func deleteGasto(gastoToDelete: CKReference, user: User, index: Int) {
+        
+        let userRecordId = CKRecordID(recordName: user.email)
         
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
@@ -180,9 +182,11 @@ class DAOCloudKit {
                 }
             }))
         
-        //AGORA TEM QUE DELETAR DA REFERENCIA DO USUARIO!!a
+
+                user.arrayGastos.removeAtIndex(index)
+                
         
-        /*container.privateCloudDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+        container.privateCloudDatabase.fetchRecordWithID(userRecordId) { (fetchedRecord,error) in
             
             print(fetchedRecord)
             
@@ -198,7 +202,7 @@ class DAOCloudKit {
                     }
                 })
             }
-        }*/
+        }
     }
     
     //NS NOTIFICATION CENTER
@@ -214,6 +218,7 @@ class DAOCloudKit {
         privateDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
             if error != nil {
                 print(error)
+                NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorInternet", object: nil)
             }
             else {
                 
@@ -247,6 +252,7 @@ class DAOCloudKit {
         privateDatabase.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
             if error != nil {
                 print(error)
+                NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorInternet", object: nil)
                 //NETWORK FAILURE DA UMA OLHADA NISSO, DAR UM ALERT PRO USUARIO DE REPENTE!
             }
             else {
@@ -369,6 +375,8 @@ class DAOCloudKit {
                         records, error in
                         if error != nil {
                             print(error)
+                            NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorInternet", object: nil)
+                            
                         } else {
                             
                             userLogged.gastos.removeAll()
