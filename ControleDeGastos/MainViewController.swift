@@ -80,7 +80,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             notifyAlarm.soundName = UILocalNotificationDefaultSoundName
             notifyAlarm.category = "Aviso_Category"
             notifyAlarm.alertTitle = "Cuidado"
-            notifyAlarm.alertBody = "Seu limite mensal é: R$ \(userLogged.limiteMes) e a sua previsão de gastos para o mês é : R$ \(userLogged.previsaogastosmes(userLogged))"
+            notifyAlarm.alertBody = "Seu limite mensal é: R$ \(userLogged.limiteMes) e a sua previsão de gastos para o mês é : R$ \(userLogged.previsaogastosmes(userLogged).roundToPlaces(2))"
             app.scheduleLocalNotification(notifyAlarm)
         }
         else{
@@ -95,7 +95,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 notifyAlarm.soundName = UILocalNotificationDefaultSoundName
                 notifyAlarm.category = "Aviso_Category"
                 notifyAlarm.alertTitle = "Atenção"
-                notifyAlarm.alertBody = "Você está gastando muito hoje.Previsão para o mês: R$ \(userLogged.previsaogastosmes(userLogged)))"
+                notifyAlarm.alertBody = "Você está gastando muito hoje.Previsão para o mês: R$ \(userLogged.previsaogastosmes(userLogged).roundToPlaces(2)))"
                 app.scheduleLocalNotification(notifyAlarm)
             }
         }
