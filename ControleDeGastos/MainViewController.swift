@@ -35,7 +35,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         act.startAnimating()
         valortotal = 0
         valorTotalMes = 0
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        view.backgroundColor = UIColor.whiteColor()/*(patternImage: UIImage(named: "background_blue.png")!)*/
         gastei.hidden = true
         limite.hidden = true
         totaldisponivel.hidden = true
@@ -80,7 +80,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             notifyAlarm.soundName = UILocalNotificationDefaultSoundName
             notifyAlarm.category = "Aviso_Category"
             notifyAlarm.alertTitle = "Cuidado"
-            notifyAlarm.alertBody = "Seu limite mensal é \(userLogged.limiteMes) e a sua previsão de gastos para o mês é :\(userLogged.previsaogastosmes(userLogged))"
+            notifyAlarm.alertBody = "Seu limite mensal é R$\(userLogged.limiteMes) e a sua previsão de gastos para o mês é : R$\(userLogged.previsaogastosmes(userLogged).roundToPlaces(2))"
             app.scheduleLocalNotification(notifyAlarm)
         }
         else{
@@ -95,7 +95,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 notifyAlarm.soundName = UILocalNotificationDefaultSoundName
                 notifyAlarm.category = "Aviso_Category"
                 notifyAlarm.alertTitle = "Atenção"
-                notifyAlarm.alertBody = "Você está gastando muito hoje.Previsão para o mês:\(userLogged.previsaogastosmes(userLogged)))"
+                notifyAlarm.alertBody = "Você está gastando muito hoje.Previsão para o mês: R$\(userLogged.previsaogastosmes(userLogged).roundToPlaces(2)))"
                 app.scheduleLocalNotification(notifyAlarm)
             }
         }
@@ -241,6 +241,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             else
             {
                 self.totaldisponivel.hidden=true
+                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
             }
             
             var arrayCategories = [String]()
@@ -255,14 +256,14 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 arrayValor.append(String(userLogged.getGastosHoje()[i].value))
                 i+=1
             }
-          /*   let item = ["categories": arrayCategories, "valor": arrayValor,"total":total]
-            self.items.append(item)
-            if let newItems = NSUserDefaults.standardUserDefaults().objectForKey("items") as? [NSDictionary] {
-                self.items = newItems
-            }
-            print(self.items)
-            WCSession.defaultSession().transferUserInfo(item)
- */
+            /*   let item = ["categories": arrayCategories, "valor": arrayValor,"total":total]
+             self.items.append(item)
+             if let newItems = NSUserDefaults.standardUserDefaults().objectForKey("items") as? [NSDictionary] {
+             self.items = newItems
+             }
+             print(self.items)
+             WCSession.defaultSession().transferUserInfo(item)
+             */
             if (WCSession.isSupported()) {
                 let session = WCSession.defaultSession()
                 session.delegate = self
@@ -273,5 +274,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
             {
                 print("Nao está conectado ao watch")
             }
+        }
     }
 }
