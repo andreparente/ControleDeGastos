@@ -254,6 +254,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             print("vetor de categorias", vetorFinalCat)
             setChart(vetorFinalCat, values: vetorFinal)
             totalLabel.text = "Total desse mês: R$ "+String(total)
+            totalLabel.hidden = false
         }
     }
     override func viewWillDisappear(animated: Bool) {
