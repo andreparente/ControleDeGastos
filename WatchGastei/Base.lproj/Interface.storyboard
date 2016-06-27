@@ -78,8 +78,8 @@
             <objects>
                 <controller id="xrv-li-tX1" customClass="NotificationController" customModule="WatchGastei_Extension">
                     <items>
-                        <label width="136" height="27.5" alignment="left" text="Label" id="QSu-Gg-CQA"/>
-                        <label width="135.5" alignment="left" text="Label" id="DK5-QT-Gv8"/>
+                        <label width="136" height="40.5" alignment="left" text="Label" id="QSu-Gg-CQA"/>
+                        <label width="135.5" height="46.5" alignment="left" text="Label" numberOfLines="3" id="DK5-QT-Gv8"/>
                     </items>
                     <connections>
                         <outlet property="labeldescricao" destination="DK5-QT-Gv8" id="Dp5-LL-Duk"/>
