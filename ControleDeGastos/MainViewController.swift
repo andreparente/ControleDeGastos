@@ -203,7 +203,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             if(userLogged.limiteMes != 0)
             {
                 self.available = userLogged.limiteMes - self.valorTotalMes
-                if(self.available >  0 && self.available > (0.2 * userLogged.limiteMes) )
+                if(self.available >  0 && self.available >= (0.2 * userLogged.limiteMes) )
                 {
                     
                     self.totaldisponivel.text = "Você ainda tem R$ \(self.available) \n para gastar nesse mês"
@@ -213,7 +213,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 }
                 else
                 {
-                    if (self.available > 0 && self.available < (0.2 * userLogged.limiteMes) )
+                    if (self.available > 0 && self.available <= (0.2 * userLogged.limiteMes) )
                     {
                         self.totaldisponivel.text = "Atenção! Você só tem mais \n R$ \(self.available) para gastar nesse mês"
                         //  eamarela = true
@@ -222,10 +222,21 @@ class MainViewController: UIViewController,WCSessionDelegate {
                     }
                     else
                     {
+                        if self.available == 0
+                        {
+                            self.totaldisponivel.text = "Você atingiu seu limite mensal!"
+                            // eamarela = false
+                            evermelha = false
+                            eazul = true
+                        }
+                    
+                    else
+                    {
                         self.totaldisponivel.text = "Você estourou seu limite \n mensal por R$\(self.valorTotalMes - userLogged.limiteMes)"
                         // eamarela = false
                         evermelha = true
                         eazul = false
+                    }
                     }
                 }
                 
