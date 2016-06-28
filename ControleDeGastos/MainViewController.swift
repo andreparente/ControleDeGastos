@@ -28,6 +28,8 @@ class MainViewController: UIViewController,WCSessionDelegate {
     var valortotal: Double = 0.0
     var valorTotalMes: Double = 0.0
     var flagLogout: Bool = false;
+    
+    
     override func viewDidLoad() {
         print("Executou Load")
         super.viewDidLoad()
@@ -166,9 +168,9 @@ class MainViewController: UIViewController,WCSessionDelegate {
         executar = false
         var gastosmes:[Gasto]!
         gastosGlobal = userLogged.gastos
-        //print(gastosGlobal)
         self.valorTotalMes = 0
         self.valortotal = 0
+        
         dispatch_async(dispatch_get_main_queue()) {
             
             gastosmes = userLogged.getGastosUltimoMês()
@@ -196,10 +198,10 @@ class MainViewController: UIViewController,WCSessionDelegate {
                     self.valorTotalMes += valor.value
                 }
             }
-            // self.totalgastos.text = "Seu total de gastos do mês é: R$ \(self.valorTotalMes)"
+            
             self.totalgastos.text = "\(self.valorTotalMes)"
             self.totaldisponivel.numberOfLines = 2
-            print("VALOR TOTAL MES :::::::::::::: ", self.valorTotalMes)
+            
             if(userLogged.limiteMes != 0)
             {
                 self.available = userLogged.limiteMes - self.valorTotalMes
