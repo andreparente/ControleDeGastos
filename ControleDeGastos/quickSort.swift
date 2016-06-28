@@ -18,6 +18,7 @@ class QuickSortClass {
             if v[j] < v[left] {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
+                (v[i], v[j]) = (v[j], v[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
@@ -47,14 +48,14 @@ class QuickSorterGasto {
         self.decrescente = decrescente
         if (ordenacao == "Data") {
             quicksortData(0, right: v.count-1)
-            quicksortData(0, right: a.count-1)
+
 
         } else if (ordenacao == "Nome") {
             quicksortNome(0, right: v.count-1)
-            quicksortNome(0, right: a.count-1)
+
         } else if (ordenacao == "Valor") {
             quicksortValor(0, right: v.count-1)
-            quicksortValor(0, right: a.count-1)
+
         }
     }
     
@@ -71,11 +72,11 @@ class QuickSorterGasto {
             if precisaTrocar {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
-                (a[i], a[j]) = (a[j], a[i])
+                (userLogged.arrayGastos[i], userLogged.arrayGastos[j]) = (userLogged.arrayGastos[j], userLogged.arrayGastos[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
-        (a[i], a[left]) = (a[left], a[i])
+        (userLogged.arrayGastos[i], userLogged.arrayGastos[left]) = (userLogged.arrayGastos[left], userLogged.arrayGastos[i])
         return i
     }
     
@@ -100,11 +101,11 @@ class QuickSorterGasto {
             if precisaTrocar {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
-                (a[i], a[j]) = (a[j], a[i])
+                (userLogged.arrayGastos[i], userLogged.arrayGastos[j]) = (userLogged.arrayGastos[j], userLogged.arrayGastos[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
-        (a[i], a[left]) = (a[left], a[i])
+        (userLogged.arrayGastos[i], userLogged.arrayGastos[left]) = (userLogged.arrayGastos[left], userLogged.arrayGastos[i])
         return i
     }
     
@@ -129,11 +130,11 @@ class QuickSorterGasto {
             if precisaTrocar {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
-                (a[i], a[j]) = (a[j], a[i])
+                (userLogged.arrayGastos[i], userLogged.arrayGastos[j]) = (userLogged.arrayGastos[j], userLogged.arrayGastos[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
-        (a[i], a[left]) = (a[left], a[i])
+        (userLogged.arrayGastos[i], userLogged.arrayGastos[left]) = (userLogged.arrayGastos[left], userLogged.arrayGastos[i])
         return i
     }
     

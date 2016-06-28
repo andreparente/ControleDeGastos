@@ -183,7 +183,7 @@ class DAOCloudKit {
             }))
         
 
-                user.arrayGastos.removeAtIndex(index)
+        user.arrayGastos.removeAtIndex(index)
                 
         
         container.privateCloudDatabase.fetchRecordWithID(userRecordId) { (fetchedRecord,error) in

@@ -48,23 +48,27 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         }
         
-        let quickSorter = QuickSorterGasto()
-        quickSorter.v = gastosGlobal
-        quickSorter.a = userLogged.arrayGastos
-        quickSorter.callQuickSort("Data", decrescente: true)
-        gastosGlobal = quickSorter.v
+        
         
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
     override func viewWillAppear(animated: Bool) {
        // executar = false
+        gastosGlobal = userLogged.gastos
+        let quickSorter = QuickSorterGasto()
+        quickSorter.v = gastosGlobal
+        quickSorter.callQuickSort("Data", decrescente: true)
+        gastosGlobal = quickSorter.v
+        
+        
         self.tableView.reloadData()
         if (evermelha)
         {
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
             viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
-        if eazul{
+        if (eazul)
+        {
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
             viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         }
