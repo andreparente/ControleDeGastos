@@ -166,7 +166,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         chartView.descriptionText = ""
         //ESSE FOR PREENCHE O VETOR DE ENTRADA DE DADOS, PRA CADA INDEX,
         for i in 0..<values.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            let dataEntry = ChartDataEntry(value: values[i].roundToPlaces(2), xIndex: i)
             dataEntries.append(dataEntry)
         }
         
