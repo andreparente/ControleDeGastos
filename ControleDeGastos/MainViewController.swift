@@ -226,8 +226,8 @@ class MainViewController: UIViewController,WCSessionDelegate {
                         {
                             self.totaldisponivel.text = "Você atingiu seu limite mensal!"
                             // eamarela = false
-                            evermelha = false
-                            eazul = true
+                            evermelha = true
+                            eazul = false
                         }
                     
                     else
