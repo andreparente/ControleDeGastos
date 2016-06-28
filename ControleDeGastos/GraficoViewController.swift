@@ -256,6 +256,14 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             totalLabel.text = "Total desse mês: R$ "+String(total)
             totalLabel.hidden = false
         }
+        if (evermelha)
+        {
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+
+        }
+        if eazul{
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        }
     }
     override func viewWillDisappear(animated: Bool) {
         pickermesano.hidden = true

@@ -236,6 +236,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                         // eamarela = false
                         evermelha = true
                         eazul = false
+                        executar = true
                     }
                     }
                 }

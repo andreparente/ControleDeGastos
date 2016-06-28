@@ -43,6 +43,10 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
             viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
+        if eazul{
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        }
         
         let quickSorter = QuickSorterGasto()
         quickSorter.v = gastosGlobal
@@ -55,6 +59,15 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     override func viewWillAppear(animated: Bool) {
        // executar = false
         self.tableView.reloadData()
+        if (evermelha)
+        {
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+        }
+        if eazul{
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        }
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
