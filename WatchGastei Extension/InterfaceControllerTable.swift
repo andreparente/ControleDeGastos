@@ -54,8 +54,6 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
         let text = message["categorias"] as! [[String]]
         var j = 0
         var i = 0
-        print(text[0].count)
-        print(text[1].count)
         if text[0].count != 0
         {
             for _ in j...text[0].count - 1
@@ -78,7 +76,6 @@ class InterfaceControllerTable: WKInterfaceController,WCSessionDelegate {
         defaults.setObject(text[0], forKey: "categories")
         defaults.setObject(text[1], forKey: "valor")
         defaults.setDouble(Double(text[2][0])!, forKey: "total")
-        print(categorias)
         self.myTable.setNumberOfRows(valor.count, withRowType: "cell")
         for(index,item) in valor.enumerate(){
             let namescontroller = myTable.rowControllerAtIndex(index) as! MyRow

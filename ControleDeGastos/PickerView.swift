@@ -118,11 +118,8 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         self.year = year
         let mes :Int =  month
         let ano :Int = year
-        print(month);print(year)
         vetorGastosMes = userLogged.getGastosMes(mes, ano: ano)
         (vetorFinalGastosMes,vetorFinalCatMes) = GraficoViewController().organizaVetoresMes(userLogged, gastosMes: vetorGastosMes)
-        print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
-        print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
         grafico.setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
         grafico.dataMesTextField.text = "\(mes)" + " " + "\(ano)"
         for gasto in userLogged.getGastosMes(month, ano: year){

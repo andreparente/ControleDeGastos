@@ -107,14 +107,12 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     }
     func actOnNotificationSaveError()
     {
-        print("erro")
         let alert=UIAlertController(title:"Erro", message: "Você não está conectado à internet", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alert,animated: true, completion: nil)
     }
    func  actOnNotificationSaveSuccess()
    {
-    print("certo")
         userLogged.addGasto(Gasto(nome: nomeGasto.text!, categoria: self.categoria, valor: (Double(valor.text!)?.roundToPlaces(2))!, data: self.dataStr))
      executar = true
      self.dismissViewControllerAnimated(true, completion: nil)
@@ -175,7 +173,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         let fullNameArr = dataaux.componentsSeparatedByString("-")
         var preferredLanguage = NSLocale.preferredLanguages()[0] as String
         var stringfinal = String()
-        print(preferredLanguage)
         if preferredLanguage == "pt-BR"
         {
         stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [1] + "-" + fullNameArr[0]
@@ -194,7 +191,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
-            //print("Text field: \(textField.text!)")
             var naoExiste = true
             for categ in userLogged.categories             {
                 if textField.text == categ {
@@ -220,7 +216,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 // atualiza pickerView
                 self.categoriaPickerView.reloadAllComponents()
                 self.categoriaPickerView.selectRow((userLogged.categories.count)-1, inComponent: 0, animated: true)
-                print("passou")
             }
         }))
         executar = false

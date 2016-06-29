@@ -75,8 +75,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         for i in 0..<userLogged.categories.count {
             
             for gasto in usuario.gastos {
-                print(gasto.category)
-                print(usuario.categories[i])
                 if(gasto.category == usuario.categories[i]) {
                     if(existeCategoria(vetCatAux, categoria: gasto.category) == false) {
                         vetCatAux.append(gasto.category)
@@ -250,8 +248,6 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             print("--------- TOTAL DE TODOS OS GASTOS DO USUARIO DO Mes:  ", total)
             (vetorFinal,vetorFinalCat) = organizaVetoresMes(userLogged,gastosMes:
             userLogged.getGastosUltimoMês())
-            print("vetor de valores", vetorFinal)
-            print("vetor de categorias", vetorFinalCat)
             setChart(vetorFinalCat, values: vetorFinal)
             totalLabel.text = "Total desse mês: R$ "+String(total)
             totalLabel.hidden = false

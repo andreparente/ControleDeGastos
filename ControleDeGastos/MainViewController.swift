@@ -33,11 +33,9 @@ class MainViewController: UIViewController,WCSessionDelegate {
     override func viewDidLoad() {
         print("Executou Load")
         super.viewDidLoad()
-        // Do any additional setup after loading the view
         act.startAnimating()
         valortotal = 0
         valorTotalMes = 0
-        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         view.backgroundColor = UIColor.whiteColor()
         gastei.hidden = true
         limite.hidden = true
@@ -57,10 +55,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorInternet), name: "notificationErrorInternet", object: nil)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     func printaLimite(usuario: User) {
         
         if(userLogged.limiteMes == 0) {
@@ -123,7 +118,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
     func actOnNotificationSuccessLoad()
     {
         setView()
-        print(userLogged.previsaogastosmes(userLogged))
     }
     
     func actOnNotificationErrorInternet() {
@@ -183,7 +177,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
             i += 1
         }
         
-        print(userLogged.arrayGastos)
         
         self.valorTotalMes = 0
         self.valortotal = 0
