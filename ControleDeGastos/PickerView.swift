@@ -123,10 +123,20 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         (vetorFinalGastosMes,vetorFinalCatMes) = GraficoViewController().organizaVetoresMes(userLogged, gastosMes: vetorGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
         print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
-        grafico.setChart(vetorFinalCatMes, values: vetorFinalGastosMes)
-        grafico.dataMesTextField.text = "\(mes)" + " " + "\(ano)"
-        for gasto in userLogged.getGastosMes(month, ano: year){
-            total = total + gasto.value
+        
+        if(vetorFinalGastosMes.count == 0) {
+            grafico.chartView.clear()
+            grafico.chartView.noDataText = "Você não possui nenhum gasto em \(months[self.month-1])"
+        }
+        
+        else {
+            grafico.setPieChart(vetorFinalCatMes, values: vetorFinalGastosMes)
+            grafico.dataMesTextField.text = "\(mes)" + " " + "\(ano)"
+            
+            for gasto in userLogged.getGastosMes(month, ano: year){
+                total = total + gasto.value
+            }
+
         }
         
         grafico.totalLabel.text = "Total desse mês: R$" + String(total)

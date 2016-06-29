@@ -14,6 +14,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     // AQUI ELE CRIA A VIEW PRO GRAFICO
     @IBOutlet weak var chartView: PieChartView!
     
+    
     @IBOutlet weak var dataMesTextField: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var limiteLabel: UILabel!
@@ -159,7 +160,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     
     
     //FUNCAO QUE SETTA TODO O GRAFICO
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setPieChart(dataPoints: [String], values: [Double]) {
         
         
         var dataEntries: [ChartDataEntry] = []
@@ -190,11 +191,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
                     g = CGFloat(Double(i)*20 + 16)
                     b = CGFloat(Double(i)*30 + 16)
                 }
-                
-                //r=CGFloat(Double(i)*10 + 20)
-                //g=CGFloat(Double(i)*15 + 30)
-                //b=CGFloat(Double(i)*20 + 40)
-                
+            
                 chartDataSet.colors.append(NSUIColor(red: r/255, green: g/255, blue: b/255, alpha: 1))
             }
         
@@ -252,7 +249,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             userLogged.getGastosUltimoMês())
             print("vetor de valores", vetorFinal)
             print("vetor de categorias", vetorFinalCat)
-            setChart(vetorFinalCat, values: vetorFinal)
+            setPieChart(vetorFinalCat, values: vetorFinal)
             totalLabel.text = "Total desse mês: R$ "+String(total)
             totalLabel.hidden = false
         }
