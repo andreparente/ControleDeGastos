@@ -74,11 +74,6 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func btn_clicked(sender: UIBarButtonItem) {
         // Do something
         dismissViewControllerAnimated(false, completion: nil)
@@ -200,15 +195,4 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         }
         return false
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

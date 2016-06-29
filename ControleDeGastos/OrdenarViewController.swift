@@ -45,7 +45,6 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
         botaoCancelar.titleLabel!.textColor = UIColor.whiteColor()
         botaoSalvar.titleLabel!.textColor = UIColor.whiteColor()
         
-        //view.backgroundColor = UIColor(red:0.50, green:0.71, blue:0.52, alpha:1.0)
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
       /*  if (eamarela)
         {
