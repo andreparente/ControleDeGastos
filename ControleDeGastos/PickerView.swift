@@ -118,11 +118,8 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         self.year = year
         let mes :Int =  month
         let ano :Int = year
-        print(month);print(year)
         vetorGastosMes = userLogged.getGastosMes(mes, ano: ano)
         (vetorFinalGastosMes,vetorFinalCatMes) = GraficoViewController().organizaVetoresMes(userLogged, gastosMes: vetorGastosMes)
-        print("vetor final depois do organizaVetores: ",vetorFinalGastosMes)
-        print("vetor final depois do organizaVetores: ",vetorFinalCatMes)
         
         if(vetorFinalGastosMes.count == 0) {
             grafico.chartView.clear()
@@ -136,7 +133,6 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
             for gasto in userLogged.getGastosMes(month, ano: year){
                 total = total + gasto.value
             }
-
         }
         
         grafico.totalLabel.text = "Total desse mês: R$" + String(total)

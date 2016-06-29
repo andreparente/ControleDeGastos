@@ -60,7 +60,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         
         var dict1 = plist.getData()
-        print(plist.plistName)
         if dict1 != nil && dict1!["isLogged"] as! String != "loggedOut" {
             
             dispatch_async(dispatch_get_main_queue(),{
@@ -176,14 +175,4 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         })
         
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

@@ -97,12 +97,26 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             let components = self.calendar.components([.Day , .Month , .Year], fromDate: self.dataNs)
             self.dataStr = "\(components.year)-\(components.month)-\(components.day)"
         }
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GastoManualViewController.actOnNotificationSaveError), name: "notificationSaveError", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GastoManualViewController.actOnNotificationSaveSuccess), name: "notificationSaveSuccess", object: nil)
+        
     }
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
+    func actOnNotificationSaveError()
+    {
+        let alert=UIAlertController(title:"Erro", message: "Você não está conectado à internet", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alert,animated: true, completion: nil)
+    }
+   func  actOnNotificationSaveSuccess()
+   {
+        userLogged.addGasto(Gasto(nome: nomeGasto.text!, categoria: self.categoria, valor: (Double(valor.text!)?.roundToPlaces(2))!, data: self.dataStr))
+     executar = true
+     self.dismissViewControllerAnimated(true, completion: nil)
+    }
     func btn_clicked(sender: UIBarButtonItem) {
         executar = false
         dismissViewControllerAnimated(true, completion: nil)
@@ -143,7 +157,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func txtFieldShouldBeginEditing(textField: UITextField) -> Bool {
         return !(textField.placeholder == "Categoria")
     }
     
@@ -159,7 +173,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         let fullNameArr = dataaux.componentsSeparatedByString("-")
         var preferredLanguage = NSLocale.preferredLanguages()[0] as String
         var stringfinal = String()
-        print(preferredLanguage)
         if preferredLanguage == "pt-BR"
         {
         stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [1] + "-" + fullNameArr[0]
@@ -178,7 +191,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         alert.addAction(UIAlertAction(title:"Cancelar",style: UIAlertActionStyle.Cancel,handler: nil))
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
-            //print("Text field: \(textField.text!)")
             var naoExiste = true
             for categ in userLogged.categories             {
                 if textField.text == categ {
@@ -204,7 +216,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 // atualiza pickerView
                 self.categoriaPickerView.reloadAllComponents()
                 self.categoriaPickerView.selectRow((userLogged.categories.count)-1, inComponent: 0, animated: true)
-                print("passou")
             }
         }))
         executar = false
@@ -243,17 +254,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
             alert.addAction(alertAction)
             self.presentViewController(alert, animated: true, completion: nil)
-        } else if(nome == nil || nome!.isEmpty) {
-            nome = "Gasto do dia \(dataStr)"
-            print(nome)
-            let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
-            // adiciona na RAM
-            userLogged.addGasto(gasto)
-            // adiciona no disco
-            DAOCloudKit().addGasto(gasto,user: userLogged)
-            // faz o segue
-            executar = true
-            dismissViewControllerAnimated(true, completion: nil)
         } else if(categoria == "") {
             let alert = UIAlertController(title: "Aviso", message: "Você não preencheu a categoria", preferredStyle: UIAlertControllerStyle.Alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
@@ -261,13 +261,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
             
-            
+            if(nome == nil || nome!.isEmpty) {
+                nome = "Gasto do dia \(dataStr)"
+                nomeGasto.text = "Gasto do dia \(dataStr)"
+            }
             let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
-            
-            userLogged.addGasto(gasto)
             DAOCloudKit().addGasto(gasto,user: userLogged)
             // faz o segue
-            executar = true
             var arrayCategories = [String]()
             var arrayValor = [String]()
             var i = 0
@@ -292,7 +292,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 complicationServer.reloadTimelineForComplication(complication)
             }
             */
-            self.dismissViewControllerAnimated(true, completion: nil)
           
         }
     }

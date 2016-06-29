@@ -32,7 +32,6 @@ class NotificationController: WKUserNotificationInterfaceController {
     }
 
     override func didReceiveLocalNotification(localNotification: UILocalNotification, withCompletion completionHandler: ((WKUserNotificationInterfaceType) -> Void)) {
-            print("chegou notification")
             if localNotification.alertTitle == "Cuidado" {
                 labeltitulo.setText("Cuidado")
                 labeldescricao.setText("Nesse ritmo seu limite vai estourar antes do fim do mês.")

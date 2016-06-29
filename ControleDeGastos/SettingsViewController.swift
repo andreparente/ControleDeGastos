@@ -57,11 +57,6 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func limite(sender: UIButton) {
         
         let alert=UIAlertController(title:" Seu limite é de R$\(userLogged.getLimiteMes())", message: "", preferredStyle: UIAlertControllerStyle.Alert)
@@ -71,7 +66,6 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{ (action) -> Void in
             let textField = alert.textFields![0] as UITextField
             print("Text field: \(textField.text)")
-            
             userLogged.setLimiteMes(Double(textField.text!)!)
             print("LIMITE DO USUARIO USERLOGGED LOCAL::::", userLogged.limiteMes)
             DAOCloudKit().changeLimit(userLogged)
@@ -143,10 +137,6 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         userLogged.gastos.removeAll()
        // userLogged.arrayGastos.removeAll()
         userLogged.categories.removeAll()
-        print(userLogged.gastos)
-        print(userLogged.arrayGastos)
-        print(userLogged.categories)
-        
         mainVC?.flagLogout = true
         dismissViewControllerAnimated(false, completion: nil)
 

@@ -138,9 +138,4 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         return true
     }
     
-    /*
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     let destino = segue.destinationViewController as! HistoricoTabelaViewController
-     }
-     */
 }

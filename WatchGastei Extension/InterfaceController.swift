@@ -55,8 +55,6 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         valor.removeAll()
         let text = message["categorias"] as! [[String]]
         var j = 0
-        print(text[0].count)
-        print(text[1].count)
         if text[0].count != 0
         {
         for _ in j...text[0].count - 1
@@ -80,9 +78,6 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         defaults.setObject(text[0], forKey: "categories")
         defaults.setObject(text[1], forKey: "valor")
         defaults.setDouble(Double(text[2][0])!, forKey: "total")
-        print(categorias)
-        print(valor)
-        
     
 }
  
