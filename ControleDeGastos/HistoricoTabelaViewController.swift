@@ -16,7 +16,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     @IBOutlet weak var botaoFiltrar: UIButton!
     
     var gastos = [Gasto]()
-    
+    var ordenou = false
+    var filtrou = false
     override func viewDidLoad() {
         
         
@@ -32,19 +33,19 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         self.botaoOrdenar.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1)
         self.botaoFiltrar.titleLabel?.textColor = UIColor.whiteColor()
         self.botaoOrdenar.titleLabel?.textColor = UIColor.whiteColor()
-     /*   if (eamarela)
-        {
-            view.backgroundColor = corAmarela
-            viewSuperior.backgroundColor = corAmarela
-        }
- */
+        /*   if (eamarela)
+         {
+         view.backgroundColor = corAmarela
+         viewSuperior.backgroundColor = corAmarela
+         }
+         */
         if (evermelha)
         {
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
             viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         if eazul{
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
             viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         }
         
@@ -53,15 +54,24 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
     override func viewWillAppear(animated: Bool) {
-       // executar = false
-        gastosGlobal = userLogged.gastos
-        let quickSorter = QuickSorterGasto()
-        quickSorter.v = gastosGlobal
-        quickSorter.callQuickSort("Data", decrescente: true)
-        gastosGlobal = quickSorter.v
+        // executar = false
         
+        if(ordenou || filtrou) {
+            
+        }
+        else {
+            gastosGlobal = userLogged.gastos
+            let quickSorter = QuickSorterGasto()
+            quickSorter.v = gastosGlobal
+            quickSorter.a = userLogged.arrayGastos
+            quickSorter.callQuickSort("Data", decrescente: true)
+            gastosGlobal = quickSorter.v
+            userLogged.arrayGastos = quickSorter.a
+            userLogged.gastos = gastosGlobal
+        }
         
         self.tableView.reloadData()
+        
         if (evermelha)
         {
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
@@ -102,11 +112,11 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             cell.labelCat.text = "\(gastosGlobal[indexPath.row].category)"
             cell.labelValor.text = "R$ " + String(gastosGlobal[indexPath.row].value)
             cell.labeldata.text = "\(gastosGlobal[indexPath.row].date)"
-           /* if (eamarela)
-            {
-                cell.backgroundColor = UIColor.clearColor()
-            }
- */
+            /* if (eamarela)
+             {
+             cell.backgroundColor = UIColor.clearColor()
+             }
+             */
             if (evermelha)
             {
                 cell.backgroundColor = UIColor.clearColor()
@@ -149,15 +159,20 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             // handle delete (by removing the data from your array and updating the tableview)
-
-            DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged,index: indexPath.row)
-            gastosGlobal.removeAtIndex(indexPath.row)
-            userLogged.gastos = gastosGlobal
-            tableView.reloadData()
-            executar = true
-
+            if(filtrou) {
+                
+            }
+            else {
+                DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged,index: indexPath.row)
+                gastosGlobal.removeAtIndex(indexPath.row)
+                userLogged.gastos = gastosGlobal
+                tableView.reloadData()
+                executar = true
+            }
+            
         }
     }
 }

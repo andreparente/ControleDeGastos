@@ -94,11 +94,15 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
     }
     
     @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+        gastosGlobal = userLogged.gastos
         let quickSorter = QuickSorterGasto()
         quickSorter.v = gastosGlobal
+        quickSorter.a = userLogged.arrayGastos
         quickSorter.callQuickSort(self.ordenacaoEscolhida, decrescente: self.decrescente)
         gastosGlobal = quickSorter.v
-        
+        userLogged.arrayGastos = quickSorter.a
+        userLogged.gastos = gastosGlobal
+        delegate.ordenou = true
         // altera os dados da historicoTabela
         
         // desfaz o segue

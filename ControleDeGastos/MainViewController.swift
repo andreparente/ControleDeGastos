@@ -168,6 +168,23 @@ class MainViewController: UIViewController,WCSessionDelegate {
         executar = false
         var gastosmes:[Gasto]!
         gastosGlobal = userLogged.gastos
+        
+        let quickSorter = QuickSorterGasto()
+        quickSorter.v = gastosGlobal
+        quickSorter.a = userLogged.arrayGastos
+        quickSorter.callQuickSort("Data", decrescente: true)
+        gastosGlobal = quickSorter.v
+        userLogged.arrayGastos = quickSorter.a
+        userLogged.gastos = gastosGlobal
+        var i = 0
+        for gasto in gastosGlobal {
+            print(gasto.name)
+            print(userLogged.gastos[i].name)
+            i += 1
+        }
+        
+        print(userLogged.arrayGastos)
+        
         self.valorTotalMes = 0
         self.valortotal = 0
         

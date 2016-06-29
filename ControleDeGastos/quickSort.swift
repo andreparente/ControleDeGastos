@@ -18,7 +18,6 @@ class QuickSortClass {
             if v[j] < v[left] {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
-                (v[i], v[j]) = (v[j], v[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
@@ -72,11 +71,11 @@ class QuickSorterGasto {
             if precisaTrocar {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
-                (userLogged.arrayGastos[i], userLogged.arrayGastos[j]) = (userLogged.arrayGastos[j], userLogged.arrayGastos[i])
+                (a[i], a[j]) = (a[j], a[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
-        (userLogged.arrayGastos[i], userLogged.arrayGastos[left]) = (userLogged.arrayGastos[left], userLogged.arrayGastos[i])
+        (a[i], a[left]) = (a[left], a[i])
         return i
     }
     
@@ -101,11 +100,11 @@ class QuickSorterGasto {
             if precisaTrocar {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
-                (userLogged.arrayGastos[i], userLogged.arrayGastos[j]) = (userLogged.arrayGastos[j], userLogged.arrayGastos[i])
+                (a[i], a[j]) = (a[j], a[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
-        (userLogged.arrayGastos[i], userLogged.arrayGastos[left]) = (userLogged.arrayGastos[left], userLogged.arrayGastos[i])
+        (a[i], a[left]) = (a[left], a[i])
         return i
     }
     
@@ -130,11 +129,11 @@ class QuickSorterGasto {
             if precisaTrocar {
                 i += 1
                 (v[i], v[j]) = (v[j], v[i])
-                (userLogged.arrayGastos[i], userLogged.arrayGastos[j]) = (userLogged.arrayGastos[j], userLogged.arrayGastos[i])
+                (a[i], a[j]) = (a[j], a[i])
             }
         }
         (v[i], v[left]) = (v[left], v[i])
-        (userLogged.arrayGastos[i], userLogged.arrayGastos[left]) = (userLogged.arrayGastos[left], userLogged.arrayGastos[i])
+        (a[i], a[left]) = (a[left], a[i])
         return i
     }
     

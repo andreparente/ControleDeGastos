@@ -101,7 +101,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         gastosGlobal =  filtroData(pickerDataMin.date, fim: pickerDataMax.date, gastos: gastosGlobal)
         
         // altera os dados da historicoTabela
-        
+        delegate.filtrou = true
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
     }
