@@ -115,6 +115,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
    func  actOnNotificationSaveSuccess()
    {
     print("certo")
+        userLogged.addGasto(Gasto(nome: nomeGasto.text!, categoria: self.categoria, valor: (Double(valor.text!)?.roundToPlaces(2))!, data: self.dataStr))
+     executar = true
      self.dismissViewControllerAnimated(true, completion: nil)
     }
     func btn_clicked(sender: UIBarButtonItem) {
@@ -264,13 +266,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
             
-            
+            if(nome == nil || nome!.isEmpty) {
+                nome = "Gasto do dia \(dataStr)"
+                nomeGasto.text = "Gasto do dia \(dataStr)"
+            }
             let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
-            
-            userLogged.addGasto(gasto)
             DAOCloudKit().addGasto(gasto,user: userLogged)
             // faz o segue
-            executar = true
             var arrayCategories = [String]()
             var arrayValor = [String]()
             var i = 0
