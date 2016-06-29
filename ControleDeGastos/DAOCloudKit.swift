@@ -118,7 +118,9 @@ class DAOCloudKit {
             ({returnRecord, error in
                 if error != nil {
                     print(error)
+                dispatch_async(dispatch_get_main_queue()) {
                 NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveError", object: nil)
+                    }
                     
                 } else {
                     dispatch_async(dispatch_get_main_queue()) {
