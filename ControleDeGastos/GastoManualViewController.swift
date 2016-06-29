@@ -157,7 +157,16 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         dataQR = dateFormatter.stringFromDate(dataNs)
         let dataaux = dataQR.stringByReplacingOccurrencesOfString("/", withString: "-")
         let fullNameArr = dataaux.componentsSeparatedByString("-")
-        let stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [0] + "-" + fullNameArr[1]
+        var preferredLanguage = NSLocale.preferredLanguages()[0] as String
+        var stringfinal = String()
+        print(preferredLanguage)
+        if preferredLanguage == "pt-BR"
+        {
+        stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [1] + "-" + fullNameArr[0]
+        }
+        else{
+        stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [0] + "-" + fullNameArr[1]
+        }
         dataStr = stringfinal
     }
     
