@@ -78,13 +78,13 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         if (evermelha)
         {
             self.background_image.image = UIImage(named: "background_red.png")
-            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
             //viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         if (eazul)
         {
             self.background_image.image = UIImage(named: "background_blue.png")
-            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
             //viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         }
     }

@@ -70,7 +70,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -306,7 +306,7 @@
         <!--Esqueci Senha View Controller-->
         <scene sceneID="w9R-Wx-Y5d">
             <objects>
-                <viewController id="mzu-Tz-c5x" customClass="EsqueciSenhaViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mzu-Tz-c5x" customClass="EsqueciSenhaViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4vt-0C-Wqp"/>
                         <viewControllerLayoutGuide type="bottom" id="hyv-gO-h3P"/>
@@ -321,7 +321,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvB-cS-q2W">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvB-cS-q2W">
                                 <rect key="frame" x="20" y="28" width="335" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="625-BK-vZl"/>
@@ -343,7 +343,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8o-Tf-D0N">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8o-Tf-D0N">
                                 <rect key="frame" x="156" y="136" width="63" height="30"/>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -375,7 +375,7 @@
                                     <action selector="confirma:" destination="mzu-Tz-c5x" eventType="touchUpInside" id="8Ib-3o-C2y"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cP-ir-TAX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cP-ir-TAX">
                                 <rect key="frame" x="20" y="61" width="335" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="K1u-A9-Rny"/>
@@ -446,7 +446,7 @@
         <!--Launch View Controller-->
         <scene sceneID="RUo-ux-V8c">
             <objects>
-                <viewController id="uwQ-dY-A3P" customClass="LaunchViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uwQ-dY-A3P" customClass="LaunchViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x8w-Qc-gcD"/>
                         <viewControllerLayoutGuide type="bottom" id="D33-sa-24O"/>
@@ -468,7 +468,7 @@
         <!--Main-->
         <scene sceneID="Tlb-kS-LJA">
             <objects>
-                <viewController title="Main" id="i28-Vj-dol" customClass="MainViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="i28-Vj-dol" customClass="MainViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fhy-6b-Bqe"/>
                         <viewControllerLayoutGuide type="bottom" id="bZu-uI-xk1"/>
@@ -738,7 +738,7 @@
         <!--Settings View Controller-->
         <scene sceneID="zuq-0A-QSK">
             <objects>
-                <viewController id="kOo-RQ-Xmt" customClass="SettingsViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kOo-RQ-Xmt" customClass="SettingsViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6rV-QR-oyB"/>
                         <viewControllerLayoutGuide type="bottom" id="xeF-8U-e6F"/>
@@ -867,7 +867,7 @@
         <!--Gasto Manual View Controller-->
         <scene sceneID="OT6-4x-4c5">
             <objects>
-                <viewController id="goP-2V-gWf" customClass="GastoManualViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="goP-2V-gWf" customClass="GastoManualViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zN2-QO-Yxc"/>
                         <viewControllerLayoutGuide type="bottom" id="qsB-Km-Wpw"/>
@@ -1307,7 +1307,7 @@
         <!--Cadastro View Controller-->
         <scene sceneID="WHU-51-ApQ">
             <objects>
-                <viewController id="rab-8m-gdV" customClass="CadastroViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rab-8m-gdV" customClass="CadastroViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nbB-2i-HAc"/>
                         <viewControllerLayoutGuide type="bottom" id="D1I-PN-VVS"/>
@@ -1535,7 +1535,7 @@
         <!--Ordenar View Controller-->
         <scene sceneID="hv2-l2-0Ov">
             <objects>
-                <viewController id="Iwo-rT-6sO" customClass="OrdenarViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Iwo-rT-6sO" customClass="OrdenarViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uFF-Rn-Ecz"/>
                         <viewControllerLayoutGuide type="bottom" id="tGZ-8E-mjS"/>
@@ -1558,7 +1558,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="80" width="160" height="22.5"/>
+                                    <rect key="frame" x="16" y="80" width="170" height="22.5"/>
                                 </variation>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgY-kK-V3Y">
@@ -1593,7 +1593,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="76" y="249.5" width="220" height="21"/>
+                                    <rect key="frame" x="76" y="249.5" width="236" height="21"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtQ-z2-AMR">
@@ -1744,7 +1744,7 @@
         <!--Filtrar View Controller-->
         <scene sceneID="sTX-Pq-qVF">
             <objects>
-                <viewController id="vag-xE-urf" customClass="FiltrarViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vag-xE-urf" customClass="FiltrarViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q7k-jW-WrJ"/>
                         <viewControllerLayoutGuide type="bottom" id="imB-97-0eo"/>
@@ -2122,7 +2122,7 @@
         <!--Histórico-->
         <scene sceneID="jIy-Yg-P4a">
             <objects>
-                <tableViewController id="K8M-vq-bPt" customClass="HistoricoTabelaViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="K8M-vq-bPt" customClass="HistoricoTabelaViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="75" sectionHeaderHeight="18" sectionFooterHeight="18" id="YjH-76-fbT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2134,7 +2134,7 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_blue" translatesAutoresizingMaskIntoConstraints="NO" id="82u-aV-xX9">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="665"/>
+                                        <rect key="frame" x="0.0" y="-268" width="375" height="665"/>
                                     </variation>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-jC-DFb">
@@ -2237,7 +2237,7 @@
                             </variation>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="75" id="lBJ-vi-tCM" customClass="TableViewCell" customModule="ControleDeGastos" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="75" id="lBJ-vi-tCM" customClass="TableViewCell" customModule="Gastei" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="177.5" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lBJ-vi-tCM" id="w99-jX-sMh">
@@ -2374,7 +2374,7 @@
         <!--Code View Controller-->
         <scene sceneID="miV-1B-ksb">
             <objects>
-                <viewController id="G5x-cB-V2J" customClass="QRCodeViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="G5x-cB-V2J" customClass="QRCodeViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IQa-MA-rLj"/>
                         <viewControllerLayoutGuide type="bottom" id="ef0-8C-yHL"/>
@@ -2429,7 +2429,7 @@
         <!--Gráfico-->
         <scene sceneID="SNO-Iq-bCZ">
             <objects>
-                <viewController id="qDv-K7-cHH" customClass="GraficoViewController" customModule="ControleDeGastos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qDv-K7-cHH" customClass="GraficoViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q4f-nB-hbk"/>
                         <viewControllerLayoutGuide type="bottom" id="14y-Hs-Y9K"/>
@@ -2475,7 +2475,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEt-D5-eaI" customClass="MonthYearPickerView" customModule="ControleDeGastos" customModuleProvider="target">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEt-D5-eaI" customClass="MonthYearPickerView" customModule="Gastei" customModuleProvider="target">
                                 <rect key="frame" x="30" y="423" width="314" height="203"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="pke-uc-1cL"/>
