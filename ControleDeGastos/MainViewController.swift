@@ -20,7 +20,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     @IBOutlet weak var totalgastos: UILabel!
     @IBOutlet weak var totalDisponivelMes: UILabel!
     let app = UIApplication.sharedApplication()
-    @IBOutlet weak var RS: UILabel!
+    //@IBOutlet weak var RS: UILabel!
     @IBOutlet weak var gastos: UILabel!
     @IBOutlet weak var imagemCarteira: UIImageView!
     var items: [NSDictionary] = []
@@ -42,7 +42,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         totaldisponivel.hidden = true
         totalgastos.hidden = true
         settingsbutton.hidden = true
-        RS.hidden = true
+        //RS.hidden = true
         gastos.hidden = true
         imagemCarteira.hidden = true
         self.tabBarController?.tabBar.hidden = true
@@ -190,7 +190,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             self.totalgastos.hidden = false
             self.settingsbutton.hidden = false
             self.tabBarController?.tabBar.hidden = false
-            self.RS.hidden = false
+            //self.RS.hidden = false
             self.gastos.hidden = false
             self.imagemCarteira.hidden = false
             self.act.stopAnimating()
@@ -209,7 +209,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 }
             }
             
-            self.totalgastos.text = "\(self.valorTotalMes)"
+            self.totalgastos.text = "R$ \(self.valorTotalMes)"
             self.totaldisponivel.numberOfLines = 2
             
             if(userLogged.limiteMes != 0)
