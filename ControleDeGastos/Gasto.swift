@@ -10,7 +10,7 @@ import Foundation
 
 public var gastosGlobal: [Gasto] = []
 
-public class Gasto {
+public class Gasto: NSObject {
     var name : String?
     var value = Double()
     var date = String() // formato "yyyy-MM-dd-hh-mm-ss"

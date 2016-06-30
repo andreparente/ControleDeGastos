@@ -163,7 +163,15 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             // handle delete (by removing the data from your array and updating the tableview)
             if(filtrou) {
-                
+               let gasto = gastosGlobal[indexPath.row]
+                if let index = userLogged.gastos.indexOf(gasto) {
+                    
+                    DAOCloudKit().deleteGasto(userLogged.arrayGastos[index], user: userLogged,index: index)
+                    gastosGlobal.removeAtIndex(index)
+                    userLogged.gastos.removeAtIndex(index)
+                    tableView.reloadData()
+                    executar = true
+                }
             }
             else {
                 DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged,index: indexPath.row)
