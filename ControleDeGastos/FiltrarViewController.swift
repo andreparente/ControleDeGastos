@@ -21,6 +21,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     @IBOutlet weak var botaoCancelar: UIButton!
     @IBOutlet weak var botaoSalvar: UIButton!
     
+    @IBOutlet weak var background_image: UIImageView!
     
     var categoriaSelecionada : String! // armazena o valor do pickerView categorias
     var categorias = [String]()
@@ -33,7 +34,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FiltrarViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
        /* if (eamarela)
         {
             view.backgroundColor = corAmarela
@@ -41,7 +42,8 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
  */
         if (evermelha)
         {
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            self.background_image.image = UIImage(named: "background_red.png")
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         
         // inicialmente, o vetor eh o do usuario

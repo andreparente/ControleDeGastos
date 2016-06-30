@@ -23,6 +23,9 @@ class MainViewController: UIViewController,WCSessionDelegate {
     //@IBOutlet weak var RS: UILabel!
     @IBOutlet weak var gastos: UILabel!
     @IBOutlet weak var imagemCarteira: UIImageView!
+    @IBOutlet weak var background_image: UIImageView!
+
+    
     var items: [NSDictionary] = []
     var available: Double!
     var valortotal: Double = 0.0
@@ -45,6 +48,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         //RS.hidden = true
         gastos.hidden = true
         imagemCarteira.hidden = true
+        background_image.hidden = true
         self.tabBarController?.tabBar.hidden = true
         
         DAOCloudKit().fetchCategoriesForUser(userLogged)
@@ -193,6 +197,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             //self.RS.hidden = false
             self.gastos.hidden = false
             self.imagemCarteira.hidden = false
+            self.background_image.hidden = false
             self.act.stopAnimating()
             self.printaLimite(userLogged)
             let hoje = NSDate()
@@ -255,18 +260,21 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 
                 if (evermelha)
                 {
-                    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+                    self.background_image.image = UIImage(named: "background_red.png")
+                    //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
                 }
                 if (eazul)
                 {
-                    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+                    self.background_image.image = UIImage(named: "background_blue.png")
+                    //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
                 }
                 self.totaldisponivel.hidden=false
             }
             else
             {
                 self.totaldisponivel.hidden=true
-                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+                self.background_image.image = UIImage(named: "background_blue.png")
+                //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
             }
             
             var arrayCategories = [String]()

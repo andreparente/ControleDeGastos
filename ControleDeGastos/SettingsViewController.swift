@@ -10,6 +10,8 @@ import UIKit
 var alteroulim = false
 class SettingsViewController: UIViewController, UINavigationBarDelegate{
     
+    @IBOutlet weak var background_image: UIImageView!
+    
     var field:UITextField!
     var flagLogout: Bool!
     var mainVC = UIViewController() as? MainViewController
@@ -17,15 +19,16 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-      /*  if (eamarela)
+        /* view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        if (eamarela)
         {
             view.backgroundColor = corAmarela
         }
  */
         if (evermelha)
         {
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            self.background_image.image = UIImage(named: "background_red.png")
         }
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53)) // Offset by 20 pixels vertically to take the status bar into account

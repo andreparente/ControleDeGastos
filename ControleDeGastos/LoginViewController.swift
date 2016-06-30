@@ -23,6 +23,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var senha: UITextField!
     @IBOutlet weak var errocadastro: UILabel!
+    @IBOutlet weak var background_image: UIImageView!
+    
     var usuarioAux: User?
     
     
@@ -38,8 +40,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         _ = NSBundle.mainBundle().pathForResource("User", ofType: "plist")
         
         //view.backgroundColor = corAzul
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-        
+        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         mail.attributedPlaceholder = NSAttributedString(string:"E-mail",
                                                         attributes:[NSForegroundColorAttributeName: UIColor(red: 52/255, green: 102/255, blue: 139/255, alpha: 1.0)])
         mail.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)

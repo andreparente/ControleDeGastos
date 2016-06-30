@@ -16,6 +16,9 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     @IBOutlet weak var nomeGasto: UITextField!
     @IBOutlet weak var categoriaPickerView: UIPickerView!
     @IBOutlet weak var botaoQRCode: UIButton!
+    @IBOutlet weak var background_image: UIImageView!
+    
+    
     // variaveis do QRCode
     var valortotal:Double!
     var dataQR: String!
@@ -33,11 +36,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         super.viewDidLoad()
         categoria = "Outros"
         executar = false
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        self.background_image.image = UIImage(named: "background_blue.png")
+        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
 
         if (evermelha)
         {
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            self.background_image.image = UIImage(named: "background_red.png")
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
 
         }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))

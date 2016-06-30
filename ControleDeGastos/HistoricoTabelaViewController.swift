@@ -14,6 +14,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     
     @IBOutlet weak var botaoOrdenar: UIButton!
     @IBOutlet weak var botaoFiltrar: UIButton!
+    @IBOutlet weak var background_image: UIImageView!
     
     var gastos = [Gasto]()
     var ordenou = false
@@ -23,9 +24,9 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         super.viewDidLoad()
         //executar = false
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         //viewSuperior.backgroundColor = corAzul
-        viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        //viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
         // apenas para poder enxergar os botoes
@@ -41,12 +42,14 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
          */
         if (evermelha)
         {
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
-            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            self.background_image.image = UIImage(named: "background_red.png")
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            //viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         if eazul{
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            self.background_image.image = UIImage(named: "background_blue.png")
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            //viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         }
         
         
@@ -74,13 +77,15 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         if (evermelha)
         {
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
-            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            self.background_image.image = UIImage(named: "background_red.png")
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            //viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         if (eazul)
         {
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            self.background_image.image = UIImage(named: "background_blue.png")
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            //viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         }
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

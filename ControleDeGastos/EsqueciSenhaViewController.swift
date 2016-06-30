@@ -14,7 +14,6 @@ class EsqueciSenhaViewController: UIViewController,MFMailComposeViewControllerDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = corAzul
         erromail.hidden = true
         // Do any additional setup after loading the view.
     }

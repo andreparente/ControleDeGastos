@@ -24,7 +24,7 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         super.viewDidLoad()
         j=0
         // view.backgroundColor = corAzul
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         nome.placeholder = "Nome"
         nome.delegate=self
         nome.backgroundColor = UIColor(red: 99/255, green: 170/255, blue: 214/255, alpha: 0.5)

@@ -19,6 +19,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var limiteLabel: UILabel!
     @IBOutlet weak var pickermesano: MonthYearPickerView!
+    @IBOutlet weak var background_image: UIImageView!
+    
     var gastos: [Gasto]!
     var total = 0.0
     var dataNs = NSDate()
@@ -36,7 +38,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         super.viewDidLoad()
         pickermesano.grafico = self
         if (eazul) {
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+        self.background_image.image = UIImage(named: "background_blue.png")
         }
      /*   if (eamarela)
         {
@@ -45,7 +48,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
  */
         if (evermelha)
         {
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            self.background_image.image = UIImage(named: "background_red.png")
         }
         
         dataMesTextField.delegate = self
@@ -251,11 +255,13 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         }
         if (evermelha)
         {
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            self.background_image.image = UIImage(named: "background_red.png")
 
         }
         if eazul{
-            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            self.background_image.image = UIImage(named: "background_blue.png")
         }
     }
     override func viewWillDisappear(animated: Bool) {
