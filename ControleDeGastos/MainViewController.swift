@@ -81,7 +81,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             notifyAlarm.alertBody = "Seu limite mensal é R$\(userLogged.limiteMes) e a sua previsão de gastos para o mês é : R$\(userLogged.previsaogastosmes(userLogged).roundToPlaces(2))"
             app.scheduleLocalNotification(notifyAlarm)
         }
-        else{
+       /* else{
             if userLogged.abaixoDaMedia(userLogged)
             {
                 let alertTime = NSDate().dateByAddingTimeInterval(60)
@@ -97,7 +97,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 app.scheduleLocalNotification(notifyAlarm)
             }
         }
-        
+        */
         
     }
     
