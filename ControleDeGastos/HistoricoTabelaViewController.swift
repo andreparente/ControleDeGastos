@@ -159,7 +159,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
+        if userLogged.gastos.count > 0
+        {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             // handle delete (by removing the data from your array and updating the tableview)
             if(filtrou) {
@@ -181,6 +182,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
                 executar = true
             }
             
+        }
         }
     }
 }

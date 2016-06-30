@@ -161,7 +161,7 @@
 		8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricoTabelaViewController.swift; sourceTree = "<group>"; };
 		8A54D3D51CA3157A00E63645 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
-		8A71E0131C9C2F6B00C055F8 /* ControleDeGastos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControleDeGastos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A71E0131C9C2F6B00C055F8 /* Gastei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gastei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A71E01B1C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -282,7 +282,7 @@
 		8A71E0141C9C2F6B00C055F8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8A71E0131C9C2F6B00C055F8 /* ControleDeGastos.app */,
+				8A71E0131C9C2F6B00C055F8 /* Gastei.app */,
 				9C9AFED11D1052DA00EA551B /* WatchGastei.app */,
 				9C9AFEDD1D1052DB00EA551B /* WatchGastei Extension.appex */,
 			);
@@ -375,7 +375,7 @@
 			);
 			name = ControleDeGastos;
 			productName = ControleDeGastos;
-			productReference = 8A71E0131C9C2F6B00C055F8 /* ControleDeGastos.app */;
+			productReference = 8A71E0131C9C2F6B00C055F8 /* Gastei.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9C9AFED01D1052DA00EA551B /* WatchGastei */ = {
@@ -770,7 +770,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Gastei;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -789,7 +789,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andremachadoparente.ControleDeGastos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Gastei;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
