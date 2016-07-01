@@ -22,10 +22,9 @@ class MainViewController: UIViewController,WCSessionDelegate {
     let app = UIApplication.sharedApplication()
     //@IBOutlet weak var RS: UILabel!
     @IBOutlet weak var gastos: UILabel!
-    @IBOutlet weak var imagemCarteira: UIImageView!
     @IBOutlet weak var background_image: UIImageView!
-
     
+
     var items: [NSDictionary] = []
     var available: Double!
     var valortotal: Double = 0.0
@@ -47,7 +46,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
         settingsbutton.hidden = true
         //RS.hidden = true
         gastos.hidden = true
-        imagemCarteira.hidden = true
         background_image.hidden = true
         self.tabBarController?.tabBar.hidden = true
         
@@ -66,7 +64,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             limite.text = "O limite mensal ainda não foi cadastrado.\nRealize-o nas configurações."
         }
         else {
-            limite.text = "Seu limite mensal é de R$ \(usuario.limiteMes)"
+            limite.text = "Seu limite mensal é de \n R$ \(usuario.limiteMes)"
         }
     }
     
@@ -196,7 +194,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
             self.tabBarController?.tabBar.hidden = false
             //self.RS.hidden = false
             self.gastos.hidden = false
-            self.imagemCarteira.hidden = false
             self.background_image.hidden = false
             self.act.stopAnimating()
             self.printaLimite(userLogged)
@@ -215,7 +212,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             }
             
             self.totalgastos.text = "R$ \(self.valorTotalMes)"
-            self.totaldisponivel.numberOfLines = 2
+            self.totaldisponivel.numberOfLines = 3
             
             if(userLogged.limiteMes != 0)
             {
@@ -232,7 +229,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 {
                     if (self.available > 0 && self.available <= (0.2 * userLogged.limiteMes) )
                     {
-                        self.totaldisponivel.text = "Atenção! Você só tem mais \n R$ \(self.available) para gastar nesse mês"
+                        self.totaldisponivel.text = "Atenção! Você só tem mais \n R$ \(self.available) para gastar \n nesse mês"
                         //  eamarela = true
                         evermelha = false
                         eazul = true
@@ -261,11 +258,13 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 if (evermelha)
                 {
                     self.background_image.image = UIImage(named: "background_red.png")
+                    self.gastei.setImage(UIImage(named: "add_red.png"), forState: .Normal)
                     //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
                 }
                 if (eazul)
                 {
                     self.background_image.image = UIImage(named: "background_blue.png")
+                    self.gastei.setImage(UIImage(named: "add_blue.png"), forState: .Normal)
                     //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
                 }
                 self.totaldisponivel.hidden=false
@@ -274,6 +273,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             {
                 self.totaldisponivel.hidden=true
                 self.background_image.image = UIImage(named: "background_blue.png")
+                self.gastei.setImage(UIImage(named: "add_blue.png"), forState: .Normal)
                 //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
             }
             
