@@ -154,9 +154,11 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         else {
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.noDataText = "Você não possui nenhum gasto!"
+            chartView.infoTextColor = UIColor.whiteColor()
+            chartView.infoFont = UIFont(name: "Tsukushi A Round Gothic", size: 16)
             chartView.delegate = self
-            chartView.animate(xAxisDuration: 2)
-            limiteLabel.text = "Limite mensal: R$ \(usuario.limiteMes)"
+            chartView.animate(xAxisDuration: 1)
+            totalLabel.hidden = true
         }
     }
     
@@ -205,6 +207,8 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             
             let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
             chartView.data = chartData
+            totalLabel.text = "Total desse mês: R$ "+String(total)
+            totalLabel.hidden = false
         }
         
         
@@ -257,8 +261,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             (vetorFinal,vetorFinalCat) = organizaVetoresMes(userLogged,gastosMes:
                 userLogged.getGastosUltimoMês())
             setPieChart(vetorFinalCat, values: vetorFinal)
-            totalLabel.text = "Total desse mês: R$ "+String(total)
-            totalLabel.hidden = false
+            
         }
         if (evermelha)
         {
