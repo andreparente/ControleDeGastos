@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A71E0121C9C2F6B00C055F8"
-               BuildableName = "ControleDeGastos.app"
+               BuildableName = "Gastei.app"
                BlueprintName = "ControleDeGastos"
                ReferencedContainer = "container:ControleDeGastos.xcodeproj">
             </BuildableReference>

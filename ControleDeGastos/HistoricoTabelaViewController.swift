@@ -108,6 +108,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         //cell.backgroundColor = UIColor(red: 20/255, green: 71/255, blue: 103/255, alpha: 1)
         //cell.backgroundColor = corAzul
+        
         cell.backgroundColor = UIColor.clearColor()
         
         if (cellsNumber > 0) {
