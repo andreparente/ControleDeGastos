@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
+class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate, UINavigationBarDelegate {
     
     @IBOutlet weak var messageLabel: UILabel!
     var link:String!
@@ -51,15 +51,41 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         qrCodeFrameView = UIView()
         qrCodeFrameView?.layer.borderColor = UIColor.greenColor().CGColor
         qrCodeFrameView?.layer.borderWidth = 2
+        
+        
+        
+        
+        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 53))
+        navigationBar.barTintColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Tsukushi A Round Gothic", size: 18)!]
+        navigationBar.delegate = self
+        let leftButton =  UIBarButtonItem(title: "Voltar", style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(QRCodeViewController.pressed(_:)))
+        leftButton.tintColor = UIColor.whiteColor()
+        leftButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Tsukushi A Round Gothic", size: 15)!], forState: UIControlState.Normal)
+        
+        
+        
+        // Create two buttons for the navigation item
+        navigationItem.leftBarButtonItem = leftButton
+        
+        // Assign the navigation item to the navigation bar
+        navigationBar.items = [navigationItem]
+        
+        
+        
+        
+        
         view.addSubview(qrCodeFrameView!)
         view.bringSubviewToFront(qrCodeFrameView!)
         view.addSubview(back)
         view.bringSubviewToFront(back)
 
     }
+    
     func pressed(sender: UIButton!) {
        dismissViewControllerAnimated(true, completion: nil)
     }
+    
     // MARK: - Identifica QRCode
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         

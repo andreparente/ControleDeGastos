@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         //navigationBar.backgroundColor = UIColor.blackColor()
         navigationBar.barTintColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Tsukushi A Round Gothic", size: 18)!]
-        navigationBar.delegate = self;
+        navigationBar.delegate = self
         
         // Create a navigation item with a title
         let navigationItem = UINavigationItem()
