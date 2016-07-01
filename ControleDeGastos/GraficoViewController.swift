@@ -38,14 +38,14 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         super.viewDidLoad()
         pickermesano.grafico = self
         if (eazul) {
-        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-        self.background_image.image = UIImage(named: "background_blue.png")
+            //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            self.background_image.image = UIImage(named: "background_blue.png")
         }
-     /*   if (eamarela)
-        {
-            view.backgroundColor = corAmarela
-        }
- */
+        /*   if (eamarela)
+         {
+         view.backgroundColor = corAmarela
+         }
+         */
         if (evermelha)
         {
             //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
@@ -142,18 +142,18 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         
     }
     
-
+    
     
     //FUNCAO QUE PRINTA LIMITE
     func printaLimite(usuario: User) {
         
         if(usuario.limiteMes == 0) {
-
+            
             limiteLabel.hidden = true
         }
         else {
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
-            chartView.noDataText = "You need to enter some data"
+            chartView.noDataText = "Você não possui nenhum gasto!"
             chartView.delegate = self
             chartView.animate(xAxisDuration: 2)
             limiteLabel.text = "Limite mensal: R$ \(usuario.limiteMes)"
@@ -165,41 +165,48 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
     func setPieChart(dataPoints: [String], values: [Double]) {
         
         
-        var dataEntries: [ChartDataEntry] = []
-        chartView.descriptionText = ""
-        //ESSE FOR PREENCHE O VETOR DE ENTRADA DE DADOS, PRA CADA INDEX,
-        for i in 0..<values.count {
-            let dataEntry = ChartDataEntry(value: values[i].roundToPlaces(2), xIndex: i)
-            dataEntries.append(dataEntry)
+        if(values.count == 0) {
+            chartView.clear()
         }
-        
-        //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
-        let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
-        
-        var r, g, b: CGFloat!
-
+        else {
+            
+            
+            var dataEntries: [ChartDataEntry] = []
+            chartView.descriptionText = ""
+            //ESSE FOR PREENCHE O VETOR DE ENTRADA DE DADOS, PRA CADA INDEX,
+            for i in 0..<values.count {
+                let dataEntry = ChartDataEntry(value: values[i].roundToPlaces(2), xIndex: i)
+                dataEntries.append(dataEntry)
+            }
+            
+            //ISSO EU NAO ENTENDI MUITO BEM MAS FUNCIONA
+            let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
+            
+            var r, g, b: CGFloat!
+            
             chartDataSet.colors.removeAll()
-
+            
             for i in 0...userLogged.categories.count {
                 
                 if (eazul) {
-                r = CGFloat(Double(i)*10 + 64)
-                g = CGFloat(Double(i)*20 + 138)
-                b = CGFloat(Double(i)*30 + 202)
+                    r = CGFloat(Double(i)*10 + 64)
+                    g = CGFloat(Double(i)*20 + 138)
+                    b = CGFloat(Double(i)*30 + 202)
                 }
-                
+                    
                 else if (evermelha) {
                     r = CGFloat(Double(i)*10 + 146)
                     g = CGFloat(Double(i)*20 + 16)
                     b = CGFloat(Double(i)*30 + 16)
                 }
-            
+                
                 chartDataSet.colors.append(NSUIColor(red: r/255, green: g/255, blue: b/255, alpha: 1))
             }
-        
+            
             let chartData = PieChartData(xVals: dataPoints, dataSet: chartDataSet)
             chartView.data = chartData
-
+        }
+        
         
     }
     
@@ -229,7 +236,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             
             //NO DATA TEXT OCORRE QUANDO NAO TEM DADOS NO GRAFICO
             chartView.clear()
-
+            
             chartView.noDataText = "Você não possui nenhum gasto!"
             chartView.infoTextColor = UIColor.whiteColor()
             chartView.infoFont = UIFont(name: "Tsukushi A Round Gothic", size: 16)
@@ -248,7 +255,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
             }
             print("--------- TOTAL DE TODOS OS GASTOS DO USUARIO DO Mes:  ", total)
             (vetorFinal,vetorFinalCat) = organizaVetoresMes(userLogged,gastosMes:
-            userLogged.getGastosUltimoMês())
+                userLogged.getGastosUltimoMês())
             setPieChart(vetorFinalCat, values: vetorFinal)
             totalLabel.text = "Total desse mês: R$ "+String(total)
             totalLabel.hidden = false
@@ -257,7 +264,7 @@ class GraficoViewController: UIViewController,ChartViewDelegate,UITextFieldDeleg
         {
             //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
             self.background_image.image = UIImage(named: "background_red.png")
-
+            
         }
         if eazul{
             //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
