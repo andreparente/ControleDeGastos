@@ -234,14 +234,6 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         let valor2 = valor.text!
         var characters2 = Array(valor2.characters)
         let j = characters2.count
-        for val in 0...j - 1
-        {
-            if (characters2[val] == ",")
-            {
-                characters2[val] = "."
-            }
-           // ia+=1
-        }
         valor.text = String(characters2)
         let valorgasto = Double(valor.text!)?.roundToPlaces(2)
         
@@ -267,6 +259,14 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 nome = "Gasto do dia \(dataStr)"
                 nomeGasto.text = "Gasto do dia \(dataStr)"
             }
+            for val in 0...j - 1
+            {
+                if (characters2[val] == ",")
+                {
+                    characters2[val] = "."
+                }
+            }
+
             let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
             DAOCloudKit().addGasto(gasto,user: userLogged)
             // faz o segue
