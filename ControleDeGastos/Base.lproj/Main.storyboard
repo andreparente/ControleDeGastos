@@ -231,10 +231,10 @@
                                 <exclude reference="37e-cL-knd"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="544-7s-47i"/>
-                                <exclude reference="sjl-N3-yEi"/>
                                 <exclude reference="GSL-w2-34z"/>
                                 <exclude reference="XCe-fC-Q6y"/>
+                                <exclude reference="544-7s-47i"/>
+                                <exclude reference="sjl-N3-yEi"/>
                                 <exclude reference="KKB-2J-YXW"/>
                                 <exclude reference="5x9-fb-YTk"/>
                                 <exclude reference="K2C-hl-TeB"/>
@@ -252,10 +252,10 @@
                                 <include reference="37e-cL-knd"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="544-7s-47i"/>
-                                <include reference="sjl-N3-yEi"/>
                                 <include reference="GSL-w2-34z"/>
                                 <include reference="XCe-fC-Q6y"/>
+                                <include reference="544-7s-47i"/>
+                                <include reference="sjl-N3-yEi"/>
                                 <include reference="KKB-2J-YXW"/>
                                 <include reference="5x9-fb-YTk"/>
                                 <include reference="K2C-hl-TeB"/>
