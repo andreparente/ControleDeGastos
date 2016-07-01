@@ -46,7 +46,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         settingsbutton.hidden = true
         //RS.hidden = true
         gastos.hidden = true
-        background_image.hidden = true
+        //background_image.hidden = true
         self.tabBarController?.tabBar.hidden = true
         
         DAOCloudKit().fetchCategoriesForUser(userLogged)
@@ -194,7 +194,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             self.tabBarController?.tabBar.hidden = false
             //self.RS.hidden = false
             self.gastos.hidden = false
-            self.background_image.hidden = false
+            //self.background_image.hidden = false
             self.act.stopAnimating()
             self.printaLimite(userLogged)
             let hoje = NSDate()
@@ -257,24 +257,24 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 
                 if (evermelha)
                 {
-                    self.background_image.image = UIImage(named: "background_red.png")
+                    //self.background_image.image = UIImage(named: "background_red.png")
                     self.gastei.setImage(UIImage(named: "add_red.png"), forState: .Normal)
-                    //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+                    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
                 }
                 if (eazul)
                 {
-                    self.background_image.image = UIImage(named: "background_blue.png")
+                    //self.background_image.image = UIImage(named: "background_blue.png")
                     self.gastei.setImage(UIImage(named: "add_blue.png"), forState: .Normal)
-                    //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+                    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
                 }
                 self.totaldisponivel.hidden=false
             }
             else
             {
                 self.totaldisponivel.hidden=true
-                self.background_image.image = UIImage(named: "background_blue.png")
+                //self.background_image.image = UIImage(named: "background_blue.png")
                 self.gastei.setImage(UIImage(named: "add_blue.png"), forState: .Normal)
-                //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
             }
             
             var arrayCategories = [String]()
