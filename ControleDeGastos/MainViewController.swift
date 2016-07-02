@@ -70,7 +70,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     
     @IBAction func botaogastar(sender: UIButton) {
         
-        if userLogged.previsaogastosmes(userLogged) > userLogged.limiteMes
+        if userLogged.previsaoGastosMes(userLogged) > userLogged.limiteMes
         {
             let alertTime = NSDate().dateByAddingTimeInterval(60)
             let notifyAlarm = UILocalNotification()
@@ -80,7 +80,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             notifyAlarm.soundName = UILocalNotificationDefaultSoundName
             notifyAlarm.category = "Aviso_Category"
             notifyAlarm.alertTitle = "Cuidado"
-            notifyAlarm.alertBody = "Seu limite mensal é R$\(userLogged.limiteMes) e a sua previsão de gastos para o mês é : R$\(userLogged.previsaogastosmes(userLogged).roundToPlaces(2))"
+            notifyAlarm.alertBody = "Seu limite mensal é R$\(userLogged.limiteMes) e a sua previsão de gastos para o mês é : R$\(userLogged.previsaoGastosMes(userLogged).roundToPlaces(2))"
             app.scheduleLocalNotification(notifyAlarm)
         }
        /* else{

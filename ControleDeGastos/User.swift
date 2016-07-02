@@ -162,6 +162,7 @@ public class User {
         return totNoDia
     }
     
+    
     func abaixoDaMedia(user: User) -> Bool {
         
         if(calculaMediaPorDia(user) > calculaGastosNoDia(user)) {
@@ -172,7 +173,7 @@ public class User {
         }
     }
     
-    func previsaogastosmes(user: User) -> Double {
+    func previsaoGastosMes(user: User) -> Double {
         
         var result: Double!
         var gastos: [Gasto]?

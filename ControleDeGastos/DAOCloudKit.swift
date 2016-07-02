@@ -22,6 +22,11 @@ class DAOCloudKit {
         }
     }
     
+    
+    //------------------------------------ SAVE FUNCTIONS ------------------------------
+    
+    
+    
     func saveUser(user: User) {
         
         let recordId = CKRecordID(recordName: user.email)
@@ -118,8 +123,8 @@ class DAOCloudKit {
             ({returnRecord, error in
                 if error != nil {
                     print(error)
-                dispatch_async(dispatch_get_main_queue()) {
-                NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveError", object: nil)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveError", object: nil)
                     }
                     
                 } else {
@@ -161,32 +166,34 @@ class DAOCloudKit {
         }
     }
     
+    
+    
+    //------------------------------------ END OF SAVE FUNCTIONS ------------------------------
+    
+    
+    
+    //------------------------------------ DELETE FUNCTIONS ------------------------------
+    
+    
     func deleteGasto(gastoToDelete: CKReference, user: User, index: Int) {
         
         let userRecordId = CKRecordID(recordName: user.email)
         
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
-       
-        print("GASTO A SER DELETADO!!!! ::::", gastoToDelete)
         
         privateDatabase.deleteRecordWithID(gastoToDelete.recordID,completionHandler:
             ({returnRecord, error in
                 if error != nil {
                     print(error)
-                    //  NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveError", object: nil)
-                    
-                } else {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        // NSNotificationCenter.defaultCenter().postNotificationName("notificationSaveSuccess", object: nil)
-                    }
+                    NSNotificationCenter.defaultCenter().postNotificationName("notificationDeleteError", object: nil)
                     
                 }
             }))
         
-
+        
         user.arrayGastos.removeAtIndex(index)
-                
+        
         
         container.privateCloudDatabase.fetchRecordWithID(userRecordId) { (fetchedRecord,error) in
             
@@ -201,13 +208,20 @@ class DAOCloudKit {
                 container.privateCloudDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
                     if (error != nil) {
                         print(error)
+                        
+                        
                     }
                 })
             }
         }
     }
     
-    //NS NOTIFICATION CENTER
+    
+    //------------------------------------ END OF DELETE FUNCTIONS ------------------------------
+    
+    
+    //------------------------------------ FETCH FUNCTIONS ------------------------------
+    
     
     func fetchCategoriesForUser(user: User) {
         
@@ -255,7 +269,6 @@ class DAOCloudKit {
             if error != nil {
                 print(error)
                 NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorInternet", object: nil)
-                //NETWORK FAILURE DA UMA OLHADA NISSO, DAR UM ALERT PRO USUARIO DE REPENTE!
             }
             else {
                 
@@ -308,36 +321,6 @@ class DAOCloudKit {
         }
         
     }
-    
-    func changeLimit(user: User) {
-        
-        let recordId = CKRecordID(recordName: user.email)
-        let container = CKContainer.defaultContainer()
-        let privateDatabase = container.privateCloudDatabase
-        
-        privateDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
-            
-            if error == nil {
-                
-                print("MUDANDO O LIMITE POR MES DE UM USUARIO EXISTENTE")
-                fetchedRecord!.setObject(userLogged.limiteMes, forKey: "monthLimit")
-                
-                privateDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
-                    if (error != nil) {
-                        print(error)
-                        let alert=UIAlertController(title:"Erro", message: "Nāo foi possivel alterar seu  limite", preferredStyle: UIAlertControllerStyle.Alert)
-                        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
-                        SettingsViewController().presentViewController(alert,animated: true, completion: nil)
-                    }
-                })
-            }
-                
-            else {
-                print(error)
-            }
-        }
-    }
-    
     
     //BUSCA OS GASTOS DE ACORDO COM A PK DO EMAIL DO USER LOGADO
     func fetchGastosFromUser(user: User) {
@@ -422,6 +405,45 @@ class DAOCloudKit {
             }
         }
     }
+    
+    //------------------------------------ END OF FETCH FUNCTIONS ------------------------------
+    
+    
+    //------------------------------------ UPDATE/CHANGE FUNCTIONS ------------------------------
+    
+    
+    
+    func changeLimit(user: User) {
+        
+        let recordId = CKRecordID(recordName: user.email)
+        let container = CKContainer.defaultContainer()
+        let privateDatabase = container.privateCloudDatabase
+        
+        privateDatabase.fetchRecordWithID(recordId) { (fetchedRecord,error) in
+            
+            if error == nil {
+                
+                print("MUDANDO O LIMITE POR MES DE UM USUARIO EXISTENTE")
+                fetchedRecord!.setObject(userLogged.limiteMes, forKey: "monthLimit")
+                
+                privateDatabase.saveRecord(fetchedRecord!, completionHandler: { (record, error) -> Void in
+                    if (error != nil) {
+                        print(error)
+                        let alert=UIAlertController(title:"Erro", message: "Nāo foi possivel alterar seu  limite", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
+                        SettingsViewController().presentViewController(alert,animated: true, completion: nil)
+                    }
+                })
+            }
+                
+            else {
+                print(error)
+            }
+        }
+    }
+    
+    //------------------------------------ END OF UPDATE/CHANGE FUNCTIONS ------------------------------
+    
 }
 
 

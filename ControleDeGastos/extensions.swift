@@ -45,6 +45,7 @@ extension NSDate {
 }
 
 public class Reachability {
+    
     class func isConnectedToNetwork() -> Bool {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))

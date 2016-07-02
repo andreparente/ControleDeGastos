@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerDelegate  {
     
@@ -116,7 +117,8 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             cell.labelNomeGasto.text = "\(gastosGlobal[indexPath.row].name!)"
             cell.labelCat.text = "\(gastosGlobal[indexPath.row].category)"
             cell.labelValor.text = "R$ " + String(gastosGlobal[indexPath.row].value)
-            cell.labeldata.text = "\(gastosGlobal[indexPath.row].date)"
+            let arrayData = gastosGlobal[indexPath.row].date.componentsSeparatedByString("-")
+            cell.labeldata.text = "\(arrayData[2])-\(arrayData[1])-\(arrayData[0])"
             /* if (eamarela)
              {
              cell.backgroundColor = UIColor.clearColor()
