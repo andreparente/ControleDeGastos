@@ -861,8 +861,7 @@
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="106" y="211" width="160" height="53"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="72" y="211" width="249" height="45"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="7Ym-z8-qTZ"/>
                                         <include reference="iJl-Y8-tdf"/>
@@ -994,7 +993,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="304" y="424" width="18" height="20"/>
+                                    <rect key="frame" x="304" y="423" width="18" height="20"/>
                                 </variation>
                                 <connections>
                                     <action selector="novacategoria:" destination="goP-2V-gWf" eventType="touchUpInside" id="QoD-bZ-R1F"/>
@@ -1045,7 +1044,7 @@
                                     <rect key="frame" x="10" y="278" width="36" height="20"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="10" y="279" width="36" height="20"/>
+                                    <rect key="frame" x="10" y="278" width="36" height="20"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nova" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBV-V9-y1m">
@@ -1057,7 +1056,7 @@
                                     <rect key="frame" x="325" y="428" width="40" height="20"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="325" y="429" width="40" height="20"/>
+                                    <rect key="frame" x="325" y="428" width="40" height="20"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="littlemoney" translatesAutoresizingMaskIntoConstraints="NO" id="OMG-UX-Gh2">
@@ -1080,7 +1079,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="40" y="131" width="30" height="30"/>
+                                    <rect key="frame" x="40" y="128" width="30" height="30"/>
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="I6T-bJ-dzY">
@@ -1103,7 +1102,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="40" y="194" width="30" height="30"/>
+                                    <rect key="frame" x="40" y="191" width="30" height="30"/>
                                 </variation>
                             </imageView>
                         </subviews>
@@ -1661,7 +1660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAo-qv-BwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2349.75" y="-1560.5"/>
+            <point key="canvasLocation" x="402.75" y="-1588.125"/>
         </scene>
         <!--Filtrar View Controller-->
         <scene sceneID="sTX-Pq-qVF">
@@ -2033,247 +2032,214 @@
             <point key="canvasLocation" x="1337.25" y="-1560.5"/>
         </scene>
         <!--Histórico-->
-        <scene sceneID="jIy-Yg-P4a">
+        <scene sceneID="h3Z-Al-b31">
             <objects>
-                <tableViewController id="K8M-vq-bPt" customClass="HistoricoTabelaViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="75" sectionHeaderHeight="18" sectionFooterHeight="18" id="YjH-76-fbT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="yqF-xL-oeE" customClass="HistoricoTabelaViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pyC-Nr-u25"/>
+                        <viewControllerLayoutGuide type="bottom" id="DEX-dW-dkM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eeR-s5-y25">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="val-6X-0lC">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-jC-DFb">
-                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <color key="backgroundColor" red="0.17056239822973818" green="0.19766545182367404" blue="0.23515624999999996" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="140" id="Qiz-gL-1l7"/>
-                                        <constraint firstAttribute="height" constant="37" id="nDG-eT-bU2"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
-                                    <state key="normal" title="Filtrar">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="9"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="Qiz-gL-1l7"/>
-                                            <exclude reference="nDG-eT-bU2"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="widthClass=compact">
-                                        <mask key="constraints">
-                                            <include reference="Qiz-gL-1l7"/>
-                                            <include reference="nDG-eT-bU2"/>
-                                        </mask>
-                                    </variation>
-                                    <connections>
-                                        <action selector="apertouBotaoFiltrar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="rEq-ka-pK6"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-co-EVe">
-                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <color key="backgroundColor" red="0.12549019607843137" green="0.14509803921568629" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="140" id="F4V-b0-Co4"/>
-                                        <constraint firstAttribute="height" constant="37" id="rpg-3m-pgI"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
-                                    <state key="normal" title="Ordenar">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="9"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="F4V-b0-Co4"/>
-                                            <exclude reference="rpg-3m-pgI"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="widthClass=compact">
-                                        <mask key="constraints">
-                                            <include reference="F4V-b0-Co4"/>
-                                            <include reference="rpg-3m-pgI"/>
-                                        </mask>
-                                    </variation>
-                                    <connections>
-                                        <action selector="apertouBotaoOrdenar:" destination="K8M-vq-bPt" eventType="touchUpInside" id="7dx-co-RKj"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="mlw-co-EVe" firstAttribute="leading" secondItem="val-6X-0lC" secondAttribute="leading" constant="14" id="J77-Pz-9Bj"/>
-                                <constraint firstItem="fzr-jC-DFb" firstAttribute="top" secondItem="val-6X-0lC" secondAttribute="top" constant="72" id="gj9-iP-bq5"/>
-                                <constraint firstAttribute="trailing" secondItem="fzr-jC-DFb" secondAttribute="trailing" constant="14" id="kVu-Rc-jt0"/>
-                                <constraint firstItem="mlw-co-EVe" firstAttribute="top" secondItem="val-6X-0lC" secondAttribute="top" constant="72" id="tyE-Z7-J1K"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="subviews">
-                                    <exclude reference="fzr-jC-DFb"/>
-                                    <exclude reference="mlw-co-EVe"/>
-                                </mask>
-                                <mask key="constraints">
-                                    <exclude reference="gj9-iP-bq5"/>
-                                    <exclude reference="kVu-Rc-jt0"/>
-                                    <exclude reference="J77-Pz-9Bj"/>
-                                    <exclude reference="tyE-Z7-J1K"/>
-                                </mask>
-                            </variation>
-                            <variation key="widthClass=compact">
-                                <mask key="subviews">
-                                    <include reference="fzr-jC-DFb"/>
-                                    <include reference="mlw-co-EVe"/>
-                                </mask>
-                                <mask key="constraints">
-                                    <include reference="gj9-iP-bq5"/>
-                                    <include reference="kVu-Rc-jt0"/>
-                                    <include reference="J77-Pz-9Bj"/>
-                                    <include reference="tyE-Z7-J1K"/>
-                                </mask>
-                            </variation>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="75" id="lBJ-vi-tCM" customClass="TableViewCell" customModule="Gastei" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="177.5" width="375" height="75"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lBJ-vi-tCM" id="w99-jX-sMh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
-                                            <rect key="frame" x="8" y="33" width="100" height="21"/>
-                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="261" y="8" width="100" height="31"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smw-gd-23h">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.1450980392" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Eov-tC-pgM"/>
+                                    <constraint firstAttribute="height" constant="37" id="uU1-LO-DJe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
+                                <state key="normal" title="Ordenar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Eov-tC-pgM"/>
+                                        <exclude reference="uU1-LO-DJe"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Eov-tC-pgM"/>
+                                        <include reference="uU1-LO-DJe"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="75" width="140" height="37"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMZ-wU-Kb7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.17056239819999999" green="0.1976654518" blue="0.23515625000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="SqS-GN-suk"/>
+                                    <constraint firstAttribute="width" constant="140" id="rWQ-TC-qHf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
+                                <state key="normal" title="Filtrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rWQ-TC-qHf"/>
+                                        <exclude reference="SqS-GN-suk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="rWQ-TC-qHf"/>
+                                        <include reference="SqS-GN-suk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="215" y="75" width="140" height="37"/>
+                                </variation>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cN0-55-Ch6">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="47" id="lFh-ne-H36" customClass="TableViewCell" customModule="Gastei" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lFh-ne-H36" id="Zda-L0-cbo">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
+                                                    <rect key="frame" x="8" y="33" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="261" y="8" width="100" height="31"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="187" y="24" width="0.0" height="0.0"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-6L-I0z">
+                                                    <rect key="frame" x="8" y="8" width="201" height="24"/>
+                                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="201" height="31"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="187" y="24" width="0.0" height="0.0"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-pn-S2T">
+                                                    <rect key="frame" x="217" y="32" width="150" height="21"/>
+                                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="217" y="48" width="144" height="21"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="166" y="14" width="42" height="20"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelSemGastos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sb-rV-YPs" userLabel="labelSemGastos">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="125" y="28" width="125" height="20"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="125" y="14" width="125" height="20"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pp0-xu-8Uh">
+                                                    <rect key="frame" x="217" y="8" width="150" height="24"/>
+                                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="38" width="144" height="31"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="187" y="24" width="0.0" height="0.0"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="EgG-ZP-eSQ"/>
+                                                    <exclude reference="wtb-6L-I0z"/>
+                                                    <exclude reference="uOf-pn-S2T"/>
+                                                    <exclude reference="1sb-rV-YPs"/>
+                                                    <exclude reference="Pp0-xu-8Uh"/>
+                                                </mask>
                                             </variation>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-6L-I0z">
-                                            <rect key="frame" x="8" y="8" width="201" height="24"/>
-                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="8" y="8" width="201" height="31"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="EgG-ZP-eSQ"/>
+                                                    <include reference="wtb-6L-I0z"/>
+                                                    <include reference="uOf-pn-S2T"/>
+                                                    <include reference="1sb-rV-YPs"/>
+                                                    <include reference="Pp0-xu-8Uh"/>
+                                                </mask>
                                             </variation>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-pn-S2T">
-                                            <rect key="frame" x="217" y="32" width="150" height="21"/>
-                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="217" y="48" width="144" height="21"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="319" y="47" width="42" height="20"/>
-                                            </variation>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelSemGastos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sb-rV-YPs" userLabel="labelSemGastos">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="125" y="28" width="125" height="20"/>
-                                            </variation>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pp0-xu-8Uh">
-                                            <rect key="frame" x="217" y="8" width="150" height="24"/>
-                                            <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="8" y="38" width="144" height="31"/>
-                                            </variation>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="uOf-pn-S2T" secondAttribute="bottom" constant="-0.5" id="5MY-6J-U8u"/>
-                                        <constraint firstItem="EgG-ZP-eSQ" firstAttribute="top" secondItem="w99-jX-sMh" secondAttribute="topMargin" id="8rj-87-SwI"/>
-                                        <constraint firstItem="1sb-rV-YPs" firstAttribute="centerY" secondItem="w99-jX-sMh" secondAttribute="centerY" id="GZG-n1-DO8"/>
-                                        <constraint firstItem="wtb-6L-I0z" firstAttribute="leading" secondItem="w99-jX-sMh" secondAttribute="leadingMargin" id="JvC-Hd-KY4"/>
-                                        <constraint firstItem="1sb-rV-YPs" firstAttribute="centerX" secondItem="w99-jX-sMh" secondAttribute="centerX" id="OVJ-I7-A4B"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="uOf-pn-S2T" secondAttribute="trailing" constant="6" id="baf-AV-0fZ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="EgG-ZP-eSQ" secondAttribute="trailing" constant="6" id="dQv-Hw-oo1"/>
-                                        <constraint firstItem="Pp0-xu-8Uh" firstAttribute="leading" secondItem="w99-jX-sMh" secondAttribute="leadingMargin" id="eHL-br-Mrm"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Pp0-xu-8Uh" secondAttribute="bottom" constant="-0.5" id="hTQ-rl-u21"/>
-                                        <constraint firstItem="wtb-6L-I0z" firstAttribute="top" secondItem="w99-jX-sMh" secondAttribute="topMargin" id="vMs-Oz-vD0"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="subviews">
-                                            <exclude reference="1sb-rV-YPs"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <exclude reference="GZG-n1-DO8"/>
-                                            <exclude reference="OVJ-I7-A4B"/>
-                                            <exclude reference="JvC-Hd-KY4"/>
-                                            <exclude reference="vMs-Oz-vD0"/>
-                                            <exclude reference="8rj-87-SwI"/>
-                                            <exclude reference="dQv-Hw-oo1"/>
-                                            <exclude reference="eHL-br-Mrm"/>
-                                            <exclude reference="hTQ-rl-u21"/>
-                                            <exclude reference="5MY-6J-U8u"/>
-                                            <exclude reference="baf-AV-0fZ"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="widthClass=compact">
-                                        <mask key="subviews">
-                                            <include reference="1sb-rV-YPs"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <include reference="GZG-n1-DO8"/>
-                                            <include reference="OVJ-I7-A4B"/>
-                                            <include reference="JvC-Hd-KY4"/>
-                                            <include reference="vMs-Oz-vD0"/>
-                                            <include reference="8rj-87-SwI"/>
-                                            <include reference="dQv-Hw-oo1"/>
-                                            <include reference="eHL-br-Mrm"/>
-                                            <include reference="hTQ-rl-u21"/>
-                                            <include reference="5MY-6J-U8u"/>
-                                            <include reference="baf-AV-0fZ"/>
-                                        </mask>
-                                    </variation>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="labelCat" destination="Pp0-xu-8Uh" id="CDK-Jv-GiH"/>
-                                    <outlet property="labelNomeGasto" destination="wtb-6L-I0z" id="ail-Hl-xM1"/>
-                                    <outlet property="labelSemGastos" destination="1sb-rV-YPs" id="59P-Bq-FJ2"/>
-                                    <outlet property="labelValor" destination="EgG-ZP-eSQ" id="pqk-XW-vB0"/>
-                                    <outlet property="labeldata" destination="uOf-pn-S2T" id="5Nb-3Z-xSx"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="K8M-vq-bPt" id="pXw-is-oTQ"/>
-                            <outlet property="delegate" destination="K8M-vq-bPt" id="sgD-6H-adF"/>
-                        </connections>
-                    </tableView>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Histórico" image="historico" id="K9N-Yg-A0B"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelCat" destination="Pp0-xu-8Uh" id="YD8-nX-eW3"/>
+                                            <outlet property="labelData" destination="wtb-6L-I0z" id="Kif-KL-OW1"/>
+                                            <outlet property="labelNomeGasto" destination="EgG-ZP-eSQ" id="itc-X1-E3u"/>
+                                            <outlet property="labelSemGastos" destination="1sb-rV-YPs" id="emS-KY-84s"/>
+                                            <outlet property="labelValor" destination="uOf-pn-S2T" id="g8A-dx-SyY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="150" width="375" height="468"/>
+                                </variation>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="smw-gd-23h"/>
+                                <exclude reference="rMZ-wU-Kb7"/>
+                                <exclude reference="cN0-55-Ch6"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="smw-gd-23h"/>
+                                <include reference="rMZ-wU-Kb7"/>
+                                <include reference="cN0-55-Ch6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Histórico" image="historico" id="Rcn-wy-r9C"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="botaoFiltrar" destination="fzr-jC-DFb" id="mBr-HD-OtN"/>
-                        <outlet property="botaoOrdenar" destination="mlw-co-EVe" id="Fag-Gt-c4H"/>
-                        <outlet property="viewSuperior" destination="val-6X-0lC" id="3nA-D2-tG5"/>
-                        <segue destination="vag-xE-urf" kind="presentation" identifier="HistoricoTabelaToFiltrar" id="6ie-cd-edk"/>
-                        <segue destination="Iwo-rT-6sO" kind="show" identifier="HistoricoTabelaToOrdenar" id="OyK-sN-QeA"/>
+                        <outlet property="botaoFiltrar" destination="rMZ-wU-Kb7" id="WId-Wh-LJF"/>
+                        <outlet property="botaoOrdenar" destination="smw-gd-23h" id="Klj-jg-ELb"/>
+                        <outlet property="tableView" destination="cN0-55-Ch6" id="gre-Cw-veH"/>
+                        <segue destination="vag-xE-urf" kind="show" identifier="HistoricoTabelaToFiltrar" id="Euy-vM-4XO"/>
+                        <segue destination="Iwo-rT-6sO" kind="show" identifier="HistoricoTabelaToOrdenar" id="Yhw-fZ-HWp"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v27-fk-LrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0s-Vh-661" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614.25" y="-688.5"/>
+            <point key="canvasLocation" x="599.25" y="-709.125"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="miV-1B-ksb">
@@ -2323,7 +2289,7 @@
                     <connections>
                         <segue destination="i28-Vj-dol" kind="relationship" relationship="viewControllers" id="qRV-4C-eBq"/>
                         <segue destination="qDv-K7-cHH" kind="relationship" relationship="viewControllers" id="mkc-D7-zcm"/>
-                        <segue destination="K8M-vq-bPt" kind="relationship" relationship="viewControllers" id="ZPf-jz-a8c"/>
+                        <segue destination="yqF-xL-oeE" kind="relationship" relationship="viewControllers" id="6Eb-d1-zbJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8y6-8X-0w1" userLabel="First Responder" sceneMemberID="firstResponder"/>

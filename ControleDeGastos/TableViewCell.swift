@@ -10,15 +10,16 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    
     @IBOutlet weak var labelNomeGasto: UILabel!
+    @IBOutlet weak var labelData: UILabel!
     @IBOutlet weak var labelValor: UILabel!
-    @IBOutlet weak var labelCat: UILabel!
-    @IBOutlet weak var labeldata: UILabel!
     @IBOutlet weak var labelSemGastos: UILabel!
+    @IBOutlet weak var labelCat: UILabel!
     
     func hideInfo (status: Bool) {
         self.labelCat.hidden = status
-        self.labeldata.hidden = status
+        self.labelData.hidden = status
         self.labelValor.hidden = status
         self.labelNomeGasto.hidden = status
         self.labelSemGastos.hidden = !status

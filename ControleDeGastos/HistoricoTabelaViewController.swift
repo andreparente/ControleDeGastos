@@ -9,13 +9,13 @@
 import UIKit
 import Foundation
 
-class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerDelegate  {
+class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet weak var viewSuperior: UIView!
     
     @IBOutlet weak var botaoOrdenar: UIButton!
     @IBOutlet weak var botaoFiltrar: UIButton!
     
+    @IBOutlet weak var tableView: UITableView!
     var gastos = [Gasto]()
     var ordenou = false
     var filtrou = false
@@ -23,6 +23,9 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         
         
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = UIColor.clearColor()
         //executar = false
         //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         //viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
@@ -41,20 +44,17 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
          */
         if (evermelha)
         {
-            //self.background_image.image = UIImage(named: "background_red.png")
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
-            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         if eazul{
-            //self.background_image.image = UIImage(named: "background_blue.png")
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         }
         
         
         
         tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
+    
     override func viewWillAppear(animated: Bool) {
         // executar = false
         
@@ -73,32 +73,33 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         }
         
         self.tableView.reloadData()
+        tableView.backgroundColor = UIColor.clearColor()
         
         if (evermelha)
         {
             //self.background_image.image = UIImage(named: "background_red.png")
+            
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
-            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         if (eazul)
         {
             //self.background_image.image = UIImage(named: "background_blue.png")
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-            viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         }
     }
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     //funçao que diz a quantidade de células
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let cellsNumber = gastosGlobal.count
         return (cellsNumber > 0) ? cellsNumber : 1
     }
     
     //funçao que seta as células
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell =
             self.tableView.dequeueReusableCellWithIdentifier(
@@ -117,7 +118,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
             cell.labelCat.text = "\(gastosGlobal[indexPath.row].category)"
             cell.labelValor.text = "R$ " + String(gastosGlobal[indexPath.row].value)
             let arrayData = gastosGlobal[indexPath.row].date.componentsSeparatedByString("-")
-            cell.labeldata.text = "\(arrayData[2])-\(arrayData[1])-\(arrayData[0])"
+            cell.labelData.text = "\(arrayData[2])-\(arrayData[1])-\(arrayData[0])"
             /* if (eamarela)
              {
              cell.backgroundColor = UIColor.clearColor()
@@ -136,7 +137,7 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
     }
     
     //funçao que é chamada ao clicar em determinada célula
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You selected cell #\(indexPath.row)!")
     }
     
@@ -160,11 +161,11 @@ class HistoricoTabelaViewController: UITableViewController, UIGestureRecognizerD
         }
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if userLogged.gastos.count > 0
         {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
