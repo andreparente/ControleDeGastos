@@ -11,13 +11,13 @@ import UIKit
 var auxID: String!
 
 class LoginCLoudViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,7 +27,14 @@ class LoginCLoudViewController: UIViewController {
         
         dispatch_async(dispatch_get_main_queue(),{
             
+            
+            
+            
+            
+            
+            // ------------- FUNCAO QUE PEGA O ID!! -------------
             DAOCloudKit().getId() {
+                
                 recordID, error in
                 
                 if let userID = recordID?.recordName {
@@ -41,6 +48,15 @@ class LoginCLoudViewController: UIViewController {
                     print("Fetched iCloudID was nil")
                 }
             }
+            
+            // ------------- END OF FUNCTION -------------
+
+            
+            
+            
+            
+            
+            
             
             if let cloudID = defaults.objectForKey("cloudID")
             {
@@ -63,7 +79,7 @@ class LoginCLoudViewController: UIViewController {
         
         
     }
-
+    
     @IBAction func loginActino(sender: AnyObject) {
         
         if DAOCloudKit().cloudAvailable() == false{
@@ -114,7 +130,7 @@ class LoginCLoudViewController: UIViewController {
                             self.presentViewController(alert,animated: true, completion: nil)
                         })
                     }
-
+                    
                 }
                 else {
                     self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
@@ -123,13 +139,13 @@ class LoginCLoudViewController: UIViewController {
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

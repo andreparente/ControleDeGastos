@@ -22,6 +22,9 @@ class DAOCloudKit {
         }
     }
     
+    
+    // ------------------------------ FUNCAO PARA PEGAR ID DO USER ---------------------------
+    
     func getId(complete: (instance: CKRecordID?, error: NSError?) -> ()) {
         let container = CKContainer.defaultContainer()
         container.fetchUserRecordIDWithCompletionHandler() {
@@ -36,9 +39,11 @@ class DAOCloudKit {
         }
     }
     
+    // ------------------------------ END OF FUNCTION -------------------------------------
+    
+    
     
     //------------------------------------ SAVE FUNCTIONS ------------------------------
-    
     
     
     func saveUser(user: User) {
@@ -63,10 +68,14 @@ class DAOCloudKit {
                     
                     print("primeira vez que ta criando")
                     
+                    record.setObject(user.cloudId, forKey: "cloudId")
                     
+                    // ------ TIRAR ESSE BLOCO ----------------------
                     record.setObject(user.name, forKey: "name")
                     record.setObject(user.email, forKey: "email")
                     record.setObject(user.password, forKey: "password")
+                    // ---------- FIM DO BLOCO ------------------------
+                    
                     record.setObject(user.categories, forKey: "categories")
                     
                     

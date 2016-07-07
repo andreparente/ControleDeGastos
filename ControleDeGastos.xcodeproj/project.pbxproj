@@ -47,7 +47,6 @@
 		9CA7128B1D1ACF700074E21C /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756E01D005BDF00CC0535 /* Gasto.swift */; };
 		9CA712901D1AD9EF0074E21C /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756E01D005BDF00CC0535 /* Gasto.swift */; };
 		9CA712931D1AE4D00074E21C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712921D1AE4D00074E21C /* InterfaceController.swift */; };
-		9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */; };
 		E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */; };
 		E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */; };
 		E5BD5CAD1CB2D76900481089 /* Filtros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CAC1CB2D76900481089 /* Filtros.swift */; };
@@ -188,7 +187,6 @@
 		9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceControllerTable.swift; sourceTree = "<group>"; };
 		9CA712891D1ACA280074E21C /* MyRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRow.swift; sourceTree = "<group>"; };
 		9CA712921D1AE4D00074E21C /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsqueciSenhaViewController.swift; sourceTree = "<group>"; };
 		E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrarViewController.swift; sourceTree = "<group>"; };
 		E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdenarViewController.swift; sourceTree = "<group>"; };
 		E5BD5CAC1CB2D76900481089 /* Filtros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */,
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
 				9C08CB3F1CFDD75F005133E7 /* PickerView.swift */,
-				9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */,
 				8A0D8C0E1D2EB92100C8BCB0 /* LoginCLoudViewController.swift */,
 			);
 			name = Controller;
@@ -604,7 +601,6 @@
 				9CA712901D1AD9EF0074E21C /* Gasto.swift in Sources */,
 				9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */,
 				8A1AFCFF1CAACC7400382D1B /* GastoManualViewController.swift in Sources */,
-				9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */,
 				9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */,
 				8A0D8C0F1D2EB92100C8BCB0 /* LoginCLoudViewController.swift in Sources */,
 				E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */,
