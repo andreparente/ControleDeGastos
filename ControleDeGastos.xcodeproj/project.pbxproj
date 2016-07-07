@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		771E225E1D2157BB00D83A36 /* TsukushiAMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E225C1D2157BB00D83A36 /* TsukushiAMaruGothic.ttc */; };
 		771E225F1D2157BC00D83A36 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E225D1D2157BB00D83A36 /* TsukushiBMaruGothic.ttc */; };
+		8A0D8C0F1D2EB92100C8BCB0 /* LoginCLoudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D8C0E1D2EB92100C8BCB0 /* LoginCLoudViewController.swift */; };
 		8A1756D61CFF63D500CC0535 /* DAOCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */; };
 		8A1756D91CFF63F000CC0535 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1756D81CFF63F000CC0535 /* CloudKit.framework */; };
 		8A1756DB1CFF65BE00CC0535 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756DA1CFF65BE00CC0535 /* User.swift */; };
@@ -146,6 +147,7 @@
 		56307421CB692CF9FCD566F8 /* Pods-ControleDeGastos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.release.xcconfig"; sourceTree = "<group>"; };
 		771E225C1D2157BB00D83A36 /* TsukushiAMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiAMaruGothic.ttc; path = ../../../../../Library/Fonts/TsukushiAMaruGothic.ttc; sourceTree = "<group>"; };
 		771E225D1D2157BB00D83A36 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiBMaruGothic.ttc; path = ../../../../../Library/Fonts/TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
+		8A0D8C0E1D2EB92100C8BCB0 /* LoginCLoudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCLoudViewController.swift; sourceTree = "<group>"; };
 		8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOCloudKit.swift; sourceTree = "<group>"; };
 		8A1756D71CFF63EA00CC0535 /* ControleDeGastos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ControleDeGastos.entitlements; sourceTree = "<group>"; };
 		8A1756D81CFF63F000CC0535 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -254,6 +256,7 @@
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
 				9C08CB3F1CFDD75F005133E7 /* PickerView.swift */,
 				9CED2A1A1D0D7B1A00805723 /* EsqueciSenhaViewController.swift */,
+				8A0D8C0E1D2EB92100C8BCB0 /* LoginCLoudViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				8A1AFCFF1CAACC7400382D1B /* GastoManualViewController.swift in Sources */,
 				9CED2A1B1D0D7B1A00805723 /* EsqueciSenhaViewController.swift in Sources */,
 				9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */,
+				8A0D8C0F1D2EB92100C8BCB0 /* LoginCLoudViewController.swift in Sources */,
 				E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */,
 				8A54D3C81CA2CC5B00E63645 /* MainViewController.swift in Sources */,
 				8A54D3CA1CA2CCCF00E63645 /* QRCodeViewController.swift in Sources */,

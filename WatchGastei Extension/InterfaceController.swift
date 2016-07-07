@@ -30,6 +30,7 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
     }
     override func willActivate() {
         self.items.removeAll()
+        
         if let categories = defaults.objectForKey("categories")
         {
             categorias = categories as! [String]

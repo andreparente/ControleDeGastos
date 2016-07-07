@@ -22,6 +22,20 @@ class DAOCloudKit {
         }
     }
     
+    func getId(complete: (instance: CKRecordID?, error: NSError?) -> ()) {
+        let container = CKContainer.defaultContainer()
+        container.fetchUserRecordIDWithCompletionHandler() {
+            recordID, error in
+            if error != nil {
+                print(error!.localizedDescription)
+                complete(instance: nil, error: error)
+            } else {
+                print("fetched ID \(recordID?.recordName)")
+                complete(instance: recordID, error: nil)
+            }
+        }
+    }
+    
     
     //------------------------------------ SAVE FUNCTIONS ------------------------------
     

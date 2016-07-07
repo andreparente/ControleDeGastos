@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uwQ-dY-A3P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bxI-5N-5Hg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -441,6 +441,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SML-Oe-o04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1560.75" y="152.625"/>
+        </scene>
+        <!--LoginC Loud View Controller-->
+        <scene sceneID="OdE-Xu-Yw2">
+            <objects>
+                <viewController id="bxI-5N-5Hg" customClass="LoginCLoudViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hgj-Zp-afZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="oYc-jH-KRB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q3x-Sj-d8y">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQT-xo-fPy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Login com Cloud"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="142" y="385" width="116" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="loginActino:" destination="bxI-5N-5Hg" eventType="touchUpInside" id="DTF-cD-ECd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="TQT-xo-fPy"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="TQT-xo-fPy"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <segue destination="7e0-v9-ANp" kind="show" identifier="LoginCloudToMain" id="wfD-jt-VFi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkM-p0-Ng7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-873" y="-295.5"/>
         </scene>
         <!--Main-->
         <scene sceneID="Tlb-kS-LJA">
@@ -2040,6 +2082,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DEX-dW-dkM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eeR-s5-y25">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smw-gd-23h">
@@ -2092,14 +2135,14 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="rWQ-TC-qHf"/>
                                         <exclude reference="SqS-GN-suk"/>
+                                        <exclude reference="rWQ-TC-qHf"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="rWQ-TC-qHf"/>
                                         <include reference="SqS-GN-suk"/>
+                                        <include reference="rWQ-TC-qHf"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
@@ -2114,9 +2157,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lFh-ne-H36" id="Zda-L0-cbo">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
                                                     <rect key="frame" x="8" y="33" width="100" height="21"/>
                                                     <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2128,7 +2172,7 @@
                                                         <rect key="frame" x="187" y="24" width="0.0" height="0.0"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-6L-I0z">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-6L-I0z">
                                                     <rect key="frame" x="8" y="8" width="201" height="24"/>
                                                     <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2140,7 +2184,7 @@
                                                         <rect key="frame" x="187" y="24" width="0.0" height="0.0"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-pn-S2T">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-pn-S2T">
                                                     <rect key="frame" x="217" y="32" width="150" height="21"/>
                                                     <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2164,7 +2208,7 @@
                                                         <rect key="frame" x="125" y="14" width="125" height="20"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pp0-xu-8Uh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pp0-xu-8Uh">
                                                     <rect key="frame" x="217" y="8" width="150" height="24"/>
                                                     <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2473,4 +2517,7 @@
         <image name="logout" width="74" height="64"/>
         <image name="principal" width="30" height="28"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wfD-jt-VFi"/>
+    </inferredMetricsTieBreakers>
 </document>

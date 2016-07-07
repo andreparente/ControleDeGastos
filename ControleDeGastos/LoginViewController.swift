@@ -8,13 +8,10 @@
 
 import UIKit
 
-func isValidEmail(testStr:String) -> Bool {
-    
-    let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-    let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-    return emailTest.evaluateWithObject(testStr)
-}
+
 var i=0
+
+
 class LoginViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var errosenhas: UILabel!
@@ -31,6 +28,51 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         i=0
+        
+        // --------------------------- JOGAR ESSA FUNÇAO NA ACAO DO BOTAO "Logado
+        DAOCloudKit().getId() {
+            recordID, error in
+            if let userID = recordID?.recordName {
+                print("received iCloudID \(userID)")
+                
+                defaults.setObject(userID, forKey: "cloudID")
+                userLogged.cloudId = userID
+                
+            } else {
+                print("Fetched iCloudID was nil")
+            }
+        }
+        
+        //- --------------------------- --------------------------- --------------------------- ---------------------------
+        if DAOCloudKit().cloudAvailable() == false{
+            let alert=UIAlertController(title:"iCloud não disponível", message: "Você nāo está logado na sua conta do iCloud, por favor, conecte-se antes de usar este aplicativo!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{(action) -> Void in
+                exit(0)
+            }))
+            dispatch_async(dispatch_get_main_queue(),{
+                self.presentViewController(alert,animated: true, completion: nil)
+            })
+        }
+        else if Reachability.isConnectedToNetwork() == false
+        {
+            let alert=UIAlertController(title:"Internet não disponível", message: "Você nāo está conectado à internet", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{(action) -> Void in
+                exit(0)
+            }))
+            dispatch_async(dispatch_get_main_queue(),{
+                self.presentViewController(alert,animated: true, completion: nil)
+            })
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(),{
+                
+                self.performSegueWithIdentifier("LaunchToLogin", sender: self)
+            })
+        }
+        
+        
+        
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.actOnNotificationSuccessLogin), name: "notificationSuccessLogin", object: nil)

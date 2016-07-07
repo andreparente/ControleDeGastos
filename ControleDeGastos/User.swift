@@ -19,6 +19,7 @@ public class User {
     var name: String!
     var email: String!
     var password: String!
+    var cloudId: String!
     var categories: [String] = ["Outros","Alimentação","Transporte"]
     var limiteMes: Double = 0
     var arrayGastos: [CKReference] = []
