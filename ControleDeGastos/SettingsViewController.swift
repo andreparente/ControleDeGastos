@@ -127,24 +127,6 @@ class SettingsViewController: UIViewController, UINavigationBarDelegate{
         self.presentViewController(alert,animated: true, completion: nil)
     }
     
-    
-    @IBAction func logOut(sender: UIButton) {
-        
-        
-        var data = [String:AnyObject]()
-        data["email"] = nil
-        data["password"] = nil
-        data["name"] = nil
-        data["isLogged"] = "loggedOut"
-        plist.deleteData(data)
-        userLogged.gastos.removeAll()
-       // userLogged.arrayGastos.removeAll()
-        userLogged.categories.removeAll()
-        mainVC?.flagLogout = true
-        dismissViewControllerAnimated(false, completion: nil)
-
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "SettingsToMain" {
