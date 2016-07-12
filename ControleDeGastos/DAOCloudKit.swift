@@ -32,9 +32,11 @@ class DAOCloudKit {
             if error != nil {
                 print(error!.localizedDescription)
                 complete(instance: nil, error: error)
+                NSNotificationCenter.defaultCenter().postNotificationName("notificationErrorGetId", object: nil)
             } else {
                 print("fetched ID \(recordID?.recordName)")
                 complete(instance: recordID, error: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName("notificationSucessGetId", object: nil)
             }
         }
     }

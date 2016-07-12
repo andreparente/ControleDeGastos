@@ -24,6 +24,9 @@ public class User {
     public var gastos: [Gasto] = []
     
     
+    init(cloudId: String) {
+        self.cloudId = cloudId
+    }
     func addCategoriaGasto(categ: String) {
         self.categories.append(categ)
     }

@@ -22,7 +22,7 @@ class LoginCLoudViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    /*
     override func viewDidAppear(animated: Bool) {
         
         dispatch_async(dispatch_get_main_queue(),{
@@ -69,9 +69,11 @@ class LoginCLoudViewController: UIViewController {
         
         
     }
+ */
     
     @IBAction func loginActino(sender: AnyObject) {
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginCLoudViewController().actonNotificationSucessGetID), name: "notificationSucessGetId", object: nil)
         if DAOCloudKit().cloudAvailable() == false{
             let alert=UIAlertController(title:"iCloud não disponível", message: "Você nāo está logado na sua conta do iCloud, por favor, conecte-se antes de usar este aplicativo!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:nil))
@@ -98,35 +100,44 @@ class LoginCLoudViewController: UIViewController {
                         print("received iCloudID \(userID)")
                         
                         auxID = userID
-                        //defaults.setObject(userID, forKey: "cloudID")
-                        //userLogged.cloudId = userID
                         
                     } else {
                         print("Fetched iCloudID was nil")
                     }
                 }
-                
-                if let cloudID = defaults.objectForKey("cloudID")
-                {
-                    if(cloudID as! String != auxID) {
-                        
-                        let alert=UIAlertController(title:"Atenção", message: "Você entrou com uma nova conta do iCloud!", preferredStyle: UIAlertControllerStyle.Alert)
-                        alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{
-                            error in
-                            self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
-                        }))
-                        
-                        dispatch_async(dispatch_get_main_queue(),{
-                            self.presentViewController(alert,animated: true, completion: nil)
-                        })
-                    }
-                    
-                }
-                else {
-                    self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
-                }
             })
         }
+    }
+    
+    func actonNotificationSucessGetID()
+    {
+        print(auxID)
+        if let cloudID = defaults.objectForKey("cloudId")
+        {
+            if(cloudID as! String != auxID) {
+                 userLogged = User(cloudId: cloudID as! String)
+                let alert=UIAlertController(title:"Atenção", message: "Você entrou com uma nova conta do iCloud!", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:{
+                    error in
+                    self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
+                }))
+                
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.presentViewController(alert,animated: true, completion: nil)
+                })
+            }
+            else{
+                userLogged = User(cloudId: auxID)
+                self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
+            }
+            
+        }
+        else {
+            defaults.setObject(auxID,forKey: "cloudId")
+             userLogged = User(cloudId: auxID)
+            self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
+        }
+
     }
     /*
      // MARK: - Navigation
