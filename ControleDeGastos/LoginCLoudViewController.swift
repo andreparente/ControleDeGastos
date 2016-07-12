@@ -24,7 +24,7 @@ class LoginCLoudViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        aux8 = 0
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginCLoudViewController().actonNotificationSucessGetID), name: "notificationSucessGetId", object: nil)
         dispatch_async(dispatch_get_main_queue(),{
             
@@ -50,7 +50,9 @@ class LoginCLoudViewController: UIViewController {
  
     
     @IBAction func loginActino(sender: AnyObject) {
-        
+        aux8 += 1
+        if aux8 == 1
+        {
         if DAOCloudKit().cloudAvailable() == false{
             let alert=UIAlertController(title:"iCloud não disponível", message: "Você nāo está logado na sua conta do iCloud, por favor, conecte-se antes de usar este aplicativo!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:nil))
@@ -83,6 +85,7 @@ class LoginCLoudViewController: UIViewController {
                     }
                 }
             })
+        }
         }
     }
     
