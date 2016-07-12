@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bxI-5N-5Hg">
     <dependencies>
+        <development version="7000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -75,7 +76,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_blue" translatesAutoresizingMaskIntoConstraints="NO" id="rve-KN-61m">
@@ -99,8 +100,7 @@
                                         <exclude reference="gzh-9B-xkB"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="73" y="321" width="225" height="40"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="ZRx-F1-xPz"/>
                                         <include reference="gzh-9B-xkB"/>
@@ -122,8 +122,7 @@
                                         <exclude reference="rM9-cf-BZW"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="73" y="221" width="225" height="40"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="NeM-qs-8hq"/>
                                         <include reference="rM9-cf-BZW"/>
@@ -135,9 +134,6 @@
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="55"/>
                                 <color key="textColor" red="0.96862745098039216" green="0.90588235294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="170" y="75" width="31" height="64.5"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj8-7R-Nlv">
                                 <rect key="frame" x="73" y="404" width="63" height="30"/>
@@ -159,8 +155,7 @@
                                         <exclude reference="UCF-40-LlR"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="114" y="402" width="142" height="37"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="31R-f8-KrV"/>
                                         <include reference="UCF-40-LlR"/>
@@ -187,7 +182,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ga  tei" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hl-c2-vzl">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <rect key="frame" x="96.5" y="72" width="182" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="J18-Kx-m29"/>
                                     <constraint firstAttribute="width" constant="182" id="tHh-g6-fw1"/>
@@ -209,7 +204,7 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3hl-c2-vzl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="544-7s-47i"/>
                             <constraint firstItem="0Q6-iS-nvL" firstAttribute="top" secondItem="vKe-60-dBH" secondAttribute="bottom" constant="60" id="5x9-fb-YTk"/>
@@ -267,7 +262,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="background_image" destination="rve-KN-61m" id="kZd-ar-cO0"/>
                         <outlet property="mail" destination="vKe-60-dBH" id="E7B-RI-5DF"/>
@@ -289,7 +283,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hyv-gO-h3P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K63-ol-a05">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_blue" translatesAutoresizingMaskIntoConstraints="NO" id="lQW-Xl-pmN">
@@ -299,7 +293,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvB-cS-q2W">
-                                <rect key="frame" x="20" y="28" width="335" height="21"/>
+                                <rect key="frame" x="20" y="70" width="335" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="625-BK-vZl"/>
                                     <constraint firstAttribute="height" constant="21" id="LSC-MP-9hN"/>
@@ -321,7 +315,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8o-Tf-D0N">
-                                <rect key="frame" x="156" y="136" width="63" height="30"/>
+                                <rect key="frame" x="116.5" y="186" width="142" height="37"/>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="A9b-Gj-xq2"/>
@@ -353,7 +347,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cP-ir-TAX">
-                                <rect key="frame" x="20" y="61" width="335" height="30"/>
+                                <rect key="frame" x="47.5" y="118" width="280" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="K1u-A9-Rny"/>
                                     <constraint firstAttribute="height" constant="30" id="zKN-rX-Vc4"/>
@@ -374,7 +368,7 @@
                                 </variation>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FvB-cS-q2W" firstAttribute="top" secondItem="4vt-0C-Wqp" secondAttribute="bottom" constant="50" id="0ey-Tj-32W"/>
                             <constraint firstItem="F8o-Tf-D0N" firstAttribute="centerX" secondItem="K63-ol-a05" secondAttribute="centerX" id="20p-IK-0I1"/>
@@ -410,7 +404,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="erromail" destination="FvB-cS-q2W" id="5AB-ro-kUK"/>
                         <outlet property="mail" destination="5cP-ir-TAX" id="At2-LV-Ktc"/>
@@ -429,11 +422,10 @@
                         <viewControllerLayoutGuide type="bottom" id="D33-sa-24O"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hRY-xY-O5s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="LaunchToLogin" id="xcU-Pe-Xfo"/>
                     </connections>
@@ -469,7 +461,7 @@
                                 <color key="textColor" red="1" green="0.92015609897361261" blue="0.22223648027368903" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="187" y="92" width="30.5" height="63"/>
+                                    <rect key="frame" x="174.5" y="92" width="30.5" height="63"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ga  tei" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8M-Ow-wI2">
@@ -478,7 +470,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="121" y="92" width="180.5" height="63"/>
+                                    <rect key="frame" x="108.5" y="92" width="158.5" height="63"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQT-xo-fPy">
@@ -570,7 +562,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bZu-uI-xk1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Gb-Go-fx3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-AX-XUB">
@@ -586,8 +578,7 @@
                                         <exclude reference="DEX-W0-fCb"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="310" y="32" width="38" height="38"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="3kT-BU-L0o"/>
                                         <include reference="DEX-W0-fCb"/>
@@ -599,7 +590,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total disponível" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-m4-c0C">
-                                <rect key="frame" x="22" y="412" width="330" height="77"/>
+                                <rect key="frame" x="27" y="338.5" width="320" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="W0c-mq-s3S"/>
                                     <constraint firstAttribute="height" constant="90" id="ptb-70-ccG"/>
@@ -626,9 +617,6 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sr6-Y8-QRJ">
                                 <rect key="frame" x="169" y="236" width="37" height="37"/>
                                 <color key="color" red="0.32120369339999999" green="0.55812718039999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="271" y="215" width="37" height="37"/>
-                                </variation>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1B-1U-4Jk">
                                 <rect key="frame" x="-48" y="-21" width="42" height="21"/>
@@ -637,9 +625,6 @@
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Regular" family="Tsukushi A Round Gothic" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="154" y="141" width="63" height="49"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vID-WR-fxp">
                                 <rect key="frame" x="26" y="189" width="322" height="76"/>
@@ -658,8 +643,7 @@
                                         <exclude reference="OGW-ns-W9c"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="285" y="528" width="63" height="63"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="G9t-NG-rJe"/>
                                         <include reference="OGW-ns-W9c"/>
@@ -711,8 +695,7 @@
                                         <exclude reference="hro-7s-KQ1"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="31" y="84" width="317" height="55"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Hwr-1h-KrX"/>
                                         <include reference="hro-7s-KQ1"/>
@@ -748,11 +731,11 @@
                                 <exclude reference="6hr-rP-YJe"/>
                                 <exclude reference="IrU-vr-6kh"/>
                                 <exclude reference="jES-CE-bz8"/>
-                                <exclude reference="8cr-3E-9uw"/>
-                                <exclude reference="vaJ-1f-ihC"/>
                                 <exclude reference="0lq-sC-L7p"/>
                                 <exclude reference="2xa-2u-JIw"/>
                                 <exclude reference="Jy4-za-irP"/>
+                                <exclude reference="8cr-3E-9uw"/>
+                                <exclude reference="vaJ-1f-ihC"/>
                                 <exclude reference="juU-OA-LZR"/>
                             </mask>
                         </variation>
@@ -767,17 +750,16 @@
                                 <include reference="6hr-rP-YJe"/>
                                 <include reference="IrU-vr-6kh"/>
                                 <include reference="jES-CE-bz8"/>
-                                <include reference="8cr-3E-9uw"/>
-                                <include reference="vaJ-1f-ihC"/>
                                 <include reference="0lq-sC-L7p"/>
                                 <include reference="2xa-2u-JIw"/>
                                 <include reference="Jy4-za-irP"/>
+                                <include reference="8cr-3E-9uw"/>
+                                <include reference="vaJ-1f-ihC"/>
                                 <include reference="juU-OA-LZR"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Principal" image="principal" id="dn7-U9-lTy"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="act" destination="Sr6-Y8-QRJ" id="D6U-bW-Aui"/>
                         <outlet property="gastei" destination="vID-WR-fxp" id="Gdz-le-cxF"/>
@@ -802,7 +784,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xeF-8U-e6F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I0w-V7-IV9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_blue" translatesAutoresizingMaskIntoConstraints="NO" id="55j-8b-SEe">
@@ -861,7 +843,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="55j-8b-SEe"/>
@@ -879,7 +861,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="background_image" destination="55j-8b-SEe" id="3TA-jf-N76"/>
                     </connections>
@@ -897,7 +878,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qsB-Km-Wpw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="z7Y-kM-Rpj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCY-ZG-clI">
@@ -985,7 +966,7 @@
                                 </connections>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descrição (opcional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sK2-FM-gRA">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <rect key="frame" x="-25" y="-30" width="97" height="40"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="243" id="hH3-dA-a3K"/>
@@ -1007,7 +988,7 @@
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-mf-Bsy">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <rect key="frame" x="-25" y="-30" width="97" height="40"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="243" id="GpH-l2-77c"/>
@@ -1293,7 +1274,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="botaoQRCode" destination="kEC-kI-HcT" id="F11-BR-pKF"/>
                         <outlet property="categoriaPickerView" destination="fCY-ZG-clI" id="ONP-j1-HKR"/>
@@ -1316,7 +1296,7 @@
                         <viewControllerLayoutGuide type="bottom" id="D1I-PN-VVS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="d6V-aJ-N9F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_blue" translatesAutoresizingMaskIntoConstraints="NO" id="Uq1-bS-MPe">
@@ -1341,7 +1321,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="74" y="172" width="225" height="40"/>
+                                    <rect key="frame" x="71" y="182" width="225" height="40"/>
                                     <mask key="constraints">
                                         <include reference="KPq-Ni-Tkh"/>
                                         <include reference="fF5-Nz-zSU"/>
@@ -1364,7 +1344,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="74" y="326" width="225" height="40"/>
+                                    <rect key="frame" x="71" y="336" width="225" height="40"/>
                                     <mask key="constraints">
                                         <include reference="5Zm-oG-SyR"/>
                                         <include reference="oME-hH-IIJ"/>
@@ -1387,7 +1367,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="74" y="249" width="225" height="40"/>
+                                    <rect key="frame" x="71" y="259" width="225" height="40"/>
                                     <mask key="constraints">
                                         <include reference="N50-sS-7Eo"/>
                                         <include reference="eOP-2A-ei1"/>
@@ -1410,7 +1390,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="74" y="95" width="225" height="40"/>
+                                    <rect key="frame" x="71" y="105" width="225" height="40"/>
                                     <mask key="constraints">
                                         <include reference="1fE-4M-HPE"/>
                                         <include reference="O5p-bf-fqT"/>
@@ -1440,7 +1420,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="115" y="428" width="142" height="37"/>
+                                    <rect key="frame" x="116.5" y="438" width="142" height="37"/>
                                     <mask key="constraints">
                                         <include reference="aM2-eq-FaA"/>
                                         <include reference="r1u-iU-wNG"/>
@@ -1451,7 +1431,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2Wy-Tz-My9" firstAttribute="leading" secondItem="d6V-aJ-N9F" secondAttribute="leadingMargin" constant="55" id="08i-98-ke7"/>
                             <constraint firstItem="56R-YL-EZe" firstAttribute="leading" secondItem="d6V-aJ-N9F" secondAttribute="leadingMargin" constant="55" id="3Qv-WT-qjx"/>
@@ -1523,7 +1503,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Email" destination="56R-YL-EZe" id="gAp-tV-Ur4"/>
                         <outlet property="confirmasenha1" destination="eUe-et-Bkd" id="jbh-bB-e5l"/>
@@ -1544,7 +1523,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tGZ-8E-mjS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sVU-dm-HJ9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYT-7N-l3y">
@@ -1750,7 +1729,7 @@
                         <viewControllerLayoutGuide type="bottom" id="imB-97-0eo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="W3c-YQ-fGN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mV-2T-FSs">
@@ -1758,27 +1737,18 @@
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="58" width="47" height="21"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data inicial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZJ-62-Ifq">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="138" width="88.5" height="21"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCM-Xr-fGW">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="400" width="78.5" height="21"/>
-                                </variation>
                             </label>
                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="U7B-w3-ePJ">
                                 <rect key="frame" x="43" y="314" width="288" height="105"/>
@@ -1808,9 +1778,6 @@
                                         <include reference="UfD-J6-4UX"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="43" y="292" width="288" height="100"/>
-                                </variation>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-5g-Wte">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1839,9 +1806,6 @@
                                         <include reference="6cr-4G-5du"/>
                                         <include reference="fF7-cm-2fo"/>
                                     </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="531" width="140" height="37"/>
                                 </variation>
                                 <connections>
                                     <action selector="apertouBotaoCancelar:" destination="vag-xE-urf" eventType="touchUpInside" id="pSl-Hp-7PD"/>
@@ -1875,9 +1839,6 @@
                                         <include reference="PmD-Cc-9aH"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="219" y="531" width="140" height="37"/>
-                                </variation>
                                 <connections>
                                     <action selector="apertouBotaoSalvar:" destination="vag-xE-urf" eventType="touchUpInside" id="38W-MB-Lk3"/>
                                 </connections>
@@ -1910,9 +1871,6 @@
                                         <include reference="RpD-3g-xn0"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="43" y="160" width="288" height="100"/>
-                                </variation>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RY3-ut-HlU">
                                 <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
@@ -1932,21 +1890,15 @@
                                         <include reference="Q7a-qu-uct"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="423" width="335" height="100"/>
-                                </variation>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data final" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-Wm-wFC">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="268" width="76" height="21"/>
-                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Máx" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0K-or-iyJ">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <rect key="frame" x="222" y="90" width="123" height="30"/>
                                 <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Xip-Sd-VxD"/>
@@ -1987,9 +1939,6 @@
                                         <include reference="Sgf-SU-DMi"/>
                                         <include reference="jxf-wy-qtT"/>
                                     </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="93" width="123" height="30"/>
                                 </variation>
                             </textField>
                         </subviews>
@@ -2040,8 +1989,6 @@
                             <mask key="constraints">
                                 <exclude reference="9CH-qD-6Ws"/>
                                 <exclude reference="MAl-eN-8Bq"/>
-                                <exclude reference="6Dz-GR-6Ci"/>
-                                <exclude reference="UAC-DD-h2s"/>
                                 <exclude reference="E2v-5s-eIE"/>
                                 <exclude reference="tGG-6P-NNu"/>
                                 <exclude reference="Nll-lA-OiH"/>
@@ -2056,6 +2003,8 @@
                                 <exclude reference="tMu-LY-eki"/>
                                 <exclude reference="buC-hl-dWr"/>
                                 <exclude reference="jz2-J4-eZh"/>
+                                <exclude reference="6Dz-GR-6Ci"/>
+                                <exclude reference="UAC-DD-h2s"/>
                                 <exclude reference="SZ1-0z-CaT"/>
                                 <exclude reference="cHH-My-ut6"/>
                                 <exclude reference="A10-GY-hB3"/>
@@ -2079,8 +2028,6 @@
                             <mask key="constraints">
                                 <include reference="9CH-qD-6Ws"/>
                                 <include reference="MAl-eN-8Bq"/>
-                                <include reference="6Dz-GR-6Ci"/>
-                                <include reference="UAC-DD-h2s"/>
                                 <include reference="E2v-5s-eIE"/>
                                 <include reference="tGG-6P-NNu"/>
                                 <include reference="Nll-lA-OiH"/>
@@ -2095,6 +2042,8 @@
                                 <include reference="tMu-LY-eki"/>
                                 <include reference="buC-hl-dWr"/>
                                 <include reference="jz2-J4-eZh"/>
+                                <include reference="6Dz-GR-6Ci"/>
+                                <include reference="UAC-DD-h2s"/>
                                 <include reference="SZ1-0z-CaT"/>
                                 <include reference="cHH-My-ut6"/>
                                 <include reference="A10-GY-hB3"/>
@@ -2125,7 +2074,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DEX-dW-dkM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eeR-s5-y25">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smw-gd-23h">
@@ -2137,7 +2086,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Ordenar">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -2156,9 +2105,6 @@
                                         <include reference="uU1-LO-DJe"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="75" width="140" height="37"/>
-                                </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMZ-wU-Kb7">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -2169,7 +2115,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="18"/>
                                 <state key="normal" title="Filtrar">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -2188,16 +2134,13 @@
                                         <include reference="rWQ-TC-qHf"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="215" y="75" width="140" height="37"/>
-                                </variation>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cN0-55-Ch6">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="47" id="lFh-ne-H36" customClass="TableViewCell" customModule="Gastei" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lFh-ne-H36" id="Zda-L0-cbo">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="46.5"/>
@@ -2282,12 +2225,24 @@
                                 </variation>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="smw-gd-23h" firstAttribute="top" secondItem="pyC-Nr-u25" secondAttribute="bottom" constant="40" id="LnD-Cg-zoV"/>
+                            <constraint firstItem="rMZ-wU-Kb7" firstAttribute="top" secondItem="pyC-Nr-u25" secondAttribute="bottom" constant="40" id="RlS-lp-un9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rMZ-wU-Kb7" secondAttribute="trailing" constant="8" id="cTv-g8-XK9"/>
+                            <constraint firstItem="smw-gd-23h" firstAttribute="leading" secondItem="eeR-s5-y25" secondAttribute="leadingMargin" id="ntm-sC-hUg"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="smw-gd-23h"/>
                                 <exclude reference="rMZ-wU-Kb7"/>
                                 <exclude reference="cN0-55-Ch6"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="LnD-Cg-zoV"/>
+                                <exclude reference="ntm-sC-hUg"/>
+                                <exclude reference="RlS-lp-un9"/>
+                                <exclude reference="cTv-g8-XK9"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2296,11 +2251,16 @@
                                 <include reference="rMZ-wU-Kb7"/>
                                 <include reference="cN0-55-Ch6"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="LnD-Cg-zoV"/>
+                                <include reference="ntm-sC-hUg"/>
+                                <include reference="RlS-lp-un9"/>
+                                <include reference="cTv-g8-XK9"/>
+                            </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" image="historico" id="Rcn-wy-r9C"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="botaoFiltrar" destination="rMZ-wU-Kb7" id="WId-Wh-LJF"/>
                         <outlet property="botaoOrdenar" destination="smw-gd-23h" id="Klj-jg-ELb"/>
@@ -2322,7 +2282,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ef0-8C-yHL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ez0-CD-bkc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCp-qD-wSg">
@@ -2332,9 +2292,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="messageLabel" destination="rCp-qD-wSg" id="T81-v3-4T6"/>
                     </connections>
@@ -2377,7 +2336,7 @@
                         <viewControllerLayoutGuide type="bottom" id="14y-Hs-Y9K"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zmR-da-6Xv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_blue" translatesAutoresizingMaskIntoConstraints="NO" id="fYk-fM-bPw">
@@ -2391,12 +2350,9 @@
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="539" width="335" height="39"/>
-                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha o mês e ano" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDg-lM-EMw">
-                                <rect key="frame" x="20" y="28" width="335" height="30"/>
+                                <rect key="frame" x="47.5" y="47" width="280" height="30"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="Gqc-75-V9y"/>
@@ -2418,7 +2374,7 @@
                                 </variation>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEt-D5-eaI" customClass="MonthYearPickerView" customModule="Gastei" customModuleProvider="target">
-                                <rect key="frame" x="30" y="423" width="314" height="203"/>
+                                <rect key="frame" x="30" y="92" width="314" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="pke-uc-1cL"/>
                                     <constraint firstAttribute="width" constant="314" id="vYT-gE-enY"/>
@@ -2441,12 +2397,9 @@
                                 <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="503" width="335" height="21"/>
-                                </variation>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-Dh-qqU" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="66" width="335" height="335"/>
+                                <rect key="frame" x="30.5" y="208.5" width="314" height="272"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="CzE-MN-h8L"/>
                                     <constraint firstAttribute="height" constant="272" id="pNW-QW-ItB"/>
@@ -2484,6 +2437,8 @@
                                 <exclude reference="KEt-D5-eaI"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Z37-Pf-UX6"/>
+                                <exclude reference="p1M-uG-Jbf"/>
                                 <exclude reference="1ab-h8-q0t"/>
                                 <exclude reference="ZzZ-pv-5M0"/>
                                 <exclude reference="Egw-xF-6xF"/>
@@ -2492,8 +2447,6 @@
                                 <exclude reference="fty-Aw-eAA"/>
                                 <exclude reference="EMK-g9-QW7"/>
                                 <exclude reference="ace-Yd-oy8"/>
-                                <exclude reference="Z37-Pf-UX6"/>
-                                <exclude reference="p1M-uG-Jbf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2502,6 +2455,8 @@
                                 <include reference="KEt-D5-eaI"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Z37-Pf-UX6"/>
+                                <include reference="p1M-uG-Jbf"/>
                                 <include reference="1ab-h8-q0t"/>
                                 <include reference="ZzZ-pv-5M0"/>
                                 <include reference="Egw-xF-6xF"/>
@@ -2510,14 +2465,11 @@
                                 <include reference="fty-Aw-eAA"/>
                                 <include reference="EMK-g9-QW7"/>
                                 <include reference="ace-Yd-oy8"/>
-                                <include reference="Z37-Pf-UX6"/>
-                                <include reference="p1M-uG-Jbf"/>
                             </mask>
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Gráfico" image="grafico" id="ma6-dk-5vZ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="background_image" destination="fYk-fM-bPw" id="ZkU-PS-Kz4"/>
                         <outlet property="chartView" destination="VZb-Dh-qqU" id="zIZ-Uk-hIQ"/>
