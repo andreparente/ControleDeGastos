@@ -25,6 +25,7 @@ class LoginCLoudViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginCLoudViewController().actonNotificationSucessGetID), name: "notificationSucessGetId", object: nil)
         dispatch_async(dispatch_get_main_queue(),{
             
             // ------------- FUNCAO QUE PEGA O ID!! -------------
@@ -36,8 +37,6 @@ class LoginCLoudViewController: UIViewController {
                     print("received iCloudID \(userID)")
                     
                     auxID = userID
-                    //defaults.setObject(userID, forKey: "cloudID")
-                    //userLogged.cloudId = userID
                     
                 } else {
                     print("Fetched iCloudID was nil")
@@ -47,14 +46,11 @@ class LoginCLoudViewController: UIViewController {
             // ------------- END OF FUNCTION -------------
             
     })
-        
-        
-    }
+}
  
     
     @IBAction func loginActino(sender: AnyObject) {
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginCLoudViewController().actonNotificationSucessGetID), name: "notificationSucessGetId", object: nil)
         if DAOCloudKit().cloudAvailable() == false{
             let alert=UIAlertController(title:"iCloud não disponível", message: "Você nāo está logado na sua conta do iCloud, por favor, conecte-se antes de usar este aplicativo!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:nil))
