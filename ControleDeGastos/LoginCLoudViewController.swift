@@ -22,7 +22,7 @@ class LoginCLoudViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
+    
     override func viewDidAppear(animated: Bool) {
         
         dispatch_async(dispatch_get_main_queue(),{
@@ -46,30 +46,11 @@ class LoginCLoudViewController: UIViewController {
             
             // ------------- END OF FUNCTION -------------
             
-            if let cloudID = defaults.objectForKey("cloudID")
-            {
-                if(cloudID as? String != auxID) {
-                    
-                    let alert=UIAlertController(title:"Atenção", message: "Você entrou com uma nova conta do iCloud!", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:nil))
-                    
-                    dispatch_async(dispatch_get_main_queue(),{
-                        self.presentViewController(alert,animated: true, completion: nil)
-                    })
-                }
-                
-            }
-            else {
-                if aux8 != 0
-                {
-                self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
-                }
-            }
-        })
+    })
         
         
     }
- */
+ 
     
     @IBAction func loginActino(sender: AnyObject) {
         
