@@ -16,26 +16,13 @@ public var arrayUserRecords: Array<CKRecord> = []
 
 public class User {
     
-    var name: String!
-    var email: String!
-    var password: String!
+
     var cloudId: String!
     var categories: [String] = ["Outros","Alimentação","Transporte"]
     var limiteMes: Double = 0
     var arrayGastos: [CKReference] = []
     public var gastos: [Gasto] = []
     
-    init(name: String, email: String, password: String) {
-        self.name = name
-        self.email = email
-        self.password = password
-    }
-    
-    init(email: String, password: String) {
-        self.email = email
-        self.password = password
-        
-    }
     
     func addCategoriaGasto(categ: String) {
         self.categories.append(categ)

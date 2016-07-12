@@ -11,7 +11,7 @@ import UIKit
 
 var i=0
 
-
+/*
 class LoginViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var errosenhas: UILabel!
@@ -219,3 +219,4 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
     }
 }
+*/

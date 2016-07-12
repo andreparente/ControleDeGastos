@@ -9,7 +9,7 @@
 import UIKit
 
 class LaunchViewController: UIViewController {
-    
+    /*
     override func viewDidLoad() {
         super.viewDidLoad()
         if DAOCloudKit().cloudAvailable() == false{
@@ -54,4 +54,5 @@ class LaunchViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         print("viewWillAppear da launch")
     }
+ */
 }

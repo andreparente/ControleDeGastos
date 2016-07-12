@@ -48,7 +48,7 @@ class DAOCloudKit {
     
     func saveUser(user: User) {
         
-        let recordId = CKRecordID(recordName: user.email)
+        let recordId = CKRecordID(recordName: user.cloudId)
         let record = CKRecord(recordType: "User", recordID: recordId)
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
@@ -70,12 +70,6 @@ class DAOCloudKit {
                     
                     record.setObject(user.cloudId, forKey: "cloudId")
                     
-                    // ------ TIRAR ESSE BLOCO ----------------------
-                    record.setObject(user.name, forKey: "name")
-                    record.setObject(user.email, forKey: "email")
-                    record.setObject(user.password, forKey: "password")
-                    // ---------- FIM DO BLOCO ------------------------
-                    
                     record.setObject(user.categories, forKey: "categories")
                     
                     
@@ -91,7 +85,7 @@ class DAOCloudKit {
     
     func addCategory(user: User) {
         
-        let recordId = CKRecordID(recordName: user.email)
+        let recordId = CKRecordID(recordName: user.cloudId)
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
         
@@ -130,7 +124,7 @@ class DAOCloudKit {
         let privateDatabase = container.privateCloudDatabase
         
         let myRecord = CKRecord(recordType: "Gasto")
-        let recordId = CKRecordID(recordName: user.email)
+        let recordId = CKRecordID(recordName: user.cloudId)
         
         myRecord.setObject(gasto.name, forKey: "name")
         myRecord.setObject(gasto.date, forKey: "data")
@@ -200,7 +194,7 @@ class DAOCloudKit {
     
     func deleteGasto(gastoToDelete: CKReference, user: User, index: Int) {
         
-        let userRecordId = CKRecordID(recordName: user.email)
+        let userRecordId = CKRecordID(recordName: user.cloudId)
         
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
@@ -262,7 +256,7 @@ class DAOCloudKit {
             else {
                 
                 for result in results! {
-                    if(result.valueForKey("email") as? String == user.email) {
+                    if(result.valueForKey("cloudId") as? String == user.cloudId) {
                         
                         
                         //Inicializa o user Logado
@@ -279,7 +273,7 @@ class DAOCloudKit {
             }
         }
     }
-    
+/*
     func fetchUserByEmail(email: String!,password: String!) {
         
         let container = CKContainer.defaultContainer()
@@ -344,11 +338,11 @@ class DAOCloudKit {
         }
         
     }
-    
+    */
     //BUSCA OS GASTOS DE ACORDO COM A PK DO EMAIL DO USER LOGADO
     func fetchGastosFromUser(user: User) {
         
-        let recordId = CKRecordID(recordName: user.email)
+        let recordId = CKRecordID(recordName: user.cloudId)
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
         
@@ -438,7 +432,7 @@ class DAOCloudKit {
     
     func changeLimit(user: User) {
         
-        let recordId = CKRecordID(recordName: user.email)
+        let recordId = CKRecordID(recordName: user.cloudId)
         let container = CKContainer.defaultContainer()
         let privateDatabase = container.privateCloudDatabase
         

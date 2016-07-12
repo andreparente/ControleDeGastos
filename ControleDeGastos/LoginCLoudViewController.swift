@@ -9,7 +9,7 @@
 import UIKit
 
 var auxID: String!
-
+var aux8 = 0
 class LoginCLoudViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -26,11 +26,6 @@ class LoginCLoudViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         dispatch_async(dispatch_get_main_queue(),{
-            
-            
-            
-            
-            
             
             // ------------- FUNCAO QUE PEGA O ID!! -------------
             DAOCloudKit().getId() {
@@ -50,17 +45,10 @@ class LoginCLoudViewController: UIViewController {
             }
             
             // ------------- END OF FUNCTION -------------
-
-            
-            
-            
-            
-            
-            
             
             if let cloudID = defaults.objectForKey("cloudID")
             {
-                if(cloudID as! String != auxID) {
+                if(cloudID as? String != auxID) {
                     
                     let alert=UIAlertController(title:"Atenção", message: "Você entrou com uma nova conta do iCloud!", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler:nil))
@@ -72,8 +60,10 @@ class LoginCLoudViewController: UIViewController {
                 
             }
             else {
-                
+                if aux8 != 0
+                {
                 self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
+                }
             }
         })
         

@@ -8,6 +8,7 @@
 
 import UIKit
 var j=0
+/*
 class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationBarDelegate{
     
     @IBOutlet weak var nome: UITextField!
@@ -196,3 +197,4 @@ class CadastroViewController: UIViewController,UITextFieldDelegate,UINavigationB
         return false
     }
 }
+ */
