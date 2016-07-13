@@ -95,7 +95,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
     //funçao que diz a quantidade de células
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let cellsNumber = gastosGlobal.count
-        return (cellsNumber > 0) ? cellsNumber : 1
+        return (cellsNumber > 0) ? cellsNumber : 0
     }
     
     //funçao que seta as células
@@ -119,6 +119,12 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
             cell.labelValor.text = "R$ " + String(gastosGlobal[indexPath.row].value)
             let arrayData = gastosGlobal[indexPath.row].date.componentsSeparatedByString("-")
             cell.labelData.text = "\(arrayData[2])-\(arrayData[1])-\(arrayData[0])"
+            
+            print("CATEGORIA DO GASTO")
+            print(cell.labelCat.text)
+            print("VALOR DO GASTO")
+            print(cell.labelValor.text)
+
             /* if (eamarela)
              {
              cell.backgroundColor = UIColor.clearColor()
@@ -129,6 +135,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
                 cell.backgroundColor = UIColor.clearColor()
             }
         } else {
+            print("entrou no sem gastos!")
             cell.hideInfo(true)
             cell.labelSemGastos.text = "Nenhum gasto para exibir!"
             cell.labelSemGastos.font = UIFont(name: "Tsukushi A Round Gothic", size: 16)
