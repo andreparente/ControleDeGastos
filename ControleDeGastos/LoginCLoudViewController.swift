@@ -91,7 +91,6 @@ class LoginCLoudViewController: UIViewController {
     
     func actonNotificationSucessGetID()
     {
-        print(auxID)
         if let cloudID = defaults.objectForKey("cloudId")
         {
             if(cloudID as! String != auxID) {

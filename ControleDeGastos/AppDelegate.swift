@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WCSessionDelegate {
     var window: UIWindow?
     var session: WCSession!
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
 
         let notificationSettings = UIUserNotificationSettings(forTypes:
             UIUserNotificationType.Alert, categories: nil)
@@ -32,8 +33,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WCSessionDelegate {
             transfer.cancel()
         }
         
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        if defaults.objectForKey("cloudId") != nil
+        {
+        
+                userLogged = User(cloudId: defaults.objectForKey("cloudId") as! String)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let initialViewController = storyboard.instantiateViewControllerWithIdentifier("MainTabBarController") as! UITabBarController
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            
+        }
+        else {
+            
+            defaults.setObject(auxID,forKey: "cloudId")
+            userLogged = User(cloudId: auxID)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") 
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
