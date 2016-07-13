@@ -111,6 +111,9 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         //cell.backgroundColor = corAzul
         
         cell.backgroundColor = UIColor.clearColor()
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        cell.selectedBackgroundView = backgroundView
         
         if (cellsNumber > 0) {
             cell.hideInfo(false)
@@ -124,17 +127,8 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
             print(cell.labelCat.text)
             print("VALOR DO GASTO")
             print(cell.labelValor.text)
-
-            /* if (eamarela)
-             {
-             cell.backgroundColor = UIColor.clearColor()
-             }
-             */
-            if (evermelha)
-            {
-                cell.backgroundColor = UIColor.clearColor()
-            }
-        } else {
+        }
+        else {
             print("entrou no sem gastos!")
             cell.hideInfo(true)
             cell.labelSemGastos.text = "Nenhum gasto para exibir!"
