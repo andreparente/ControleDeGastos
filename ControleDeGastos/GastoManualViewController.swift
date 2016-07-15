@@ -257,7 +257,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             
             if(nome == nil || nome!.isEmpty) {
                 nome = "Gasto do dia \(dataStr)"
-                nomeGasto.text = ""/*"Gasto do dia \(dataStr)"*/
+                nomeGasto.text = "Gasto do dia \(dataStr)"
             }
             for val in 0...j - 1
             {
