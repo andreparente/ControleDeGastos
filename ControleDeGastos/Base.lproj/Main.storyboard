@@ -1658,15 +1658,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="82.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome gasto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
-                                                    <rect key="frame" x="8" y="33" width="100" height="21"/>
-                                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="8" y="8" width="93" height="20"/>
-                                                    </variation>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-6L-I0z">
                                                     <rect key="frame" x="8" y="8" width="201" height="24"/>
                                                     <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
@@ -1699,9 +1690,12 @@
                                                     <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="8" y="54" width="74" height="20"/>
-                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome gasto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgG-ZP-eSQ">
+                                                    <rect key="frame" x="8" y="33" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" name="TsukuARdGothic-Bold" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -1717,13 +1711,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="wtb-6L-I0z" secondAttribute="bottom" id="s6z-Bm-hAo"/>
                                             </constraints>
                                             <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="EgG-ZP-eSQ"/>
-                                                    <exclude reference="wtb-6L-I0z"/>
-                                                    <exclude reference="uOf-pn-S2T"/>
-                                                    <exclude reference="1sb-rV-YPs"/>
-                                                    <exclude reference="Pp0-xu-8Uh"/>
-                                                </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="WWG-yv-eoq"/>
                                                     <exclude reference="s6z-Bm-hAo"/>
@@ -1739,11 +1726,11 @@
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
-                                                    <include reference="EgG-ZP-eSQ"/>
                                                     <include reference="wtb-6L-I0z"/>
                                                     <include reference="uOf-pn-S2T"/>
                                                     <include reference="1sb-rV-YPs"/>
                                                     <include reference="Pp0-xu-8Uh"/>
+                                                    <include reference="EgG-ZP-eSQ"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="WWG-yv-eoq"/>
