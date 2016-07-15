@@ -2400,7 +2400,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4x5-HQ-jd8">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7e0-v9-ANp" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7e0-v9-ANp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" barStyle="black" id="K4w-wg-EJq">
                         <autoresizingMask key="autoresizingMask"/>
