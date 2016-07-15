@@ -28,7 +28,7 @@ class LoginCLoudViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginCLoudViewController().actonNotificationSucessGetID), name: "notificationSucessGetId", object: nil)
         dispatch_async(dispatch_get_main_queue(),{
             
-            // ------------- FUNCAO QUE PEGA O ID!! -------------
+        /*    // ------------- FUNCAO QUE PEGA O ID!! -------------
             DAOCloudKit().getId() {
                 
                 recordID, error in
@@ -43,7 +43,7 @@ class LoginCLoudViewController: UIViewController {
                 }
             }
             
-            // ------------- END OF FUNCTION -------------
+            // ------------- END OF FUNCTION -------------*/
             
     })
 }

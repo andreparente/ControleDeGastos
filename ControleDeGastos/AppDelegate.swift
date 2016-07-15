@@ -35,8 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WCSessionDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        if defaults.objectForKey("cloudId") != nil
-        {
+        if defaults.objectForKey("cloudId") != nil {
         
                 userLogged = User(cloudId: defaults.objectForKey("cloudId") as! String)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -45,16 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WCSessionDelegate {
                 self.window?.makeKeyAndVisible()
             
         }
+            
         else {
             
-            defaults.setObject(auxID,forKey: "cloudId")
-            userLogged = User(cloudId: auxID)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") 
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         }
-        
+
         return true
     }
     

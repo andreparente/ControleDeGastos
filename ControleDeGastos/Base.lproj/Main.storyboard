@@ -440,7 +440,7 @@
         <!--LoginC Loud View Controller-->
         <scene sceneID="OdE-Xu-Yw2">
             <objects>
-                <viewController id="bxI-5N-5Hg" customClass="LoginCLoudViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bxI-5N-5Hg" customClass="LoginCLoudViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hgj-Zp-afZ"/>
                         <viewControllerLayoutGuide type="bottom" id="oYc-jH-KRB"/>
