@@ -52,7 +52,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         
         
         
-        tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
+       // tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -95,7 +95,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
     //funçao que diz a quantidade de células
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let cellsNumber = gastosGlobal.count
-        return (cellsNumber > 0) ? cellsNumber : 0
+        return (cellsNumber > 0) ? cellsNumber : 1
     }
     
     //funçao que seta as células
@@ -103,17 +103,15 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         
         let cell =
             self.tableView.dequeueReusableCellWithIdentifier(
-                "TableViewCell", forIndexPath: indexPath)
+                "cell", forIndexPath: indexPath)
                 as! TableViewCell
         let cellsNumber = gastosGlobal.count
         
-        //cell.backgroundColor = UIColor(red: 20/255, green: 71/255, blue: 103/255, alpha: 1)
-        //cell.backgroundColor = corAzul
         
         cell.backgroundColor = UIColor.clearColor()
-        let backgroundView = UIView()
+        /*let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-        cell.selectedBackgroundView = backgroundView
+        cell.selectedBackgroundView = backgroundView*/
         
         if (cellsNumber > 0) {
             cell.hideInfo(false)
@@ -123,9 +121,8 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
             let arrayData = gastosGlobal[indexPath.row].date.componentsSeparatedByString("-")
             cell.labelData.text = "\(arrayData[2])-\(arrayData[1])-\(arrayData[0])"
             
-            print("CATEGORIA DO GASTO")
+            print(indexPath.row)
             print(cell.labelCat.text)
-            print("VALOR DO GASTO")
             print(cell.labelValor.text)
         }
         else {
