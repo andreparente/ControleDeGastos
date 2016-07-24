@@ -289,6 +289,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 arrayValor.append(String(userLogged.getGastosHoje()[i].value))
                 i+=1
             }
+            
             /*   let item = ["categories": arrayCategories, "valor": arrayValor,"total":total]
              self.items.append(item)
              if let newItems = NSUserDefaults.standardUserDefaults().objectForKey("items") as? [NSDictionary] {
@@ -297,6 +298,8 @@ class MainViewController: UIViewController,WCSessionDelegate {
              print(self.items)
              WCSession.defaultSession().transferUserInfo(item)
              */
+            
+            
             if (WCSession.isSupported()) {
                 let session = WCSession.defaultSession()
                 session.delegate = self

@@ -221,6 +221,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             }
         }))
         executar = false
+     
         self.presentViewController(alert,animated: true, completion: nil)
     }
     
@@ -268,6 +269,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             }
 
             let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
+            print(gasto.date)
             DAOCloudKit().addGasto(gasto,user: userLogged)
             // faz o segue
             var arrayCategories = [String]()
