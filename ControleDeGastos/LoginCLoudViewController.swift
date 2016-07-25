@@ -109,5 +109,9 @@ class LoginCLoudViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    @IBAction func pularLoginAction(sender: UIButton) {
+        defaults.setBool(false, forKey: "Cloud")
+        self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
+    }
     
 }

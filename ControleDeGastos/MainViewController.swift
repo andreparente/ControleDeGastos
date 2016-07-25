@@ -24,7 +24,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
     @IBOutlet weak var gastos: UILabel!
     @IBOutlet weak var background_image: UIImageView!
     
-
+    
     var items: [NSDictionary] = []
     var available: Double!
     var valortotal: Double = 0.0
@@ -49,13 +49,23 @@ class MainViewController: UIViewController,WCSessionDelegate {
         //background_image.hidden = true
         self.tabBarController?.tabBar.hidden = true
         
-        DAOCloudKit().fetchCategoriesForUser(userLogged)
-        DAOCloudKit().fetchGastosFromUser(userLogged)
+        if defaults.boolForKey("Cloud") {
+            
+            DAOCloudKit().fetchCategoriesForUser(userLogged)
+            DAOCloudKit().fetchGastosFromUser(userLogged)
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorInternet), name: "notificationErrorInternet", object: nil)
+            
+        }
+        else {
+            
+            //CoreDataOnly
+            userLogged = User(cloudId: "notCloud")
+            DAOLocal().loadGastos()
+        }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorInternet), name: "notificationErrorInternet", object: nil)
     }
     
     func printaLimite(usuario: User) {
@@ -83,23 +93,23 @@ class MainViewController: UIViewController,WCSessionDelegate {
             notifyAlarm.alertBody = "Seu limite mensal é R$\(userLogged.limiteMes) e a sua previsão de gastos para o mês é : R$\(userLogged.previsaoGastosMes(userLogged).roundToPlaces(2))"
             app.scheduleLocalNotification(notifyAlarm)
         }
-       /* else{
-            if userLogged.abaixoDaMedia(userLogged)
-            {
-                let alertTime = NSDate().dateByAddingTimeInterval(60)
-                
-                let notifyAlarm = UILocalNotification()
-                
-                notifyAlarm.fireDate = alertTime
-                notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
-                notifyAlarm.soundName = UILocalNotificationDefaultSoundName
-                notifyAlarm.category = "Aviso_Category"
-                notifyAlarm.alertTitle = "Atenção"
-                notifyAlarm.alertBody = "Você está gastando muito hoje.Previsão para o mês: R$\(userLogged.previsaogastosmes(userLogged).roundToPlaces(2)))"
-                app.scheduleLocalNotification(notifyAlarm)
-            }
-        }
-        */
+        /* else{
+         if userLogged.abaixoDaMedia(userLogged)
+         {
+         let alertTime = NSDate().dateByAddingTimeInterval(60)
+         
+         let notifyAlarm = UILocalNotification()
+         
+         notifyAlarm.fireDate = alertTime
+         notifyAlarm.timeZone = NSTimeZone.defaultTimeZone()
+         notifyAlarm.soundName = UILocalNotificationDefaultSoundName
+         notifyAlarm.category = "Aviso_Category"
+         notifyAlarm.alertTitle = "Atenção"
+         notifyAlarm.alertBody = "Você está gastando muito hoje.Previsão para o mês: R$\(userLogged.previsaogastosmes(userLogged).roundToPlaces(2)))"
+         app.scheduleLocalNotification(notifyAlarm)
+         }
+         }
+         */
         
     }
     
@@ -143,20 +153,23 @@ class MainViewController: UIViewController,WCSessionDelegate {
         //  setNotification()
         
         print(executar)
-        if(flagLogout) {
-            
-            print("entrou na viewWillAppear, flagLogout é true")
-            self.view.hidden = true
-            dismissViewControllerAnimated(false, completion: nil)
-        }
-            
-        else {
-            if(executar == true)
-            {
+        /* if(flagLogout) {
+         
+         print("entrou na viewWillAppear, flagLogout é true")
+         self.view.hidden = true
+         dismissViewControllerAnimated(false, completion: nil)
+         }*/
+        
+            if(executar == true) {
                 print("Executou appear")
                 setView()
             }
-        }
+        
+        
+    }
+    
+    func setViewCoreData() {
+        //utilizar CoreData na porra toda
     }
     
     func setView()
@@ -243,15 +256,15 @@ class MainViewController: UIViewController,WCSessionDelegate {
                             evermelha = true
                             eazul = false
                         }
-                    
-                    else
-                    {
-                        self.totaldisponivel.text = "Você estourou seu limite \n mensal por R$\(self.valorTotalMes - userLogged.limiteMes)"
-                        // eamarela = false
-                        evermelha = true
-                        eazul = false
-                        executar = true
-                    }
+                            
+                        else
+                        {
+                            self.totaldisponivel.text = "Você estourou seu limite \n mensal por R$\(self.valorTotalMes - userLogged.limiteMes)"
+                            // eamarela = false
+                            evermelha = true
+                            eazul = false
+                            executar = true
+                        }
                     }
                 }
                 

@@ -14,7 +14,7 @@ public var gastosCoreData: [NSManagedObject]!
 
 public class DAOLocal {
     
-    func salvarDadosGasto(gasto: Gasto) {
+    func salvarGasto(gasto: Gasto) {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
