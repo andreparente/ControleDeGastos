@@ -62,7 +62,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         else {
             
             //CoreDataOnly
-            userLogged = User(cloudId: "notCloud")
+           // userLogged = User(cloudId: "notCloud")
             DAOLocal().loadGastos()
         }
         
@@ -170,14 +170,133 @@ class MainViewController: UIViewController,WCSessionDelegate {
     
     func setViewCoreData() {
         //utilizar CoreData na porra toda
+        executar = false
+        var gastosmes:[Gasto]!
+        let quickSorter = QuickSorterGasto()
+        quickSorter.v = gastosGlobal
+        quickSorter.a = userLogged.arrayGastos
+        quickSorter.callQuickSort("Data", decrescente: true)
+        gastosGlobal = quickSorter.v
+        self.valorTotalMes = 0
+        self.valortotal = 0
+         dispatch_async(dispatch_get_main_queue()) {
+            self.gastei.hidden = false
+            self.limite.hidden = false
+            self.totaldisponivel.hidden = false
+            self.totalgastos.hidden = false
+            self.settingsbutton.hidden = false
+            self.tabBarController?.tabBar.hidden = false
+            self.gastos.hidden = false
+            let hoje = NSDate()
+            let components = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: hoje)
+            let mesAtual = components.month
+            let anoAtual = components.year
+            if(defaults.doubleForKey("limite") != 0)
+            {
+                self.available = defaults.doubleForKey("limite") - self.valorTotalMes
+                if(self.available >  0 && self.available >= (0.2 * defaults.doubleForKey("limite")) )
+                {
+                    
+                    self.totaldisponivel.text = "Você ainda tem R$ \(self.available) \n para gastar nesse mês"
+                    // eamarela = false
+                    evermelha = false
+                    eazul = true
+                }
+                else
+                {
+                    if (self.available > 0 && self.available <= (0.2 * defaults.doubleForKey("limite")) )
+                    {
+                        self.totaldisponivel.text = "Atenção! Você só tem mais \n R$ \(self.available) para gastar \n nesse mês"
+                        //  eamarela = true
+                        evermelha = false
+                        eazul = true
+                    }
+                    else
+                    {
+                        if self.available == 0
+                        {
+                            self.totaldisponivel.text = "Você atingiu seu limite mensal!"
+                            // eamarela = false
+                            evermelha = true
+                            eazul = false
+                        }
+                            
+                        else
+                        {
+                            self.totaldisponivel.text = "Você estourou seu limite \n mensal por R$\(self.valorTotalMes - userLogged.limiteMes)"
+                            // eamarela = false
+                            evermelha = true
+                            eazul = false
+                            executar = true
+                        }
+                    }
+                }
+                
+                if (evermelha)
+                {
+                    //self.background_image.image = UIImage(named: "background_red.png")
+                    self.gastei.setImage(UIImage(named: "add_red.png"), forState: .Normal)
+                    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+                }
+                if (eazul)
+                {
+                    //self.background_image.image = UIImage(named: "background_blue.png")
+                    self.gastei.setImage(UIImage(named: "add_blue.png"), forState: .Normal)
+                    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+                }
+                self.totaldisponivel.hidden=false
+            }
+            else
+            {
+                self.totaldisponivel.hidden=true
+                //self.background_image.image = UIImage(named: "background_blue.png")
+                self.gastei.setImage(UIImage(named: "add_blue.png"), forState: .Normal)
+                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+            }
+            var arrayCategories = [String]()
+            var arrayValor = [String]()
+            var total = [String]()
+            
+            total.append(String(self.valorTotalMes))
+/*Isso aqui tem que ver melhor
+             var i = 0
+             for _ in userLogged.getGastosHoje()
+             {
+             arrayCategories.append(userLogged.getGastosHoje()[i].category)
+             arrayValor.append(String(userLogged.getGastosHoje()[i].value))
+             i+=1
+             }
+ 
+             let item = ["categories": arrayCategories, "valor": arrayValor,"total":total]
+             self.items.append(item)
+             if let newItems = NSUserDefaults.standardUserDefaults().objectForKey("items") as? [NSDictionary] {
+             self.items = newItems
+             }
+             print(self.items)
+ 
+             WCSession.defaultSession().transferUserInfo(item)
+ */
+ 
+ 
+            if (WCSession.isSupported()) {
+                let session = WCSession.defaultSession()
+                session.delegate = self
+                session.activateSession()
+                session.sendMessage(["categorias":[arrayCategories,arrayValor,total]], replyHandler: {(handler) -> Void in print(handler)}, errorHandler: {(error) -> Void in print(#file,error)})
+            }
+            else
+            {
+                print("Nao está conectado ao watch")
+            }
+        }
     }
-    
+ 
     func setView()
     {
         executar = false
         var gastosmes:[Gasto]!
         gastosGlobal = userLogged.gastos
-        
+ 
         let quickSorter = QuickSorterGasto()
         quickSorter.v = gastosGlobal
         quickSorter.a = userLogged.arrayGastos
@@ -190,8 +309,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             print(gasto.name)
             print(userLogged.gastos[i].name)
             i += 1
-        }
-        
+            
         
         self.valorTotalMes = 0
         self.valortotal = 0
@@ -205,9 +323,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
             self.totalgastos.hidden = false
             self.settingsbutton.hidden = false
             self.tabBarController?.tabBar.hidden = false
-            //self.RS.hidden = false
             self.gastos.hidden = false
-            //self.background_image.hidden = false
             self.act.stopAnimating()
             self.printaLimite(userLogged)
             let hoje = NSDate()
@@ -324,5 +440,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
                 print("Nao está conectado ao watch")
             }
         }
+        }
     }
-}
+    }
