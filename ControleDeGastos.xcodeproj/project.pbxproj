@@ -42,7 +42,6 @@
 		9CA712851D1ACA0C0074E21C /* InterfaceControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */; };
 		9CA7128A1D1ACA280074E21C /* MyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712891D1ACA280074E21C /* MyRow.swift */; };
 		9CA712931D1AE4D00074E21C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712921D1AE4D00074E21C /* InterfaceController.swift */; };
-		9CC001381D593525001C0A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001371D593525001C0A7C /* AppDelegate.swift */; };
 		9CC0013B1D593555001C0A7C /* GasteiLocal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001391D593555001C0A7C /* GasteiLocal.xcdatamodeld */; };
 		9CC0013E1D59356B001C0A7C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0013C1D59356B001C0A7C /* Model.xcdatamodeld */; };
 		9CC0014D1D593ADA001C0A7C /* LoginCLoudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0014C1D593ADA001C0A7C /* LoginCLoudViewController.swift */; };
@@ -51,6 +50,7 @@
 		9CC001561D593B1A001C0A7C /* Filtros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001551D593B1A001C0A7C /* Filtros.swift */; };
 		9CC001581D593B2C001C0A7C /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001571D593B2C001C0A7C /* Gasto.swift */; };
 		9CC0015A1D593B39001C0A7C /* DAOLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001591D593B39001C0A7C /* DAOLocal.swift */; };
+		9CC0015D1D593F13001C0A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0015C1D593F13001C0A7C /* AppDelegate.swift */; };
 		E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */; };
 		E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */; };
 		E5BD5CB11CB353C300481089 /* quickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CB01CB353C300481089 /* quickSort.swift */; };
@@ -186,7 +186,6 @@
 		9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceControllerTable.swift; sourceTree = "<group>"; };
 		9CA712891D1ACA280074E21C /* MyRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRow.swift; sourceTree = "<group>"; };
 		9CA712921D1AE4D00074E21C /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		9CC001371D593525001C0A7C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../.Trash/AppDelegate.swift; sourceTree = "<group>"; };
 		9CC0013A1D593555001C0A7C /* GasteiLocal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GasteiLocal.xcdatamodel; sourceTree = "<group>"; };
 		9CC0013D1D59356B001C0A7C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9CC0014C1D593ADA001C0A7C /* LoginCLoudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCLoudViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +194,7 @@
 		9CC001551D593B1A001C0A7C /* Filtros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
 		9CC001571D593B2C001C0A7C /* Gasto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gasto.swift; sourceTree = "<group>"; };
 		9CC001591D593B39001C0A7C /* DAOLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOLocal.swift; sourceTree = "<group>"; };
+		9CC0015C1D593F13001C0A7C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrarViewController.swift; sourceTree = "<group>"; };
 		E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdenarViewController.swift; sourceTree = "<group>"; };
 		E5BD5CB01CB353C300481089 /* quickSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quickSort.swift; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 		8A71E0151C9C2F6B00C055F8 /* ControleDeGastos */ = {
 			isa = PBXGroup;
 			children = (
-				9CC001371D593525001C0A7C /* AppDelegate.swift */,
+				9CC0015C1D593F13001C0A7C /* AppDelegate.swift */,
 				771E225C1D2157BB00D83A36 /* TsukushiAMaruGothic.ttc */,
 				771E225D1D2157BB00D83A36 /* TsukushiBMaruGothic.ttc */,
 				9CC001391D593555001C0A7C /* GasteiLocal.xcdatamodeld */,
@@ -602,6 +602,7 @@
 				8A54D3C31CA2CBA700E63645 /* LoginViewController.swift in Sources */,
 				9CC001561D593B1A001C0A7C /* Filtros.swift in Sources */,
 				8A1756DF1CFF766C00CC0535 /* SimplePList.swift in Sources */,
+				9CC0015D1D593F13001C0A7C /* AppDelegate.swift in Sources */,
 				9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */,
 				9CC0013E1D59356B001C0A7C /* Model.xcdatamodeld in Sources */,
 				9CC001581D593B2C001C0A7C /* Gasto.swift in Sources */,
@@ -610,7 +611,6 @@
 				9CC001521D593AF7001C0A7C /* MainViewController.swift in Sources */,
 				E5BD5CB11CB353C300481089 /* quickSort.swift in Sources */,
 				9CC0014D1D593ADA001C0A7C /* LoginCLoudViewController.swift in Sources */,
-				9CC001381D593525001C0A7C /* AppDelegate.swift in Sources */,
 				9C047D721CB2A1D40099A13C /* extensions.swift in Sources */,
 				8A1AFD271CB07DF000382D1B /* TableViewCell.swift in Sources */,
 				9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */,
