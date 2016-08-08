@@ -36,11 +36,11 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         categoria = "Outros"
         executar = false
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-
+        
         if (evermelha)
         {
-           view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
-
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
+            
         }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GastoManualViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -77,7 +77,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         
         valor.delegate = self
         
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         if valortotal != nil
         {
@@ -89,7 +89,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         {
             dataStr = dataQR
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.dateFormat = "dd/MM/yyyy"
             let datefromstring = dateFormatter.dateFromString(dataQR)
             datePicker.date = datefromstring!
             
@@ -97,9 +97,9 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         else
         {
             let components = self.calendar.components([.Day , .Month , .Year], fromDate: self.dataNs)
-            self.dataStr = "\(components.year)-\(components.month)-\(components.day)"
+            self.dataStr = "\(components.day)/\(components.month)/\(components.year)"
         }
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GastoManualViewController.actOnNotificationSaveError), name: "notificationSaveError", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GastoManualViewController.actOnNotificationSaveError), name: "notificationSaveError", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GastoManualViewController.actOnNotificationSaveSuccess), name: "notificationSaveSuccess", object: nil)
         
     }
@@ -113,11 +113,14 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         alert.addAction(UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alert,animated: true, completion: nil)
     }
-   func  actOnNotificationSaveSuccess()
-   {
-        userLogged.addGasto(Gasto(nome: nomeGasto.text!, categoria: self.categoria, valor: (Double(valor.text!)?.roundToPlaces(2))!, data: self.dataStr))
-     executar = true
-     self.dismissViewControllerAnimated(true, completion: nil)
+    func  actOnNotificationSaveSuccess() {
+       
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let data = dateFormatter.dateFromString(self.dataStr)
+        userLogged.addGasto(Gasto(nome: nomeGasto.text!, categoria: self.categoria, valor: (Double(valor.text!)?.roundToPlaces(2))!, data: data!))
+        executar = true
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     func btn_clicked(sender: UIBarButtonItem) {
         executar = false
@@ -170,19 +173,24 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
     
     @IBAction func datePickerChanged(sender: AnyObject) {
         dataNs = datePicker.date
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         dataQR = dateFormatter.stringFromDate(dataNs)
-        let dataaux = dataQR.stringByReplacingOccurrencesOfString("/", withString: "-")
-        let fullNameArr = dataaux.componentsSeparatedByString("-")
-        var preferredLanguage = NSLocale.preferredLanguages()[0] as String
-        var stringfinal = String()
+       // let dataaux = dataQR.stringByReplacingOccurrencesOfString("/", withString: "/")
+//        let fullNameArr = dataQR.componentsSeparatedByString("/")
+//        var preferredLanguage = NSLocale.preferredLanguages()[0] as String
+        print(datePicker.date)
+        print(dataQR)
+        dataStr = dataQR
+       /* var stringfinal = String()
         if preferredLanguage == "pt-BR"
         {
-        stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [1] + "-" + fullNameArr[0]
+            stringfinal =  fullNameArr[0] + "/" + fullNameArr [1] + "/" + fullNameArr[2]
         }
         else{
-        stringfinal = "20" + fullNameArr[2] + "-" + fullNameArr [0] + "-" + fullNameArr[1]
+            stringfinal = fullNameArr[1] + "/" + fullNameArr [0] + "/" + "20" + fullNameArr[2]
         }
-        dataStr = stringfinal
+        dataStr = stringfinal*/
     }
     
     @IBAction func novacategoria(sender: UIButton) {
@@ -207,10 +215,13 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                 // adiciona na RAM
                 userLogged.addCategoriaGasto(textField.text!)
                 
+                //adiciona no NSUserDefaults
+                defaults.setObject(userLogged.categories, forKey: "categories")
+                
                 // adiciona no cloud
                 dispatch_async(dispatch_get_main_queue(),{
                     
-                    DAOCloudKit().addCategory(userLogged)
+                    //            DAOCloudKit().addCategory(userLogged)
                 })
                 
                 // atualiza label de categoria
@@ -221,7 +232,7 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             }
         }))
         executar = false
-     
+        
         self.presentViewController(alert,animated: true, completion: nil)
     }
     
@@ -257,8 +268,8 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
         } else {
             
             if(nome == nil || nome!.isEmpty) {
-                nome = "Gasto do dia \(dataStr)"
-                nomeGasto.text = "Gasto do dia \(dataStr)"
+                nome = ""
+                nomeGasto.text = ""
             }
             for val in 0...j - 1
             {
@@ -267,10 +278,18 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
                     characters2[val] = "."
                 }
             }
-
-            let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: self.dataStr)
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            print(self.dataStr)
+            let data = dateFormatter.dateFromString(self.dataStr)
+            print( "data a ser adicionada!! :::::::::  ",data )
+            let gasto = Gasto(nome: nome!, categoria: self.categoria, valor: valorgasto!, data: data!)
             print(gasto.date)
-            DAOCloudKit().addGasto(gasto,user: userLogged)
+            //     DAOCloudKit().addGasto(gasto,user: userLogged)
+            
+            DAOLocal().salvarGasto(gasto)
+            dismissViewControllerAnimated(true, completion: nil)
             // faz o segue
             var arrayCategories = [String]()
             var arrayValor = [String]()
@@ -291,12 +310,12 @@ class GastoManualViewController: UIViewController, UIPickerViewDelegate,UIPicker
             {
                 print("Nao está conectado ao watch")
             }
-           /*  let complicationServer = CLKComplicationServer.sharedInstance()
-            for complication in complicationServer.activeComplications {
-                complicationServer.reloadTimelineForComplication(complication)
-            }
-            */
-          
+            /*  let complicationServer = CLKComplicationServer.sharedInstance()
+             for complication in complicationServer.activeComplications {
+             complicationServer.reloadTimelineForComplication(complication)
+             }
+             */
+            
         }
     }
 }

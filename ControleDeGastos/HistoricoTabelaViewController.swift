@@ -114,12 +114,17 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         cell.selectedBackgroundView = backgroundView*/
         
         if (cellsNumber > 0) {
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            
             cell.hideInfo(false)
             cell.labelNomeGasto.text = "\(gastosGlobal[indexPath.row].name!)"
             cell.labelCat.text = "\(gastosGlobal[indexPath.row].category)"
             cell.labelValor.text = "R$ " + String(gastosGlobal[indexPath.row].value)
-            let arrayData = gastosGlobal[indexPath.row].date.componentsSeparatedByString("-")
-            cell.labelData.text = "\(arrayData[2])-\(arrayData[1])-\(arrayData[0])"
+            
+            //let arrayData = dateFormatter.stringFromDate(gastosGlobal[indexPath.row].date).componentsSeparatedByString("/")
+            cell.labelData.text = dateFormatter.stringFromDate(gastosGlobal[indexPath.row].date)
             
             print(indexPath.row)
             print(cell.labelCat.text)
@@ -172,7 +177,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
                let gasto = gastosGlobal[indexPath.row]
                 if let index = userLogged.gastos.indexOf(gasto) {
                     
-                    DAOCloudKit().deleteGasto(userLogged.arrayGastos[index], user: userLogged,index: index)
+              //      DAOCloudKit().deleteGasto(userLogged.arrayGastos[index], user: userLogged,index: index)
                     gastosGlobal.removeAtIndex(index)
                     userLogged.gastos.removeAtIndex(index)
                     tableView.reloadData()
@@ -180,7 +185,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
                 }
             }
             else {
-                DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged,index: indexPath.row)
+           //     DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged,index: indexPath.row)
                 gastosGlobal.removeAtIndex(indexPath.row)
                 userLogged.gastos = gastosGlobal
                 tableView.reloadData()

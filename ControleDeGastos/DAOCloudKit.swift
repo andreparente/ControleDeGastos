@@ -389,7 +389,7 @@ class DAOCloudKit {
                             for (_, result) in records! {
                                 
                                 userLogged.arrayGastos.append(CKReference(recordID: result.recordID, action: .None))
-                                userLogged.gastos.append(Gasto(nome: result.valueForKey("name") as! String, categoria: result.valueForKey("category") as! String, valor: result.valueForKey("value") as! Double, data: result.valueForKey("data") as! String))
+                                userLogged.gastos.append(Gasto(nome: result.valueForKey("name") as! String, categoria: result.valueForKey("category") as! String, valor: result.valueForKey("value") as! Double, data: result.valueForKey("data") as! NSDate))
                             }
                             
                             NSNotificationCenter.defaultCenter().postNotificationName("notificationSuccessLoadUser", object: nil)

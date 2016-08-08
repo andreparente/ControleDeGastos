@@ -9,25 +9,20 @@
 /* Begin PBXBuildFile section */
 		771E225E1D2157BB00D83A36 /* TsukushiAMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E225C1D2157BB00D83A36 /* TsukushiAMaruGothic.ttc */; };
 		771E225F1D2157BC00D83A36 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 771E225D1D2157BB00D83A36 /* TsukushiBMaruGothic.ttc */; };
-		8A0D8C0F1D2EB92100C8BCB0 /* LoginCLoudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D8C0E1D2EB92100C8BCB0 /* LoginCLoudViewController.swift */; };
 		8A1756D61CFF63D500CC0535 /* DAOCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */; };
 		8A1756D91CFF63F000CC0535 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1756D81CFF63F000CC0535 /* CloudKit.framework */; };
-		8A1756DB1CFF65BE00CC0535 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756DA1CFF65BE00CC0535 /* User.swift */; };
 		8A1756DF1CFF766C00CC0535 /* SimplePList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756DE1CFF766C00CC0535 /* SimplePList.swift */; };
 		8A1AFCFF1CAACC7400382D1B /* GastoManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3CB1CA2CCDF00E63645 /* GastoManualViewController.swift */; };
 		8A1AFD271CB07DF000382D1B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1AFD261CB07DF000382D1B /* TableViewCell.swift */; };
 		8A54D3C31CA2CBA700E63645 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3C21CA2CBA700E63645 /* LoginViewController.swift */; };
-		8A54D3C81CA2CC5B00E63645 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3C71CA2CC5B00E63645 /* MainViewController.swift */; };
 		8A54D3CA1CA2CCCF00E63645 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3C91CA2CCCF00E63645 /* QRCodeViewController.swift */; };
 		8A54D3CE1CA2CCFC00E63645 /* GraficoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */; };
 		8A54D3D01CA2CF7200E63645 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */; };
 		8A54D3D21CA2CFD100E63645 /* HistoricoTabelaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */; };
 		8A54D3D61CA3157A00E63645 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54D3D51CA3157A00E63645 /* Classes.swift */; };
-		8A71E0171C9C2F6B00C055F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */; };
 		8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01A1C9C2F6B00C055F8 /* Main.storyboard */; };
 		8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */; };
 		8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01F1C9C2F6B00C055F8 /* LaunchScreen.storyboard */; };
-		8ABDAF211D44511500DCD632 /* DAOLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDAF201D44511500DCD632 /* DAOLocal.swift */; };
 		8ABDAF271D44742D00DCD632 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDAF251D44742D00DCD632 /* Model.xcdatamodeld */; };
 		9C047D721CB2A1D40099A13C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C047D711CB2A1D40099A13C /* extensions.swift */; };
 		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
@@ -46,12 +41,18 @@
 		9CA712791D1990070074E21C /* User.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CA712781D1990070074E21C /* User.plist */; };
 		9CA712851D1ACA0C0074E21C /* InterfaceControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */; };
 		9CA7128A1D1ACA280074E21C /* MyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712891D1ACA280074E21C /* MyRow.swift */; };
-		9CA7128B1D1ACF700074E21C /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756E01D005BDF00CC0535 /* Gasto.swift */; };
-		9CA712901D1AD9EF0074E21C /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1756E01D005BDF00CC0535 /* Gasto.swift */; };
 		9CA712931D1AE4D00074E21C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA712921D1AE4D00074E21C /* InterfaceController.swift */; };
+		9CC001381D593525001C0A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001371D593525001C0A7C /* AppDelegate.swift */; };
+		9CC0013B1D593555001C0A7C /* GasteiLocal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001391D593555001C0A7C /* GasteiLocal.xcdatamodeld */; };
+		9CC0013E1D59356B001C0A7C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0013C1D59356B001C0A7C /* Model.xcdatamodeld */; };
+		9CC0014D1D593ADA001C0A7C /* LoginCLoudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0014C1D593ADA001C0A7C /* LoginCLoudViewController.swift */; };
+		9CC001521D593AF7001C0A7C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001511D593AF7001C0A7C /* MainViewController.swift */; };
+		9CC001541D593B0A001C0A7C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001531D593B0A001C0A7C /* User.swift */; };
+		9CC001561D593B1A001C0A7C /* Filtros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001551D593B1A001C0A7C /* Filtros.swift */; };
+		9CC001581D593B2C001C0A7C /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001571D593B2C001C0A7C /* Gasto.swift */; };
+		9CC0015A1D593B39001C0A7C /* DAOLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC001591D593B39001C0A7C /* DAOLocal.swift */; };
 		E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */; };
 		E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */; };
-		E5BD5CAD1CB2D76900481089 /* Filtros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CAC1CB2D76900481089 /* Filtros.swift */; };
 		E5BD5CB11CB353C300481089 /* quickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD5CB01CB353C300481089 /* quickSort.swift */; };
 /* End PBXBuildFile section */
 
@@ -148,16 +149,12 @@
 		56307421CB692CF9FCD566F8 /* Pods-ControleDeGastos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControleDeGastos.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControleDeGastos/Pods-ControleDeGastos.release.xcconfig"; sourceTree = "<group>"; };
 		771E225C1D2157BB00D83A36 /* TsukushiAMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiAMaruGothic.ttc; path = ../../../../../Library/Fonts/TsukushiAMaruGothic.ttc; sourceTree = "<group>"; };
 		771E225D1D2157BB00D83A36 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TsukushiBMaruGothic.ttc; path = ../../../../../Library/Fonts/TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
-		8A0D8C0E1D2EB92100C8BCB0 /* LoginCLoudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCLoudViewController.swift; sourceTree = "<group>"; };
 		8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOCloudKit.swift; sourceTree = "<group>"; };
 		8A1756D71CFF63EA00CC0535 /* ControleDeGastos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ControleDeGastos.entitlements; sourceTree = "<group>"; };
 		8A1756D81CFF63F000CC0535 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		8A1756DA1CFF65BE00CC0535 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8A1756DE1CFF766C00CC0535 /* SimplePList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePList.swift; sourceTree = "<group>"; };
-		8A1756E01D005BDF00CC0535 /* Gasto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gasto.swift; sourceTree = "<group>"; };
 		8A1AFD261CB07DF000382D1B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8A54D3C21CA2CBA700E63645 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8A54D3C71CA2CC5B00E63645 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8A54D3C91CA2CCCF00E63645 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		8A54D3CB1CA2CCDF00E63645 /* GastoManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GastoManualViewController.swift; sourceTree = "<group>"; };
 		8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraficoViewController.swift; sourceTree = "<group>"; };
@@ -165,12 +162,10 @@
 		8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricoTabelaViewController.swift; sourceTree = "<group>"; };
 		8A54D3D51CA3157A00E63645 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		8A71E0131C9C2F6B00C055F8 /* Gastei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gastei.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A71E01B1C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A71E0201C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A71E0221C9C2F6B00C055F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8ABDAF201D44511500DCD632 /* DAOLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOLocal.swift; sourceTree = "<group>"; };
 		8ABDAF261D44742D00DCD632 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9C047D711CB2A1D40099A13C /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
@@ -191,9 +186,17 @@
 		9CA712841D1ACA0C0074E21C /* InterfaceControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceControllerTable.swift; sourceTree = "<group>"; };
 		9CA712891D1ACA280074E21C /* MyRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRow.swift; sourceTree = "<group>"; };
 		9CA712921D1AE4D00074E21C /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		9CC001371D593525001C0A7C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../.Trash/AppDelegate.swift; sourceTree = "<group>"; };
+		9CC0013A1D593555001C0A7C /* GasteiLocal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GasteiLocal.xcdatamodel; sourceTree = "<group>"; };
+		9CC0013D1D59356B001C0A7C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9CC0014C1D593ADA001C0A7C /* LoginCLoudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCLoudViewController.swift; sourceTree = "<group>"; };
+		9CC001511D593AF7001C0A7C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9CC001531D593B0A001C0A7C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9CC001551D593B1A001C0A7C /* Filtros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
+		9CC001571D593B2C001C0A7C /* Gasto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gasto.swift; sourceTree = "<group>"; };
+		9CC001591D593B39001C0A7C /* DAOLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOLocal.swift; sourceTree = "<group>"; };
 		E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrarViewController.swift; sourceTree = "<group>"; };
 		E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdenarViewController.swift; sourceTree = "<group>"; };
-		E5BD5CAC1CB2D76900481089 /* Filtros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
 		E5BD5CB01CB353C300481089 /* quickSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quickSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,15 +232,15 @@
 		8A54D3BF1CA2CAF200E63645 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9CC001591D593B39001C0A7C /* DAOLocal.swift */,
+				9CC001551D593B1A001C0A7C /* Filtros.swift */,
+				9CC001571D593B2C001C0A7C /* Gasto.swift */,
+				9CC001531D593B0A001C0A7C /* User.swift */,
 				8A1756DE1CFF766C00CC0535 /* SimplePList.swift */,
 				9C047D711CB2A1D40099A13C /* extensions.swift */,
-				E5BD5CAC1CB2D76900481089 /* Filtros.swift */,
 				E5BD5CB01CB353C300481089 /* quickSort.swift */,
 				8A54D3D51CA3157A00E63645 /* Classes.swift */,
 				8A1756D51CFF63D500CC0535 /* DAOCloudKit.swift */,
-				8A1756DA1CFF65BE00CC0535 /* User.swift */,
-				8A1756E01D005BDF00CC0535 /* Gasto.swift */,
-				8ABDAF201D44511500DCD632 /* DAOLocal.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -248,17 +251,17 @@
 				9C4429AF1CAAD543005D0530 /* LaunchViewController.swift */,
 				9C4429711CAAA544005D0530 /* CadastroViewController.swift */,
 				8A54D3C21CA2CBA700E63645 /* LoginViewController.swift */,
-				8A54D3C71CA2CC5B00E63645 /* MainViewController.swift */,
 				8A54D3C91CA2CCCF00E63645 /* QRCodeViewController.swift */,
 				8A54D3CB1CA2CCDF00E63645 /* GastoManualViewController.swift */,
 				8A54D3CD1CA2CCFC00E63645 /* GraficoViewController.swift */,
 				8A54D3CF1CA2CF7200E63645 /* SettingsViewController.swift */,
+				9CC001511D593AF7001C0A7C /* MainViewController.swift */,
 				8A1AFD261CB07DF000382D1B /* TableViewCell.swift */,
 				8A54D3D11CA2CFD100E63645 /* HistoricoTabelaViewController.swift */,
 				E51F5A341CB1CD8B00A54915 /* FiltrarViewController.swift */,
 				E51F5A361CB1CD9B00A54915 /* OrdenarViewController.swift */,
 				9C08CB3F1CFDD75F005133E7 /* PickerView.swift */,
-				8A0D8C0E1D2EB92100C8BCB0 /* LoginCLoudViewController.swift */,
+				9CC0014C1D593ADA001C0A7C /* LoginCLoudViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -297,13 +300,15 @@
 		8A71E0151C9C2F6B00C055F8 /* ControleDeGastos */ = {
 			isa = PBXGroup;
 			children = (
+				9CC001371D593525001C0A7C /* AppDelegate.swift */,
 				771E225C1D2157BB00D83A36 /* TsukushiAMaruGothic.ttc */,
 				771E225D1D2157BB00D83A36 /* TsukushiBMaruGothic.ttc */,
+				9CC001391D593555001C0A7C /* GasteiLocal.xcdatamodeld */,
+				9CC0013C1D59356B001C0A7C /* Model.xcdatamodeld */,
 				8A1756D71CFF63EA00CC0535 /* ControleDeGastos.entitlements */,
 				8A54D3C11CA2CB0800E63645 /* View */,
 				8A54D3C01CA2CAFC00E63645 /* Controller */,
 				8A54D3BF1CA2CAF200E63645 /* Model */,
-				8A71E0161C9C2F6B00C055F8 /* AppDelegate.swift */,
 				8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */,
 				9CA712781D1990070074E21C /* User.plist */,
 				8A71E0221C9C2F6B00C055F8 /* Info.plist */,
@@ -595,26 +600,28 @@
 			files = (
 				E51F5A371CB1CD9B00A54915 /* OrdenarViewController.swift in Sources */,
 				8A54D3C31CA2CBA700E63645 /* LoginViewController.swift in Sources */,
+				9CC001561D593B1A001C0A7C /* Filtros.swift in Sources */,
 				8A1756DF1CFF766C00CC0535 /* SimplePList.swift in Sources */,
-				8A1756DB1CFF65BE00CC0535 /* User.swift in Sources */,
 				9C4429B01CAAD543005D0530 /* LaunchViewController.swift in Sources */,
+				9CC0013E1D59356B001C0A7C /* Model.xcdatamodeld in Sources */,
+				9CC001581D593B2C001C0A7C /* Gasto.swift in Sources */,
+				9CC0015A1D593B39001C0A7C /* DAOLocal.swift in Sources */,
 				8A54D3CE1CA2CCFC00E63645 /* GraficoViewController.swift in Sources */,
-				8A71E0171C9C2F6B00C055F8 /* AppDelegate.swift in Sources */,
+				9CC001521D593AF7001C0A7C /* MainViewController.swift in Sources */,
 				E5BD5CB11CB353C300481089 /* quickSort.swift in Sources */,
+				9CC0014D1D593ADA001C0A7C /* LoginCLoudViewController.swift in Sources */,
+				9CC001381D593525001C0A7C /* AppDelegate.swift in Sources */,
 				9C047D721CB2A1D40099A13C /* extensions.swift in Sources */,
-				E5BD5CAD1CB2D76900481089 /* Filtros.swift in Sources */,
 				8A1AFD271CB07DF000382D1B /* TableViewCell.swift in Sources */,
-				9CA712901D1AD9EF0074E21C /* Gasto.swift in Sources */,
 				9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */,
 				8A1AFCFF1CAACC7400382D1B /* GastoManualViewController.swift in Sources */,
 				9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */,
-				8A0D8C0F1D2EB92100C8BCB0 /* LoginCLoudViewController.swift in Sources */,
-				8ABDAF211D44511500DCD632 /* DAOLocal.swift in Sources */,
 				E51F5A351CB1CD8B00A54915 /* FiltrarViewController.swift in Sources */,
-				8A54D3C81CA2CC5B00E63645 /* MainViewController.swift in Sources */,
+				9CC001541D593B0A001C0A7C /* User.swift in Sources */,
 				8A54D3CA1CA2CCCF00E63645 /* QRCodeViewController.swift in Sources */,
 				8A54D3D21CA2CFD100E63645 /* HistoricoTabelaViewController.swift in Sources */,
 				8A54D3D01CA2CF7200E63645 /* SettingsViewController.swift in Sources */,
+				9CC0013B1D593555001C0A7C /* GasteiLocal.xcdatamodeld in Sources */,
 				8ABDAF271D44742D00DCD632 /* Model.xcdatamodeld in Sources */,
 				8A54D3D61CA3157A00E63645 /* Classes.swift in Sources */,
 				8A1756D61CFF63D500CC0535 /* DAOCloudKit.swift in Sources */,
@@ -629,7 +636,6 @@
 				9CA712931D1AE4D00074E21C /* InterfaceController.swift in Sources */,
 				9CA7128A1D1ACA280074E21C /* MyRow.swift in Sources */,
 				9C82EA5D1D1D8E6B0088B306 /* Complication.swift in Sources */,
-				9CA7128B1D1ACF700074E21C /* Gasto.swift in Sources */,
 				9CA712851D1ACA0C0074E21C /* InterfaceControllerTable.swift in Sources */,
 				9C9AFEE51D1052DB00EA551B /* ExtensionDelegate.swift in Sources */,
 			);
@@ -929,6 +935,28 @@
 			);
 			currentVersion = 8ABDAF261D44742D00DCD632 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		9CC001391D593555001C0A7C /* GasteiLocal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9CC0013A1D593555001C0A7C /* GasteiLocal.xcdatamodel */,
+			);
+			currentVersion = 9CC0013A1D593555001C0A7C /* GasteiLocal.xcdatamodel */;
+			name = GasteiLocal.xcdatamodeld;
+			path = "../../Downloads/Gastei-master/GasteiLocal/GasteiLocal.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		9CC0013C1D59356B001C0A7C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9CC0013D1D59356B001C0A7C /* Model.xcdatamodel */,
+			);
+			currentVersion = 9CC0013D1D59356B001C0A7C /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = "../../Downloads/Gastei-master/GasteiLocal/Model.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
