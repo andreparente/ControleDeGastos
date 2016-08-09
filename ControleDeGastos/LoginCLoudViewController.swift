@@ -30,13 +30,25 @@ class LoginCLoudViewController: UIViewController {
     
     
     @IBAction func loginActino(sender: AnyObject) {
-        defaults.setBool(true, forKey: "Logged")
+        
+        DAOCloudKit().getId({recordID, error in
+            if let userID = recordID?.recordName {
+                print("received iCloudID \(userID)")
+                
+                //inicializa o usuário local
+                userLogged = User(cloudId: userID)
+                defaults.setBool(true, forKey: "Logged")
+                defaults.setBool(true, forKey: "Cloud")
+                self.performSegueWithIdentifier("LoginCloudToMain", sender: self)
+                
+            } else {
+                print("Fetched iCloudID was nil")
+            }})
+        
     }
     
-    func actonNotificationSucessGetID()
-    {
-        
-        
+    func actonNotificationSucessGetID() {
+        //TALVEZ NAO PRECISE
     }
     /*
      // MARK: - Navigation

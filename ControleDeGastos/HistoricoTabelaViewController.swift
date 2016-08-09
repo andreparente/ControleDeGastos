@@ -26,9 +26,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clearColor()
-        //executar = false
-        //view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-        //viewSuperior.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
+
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
         // apenas para poder enxergar os botoes
@@ -77,13 +75,11 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         
         if (evermelha)
         {
-            //self.background_image.image = UIImage(named: "background_red.png")
             
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
         }
         if (eazul)
         {
-            //self.background_image.image = UIImage(named: "background_blue.png")
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
         }
     }
@@ -109,9 +105,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         
         
         cell.backgroundColor = UIColor.clearColor()
-        /*let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-        cell.selectedBackgroundView = backgroundView*/
+
         
         if (cellsNumber > 0) {
             
@@ -123,7 +117,6 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
             cell.labelCat.text = "\(gastosGlobal[indexPath.row].category)"
             cell.labelValor.text = "R$ " + String(gastosGlobal[indexPath.row].value)
             
-            //let arrayData = dateFormatter.stringFromDate(gastosGlobal[indexPath.row].date).componentsSeparatedByString("/")
             cell.labelData.text = dateFormatter.stringFromDate(gastosGlobal[indexPath.row].date)
             
             print(indexPath.row)

@@ -36,7 +36,9 @@ class DAOCloudKit {
             } else {
                 print("fetched ID \(recordID?.recordName)")
                 complete(instance: recordID, error: nil)
-                NSNotificationCenter.defaultCenter().postNotificationName("notificationSucessGetId", object: nil)
+                
+                
+               // NSNotificationCenter.defaultCenter().postNotificationName("notificationSucessGetId", object: nil)
             }
         }
     }

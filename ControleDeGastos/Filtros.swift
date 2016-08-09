@@ -60,8 +60,7 @@ public func filtraCategoria(categoriaFiltro: String, gastos: [Gasto]) -> [Gasto]
     return gastosFiltrados
 }
 
-public func comparadata(data1: NSDate, date2: NSDate) ->(Int)
-{
+public func comparadata(data1: NSDate, date2: NSDate) ->(Int) {
     //data1.changeDaysBy(-1)
     if data1.compare(date2) == NSComparisonResult.OrderedDescending
     {
@@ -78,23 +77,18 @@ public func comparadata(data1: NSDate, date2: NSDate) ->(Int)
     }
 }
 
-public func filtroData(inicio:NSDate, fim:NSDate, gastos:[Gasto]) ->([Gasto])
-{
+public func filtroData(inicio:NSDate, fim:NSDate, gastos:[Gasto]) ->([Gasto]) {
     var gastosFiltrados: [Gasto] = []
     let dateFormatter = NSDateFormatter()
     
     // eh necessario zerar a hora, os minutos e os segundos antes de comecar
     let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-    let inicio_ = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: inicio, options: NSCalendarOptions())!
-    let fim_ = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: fim, options: NSCalendarOptions())!
+    _ = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: inicio, options: NSCalendarOptions())!
+    _ = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: fim, options: NSCalendarOptions())!
     
     dateFormatter.dateFormat = "dd/MM/yyyy"
     for i in 0..<gastos.count {
-      //  let dataGasto = dateFormatter.dateFromString(gastos[i].date)!
-        //print (dataGasto, " --- ", fim, " --- ", inicio)
-       /* if ( (comparadata(inicio_, date2: gastos[i].date) == -1 || comparadata(inicio_, date2: gastos[i].date) == 0) && (comparadata(fim_, date2: gastos[i].date) == 0 || comparadata(fim_,date2: gastos[i].date) == 1) ) {
-            gastosFiltrados.append(gastos[i])
-        }*/
+
         
         print(gastos[i].date)
         if gastos[i].date.isLessThanDate(fim) && gastos[i].date.isGreaterThanDate(inicio) {

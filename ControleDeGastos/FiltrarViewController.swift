@@ -35,11 +35,11 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         view.addGestureRecognizer(tap)
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.png")!)
-       /* if (eamarela)
-        {
-            view.backgroundColor = corAmarela
-        }
- */
+        /* if (eamarela)
+         {
+         view.backgroundColor = corAmarela
+         }
+         */
         if (evermelha)
         {
             //self.background_image.image = UIImage(named: "background_red.png")
@@ -84,10 +84,13 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     
     @IBAction func apertouBotaoSalvar(sender: AnyObject) {
         // filtros de valor minimo e maximo
+        gastosGlobal = DAOLocal().loadGastos()
+        print(gastosGlobal)
         let minVal = (textValorMin.text!).toDouble()!
         let maxVal = (textValorMax.text!).toDouble()!
         if (!minVal.isZero && !maxVal.isZero) {
             gastosGlobal = filtraValor( minVal, max: maxVal, gastos: gastosGlobal )
+            
         } else if (!minVal.isZero) {
             gastosGlobal = filtraValorMin( minVal, gastos: gastosGlobal )
         } else if (!maxVal.isZero) {
@@ -97,6 +100,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         // filtro de categorias
         if (categoriaSelecionada != "Todas") {
             gastosGlobal = filtraCategoria(self.categoriaSelecionada, gastos: gastosGlobal)
+            
         }
         
         // filtro de data
@@ -105,6 +109,7 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         // altera os dados da historicoTabela
         delegate.filtrou = true
         // desfaz o segue
+        print(gastosGlobal)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -34,7 +34,10 @@ public class DAOLocal {
         }
     }
     
-    func loadGastos() {
+    func loadGastos() -> [Gasto] {
+        
+        var gastosAux: [Gasto] = []
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
@@ -50,7 +53,7 @@ public class DAOLocal {
             
             //pra garantir que o gastosGlobal e o gastosCoreData estao na mesma ordem, que nem o cloudKit!
             for gasto in gastosCoreData {
-                gastosGlobal.append(
+                gastosAux.append(
                     Gasto(nome: gasto.valueForKey("name") as! String,
                     categoria: gasto.valueForKey("category") as! String,
                     valor: gasto.valueForKey("value") as! Double,
@@ -60,21 +63,17 @@ public class DAOLocal {
         } catch let error as NSError {
             print("Erro ao fetch Exercicios: \(error.localizedDescription), \(error.userInfo)")
         }
+        return gastosAux
     }
     
-    func loadGastosEspecifico(fromDate: NSDate, toDate: NSDate) {
+    func loadGastosEspecifico(fromDate: NSDate, toDate: NSDate) -> [Gasto] {
         
-        //a data ta em qual formato mesmo??
-    
+        var gastosAux: [Gasto] = []
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         var request = NSFetchRequest(entityName: "Gasto")
         request.returnsObjectsAsFaults = false
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = "dd/MM/yyyy"
-//    //    dateFormatter.timeZone = NSTimeZone(name: "GMT") // this line resolved me the issue of getting one day less than the selected date
-//        let startDate:NSDate = dateFormatter.dateFromString(fromDate)!
-//        let endDate:NSDate = dateFormatter.dateFromString(toDate)!
+
         request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", fromDate, toDate)
         
         request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
@@ -85,7 +84,7 @@ public class DAOLocal {
             
             //aqui teremos que botar na ordem o gastosGlobal ou o userLogged.gastos?? acho que na versao "offline"nao iremos ter User neh
             for gasto in gastosCoreData {
-                gastosGlobal.append(
+                gastosAux.append(
                     Gasto(nome: gasto.valueForKey("name") as! String,
                         categoria: gasto.valueForKey("category") as! String,
                         valor: gasto.valueForKey("value") as! Double,
@@ -94,12 +93,14 @@ public class DAOLocal {
         } catch let error as NSError {
             print("Erro ao fetch Exercicios: \(error.localizedDescription), \(error.userInfo)")
         }
-        print(gastosCoreData.count)
+        
+        return gastosAux
     }
     
-    func loadGastosMesEspecifico(month: String) {
+    func loadGastosMesEspecifico(month: String) -> [Gasto] {
         
-        //a data ta em qual formato mesmo??
+        var gastosAux: [Gasto] = []
+
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -118,7 +119,7 @@ public class DAOLocal {
             
             //aqui teremos que botar na ordem o gastosGlobal ou o userLogged.gastos?? acho que na versao "offline"nao iremos ter User neh
             for gasto in gastosCoreData {
-                gastosGlobal.append(
+                gastosAux.append(
                     Gasto(nome: gasto.valueForKey("name") as! String,
                         categoria: gasto.valueForKey("category") as! String,
                         valor: gasto.valueForKey("value") as! Double,
@@ -127,7 +128,7 @@ public class DAOLocal {
         } catch let error as NSError {
             print("Erro ao fetch Exercicios: \(error.localizedDescription), \(error.userInfo)")
         }
-        print(gastosCoreData.count)
+        return gastosAux
     }
     
     func deleteGastoEspecifico(gasto: Gasto, index: Int) {
@@ -145,10 +146,12 @@ public class DAOLocal {
         } catch let error as NSError {
             print("Erro ao deletar gasto: \(error.localizedDescription), \(error.userInfo)")
         }
-        print(gastosCoreData.count)
     }
     
-    func filtrarPorData(fromDate: NSDate, toDate: NSDate) {
+    func filtrarPorData(fromDate: NSDate, toDate: NSDate) -> [Gasto] {
+        
+        var gastosAux: [Gasto] = []
+
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -164,7 +167,7 @@ public class DAOLocal {
             
             //aqui teremos que botar na ordem o gastosGlobal ou o userLogged.gastos?? acho que na versao "offline"nao iremos ter User neh
             for gasto in gastosCoreData {
-                gastosGlobal.append(
+                gastosAux.append(
                     Gasto(nome: gasto.valueForKey("name") as! String,
                         categoria: gasto.valueForKey("category") as! String,
                         valor: gasto.valueForKey("value") as! Double,
@@ -173,10 +176,13 @@ public class DAOLocal {
         } catch let error as NSError {
             print("Erro ao fetch Exercicios: \(error.localizedDescription), \(error.userInfo)")
         }
-        print(gastosCoreData.count)
+        return gastosAux
     }
     
-    func filtrarPorDataCategoriaPreço(fromDate: NSDate, toDate: NSDate, fromPrice: Double, toPrice: Double, category: String) {
+    func filtrarPorDataCategoriaPreço(fromDate: NSDate, toDate: NSDate, fromPrice: Double, toPrice: Double, category: String) -> [Gasto] {
+        
+        var gastosAux: [Gasto] = []
+
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -195,10 +201,9 @@ public class DAOLocal {
             let results = try managedContext.executeFetchRequest(request)
             gastosCoreData = results as? [NSManagedObject]
             
-            //aqui teremos que botar na ordem o gastosGlobal ou o userLogged.gastos?? acho que na versao "offline"nao iremos ter User neh
             gastosGlobal.removeAll()
             for gasto in gastosCoreData {
-                gastosGlobal.append(
+                gastosAux.append(
                     Gasto(nome: gasto.valueForKey("name") as! String,
                         categoria: gasto.valueForKey("category") as! String,
                         valor: gasto.valueForKey("value") as! Double,
@@ -207,6 +212,6 @@ public class DAOLocal {
         } catch let error as NSError {
             print("Erro ao fetch Exercicios: \(error.localizedDescription), \(error.userInfo)")
         }
-        print(gastosCoreData.count)
+        return gastosAux
     }
 }

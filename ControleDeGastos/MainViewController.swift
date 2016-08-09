@@ -48,30 +48,31 @@ class MainViewController: UIViewController,WCSessionDelegate {
         gastos.hidden = true
         //background_image.hidden = true
         self.tabBarController?.tabBar.hidden = true
-        userLogged = User(cloudId: "noCloud")
         
-        
-        if defaults.objectForKey("categories") == nil {
-            
-            //SETANDO PELA PRIMEIRA VEZ AS CATEGORIAS
-            defaults.setObject(userLogged.categories, forKey: "categories")
-
-        } else {
-            userLogged.categories = defaults.objectForKey("categories") as! [String]!
-        }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorInternet), name: "notificationErrorInternet", object: nil)
         
         if defaults.boolForKey("Cloud") {
             
-     //       DAOCloudKit().fetchCategoriesForUser(userLogged)
-   //         DAOCloudKit().fetchGastosFromUser(userLogged)
+           DAOCloudKit().fetchCategoriesForUser(userLogged)
+           DAOCloudKit().fetchGastosFromUser(userLogged)
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationSuccessLoad), name: "notificationSuccessLoadUser", object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorLoad), name: "notificationErrorLoadUser", object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.actOnNotificationErrorInternet), name: "notificationErrorInternet", object: nil)
+
             
         }
-
-        
+        else {
+            userLogged = User(cloudId: "noCloud")
+            
+            if defaults.objectForKey("categories") == nil {
+                
+                //SETANDO PELA PRIMEIRA VEZ AS CATEGORIAS
+                defaults.setObject(userLogged.categories, forKey: "categories")
+                
+            } else {
+                userLogged.categories = defaults.objectForKey("categories") as! [String]!
+            }
+        }
     }
     
     func printaLimite(usuario: User) {
@@ -133,8 +134,9 @@ class MainViewController: UIViewController,WCSessionDelegate {
         }
     }
     
-    func actOnNotificationSuccessLoad()
-    {
+    func actOnNotificationSuccessLoad() {
+        
+        //temos que ver, uma vez carregado do cloud, recarregar o coreData
         setView()
     }
     
@@ -178,7 +180,7 @@ class MainViewController: UIViewController,WCSessionDelegate {
         let endOfMonth = calendar.dateByAddingComponents(comps2, toDate: startOfMonth, options: [])!
         print(dateFormatter.stringFromDate(endOfMonth))
         
-        DAOLocal().loadGastosEspecifico(twoMonthsAgo!, toDate: endOfMonth)
+        gastosGlobal = DAOLocal().loadGastosEspecifico(twoMonthsAgo!, toDate: endOfMonth)
         userLogged.gastos.removeAll()
         userLogged.gastos = gastosGlobal
         let quickSorter = QuickSorterGasto()

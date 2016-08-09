@@ -92,20 +92,20 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     //karina - funcao para deixar a fonte do picker branca
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         if component == 0 {
-        let titleData = months[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Tsukushi A Round Gothic", size: 15.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
-        return myTitle
+            let titleData = months[row]
+            let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Tsukushi A Round Gothic", size: 15.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+            return myTitle
         }
-        
-        
+            
+            
         else {
-        let titleData2 = String(years[row])
-        let myTitle = NSAttributedString(string: titleData2, attributes: [NSFontAttributeName:UIFont(name: "Tsukushi A Round Gothic", size: 15.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
-        return myTitle
+            let titleData2 = String(years[row])
+            let myTitle = NSAttributedString(string: titleData2, attributes: [NSFontAttributeName:UIFont(name: "Tsukushi A Round Gothic", size: 15.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+            return myTitle
         }
     }
     
-
+    
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let month = self.selectedRowInComponent(0)+1
@@ -118,6 +118,8 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         self.year = year
         let mes :Int =  month
         let ano :Int = year
+        gastosGlobal = DAOLocal().loadGastos()
+        userLogged.gastos = gastosGlobal
         vetorGastosMes = userLogged.getGastosMes(mes, ano: ano)
         (vetorFinalGastosMes,vetorFinalCatMes) = GraficoViewController().organizaVetoresMes(userLogged, gastosMes: vetorGastosMes)
         
@@ -125,7 +127,7 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
             grafico.chartView.clear()
             grafico.chartView.noDataText = "Você não possui nenhum gasto em \(months[self.month-1])"
         }
-        
+            
         else {
             grafico.setPieChart(vetorFinalCatMes, values: vetorFinalGastosMes)
             grafico.dataMesTextField.text = "\(mes)" + " " + "\(ano)"
