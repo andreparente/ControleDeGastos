@@ -37,7 +37,6 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
         // adiciona opcoes de ordenacao
         self.ordenacoes.append("Data")
         self.ordenacoes.append("Valor")
-        self.ordenacoes.append("Nome")
         
         // inicializa ordenacao escolhida
         self.ordenacaoEscolhida = self.ordenacoes[0]
@@ -96,16 +95,23 @@ class OrdenarViewController: UIViewController, UIPickerViewDelegate,UIPickerView
     
     @IBAction func apertouBotaoSalvar(sender: AnyObject) {
         gastosGlobal = userLogged.gastos
-        let quickSorter = QuickSorterGasto()
+ /*       let quickSorter = QuickSorterGasto()
         quickSorter.v = gastosGlobal
-        quickSorter.a = userLogged.arrayGastos
+      //  quickSorter.a = userLogged.arrayGastos
         quickSorter.callQuickSort(self.ordenacaoEscolhida, decrescente: self.decrescente)
         gastosGlobal = quickSorter.v
-        userLogged.arrayGastos = quickSorter.a
-        userLogged.gastos = gastosGlobal
+      //  userLogged.arrayGastos = quickSorter.a
+        userLogged.gastos = gastosGlobal*/
         delegate.ordenou = true
+        
         // altera os dados da historicoTabela
         
+        if self.ordenacaoEscolhida == "Valor" {
+            gastosGlobal = DAOLocal().ordernar(self.decrescente, value: true)
+        } else {
+            gastosGlobal = DAOLocal().ordernar(self.decrescente, value: false)
+
+        }
         // desfaz o segue
         dismissViewControllerAnimated(true, completion: nil)
     }

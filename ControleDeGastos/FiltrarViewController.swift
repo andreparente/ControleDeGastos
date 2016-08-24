@@ -83,28 +83,26 @@ class FiltrarViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     }
     
     @IBAction func apertouBotaoSalvar(sender: AnyObject) {
+        
         // filtros de valor minimo e maximo
-        gastosGlobal = DAOLocal().loadGastos()
-        print(gastosGlobal)
-        let minVal = (textValorMin.text!).toDouble()!
-        let maxVal = (textValorMax.text!).toDouble()!
-        if (!minVal.isZero && !maxVal.isZero) {
-            gastosGlobal = filtraValor( minVal, max: maxVal, gastos: gastosGlobal )
-            
-        } else if (!minVal.isZero) {
-            gastosGlobal = filtraValorMin( minVal, gastos: gastosGlobal )
-        } else if (!maxVal.isZero) {
-            gastosGlobal = filtraValorMax( maxVal, gastos: gastosGlobal)
+        var minVal = (textValorMin.text!).toDouble()!
+        var maxVal = (textValorMax.text!).toDouble()!
+        
+        if (minVal.isZero) {
+            minVal = 0
+        }
+        if (maxVal.isZero) {
+            maxVal = 100000000000
         }
         
-        // filtro de categorias
-        if (categoriaSelecionada != "Todas") {
-            gastosGlobal = filtraCategoria(self.categoriaSelecionada, gastos: gastosGlobal)
-            
-        }
+
         
-        // filtro de data
-        gastosGlobal =  filtroData(pickerDataMin.date, fim: pickerDataMax.date, gastos: gastosGlobal)
+
+        
+        //filtro geral foda-se
+        print(pickerDataMin.date)
+        print(pickerDataMax.date)
+        gastosGlobal = DAOLocal().filtrarPorDataCategoriaPreço(pickerDataMin.date, toDate: pickerDataMax.date, fromPrice: minVal, toPrice: maxVal, category: categoriaSelecionada)
         
         // altera os dados da historicoTabela
         delegate.filtrou = true

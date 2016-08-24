@@ -26,7 +26,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clearColor()
-
+        
         tableView.frame = (CGRectMake(0,44,view.frame.width,view.frame.height))
         tableView.estimatedRowHeight = 50
         // apenas para poder enxergar os botoes
@@ -34,12 +34,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         self.botaoOrdenar.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1)
         self.botaoFiltrar.titleLabel?.textColor = UIColor.whiteColor()
         self.botaoOrdenar.titleLabel?.textColor = UIColor.whiteColor()
-        /*   if (eamarela)
-         {
-         view.backgroundColor = corAmarela
-         viewSuperior.backgroundColor = corAmarela
-         }
-         */
+        
         if (evermelha)
         {
             view.backgroundColor = UIColor(patternImage: UIImage(named: "background_red.png")!)
@@ -50,23 +45,21 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         
         
         
-       // tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: "cell")
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        // executar = false
+        
         
         if(ordenou || filtrou) {
-            
+            userLogged.gastos = gastosGlobal
         }
         else {
             gastosGlobal = userLogged.gastos
             let quickSorter = QuickSorterGasto()
             quickSorter.v = gastosGlobal
-            quickSorter.a = userLogged.arrayGastos
             quickSorter.callQuickSort("Data", decrescente: true)
             gastosGlobal = quickSorter.v
-            userLogged.arrayGastos = quickSorter.a
             userLogged.gastos = gastosGlobal
         }
         
@@ -105,7 +98,7 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
         
         
         cell.backgroundColor = UIColor.clearColor()
-
+        
         
         if (cellsNumber > 0) {
             
@@ -119,9 +112,9 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
             
             cell.labelData.text = dateFormatter.stringFromDate(gastosGlobal[indexPath.row].date)
             
-            print(indexPath.row)
-            print(cell.labelCat.text)
-            print(cell.labelValor.text)
+            /* print(indexPath.row)
+             print(cell.labelCat.text)
+             print(cell.labelValor.text)*/
         }
         else {
             print("entrou no sem gastos!")
@@ -162,30 +155,17 @@ class HistoricoTabelaViewController: UIViewController, UIGestureRecognizerDelega
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if userLogged.gastos.count > 0
-        {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
-            if(filtrou) {
-               let gasto = gastosGlobal[indexPath.row]
-                if let index = userLogged.gastos.indexOf(gasto) {
-                    
-              //      DAOCloudKit().deleteGasto(userLogged.arrayGastos[index], user: userLogged,index: index)
-                    gastosGlobal.removeAtIndex(index)
-                    userLogged.gastos.removeAtIndex(index)
-                    tableView.reloadData()
-                    executar = true
-                }
-            }
-            else {
-           //     DAOCloudKit().deleteGasto(userLogged.arrayGastos[indexPath.row], user: userLogged,index: indexPath.row)
+        if userLogged.gastos.count > 0 {
+            if (editingStyle == UITableViewCellEditingStyle.Delete) {
+                
+                // handle delete (by removing the data from your array and updating the tableview)
                 gastosGlobal.removeAtIndex(indexPath.row)
                 userLogged.gastos = gastosGlobal
+                DAOLocal().removeAtIndex(indexPath.row)
                 tableView.reloadData()
                 executar = true
+                
             }
-            
-        }
         }
     }
 }
