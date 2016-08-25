@@ -29,6 +29,7 @@
 		8A71E01C1C9C2F6B00C055F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01A1C9C2F6B00C055F8 /* Main.storyboard */; };
 		8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */; };
 		8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A71E01F1C9C2F6B00C055F8 /* LaunchScreen.storyboard */; };
+		8AF0B63F1D6F54EE00C84271 /* Tutorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF0B63E1D6F54EE00C84271 /* Tutorial.xcassets */; };
 		9C047D721CB2A1D40099A13C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C047D711CB2A1D40099A13C /* extensions.swift */; };
 		9C08CB401CFDD75F005133E7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08CB3F1CFDD75F005133E7 /* PickerView.swift */; };
 		9C4429721CAAA544005D0530 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4429711CAAA544005D0530 /* CadastroViewController.swift */; };
@@ -173,9 +174,10 @@
 		8A54D3D51CA3157A00E63645 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		8A71E0131C9C2F6B00C055F8 /* Gastei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gastei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A71E01B1C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ControleDeGastos/Assets.xcassets; sourceTree = "<group>"; };
 		8A71E0201C9C2F6B00C055F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A71E0221C9C2F6B00C055F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AF0B63E1D6F54EE00C84271 /* Tutorial.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Tutorial.xcassets; sourceTree = "<group>"; };
 		9C047D711CB2A1D40099A13C /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		9C08CB3F1CFDD75F005133E7 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		9C4429711CAAA544005D0530 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		8A71E00A1C9C2F6B00C055F8 = {
 			isa = PBXGroup;
 			children = (
+				8AF0B63A1D6F54DA00C84271 /* Assets */,
 				8A71E0151C9C2F6B00C055F8 /* ControleDeGastos */,
 				9C9AFED21D1052DA00EA551B /* WatchGastei */,
 				9C9AFEE11D1052DB00EA551B /* WatchGastei Extension */,
@@ -330,11 +333,19 @@
 				8A54D3C11CA2CB0800E63645 /* View */,
 				8A54D3C01CA2CAFC00E63645 /* Controller */,
 				8A54D3BF1CA2CAF200E63645 /* Model */,
-				8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */,
 				9CA712781D1990070074E21C /* User.plist */,
 				8A71E0221C9C2F6B00C055F8 /* Info.plist */,
 			);
 			path = ControleDeGastos;
+			sourceTree = "<group>";
+		};
+		8AF0B63A1D6F54DA00C84271 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8A71E01D1C9C2F6B00C055F8 /* Assets.xcassets */,
+				8AF0B63E1D6F54EE00C84271 /* Tutorial.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		9C9AFEBA1D10516F00EA551B /* Products */ = {
@@ -539,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A71E0211C9C2F6B00C055F8 /* LaunchScreen.storyboard in Resources */,
+				8AF0B63F1D6F54EE00C84271 /* Tutorial.xcassets in Resources */,
 				8A71E01E1C9C2F6B00C055F8 /* Assets.xcassets in Resources */,
 				8A31D6F31D6F150200A22D16 /* Walkthrough.storyboard in Resources */,
 				9CA712791D1990070074E21C /* User.plist in Resources */,

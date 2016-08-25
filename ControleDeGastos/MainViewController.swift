@@ -194,7 +194,6 @@ class MainViewController: UIViewController,WCSessionDelegate {
         
         for gasto in gastosGlobal {
             print(gasto.name)
-           // print(userLogged.gastos[i].name)
             i += 1
         }
         

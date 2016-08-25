@@ -22,9 +22,6 @@ class CustomPageViewController: UIViewController,BWWalkthroughPage {
         var tr = CATransform3DIdentity
         tr.m34 = -1/500.0
         
-        /*  titleLabel?.layer.transform = CATransform3DRotate(tr, CGFloat(M_PI) * (1.0 - offset), 1, 1, 1)
-         textLabel?.layer.transform = CATransform3DRotate(tr, CGFloat(M_PI) * (1.0 - offset), 1, 1, 1)*/
-        
         var tmpOffset = offset
         if(tmpOffset > 1.0){
             tmpOffset = 1.0 + (1.0 - tmpOffset)
@@ -32,4 +29,23 @@ class CustomPageViewController: UIViewController,BWWalkthroughPage {
         imageView?.layer.transform = CATransform3DTranslate(tr, 0 , (1.0 - tmpOffset) * 200, 0)
     }
     
+    @IBAction func finishAction(sender: AnyObject) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainController = storyboard.instantiateViewControllerWithIdentifier("MainTabBarController") as! UITabBarController
+        defaults.setBool(true, forKey: "notFirstLaunch")
+        
+        let top = topMostController()
+        top?.presentViewController(mainController, animated: true, completion: nil)
+    }
+    
+    func topMostController() -> UIViewController? {
+        var topController = UIApplication.sharedApplication().keyWindow?.rootViewController
+        
+        while ((topController?.presentedViewController) != nil) {
+            topController = topController?.presentedViewController
+        }
+        
+        return topController
+    }
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -69,7 +70,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TESTE TUDO" translatesAutoresizingMaskIntoConstraints="NO" id="uU9-bZ-q3j">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main" translatesAutoresizingMaskIntoConstraints="NO" id="uU9-bZ-q3j">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -123,7 +124,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone home" translatesAutoresizingMaskIntoConstraints="NO" id="5QY-0r-4rv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Charts" translatesAutoresizingMaskIntoConstraints="NO" id="5QY-0r-4rv">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -177,7 +178,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pie_chart" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-bP-J4S">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Historico" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-bP-J4S">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -234,34 +235,49 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="AFf-6b-qeG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpO-dL-vqA">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Finish!"/>
+                                <connections>
+                                    <action selector="finishAction:" destination="0Kd-A8-g5J" eventType="touchUpInside" id="dpl-AW-TV3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AFf-6b-qeG" firstAttribute="leading" secondItem="yVc-Gd-cPZ" secondAttribute="leading" id="3az-wx-fQn"/>
-                            <constraint firstItem="AFf-6b-qeG" firstAttribute="top" secondItem="yVc-Gd-cPZ" secondAttribute="top" id="F7j-pG-xsw"/>
-                            <constraint firstAttribute="trailing" secondItem="AFf-6b-qeG" secondAttribute="trailing" id="h4A-wJ-vGJ"/>
-                            <constraint firstItem="AFf-6b-qeG" firstAttribute="bottom" secondItem="qFk-xb-tRD" secondAttribute="top" id="hwM-Ma-NDx"/>
+                            <constraint firstAttribute="trailing" secondItem="AFf-6b-qeG" secondAttribute="trailing" id="33g-gZ-gN3"/>
+                            <constraint firstItem="AFf-6b-qeG" firstAttribute="leading" secondItem="yVc-Gd-cPZ" secondAttribute="leading" id="3d9-6S-8gR"/>
+                            <constraint firstItem="AFf-6b-qeG" firstAttribute="centerX" secondItem="IpO-dL-vqA" secondAttribute="centerX" id="Bx6-Qz-m1n"/>
+                            <constraint firstItem="IpO-dL-vqA" firstAttribute="top" secondItem="MoR-bA-dEh" secondAttribute="bottom" id="ItL-cA-Hlx"/>
+                            <constraint firstItem="AFf-6b-qeG" firstAttribute="top" secondItem="yVc-Gd-cPZ" secondAttribute="top" id="Srw-w0-jLq"/>
+                            <constraint firstItem="AFf-6b-qeG" firstAttribute="bottom" secondItem="qFk-xb-tRD" secondAttribute="top" id="fi1-gO-I5h"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="AFf-6b-qeG"/>
+                                <exclude reference="IpO-dL-vqA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="3az-wx-fQn"/>
-                                <exclude reference="F7j-pG-xsw"/>
-                                <exclude reference="h4A-wJ-vGJ"/>
-                                <exclude reference="hwM-Ma-NDx"/>
+                                <exclude reference="ItL-cA-Hlx"/>
+                                <exclude reference="33g-gZ-gN3"/>
+                                <exclude reference="3d9-6S-8gR"/>
+                                <exclude reference="Bx6-Qz-m1n"/>
+                                <exclude reference="Srw-w0-jLq"/>
+                                <exclude reference="fi1-gO-I5h"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="AFf-6b-qeG"/>
+                                <include reference="IpO-dL-vqA"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="3az-wx-fQn"/>
-                                <include reference="F7j-pG-xsw"/>
-                                <include reference="h4A-wJ-vGJ"/>
-                                <include reference="hwM-Ma-NDx"/>
+                                <include reference="ItL-cA-Hlx"/>
+                                <include reference="33g-gZ-gN3"/>
+                                <include reference="3d9-6S-8gR"/>
+                                <include reference="Bx6-Qz-m1n"/>
+                                <include reference="Srw-w0-jLq"/>
+                                <include reference="fi1-gO-I5h"/>
                             </mask>
                         </variation>
                     </view>
@@ -275,9 +291,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TESTE TUDO" width="375" height="667"/>
-        <image name="icone home" width="55" height="52"/>
+        <image name="Charts" width="328" height="577"/>
+        <image name="Historico" width="331" height="578"/>
+        <image name="Main" width="330" height="576"/>
         <image name="money" width="208" height="67"/>
-        <image name="pie_chart" width="32" height="32"/>
     </resources>
 </document>

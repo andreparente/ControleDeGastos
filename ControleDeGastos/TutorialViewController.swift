@@ -30,7 +30,9 @@ class TutorialViewController: UIViewController, BWWalkthroughViewControllerDeleg
         let page_zero = stb.instantiateViewControllerWithIdentifier("walk0")
         let page_one = stb.instantiateViewControllerWithIdentifier("walk1")
         let page_two = stb.instantiateViewControllerWithIdentifier("walk2")
-        let page_three = stb.instantiateViewControllerWithIdentifier("walk3")
+        let page_three = stb.instantiateViewControllerWithIdentifier("walk3") 
+        
+    
        /* let page_four = stb.instantiateViewControllerWithIdentifier("walk4")
         let page_five = stb.instantiateViewControllerWithIdentifier("walk5")
         let page_six = stb.instantiateViewControllerWithIdentifier("walk6")
