@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Walkthrough View Controller-->
+        <scene sceneID="PPo-SJ-8hr">
+            <objects>
+                <viewController storyboardIdentifier="Master" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bm5-ch-N9j" customClass="BWWalkthroughViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uhe-KI-HBP"/>
+                        <viewControllerLayoutGuide type="bottom" id="iGG-If-Anw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XJY-Xj-370">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoZ-HW-cnv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="close:" destination="Bm5-ch-N9j" eventType="touchUpInside" id="Suo-j5-az1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FoZ-HW-cnv" firstAttribute="trailing" secondItem="XJY-Xj-370" secondAttribute="trailingMargin" id="Prq-aQ-cCJ"/>
+                            <constraint firstItem="FoZ-HW-cnv" firstAttribute="top" secondItem="Uhe-KI-HBP" secondAttribute="bottom" constant="8" symbolic="YES" id="hXw-uu-jHq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="FoZ-HW-cnv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Prq-aQ-cCJ"/>
+                                <exclude reference="hXw-uu-jHq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="FoZ-HW-cnv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Prq-aQ-cCJ"/>
+                                <include reference="hXw-uu-jHq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="FoZ-HW-cnv" id="iy5-88-rsF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UaX-Yh-1q0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="661"/>
+        </scene>
+        <!--Custom Page View Controller-->
+        <scene sceneID="seF-i0-23W">
+            <objects>
+                <viewController storyboardIdentifier="walk0" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fsn-uq-46M" customClass="CustomPageViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kg3-En-hXE"/>
+                        <viewControllerLayoutGuide type="bottom" id="AEj-nx-a2Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2jE-aq-GSV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TESTE TUDO" translatesAutoresizingMaskIntoConstraints="NO" id="uU9-bZ-q3j">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uU9-bZ-q3j" firstAttribute="bottom" secondItem="AEj-nx-a2Z" secondAttribute="top" id="0kj-BW-mh2"/>
+                            <constraint firstItem="uU9-bZ-q3j" firstAttribute="top" secondItem="2jE-aq-GSV" secondAttribute="top" id="0wW-77-3W6"/>
+                            <constraint firstAttribute="trailing" secondItem="uU9-bZ-q3j" secondAttribute="trailing" id="GdR-p0-6IL"/>
+                            <constraint firstItem="uU9-bZ-q3j" firstAttribute="leading" secondItem="2jE-aq-GSV" secondAttribute="leading" id="mlK-Ac-awI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="uU9-bZ-q3j"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0kj-BW-mh2"/>
+                                <exclude reference="0wW-77-3W6"/>
+                                <exclude reference="GdR-p0-6IL"/>
+                                <exclude reference="mlK-Ac-awI"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="uU9-bZ-q3j"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0kj-BW-mh2"/>
+                                <include reference="0wW-77-3W6"/>
+                                <include reference="GdR-p0-6IL"/>
+                                <include reference="mlK-Ac-awI"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="uU9-bZ-q3j" id="Qpm-Ml-r7B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CN1-Zu-J07" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1602" y="659.25"/>
+        </scene>
+        <!--Custom Page View Controller-->
+        <scene sceneID="Jg3-We-4BQ">
+            <objects>
+                <viewController storyboardIdentifier="walk1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Jv-d0-ldZ" customClass="CustomPageViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G1i-IY-HsE"/>
+                        <viewControllerLayoutGuide type="bottom" id="e9F-KW-V8I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mcf-VE-jgg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone home" translatesAutoresizingMaskIntoConstraints="NO" id="5QY-0r-4rv">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5QY-0r-4rv" firstAttribute="top" secondItem="mcf-VE-jgg" secondAttribute="top" id="A86-QE-0GP"/>
+                            <constraint firstItem="5QY-0r-4rv" firstAttribute="bottom" secondItem="e9F-KW-V8I" secondAttribute="top" id="JHU-qO-kmr"/>
+                            <constraint firstAttribute="trailing" secondItem="5QY-0r-4rv" secondAttribute="trailing" id="eQJ-6N-Dmm"/>
+                            <constraint firstItem="5QY-0r-4rv" firstAttribute="leading" secondItem="mcf-VE-jgg" secondAttribute="leading" id="y7U-2r-A7j"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="5QY-0r-4rv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="A86-QE-0GP"/>
+                                <exclude reference="JHU-qO-kmr"/>
+                                <exclude reference="eQJ-6N-Dmm"/>
+                                <exclude reference="y7U-2r-A7j"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="5QY-0r-4rv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="A86-QE-0GP"/>
+                                <include reference="JHU-qO-kmr"/>
+                                <include reference="eQJ-6N-Dmm"/>
+                                <include reference="y7U-2r-A7j"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="5QY-0r-4rv" id="YBs-5b-9s0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVj-vb-Rew" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302.5" y="659.25"/>
+        </scene>
+        <!--Custom Page View Controller-->
+        <scene sceneID="TSN-ff-1cc">
+            <objects>
+                <viewController storyboardIdentifier="walk2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="99g-zv-6ju" customClass="CustomPageViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="THo-ou-VLD"/>
+                        <viewControllerLayoutGuide type="bottom" id="ItH-Lp-Rlm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a1U-Je-6nT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pie_chart" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-bP-J4S">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d4c-bP-J4S" firstAttribute="bottom" secondItem="ItH-Lp-Rlm" secondAttribute="top" id="GP8-yw-ObP"/>
+                            <constraint firstAttribute="trailing" secondItem="d4c-bP-J4S" secondAttribute="trailing" id="gCb-RQ-AUH"/>
+                            <constraint firstItem="d4c-bP-J4S" firstAttribute="leading" secondItem="a1U-Je-6nT" secondAttribute="leading" id="j2F-qa-vH2"/>
+                            <constraint firstItem="d4c-bP-J4S" firstAttribute="top" secondItem="a1U-Je-6nT" secondAttribute="top" id="qeu-UH-RAd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="d4c-bP-J4S"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="GP8-yw-ObP"/>
+                                <exclude reference="gCb-RQ-AUH"/>
+                                <exclude reference="j2F-qa-vH2"/>
+                                <exclude reference="qeu-UH-RAd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="d4c-bP-J4S"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="GP8-yw-ObP"/>
+                                <include reference="gCb-RQ-AUH"/>
+                                <include reference="j2F-qa-vH2"/>
+                                <include reference="qeu-UH-RAd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="d4c-bP-J4S" id="ujG-fA-cl3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mKl-W4-ROX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3006" y="659.25"/>
+        </scene>
+        <!--Custom Page View Controller-->
+        <scene sceneID="pwo-Zp-cPp">
+            <objects>
+                <viewController storyboardIdentifier="walk3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Kd-A8-g5J" customClass="CustomPageViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MoR-bA-dEh"/>
+                        <viewControllerLayoutGuide type="bottom" id="qFk-xb-tRD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yVc-Gd-cPZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="AFf-6b-qeG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AFf-6b-qeG" firstAttribute="leading" secondItem="yVc-Gd-cPZ" secondAttribute="leading" id="3az-wx-fQn"/>
+                            <constraint firstItem="AFf-6b-qeG" firstAttribute="top" secondItem="yVc-Gd-cPZ" secondAttribute="top" id="F7j-pG-xsw"/>
+                            <constraint firstAttribute="trailing" secondItem="AFf-6b-qeG" secondAttribute="trailing" id="h4A-wJ-vGJ"/>
+                            <constraint firstItem="AFf-6b-qeG" firstAttribute="bottom" secondItem="qFk-xb-tRD" secondAttribute="top" id="hwM-Ma-NDx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="AFf-6b-qeG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3az-wx-fQn"/>
+                                <exclude reference="F7j-pG-xsw"/>
+                                <exclude reference="h4A-wJ-vGJ"/>
+                                <exclude reference="hwM-Ma-NDx"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="AFf-6b-qeG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3az-wx-fQn"/>
+                                <include reference="F7j-pG-xsw"/>
+                                <include reference="h4A-wJ-vGJ"/>
+                                <include reference="hwM-Ma-NDx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="AFf-6b-qeG" id="fPi-z1-hxU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2E-7V-Cey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3714" y="659.25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="TESTE TUDO" width="375" height="667"/>
+        <image name="icone home" width="55" height="52"/>
+        <image name="money" width="208" height="67"/>
+        <image name="pie_chart" width="32" height="32"/>
+    </resources>
+</document>

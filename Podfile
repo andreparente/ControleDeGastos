@@ -4,6 +4,6 @@
 use_frameworks!
 
 target 'ControleDeGastos' do
-	pod 'Charts'
+	pod 'BWWalkthrough'
 end
 

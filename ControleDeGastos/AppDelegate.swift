@@ -37,28 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WCSessionDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if defaults.objectForKey("cloudId") != nil {
-            
-            userLogged = User(cloudId: defaults.objectForKey("cloudId") as! String)
+        
+        
+        if !defaults.boolForKey("notFirstLaunch") {
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("Tutorial")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        } else {
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("MainTabBarController") as! UITabBarController
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
-            
         }
-            
-        else {
-            if defaults.boolForKey("Logged") {
-                let initialViewController = storyboard.instantiateViewControllerWithIdentifier("MainTabBarController") as! UITabBarController
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            } else {
-                let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            }
-            
-        }
-        
        
         return true
     }

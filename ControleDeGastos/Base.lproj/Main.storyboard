@@ -198,6 +198,23 @@
             </objects>
             <point key="canvasLocation" x="-1644.75" y="2048.5"/>
         </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="E1x-RJ-GTS">
+            <objects>
+                <viewController storyboardIdentifier="Tutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SaQ-Oq-8zK" customClass="TutorialViewController" customModule="Gastei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DDT-sR-4Jw"/>
+                        <viewControllerLayoutGuide type="bottom" id="gpV-mE-FCa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZNG-2H-hjm">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCK-Dh-KUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2109" y="225.75"/>
+        </scene>
         <!--LoginC Loud View Controller-->
         <scene sceneID="OdE-Xu-Yw2">
             <objects>
