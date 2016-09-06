@@ -23,7 +23,8 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     let back = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageLabel.text="No QR code is detected"
+        messageLabel.text="Nenhum QR Code detectado"
+        messageLabel.hidden = false
         back.setTitle("Voltar", forState: .Normal)
         back.setTitleColor(UIColor.blueColor(), forState: .Normal)
         back.frame = CGRectMake(15, 15, 100, 100)
@@ -79,7 +80,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         view.bringSubviewToFront(qrCodeFrameView!)
         view.addSubview(back)
         view.bringSubviewToFront(back)
-
+        view.bringSubviewToFront(messageLabel)
     }
     
     func pressed(sender: UIButton!) {
@@ -105,6 +106,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             qrCodeFrameView?.frame = barCodeObject.bounds;
             
             if metadataObj.stringValue != nil  && contglobal==0 {
+                messageLabel.hidden = true
                 print(metadataObj.stringValue)
                 link = metadataObj.stringValue
                 (valorfinal,datafinalmente)=reconheceUrl(link)
